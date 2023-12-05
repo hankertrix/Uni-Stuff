@@ -1,0 +1,387 @@
+% Created 2023-11-05 Sun 02:17
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Hankertrix}
+\date{\today}
+\title{Math Module 4B Cheat Sheet}
+\hypersetup{
+ pdfauthor={Hankertrix},
+ pdftitle={Math Module 4B Cheat Sheet},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.1 (Org mode 9.6.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\newpage
+
+\section{Definitions}
+\label{sec:org70bcecd}
+
+\subsection{Differential equation (d.e or DE)}
+\label{sec:orge35b2c5}
+A differential equation is an equation involving one or more derivatives of an unknown function. The order of the highest derivative occurring in a differential equation is called the \textbf{order} of the differential equation.
+
+\subsubsection{Examples}
+\label{sec:org4225674}
+\[\frac{dy}{dx} + x^2 = y\]
+\[\frac{d^2y}{dx^2} = -k^2 y\]
+\[\frac{d^3y}{dx^3} + \left( \frac{d^2y}{dx^2} \right)^5 + \cos x = 0\]
+\[\sin \left( \frac{dy}{dx} \right) + \arctan y = 1\]
+
+The equations above are all differential equations in the unknown function \(y(x)\).
+
+\subsection{Solution to a differential equation}
+\label{sec:org60bea96}
+Consider an \(n\)th order differential equation in the unknown \(y\). A function \(y(x)\) which is (at least) \(n\) times differentiable on an interval \(I\) is called a \textbf{solution} to the differential equation on \(I\), if the substitution \(y = y(x), y' = y'(x), \ldots, y^{(n)} = y^{(n)}(x)\) reduces the differential equation to an identity valid for all \(x \in I\).
+\\[0pt]
+
+A solution to a differential equation is sometimes also called a \textbf{particular solution}.
+\\[0pt]
+
+The \textbf{general} solution to a differential equation is the collection of all (particular) solutions.
+
+\newpage
+
+\subsection{Initial-value problems (i.v.p)}
+\label{sec:org4998b18}
+An \(n\)th-order differential equation together with \(n\) \textbf{initial conditions} of the form:
+\[y(x_0) = y_0\]
+\[y'(x_0) = y_0\]
+\[\vdots\]
+\[y^{(n - 1)}(x_0) = y_{n - 1}\]
+
+Where \(y_0, y_1, \ldots, y_{n-1}\) are constants, is called an \textbf{initial-value problem}. A solution to an initial value problem is a function that satisfies both the stated differential equations and all the initial conditions.
+
+\subsection{Separable differential equations}
+\label{sec:org7f741d5}
+A first-order differential equation is called \textbf{separable} if it can be written in the form:
+\[p(y) y' = q(x)\]
+
+A separable differential equation is just a differential equation that we can separate \(x\) and \(y\).
+\\[0pt]
+
+If \(p\) and \(q\) are continuous, we can solve \(p(y) y' = q(x)\) by integrating both sides with respect to \(x\):
+\begin{align*}
+\int p(y) y' \, dx &= \int q(x) \, dx \\
+\int p(y) \, dy &= \int q(x) \, dx
+\end{align*}
+
+\newpage
+
+\subsection{Linear differential equation}
+\label{sec:org2409a2e}
+A differential equation that can be written in the form:
+\[a_0 (x) y^{(n)} + a_1 (x) y^{(n - 1)} + \cdots + a_n (x) y = F(x)\]
+
+Where \(a_0, a_1, \ldots, a_n\) and \(F\) are functions of \(x\) only, is called a \textbf{linear} differential equation of order \(n\).
+\\[0pt]
+
+Basically, the degree of all terms in \(y\) is \textbf{at most one}.
+
+\subsubsection{Examples}
+\label{sec:org790f482}
+\[I \cdot y'' + x^2 y + (\sin x) y = e^x \tag{1}\]
+\[xy''' + 4x^2 y' - \frac{2}{1+ x^2} y = 0 \tag{2}\]
+
+The equations above (\((1) \text{ and } (2)\)) are \textbf{linear} differential equations.
+
+\[y'' + x \sin (y') - xy = x^2 \tag{3}\]
+\[y'' + x^2y' + y^2 = 0 \tag{4}\]
+
+The equations above (\((3) \text{ and } (4)\)) are \textbf{nonlinear} differential equations.
+
+\subsection{Linear initial value problems}
+\label{sec:orge34e5c2}
+Let \(a_1, a_2, \ldots, a_n, F\) be functions that are continuous on an interval \(I\). Then, for any \(x_0 \in I\), the initial-value problem below has a unique solution on \(I\).
+\[y^{(n)} + a_1 (x) y^{(n - 1)} + \cdots + a_{n - 1}(x) y' + a_n (x) y = F(x)\]
+\[y(x_0) = y_0, y'(x_0) = y_1, \ldots, y^{(n - 1)} x_0 = y_{n - 1}\]
+
+\newpage
+
+\subsection{First-order linear differential equations}
+\label{sec:org15df989}
+A differential equation that can be written in the form:
+\[a(x) \frac{dy}{dx} + b(x)y = r(x)\]
+
+Where \(a(x), b(x), \text{ and } r(x)\) are functions defined on an interval \((a, b)\), is called a \textbf{first-order linear differential equation}.
+\\[0pt]
+
+If \(a(x) \ne 0\) on \((a, b)\), we have the \textbf{standard form}:
+\[\frac{dy}{dx} + p(x) y = q(x)\]
+
+Where \(p(x) = \frac{b(x)}{a(x)} \text{ and } q(x) = \frac{r(x)}{a(x)}\).
+\\[0pt]
+
+Let \(P(x)\) be an antiderivative to \(p(x)\) and multiply with \(e^{P(x)}\) to get:
+\[e^{P(x)} \frac{dy}{dx} + p(x) e^{P(x)} y = q(x) e^{P(x)}\]
+\[\frac{d}{dx} \left( e^{P(x)} y \right) = q(x) e^{P(x)}\]
+
+We can solve the problem by integration.
+
+\subsection{Homogeneous differential equation}
+\label{sec:org4e93fb4}
+Homogeneous just means that the differential equation is equal to 0.
+
+\newpage
+
+\subsection{Second-order linear differential equation}
+\label{sec:org2d5abe5}
+A \textbf{second-order linear} differential equation, has the form:
+\[a_0(x)y'' + a_1(x)y' + a_2(x)y = F(x)\]
+
+Here, \(a_0, a_1, a_2 \text{ and } F\) are functions defined on an interval \(I\). If \(F(x) = 0\) for all \(x \in I\), we say that the equation is \textbf{homogeneous}.
+\\[0pt]
+
+If \(a_0 (x) \ne 0\) on \(I\), dividing gives the \textbf{standard form}:
+\[y'' + p(x)y' + q(x)y = f(x)\]
+
+\subsubsection{Theorem}
+\label{sec:org902061b}
+For a \textbf{homogeneous} linear differential equation:
+\[a(x)y'' + b(x)y' + c(x)y = 0\]
+
+If \(y_1(x)\) and \(y_2(x)\) are two solutions on the interval \(I\), then any \textbf{linear combination} below is also a solution on \(I\):
+\[y(x) = C_1 y_1 (x) + C_2 y_2 (x)\]
+
+Where \(C_1, C_2\) are constants.
+\\[0pt]
+
+The linearity principle holds \textbf{only} for differential equations that are \textbf{both homogeneous} and \textbf{linear}. The result is stated above for a second-order linear homogeneous equation, but the analogous result holds for \(n\)th order linear homogeneous equations.
+
+\newpage
+
+\subsection{Linearly dependent functions}
+\label{sec:org7937d30}
+Two functions defined on the interval \(I\) are said to be \textbf{linearly dependent} on \(I\), if one function is a \textbf{scalar (constant) multiple} of another function.
+
+\subsubsection{Example}
+\label{sec:org4f48f23}
+\[y_1(x) = \cos 2x\]
+\[y_2(x) = 3(1 - 2 \sin^2 x)\]
+
+\begin{align*}
+y_2(x) &= 3 (1 - 2 \sin^2 x) \\
+&= 3 \left( 1 - 2 \cdot \frac{1 - \cos 2x}{2} \right) \\
+&= 3 (1 - (1 - \cos 2x)) \\
+&= 3 \cos 2x \\
+&= 3y_1(x)
+\end{align*}
+
+Since \(y_2(x) = 3y_1(x), y_1(x) \text{ and } y_2(x)\) are \textbf{linearly dependent}.
+
+\newpage
+
+\subsection{Linearly independent functions}
+\label{sec:orgc68162b}
+Two functions defined on the interval \(I\) are said to be \textbf{linearly independent} if one function is \textbf{not} a scalar (constant) multiple of another function.
+
+\subsubsection{Example}
+\label{sec:orgbeae32b}
+\[y_1(x) = e^x\]
+\[y_2(x) = xe^x\]
+
+Since neither \(e^x\) nor \(xe^x\) is a constant multiple of the other, the two functions are \textbf{linearly independent}.
+
+\subsubsection{Theorem}
+\label{sec:org9bef716}
+Let \(I\) be an interval and consider the equations:
+\[y'' + p(x)y' + q(x)y = f(x) \tag{3}\]
+\[y'' + p(x)y' + q(x)y = 0 \tag{4}\]
+
+Let \(y_1(x), y_2(x)\) be \textbf{linearly independent} solutions of \((4)\) and \(y_p(x)\) a solution of \((3)\) on \(I\). Then:
+\begin{itemize}
+\item The general solution of \((4)\) on \(I\) is:
+\[y(x) = C_1 y_1(x) + C_2 y_2(x), \quad C_1, C_2 \in \mathbb{R}\]
+\item The general solution to \((3)\) on \(I\) is:
+\[y(x) = C_1 y_1(x) + C_2 y_2(x) + y_p(x), \quad C_1, C_2 \in \mathbb{R}\]
+\end{itemize}
+
+So, the \textbf{general solution} to the non-homogeneous differential equation \(y'' + p(x)y' + q(x)y = f(x)\) is of the form:
+\[y(x) = y_c(x) + y_p(x)\]
+
+Where \(y_c(x) = C_1 y_1(x) + C_2 y_2(x)\) is the general solution to the associated homogeneous equation:
+\[y'' + p(x)y' + q(x)y = 0\]
+
+And \(y_p\) is a particular solution to:
+\[y'' + p(x)y' + q(x)y = f(x)\]
+
+
+\subsection{Characteristic equation}
+\label{sec:org759083a}
+Consider a homogeneous linear differential equation of order 2 with \textbf{constant coefficients}.
+\[ay'' + by' + cy = 0\]
+
+Where \(a, b, c \in \mathbb{R}, a \ne 0\).
+\\[0pt]
+
+Since, in order to satisfy the equation, we want constant multiples of \(y\) and its derivatives to cancel, we should look for solutions of this differential equation of the form \(y(x) = e^{rx}\) (since derivatives of \(y\) are constant multiples of \(y\)). Trying this:
+\\[0pt]
+
+With \(y(x) = e^{rx}\), we get:
+\[y'(x) = re^{rx}, \ y''(x) = r^2 e^{rx}\]
+
+Substituting the above equation into the differential equation \(ay'' + by' + cy = 0\), we get:
+\[ar^2 e^{rx} + bre^{rx} + ce^{rx} = 0\]
+\[e^{rx} (ar^2 + br + c) = 0\]
+
+Since \(e^{rx} > 0\), the equation is satisfied only if:
+\[ar^2 + br + c = 0\]
+
+The quadratic equation above is called the \textbf{characteristic equation} for the differential equation above.
+
+\newpage
+
+\section{Solving first-order differential equations (FODEs)}
+\label{sec:orga04e118}
+In order to solve first-order differential equations of the form:
+\[\frac{dy}{dx} + p(x)y = q(x) \tag{1}\]
+
+We will use a method called the integrating factor. Introducing an integrating factor called \(\mu\) to the equation above:
+\[\mu \frac{dy}{dx} + \mu p(x)y = \mu q(x)\]
+
+Considering the product rule to simplify the above equation:
+\[\frac{d}{dx} (uv) = u \frac{du}{dx} + v \frac{du}{dx}\]
+
+Comparing this with the left-hand side of the original first-order differential equation, we have:
+\[u = \mu \tag{2}\]
+\[\frac{du}{dx} = \frac{dy}{dx} \tag{3}\]
+\[v = y \tag{4}\]
+\[\frac{du}{dx} = \mu p(x) \tag{5}\]
+
+Equations \((2)\) and \((5)\) yield:
+\[\frac{d \mu}{dx} = \frac{du}{dx} = \mu p (x)\]
+
+Solving this with the separation of variables:
+\[\frac{d \mu}{dx} = \mu p(x)\]
+\[\frac{1}{\mu} \frac{d \mu}{dx} = p(x)\]
+\[\int \frac{1}{\mu} \, d \mu = \int p(x) \, dx\]
+\[\ln |\mu| = \int p(x) \, dx\]
+\[\mu = e^{\int p(x) \, dx} \tag{6}\]
+
+Substituting \((6)\) into \((1)\):
+\[e^{\int p(x) \, dx} \frac{dy}{dx} + e^{\int p(x) \, dx} y = e^{\int p(x) \, dx} q(x)\]
+
+Using equations \((2), (3), (4), (5) \text{ and } (6)\) with the product rule:
+\[\frac{d}{dx} \left( e^{\int p(x) \, dx} y \right) = e^{\int p(x) \, dx} q(x)\]
+
+Integrating both sides with respect to \(x\), we get:
+\[e^{\int p(x) \, dx} y = \int q(x) e^{\int p(x) \, dx} \, dx\]
+
+In summary, reduce the given first-order differential equation into the form \(\frac{dy}{dx} + p(x) y = q(x)\), then find the integrating factor with \(\mu = e^{\int p(x) \, dx}\) and multiply every term by it. Apply the product rule to obtain \(\frac{d}{dx} \left( e^{\int p(x) \, dx} y \right) = e^{\int p(x) \, dx} q(x)\). Then integrate both sides with respect to \(x\) and solve for \(y\).
+
+
+\section{Solving second-order differential equations (SODEs)}
+\label{sec:orgd09cff9}
+
+\subsection{Solving linear homogeneous second-order differential equations}
+\label{sec:org4216556}
+To solve linear (degree of all terms is at most 1) homogeneous (the equation is equal to 0) second-order differential equations of the form:
+\[a \frac{d^2y}{dx^2} + b \frac{dy}{dx} + cy = 0\]
+
+We are finding the \textbf{general solution} of \(y\). First, we need to identify the \textbf{characteristic or auxiliary equation} of the second-order differential equation. It is given by:
+\[am^2 + bm + c = 0\]
+
+Using the quadratic formula,
+\[m = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\]
+
+We now have three cases for the different types of roots.
+
+\subsubsection{Case 1: Roots are real and distinct (\(b^2 - 4ac > 0\))}
+\label{sec:org51d7f70}
+The general solution is:
+\[y = C_1 e^{m_1 x} + C_2 e^{m_2 x}\]
+
+Where \(C_1\) and \(C_2\) are constants to be found.
+
+\subsubsection{Case 2: Roots are real and equal (\(b^2 - 4ac = 0\))}
+\label{sec:org133215c}
+The general solution is:
+\[y = (C_1 + C_2 x) e^{mx}\]
+
+\subsubsection{Case 3: Roots are complex (\(b^2 - 4ac < 0\))}
+\label{sec:org9dbd9f6}
+The general solution is:
+\[y = e^{\alpha x} (C_1 \cos (\beta x) + C_2 \sin (\beta x)), \quad m = \alpha + \beta i\]
+
+\subsection{Solving linear non-homogeneous second-order differential equations}
+\label{sec:org0ce37a9}
+To solve linear non-homogeneous second-order differential equations of the form:
+\[a \frac{d^2y}{dx^2} + b \frac{dy}{dx} + cy = f(x)\]
+
+We must first find the \textbf{complimentary function}, which is the function \(y = q(x)\). When this function is substituted into the second-order differential equation, the right-hand side is 0 (similar to the \textbf{general solution} of a linear homogeneous second-order differential equation). After which, we must find the \textbf{particular solution}, which is the function \(y = p(x)\). When this function is substituted into the second-order differential equation, it gives us \(f(x)\). Finally, the general solution to the linear non-homogeneous second-order differential equation is given by:
+\[y = \textbf{Complimentary function} + \textbf{Particular solution}\]
+
+To find the particular solution, we must consider 3 cases.
+
+\subsubsection{Case 1: \(f(x)\) is a polynomial of degree \(n, f(x) = a_0 + a_1 x + \ldots + a_n x^n\)}
+\label{sec:org0e0fe85}
+The particular solution is a polynomial with degree equal to the degree of \(f(x)\).
+\[p(x) = b_0 + b_1 x + b_2 x^2 + \ldots + b_n x^n\]
+
+\subsubsection{Case 2: \(f(x) = (c_0 + c_1 x + c_2 x^2 + \ldots + c_n x^n) e^{kx}, \  c_n \in \mathbb{R}\)}
+\label{sec:org5a41c3e}
+
+\begin{enumerate}
+\item The complimentary function does not have \(e^{kx}\)
+\label{sec:orgd23b9e9}
+
+The particular solution is:
+\[p(x) = (c_0 + c_1 x + c_2 x^2 + \ldots + c_n x^n) e^{kx}\]
+
+\item The complimentary function has \(e^{kx}\) but not \(xe^{kx}\)
+\label{sec:org3767637}
+
+The particular solution is:
+\[p(x) = x(c_0 + c_1 x + c_2 x^2 + \ldots + c_n x^n) e^{kx}\]
+
+\item The complimentary function has \(e^{kx}\) and \(xe^{kx}\)
+\label{sec:org9e639d9}
+
+The particular solution is:
+\[p(x) = x^2(c_0 + c_1 x + c_2 x^2 + \ldots + c_n x^n) e^{kx}\]
+
+\item The complimentary function is \(q(x) = e^{\alpha x} (C_1 \cos (\beta x) + C_2 \sin (\beta x))\)
+\label{sec:org9574264}
+
+The particular solution is:
+\[p(x) = pe^{kx}\]
+\end{enumerate}
+
+\subsubsection{Case 3: \(f(x) = k \cos (ax), k \sin (ax) \text{ or } k \cos (ax) + r \sin (ax)\)}
+\label{sec:org85ab874}
+
+\begin{enumerate}
+\item The complimentary function does not have \(A \cos (ax) + B \sin (ax)\)
+\label{sec:orgb14ac41}
+
+The particular solution is:
+\[p(x) = p \cos (ax) + q \sin (ax)\]
+
+\item The complimentary function has \(A \cos (ax) + B \sin (ax)\)
+\label{sec:orgafc7a1d}
+
+The particular solution is:
+\[p(x) = x(p \cos (ax) + q \sin (ax))\]
+\end{enumerate}
+
+\subsubsection{After the particular solution is found}
+\label{sec:org96c6af9}
+Once we find the particular solution, we must find its first and second derivatives, \(p'(x)\) and \(p''(x)\). After which, we substitute them into the original second-order differential equation to find the constants \(p\) and \(q\). And now, the full general solution to the linear non-homogeneous second-order differential equation is:
+\[y = q(x) + p(x)\]
+\end{document}

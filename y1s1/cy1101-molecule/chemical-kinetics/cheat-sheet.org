@@ -1,0 +1,269 @@
+#+TITLE: Chemical Kinetics Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{graphicx, siunitx}
+#+LATEX_HEADER: \graphicspath{ {./images/} }
+
+\newpage
+
+* Definitions
+
+** Reaction rate
+Either the *increase* in the concentration of a product per unit time or the *decrease* in the concentration of a reactant per unit time.
+\\
+
+General reaction:
+\[aA + bB \rightarrow dD + eE\]
+
+\[\text{Rate of reaction} = - \frac{1}{a}\frac{d[A]}{dt} = - \frac{1}{b}\frac{d[B]}{dt} = - \frac{1}{d}\frac{d[D]}{dt} = - \frac{1}{e}\frac{d[E]}{dt}\]
+
+*** Example
+
+\[2N_2O_5 (g) \rightarrow 4 NO_2 (g) + O_2 (g)\]
+
+\[\text{Rate of reaction} = \frac{1}{2}\frac{d[N_2O_5]}{dt} = \frac{1}{4}\frac{d[NO_2]}{dt} = \frac{d[O_2]}{dt}\]
+\[\text{Rate of reaction} = k[N_2O_5]^2\]
+\[\text{Rate of consumption of reactant} = -\frac{d[N_2O_5]}{dt} = 2 \cdot k[N_2O_5]^2\]
+\[\text{Rate of formation of product} = -\frac{d[NO_2]}{dt} = 4 \cdot k[N_2O_5]^2\]
+\[\text{Rate of formation of product} = -\frac{d[O_2]}{dt} = k[N_2O_5]^2\]
+
+** Rate law
+The rate law is an equation that shows the dependence of the reaction rate on the concentration of each reactant.
+
+\[aA + bB \rightarrow \text{ Products}\]
+\[\text{Rate} \propto [A]^m[B]^n\]
+\[\text{Rate} = k[A]^m[B]^n\]
+
+$k$ is the *rate constant*.
+\\
+
+The values of the exponents in the rate law must be *determined experimentally*. They cannot be deduced from the stoichiometry of the reaction.
+\\
+
+*** Units of the rate constant $k$
+
+The units of $k$ must be determined based on the order of the reaction. For example, given a third order reaction:
+
+\[2NO(g) + O_2(g) \rightarrow 2NO_2 (g)\]
+\[\text{Rate} = k[NO]^2[O_2]\]
+
+Units of $k$ for this third-order reaction:
+\[k = \frac{\text{Rate}}{[NO^2][O_2]} = \frac{\frac{M}{s}}{M^2 \cdot M} = \frac{1}{M^2 s}\]
+
+*** The rate constant $k$ is dependent on temperature
+The *rate constant* $k$ is dependent on temperature and the *rate of reaction* usually *increases* when the *temperature increases*.
+
+** Half-life
+The half-life is the *time* required for the reactant concentration to drop to *one-half* of its initial value.
+
+** Transition state
+The transition state is the configuration of atoms at the maximum in the potential energy profile. This is also called the activated complex.
+
+** Collision theory
+Collision theory states that as the average *kinetic energy* increases, the average *molecular speed* increases and thus the *collision rate* increases.
+
+\newpage
+
+** Arrhenius equation
+\[k = Ae^{\frac{-E_a}{RT}}\]
+
+Where:
+- $k$ is the rate constant
+- $A$ is the collision frequency factor
+- $E_a$ is the activation energy
+- $R$ is the gas constant
+- $T$ is the temperature in Kelvin ($\unit{K}$)
+
+*** Using the Arrhenius equation
+\[\ln (k) = \ln (A) + \ln \left[e^{\frac{-E_a}{RT}} \right]\]
+\[\ln (k) = \ln (A) - \frac{-E_a}{RT}\]
+\[\ln (k) = \frac{-E_a}{R} \frac{1}{T} + \ln (A) \text{ which is in the form: } y = mx + c\]
+\\
+
+So, we get:
+\[\ln \left( \frac{k_2}{k_1} \right) = \frac{-E_a}{R} \left( \frac{1}{T_2} - \frac{1}{T_1} \right)\]
+
+Plotting the graph of $\ln(k)$ versus $\frac{1}{T}$ gives a straight line graph with a *slope (gradient)* of $\frac{-E_a}{R}$.
+
+\newpage
+
+*** Which gas constant $(R)$ value to use?
+The gas constant can be either:
+
+- $R$ value: 8.314 \\
+  Units: \(\unit{J.K^{-1}.mol^{-1}}, \ \unit{m^3.Pa.K^{-1}.mol{^-1}}\)
+
+- $R$ value: 0.0821 \\
+  Units: \(\unit{L.atm.K^{-1}.mol^{-1}}\)
+
+\[\ln \left( \frac{k_2}{k_1} \right) = \frac{-E_a}{R} \left( \frac{1}{T_2} - \frac{1}{T_1} \right)\]
+\\
+
+For the term \(\frac{-E_a}{R}\), the final units should be $\unit{K}$.
+\\
+
+If \(R = \qty{8.314}{\unit{J.K^{-1}.mol^{-1}}}\), the units for $E_a$ should be $\unit{J.mol^{-1}}$.
+
+If \(R = \qty{0.0821}{\unit{L.atm.K^{-1}.mol^{-1}}}\), the units for $E_a$ should be $\unit{L.atm.mol^{-1}}$.
+
+** Elementary reaction (elementary step)
+A single step in a reaction mechanism. An elementary reaction describes an individual molecular event.
+
+** Overall reaction
+The overall reaction described the reaction stoichiometry and is a summation of elementary reactions.
+
+** Reaction mechanism
+The reaction mechanism is a sequence of reaction steps that describes the pathway from reactants to products.
+
+*** Example
+\[NO_2 (g) + NO_2 (g) \rightarrow NO (g) + NO_3 (g) \textbf{ Elementary reaction}\]
+\[NO_3 (g) + CO (g) \rightarrow NO_2 (g) + CO_2 (g) \textbf{ Elementary reaction}\]
+\hrule
+\[NO_2 (g) + CO (g) \rightarrow NO (g) + CO_2 (g) \textbf { Overall reaction}\]
+
+** Molecularity
+Molecularity is a classification of an elementary reaction based on the number of molecules or atoms on the reactant side of the chemical equation.
+
+*** Unimolecular reaction
+\[O_3^* (g) \rightarrow O_2 (g) + O (g)\]
+\[\text{Rate} = k[O_3]\]
+
+*** Bimolecular reaction
+\[O_3 (g) + O (g) \rightarrow 2O_2 (g)\]
+\[\text{Rate} = k[O_3][O]\]
+
+*** Termolecular reaction
+\[O (g) + O (g) + M (g) \rightarrow O_2 (g) + M (g)\]
+\[\text{Rate} = k[O]^2[M]\]
+
+** Rate-determining step
+The rate-determining step is the *slow step* in a reaction mechanism since it acts as a bottleneck and limits the rate at which reactants can be converted to products.
+
+\newpage
+
+** Catalyst
+A catalyst is a substance that increases the rate of a reaction without itself being consumed in the reaction. A catalyst is used in one step and regenerated in a later step.
+
+*** Example
+\(I^- (aq)\) is acting as a catalyst in the reaction below as it is regenerated and not used up:
+
+\[H_2 O_2 (aq) + I^- (aq) \rightarrow H_2O (l) + IO^- (aq) \textbf{ Rate-determining step}\]
+\[H_2 O_2 (aq) + IO^- (aq) \rightarrow H_2O (l) + O^2 (g) + I^- (aq) \textbf{ Fast step}\]
+\hrule
+\[2H_2O_2 (aq) \rightarrow 2H_2O (l) + O_2 (g) \textbf{ Overall reaction}\]
+\\
+
+Since the catalyst is involved in the *rate-determining step*, it often appears in the rate law. The rate law for the reaction above is:
+\[\text{Rate} = k[H_2O_2][I^-]\]
+
+*** Effect of a catalyst
+A catalyst will *decrease* the *activation energy* ($E_a$) of a reaction and there will usually be *two transition states* in the reaction, which means 2 humps in the energy level diagram for the reaction. The first hump will be *larger* than the second one as the first hump represents the activation energy for the reaction.
+
+** Homogeneous catalyst
+A homogeneous catalyst is a catalyst that exists in the *same phase* as the reactants.
+
+\newpage
+
+** Heterogeneous catalyst
+A catalyst that exists in a *different phase* from that of the reactants.
+
+*** Example mechanism
+Using a metal catalyst for the reaction between $H_2$ and \(C_2H_4\):
+
+1. $H_2$ and $C_2H_4$ are adsorbed on the metal surface.
+2. The $H-H$ bond breaks as \(H\)-metal bonds form, and the $H$ atoms move about on the surface.
+3. One $H$ atom forms a bond to a $C$ atom of the adsorbed $C_2H_4$ to give a metal-bonded $C_2H_5$ group. A second $H$ atom bonds to the $C_2H_5$ group.
+4. The resulting $C_2H_6$ molecule is desorbed from the surface.
+
+* Characteristics of zeroth, first, and second-order reactions
+
+\[\includegraphics[width = \textwidth]{characteristics}\]
+
+\newpage
+
+* Zeroth-order reactions
+For a zeroth-order reaction, the rate is *independent* of the concentration of the reactant.
+
+\[A \rightarrow \text{ Products}\]
+\[\text{Rate} = k[A]^0 = k\]
+\[- \frac{\Delta [A]}{\Delta t} = k\]
+
+The *integrated rate law* for a zeroth-order reaction is:
+\[[A]_t = -kt + [A]_0, \text{ which is in the form: } y = mx + c\]
+
+Where $[A]_t$ is the concentration of $A$ at time $t$ and $[A]_0$ is the initial concentration of $A$.
+\\
+
+A plot of $[A]$ versus *time* gives a straight-line graph and the *slope (gradient)* will be $-k$.
+
+** Example
+\[2NH_3 (g) \rightarrow N_2 (g) + 3H_2 (g)\]
+\[\text{Rate} = k[NH_3]^0 = k\]
+
+*** Explanation (not very important)
+Most of the $NH_3$ molecules are in the gas phase above the surface and are unable to react. As the $NH_3$ molecules on the surface decompose, they are replaced by molecules form the gas phase, so the number of $NH_3$ molecules on the surface remains constant. Because only the $NH_3$ molecules on the surface react under these conditions, the reaction rate is independent of the total concentration of $NH_3$.
+
+\newpage
+
+* First-order reaction
+\[A \rightarrow \text{ Products}\]
+\[\text{Rate} = k[A]\]
+\[- \frac{\Delta [A]}{\Delta t} = k[A]\]
+
+Deriving the *integrated rate law*:
+\[\ln \left( \frac{[A]_t}{[A]_0} = -kt \right)\]
+\[\ln [A]_t - \ln [A]_0 = -kt\]
+
+Hence, the *integrated rate law* is:
+\[\ln [A]_t = -kt + \ln [A]_0, \text{ which is in the form: } y = mx + c\]
+\[[A]_t = e^{-kt} + [A]_0\]
+
+Where $[A]_t$ is the concentration of $A$ at time $t$ and $[A]_0$ is the initial concentration of $A$.
+\\
+
+A plot of $ln[A]$ versus *time* gives a straight-line graph and the *slope (gradient)* will be $-k$.
+
+** Half-life
+
+Finding the half life of a first-order reaction:
+\[A \rightarrow \text{ Products}\]
+\[\text{Rate} = k[A]\]
+\[\ln \left( \frac{[A]_t}{[A]_0} = -kt \right)\]
+
+When \(t = t_{\frac{1}{2}}\) and \([A]_{t_{\frac{1}{2}}} = \frac{[A]_0}{2}\):
+\[\ln \frac{1}{2} = -kt_{\frac{1}{2}}\]
+
+Hence, the half-life of a first-order reaction is:
+\[t_{\frac{1}{2}} = \frac{\ln 2}{k}\]
+
+The half-life of a first-order reaction is *independent* of the initial concentration. Each successive half-life is an equal period of time.
+
+
+* Second-order reaction
+\[A \rightarrow \text{ Products}\]
+\[\text{Rate} = k[A]^2\]
+\[- \frac{\Delta [A]}{\Delta t} = k[A]^2\]
+
+The *integrated rate law* of a second-order reaction is:
+\[\frac{1}{[A]_t} = kt + \frac{1}{[A]_0} \text{ which is in the form: } y = mx + c\]
+
+Where $[A]_t$ is the concentration of $A$ at time $t$ and $[A]_0$ is the initial concentration of $A$.
+\\
+
+A plot of $ln[A]$ versus *time* gives a curve. However, plotting $\frac{1}{[A]}$ versus *time* gives a straight-line graph with the *slope (gradient)* will be $k$.
+
+** Half-life
+
+Finding the half life of a second-order reaction:
+\[A \rightarrow \text{ Products}\]
+\[\text{Rate} = k[A]\]
+\[\frac{1}{[A]_t} = kt + \frac{1}{[A]_0}\]
+
+When \(t = t_{\frac{1}{2}}\) and \([A]_{t_{\frac{1}{2}}} = \frac{[A]_0}{2}\):
+\[\frac{2}{[A]_0} = kt_{\frac{1}{2}} + \frac{1}{[A]_0}\]
+
+Hence, the half-life of a second-order reaction is:
+\[t_{\frac{1}{2}} = \frac{1}{k[A]_0}\]
+
+For a second-order reaction, the half-life is *dependent* on the initial concentration. Each successive half-life is *twice* as long as the preceding one.

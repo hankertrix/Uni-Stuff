@@ -1,0 +1,480 @@
+% Created 2023-09-18 Mon 14:20
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\author{Hankertrix}
+\date{\today}
+\title{Chemical Kinetics Tutorial}
+\hypersetup{
+ pdfauthor={Hankertrix},
+ pdftitle={Chemical Kinetics Tutorial},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.1 (Org mode 9.6.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\newpage
+
+\section{Question 1}
+\label{sec:orge7fb205}
+
+\subsection{(a)}
+\label{sec:orgdd78588}
+
+\[I^- (aq) + OCl^- (aq) \rightarrow Cl^- (aq) + OI^- (aq)\]
+
+\subsection{(b)}
+\label{sec:org1386dc6}
+For experiment 1:
+
+\begin{align*}
+\text{Rate of decrease of } [I^-] &= \frac{2.40 \times 10^{-4} - 2.16 \times 10^{-4}}{10} \\
+&= 2.40 \times 10^{-6}
+\end{align*}
+
+\begin{align*}
+\text{Rate of decrease of } [OCl^-] &= \frac{1.60 \times 10^{-4} - 1.36 \times 10^{-4}}{10} \\
+&= 2.40 \times 10^{-6}
+\end{align*}
+\\[0pt]
+
+For experiment 2:
+
+\begin{align*}
+\text{Rate of decrease of } [I^-] &= \frac{1.20 \times 10^{-4} - 1.08 \times 10^{-4}}{10} \\
+&= 1.20 \times 10^{-6}
+\end{align*}
+
+\begin{align*}
+\text{Rate of decrease of } [OCl^-] &= \frac{1.60 \times 10^{-4} - 1.48 \times 10^{-4}}{10} \\
+&= 1.20 \times 10^{-6}
+\end{align*}
+
+\newpage
+
+For experiment 3:
+
+\begin{align*}
+\text{Rate of decrease of } [I^-] &= \frac{2.40 \times 10^{-4} - 2.34 \times 10^{-4}}{10} \\
+&= 6.00 \times 10^{-7}
+\end{align*}
+
+\begin{align*}
+\text{Rate of decrease of } [OCl^-] &= \frac{4.00 \times 10^{-5} - 3.40 \times 10^{-5}}{10} \\
+&= 6.00 \times 10^{-7}
+\end{align*}
+\\[0pt]
+
+For experiment 4:
+
+\begin{align*}
+\text{Rate of decrease of } [I^-] &= \frac{1.20 \times 10^{-4} - 1.14 \times 10^{-4}}{10} \\
+&= 6.00 \times 10^{-7}
+\end{align*}
+
+\begin{align*}
+\text{Rate of decrease of } [OCl^-] &= \frac{1.60 \times 10^{-4} - 1.54 \times 10^{-4}}{10} \\
+&= 6.00 \times 10^{-7}
+\end{align*}
+
+\newpage
+
+Comparing experiment 1 and 2, the rate halves when \([I^-]\) halves, hence, the reaction is first-order with respect to \(I^-\).
+\\[0pt]
+
+Comparing experiment 1 and 3, the rate decreases by 75\% when \([OCl^-]\) decreases by 75\%, hence, the reaction is first-order with respect to \(OCl^-\).
+\\[0pt]
+
+Comparing experiments 2 and 4, the rate halves when \([OH^-]\) is doubled. This means that the reaction is negative first-order with respect to \(OH^-\).
+\\[0pt]
+
+Thus, the rate law for the reaction is:
+\[\text{Rate} = k[I^-][OCl^-][OH^-]^{-1}\]
+
+Calculating the value of the rate constant using experiment 1:
+\[2.40 \times 10^{-6} = k \times 2.40 \times 10^{-4} \times 1.60 \times 10^{-4} \times (1.00)^{-1}\]
+\[k = \qty{62.5}{s^{-1}}}\]
+
+\subsection{(c)}
+\label{sec:org9648a09}
+The reaction is unlikely to occur through a single step reaction as the reaction is first order with respect to \(H^+\), which is not found in the overall reaction and is a reaction intermediate, which suggests that the reaction occurs through a multistep mechanism.
+
+\subsection{(d)}
+\label{sec:org79ca391}
+
+\[H_2O (l) + OCl^- (aq) \underset{k_2}{\stackrel{k_1}{\rightleftharpoons}} HOCl (aq) + OH^- (aq) \quad \textbf{Fast step}\]
+\[HOCl (aq) + I^- (aq) \underset{k_3}{\rightarrow} HOI^- (aq) + Cl^- (aq) \quad \textbf{Slow step}\]
+\[HOI^- (aq) + OH^- (aq) \rightarrow OI^- (aq) + H_2O (l) \quad \textbf{Fast step}\]
+
+Expressing the rate constant in terms of the rate constants for the elementary steps:
+\[k = \frac{k_1 k_3}{k_2}\]
+
+
+\section{Question 2}
+\label{sec:orgd3b9963}
+
+At \(\qty{25}{\unit{\degreeCelsius}}\), the \(k\) value is:
+\[60 = \frac{\ln 2}{k}\]
+\[k = \frac{\ln 2}{60}\]
+\[k = 0.01155245301\]
+
+At \(\qty{32}{\unit{\degreeCelsius}}\), the \(k\) value is:
+\[\ln 0.2 = -k(60) + \ln 0.5\]
+\[k = -\frac{\ln 2 - \ln 5}{60}\]
+\[k = 0.0152715122\]
+
+Finding the required \(k\) value for \(X\) to decrease from \(\qty{0.200}{\unit{mol}}\) to \(\qty{0.010}{\unit{mol}}\):
+\[\ln 0.01 = -k(60) + \ln 0.2\]
+\[k = 0.0499288712\]
+
+Finding \(\frac{-E_a}{R}\) using the Arrhenius equation:
+\[\ln \left( \frac{k_1}{k_2} \right) = \frac{-E_a}{R} \left(\frac{1}{T_1} - \frac{1}{T_2} \right)\]
+\[\ln \left( \frac{0.01155245301}{0.0152715122} \right) = \frac{-E_a}{R} \left(\frac{1}{298.15} - \frac{1}{305.15} \right)\]
+\[\frac{-E_a}{R} = -0.2790913488 \div 0.00007693958\]
+\[\frac{-E_a}{R} = -3627.408969\]
+
+\newpage
+
+Finding the required temperature:
+\[\ln \left( \frac{k_1}{k_2} \right) = \frac{-E_a}{R} \left(\frac{1}{T_1} - \frac{1}{T_2} \right)\]
+\[\ln \left( \frac{0.0499288712}{0.0152715122} \right) = -3627.408969 \left(\frac{1}{T_1} - \frac{1}{305.15} \right)\]
+\[\ln \left( \frac{0.0499288712}{0.0152715122} \right) = \frac{-3627.408969}{T_1} - \frac{-3627.408969}{305.15}\]
+\[-10.70268768 = \frac{-3627.408969}{T_1}\]
+\[T_1 = \frac{-3627.408969}{-10.70268768}\]
+\[T_1 = \qty{338.9259512}{\unit{K}}\]
+\[T_1 = \qty{65.77505121}{\unit{\degreeCelsius}}\]
+\[T_1 \approx \qty{65.8}{\unit{\degreeCelsius}}\]
+
+Hence, the minimum temperature required is \(\qty{65.8}{\unit{\degreeCelsius}}\).
+
+
+\section{Question 3}
+\label{sec:orgf6e35a4}
+
+Getting the value of \(k\) for the reaction:
+\[t_{\frac{1}{2}} = \frac{\ln 2}{k}\]
+\[1.3 \times 10^{-5} k = \ln 2\]
+\[k = \frac{\ln 2}{1.3 \times 10^{-5}}\]
+\[k = 53319.01389\]
+
+Using the integrated rate law for first-order reactions:
+\[\ln (19.0 - \frac{1.3}{2}) = -53319.01389t + \ln 19.0\]
+\[\ln 18.35 - \ln 19.0 = -53319.01389t\]
+\[t = 6.528516213 \times 10^{-7}\]
+\[t \approx 6.53 \times 10^{-7}\]
+
+Thus, it will take \(6.53 \times 10^{-7} \ \unit{s}\) for the pressure of \(NO_2\) to reach \(\qty{1.3}{\unit{mm.Hg}}\).
+
+
+\section{Question 4}
+\label{sec:org1c9275b}
+
+\subsection{(a)}
+\label{sec:org2efcb75}
+
+Using the integrated rate law for second-order reactions:
+\[\frac{1}{\frac{0.001}{100} \times \frac{3.2}{2}} = 1.3 \times 10^{11} t + \frac{1}{\frac{3.2}{2}} \]
+\[62500 - \frac{5}{8} = 1.3 \times 10^{11}t\]
+\[62499.375 = 1.3 \times 10^{11}t\]
+\[t = 4.807644231 \times 10^{-7}\]
+\[t \approx 4.81 \times 10^{-7}\]
+
+It will take \(4.81 \times 10^{-7} \ \unit{s}\) to neutralise 99.999\% of acid.
+
+\subsection{(b)}
+\label{sec:org9f532a1}
+I would expect the rate of the acid-base neutralisation to be limited by the speed of mixing, since the reaction takes far less than even 1 microsecond to complete as stirring would take much longer than 1 microsecond to complete.
+
+\newpage
+
+\section{Question 5}
+\label{sec:org4c32694}
+
+Finding \([O_2]\):
+
+\[\frac{1}{[O_2]^2} = 8kt + \frac{1}{([O_2]_0)^2}\]
+\[\frac{1}{[O_2]^2} = 8(25)(120.0) + \frac{1}{(0.0100)^2}\]
+\[\frac{1}{[O_2]^2} = 3.4 \times 10^4\]
+\[[O_2]^2 = \frac{1}{3.4 \times 10^4}\]
+\[[O_2] = \sqrt{\frac{1}{3.4 \times 10^4}}\]
+\[[O_2] = 5.42326145 \times 10^{-3}\]
+\[[O_2] \approx 5.42 \times 10^{-3} \ \unit{M}\]
+
+The concentrations of \(NO\) would be double that of \(O_2\) as its stoichiometric ratio to \(O_2\) is \(2:1\).
+\[[NO] = 2 \times 5.42326145 \times 10^{-3}\]
+\[[NO] = 1.08465229 \times 10^{-2}\]
+\[[NO] \approx 1.08 \times 10^{-2} \ \unit{M}\]
+
+The concentration of \(NO_2\) will be double that of the reduction in \([O_2]\) as it is a product and its stoichiometric ratio to \(O_2\) is \(2:1\) as well.
+\[[NO_2] = 2(0.0100 - 5.42326145 \times 10^{-3})\]
+\[[NO_2] = 9.15347711 \times 10^{-3}\]
+\[[NO_2] \approx 9.15 \times 10^{-3} \ \unit{M}\]
+
+Hence, the concentration of \(NO\) is \(1.08 \times 10^{-2} \ \unit{M}\), the concentration of \(O_2\) is \(5.42 \times 10^{-3} \ \unit{M}\), and the concentration of \(NO_2\) is \(9.15 \times 10^{-3} \ \unit{M}\) after \(\qty{120.0}{\unit{s}}\).
+
+
+\section{Question 6}
+\label{sec:orgfa1de93}
+
+Finding the order of reaction with respect to \(NO_2\) from the two experiments conducted at \(\qty{600}{\unit{K}}\):
+\[\frac{5.4 \times 10^{-7}}{2.2 \times 10^{-6}} = \frac{k(0.0010)^a}{k(0.0020)^a}\]
+\[\frac{27}{110} = \frac{(0.0010)^a}{(0.0020)^a}\]
+\[\ln \left(\frac{27}{110} \right) = \ln \left(\frac{(0.0010)^a}{(0.0020)^a} \right)\]
+\[\ln \left(\frac{27}{110} \right) = \ln \left(\frac{0.0010}{0.0020} \right)^a\]
+\[\ln \left(\frac{27}{110} \right) = a \ln \left(\frac{0.0010}{0.0020} \right)\]
+\[a = 2.02647221\]
+\[a \approx 2\]
+
+Hence, the order of reaction with respect to \(NO_2\) is second-order.
+\\[0pt]
+
+Finding the \(k\) value of the first experiment conducted at \(\qty{600}{\unit{K}}\):
+\[\text{Rate} = k[NO_2]^2\]
+\[5.4 \times 10^{-7} = k(0.0010)^2\]
+\[k = \frac{5.4 \times 10^{-7}}{(0.0010)^2}\]
+\[k = 0.54\]
+
+Finding the \(k\) value of the second experiment conducted at \(\qty{600}{\unit{K}}\):
+\[\text{Rate} = k[NO_2]^2\]
+\[2.2 \times 10^{-6} = k(0.0020)^2\]
+\[k = \frac{2.2 \times 10^{-6}}{(0.0020)^2}\]
+\[k = 0.55\]
+
+Getting the average value of \(k\) for the experiments conducted at \(\qty{600}{\unit{K}}\):
+\begin{align*}
+k_{\qty{600}{\unit{K}}} &= \frac{0.54 + 0.55}{2} \\
+&= 0.545 \\
+\end{align*}
+
+Finding the \(k\) value of the experiment conducted at \(\qty{700}{\unit{K}}\):
+\[\text{Rate} = k[NO_2]^2\]
+\[5.2 \times 10^{-5} = k(0.0020)^2\]
+\[k = \frac{5.2 \times 10^{-5}}{(0.0020)^2}\]
+\[k = 13\]
+
+Using the Arrhenius equation to find \(\frac{-E_a}{R}\) of the reaction:
+\[\ln \left( \frac{k_1}{k_2} \right) = \frac{-E_a}{R} \left( \frac{1}{T_1} - \frac{1}{T_2}\right)\]
+\[\ln \left( \frac{0.545}{13} \right) = \frac{-E_a}{R} \left( \frac{1}{600} - \frac{1}{700}\right)\]
+\[\ln \left( \frac{0.545}{13} \right) = \frac{-E_a}{R} \left( \frac{1}{4200} \right)\]
+\[\ln \left( \frac{0.545}{13} \right) \div \frac{1}{4200} = \frac{-E_a}{R}\]
+\[\frac{-E_a}{R} = -13322.05914\]
+
+\newpage
+
+Finding the \(k\) at \(\qty{660}{\unit{K}}\):
+\[\ln \left( \frac{k_1}{k_2} \right) = \frac{-E_a}{R} \left( \frac{1}{T_1} - \frac{1}{T_2}\right)\]
+\[\ln \left( \frac{k_1}{13} \right) = -13322.05914 \left( \frac{1}{660} - \frac{1}{700}\right)\]
+\[\ln \left( \frac{k_1}{13} \right) = -13322.05914 \left( \frac{1}{11550} \right)\]
+\[\frac{k_1}{13} = e^{-13322.05914 \left( \frac{1}{11550} \right)}\]
+\[k_1 = 13e^{-13322.05914 \left( \frac{1}{11550} \right)}\]
+\[k_1 = 4.102203729\]
+\[k_1 \approx 4.10\]
+
+Using the integrated rate law for a second-order reaction:
+\[\frac{1}{[NO_2]} = kt + \frac{1}{[NO_2]_0}\]
+\[\frac{1}{0.0010} = 4.102203729t + \frac{1}{\frac{0.0055}{1}}\]
+\[\frac{1}{0.0010} = 4.102203729t + \frac{1}{0.0055}\]
+\[\frac{1}{0.0010} - \frac{1}{0.0055} = 4.102203729t\]
+\[t = 199.449338\]
+\[t \approx \qty{199}{\unit{s}}\]
+
+\newpage
+
+\section{Question 7}
+\label{sec:org62c2205}
+
+Comparing experiment 1 and 2, the initial reaction rate approximately doubles when the initial concentration of \(A\) doubles. Hence, the reaction is first-order with respect to \(A\).
+\\[0pt]
+
+Comparing experiment 2 and 3:
+\[\frac{3.1 \times 10^{-5}}{3.1 \times 10^{-5}} = \frac{k(0.40)(0.10)^b}{k(0.10)(0.20)^b}\]
+\[1 = \frac{4(0.10)^b}{(0.20)^b}\]
+\[\frac{1}{4} = \left( \frac{1}{2} \right)^b\]
+\[b = 2\]
+
+Hence, the order of reaction is second-order with respect to \(B\).
+\\[0pt]
+
+Finding the rate constant using experiment 1:
+\[\text{Rate} = k[A][B]^2\]
+\[1.5 \times 10^{-5} = k(0.20)(0.10)^2\]
+\[k = 0.0075\]
+
+Finding the rate constant using experiment 2:
+\[\text{Rate} = k[A][B]^2\]
+\[3.1 \times 10^{-5} = k(0.40)(0.10)^2\]
+\[k = 0.00775\]
+
+Finding the rate constant using experiment 3:
+\[\text{Rate} = k[A][B]^2\]
+\[3.1 \times 10^{-5} = k(0.10)(0.20)^2\]
+\[k = 0.00775\]
+
+Getting the average value of \(k\) at \(\qty{700}{\unit{K}}\):
+\begin{align*}
+k &= \frac{0.0075 + 0.00775 + 0.00775}{3} \\
+&= \frac{23}{3000}
+\end{align*}
+
+Finding the rate constant at \(\qty{600}{\unit{K}}\) using experiment 4:
+\[\text{Rate} = k[A][B]^2\]
+\[1.1 \times 10^{-5} = k(0.50)(0.50)^2\]
+\[k = 0.000088\]
+
+Using the Arrhenius equation to find the activation energy:
+\[\ln \left( \frac{k_1}{k_2} \right) = \frac{-E_a}{R} \left( \frac{1}{T_1} - \frac{1}{T_2} \right)\]
+\[\ln \left( \frac{\frac{23}{3000}}{0.000088} \right) = \frac{-E_a}{R} \left( \frac{1}{700} - \frac{1}{600} \right)\]
+\[\ln \left( \frac{\frac{23}{3000}}{0.000088} \right) \div -\frac{1}{4200} = \frac{-E_a}{R}\]
+\[-\frac{E_a}{R} = -18762.66165\]
+\[E_a = 18762.66165R\]
+\[E_a = 18762.66165 \times 8.314 \]
+\[E_a = \qty{155992.7689}{\unit{J.mol^{-1}}}\]
+\[E_a = \qty{155.9927689}{\unit{kJ.mol^{-1}}}\]
+\[E_a \approx \qty{156}{\unit{kJ.mol^{-1}}}\]
+
+
+\section{Question 8}
+\label{sec:org60c17ba}
+
+Using the integrated rate law for first-order reactions to get the value of \(k\):
+\\[0pt]
+
+When \(t = 10\), Absorbance\(= 0.444\).
+\[\ln (1.2 - 0.444) = - k(10) + \ln (1.2)\]
+\[-10k = \ln (1.2 - 0.444) - \ln (1.2)\]
+\[k = 0.04620354596\]
+
+When \(t = 20\), Absorbance\(= 0.724\).
+\[\ln (1.2 - 0.724) = - k(20) + \ln (1.2)\]
+\[-20k = \ln (1.2 - 0.724) - \ln (1.2)\]
+\[k = 0.04623294908\]
+
+When \(t = 100\), Absorbance\(= 1.188\).
+\[\ln (1.2 - 1.188) = - k(100) + \ln (1.2)\]
+\[-100k = \ln (1.2 - 1.188) - \ln (1.2)\]
+\[k = 0.04605170186\]
+
+Finding the average value of \(k\):
+\begin{align*}
+k &= \frac{0.04620354596 + 0.04623294908 + 0.04605170186}{3} \\
+&= 0.0461627323
+\end{align*}
+
+Getting the half-life of the reaction:
+\begin{align*}
+t_{\frac{1}{2}} &= \frac{\ln 2}{0.0461627323} \\
+&= 15.01529797 \\
+&\approx \qty{15.0}{\unit{s}}
+\end{align*}
+
+Hence, the half-life of the reaction is \(\qty{15.0}{\unit{s}}\).
+
+
+\section{Question 9}
+\label{sec:orgdf0ac22}
+
+Comparing experiment 1 and 2, when \([HI]\) tripled, the rate of reaction increased by 9 times. Hence, the order of reaction with respect to \(HI\) is second-order.
+\\[0pt]
+
+Getting the value of \(k\) from experiment 1:
+\[\text{Rate} = k[HI]^2\]
+\[1.8 \times 10^{-5} = k(0.10)^2\]
+\[k = \frac{1.8 \times 10^{-5}}{(0.10)^2}\]
+\[k = 0.0018\]
+
+Getting the value of \(k\) from experiment 2:
+\[\text{Rate} = k[HI]^2\]
+\[1.6 \times 10^{-4} = k(0.30)^2\]
+\[k = \frac{1.6 \times 10^{-4}}{(0.30)^2}\]
+\[k = \frac{2}{1125}\]
+
+Getting the average value of \(k\):
+\begin{align*}
+k &= \frac{0.0018 + \frac{2}{1125}}{2} \\
+&= \frac{161}{90000}
+\end{align*}
+
+Getting the value of \(k\) from experiment 3:
+\[\text{Rate} = k[HI]^2\]
+\[3.9 \times 10^{-3} = k(0.20)^2\]
+\[k = \frac{3.9 \times 10^{-3}}{(0.20)^2}\]
+\[k = 0.0975\]
+
+Using the Arrhenius equation to find the value of \(\frac{-E_a}{R}\):
+\[\ln \left( \frac{k_1}{k_2} \right) = \frac{-E_a}{R} \left(\frac{1}{T_1} - \frac{1}{T_2} \right)\]
+\[\ln \left( \frac{\frac{161}{90000}}{0.0975} \right) = \frac{-E_a}{R} \left( \frac{1}{700} - \frac{1}{800}\right)\]
+\[\ln \left( \frac{\frac{161}{90000}}{0.0975} \right) = \frac{-E_a}{R} \left( \frac{1}{5600} \right)\]
+\[\ln \left( \frac{\frac{161}{90000}}{0.0975} \right) \div \frac{1}{5600} = \frac{-E_a}{R}\]
+\[\frac{-E_a}{R} = -22390.24303\]
+
+Finding the rate constant \(k\) at \(\qty{660}{\unit{K}}\):
+\[\ln \left( \frac{k_1}{k_2} \right) = \frac{-E_a}{R} \left(\frac{1}{T_1} - \frac{1}{T_2} \right)\]
+\[\ln \left( \frac{k_1}{0.0975} \right) = -22390.24303 \left( \frac{1}{660} - \frac{1}{800}\right)\]
+\[\ln \left( \frac{k_1}{0.0975} \right) = -22390.24303 \left( \frac{7}{26400} \right)\]
+\[\frac{k_1}{0.0975} = e^{-5.936806864}\]
+\[k_1 = e^{-5.936806864} \times 0.0975\]
+\[k_1 = 0.00025744363\]
+
+Finding the initial \([HI]\) to have a rate of \(1.2 \times 10^{-5}\) at \(\qty{660}{\unit{K}}\):
+\[\text{Rate} = k[HI]^2\]
+\[1.2 \times 10^{-5} = 0.00025744363[HI]^2\]
+\[[HI]^2 = 0.04661214525\]
+\[[HI] = 0.2158984605\]
+\[[HI] \approx \qty{0.216}{\unit{M}}\]
+
+Hence, the initial \([HI]\) that gives a rate of \(1.2 \times 10^{-5} \ \unit{M.s^{-1}}\) at \(\qty{660}{\unit{K}}\) is \(\qty{0.216}{\unit{M}}\).
+
+
+\section{Question 10}
+\label{sec:org31d3966}
+
+\subsection{(a)}
+\label{sec:org128e153}
+
+Using the Arrhenius equation to find the activation energy:
+\[\ln \left( \frac{k_1}{k_2} \right) = \frac{-E_a}{R} \left(\frac{1}{T_1} - \frac{1}{T_2} \right)\]
+\[\ln \left( \frac{2.60 \times 10^{-4}}{9.45 \times 10^{-3}} \right) = \frac{-E_a}{8.314} \left(\frac{1}{530 + 273.15} - \frac{1}{620 + 273.15} \right)\]
+\[\ln \left( \frac{26}{945} \right) = \frac{-E_a}{8.314} (0.00012546466)\]
+\[\ln \left( \frac{26}{945} \right) = -0.00001509077 E_a\]
+\[E_a = \qty{238098.4005}{\unit{J.mol^{-1}}}\]
+\[E_a = \qty{238.0984005}{\unit{kJ.mol^{-1}}}\]
+\[E_a \approx \qty{238}{\unit{kJ.mol^{-1}}}\]
+
+\newpage
+
+\subsection{(b)}
+\label{sec:org4af68c5}
+
+Using the Arrhenius equation to find the rate constant at \(\qty{580}{\unit{\degreeCelsius}}\):
+\[\ln \left( \frac{k_1}{k_2} \right) = \frac{-E_a}{R} \left(\frac{1}{T_1} - \frac{1}{T_2} \right)\]
+\[\ln \left( \frac{k_1}{9.45 \times 10^{-3}} \right) = \frac{-238.0984005 \times 10^{3}}{8.314} \left(\frac{1}{580 + 273.15} - \frac{1}{620 + 273.15} \right)\]
+\[\ln \left( \frac{k_1}{9.45 \times 10^{-3}} \right) = - 2.86382488 \times 10^{4} \times (0.00005249406)\]
+\[\ln \left( \frac{k_1}{9.45 \times 10^{-3}} \right) = -1.503338056\]
+\[\frac{k_1}{9.45 \times 10^{-3}} = e^{-1.503338056}\]
+\[k_1 = 2.10155319 \times 10^{-3}\]
+\\[0pt]
+
+Assuming that the order of reaction with respect to Teflon is first-order, the half-life of the reaction is:
+\begin{align*}
+t_{\frac{1}{2}} &= \frac{\ln 2}{k} \\
+&= \frac{\ln 2}{2.10155319 \times 10^{-3}} \\
+&= 329.8261418 \\
+&\approx \qty{330}{\unit{s}}
+\end{align*}
+\end{document}

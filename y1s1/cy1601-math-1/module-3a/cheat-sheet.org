@@ -1,0 +1,304 @@
+#+TITLE: Math Module 3A Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{pgfplots}
+
+\newpage
+
+* Definitions
+
+** Corollary
+A corollary is a proposition that is inferred immediately from a proved proposition with little or no additional proof.
+
+** Lagrange's mean value theorem (MVT)
+Suppose that:
+1. $f$ is continuous on a closed interval $[a, b]$
+2. $f$ is differentiable on the open interval $(a, b)$
+
+Then there is a point $c \in (a, b)$ such that:
+\[f'(c) = \frac{f(b) - f(a)}{b - a}\]
+
+For an illustration of this theorem, go to [[https://www.desmos.com/calculator/humyjrcbm4][this link.]]
+
+*** Corollaries
+- If $f'(x) = 0$ on an interval, then $f$ is constant on the interval.
+- If $f' = g'$ on an interval, then $f = g + C$, where $C$ is some constant.
+
+** Rolle's theorem
+Suppose that:
+1. $f$ is continuous on a closed interval $[a, b]$
+2. $f$ is differentiable on the open interval $(a, b)$
+3. $f(a) = f(b)$
+
+Then there exists a point $c \in (a, b)$ such that \(f'(c) = 0\).
+
+\newpage
+
+** Cauchy's mean value theorem
+1. $f$ and $g$ are continuous on a closed interval $[a, b]$.
+2. $f$ and $g$ are differentiable on the open interval $(a, b)$.
+
+Then there exists $c \in (a, b)$ such that:
+\[g'(c)[f(b) - f(a)] = f'(c)[g(b) - g(a)]\]
+
+With $g'(c) \neq 0$, $g(b) - g(a) \neq 0$, we get:
+\[\frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(c)}{g'(c)}\]
+
+With $g(x) = x$, we get Lagrange's mean value theorem.
+
+** Indeterminate forms
+If \(\lim_{x \rightarrow a} f(x) = \lim_{x \rightarrow a}g(x) = 0\), the limit \(\lim_{x \rightarrow a} \frac{f(x)}{g(x)}\) is called an *indeterminate form of type* \(\left[\frac{0}{0} \right]\).
+\\
+
+Likewise, if \(\lim_{x \rightarrow a \pm} f(x) = \pm \infty, \ \lim_{x \rightarrow a \pm} g(x) = \pm \infty\), the limit \(\lim_{x \rightarrow a} \frac{f(x)}{g(x)}\) is called an *indeterminate form of type* \(\left[ \frac{\infty}{\infty} \right]\).
+
+*** More examples
+1. \(\lim_{x \rightarrow 0} x \cdot \ln x\) produces the indeterminate form $[\infty \cdot 0]$.
+2. \(\lim_{x \rightarrow \infty} (\sqrt{n^2 + 2n} - n)\) produces the indeterminate form $[\infty - \infty]$.
+3. \(\lim_{x \rightarrow +\infty} \left(1 + \frac{1}{x} \right)^x\) produces the indeterminate form $[1^{\infty}]$.
+
+\newpage
+
+** L'H\(\text{\^o}\)pital's Rule
+If there exists $\delta > 0$ such that:
+1. $f(x)$ and $g(x)$ are differentiable on $(a - \delta, a) \cup (a, a + \delta)$
+2. $g'(x) \neq 0$ on $(a - \delta, a) \cup (a, a + \delta)$
+
+And also if:
+\[\lim_{x \rightarrow a} f(x) = \lim_{x \rightarrow a} g(x) = 0\]
+
+Then:
+\[\lim_{x \rightarrow a} \frac{f(x)}{g(x)} = \lim_{x \rightarrow a} \frac{f'(x)}{g'(x)}\]
+
+This only applies if the right-hand limit exists.
+
+*** The conditions, simplified
+1. \(\lim_{x \rightarrow a} \frac{f(x)}{g(x)}\) is of type \(\left[ \frac{0}{0}\right]\)
+2. \(\frac{f'(x)}{g'(x)}\) makes sense for $x$ close to $a$, and has a limit as $x \rightarrow a$.
+
+*** Variations
+\[\text{1. } \lim_{x \rightarrow a+} \frac{f(x)}{g(x)} = \lim_{x \rightarrow a+} \frac{f'(x)}{g'(x)} \text{ if the right-hand side makes sense}\]
+\[\text{2. } \lim_{x \rightarrow a-} \frac{f(x)}{g(x)} = \lim_{x \rightarrow a-} \frac{f'(x)}{g'(x)} \text{ if the right-hand side makes sense}\]
+\[\text{3. } \lim_{x \rightarrow \pm \infty} \frac{f(x)}{g(x)} = \lim_{x \rightarrow \pm \infty} \frac{f'(x)}{g'(x)} \text{ if the right-hand side makes sense}\]
+
+These rules *only apply* if the left-hand limit is an indeterminate form of the type \( \left[\frac{0}{0} \right]\) or \(\left[ \frac{\infty}{\infty} \right]\)
+
+*** Example 1
+\begin{align*}
+\lim_{x \rightarrow 0} \frac{e^x = 1}{\sin x} &= \lim_{x \rightarrow 0} \frac{e^x}{\cos x} \\
+&= \frac{1}{1} \\
+&= 1
+\end{align*}
+
+*** Example 2
+\begin{align*}
+\lim_{x \rightarrow +\infty} x^2 e^{-3x} &= \lim_{x \rightarrow +\infty} \frac{x^2}{e^{3x}} \\
+&= \lim_{x \rightarrow +\infty} \frac{2x}{3e^{3x}} \\
+&= \lim_{x \rightarrow +\infty} \frac{2}{9e^{3x}} \\
+&= 0
+\end{align*}
+
+*** Example 3
+\begin{align*}
+\lim_{x \rightarrow +\infty} \left(1 + \frac{1}{x} \right)^{x} &= \lim_{x \rightarrow +\infty} e^{x \cdot \ln \left( 1 + \frac{1}{x} \right)} \\
+&= e^{\lim_{x \rightarrow +\infty} x \cdot \ln \left(1 + \frac{1}{x} \right)}
+\end{align*}
+
+Finding the limit \(\lim_{x \rightarrow +\infty} x \cdot \ln \left(1 + \frac{1}{x} \right)\):
+\begin{align*}
+\lim_{x \rightarrow +\infty} x \cdot \ln \left(1 + \frac{1}{x} \right) &= \lim_{x \rightarrow +\infty} \frac{\ln \left(1 + \frac{1}{x} \right)}{\frac{1}{x}} \\
+&= \lim_{x \rightarrow +\infty} \frac{\frac{1}{1 + \frac{1}{x}} \cdot \left( \frac{-1}{x^2} \right)}{\frac{-1}{x^2}} \\
+&= \lim_{x \rightarrow +\infty} \frac{1}{1 + \frac{1}{x}} \\
+&= \frac{1}{1 + 0} \\
+&= 1
+\end{align*}
+
+Hence:
+\begin{align*}
+\lim_{x \rightarrow +\infty} \left(1 + \frac{1}{x} \right)^{x} &= e^{1} \\
+&= e
+\end{align*}
+
+\newpage
+
+** Convexity
+A function $f(x)$ is called *convex* (or it is said to *concave upward*) on an interval $I$ if for all $a, b \in I$, the line segment joining the points $(a, f(a)), (b, f(b))$ lies above the graph of $f(x)$.
+\\
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+\addplot[color = blue]{- (x + 3) * (x - 3)};
+\addplot[color = green]{-x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+A function $f(x)$ is *convex* (or it is said to *concave upward*) on the interval $I$ if and only if for any $a < x < b$ in $I$ we have:
+\[\frac{f(x) - f(a)}{x - a} < \frac{f(b) - f(a)}{b - a}\]
+
+\newpage
+
+** Concavity
+A function $f(x)$ is called *concave* (or it is said to *concave downward*) on an interval $I$ if for all $a, b \in I$, the line segment joining the points $(a, f(a)), (b, f(b))$ lies above the graph of $f(x)$.
+\\
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}
+\addplot[color = blue]{(x + 3) * (x - 3)};
+\addplot[color = green]{x};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+A function $f(x)$ is *concave* (or it is said to *concave downward*) on the interval $I$ if and only if for any $a < x < b$ in $I$ we have:
+\[\frac{f(x) - f(a)}{x - a} > \frac{f(b) - f(a)}{b - a}\]
+
+\newpage
+
+** Inflection point
+A point where the graph of a function has a tangent line and where the concavity changes, is called a *point of inflection* or an *inflection point*.
+
+*** Example
+Both $f(x) = x^3$ and $f(x) =\sqrt[3]{x}$ have a point of inflection at $x = 0$.
+\\
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, samples = 100, legend pos = north west]
+\addplot[color = blue]{x^3};
+\addlegendentry{$y = x^3$};
+\addplot[color = red]{0};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, samples = 100, legend pos = north west]
+\addplot[color = blue]{x/abs(x) * abs(x)^(1/3)};
+\addlegendentry{$y = \sqrt[3]{x}$};
+\addplot[color = red]{0};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+** Second derivative
+Given a function $f(x)$, its *second derivative* is the derivative of $f'(x)$.
+
+** Higher order derivatives
+Given a function $f(x)$, its \(n\)-th derivative is:
+\[\underbrace{((f')' \cdots )'}_{n \text{ differentiations}}\]
+
+*** Standard notation
+- $f''$ for the second derivative
+- $f'''$ for the third derivative
+- $f^{iv}$ for the fourth derivative
+- $f^{(n)}$ for the \(n\)-th derivative
+- \(C^n (A) = \{f: f^{(n)} \text{ exists and is continuous on } A\}\)
+
+Note that:
+\[C(A) \subset C'(A) \subset C''(a) \subset \ldots \subset C^{\infty} A\]
+
+\newpage
+
+** Vertical asymptote
+The graph of $y = f(x)$ has a *vertical asymptote* at $x = a$ if:
+\[\lim_{x \rightarrow a-} f(x) = \pm \infty \quad \text{or} \quad \lim_{x \rightarrow a+} f(x) = \pm \infty\]
+
+*** Example
+\[f(x) = \frac{1}{x^2 - x}\]
+
+The graph of $f(x)$ has vertical asymptotes at $x = 0$ and $x = 1$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, samples = 200]
+\addplot[color = blue]{1/(x^2 - x)};
+\addlegendentry{$y = \frac{1}{x^2 - x}$};
+\addplot[color = red] coordinates {(0, 45) (0, -45)};
+\addlegendentry{$x = 0$};
+\addplot[color = green] coordinates {(1, 45) (1, -45)};
+\addlegendentry{$x = 1$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+** Horizontal asymptote
+The graph of $y = f(x)$ has a *horizontal asymptote* $y = L$ if:
+\[\lim_{x \rightarrow -\infty} f(x) = L \quad \text{or} \quad \lim_{x \rightarrow +\infty} f(x) = L\]
+
+*** Example
+\[f(x) = \frac{\sqrt{4x^2 + 1}}{x - 1}\]
+
+The graph of $f(x)$ has a horizontal asymptote $y = 2$ and another horizontal asymptote $y = -2$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, samples = 200, ymin = -20, ymax = 20, legend pos = south west]
+\addplot[color = blue]{sqrt(4*x^2 + 1)/(x - 1)};
+\addlegendentry{$y = \frac{\sqrt{4x^2 + 1}}{x - 1}$};
+\addplot[color = red]{2};
+\addlegendentry{$y = 2$};
+\addplot[color = green]{-2};
+\addlegendentry{$y = -2$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+** Oblique asymptote
+The straight line $y = ax + b, (a \neq 0)$, is an *oblique asymptote* of the graph of $y = f(x)$ if:
+\[\lim_{x \rightarrow -\infty} (f(x) - (ax + b)) = 0 \quad \text{or} \quad \lim_{x \rightarrow +\infty} (f(x) - (ax + b)) = 0\]
+
+*** Example
+Find the oblique asymptote of:
+\[f(x) = \frac{x^3}{x^2 + x + 1}\]
+
+Long divide $x^3$ by \(x - 1\):
+\[f(x) = \frac{x^3}{x^2 + x + 1} = x - 1 + \frac{1}{x^2 + x + 1}\]
+
+So:
+\[f(x) - (x - 1) = \frac{1}{x^2 + x + 1} \rightarrow 0 \text{ as } x \rightarrow \pm \infty\]
+
+Hence, $y = x - 1$ is an oblique asymptote for $f(x)$.
+
+
+* Relationship between the derivative and monotonicity
+Suppose $f(x)$ is continuous on $[a, b]$ and differentiable on $(a, b)$. Then:
+- If $f'(x) > 0$ on $(a, b)$, then $f$ is strictly increasing on $[a, b]$.
+- If $f'(x) \ge 0$ on $(a, b)$, then $f$ is increasing on $[a, b]$.
+- If $f'(x) < 0$ on $(a, b)$, then $f$ is strictly decreasing on $[a, b]$.
+- If $f'(x) \le 0$ on $(a, b)$, then $f$ is decreasing on $[a, b]$.
+
+\newpage
+
+* Standard limits
+The following equations hold for any numbers $p > 0$ and \(\varepsilon > 0\):
+\[\text{1. } \lim_{x \rightarrow +\infty} \frac{x^p}{e^{\varepsilon x}}\]
+\[\text{2. } \lim_{x \rightarrow +\infty} \frac{(\ln x)^p}{x^{\varepsilon}}\]
+
+Rule of thumb:
+- Exponentials beat powers
+- Powers beat logarithms
+
+
+* Second derivative and concavity
+1. If $f''(x) > 0$ on an interval $I$, then $f$ is *convex* (or is said to *concave upward*) on $I$ (positive means happy face).
+2. If $f''(x) < 0$ on an interval $I$, then $f$ is *concave* (or is said to *concave downward*) on $I$ (negative means sad face).
+3. If $a$ is an inflection point for $f$, then either $f''(a)$ does not exist, or $f''(a) = 0$.
+
+
+* Second derivative and extreme points
+Suppose $f \in C^2(I)$, where $I$ is some open interval containing $a$, and suppose $f'(a) = 0$. We have:
+1. If $f''(a) > 0$, then $a$ is a point of local minimum.
+2. If $f''(a) < 0$, then $a$ is a point of local maximum.
+
+Note that if $f''(a) = 0$, we get no information. $x = a$ might be a local maximum or minimum or neither.
