@@ -26,12 +26,31 @@ An interpreter is a program that reads the code of an interpreted programming la
 ** (iii)
 
 *** Compiled languages
-- Go
+- Julia
 - Carp
+- Go
+- TeX
+- Nim
+- Zig
+- D
+- Pascal
+- Assembly
+- Elixir
+- Erlang
+- Fortran
+- Dart
+- COBOL
 
 *** Interpreted languages
 - OCaml
+- ML
+- FL
+- APL
+- J
 - Lua
+- Lisp
+- Perl
+- Ruby
 
 * Question 3
 
