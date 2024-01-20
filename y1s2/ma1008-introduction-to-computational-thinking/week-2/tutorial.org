@@ -40,6 +40,15 @@ An interpreter is a program that reads the code of an interpreted programming la
 - Fortran
 - Dart
 - COBOL
+- Cython
+- Pyrex
+- B
+- ACL2
+- Coq
+- Clojure
+- Scala
+- Ada
+- SPARK
 
 *** Interpreted languages
 - OCaml
@@ -325,7 +334,7 @@ fn solve_quadratic_eqn() {
     let c = *coefficients.get("constant").unwrap();
 
     // Get the discriminant
-    let discriminant = b.powf(2.0) - 4.0 * a * c;
+    let discriminant = b.powi(2) - 4.0 * a * c;
 
     // Gets the part after the plus minus function
     let part_after_plus_minus = f64::sqrt(discriminant.abs()) / (2.0 * a);
@@ -459,10 +468,10 @@ fn compute_surface_area_and_volume_of_sphere() {
     }
 
     // Calculate the surface area of the sphere
-    let surface_area = 4.0 * std::f64::consts::PI * radius.powf(2.0);
+    let surface_area = 4.0 * std::f64::consts::PI * radius.powi(2);
 
     // Calculate the volume of the sphere
-    let volume = (4.0 / 3.0) * std::f64::consts::PI * radius.powf(3.0);
+    let volume = (4.0 / 3.0) * std::f64::consts::PI * radius.powi(3);
 
     // Prints the surface area and volume
     println!("Surface area of the sphere: {}", surface_area);
@@ -809,7 +818,7 @@ fn calculate_bmi() {
     let height = *data_map.get("height").unwrap();
 
     // Calculate the person's BMI
-    let bmi = weight / (height.powf(2.0));
+    let bmi = weight / (height.powi(2));
 
     // Prints the person's BMI
     println!("Your BMI is {bmi}");
