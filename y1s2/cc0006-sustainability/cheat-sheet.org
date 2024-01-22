@@ -1,0 +1,273 @@
+#+TITLE: CC0006 Sustainability Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** Sustainability
+The ability for something to sustain itself.
+
+** Sustainable development
+Sustainable development is development that meets the needs of the present without compromising the ability of future generations to meet their own needs.
+
+This is the definition used in CC0006.
+
+*** Necessary conditions to achieve sustainable development
+1. We need to know what the needs of the present are.
+2. We need to know the needs and abilities of future generations.
+3. How our actions are affecting the world of the future.
+4. We need to decide on ways to change, and implement those changes.
+
+*** Goals
+1. Economic development
+2. Social Inclusion
+3. Environmental sustainability
+
+** Multidisciplinary
+The additive knowledge of different disciplines.
+
+** Interdisciplinarity
+The integration and synthesis of different disciplines.
+
+** Transdisciplinarity
+This refers to approaches that go across, between, and beyond disciplines.
+
+** Circular economy
+The circular economy is based on three principles, namely:
+1. Eliminate waste and pollution
+2. Circulate products and materials
+3. Regenerate nature
+
+Some ideas include having waste build capital (make money) instead of reducing it, such as using safe and compostable materials that can help grow more food. Another is to have a return-and-renew kind of product cycle instead of a buy-and-throw-away one.
+
+** Poverty
+Poverty, in the sustainable development context, not only implies a lack of income and productive resources to ensure sustainable living. It also implies hunger and malnourishment, social discrimination, exclusion, and the lack of participation in decision-making.
+
+** Purchasing Power Parity (PPP)
+Purchasing Power Parity (PPP) is a theoretical exchange rate at which you can buy the same amount of goods and services with another currency. An example is that if a burger in London costs £2 while the same burger costs S$4 in Singapore, it would imply a PPP exchange rate of £1 to S$2.
+
+** Official Development Assistance (ODA)
+Government aid that is mainly donated by *high-income countries* promotes and specifically targets the economic development and welfare of developing countries. It is mainly used for economic development in poor countries, like to build capital or capacity. Some examples of this are paving roads, building power grids, clinics and schools, as well as providing training and salaries for teachers and healthcare workers.
+
+Official Development Assistance came into existence around 1970, and the goal was that high-income countries would donate around 1% of their GDP to help lower-income countries. 70% of it was intended to come mainly through government-to-government grants and low-interest loans. The remaining 30% was intended to come through private contributions, such as corporations, foundations and charitable organisations.
+
+An all-time high ODA was mobilised in 2021, about 179 billion US dollars, which was around 4.4% higher than the donations received in 2020. However, the ODA is still significantly less than the intended amount. The actual intended ODA in 2021 was expected to be about $280 billion US dollars.
+
+*** How does it work?
+- Foreign aid cannot be a long-term way of life in developing countries.
+- It is a temporary helping hand to push poor countries on the ladder of economic development so that they can self-sustain their growth for the longer term.
+- Once these countries reach a certain level of economic growth, they will no longer need financial help.
+- China and Korea and examples of this process as they heavily relied on foreign aid in the past, then progressively graduated from aid and have recently significant donor countries themselves.
+
+*** Distributing foreign aid
+- Project-based approaches such as financing a local business, building a well, or providing uniforms so that the children can go to school. Public health aid is also widely supported, such as offering vaccinations, or developing cheap and effective drugs to treat malaria and other similar diseases in low-income countries.
+- Observing the development effects of various projects and practices to then decide which ones to adopt and which ones to discard.
+
+*** Effectiveness of ODA
+- ODA has been the most stable external resource for developing countries in the last few decades.
+- It has successfully helped countries control AIDS, malaria and tuberculosis, and lowered the mortality rate of children and mothers during pregnancy.
+
+** Gender pay gap
+The gender pay gap is the average gap between men's and women's wages and salaries, before or after controlling for the type of work, the level of qualification and some other relevant factors.
+
+* The complexity of sustainable development
+- It is a long range of interconnected but unique problems.
+- There are multiple causes, hard to define "the problem".
+- There is no generalisable solution, and there's no definite right or wrong. Instead, there is only better or worse.
+- The solutions tend to ramify throughout the system.
+- The solutions can take a long time to evaluate.
+
+
+* Perspectives of sustainable development
+
+** Society perspective
+- Environmental justice and unequal distribution of climate change effects
+- Understanding human behaviour to implement changes for sustainability.
+- Risk of political conflict or humanitarian crises due to climate change or environmental degradation
+
+*** In Singapore
+- Additional 200 hectares of nature parks for citizens and wildlife to enjoy
+- Planting one million trees across the island to absorb CO_{2}, provide shade, and reduce temperatures.
+- Programmes to reduce human-wildlife conflicts.
+
+** Economic perspective
+- Sustainability accountants are needed for sustainable capital investments
+- Integration of financial decision-making and sustainability work
+- Stating potential social and environmental impact on profits
+- Effect on valuation and investment
+
+** Environmental perspective
+- Laws of nature govern processes of climate change and environmental degradation
+- Intrinsic value of nature
+- Human dependence on natural resources
+- Natural climate solutions, such as using mangrove forests to protect against storms and floods
+- Tree planting
+
+*** In Singapore
+- More green spaces
+- Education and appreciation for local wildlife
+- Limit pollution of water
+- Conservation initiatives
+
+
+* Goal of having no poverty
+
+** Extreme poverty
+- In 2015, more than 734 million people lived in extreme poverty (making $1.90 a day or less), which is about 10% of the world's population.
+- More than 160 million children are at risk of continuing to live in extreme poverty.
+- We cannot think about sustainable development when there are still millions of people who are living in extreme poverty in some parts of the world.
+- As such, eradicating poverty everywhere, in all forms, is the first of the 17 sustainable development goals adopted by the United Nations.
+
+** Progress on poverty
+
+*** Positive
+- The number of people living in extreme poverty has been declining gradually in the last three decades.
+- In 1990, about 1.9 billion people were living in extreme poverty, which is about 36% of the world's population back then.
+- In 2010, this number went down to about 1 billion, or about 16% of the world's population.
+- Between 2015 and 2017, there has been a substantial decrease in the poverty rate worldwide.
+- About 10% of the world's population is presently living in poverty.
+
+*** Negative
+- The rate of poverty decline has significantly slowed in recent times.
+- The Covid-19 pandemic has led to the first rise in extreme poverty in three decades.
+- Estimates suggest that the pandemic has pushed an additional 199-124 million people back into extreme poverty in 2020.
+- The pandemic caused income and job losses, and work slowdowns have been extremely damaging to poor households.
+
+** New target
+The World Bank now targets to have no more than 3% of the world's population living under the poverty line by 2030.
+
+** Measuring poverty
+- Global institutions calculate the poverty line by considering the cost of food, clothing, healthcare and shelter and reach a final amount if you earn less than that amount, then you can't afford basic human needs and are thus considered poor.
+- Professor Jeffrey Sachs, a world-renowned economist, suggests that the ideal definition of poverty should be measured by people's ability to meet a broad range of basic needs that are needed not only for survival, but also for human dignity, such as food, clean water, sanitation, shelter, clothing, access to healthcare, basic education, transport, energy and connectivity.
+- To calculate the international poverty line, the World Bank uses the average of the national poverty line in 15 very poor countries, converted to PPP estimates.
+- Every country has *its own* poverty line.
+- The international poverty line is currently US$2.15 a day.
+
+** Profile of the global poor
+
+*** Regions
+- The majority of the global poor are located in Sub-Saharan Africa and in South Asia.
+- In South Asia, the poverty rate in 2010 was as high as 30%, but the number has rapidly declined in recent times.
+- However, in Sub-Saharan Africa, the poverty line sometimes grows.
+- The extreme poverty rate in the Middle East and North Africa has increased from about 2.3% in 2013 to about 10% in 2018.
+- East Asia has achieved one of the fastest economic growths, and hence has seen one of the fastest decline in the rates of extreme poverty in any region. Most of this decline came from China.
+- Sub-Saharan Africa and South Asia need a breakthrough, as they house about 76% of the world's extremely poor.
+
+*** Characteristics
+- The poor are predominantly rural, young, and under-educated. Women are over-represented among the poor globally.
+- In 2018, half of the poor were children younger than 15.
+
+** Lifting Sub-Saharan Africa out of poverty
+The way to lift Sub-Saharan Africa out of poverty is to increase overall economic growth.
+
+*** Farm productivity
+- Small farmers in Sub-Saharan Africa achieve an average yield of about half a ton to one ton of grain per hectare. This is extremely low as other countries in the developing world can achieve 4 to 5 times of it.
+- The reason for this is that the Sub-Saharan African farmers are simply too poor to spend money on soil refilling. They cannot afford to buy the nitrogen, potassium and phosphorus necessary for decent crop yields. This results in a poverty trap where they can't afford to acquire the resources to get decent crop yields and hence remain poor.
+- Hence, a high priority for Sub-Saharan Africa is to roll out government programmes that can help the poorest farmers get the resources that they need for farming. Once they have higher crop yields and hence higher income, they will be able to acquire these resources on their own.
+
+*** Other changes
+- Vital investments are needed to build up critical infrastructure, such as roads, rails, power, ports and communication networks.
+- Mass electrification is needed.
+- A lot of investment is needed in health and education.
+- These investments might not lead to the desired changes if the population of Sub-Saharan Africa keeps growing.
+- As such, lowering the fertility rate should also be another priority.
+
+** Lifting South Asia out of poverty
+
+*** Current problems
+- South Asia has a huge population and hence high population density.
+- South Asia also has the worst levels of human deprivation in the world.
+- India's child malnutrition levels are nearly double that of Sub-Saharan Africa.
+- Extremely low enrollment in primary education, gender disparity and high levels of corruption are some issues that need an immediate fix.
+
+
+* Social inclusion
+Social inclusion is a vision for a discrimination-free society where every individual has equal rights and opportunities, specifically the opportunities to fulfil their economic potential.
+
+All individuals are interconnected within a wider social system with harmoniously maintained relationships. Society has respect for human rights, cultural diversity and democratic governance. Most importantly, there is some degree of social mobility, which means a child born into poverty doesn't have to end up in poverty.
+
+** Factors of social exclusion
+- Income
+- Class
+- Gender
+- Race
+- Ethnicity
+- Religion
+- Sexual orientation
+
+*** Example
+- Massive poverty and exclusion faced by Native Americans in the United States, or the Maoris in New Zealand.
+
+** UN goals
+1. A peaceful and inclusive society for all
+2. Fewer inequalities
+3. Safe, resilient and sustainable cities
+4. Inclusive and equitable education for all
+5. Healthy lives and well-being for all
+6. No gender inequality
+
+** Measuring income inequality
+- The Gini coefficient is a statistical measure of income inequality within a country or social group. The index measures income distribution across a population and varies from 0 to 1, where 0 represents perfect equality while 1 represents perfect inequality.
+- South Africa ranks as the country with the lowest level of income equality in the world. The richest 10% hold 70% of the wealth of the country, while more than half of South Africa live in poverty.
+- The United States and several South American countries have some of the highest levels of income inequality, but Canada is an exception.
+- Western, Central and Eastern Europe enjoy relatively equal income.
+- Some of the world's poorest countries have some of the highest Gini coefficients, like the Central African Republic, which is among the world's poorest countries, has a Gini coefficient of about 0.61.
+- However, the Gini coefficient doesn't tell anything about the overall wealth, income of a country, quality of life, or general economic well-being.
+- This means that high-income and low-income countries can have the same Gini coefficient if income is distributed equally within them.
+- For example, the United States and Turkey have the same Gini coefficient of about 0.39, but the US has a GDP per capita of about eight times that of Turkey.
+
+** Forces of income inequality
+- Racial discrimination
+- Social discrimination
+- Ethnic discrimination
+- Gender discrimination
+- Religious discrimination
+- Discrimination based on sexual orientation
+- Skills, education and globalisation
+- Technology and digital revolution
+- Political influence and economic winners
+- Redistribution policies
+
+*** Examples
+- Black workers in the United States earn 30% less than their white counterparts
+- Women in Singapore earn 6% less than men.
+- A person with a higher level of education often has more advanced skills that few others can offer, which leads to higher wages. The returns on education have increased strikingly in recent times, which leaves the less-educated behind.
+- Competition from emerging economies like China is further reducing prospects for workers without advanced skills in developed countries.
+- The recent digital revolution has led to the increased use of data science, robotics, artificial intelligence and several other information technologies, which creates enormous amounts of wealth for people with such skills, or for the people who use their existing wealth to invest in such technologies and related infrastructure. This also eliminates middle-skill jobs, or jobs requiring repetitive tasks, such as packaging or basic manufacturing.
+- Wealthy people use the power of their wealth to gain political influence to influence policy in their favour, such as tax breaks, subsidies or favourable regulatory changes. With such policies, they earn even more money. There are now more ways in the social media age to gain political influence to eventually gain more wealth.
+- Redistribution policies like progressive taxes and social transfers are used in an attempt to reduce inequality. An example of social transfer is public retirement benefits. However, a lot of advanced countries are not using these tools effectively any more and high-income corporations are enjoying even lower effective tax rates.
+
+** How to reduce income inequality?
+- Customised policies and specific reforms such as policies to establish social mobility can help, so that kids that grow up poor don't become poor adults.
+- Tax on the rich needs to be increased.
+- Review tax breaks and offshore tax havens for wealthy people.
+- Have greater social support for low-income households.
+- Increase training, re-skilling and educational opportunities for the poor.
+- Implement pensions, unemployment child benefits for the needy.
+
+** Gender inequality
+- It has existed for a long time in most societies around the world.
+- Men have been in the paid labour force, while women carried out farm labour or home-based production while also raising the children.
+- Women's participation in paid work has significantly increased, but the inequality remains in the form of a gender pay gap.
+- Gender inequality is the highest in Asia, the Middle East and North Africa. Women in Asia are only employed about 50% of the time and earn 50% - 52% of what their male counterparts earn.
+- Sub-Saharan Africa shows a very high employment ratio of women, but the earning ratio of women is very low.
+- Women do three times as much unpaid care work as men.
+- Increasing automation is also threatening more jobs that women are in due to their nature.
+- Globally, women's jobs are 1.8 times more vulnerable to crises like COVID-19 than men's jobs.
+- Almost 1 in 3 women have been subjected to physical, sexual or non-sexual violence at least one time in their lifetime.
+
+** Measuring gender inequality
+- The Gender Inequality Index (GII) focuses on analysing women's reproductive health, labour market participation and empowerment in the form of women's participation in parliament and higher education.
+- The Gender Development Index (GDI) focuses on life expectancy, education and income to understand if such achievements are distributed evenly between men and women.
+
+** Goals to eradicate gender equality
+- End all forms of discrimination against all women and girls everywhere.
+- Eliminate all forms of violence against all women and girls in the public and private spheres.
+- Eliminate all harmful practices, such as child, early and forced marriage.
+- Recognise and value unpaid care and domestic work through the provision of public services, etc.
+- Ensure women's full and effective participation and equal opportunities for leadership at all levels of decision-making.
+- Ensure universal access to sexual and reproductive health and reproductive rights.
+
+** Possible solutions for gender inequality
+- Legal reforms to give equal rights to women in property matters, ownership of a business, participation in education, politics, and other significant matters and areas.
