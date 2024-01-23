@@ -1,0 +1,220 @@
+#+TITLE: CC0002 Navigating The Digital World Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** Computational
+Involving the calculation of answers, amounts, results (e.g. calculation, order).
+
+** Thinking
+The activity of using your mind to consider something (e.g. reasoning, questioning).
+
+** Competencies
+Important skills that are needed to do a job (e.g. managerial competencies).
+
+** Bioinformatics
+Combines different fields of study, including computer sciences, molecular biology, biotechnology, statistics and engineering.
+
+** Pseudocode
+An informal description of the steps involved in executing a computer program, often written in something similar to plain language (plain English for example).
+
+** Computation thinking
+A problem-solving process that anyone can use in various areas in our daily lives.
+
+*** How?
+By breaking down a problem
+- Look for similarities
+- Identify relevant information and opportunities
+- Create a plan for the solution
+
+** Pangaea
+A supercontinent made up of the current 7 continents.
+
+** Geology
+The study of structure, evolution, and dynamics of the Earth and its natural mineral and energy resources.
+
+** Quantitative reasoning
+Reasoning about things in a quantitative manner, such as asking questions that relate to an amount of something. These questions are usually testable.
+
+Quantitative reasoning tells you:
+- how to *frame* concrete numerical questions
+- how to *identify* tools and data for analysis
+- how to *build* models to analyse the data
+- how to *analyse* the results you obtain
+
+*** Examples
+1. How much arsenic in water may still be safe?
+2. Does smoking cigarettes really cause cancer?
+3. Is renting better than buying your own property?
+4. How long should the traffic lights stay red?
+
+Data-driven quantitative questions:
+1. How does the app know what I want to buy?
+2. How does the World Bank allocate the aids?
+3. Which country is the "happiest" in the world?
+4. Will blue whales survive of face extinction?
+
+*** Example of arsenic in water
+How much arsenic is in the swimming pool?
+
+To answer the question, we will need to have a clear idea about:
+- Quantities and units in relative terms
+- Volumetric measures, given the dimensions
+- Proportions and conversion techniques
+
+All that is in addition to the basic knowledge of:
+- Global regulations for safe arsenic levels
+- Sampling techniques and basic statistics
+
+*** Example of renting vs buying a house
+Will you rent or buy a given flat?
+
+To answer the question, we will need to have a clear idea about:
+- Financial quantities and their relationship
+- Rates, periods and compounding effects
+- Proportions and comparison techniques
+
+All that is in addition to the basic knowledge of:
+- Real estate valuation and appreciation
+- Forecasting and the market volatility
+
+*** Example of the app knowing what you want to buy
+The app has a clear idea about:
+- Purchasing habits of several individuals
+- Effects of pricing on sales over the years
+- Placement strategies for improving sales
+
+All this is in additional to the basic knowledge of:
+- Who and where you are and what you like
+- Market behaviour and the competition
+
+
+* Computational thinking competencies
+
+** Abstraction
+- Identifying and utilising the structure of concepts and main ideas.
+- Simplifies things
+  - Identifies what is important without worrying too much about the detail
+- Allows us to manage the complexity of the context or content
+- Helps to filter out unnecessary details and highlight important ones
+- Involves the induction of ideas or the synthesis of particular facts into one general theory
+
+*** How to abstract?
+- Provide labelling
+- Make use of numbers, colours, shapes to simplify information
+
+*** Examples
+- Abstract art, such as cave drawings of dots and symbols, which is a form of communication between the past and the present as we can at least figure out what ancient lifestyles and costumes are like.
+- Providing a book synopsis, as you would have to sieve out the main plot line of the book and omit small details describing the appearance of characters.
+
+** Algorithm
+- Following, identifying, using, and creating an ordered set of instructions
+- Ordering things in either ascending order (e.g. from 1 to 5) or in descending order (e.g. from 5 to 1)
+- Allows us to order the complexity of the context or content
+
+*** An example
+The legislative process is a form of algorithm. The judicial system assists in maintaining consistency and reducing bias.
+
+The process of creating a law can be broken down in the these steps:
+1. Introducing the bill in Parliament
+2. Debating
+3. Voting in Parliament
+4. Presenting for the President's approval
+
+*** Other examples
+- Traditional poetry, which is defined due to its regular rhythm, verse structure and rhyme scheme.
+
+** Decomposition
+- Breaking down data, processes or problems into smaller and more manageable components to solve a problem.
+- Each sub problem can then be examined or solved individually, as they are simpler to work with
+- Natural way to solve problems
+- Also known as to divide and conquer
+- Solves complex problems
+  - If a complex problem is not decomposed, it is much harder to solve at once. Sub problems are usually easy to tackle.
+- Each sub problem can be solved by different parties of analysis
+- Decomposition forces you to analyse your problem from different aspects
+
+*** Examples
+- Counting up the coins in a piggy bank, as we would normally separate the coins into bundles of the same type and then count them up separately, before adding their totals together.
+- Organisational structure in an organisation, where it would have different departments and teams that hold different sets of responsibilities and powers to ensure a sustained and effective working environment. Each department will then have to submit reports on the work that they have done, which allows organisations to operate efficiently.
+- Essay writing in school, as the essay is usually broken down into parts like the introduction, body, and the conclusion. Then, we can tackle each part of the essay separately.
+
+** Pattern recognition
+- Is observing patterns, trends and regularities in data (Google's definition)
+- A pattern is a discernible regularity
+  - The elements of a pattern repeat predictably
+- In computation thinking, a pattern is the spotted similarities and common differences between problems
+- It involves finding the similarities or patterns among small, decomposed problems, which can help us solve complex problems more efficiently
+- Patterns make problems simpler and easy to solve
+- Problems are easier to solve when they share patterns, we can use the same problem-solving solution wherever the pattern exists
+- The more patterns we can find, the easier and quicker our problem-solving will be
+
+*** Examples
+- Geologists found that the fossil of plants present in the Svalbard in Norway were not the same hardy plants that survived now, so the plants were part of the tropics. They also found that the continents and the rock layers fit together as well, which allowed them to use pattern recognition to figure out that Pangaea existed in the past and the 7 continents we have today are split from Pangaea.
+- Young children learning how to pronounce words use pattern recognition to learn how to pronounce a group of words easily.
+
+
+* Testing techniques
+Suppose you take the drug for a headache now, and your headache goes away within the next hour. Does this mean the drug is effective?
+
+** Desired insights on the problem
+- Does the drug at all reduce your headache in reasonable time?
+- Does the drug manage to work better than a placebo?
+
+** Steps to obtain the desired insights
+- How to *frame* concrete numerical questions?
+- How to *identify* tools and data for analysis?
+- How to *build* models to analyse the data?
+- How to *analyse* the results you obtain?
+
+** Identifying your data
+
+*** What type of data is relevant?
+- Binary: Did your headache subside?
+- Continuous: How long did it take to subside?
+
+*** How much data do you need?
+- Is it sufficient to have a single data point?
+- Is it required to have a million data points?
+
+*** Do you want a comparison?
+- Which base case would you compare with?
+- Is it possible to get data for both the cases?
+
+** Formulating your question
+
+*** Which case seems to be better?
+- Will better in any one of the trials suffice?
+- Does it have to be better in all the trials?
+- Is it fine if one is better on average?
+
+*** Is average behaviour sufficient?
+- What if the drug seems better on average?
+- Do you know if the drug will always be better?
+- How about being better most of the time?
+
+** Comparing distributions
+- A line plot is for plotting data-points connected by lines
+- A histogram is for counting frequency across specific bins (a value that is representative of an interval, which is usually the central value like the mean or median)
+
+** Comparing likelihoods
+
+*** Idealise the distribution
+Assume a normal or Gaussian distribution for the placebo data and find the mean and standard deviation.
+
+*** Recreate the distribution
+Recreate the distribution of the *mean* of the drug trials data set using the idealised distribution of the placebo data obtained earlier. This just means dividing the standard deviation of the placebo data set by the square root of the number of drug trials, which in this case is 30.
+
+*** Analyse the distribution
+Find the probability (likelihood) that the value of the recreated distribution is the same as the actual mean of the drug trials data set.
+
+** Summary
+All the steps are above are the steps of hypothesis testing. Below are the hypothesis testing steps:
+
+1. Start by assuming that the drug is identical to the placebo in efficacy.
+2. Data hypothesis: The drug trials are identical to the placebo trials.
+3. Statistical hypothesis: Statistics of drug trials are identical as if they are drawn from placebo trials.
+4. Test the statistical hypothesis using the actual mean from the data set of the drug trials.
+5. Obtain the probability from that test to determine whether the drug is identical to the placebo, which is usually checking whether the probability is less than a specific value, usually 1%, 2%, 5% or 10%.
