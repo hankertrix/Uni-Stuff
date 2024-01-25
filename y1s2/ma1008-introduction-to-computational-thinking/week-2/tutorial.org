@@ -325,6 +325,9 @@ fn solve_quadratic_eqn() {
                 // If there's an error parsing, set is_number is false
                 Err(_) => is_number = false
             }
+
+            // Make the input an empty string
+            input = "".to_string();
         }
     }
 
@@ -465,6 +468,9 @@ fn compute_surface_area_and_volume_of_sphere() {
             // If there's an error parsing, set is_number is false
             Err(_) => is_number = false
         }
+
+        // Make the input an empty string
+        input = "".to_string();
     }
 
     // Calculate the surface area of the sphere
@@ -588,6 +594,9 @@ fn compute_simultaneous_eqn_solutions() {
                 // If there's an error parsing, set is_number is false
                 Err(_) => is_number = false
             }
+
+            // Make the input an empty string
+            input = "".to_string();
         }
     }
 
@@ -691,6 +700,9 @@ fn even_or_odd() {
             // If there's an error parsing, set is_number is false
             Err(_) => is_number = false
         }
+
+        // Make the input an empty string
+        input = "".to_string();
     }
 
     // The string that says even or odd
@@ -810,6 +822,9 @@ fn calculate_bmi() {
                 // If there's an error parsing, set is_number is false
                 Err(_) => is_number = false
             }
+
+            // Make the input an empty string
+            input = "".to_string();
         }
     }
 
