@@ -58,7 +58,7 @@ An all-time high ODA was mobilised in 2021, about 179 billion US dollars, which 
 - Foreign aid cannot be a long-term way of life in developing countries.
 - It is a temporary helping hand to push poor countries on the ladder of economic development so that they can self-sustain their growth for the longer term.
 - Once these countries reach a certain level of economic growth, they will no longer need financial help.
-- China and Korea and examples of this process as they heavily relied on foreign aid in the past, then progressively graduated from aid and have recently significant donor countries themselves.
+- China and Korea are examples of this process as they heavily relied on foreign aid in the past, then progressively graduated from aid and have recently significant donor countries themselves.
 
 *** Distributing foreign aid
 - Project-based approaches such as financing a local business, building a well, or providing uniforms so that the children can go to school. Public health aid is also widely supported, such as offering vaccinations, or developing cheap and effective drugs to treat malaria and other similar diseases in low-income countries.
@@ -70,6 +70,22 @@ An all-time high ODA was mobilised in 2021, about 179 billion US dollars, which 
 
 ** Gender pay gap
 The gender pay gap is the average gap between men's and women's wages and salaries, before or after controlling for the type of work, the level of qualification and some other relevant factors.
+
+** Environmental inequality
+Environmental inequality is the uneven exposure to environmental risks and hazards, often coupled with the systematic exclusion of people from environmental decision-making processes.
+
+Environmental inequality is often invisible, and has been all too easy for politicians to ignore.
+
+*** Possible solutions in the context of Singapore
+- Changing mindsets:
+  Changing some policies to accommodate the changing demographics of Singapore or enhancing the existing social structures are insufficient in addressing environmental inequality, we need to fundamentally change our mindset about poverty and inequality.
+
+- Learning from Sweden:
+  The experience of many northern European countries, particularly Scandinavian countries, demonstrates that strong welfare states can see high levels of inclusive growth.
+
+- More public debate:
+  We need to resist the inner urge to define and explain away inequality. We should instead make a conscious effort to move beyond defensiveness and ideology.
+
 
 * The complexity of sustainable development
 - It is a long range of interconnected but unique problems.
