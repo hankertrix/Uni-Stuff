@@ -3,6 +3,17 @@
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
 
+* Definitions
+
+** Expression
+An expression in Python is the same as the mathematical definition of an expression, which means a series of operators that return a value. Basically, an expression *returns* a value.
+
+** Statement
+A statement in Python is usually just a line of code in Python. A statement in Python is used to carry out tasks like assigning a variable. A statement *does not* return a value.
+
+*** Difference between an expression and a statement
+The main difference between a statement and an expression in Python is that a *statement does not* return a value, while an *expression does* return a value.
+
 * Question 1
 A distinction between different types of data allows the computer to know what kind of data it is dealing with, and how to treat it appropriately.
 
