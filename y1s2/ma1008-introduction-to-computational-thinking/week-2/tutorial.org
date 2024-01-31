@@ -91,6 +91,19 @@ The transistors in the computer can only have 2 states, either "on", which is hi
 *** 14.124 (IEEE 754 binary floating point representation)
 0-10000010-11000011111101111100111
 
+*** Model answer
+14.125 = 14 + 0.125
+
+14_{10} = 1110_{2}
+
+0.125_{10} = 0.001_{2} (0.001_{2} = 0x2^{-1} + 0x2^{-2} + 1x2^{-3} = 1/8 = 0.125)
+
+So, 14.125_{10} = 1110.001_{2}, which is exact.
+
+0.124_{2} = 0.000111111101... an infinite sequence of bits.
+
+14.124 = 1110.000111111101, truncated to 12 binary point places. This is an approximation. Almost all floating point numbers are represented approximately in the computer. The computer representation of floating point numbers uses the same basic principle as illustrated here, but has several enhancements to ensure that it can deal with a large range of numbers with good precision.
+
 * Question 5
 #+begin_src python
 c = a
