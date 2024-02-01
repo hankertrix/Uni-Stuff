@@ -41,6 +41,8 @@ The circular economy is based on three principles, namely:
 
 Some ideas include having waste build capital (make money) instead of reducing it, such as using safe and compostable materials that can help grow more food. Another is to have a return-and-renew kind of product cycle instead of a buy-and-throw-away one.
 
+The circular economy replaces the concept of end-of-life materials, like food products, with reusing or recycling in both the production and consumption of the products.
+
 ** Poverty
 Poverty, in the sustainable development context, not only implies a lack of income and productive resources to ensure sustainable living. It also implies hunger and malnourishment, social discrimination, exclusion, and the lack of participation in decision-making.
 
@@ -61,7 +63,7 @@ An all-time high ODA was mobilised in 2021, about 179 billion US dollars, which 
 - China and Korea are examples of this process as they heavily relied on foreign aid in the past, then progressively graduated from aid and have recently significant donor countries themselves.
 
 *** Distributing foreign aid
-- Project-based approaches such as financing a local business, building a well, or providing uniforms so that the children can go to school. Public health aid is also widely supported, such as offering vaccinations, or developing cheap and effective drugs to treat malaria and other similar diseases in low-income countries.
+- Project-based approaches such as financing a local business, building a well, or providing uniforms so the children can attend school. Public health aid is also widely supported, such as offering vaccinations, or developing cheap and effective drugs to treat malaria and other similar diseases in low-income countries.
 - Observing the development effects of various projects and practices to then decide which ones to adopt and which ones to discard.
 
 *** Effectiveness of ODA
@@ -85,6 +87,24 @@ Environmental inequality is often invisible, and has been all too easy for polit
 
 - More public debate:
   We need to resist the inner urge to define and explain away inequality. We should instead make a conscious effort to move beyond defensiveness and ideology.
+
+** Food security
+Food security exists when people when all people at all times have physical and economic access to sufficient, safe and nutritious food that meets their dietary needs and food preferences for an active and healthy life.
+
+*** Stability
+Stability refers to a secure population, household or individual access to adequate food at all times, protected from sudden shocks or cyclical events that can threaten the availability of and access to food resources.
+
+*** Utilisation
+Utilisation refers to the utilisation of food in conjunction with adequate diet, clean water, sanitation and healthcare to a state of nutritional well-being, demonstrating the importance of non-food inputs for food security.
+
+*** Food availability
+Food availability refers to the availability of sufficient quantities and appropriate quality of food products that are either locally produced or supplied by imports, including food aid.
+
+*** Food accessibility
+Food accessibility refers to adequate access to food resources for a nutritious diet.
+
+** Global food system
+The global food system is the sum of actors, sectors and interactions along the food value chains, which includes research and development, input supply, production, harvesting, storage, transportation, processing, retailing, wholesaling, preparation, consumption and the disposal of food.
 
 
 * The complexity of sustainable development
@@ -178,7 +198,7 @@ The World Bank now targets to have no more than 3% of the world's population liv
 The way to lift Sub-Saharan Africa out of poverty is to increase overall economic growth.
 
 *** Farm productivity
-- Small farmers in Sub-Saharan Africa achieve an average yield of about half a ton to one ton of grain per hectare. This is extremely low as other countries in the developing world can achieve 4 to 5 times of it.
+- Small farmers in Sub-Saharan Africa achieve an average yield of about half a ton to one ton of grain per hectare. This is extremely low as other countries in the developing world can achieve 4 to 5 times it.
 - The reason for this is that the Sub-Saharan African farmers are simply too poor to spend money on soil refilling. They cannot afford to buy the nitrogen, potassium and phosphorus necessary for decent crop yields. This results in a poverty trap where they can't afford to acquire the resources to get decent crop yields and hence remain poor.
 - Hence, a high priority for Sub-Saharan Africa is to roll out government programmes that can help the poorest farmers get the resources that they need for farming. Once they have higher crop yields and hence higher income, they will be able to acquire these resources on their own.
 
@@ -251,7 +271,7 @@ All individuals are interconnected within a wider social system with harmoniousl
 - A person with a higher level of education often has more advanced skills that few others can offer, which leads to higher wages. The returns on education have increased strikingly in recent times, which leaves the less-educated behind.
 - Competition from emerging economies like China is further reducing prospects for workers without advanced skills in developed countries.
 - The recent digital revolution has led to the increased use of data science, robotics, artificial intelligence and several other information technologies, which creates enormous amounts of wealth for people with such skills, or for the people who use their existing wealth to invest in such technologies and related infrastructure. This also eliminates middle-skill jobs, or jobs requiring repetitive tasks, such as packaging or basic manufacturing.
-- Wealthy people use the power of their wealth to gain political influence to influence policy in their favour, such as tax breaks, subsidies or favourable regulatory changes. With such policies, they earn even more money. There are now more ways in the social media age to gain political influence to eventually gain more wealth.
+- Wealthy people use the power of their wealth to gain political influence to influence policy in their favour, such as tax breaks, subsidies or favourable regulatory changes. With such policies, they earn even more money. There are now more ways in the social media age to gain political influence and eventually gain more wealth.
 - Redistribution policies like progressive taxes and social transfers are used in an attempt to reduce inequality. An example of social transfer is public retirement benefits. However, a lot of advanced countries are not using these tools effectively any more and high-income corporations are enjoying even lower effective tax rates.
 
 ** How to reduce income inequality?
@@ -287,3 +307,139 @@ All individuals are interconnected within a wider social system with harmoniousl
 
 ** Possible solutions for gender inequality
 - Legal reforms to give equal rights to women in property matters, ownership of a business, participation in education, politics, and other significant matters and areas.
+
+
+* Food security
+- In 2020, there were 2.37 billion people worldwide who were lacking food or unable to eat a healthy diet regularly.
+- 149.2 million children under 5 are stunted, which makes up 22% of children worldwide.
+- 45.4 million children under 5 suffer from wasting, which makes up 6.7% of children worldwide.
+- 38.9 million children under 5 are overweight, which makes up 5.7% of children worldwide.
+- The number of undernourished people increased from 607 million people in 2014 to 720 - 811 million people in 2020. More than half of the world's undernourished people are found in Asia.
+
+** Conflict
+- In 2020, the World Food Programme was awarded the Nobel Peace Prize for acting as a driving force in efforts to prevent the use of hunger as a weapon of war. War and conflict can cause food insecurity and hunger while food insecurity and hunger can cause latent conflicts to flare up and trigger the use of violence.
+- Conflict is the single greatest challenge to the goal of zero hunger as almost 60% of the world's 811 million hungry people live in areas affected by armed violence.
+
+** Climate change
+- Agriculture contributes about a quarter of total greenhouse gas emissions globally. It comes mainly from changes in land use, like deforestation and the loss of carbon from soils. There's also methane produced from the gas of ruminating animals like cows. Since climate change causes disturbance to the stable conditions that agriculture relies on, the risk of conflict and migration is increased as people's livelihoods are threatened.
+- Sea level rise in low-lying coastal areas is one example of the threat climate change poses to people's livelihoods. Bangladesh and Vietnam are hotspots for such impacts, which result in an increase in salinity levels in agricultural lands.
+- Floods and water-logging caused by cyclones and typhoons as well as prolonged drought periods also affect people's livelihoods and food security.
+- By 2050, the World Bank estimates that salinity issues in Bangladesh will most likely lead to significant shortages of drinking water and irrigation, and increased soil salinity in both coastal and inland areas, which could result in a decline in rice yield by 15.6%.
+- Vietnam is also prone to strong storms, rising temperatures and seasonal variability in rainfall.
+
+** Singapore context
+- Imports 90% of its food currently
+- Less than 1% of land in Singapore is allocated for farming
+- Has 220 farms that currently produce 10% of Singapore's food supply
+- 16kg of leafy vegetables consumed per person in 2019
+- Imported vegetables in Singapore are 10% - 20% cheaper than their local counterparts due to the lack of economies of scale in Singapore
+- Has 77 vegetable farms, with 2 rooftop farms and 25 indoor farms
+- Imported more than 125,000 tonnes of seafood in 2019
+- Local farms currently produce 10% of the fish supply
+- Wants to increase domestic fish production to 15%
+- Has 109 sea-based fish farms across the straits of Johor and in the waters off southern Singapore
+- Has 12 land-based fish farms
+- Consumes about 2 billion eggs per year
+- 26% of the eggs come from local farms and efforts are underway to increase domestic egg production
+- Has 3 local egg farms
+- Imports almost 100% of its fruits
+- Currently diversifying sources of import supply can buffer against disruptions in one important region
+- Currently boosting its local production and the goal is to produce 30% of nutritional needs locally by 2030, called 30 by 30. This is triple the current domestic production of food
+- Leading the development of lab-grown artificial meat
+- The first country in the world to approve the sale of lab-grown meat to consumers in December 2020
+
+*** Where vegetables come from
+- 41% from Malaysia
+- 27% from China
+- 7% from India
+- 5% from Australia
+- 4% locally produced
+- 16% from various other countries
+
+*** Where fishes come from
+- 21% from Indonesia
+- 19% from Vietnam
+- 9% from Norway
+- 7% from Thailand
+- 5% locally produced
+- 24% from various other countries
+
+*** Where eggs come from
+- 72% from Malaysia
+- 26% locally produced
+- 1% from Ukraine
+- 1% from Thailand
+- < 1% from various other countries
+
+*** Where fruits come from
+- 39% from Malaysia
+- 11% from China
+- 8% from South Africa
+- 7% from the Philippines
+- 7% from Australia
+- 28% from various other countries
+
+*** Sustenir agriculture (indoor farm)
+- Founded in 2013
+- Entered the Singapore market in 2015 with kale
+- Don't use pesticides
+- They grow kale, rocket, lettuce and ice plants by germinating them in specially designed foam cubes
+- Invests heavily in automation for their processes
+
+** The agri-food industry
+- World's largest economic sector which employs half of the global workforce, many of which are subsistence farmers and fishermen.
+- Responsible for 25% - 30% of global greenhouse emissions uses 68% of our freshwater and drives degradation of marine and terrestrial ecosystems.
+- Creates economic profit and the expense of the natural environment.
+- Generates social injustices between countries and among actors in the chain from production to consumption and waste.
+- The global population is predicted to hit 10 billion in the 2050s, which means that in less than 30 years, the agri-food industry needs to support about 2 billion more people compared to today.
+- This is in addition to fixing the problem of over 2 billion people worldwide who already go hungry today.
+- Economic growth tends to lead to an increase in food consumption per capita.
+- As people get richer, they consume more food.
+- 50% more food is produced today compared to 1960.
+- As such, the individual consumption and demand for food is likely to increase as incomes increase, alongside the increase in population.
+
+** Meat
+- Higher quality foods like meat are also what people go for when they can afford to.
+- Hence, the richer we are, the more meat we consume.
+- Meat consumption worldwide has been on a steady rise for decades, driven by increasing individual incomes and population growth.
+- Too much consumption of red and processed meat is linked to health problems like cancer.
+- Meat is a major contributor to greenhouse gas emissions and environmental degradation.
+- Meat and dairy also generally have a larger impact on global warming compared to plants due to deforestation and the loss of carbon from the soil. The contribution from the storage and transport of meat is much smaller.
+- One-third of the world's fish stocks are in decline due to overfishing.
+- Countries rely on aquaculture to meet growing long-term demand.
+- THe global demand for meat is projected to grow by 78% in 2050.
+- The global market for plant-based meat is expected to be worth over SGD 16 billion by 2025.
+
+** Environmental impacts of agriculture
+- Single largest cause of biodiversity loss
+- Consumptive use of freshwater
+- Loading of nutrients
+- Pollution due to pesticides
+- Soil erosion and degradation
+- Water pollution
+- Depletion of freshwater resources
+
+** Strategies for sustainably producing more food
+- Desirable to increase production with minimal expansion of agricultural land
+- Avoiding degenerative practices on current agricultural land
+- Having more sustainable agricultural practices
+- Shifting diets towards more plant-based food
+- Developing food technology
+- Reducing food waste
+
+** Food waste
+- In 2020, a third of produced food was wasted.
+- This means we can make a lot more food available without increasing production by reducing waste.
+- 70% of produce is wasted before getting it to the end consumer.
+- Researchers at NUS used the larvae of black soldier flies to convert food waste into nutritious compost, which can then be used to grow local food or animal feed.
+- When food waste is converted to compost soil, which is then used to grow new food for consumption, it can be considered a closed food loop within Singapore.
+
+** Global land use
+- 27% of global land area is used for livestock
+- 26% of global land area is forests
+- 19% of global land area is barren
+- 10% of global land area is glaciers
+- 8% of global land area is shrubs
+- 7% of global land area is used for crops
+- 1% of global land area is freshwater
+- 1% of global land area is built-up areas
