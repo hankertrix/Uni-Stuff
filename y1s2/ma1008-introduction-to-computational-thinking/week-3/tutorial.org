@@ -748,7 +748,7 @@ def calculate_triangle_angles() -> None:
     # the 3 sides of the triangle
     variables = ["a", "b", "c"]
 
-    # The data dictionary to store the user's input'
+    # The data dictionary to store the user's input
     data: dict[str, float] = {}
 
     # Iterates over the variables
