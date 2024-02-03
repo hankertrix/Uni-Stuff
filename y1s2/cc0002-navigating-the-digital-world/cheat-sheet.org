@@ -90,6 +90,44 @@ All this is in additional to the basic knowledge of:
 - Who and where you are and what you like
 - Market behaviour and the competition
 
+** Cybersecurity
+Cybersecurity refers to the practices, processes and technologies implemented by an organisation to protect its cyber assets from damage, malicious attack and unauthorised access.
+
+** CIA acronym
+An acronym to help keep ourselves cyber safe.
+
+*** Confidentiality (C)
+Ensuring data or information cannot be read by unauthorised personnel.
+- Protect your personal information
+- Share only what is necessary
+
+*** Integrity (I)
+Ensuring data or information held by an individual or organisation remains accurate and unmodified by unauthorised personnel.
+- Practice good cyber hygiene
+- Beware of fake sources of information
+
+*** Availability (A)
+Ensuring data or services remains usable or accessible with sufficient capability and capacity.
+- Prevent getting locked out of your devices
+- Your actions can affect others
+
+** Data
+- Data can be in both physical and digital formats.
+- It can belong to an individual or an organisation.
+
+** Data security
+Data security is the process of protecting and maintaining the confidentiality, integrity and availability of *data*.
+
+** Cybersecurity
+Cybersecurity maintains the confidentiality, integrity and availability of *systems*.
+
+** Phishing
+- The fraudulent practice of sending emails purporting to be from reputable companies in order to induce individuals to reveal personal information such as passwords and credit card numbers.
+- Phishing is a cyberattack in which criminals pose as legitimate institutions to lure individuals into providing sensitive data such as:
+  - Personal information
+  - Passwords
+  - Credit card details
+
 
 * Computational thinking competencies
 
@@ -218,3 +256,164 @@ All the steps are above are the steps of hypothesis testing. Below are the hypot
 3. Statistical hypothesis: Statistics of drug trials are identical as if they are drawn from placebo trials.
 4. Test the statistical hypothesis using the actual mean from the data set of the drug trials.
 5. Obtain the probability from that test to determine whether the drug is identical to the placebo, which is usually checking whether the probability is less than a specific value, usually 1%, 2%, 5% or 10%.
+
+
+* Cybersecurity
+
+** Phishing
+- In 2018 alone, there were more than 16,100 phishing cases.
+
+** Strong passwords
+- The password is at least 8 - 12 characters long.
+- The password consists of a mixture of numbers, symbols, upper and lowercase letters.
+- Use uncommon words for the password.
+- The password should be long and random.
+- The password should also be easy to remember.
+- Create a password from a sentence or a phrase that makes sense to you.
+- Do not use personal information in your passwords, such as your name, NRIC, or birthdate as such information can be easily guessed by cyber criminals if they obtain your personal information through other means.
+- Always activate two-factor authentication if possible. This can be done by enrolling your mobile number or email address to receive a one-time password (OTP), or through an authentication app.
+- Use different passwords for different accounts, especially for more important accounts such as your banking and payment accounts.
+- Change your passwords regularly.
+- Never share your password with anyone else.
+
+*** Examples of 2-factor authentication (2FA)
+- One-time passwords (OTP) through SMS or an authenticator app
+- Biometrics like fingerprints or iris data
+
+
+** Data classification
+
+*** Level 1 - Open
+This classification applies to data that can be distributed to the public or published on the internet.
+
+*** Level 2 - Restricted
+This classification applies to any data that is generally made accessible to members of an organisation but not to the public. Some examples in a university context are internal meeting minutes, presentation files and project reports.
+
+*** Level 3 - Confidential
+- This classification applies to any data that is contractually defined as confidential, or is by nature confidential. Examples of such data includes personal identifiable information, staff performance reports and audit reports.
+- If confidential data is disclosed, the party disclosing the data may be subjected to statutory penalities. The disclosure of confidential data also causes damage to the organisation.
+
+*** Level 4 - Classified
+- This classification applies to any information that is covered under the Official Secrets Act in Singapore.
+- Unauthorised disclosure of such information may result in damage to national security.
+
+** Tips on securing data
+1. Lock your workstation when leaving your desk.
+2. Adopt a clean-desk policy and keep your desk clear.
+3. Send and store work information through organisational accounts.
+4. Keep your data storage devices securely.
+
+** Safe cyber practices
+- Always choose to use trusted Wi-Fi networks and avoid doing sensitive transactions.
+- Always choose to use "BCC" instead of "CC".
+- Be mindful when connecting an external device to your computer.
+- Do remember to install an antivirus software on your devices and always ensure that it is up-to-date.
+- Spots the signs of phishing emails.
+- Use strong passwords.
+- Enable multiple factor authentication (MFA).
+- Secure data using encryption.
+- Follow the Acceptable IT Usage Policy (AIUP) and conform to security best practices.
+
+** NTU's Acceptable IT Usage Policy (AIUP)
+
+*** Do's
+- Update passwords regularly
+- Keep your passwords safe
+- Use NTU email for official communications
+- Use blind carbon copy (BCC) for mass emails
+- Keep your software updated with security patches
+
+*** Don't's
+- Share your passwords
+- Forward NTU documents to personal email or storage
+- Install software without appropriate licences
+- Turn off antivirus or cancel software updates
+- Overshare on social media
+
+** Cybersecurity agency (CSA) Singapore
+- Established in 2015 as a national agency tasked to protect Singapore's cyberspace.
+
+*** Mission
+- Keep cyberspace safe and secure
+- Underpin our national security
+- Power a digital economy
+- Protect our digital way of life
+
+*** Vision
+A trusted and resilient cyberspace that allows Singapore to capture the benefits of a more connected world.
+
+** Cybersecurity and Singapore
+- Cybersecurity is a key enabler for Singapore digital ambitions towards our future economy and society.
+- It allows Singapore to leverage the benefits of digitalisation with a peace of mind.
+- Cybersecurity is needed to help Singaporeans understand and navigate through cyber risks.
+- Individuals also need to take steps to protect our devices and information.
+- New technologies such as cloud, 5G, internet of things (IoT), machine learning and AI can give rise to new attack vectors and vulnerabilities.
+- The cyberspace environment can be viewed as hostile and contested, with thinking, determined and motivated cyber adversaries such as advanced persistent threat groups, cybercriminal gangs and hacktivists.
+- Cybersecurity is known as a wicked problem as cyber threats are asymmetric, borderless, constantly evolving and difficult to attribute.
+- Cyber threats do not discriminate when choosing their targets or victims. They can target the young or old, rich or poor, educated or uneducated.
+- Cyber threats that Singapore faces mirrors global trends, and some of them include advanced persistent threats, ransomware, phishing and data breaches.
+- There has been an up tick in ransomware and supply-chain breaches.
+- 89 ransomware cases were reported to the CSA in 2020, which is a sharp rise of about 154% from the 35 cases reported in 2019.
+- These ransomware cases mostly affected small and medium enterprises (SMEs) in the manufacturing, retail and healthcare sectors.
+- The recent SolarWinds incident showed how supply-chain breaches can compromise many victims at one go. This can cause total loss of trust in the affected products, including for our critical information infrastructure (CII) systems.
+- The reliance of digital tools has greatly increased the "attack surface" that malicious actors can target or exploit.
+
+** Cyber trilemma
+Because cyberspace is a dynamic environment with evergreen challenges, there is a trilemma among security, usability and cost. Hence, there is no completely secure system as there will always be some trade-offs.
+
+** Good cyber hygiene (PASS)
+
+*** Password (P)
+- Use strong passwords
+- Enable two-factor authentication on your accounts
+
+*** Antivirus (A)
+- Keep them installed on your devices
+- They help to protect your devices against known malicious software, or malware for short
+
+*** Spot signs of phishing (S)
+- Be aware of urgent or threatening language. Remain vigilant and take a quick moment to think before responding.
+- Promises of attractive rewards.
+- Requests for confidential information.
+- Don't respond to suspicious messages or emails.
+- Don't click on any suspicious links or attachments.
+- Don't forward those links or attachments to others except when reporting a phishing email or message.
+- Always double-check the URL. Cyber criminals often substitute letters in a URL to mislead you.
+- Look out for poor English with grammatical errors.
+
+*** Software applications (S)
+- Keep software applications updated and patched in a timely manner.
+- Enable auto updates or auto patch because doing so will help protect against known security vulnerabilities and exploits.
+
+** Safe use of public Wi-Fi
+
+*** Cyber threats
+- Cybercriminals can eavesdrop on what you're browsing on the web and sniff sensitive information like usernames and passwords.
+- Cybercriminals can also set up bogus Wi-Fi networks to trick you into connecting to what you think is a legitimate network.
+
+*** Tips
+- Do not input sensitive information like banking details and personal information.
+- Do not do sensitive transactions.
+- Look out for the HTTPS or the padlock icon in the address bar of the browser.
+- Use a virtual private network (VPN), which encrypts the data transmitting to and from your devices.
+- Disable file sharing to prevent anyone from accessing your files or from sending you malicious files when they are connected to the same Wi-Fi network.
+- Disable auto-connect to avoid connecting to bogus networks unknowingly.
+
+** Using e-payment services
+
+*** Cyber threats
+- Online shopping is an increasingly popular option for consumers, especially the young.
+- Cybercriminals are exploiting this by creating phishing scams that aim to steal financial information and bogus websites to offer products that don't exist.
+- Cybercriminals use spoofed social media accounts to impersonate a victim's friends or followers.
+- They will then ask their victims to share their personal information, such as mobile number, internet banking details and one-time password (OTP) on the pretext of helping them to sign up for fake contests or promotions on online shopping platforms.
+
+*** Tips
+- Enable 2-factor authentication (2FA) for all online transactions.
+- Do not store your credit card information online.
+- Avoid performing financial transactions over unsecured public Wi-Fi networks.
+- Be vigilant against phishing or bogus sites.
+- Be wary of offers that are too good to be true.
+- Be wary of unexpected requests or offers from social media contacts.
+- Be wary of URL links provided in unsolicited text messages.
+- Always verify the authenticity of the information with official sources, such as official websites.
+- Never disclose personal or internet banking information and one-time passwords (OTP).
