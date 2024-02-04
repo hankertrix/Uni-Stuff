@@ -168,7 +168,7 @@ The global food system is the sum of actors, sectors and interactions along the 
 - The rate of poverty decline has significantly slowed in recent times.
 - The Covid-19 pandemic has led to the first rise in extreme poverty in three decades.
 - Estimates suggest that the pandemic has pushed an additional 199-124 million people back into extreme poverty in 2020.
-- The pandemic caused income and job losses, and work slowdowns have been extremely damaging to poor households.
+- The pandemic caused income and job losses, and work slowdowns have damaged poor households.
 
 ** New target
 The World Bank now targets to have no more than 3% of the world's population living under the poverty line by 2030.
@@ -249,7 +249,7 @@ All individuals are interconnected within a wider social system with harmoniousl
 - The United States and several South American countries have some of the highest levels of income inequality, but Canada is an exception.
 - Western, Central and Eastern Europe enjoy relatively equal income.
 - Some of the world's poorest countries have some of the highest Gini coefficients, like the Central African Republic, which is among the world's poorest countries, has a Gini coefficient of about 0.61.
-- However, the Gini coefficient doesn't tell anything about the overall wealth, income of a country, quality of life, or general economic well-being.
+- However, the Gini coefficient doesn't tell anything about a country's overall wealth, income, quality of life, or general economic well-being.
 - This means that high-income and low-income countries can have the same Gini coefficient if income is distributed equally within them.
 - For example, the United States and Turkey have the same Gini coefficient of about 0.39, but the US has a GDP per capita of about eight times that of Turkey.
 
@@ -272,7 +272,7 @@ All individuals are interconnected within a wider social system with harmoniousl
 - Competition from emerging economies like China is further reducing prospects for workers without advanced skills in developed countries.
 - The recent digital revolution has led to the increased use of data science, robotics, artificial intelligence and several other information technologies, which creates enormous amounts of wealth for people with such skills, or for the people who use their existing wealth to invest in such technologies and related infrastructure. This also eliminates middle-skill jobs, or jobs requiring repetitive tasks, such as packaging or basic manufacturing.
 - Wealthy people use the power of their wealth to gain political influence to influence policy in their favour, such as tax breaks, subsidies or favourable regulatory changes. With such policies, they earn even more money. There are now more ways in the social media age to gain political influence and eventually gain more wealth.
-- Redistribution policies like progressive taxes and social transfers are used in an attempt to reduce inequality. An example of social transfer is public retirement benefits. However, a lot of advanced countries are not using these tools effectively any more and high-income corporations are enjoying even lower effective tax rates.
+- Redistribution policies like progressive taxes and social transfers are used in an attempt to reduce inequality. An example of social transfer is public retirement benefits. However, a lot of advanced countries need to be using these tools more effectively as high-income corporations are enjoying even lower effective tax rates.
 
 ** How to reduce income inequality?
 - Customised policies and specific reforms such as policies to establish social mobility can help, so that kids that grow up poor don't become poor adults.
@@ -407,7 +407,7 @@ All individuals are interconnected within a wider social system with harmoniousl
 - Meat and dairy also generally have a larger impact on global warming compared to plants due to deforestation and the loss of carbon from the soil. The contribution from the storage and transport of meat is much smaller.
 - One-third of the world's fish stocks are in decline due to overfishing.
 - Countries rely on aquaculture to meet growing long-term demand.
-- THe global demand for meat is projected to grow by 78% in 2050.
+- The global demand for meat is projected to grow by 78% in 2050.
 - The global market for plant-based meat is expected to be worth over SGD 16 billion by 2025.
 
 ** Environmental impacts of agriculture
@@ -443,3 +443,147 @@ All individuals are interconnected within a wider social system with harmoniousl
 - 7% of global land area is used for crops
 - 1% of global land area is freshwater
 - 1% of global land area is built-up areas
+
+
+* Water
+
+** Major concerns
+- 17 countries, which are home to one-quarter of the world's population, face high levels of baseline water stress. For example, India's water challenges extend beyond surface water stress. The country has more than 3 times the population of these other 16 extremely highly water-stressed countries combined. In addition to rivers, lakes and streams, its groundwater resources are severely overdrawn, largely to provide water for irrigation.
+- 44 countries face a high level of water stress. Such water stress causes severe threats to human lives, livelihoods and business sustainability.
+- Population growth, socio-economic development and urbanisation will increase water demand.
+- Climate change can make precipitation and demand more unpredictable.
+- Some families reported that available water was unaffordable or inaccessible due to physical or social constraints. For example, those living in semi-arid environments experience persistent water shortages. In Brazil, many households experience problems with water that limited handwashing ability despite the country having abundant water resources.
+- For some, handwashing was forgone due to unexpected shutoffs or contamination. Some households also prioritise consumption over hygiene when the water supply is limited.
+- Two-thirds of the global population had no safe toilets in 2015.
+- A third of the global population had no safe water supply in 2015.
+- Water sources are becoming more polluted.
+- Funding for water and sanitation services is inadequate.
+- Adults are too sick to work and children are too sick to study.
+- Governance and delivery systems are weak.
+- Agriculture and industry are getting thirstier and climate change is taking a heavy toll.
+- 2.2 billion people lack safely managed drinking water in 2017, which is one-third of the global population.
+- 4.2 billion people lack safely managed sanitation in 2017, which is two-fifths of the global population.
+- More than 670 million people still practice open defecation.
+- 2 in 5 healthcare facilities worldwide had no soap and water or alcohol-based hand rub in 2016.
+- 3 billion people worldwide lack basic handwashing facilities at home.
+- Water scarcity could displace 700 million people by 2030.
+- Some countries experience a funding gap of 61% for achieving water and sanitation targets.
+- Climate change-related floods, droughts and other water-related disasters account for 70% of all deaths due to natural disasters worldwide.
+- Agriculture needs to grow by roughly 70% by 2050. Since agriculture is the largest water user, efficient and sustainable irrigation is necessary to achieve global food security goals.
+- There is a shortage of funds, as well as water, to maintain irrigation facilities.
+- The World Bank proposes that water must be treated as an economic good, using financial instruments to encourage water savings and generate revenues to address both issues.
+- Sophisticated economic instruments such as market-driven pricing, volumetric charges, and treatable water rights are a low priority in many developing countries.
+- More than 40% of the residents in cities of the Global South, mainly developing nations, will lack affordable and good quality water daily.
+- Lack of access to piped-in water means that families must buy water from private sources or bottled water, which can cost up to 50 times as much as piped utility water.
+- When water is expensive or inaccessible, households are forced to sacrifice their health and time to provide free but likely unsafe ground and surface water, or sacrifice food, electricity, education, healthcare, or other household needs to buy water.
+- South Africa's Cape Town's water crisis in 2018 got so bad that there were competitions to see who could wash their clothes the least. The city was just 90 days away from having no water at all. They will need significant investment to secure adequate water supplies and safeguard functioning freshwater ecosystems for future generations.
+- Water will be an increasing source of international tensions.
+- Future wars would be over water.
+- The matter of water diversion was a devastating issue of life and death.
+- Lack of communication over natural resources can be a bad sign for cooperation.
+- While most water conflicts are intro-state, transboundary tensions are likely to intensify.
+- Downstream nations fear or resent the effect on their waters due to the action of upstream countries.
+- For example, in Mexico, the river that created the Grand Canyon and fed a vast delta has been almost completely dry for 2 decades.
+- Water basins in South Asia, the Middle East and East Africa are major hotspots with many violent conflicts.
+- The Nile basin has fewer conflicts, which reflects the past negotiations between the basin's ten member states to replace colonial-era water agreements.
+- India and Bangladesh are particularly concerned about China's thirsty north and water diversion plans.
+- In the Mekong Basin, a few Southeast Asian countries are anxious too.
+
+** Water pollution
+- An "invisible crisis" that involves water inequality and gender inequality, that will worsen as the planet warms, causing more damage to health, ecosystems and economics than is commonly understood.
+- Contaminated water kills more people as compared to disasters and conflicts.
+- Globally, deaths from diarrhoea caused by unclean drinking water are estimated at half a million each year, and most of them are young children.
+- More than 300,000 children die every year from diarrhoeal diseases caused by unsafe water and poor sanitation in Africa.
+- Africa is also at a high risk of desertification, which will reduce the availability of fresh water and increase the risk of water inequality in the future.
+- More than 25% of the population in Africa must walk 30 minutes or more to collect water, a burden that falls on women and girls.
+- This trend of women being responsible for water collection spans many developing nations and takes time away from income generation.
+- Water pollution also disproportionately affects the poor and socially discriminated communities.
+- 80% of the world's wastewater is released into the environment without treatment due to poor water infrastructure.
+- Water shortage concerns have overshadowed water pollution.
+- The use of nitrogen as a fertiliser has increased by more than 700% since 1960, with nearly all the growth occurring in Asia.
+- Long-term exposure to non-point source pollution for agriculture during childhood results in lower earnings when the children enter adulthood.
+- Such economic inequality and water pollution will create a vicious cycle and result in intergenerational poverty.
+- Nanoplastics, with an upper size limit of one micrometre, are tiny enough to remain and disperse through a water column where organisms, including humans, can easily consume them, instead of them sinking of floating like large microplastics do.
+
+** Water security framework
+
+*** Good governance
+Adequate legal regimes, institutions, infrastructure and capacity are in place.
+
+*** Transboundary cooperation
+Sovereign states discuss and coordinate their actions to meet the varied and sometimes competing interests for mutual benefit.
+
+*** Peace and political stability
+The negative effects of conflicts are avoided, including reduced water quality or quantity, compromised water infrastructure, human resources, related governance, and social or political systems.
+
+*** Financing
+Innovative sources of financing complement funding by the public sector, including investments from the private sector and micro-financing schemes.
+
+*** Drinking water and human well-being
+Populations have access to safe sufficient and affordable water to meet basic needs for drinking sanitation and hygiene to safeguard health and well-being, and to fulfill basic human rights.
+
+*** Economic activities and development
+Adequate water supplies are available for food and energy production, industry, transport and tourism.
+
+*** Water-related hazards and climate change
+Populations are resilient to water-related hazards including floods, droughts and pollution.
+
+*** Ecosystems
+Ecosystems are preserved and can deliver their services, on which both nature and people rely, including the provision of fresh water.
+
+** Singapore's water story
+- More than 5 million consumers use 800 Olympic-sized swimming pools of water every single day, which is about 340 million gallons a day, with homes consuming about 45% and industries taking up the rest.
+- By 2060, Singapore's water demand could almost double, with the industrial sector using about 70%.
+- By 2060, NEWater and desalination will meet up to 85% of Singapore's future water demand.
+- Singapore was ranked 170th of 193 countries for water resources in the 2006 United Nations World Water Development Report.
+- The poor availability was not because we lack rainfall, but because there is a limited land area to catch and store the rain.
+- Even though Singapore's water supply comes mostly from more expensive water sources such as NEWater and desalinated water, these sources are weather-independent sources that will strengthen the resilience of Singapore's water supply against the effects of dry weather caused by climate change.
+- Between 2003 and 2016, households cut their water use per person, per day from 165 litres to 148 litres. The long-term goal is 140 litres by 2030.
+- A study surveyed 400 local households, from 2018 to 2019, found that 66% of the households used running water to wash their toilets instead of a bucket or a pail. 41.5% of households used the same method for pet care, and 50% of households washed food under running taps and washed their laundry using a washing machine when it was not fully loaded. 94% of households washed their dishes under running taps instead of using basins.
+- Under the mandatory water efficiency labelling scheme, suppliers must list the water efficiency of their water fitting and device on display so that consumers can make more informed choices.
+- As Singapore becomes more urbanised and downpours become more frequent and intense, the risk of floods will increase.
+
+*** First National Tap - Rainwater
+- Singapore has 17 reservoirs, including the largest reservoir, the Marina Catchment that has an area of 10,000 hectares.
+- Unprotected catchments in western and northern Singapore where limited residential, and light uses were allowed.
+- Urban catchment areas like stormwater collection systems were designed such that only the cleaner parts of the stormwater are extracted and pumped into the reservoir. The immediate runoff that is the most polluted bypasses the collection facilities.
+- The Marina Barrage was built across the Marina Channel, where the five rivers running through the city centre, including the Singapore River, meet before emptying into the sea.
+- The 16th and 17th reservoirs were formed, creating a dam at the mouth of the Punggol and Serangoon rivers in northeastern Singapore.
+- Catchment areas currently make up two-thirds of Singapore and will occupy 90% of Singapore's land area by 2060.
+- Singapore has more than 8,000 kilometres of waterways, much of it being in urban areas.
+- Singapore is one of the few countries in the world that harvest stormwater on a large scale for its water supply.
+- Rainwater is channelled through an island-wide network of drains, canals and rivers to the reservoirs for storage.
+- Rainwater is then treated at water treatment plants to become potable water for homes and industries.
+
+*** Second National Tap - Imported water from Johor, Malaysia
+- In 1965, water supply sources in Singapore comprised solely of reservoirs in the central catchment inherited from the British and water supply was not sufficient to meet demand.
+- Singapore had to depend on Johor for its water supply and two water agreements were signed in the early 1960s.
+- The 1961 water agreement between the Johor state government and Singapore expired on 31st August 2011.
+- Singapore continues to import water from Johor under the 1962 water agreement, which allows us to draw water from the Johor River until 2061.
+- The Johor River fell to a historic low of 20% of its capacity due to climate change in 2016.
+- Singapore has been importing water from Malaysia for many years.
+- Singapore has been able to reduce its reliance on imported water thanks to the next tap.
+- There have been conflicts between Malaysia and Singapore over how much Singapore should pay for water from Malaysia, and hence the government is looking to minimise the amount of water imported from Johor by 2061.
+
+*** Third National Tap - Recycled water
+- Singapore is one of the few countries in the world that has two separate collection systems, one for rainwater and one for used water.
+- Used water is then sent to treatment plants or water reclamation plants, where it goes through rigorous processing, such as microfiltration, reverse osmosis and ultraviolet disinfection to make the water safe for consumption. This is called NEWater.
+- NEWater is a high-grade reclaimed water produced from treated used water that is further purified using advanced membrane technologies and ultraviolet disinfection, making it ultra clean and safe to drink.
+- Presently, Singapore's 5 NEWater plants can meet up to 50% of the nation's current water needs.
+- However, the use of advanced technologies makes producing NEWater a lot more expensive.
+- Singapore collects used water through the Deep Tunnel Sewerage System (DTSS) and underground sewers for treatment at a water reclamation plant.
+- Treated used water can then be sent to NEWater facilities for further treatment to obtain ultra-clean, high-grade reclaimed water.
+- Sometimes, such water is treated and discharged to the sea.
+- NEWater is mainly used for industries, but it is also used to top up our reservoirs to further enhance our water security.
+
+*** Fourth National Tap - Desalinated water
+- Desalination turns seawater into potable water.
+- The most energy-intensive of the 4 national taps.
+- Singapore currently uses reverse osmosis for its desalination, producing drinking water by pushing seawater through membranes to remove dissolved salts and minerals.
+- The cost of desalinated water is more than twice that of NEWater.
+- Singapore has two desalination plants that can produce up to 25% of its water needs.
+- Singapore will continue investing in research and technology to find better and less expensive ways of desalting seawater.
+
+*** Deep Tunnel Sewerage System (DTSS)
+- By 2050, whenever you flush the toilet, take a shower, or wash the dishes, the used water will flow into the underground network of tunnel sewers and be channelled by gravity to one of the 3 coastal water reclamation plants for treatment.
+- When completed, the DTSS will shrink the land area occupied by used water infrastructure by 50% and collect every drop of used water for treatment and purification.
