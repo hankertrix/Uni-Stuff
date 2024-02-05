@@ -1,0 +1,1093 @@
+#+TITLE: MA1008 Introduction to Computational Thinking Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{array}
+
+* Definitions
+
+** Programming
+Programming is the process of:
+- Implementing a representation of the solution for the computer to execute
+- Taking an algorithm and encoding it using certain programming language
+
+** Programming language
+- A medium through which programmer may give instructions to a computer.
+- It must support certain control constructs and data types needed to implement algorithms.
+
+** High-level programming languages
+- Provide abstraction from the internal operating detail of the computer.
+- Enable the programmers to focus on solving the problem.
+- Make the process of developing the algorithm simpler
+
+** Microprocessor
+The microprocessor in a computer is a digital device consisting of electronic components like transistors that operate in two states (either *on* or *off*).
+
+*** The two states as voltage levels
+- Low voltage (0 volt)
+- High voltage (depends on the power supply used by the microprocessor)
+
+*** The two states represented in binary
+- 0 for low voltage
+- 1 for high voltage
+
+** Datum
+A datum is a number.
+
+** Byte
+1 byte = 8 bits (2 hex digits)
+
+** Nibble
+1 nibble = 4 bits (1 hex digit)
+
+** Word
+1 word = 16 or 32 bits depending on CPU architecture (32 bits is used in this course)
+
+** DWord
+1 DWord = 64 bits
+
+** Algorithms
+Algorithms are the method, procedure, or steps for solving a problem.
+
+*** Expressing an algorithm
+- Must be unambiguous, every step must be clear and precise
+- Specify the order of steps precisely (sequence)
+- Consider all possible decision points (branching and looping)
+- Must terminate (no matter which representation is used)
+
+\newpage
+
+** Flow chart
+A representation of an algorithm using diagrams for effective visualisation.
+
+#+ATTR_LATEX: :environment tabular :align |c|m{22em}|
+|----------------------+----------------------------------------------------------------------------------------------|
+| *Name*               | *Use in flowchart*                                                                           |
+|----------------------+----------------------------------------------------------------------------------------------|
+| Oval                 | Denotes the beginning or end of a program                                                    |
+|----------------------+----------------------------------------------------------------------------------------------|
+| Flow line (an arrow) | Denotes the direction of logic flow in a program                                             |
+|----------------------+----------------------------------------------------------------------------------------------|
+| Parallelogram        | Denotes either an input operation (INPUT) or an output operation (PRINT)                     |
+|----------------------+----------------------------------------------------------------------------------------------|
+| Rectangle            | Denotes a process to be carried out, like addition                                           |
+|----------------------+----------------------------------------------------------------------------------------------|
+| Diamond              | Denotes a decision or branch to be made; the program should continue along one of two routes |
+|----------------------+----------------------------------------------------------------------------------------------|
+
+** Pseudocode
+Directly uses informal English to describe an algorithm step by step with one step per line. It uses the structural conventions of a normal programming language, but is intended for human reading rather than machine reading. Syntax doesn't matter in pseudocode.
+
+*** Guidelines
+- Write one statement per line only
+- Capitalise the keywords
+- Indent to show hierarchy
+- End multi-line structures like loops and if statements
+- Keep statements programming-language independent
+
+** Variable
+A variable is like a labelled box that contains a value inside it. Each variable has its name, like ~price_of_chicken_rice~ and value, like ~2.8~.
+
+*** Why use variables?
+- Reuse names instead of values, which is helpful in keeping track of useful information without needing to remember a bunch of numbers
+- Easier to change or refactor the code later
+
+** Expressions
+Expressions are anything that produces or returns a value. It usually consists of a combination of values (literals, variables, etc) and operations (operators, functions, etc).
+
+*** Examples
+- 3.14
+- 100 * 15
+- Result * 100
+
+** Assignment operator (=)
+The assignment operator binds variables and values. The "=" sign is the *assignment operator*, not the equality in mathematics.
+
+*** Syntax
+Left-Hand Side (LHS) = Right-Hand Side (RHS)
+
+This means:
+- Evaluate the expression on the right-hand side
+- Take the resulting value and assign it to the name (variable) on the left-hand side
+
+** Arithmetic operators (~+, -, *, /~)
+- Used in common arithmetic
+- Each arithmetic operator is a mathematical function that takes one or two operands and performs a calculation on them
+- Most computer languages contain a set of such operators that can be used within equations to perform a number of types of sequential calculation
+
+** Identifiers
+A name given to an entity in a programming language.
+- Helps in differentiating one entity from another
+- Name of the entity must be unique to be identified during the execution of the program
+
+*** Attributes of identifiers in Python
+- Uppercase and lower case letters A through Z
+- The underscore "_"
+- The digits 0 through 9
+- However, the first character cannot be a digit
+- Identifiers are case-sensitive
+
+*** Naming conventions in Python
+- Variables names should be in lowercase, with words separated by underscores as necessary to improve readability (~snake_case~).
+
+** Keywords
+Keywords are special words that are reserved by a programming language. Programmers should not use keywords to name things.
+
+** Conditional statement
+A conditional statement performs different actions depending on whether the condition evaluates to true or false.
+
+** Conditional expression (Boolean expression)
+A conditional expression may be composed of a combination of the Boolean constants True or False, Boolean-typed variables, Boolean-valued operators, and Boolean-valued functions.
+
+** Nested ~if~ statements
+A nested ~if~ statement is an ~if~ statement inside another ~if~ statement.
+
+** Relational operators (~==, !=, <, <=, >, >=~)
+A relational operator compares two numbers (float or int) and returns a Boolean value of either True or False.
+
+| Relational Operator | Meaning                  | Example  |
+|---------------------+--------------------------+----------|
+| /                   | <                        | <        |
+| ==                  | Equal to                 | a == 1   |
+| !=                  | Not equal to             | b != 2   |
+| <                   | Less than                | c < 3    |
+| <=                  | Less than or equal to    | d <= 4   |
+| >                   | Greater than             | f > 5.0  |
+| >=                  | Greater than or equal to | g >= 6.0 |
+
+** Program execution and control flow
+- Control flow controls which instruction should be executed next.
+- By default, program instructions are executed one after another.
+- However, some structures can alter the flow, like selection.
+- Selection (branching) occurs when an "algorithm" makes a choice to do one of two or more things.
+- The flow control in a program is, in essence, logic.
+- When writing or reading a program, ensure that you could understand the flow, i.e., what should be executed next for every step.
+
+** Logical operators (Boolean operators)
+Logical operators connect Boolean values and expressions and *return* a Boolean value as a result.
+
+| Operator | Example                           | Meaning                             |
+|----------+-----------------------------------+-------------------------------------|
+| /        | <                                 | <                                   |
+| *not*    | *not* number < 0                  | Change True to False, or vice versa |
+| *and*    | (num1 > num2) *and* (num2 > num3) | Return True only if *both* are True |
+| *or*     | (num1 > num2) *or* (num2 > num3)  | Return True if *either* one is True |
+
+\newpage
+
+** Looping
+A computer program can dynamically choose how many times it repeats certain instructions during the program runtime.
+
+*** General structure of a loop
+1. *Initialise* the loop control variable.
+2. *Test*: continue the loop or not?
+3. *Loop body*: main computation being repeated.
+4. *Update*: Modify the value of the loop control variable so that next time we test, we may exit the loop.
+
+Sometimes, a loop may not have all of them, such as an infinite loop, where the test condition is always true.
+
+*** Types of loops
+1. Counter-controlled loop
+   The number of repetitions can be *known* before the loop body starts. This loop just repeats the loop on each element in a preset sequence.
+
+2. Sentinel-controlled loop
+   The number of repetitions is *not known* before the loop body starts. Hence, a sentinel value that differs from normal data, like -1, is used to stop the loop.
+
+** Iteration
+A one-time execution of a loop body is referred to as an iteration of the loop.
+
+** Nested loop
+A nested loop is a loop inside another loop. An outer loop may enclose an inner loop.
+
+\newpage
+
+** Abstraction
+- *Simplifies* things
+- Identifies what is *important* without worrying too much about the details
+- Allows us to *manage complexity*.
+
+*** Why is abstraction important?
+- A key element of computing is the complexity of the systems we build.
+- Abstraction provides a means to distil what is essential, giving a manageable approach to create computational solutions.
+- Abstractions are sometimes represented as *layers* or *hierarchies*, allowing us to view things at different degrees of detail.
+
+** String
+A string is a sequence of characters. The sequence of characters is important and is maintained.
+
+** ASCII
+- Uses 8 bits to store a character.
+- 2^{8} = 256 different characters.
+
+** Unicode
+- An extension of ASCII
+- Able to include more characters
+- Uses 16 bits to store a character
+- 2^{16} = 65,536 characters
+- The Unicode space is divided into 17 planes.
+- Each plane contains 65,536 code points (16-bit).
+- Total of 1,114,112 characters, 96,000 used.
+
+** Function
+- A function is a *piece of code* that performs some operation.
+- The details are hidden (encapsulated) and only it's interface is exposed.
+- It is a way to arrange a program to make it easier to understand.
+- A function has arguments as inputs and may return one output.
+
+** Method
+- A method is a variation on a function.
+- It represents a program and has input arguments and output.
+- Unlike a function, it is applied in the context of a *particular object*.
+- This is indicated by the *dot notation* invocation.
+
+*** Method chaining
+Methods can be chained together. For example:
+#+NAME: method-chaining
+#+begin_src python :results output :exports both
+string = "Python is cool!"
+print(string.upper())
+print(string.upper().find("C"))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: method-chaining
+: PYTHON IS COOL!
+: 10
+
+\newpage
+
+* Program translations
+
+** Interpretation approach
+- Uses a program known as an interpreter
+- Reads one high-level code statement at a time
+  - Immediately translates and executes the statement before processing the next one
+
+*** Examples
+- Python
+- R
+- JavaScript
+- TypeScript
+- Lua
+- Lisp
+
+*** Benefits
+- Very portable across different computing platforms
+- Produces results almost immediately
+- Easy to debug
+- Program executes more slowly
+- Useful for implementing dynamic, interactive features, such as those used on web pages
+
+\newpage
+
+** Compilation approach
+- Uses a program called a compiler
+- Reads and translates the entire high-level language program (source) code into its equivalent machine-language instructions in an executable file
+- The resulting machine-language instructions can then be executed directly on the computer when the program is launched
+
+*** Examples
+- C
+- C++
+- Rust
+- Go
+- Zig
+- Nim
+
+*** Benefits
+- Program runs very fast AFTER compilation
+- Smaller in code size after compilation
+- Must compile the entire program before execution
+- Needs to be re-compiled if to be used on different computing platforms
+- Used in large and sophisticated software applications when speed is of the utmost importance
+
+** Combination of compilation and interpretation
+It is also possible to use the combination of both translation techniques.
+
+*** Examples
+- Java
+
+
+* Computer organisation
+
+** Central processing unit (CPU)
+- Processes information
+- Performs operations based on information given
+
+*** Control unit (CU)
+- Controls and coordinates the overall operation of the CPU
+- Consists of decoders and logic circuits
+- Controls the overall operations of the various units and modules
+- Driven by a clock signal to ensure that everything happens at the correct instances and in proper sequence
+
+*** Arithmetic/Logic Unit (ALU)
+- Performs arithmetic operations as well as Boolean logic functions
+- Deals with arithmetic operations like addition, subtraction, multiplication and division (if supported)
+- Also performs logic operations (i.e. Boolean operations) like AND, OR, NOT, XOR etc, and bit shifting/rotation
+
+*** Register Array
+- Holds the various information used by CPU operations
+- A small amount of very high speed internal storage used for frequently accessed data
+- Enables data to be stored and retrieved quickly
+- Some of these registers are used for more specific functions, like program counter, instruction register, stack pointer, memory address register, accumulator, etc
+
+*** Program counter (PC) (special register)
+Tells the control unit where to find the instruction in memory.
+
+*** Instruction register (IR) (special register)
+Holds the copy of the instruction to be decoded and executed by the control unit.
+
+*** Data, Address and Control Signals
+- Consists of signalling wires that are grouped into data signals, address signals, and control signals
+- The signals connect the various internal functional units together
+- Extend to the external system bus for other modules (memory and I/O) of the microprocessor
+
+** Memory
+- Memory is used to store instructions and data for the CPU
+- Consists of high speed electronics components that store the information in binary bit format
+- Each location stores an 8-bit (byte) size data
+- Each location is allocated a unique address
+- Identified by specifying its binary pattern on the address bus
+- If data is more than 8 bits in size (e.g. a 32-bit word), consecutive locations are used, and the lowest byte address is used to access the word location
+
+*** Memory size
+It is dependent on the number of bits (n) used in its address bus. Memory size = 2^{n} bytes.
+
+- When n = 10, 2^{10} = 1024 bytes or 1 kilobyte (KB)
+- When n = 20, 2^{20} = 1024 × 1 KB = 1048576 bytes or 1 megabyte (MB)
+- When n = 30, 2^{30} = 1 KB × 1 KB × 1 KB = 1073741824 bytes or 1 Gigabyte (GB)
+
+** Input/Output (I/O) Interface
+- Mechanism for transferring information to and from the outside world, such as to interact with users
+
+** System Bus
+- The system bus consists of groups of parallel signals that are used to transfer information between the modules in the microprocessor.
+- The system bus is used to connect external devices, such as memory and I/O devices, to the functional units within the CPU.
+
+*** Data Bus
+- Conveys the information from one module to the other.
+
+*** Control Bus
+- Provides the control signals for the modules to work together, such as to determine the direction of data flow, and when each device can access the data bus and address bus.
+
+*** Address Bus
+- Used to convey the address information. The signals' pattern on the address bus lines determines the location of the source and destination of the data transfer.
+
+
+* Information in a computer
+
+** Types of information
+- Instructions
+- Data
+
+\newpage
+
+** Information representation
+
+*** Binary format (base-2)
+- General expression: b_{n-1} ... b_{k} ... b_{2}b_{1}b_{0}
+- Example of an 8-bit binary number: 01001101b
+- The decimal (base-10) value can be calculated as:
+  2^{n-1} × b_{n-1} + ... + 2^{k} × b_{k} + ... + 2^{2} × b_{2} + 2^{1} × b_{1} + 2^{0} × b_{0}
+
+- The k^{th} bit will have a weightage of 2^{k}.
+
+*** Hexadecimal format (base-16)
+- Hexadecimal symbols: 0, 1, 2, ..., 8, 9, A, B, C, D, E, F
+- Each hexadecimal is 4 binary bits
+- The binary format data is separated into groups of 4 bits:
+  1011 0101 0110 1100 = B56C
+
+
+* Program execution
+
+** Instruction execution
+1. On power up, the program instruction will be typically first loaded into certain default memory locations (together with data).
+2. A clocking signal is also applied to the CPU (as well as to the rest of the microprocessor system).
+3. Based on the rising or falling edges of the clock, the control unit (CU) will retrieve (fetch) the instruction from the default memory location.
+4. The control unit (CU) of a CPU is designed to recognise its own instructions and performs the corresponding operation.
+
+\newpage
+
+** Fetch
+Fetch the instruction from the memory into the instruction register (IR) using the address indicated by the program counter (PC).
+
+** Decode
+Decode the machine instruction by the control unit, which is now stored in the instruction register (IR).
+
+** Execute
+Execute the instruction. For example, loading the operands into the arithmetic/logic unit (ALU) and get the ALU to operate on them.
+
+\newpage
+
+* Data types in Python
+Python uses duck-typing to figure out the type of a variable.
+- Python does not have variable declaration, like Java or C, to announce or create a variable.
+- A variable is created by just assigning a value to it and the type of the value defines the type of the variable.
+- If another value is re-assigned to the variable, its type can change.
+
+** Why differentiate between data types?
+1. The underlying representations for different data types are different.
+2. Different data types support different operations, and for these operations to work, we need to supply them with variables of the correct types.
+3. The objects we wish to represent in a computer program are of different types in nature and require different data types.
+
+** String (~str~)
+- It is a sequence, typically a sequence of characters delimited by single quotes or double quotes.
+- The sequence of characters is important and is maintained.
+- Use either single or double quotes to create a string.
+- Do not use both single and double quotes to create a string.
+- Escape a quote by using the backslash character "\".
+
+\newpage
+
+*** Index (~[]~)
+- Characters in a string are in a sequence
+- We can identify each character with a unique index (a position in the sequence).
+- We can index a character from either end of the sequence.
+  - Non-negative values: counting from left, starting at 0
+  - Negative values: counting from right, starting at -1
+
+We can use ~[]~ to access particular characters in a string.
+#+NAME: string-indexing
+#+begin_src python :results output :exports both
+string = "Hello World"
+print(string[0])
+print(string[1])
+print(string[-2])
+print(string)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-indexing
+: H
+: e
+: l
+: Hello World
+
+\newpage
+
+*** Slicing (~[:]~)
+~[start : end : step]~
+- ~start~ is the index of the start of the subsequence.
+- ~end~ is the index of the end of a subsequence (not included).
+- ~step~ specifies the step size to jump along the sequence.
+
+#+NAME: string-slicing
+#+begin_src python :results output :exports both
+string = "Hello World"
+print(string[1:4])
+print(string[::2])
+print(string[::-2])
+print(string[0:14:-1])
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-slicing
+: ell
+: HloWrd
+: drWolH
+:
+
+*** Length of a string (~len~)
+#+NAME: length-of-a-string
+#+begin_src python :results output :exports both
+string = "Hello World"
+print(len(string))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: length-of-a-string
+: 11
+
+*** Concatenate strings (~+~)
+#+NAME: concatenate-string
+#+begin_src python :results output :exports both
+string = "Hello World"
+print(string + "!")
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: concatenate-string
+: Hello World!
+
+*** Repeat string (~*~)
+#+NAME: repeat-string
+#+begin_src python :results output :exports both
+string = "Hello World"
+print(string * 3)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: repeat-string
+: Hello WorldHello WorldHello World
+
+*** Comparison of strings
+The ASCII or Unicode code obtained using the ~ord~ function is used to compare strings.
+#+NAME: string-comparison
+#+begin_src python :results output :exports both
+print("a" == "a")
+print("a" < "b")
+print("1" < "9")
+print("a" < "B")
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-comparison
+: True
+: True
+: True
+: False
+
+*** Membership (~in~)
+~a in b~ is True if string ~a~ is contained in string ~b~.
+#+NAME: string-membership
+#+begin_src python :results output :exports both
+string = "abcdef"
+print("c" in string)
+print("cde" in string)
+print("cef" in string)
+print(string in string)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-membership
+: True
+: True
+: False
+: True
+
+*** Immutability
+- Strings are immutable, which means you cannot change a string after it has been created.
+  #+begin_src python
+  string = "spam"
+  string[1] = "l"  # Error
+  #+end_src
+
+- However, you can use it to make another string:
+  #+NAME: string-edit
+  #+begin_src python :results output :exports both
+  string = "spam"
+  new_string = string[:1] + "l" + string[2:]
+  print(new_string)
+  #+end_src
+
+  @@latex: \noindent@@ Output:
+
+  #+RESULTS: string-edit
+  : slam
+
+
+** Integers (~int~)
+Integers are like whole numbers, including the negative numbers. They can be negative (-1, -2, -3, etc), positive (1, 2, 3, etc) or zero (0).
+
+** Floats (~float~)
+Floats represent real numbers and have a decimal point, like 2.8, 7.1 and 9.0001.
+
+** Boolean (~bool~)
+In most computer programming languages, a Boolean data type is a data type with only two possible values, either True or False.
+
+\newpage
+
+* Python syntax
+
+** Statements
+Each line of code in a Python program is called a *statement*. Python interprets and runs the statements one by one.
+
+Python is sensitive to the end of line in text files, which marks the end of a statement. In text editors, we press "Enter".
+
+*** Continuation of a statement
+- The symbol "\" is used to continue a statement with the next line so that the two lines can be joined as one statement.
+- It improves readability in the text editor.
+
+** Comments
+- The pound sign "#" in Python indicates a comment.
+- *Anything after "#"* is ignored during interpretation.
+
+\newpage
+
+** If statements
+- A colon must be used to mark the start of a block
+- An indentation must be used for the entire block
+
+*** Example
+#+begin_src python
+a = 5
+b = 1
+if a > b:
+    print("a > b")
+#+end_src
+
+*** If-else statements
+#+begin_src python
+a = 5
+b = 1
+if a > b:
+    print("a > b")
+else:
+    print("b < a")
+#+end_src
+
+*** If-elif-else statements
+#+begin_src python
+a = 5
+b = 10
+if a > b:
+    print("a > b")
+elif a > 4:
+    print("a > 4")
+else:
+    print("b < a")
+#+end_src
+
+\newpage
+
+** While loops
+- The ~while~ statement allows repetition of a group of Python code as long as a condition (Boolean expression) is True.
+- It is structurally similar to an if statement but repeats the block until the condition becomes False.
+- When the condition becomes False, repetition ends and control moves on to the code following the repetition.
+
+*** Syntax
+#+begin_src python
+count = 0
+while count < 10:
+    count += 1
+#+end_src
+
+** While-else loops (avoid using as much as possible)
+- The ~while~ loop can have an associated ~else~ statement.
+- The ~else~ block is executed when the loop finishes under normal conditions. It is the last thing the loop does as it exits.
+- The ~else~ block is entered after the ~while~ loop's Boolean expression becomes False.
+- This occurs even when the expression is initially False and the ~while~ loop has never run.
+- It is a handy way to perform some final tasks when the loop ends normally.
+
+*** Syntax
+#+begin_src python
+count = 0
+while count < 10:
+    count += 1
+else:
+    print("Done looping")
+#+end_src
+
+** Break statement
+- The ~break~ statement can be used to *immediately* exit the execution of the current loop and skip past all the remaining parts of the loop.
+- Note that "skip past" also means that the ~break~ statement also *skips* the ~else~ block as well.
+- The ~break~ statement is useful for stopping computation when the "answer" has been found or when continuing the computation is otherwise useless.
+
+*** Syntax
+#+begin_src python
+count = 0
+while count < 10:
+    count += 1
+if count == 8:
+    break
+
+# The else clause is skipped in this case
+# as the loop is broken out of when the count hits 8
+else:
+    print("Done looping")
+#+end_src
+
+\newpage
+
+** Continue statement
+- The ~continue~ statement skips some portion of the ~while~ block that we are executing and have control flow back to the beginning of the ~while~ loop.
+- Exit early from this iteration of the loop (not the loop itself), and keep executing the ~while~ loop.
+- The ~continue~ statement continues with the next iteration of the loop.
+
+*** Syntax
+#+begin_src python
+count = 0
+while count < 10:
+    count += 1
+    if count == 3:
+        print("It's a three!")
+        continue
+
+    # This print statement is skipped when the count is 3
+    print("count is", count)
+#+end_src
+
+\newpage
+
+** For loops
+- For loops have the ability to iterate over the items of any sequence, such as a list or a string.
+- Each item in the sequence is assigned to the iterating variable, which can be any variable.
+- The ~for~ loop completes when the last of the elements has been assigned to the iterating variable, or when the entire sequence is exhausted.
+
+*** Syntax
+#+begin_src python
+for i in range(10):
+    print("i is", i)
+
+for char in "Hello World!":
+    print("Current char is", char)
+
+for drink in ("coffee", "tea", "milo"):
+    print("Current drink is", drink)
+#+end_src
+
+*** For-else
+#+begin_src python
+for i in range(10):
+    print("i is", i)
+else:
+    print("Done looping")
+#+end_src
+
+*** For-else-break
+#+begin_src python
+for i in range(10):
+    if i == 5:
+        break
+    print("i is", i)
+
+# This else statement is skipped as
+# the loop is broken out of when i is 5
+else:
+    print("Done looping")
+#+end_src
+
+*** For-else-break-continue
+#+begin_src python
+for i in range(10):
+    if i == 5:
+        break
+    if i == 3:
+        print("It's a three!")
+        continue
+
+    # This print statement is skipped when i is 3
+    print("i is", i)
+
+# This else statement is skipped as
+# the loop is broken out of when i is 5
+else:
+    print("Done looping")
+#+end_src
+
+** Pass statement
+- The ~pass~ statement has no effect (it does nothing) but it helps in indicating an *empty* statement, suite, or block.
+- Use the ~pass~ statement when you have to put something in a statement (syntactically, you cannot leave it blank or Python will complain), but what you really want is nothing.
+- Python has the syntactical requirement that code blocks after ~if~, ~for~, ~while~, ~except~, ~def~, ~class~, etc cannot be empty.
+- It can be used to *test a statement*, like opening a file or iterating through a collection to see if it works.
+- You can also use ~pass~ as a placeholder.
+
+*** Syntax
+#+begin_src python
+for i in range(10):
+    pass
+#+end_src
+
+** Method in general
+#+begin_src python
+object.method()
+#+end_src
+
+@@latex: \noindent@@ We say that ~object~ is calling the method ~method~.
+
+
+** Whitespace
+Python counts the "Tab", "Space bar" and "Enter" as white spaces.
+- The purpose of whitespace is to separate words in a statement.
+- For the most part, you can place white spaces anywhere in your program to make the code more readable.
+
+** Indentation
+An indentation is a leading whitespace at the start of a statement. In Python, a group of indented statements is called a *suite* or a *block*. A *compound statement* is a set of statements being used as a group.
+
+Purpose of indentation:
+- Makes the code more readable
+- For grouping, particularly for control flow such as branching and looping
+
+** Modulus operator (Remainder operator) (~%~)
+Returns the remainder of the division of the left operand by the right.
+
+*** Syntax
+#+begin_src python
+x % y
+#+end_src
+
+@@latex: \noindent@@ The remainder of ~x/y~.
+
+*** Example
+#+NAME: modulus
+#+begin_src python :results output :exports both
+print(8 % 3)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: modulus
+: 2
+
+\newpage
+
+** Arithmetic operators
+
+#+ATTR_LATEX: :environment tabular :align |c|m{32em}|
+|----------+--------------------------------------------------------------------------------------------------------------------------------|
+| Operator | Meaning                                                                                                                        |
+|----------+--------------------------------------------------------------------------------------------------------------------------------|
+| /        | <                                                                                                                              |
+| ~+~      | Add two operands or unary plus                                                                                                 |
+|----------+--------------------------------------------------------------------------------------------------------------------------------|
+| ~-~      | Subtract the right operand from the left or unary minus                                                                        |
+|----------+--------------------------------------------------------------------------------------------------------------------------------|
+| ~*~      | Multiply two operands                                                                                                          |
+|----------+--------------------------------------------------------------------------------------------------------------------------------|
+| ~/~      | Floating point division: divide the left operand by the right one (always results in a ~float~)                                |
+|----------+--------------------------------------------------------------------------------------------------------------------------------|
+| ~%~      | Modulus: remainder of the division of the left operand by the right                                                            |
+|----------+--------------------------------------------------------------------------------------------------------------------------------|
+| ~//~     | Floor division (integer division): the resultant value is a whole integer, although the result's type is not necessarily ~int~ |
+|----------+--------------------------------------------------------------------------------------------------------------------------------|
+| ~**~     | Exponent: the left operant is raised to the power of the right operand                                                         |
+|----------+--------------------------------------------------------------------------------------------------------------------------------|
+
+** Augmented assignment operators
+
+| Shortcut | Equivalent  |
+|----------+-------------|
+| /        | <           |
+| ~x += 2~ | ~x = x + 2~ |
+| ~x -= 2~ | ~x = x - 2~ |
+| ~x /= 2~ | ~x = x / 2~ |
+| ~x *= 2~ | ~x = x * 2~ |
+| ~x %= 2~ | ~x = x % 2~ |
+
+** Chained comparisons
+In Python, chained comparisons work just like you would expect in a mathematical expression.
+
+*** Examples
+- ~0 <= x <= 5~ is the same as ~0 <= x and x <= 5~.
+- ~0 <= x <= 5 > 10~ is the same as ~0 <= x and x <= 5 and x > 10~.
+
+\newpage
+
+** Operator precedence
+| *Precedence* | *Associativity* | *Operator*                     | *Description*               |
+|--------------+-----------------+--------------------------------+-----------------------------|
+|            / | <               | <                              | <                           |
+|           18 | Left-to-right   | ~()~                           | Parentheses (grouping)      |
+|           17 | Left-to-right   | ~f(args...)~                   | Function call               |
+|           16 | Left-to-right   | ~x[index:index]~               | Slicing                     |
+|           15 | Left-to-right   | ~x[index]~                     | Indexing an array           |
+|           14 | Right-to-left   | ~**~                           | Exponentiation              |
+|           13 | Left-to-right   | ~~x~                           | Bitwise not                 |
+|           12 | Left-to-right   | ~+x~                           | Positive                    |
+|           12 | Left-to-right   | ~-x~                           | Negative                    |
+|           11 | Left-to-right   | ~*~                            | Multiplication              |
+|           11 | Left-to-right   | ~/~                            | Division                    |
+|           11 | Left-to-right   | ~%~                            | Modulo (Remainder operator) |
+|           10 | Left-to-right   | ~+~                            | Addition                    |
+|           10 | Left-to-right   | ~-~                            | Subtraction                 |
+|            9 | Left-to-right   | ~<<~                           | Bitwise left shift          |
+|            9 | Left-to-right   | ~>>~                           | Bitwise right shift         |
+|            8 | Left-to-right   | ~&~                            | Bitwise AND                 |
+|            7 | Left-to-right   | ~^~                            | Bitwise XOR                 |
+|            6 | Left-to-right   | \vert                          | Bitwise OR                  |
+|            5 | Left-to-right   | ~in~, ~not in~, ~is~, ~is not~ | Membership                  |
+|            5 | Left-to-right   | ~<~, ~<=~, ~>~, ~>=~           | Relational                  |
+|            5 | Left-to-right   | ~<>~, ~==~                     | Equality                    |
+|            5 | Left-to-right   | ~!=~                           | Inequality                  |
+|            4 | Left-to-right   | ~not x~                        | Boolean NOT                 |
+|            3 | Left-to-right   | ~and~                          | Boolean AND                 |
+|            2 | Left-to-right   | ~or~                           | Boolean OR                  |
+|            1 | Left-to-right   | ~lambda~                       | Lambda expression           |
+
+\newpage
+
+* Documentation for Python functions
+
+** ~input~
+~input~ is a built-in function in Python to get an input.
+- It prints the message string on the screen and waits until the user types anything and presses "Enter".
+- It returns a *string* no matter what is given, even a number.
+
+*** Usage
+#+begin_src python
+user_input = input("Please enter an input: ")
+#+end_src
+
+#+RESULTS:
+
+@@latex: \noindent@@ ~user_input~ will be a *string*.
+
+** ~print~
+~print~ is another built-in function in Python that displays related messages and data on the shell screen. It uses a *comma* to separate the elements.
+
+#+NAME: print
+#+begin_src python :results output :exports both
+a = 1
+b = 2
+print("a is", a, "and b is", b)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: print
+: a is 1 and b is 2
+
+*** ~sep~ parameter (optional)
+~sep~ takes a *string* that specifies what *string* to use to separate the objects passed to the function, if there is more than one. It defaults to a space character, " ".
+
+#+NAME: sep
+#+begin_src python :results output :exports both
+a = 1
+b = 2
+print("a is", a, "and b is", b, sep=" @ ")
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: sep
+: a is @ 1 @ and b is @ 2
+
+*** ~end~ parameter (optional)
+~end~ takes a *string* that specifies what the end of the printed string should be. It defaults to a new line "=\n=".
+
+#+NAME: end
+#+begin_src python :results output :exports both
+print("Hello world!")
+print("My first program.")
+print("Hello world!", end=" ")
+print("My first program.")
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: end
+: Hello world!
+: My first program.
+: Hello world! My first program.
+
+** ~range~
+~range([start], end[, step])~
+- ~start~ is the starting number of the sequence. The default value is 0.
+- ~end~ is the number to generate numbers up to, but not including this number.
+- ~step~ is the difference between each number in the sequence. The default value is 1.
+
+*** ~range(end)~
+- Python sets ~start~ to 0 and ~step~ to 1.
+
+#+NAME: range-end
+#+begin_src python :results output :exports both
+print(list(range(11)))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: range-end
+: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+*** ~range(start, end)~
+- Python sets ~step~ to 1.
+
+#+NAME: range-start-end
+#+begin_src python :results output :exports both
+print(list(range(1, 11)))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: range-start-end
+: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+*** ~range(start, end, step)~
+
+#+NAME: range-start-end-step
+#+begin_src python :results output :exports both
+print(list(range(1, 11, 2)))
+print(list(range(11, 2, -2)))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: range-start-end-step
+: [1, 3, 5, 7, 9]
+: [11, 9, 7, 5, 3]
+
+** ~ord~
+Takes a character as input and returns the Unicode of the character. For standard symbols, this is the same as in ASCII.
+
+#+NAME: ord
+#+begin_src python :results output :exports both
+print(ord("a"))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: ord
+: 97
+
+** ~chr~
+Takes an ASCII or UTF-8 code and returns the corresponding character.
+
+#+NAME: chr
+#+begin_src python :results output :exports both
+print(chr(97))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: chr
+: a
+
+** String method: ~string.upper~
+This method will output a new string, which is the same as the string on which it was called, except all letters in the string will now be in uppercase.
+
+#+NAME: string-upper
+#+begin_src python :results output :exports both
+string = "Shouting!"
+print(string.upper())
+#+end_src
+
+- Object: ~string~
+- Method: ~upper()~
+- Method call: ~string.upper()~
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-upper
+: SHOUTING!
+
+
+** String method: ~string.find~
+- This method takes a single character and outputs the *index* of the character (first seen from left to right).
+- If the character is not found ~-1~ is returned.
+
+#+NAME: string-find
+#+begin_src python :results output :exports both
+string = "Find me!"
+print(string.find("m"))
+print(string.find("a"))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-find
+: 5
+: -1
+
+** String method: ~string.join~
+This method takes a *string* to be joined and outputs a new string where the base string joins the target string.
+
+#+NAME: string-join
+#+begin_src python :results output :exports both
+string1 = "1234"
+string2 = "abcd"
+print(string1.join(string2))
+print(string2.join(string1))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-join
+: a1234b1234c1234d
+: 1abcd2abcd3abcd4
