@@ -55,7 +55,7 @@ Algorithms are the method, procedure, or steps for solving a problem.
 - Consider all possible decision points (branching and looping)
 - Must terminate (no matter which representation is used)
 
-\newpage
+@@latex: \newpage@@
 
 ** Flow chart
 A representation of an algorithm using diagrams for effective visualisation.
@@ -145,9 +145,9 @@ A nested ~if~ statement is an ~if~ statement inside another ~if~ statement.
 ** Relational operators (~==, !=, <, <=, >, >=~)
 A relational operator compares two numbers (float or int) and returns a Boolean value of either True or False.
 
+#+ATTR_LATEX: :environment tabular :align c|c|c
 | Relational Operator | Meaning                  | Example  |
 |---------------------+--------------------------+----------|
-| /                   | <                        | <        |
 | ==                  | Equal to                 | a == 1   |
 | !=                  | Not equal to             | b != 2   |
 | <                   | Less than                | c < 3    |
@@ -166,14 +166,14 @@ A relational operator compares two numbers (float or int) and returns a Boolean 
 ** Logical operators (Boolean operators)
 Logical operators connect Boolean values and expressions and *return* a Boolean value as a result.
 
+#+ATTR_LATEX: :enviroment tabular :align c|c|c
 | Operator | Example                           | Meaning                             |
 |----------+-----------------------------------+-------------------------------------|
-| /        | <                                 | <                                   |
 | *not*    | *not* number < 0                  | Change True to False, or vice versa |
 | *and*    | (num1 > num2) *and* (num2 > num3) | Return True only if *both* are True |
 | *or*     | (num1 > num2) *or* (num2 > num3)  | Return True if *either* one is True |
 
-\newpage
+@@latex: \newpage@@
 
 ** Looping
 A computer program can dynamically choose how many times it repeats certain instructions during the program runtime.
@@ -199,7 +199,7 @@ A one-time execution of a loop body is referred to as an iteration of the loop.
 ** Nested loop
 A nested loop is a loop inside another loop. An outer loop may enclose an inner loop.
 
-\newpage
+@@latex: \newpage@@
 
 ** Abstraction
 - *Simplifies* things
@@ -254,7 +254,7 @@ print(string.upper().find("C"))
 : PYTHON IS COOL!
 : 10
 
-\newpage
+@@latex: \newpage@@
 
 * Program translations
 
@@ -278,7 +278,7 @@ print(string.upper().find("C"))
 - Program executes more slowly
 - Useful for implementing dynamic, interactive features, such as those used on web pages
 
-\newpage
+@@latex: \newpage@@
 
 ** Compilation approach
 - Uses a program called a compiler
@@ -379,7 +379,7 @@ It is dependent on the number of bits (n) used in its address bus. Memory size =
 - Instructions
 - Data
 
-\newpage
+@@latex: \newpage@@
 
 ** Information representation
 
@@ -406,7 +406,7 @@ It is dependent on the number of bits (n) used in its address bus. Memory size =
 3. Based on the rising or falling edges of the clock, the control unit (CU) will retrieve (fetch) the instruction from the default memory location.
 4. The control unit (CU) of a CPU is designed to recognise its own instructions and performs the corresponding operation.
 
-\newpage
+@@latex: \newpage@@
 
 ** Fetch
 Fetch the instruction from the memory into the instruction register (IR) using the address indicated by the program counter (PC).
@@ -417,7 +417,7 @@ Decode the machine instruction by the control unit, which is now stored in the i
 ** Execute
 Execute the instruction. For example, loading the operands into the arithmetic/logic unit (ALU) and get the ALU to operate on them.
 
-\newpage
+@@latex: \newpage@@
 
 * Data types in Python
 Python uses duck-typing to figure out the type of a variable.
@@ -437,7 +437,7 @@ Python uses duck-typing to figure out the type of a variable.
 - Do not use both single and double quotes to create a string.
 - Escape a quote by using the backslash character "\".
 
-\newpage
+@@latex: \newpage@@
 
 *** Index (~[]~)
 - Characters in a string are in a sequence
@@ -464,7 +464,7 @@ print(string)
 : l
 : Hello World
 
-\newpage
+@@latex: \newpage@@
 
 *** Slicing (~[:]~)
 ~[start : end : step]~
@@ -592,7 +592,7 @@ Floats represent real numbers and have a decimal point, like 2.8, 7.1 and 9.0001
 ** Boolean (~bool~)
 In most computer programming languages, a Boolean data type is a data type with only two possible values, either True or False.
 
-\newpage
+@@latex: \newpage@@
 
 * Python syntax
 
@@ -609,7 +609,7 @@ Python is sensitive to the end of line in text files, which marks the end of a s
 - The pound sign "#" in Python indicates a comment.
 - *Anything after "#"* is ignored during interpretation.
 
-\newpage
+@@latex: \newpage@@
 
 ** If statements
 - A colon must be used to mark the start of a block
@@ -645,7 +645,7 @@ else:
     print("b < a")
 #+end_src
 
-\newpage
+@@latex: \newpage@@
 
 ** While loops
 - The ~while~ statement allows repetition of a group of Python code as long as a condition (Boolean expression) is True.
@@ -694,7 +694,7 @@ else:
     print("Done looping")
 #+end_src
 
-\newpage
+@@latex: \newpage@@
 
 ** Continue statement
 - The ~continue~ statement skips some portion of the ~while~ block that we are executing and have control flow back to the beginning of the ~while~ loop.
@@ -714,7 +714,7 @@ while count < 10:
     print("count is", count)
 #+end_src
 
-\newpage
+@@latex: \newpage@@
 
 ** For loops
 - For loops have the ability to iterate over the items of any sequence, such as a list or a string.
@@ -826,7 +826,7 @@ print(8 % 3)
 #+RESULTS: modulus
 : 2
 
-\newpage
+@@latex: \newpage@@
 
 ** Arithmetic operators
 
@@ -834,7 +834,6 @@ print(8 % 3)
 |----------+--------------------------------------------------------------------------------------------------------------------------------|
 | Operator | Meaning                                                                                                                        |
 |----------+--------------------------------------------------------------------------------------------------------------------------------|
-| /        | <                                                                                                                              |
 | ~+~      | Add two operands or unary plus                                                                                                 |
 |----------+--------------------------------------------------------------------------------------------------------------------------------|
 | ~-~      | Subtract the right operand from the left or unary minus                                                                        |
@@ -852,9 +851,9 @@ print(8 % 3)
 
 ** Augmented assignment operators
 
+#+ATTR_LATEX: :environment tabular :align c|c
 | Shortcut | Equivalent  |
 |----------+-------------|
-| /        | <           |
 | ~x += 2~ | ~x = x + 2~ |
 | ~x -= 2~ | ~x = x - 2~ |
 | ~x /= 2~ | ~x = x / 2~ |
@@ -868,12 +867,13 @@ In Python, chained comparisons work just like you would expect in a mathematical
 - ~0 <= x <= 5~ is the same as ~0 <= x and x <= 5~.
 - ~0 <= x <= 5 > 10~ is the same as ~0 <= x and x <= 5 and x > 10~.
 
-\newpage
+@@latex: \newpage@@
 
 ** Operator precedence
+
+#+ATTR_LATEX: :environment tabular :align c|c|c|c
 | *Precedence* | *Associativity* | *Operator*                     | *Description*               |
 |--------------+-----------------+--------------------------------+-----------------------------|
-|            / | <               | <                              | <                           |
 |           18 | Left-to-right   | ~()~                           | Parentheses (grouping)      |
 |           17 | Left-to-right   | ~f(args...)~                   | Function call               |
 |           16 | Left-to-right   | ~x[index:index]~               | Slicing                     |
@@ -901,7 +901,7 @@ In Python, chained comparisons work just like you would expect in a mathematical
 |            2 | Left-to-right   | ~or~                           | Boolean OR                  |
 |            1 | Left-to-right   | ~lambda~                       | Lambda expression           |
 
-\newpage
+@@latex: \newpage@@
 
 * Documentation for Python functions
 
