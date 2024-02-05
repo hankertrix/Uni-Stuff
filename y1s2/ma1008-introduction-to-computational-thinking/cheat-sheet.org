@@ -392,7 +392,7 @@ It is dependent on the number of bits (n) used in its address bus. Memory size =
 - The k^{th} bit will have a weightage of 2^{k}.
 
 *** Hexadecimal format (base-16)
-- Hexadecimal symbols: 0, 1, 2, ..., 8, 9, A, B, C, D, E, F
+- Hexadecimal symbols: 0, 1, 2, ..., 8, 9, A (10), B (11), C (12), D (13), E (14), F (15)
 - Each hexadecimal is 4 binary bits
 - The binary format data is separated into groups of 4 bits:
   1011 0101 0110 1100 = B56C
