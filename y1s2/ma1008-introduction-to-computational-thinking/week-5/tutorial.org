@@ -235,7 +235,7 @@ def mathematical_sum_2(n: int) -> int:
         sum += i
 
         # Iterates from 0 to the current number i
-        for j in range(i):
+        for j in range(i + 1):
 
             # Add the current number j to the sum
             sum += j
@@ -261,7 +261,7 @@ fn mathematical_sum_2(n: i32) -> i32 {
         sum += i;
 
         // Iterates from 0 to the current number i
-        for j in 0..i {
+        for j in 0..=i {
 
             // Add the current number j to the sum
             sum += j;
