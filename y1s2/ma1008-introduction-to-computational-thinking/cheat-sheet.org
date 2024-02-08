@@ -1107,7 +1107,7 @@ print(string2.join(string1))
 : a1234b1234c1234d
 : 1abcd2abcd3abcd4
 
-\newpage
+@@latex: \newpage@@
 
 * ASCII Table
 
