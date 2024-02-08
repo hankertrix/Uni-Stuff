@@ -780,7 +780,7 @@ fn print_trianglular_pattern_of_lines() {
         // Prints the prompt
         print!(
             "Please enter the height of the triangular pattern: "
-            );
+        );
 
         // Flush the stdout
         std::io::stdout().flush().unwrap();
