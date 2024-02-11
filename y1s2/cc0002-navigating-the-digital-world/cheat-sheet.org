@@ -128,6 +128,30 @@ Cybersecurity maintains the confidentiality, integrity and availability of *syst
   - Passwords
   - Credit card details
 
+** Falsehoods
+A statement is false if it is false or misleading, whether wholly or in part, and whether on its own or in the context in which it appears.
+
+** Misinformation
+The inadvertent dissemination of false information.
+
+** Disinformation
+The intentional dissemination of false information.
+
+** Fake news
+A specific type of falsehood intentionally packaged to look like news to deceive others.
+
+** Confirmation bias
+Confirmation bias is the human tendency to seek and believe in information that confirms our existing beliefs.
+
+** Informational apathy
+Informational apathy refers to people not bothering to take an action to correct fake news that they see on social media sites.
+
+** Verification
+The process of evaluating the veracity of a story before it becomes the news.
+
+** Fact-checking
+A process that occurs post publication and compares an explicit claim made publicly against trusted sources of facts.
+
 
 * Computational thinking competencies
 
@@ -417,3 +441,212 @@ Because cyberspace is a dynamic environment with evergreen challenges, there is 
 - Be wary of URL links provided in unsolicited text messages.
 - Always verify the authenticity of the information with official sources, such as official websites.
 - Never disclose personal or internet banking information and one-time passwords (OTP).
+
+
+* Fake news
+A specific type of falsehood intentionally packaged to look like news to deceive others.
+
+** Examples
+- Political satire
+- Advertising
+- News parody
+- Manipulation
+- Propaganda
+- Fabrication
+
+** As true fake news
+- A knowingly false headline and story is written and published on a website that is designed to look like a real news site, and is spread via social media.
+- News stories that were fabricated and promoted on social media in order to deceive the public for ideological or financial gain.
+- News articles that are intentionally and verifiably false, and could mislead readers.
+- Fake news takes advantage of what we associate with real news, including language, structure and the layout of a page.
+- Fake news has always been around, it is just far more prevalent in the digital age.
+- A survey of a thousand Singapore residents in December 2019 showed that higher social media news use resulted in a higher likelihood to believe in fake news.
+- Those who actively avoid news about COVID-19 are more likely to believe in misinformation as well.
+- 18% - 25% of Singaporeans thought some of the viral false claims in Singapore were true.
+
+** Motivations
+
+*** Financial
+- Attracting clicks
+- Advertising revenue
+
+*** Ideological
+- Personal agenda
+- Weapons of mass misinformation
+
+** What makes people vulnerable?
+
+*** Sender
+- Credible or familiar?
+- Trustworthy or similar?
+- Proximate or distal?
+
+*** Receiver
+- Confirmation bias
+- Motivations
+- Corrections
+
+*** Message
+- Format
+- Plausibility
+
+*** Context
+- Information overload
+- Instability
+
+*** Channel
+- Trusted or depended on?
+- Closed or open?
+- Feedback
+
+** Who is the actual source of the message?
+
+*** Original source
+Original source refers to the creator of the message.
+
+*** Immediate source
+Immediate source refers to the source that a person received a message from.
+
+*** Invisible sources
+Invisible sources are sources that are not immediately visible to people who receive the message. It is usually the sources for the message itself, like interviewees, references from other sources, etc. It can also be the original source when the message has been forwarded or shared many times, such that the original source becomes invisible.
+
+*** Trusted source
+Trusted sources are sources that people trust, be it their friends, or a news site.
+
+*** Disregarded sources
+Disregarded sources are sources that people don't trust, and hence dismiss the sources' claims, even if they may be true.
+
+** Message characteristics to take note
+- Plausible?
+- Mentions experts?
+- Conversational tone?
+- Stirs emotion?
+- Asks you to forward or has call to action?
+
+** Channels where information flows are conducive to fake news
+- Popularity cues
+- People rely on the channels
+- Lack of gatekeeping
+- Information overload
+
+** Informational apathy
+Informational apathy refers to people not bothering to take an action to correct fake news that they see on social media sites. This is the case for most people.
+
+*** Reasons for being apathetic
+- The issue isn't relevant
+- Protecting interpersonal relationships
+- Personal inefficacy, people believe that even if they correct the fake news, there's nothing that will come out of it
+
+** The consequences of fake news
+
+*** Short-term effects
+- Fake news affects political decisions
+- Businesses are negatively impacted by fake news
+- Peace and order are sometimes disrupted by fake news
+- Fake news can hurt personal reputation
+
+*** Long-term effects
+- Devaluation of information
+- Erosion of trust in institutions
+- Larger social divisions
+- Chilling effect, where the press or news outlets just report positive news regarding a certain entity when the entity labels them as fake news
+
+** How do we authenticate information?
+
+*** Internal acts of authentication
+- The self: Using one's own intuition to judge if some information is fake.
+- The source: Check if the source is reliable, for example, an article from an established media company is generally more factually correct than one from a relatively unknown news site.
+- The message: Check the tone of the news article to see if it's polemical or deliberately misleading or false to arouse emotions.
+- Message cues: The presence of a lot of likes or dislikes on the message, the number of negative comments versus positive comments, etc.
+
+*** External acts of authentication
+- Incidental and interpersonal: Asking friends or relatives for their opinion on the matter.
+- Incidental and institutional: Waiting for a follow-up post to correct the mistakes or to clarify certain things that may have been misunderstood.
+- Intentional and interpersonal: Contacting a reliable group of people to verify the information.
+- Intentional and institutional: Searching for the title of the report to see if there are similar reports on mainstream news outlets.
+
+** Authentication is a social process
+
+*** Motivations for authenticating
+- Self-image, as we don't want to show our friends and family members that we have questionable beliefs.
+- Group cohesion, to maintain good relationships with others.
+
+*** Strategies of authentication
+- Group beliefs, "deep stories"
+- Source affiliation
+- Sharing as authenticating
+
+*** Consequences of authentication
+- Institutionalisation of interdependence
+- Ritualisation of collective authentication
+
+** Gamifying interventions
+- "Go viral!" is a 5-minute game that helps protect people from COVID-19 misinformation.
+- "Bad News" is another game that helps people identify fake news.
+
+** Singapore's Protection from Online Falsehoods and Manipulation Act (POFMA)
+An Act to prevent the electronic communication in Singapore of false statement of fact, to suppress support for and counteract the effects of such communication, to safeguard against the use of online accounts for such communication and for information manipulation, to enable measure to be taken to enhance transparency of online political advertisements, and for related matters.
+
+*** What is true and what is false?
+- A statement of fact is a statement which a reasonable person seeing, hearing or otherwise perceiving it would consider to be a representation of fact.
+- A statement is false if it is false or misleading, whether wholly or in part, and whether on its own or in the context in which it appears.
+
+*** What constitutes communicating?
+A statement or material is communicated in Singapore if it is made available to one or more end-users in Singapore on or through the internet, MMS or SMS.
+
+*** What is "in the public interest"?
+- It is in the interest of the security of Singapore or any part of Singapore.
+- It is to protect public health or public finances, or to secure public safety or public tranquillity.
+- It is in the interest of friendly relations of Singapore with other countries.
+- It is to prevent any influence of the outcome of an election to the office of President, a general election of Member of Parliament, a by-election of a Member of Parliament, or a referendum.
+- It is to prevent incitement of feelings of enmity, hatred or ill-will between different groups of persons
+- It is to prevent a diminution of public confidence in the performance of any duty or function of, or in the exercise of any power by, the Government, an Organ of State, a statutory board, or a part of the Government, an Organ of state or a statutory board.
+
+** Tech companies' interventions
+- Supporting third-party fact-checkers and journalists
+- Promoting media literacy among users
+- Reducing financial incentives for content producers
+- Implementing new features to flag content
+- Deleting posts and removing accounts
+
+** Fact-checking
+- A process that occurs post publication and compares an explicit claim made publicly against trusted sources of facts.
+- 21% of Singaporeans said that they use fact-checking sites often or very often.
+- Younger Singaporeans are using fact-checking sites more often than older Singaporeans.
+
+*** Fact-checking sites
+- Politifact
+- Snopes
+- AFP
+- Blackdot research
+- Vera files
+- Cofacts
+- Social media hoax slayer
+
+*** Types of fact-checkers
+- Affiliated with news organisations
+- Government-owned
+- Independent organisation
+- Volunteer group
+- Individual
+
+*** Fact-checking tools
+- Monitor what's trending using software like CrowdTangle
+- Verify images using reverse image search or checking image metadata
+- Verify sites by checking their registration dates
+- Checking the weather
+- Using maps to verify a photo
+
+*** Ways to deliver a fact-checking message
+- Videos
+- Rating scales
+- Mixed accuracy statements
+- Truth sandwich
+
+*** What can the individual do?
+1. Reflect on our own information behaviour.
+2. Engage, rather than ignore.
+3. Strive to understand others.
+4. Use and support reliable and legitimate information sources.
+5. Maximise available resources.
+6. Equip ourselves with the proper tools and resources to fight fake news.
