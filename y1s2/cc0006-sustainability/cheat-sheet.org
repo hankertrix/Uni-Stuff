@@ -9,9 +9,12 @@
 The ability for something to sustain itself.
 
 ** Sustainable development
-Sustainable development is development that meets the needs of the present without compromising the ability of future generations to meet their own needs.
-
-This is the definition used in CC0006.
+- Sustainable development is development that meets the needs of the present without compromising the ability of future generations to meet their own needs.
+- Sustainable development aims for a world in which:
+  - Economic growth is widespread.
+  - Extreme poverty is eradicated.
+  - Community is strengthened through relevant policies that promote social trust and equal opportunities for everyone.
+  - The environment is protectued from human-induced degradation.
 
 *** Necessary conditions to achieve sustainable development
 1. We need to know what the needs of the present are.
@@ -105,6 +108,25 @@ Food accessibility refers to adequate access to food resources for a nutritious 
 
 ** Global food system
 The global food system is the sum of actors, sectors and interactions along the food value chains, which includes research and development, input supply, production, harvesting, storage, transportation, processing, retailing, wholesaling, preparation, consumption and the disposal of food.
+
+** Economy
+The economy constitutes of two simple blocks, production and consumption. Minerals and other natural resources from the environment are used for production. The waste material from our consumption is then sent back to the environment. Hence, we are completely dependent on the environment for our survival on Earth.
+
+** Greenhouse effect
+The greenhouse effect is a natural process tha makes life possible on Earth. The effect is as follows:
+- Some solar radiation is reflected by the Earth and the atmosphere.
+- Most radiation is absorbed by the Earth's surface and warms it.
+- Some of the infrared radiation passes through the atmosphere, and some is absorbed and re-emitted in all directions by greenhouse gas molecules. The effect of this is to warm the Earth's surface and the lower atmosphere.
+- Infrared radiation is emitted by the Earth's surface.
+
+Generally, the greater the amount of greenhouse gases in the atmosphere, the warmer the planet is.
+
+*** Ramping up the greenhouse effect
+- Burning excessive amounts of fossil fuels adds an excessive amount of carbon dioxide to the air.
+- Greenhouse gases are trapping much more heat than required, which increases the average global temperature.
+
+** Energy poverty
+Energy poverty is the lack of access to sustainable and modern energy services and products.
 
 
 * The complexity of sustainable development
@@ -587,3 +609,157 @@ Ecosystems are preserved and can deliver their services, on which both nature an
 *** Deep Tunnel Sewerage System (DTSS)
 - By 2050, whenever you flush the toilet, take a shower, or wash the dishes, the used water will flow into the underground network of tunnel sewers and be channelled by gravity to one of the 3 coastal water reclamation plants for treatment.
 - When completed, the DTSS will shrink the land area occupied by used water infrastructure by 50% and collect every drop of used water for treatment and purification.
+
+
+* Energy and greenhouse gas emissions
+- Present global carbon dioxide emissions are about 180 times higher than in 1850.
+- In 2000, 23 to 24 million tons of CO_{2} were emitted. In 2020, this amount has reached 35 million tons, which is an increase of almost 50% within 20 years.
+- All these carbon dioxide emissions are going into the Earth's atmosphere and increasing the atmospheric concentration of CO_{2}. The unit used to measure the concentration of CO_{2} is parts per million or ppm, which is the number of molecules of CO_{2} present in every 1 million molecules of air.
+- The atmospheric concentration of CO_{2} in 2019 was higher than any other time in the last 2 million years.
+- There are 6 major greenhouse gases, CO_{2}, methane nitrous oxides and 3 fluorinated gases.
+- There are three main factors to analysing the impact of greenhouse gases, which are:
+  - Concentration, which refers to the amount of the gas present in the atmosphere.
+  - Lifetime, which refers to how long the gas stays in the atmosphere. Most greenhouses gases remain in the atmosphere for thousands of years. CO_{2} stays in the atmosphere for much longer as compared to other gases.
+  - Global warming potential, which refers to how capable the gas is in trapping heat. The global warming potential of methane is much higher than CO_{2}.
+
+- When all factors are taken into account, CO_{2} is determined to be the main driver of climate change.
+- 76% of global greenhouse gas emissions are caused by carbon dioxide.
+- Almost 44% of global CO_{2} emissions come from electricity and heat generation. The next major contributor is the transport sector.
+- Fossil fuels, such as coal, oil and gas are predominantly used to generate electricity and heat and power transportation vehicles, which contributes massively to CO_{2} emissions.
+- Most fossil fuels have carbon as their main component. For example, coal is almost fully carbon and we burn it to generate energy. During the combustion process, the carbon in the coal combines with oxygen in the air to form carbon dioxide, which releases energy.
+- The Intergovernmental Panel on Climate Chage (IPCC) suggests limiting the global temperature increase to 1.5 degrees centigrade above pre-industrial levels.
+- The present temperature increase is about 1.1 degrees centigrade above pre-industrial levels.
+- Adverse consequences of climate change like extreme weather events and sea-level rise are already being experienced.
+- Some of the major impacts of climate change can be avoided by limiting the temperature increase to 1.5 degrees centigrade.
+- Going above the 1.5 degree limit can result in long-lasting and irreversible damage, such as losing some ecosystems like forests and marine ecosystems for good.
+- Forests act as carbon sinks, which means they act like a sponge and soak up carbon emissions.
+- Since the 1960, forests have soaked up about 25% of total CO_{2} emissions contributed by fossil fuel burning.
+- The Amazon rainforest is the world's largest tropical rainforest, but deforestation and climate change are affecting the Amazon rainforest's ability to soak up carbon.
+- Significant parts of the Amazon rainforest have started emitting more CO_{2} than they absorbed.
+- Around 700 million people still don't have access to electricity.
+- 10% of the world's population (roughly 734 million people) live in extreme poverty.
+- About 690 million people globally are undernourished and about 14 million children under the age of 5 suffer from severe acute malnutrition.
+- We need to grow in a way such that everyone in the world has access to clean, affordable and sustainable energy so that no one lives in extreme poverty and no child suffers from malnutrition.
+
+** Effects of global warming
+- Global warming leads to climate change. When there is an increase in the conccentration of CO_{2} in the atmosphere, the global temperature increases. This leads to adverse effects such as:
+  - Increased frequency and intensity of hot extremes
+  - Marine heatwaves
+  - Heavy precipitation
+  - Reductions in Arctic sea ice and snow cover
+  - Extreme weather
+  - Negatively impacts food production
+  - Negatively impacts water supply
+  - Negatively impacts human health
+
+- Climate-fuelled disasters killed 475,000 people between 2000 and 2019 and which resulted in more than $2.50 trillion lost.
+- From 1980 to 1999, more than 4,000 natural disasters were reported resulting in 1.19 million deaths and losses of $1.5 trillion. From 2000 to 2019, these numbers have risen to 7,400 natural disasters resulting in 1.23 million deaths and losses of about $3 trillion.
+- The frequency and intensity of extreme weather events and natural disasters have increased tremendously.
+- Climate change will impact everyone. However, richer countries are more able to deal with the impact of climate change compared to poorer countries as richer countries have more resources, a skilled workforce, a better system in place, a well-functioning government and access to advanced technologies to deal with the impacts of climate change.
+
+
+* Sustainable development goals (SDG)
+- SDG 1: End extreme poverty.
+- SDG 7: Ensure access to affordable, sustainable and modern energy for all, as well as end energy poverty.
+- SDG 8: Decent work and economic growth for all, which means raising incomes per person in poor countries and allow them to narrow the gap with high-income countries.
+- SDG 11: Make cities and human setllements sustainable through decarbonisation and sustainability.
+- SDG 13: Take urgent action to combat climate change.
+
+
+* Energy
+- In 2010, 1.2 billion people did not have access to electricity, and this number decreased to 771 million in 2020.
+- Electricity, which was invented back in the 19th century, still has not reached millions of people.
+- The Organisation for Economic Co-operation and Development (OECD) countries use much more energy per person than the global average, while people in Africa and Asia still live in the dark.
+
+
+* Possible actions to tackle climate change
+- Advanced technologies, clean energy, and behaviour change is the first step towards decarbonisation of the economy.
+
+** Mitigation
+Mitigation is essential and is our only shot to deal with climate change. The two methods to mitigate climate change are energy efficiency and low carbon transition.
+
+*** Low carbon transition
+- Low carbon transition means transitioning to an economy where as little carbon is used as possible.
+- There are two ways to achieve a low carbon transition
+  1. Decarbonising the energy system, which is to produce and use energy with lower emissions of carbon dioxide.
+  2. Making shifts in sectors of the economy that contribute a lot to greenhouse gas emissions, such as transport. Instead of using diesel or petrol powered vehicles, electric vehicles or vehicles powered by other clean fuels, such as hydrogen fuel, should be used instead.
+
+- A low carbon transition cannot happen overnight, as most of the world's energy is still produced by fossil fuels.
+- These plants also generate plenty of employment, so there is no way to shut them down overnight. It will take some time and must happen gradually.
+- Cutting edge technologies that reduce the carbon footprint of these fossil fuel power generation systems can help a lot. For example, carbon capture and storage can capture CO_{2} on-site and store it in an underground storage site for a longer term.
+- There are still some technical and financial challenges to using these technology.
+- Innovation will play a crucial role in ensuring our success in emission mitigation.
+
+*** Clean sources of energy
+1. Solar thermal energy: Using direct sunlight to heat water or air and using this fluid for residential or industrial purposes. Some examples include solar-powered water heaters and solar-powered swimming pools.
+2. Concentrated solar thermal energy: Concentrating sunlight at a point to heat fluids, and ultimately high pressure vapour, which are then used to drive turbines to generate electricity.
+3. Solar photovoltaics (PV): Generate electricity using photovoltaics panels.
+4. Passive solar heating: Use the Sun to naturally heat the buildings.
+5. Onshore wind energy: Land-based wind farms.
+6. Offshore wind energy: Wind farms in bodies of water, where the wind speed is much higher. Offshore wind farms are more expensive than their onshore counterparts, but the cost has decreased substantially in the recent years and is projected to decrease even further.
+7. Hybrid system: A system consisting of a combination of solar photovoltaics and wind turbines. Sunlight is available during the day while wind speed is higher at night, and hence both sources of energy complement each other well.
+8. Run-of-river hydropower
+9. Storage hydropower systems
+10. Pumped storage hydropower systems
+11. Wave energy
+12. Tidal energy
+13. Geothermal energy
+14. Energy from biomass
+15. Nuclear energy
+16. Energy from hydrogen fuel
+
+*** Benefits of renewable energy
+- We have the dual challenge of reducing our emissions and ensuring access to sustainable and modern energy for all.
+- Renewable energy can address both challenges as it doesn't run out, never emits greenhouse gases, saves money in most cases, and has the potential to generate massive employment.
+- The renewable power industry employs 12 million people in 2020. Solar photovoltaics leads the field with about 4 million jobs.
+- This employment number will likely increase as we move towards renewable energy.
+- These jobs are green jobs and they also ensure much-needed access to electricity in remote and energy-poor communities.
+- Renewable power plants can be installed at a much smaller scale and decentralised operation is also possible, which means that the power plants don't have to be connected to a large power grid. This makes it possible to supply electricity to remote locations.
+- Prices of renewable energy is relatively immune to market fluctuations.
+- The recent surge in natural gas prices raised electricity tariffs in many countries, including Singapore. Many retail electricity companies shut down their operations in Singapore due to not being able to supply electricity at previously-promised prices.
+- Using renewable energy might safeguard us from such fluctuations, especially for countries that are heavily dependent on imported fuels for electricity generation, such as Singapore.
+- Some renewable energy systems have already reached grid parity, which means generating electricity through solar photovoltaics costs the same as generating electricity from conventional sources.
+
+*** Challenges of renewable energy
+- Renewable energy sources are intermittent, which means that they are not available all the time.
+- The sun doesn't shine at night and the wind doesn't always blow at the same speed.
+- This creates the need to store energy whenever it is available, which increases the cost of these systems.
+- Renewable energy needs a lot of land area and some countries do not have much free land to spare, such as Singapore. These countries will need to be more innovative in their approach to using renewable sources of energy, such as using rooftop spaces, water bodies and generating electricity in neighbouring countries and transmitting it to their own countries may be some typical solutions.
+- In the beginning, people found wind turbines to be ugly and raised many other objections against renewable energy.
+- However, public awareness and acceptability have improved over time.
+- Massive investment in research and development is needed to help overcome all the technical and financial challenges of renewable energy.
+
+*** Energy efficiency
+- Greater energy output per unit of energy input.
+- Use of technologies, systems or methods that require less energy for perform the same task, eliminating energy waste.
+- Energy applicances convert energy sources into other useful energy services, such as lighting, cooling or heating.
+- During this conversion, some energy is lost, which should be reduced, as reducing this loss would mean that the energy efficiency of the system has improved.
+- Energy-efficient household appliances are now available on the market and consumers have the option to buy an energy efficient air-con, refrigerator, light bulbs, and other devices.
+- Enormous amounts of energy can be saved in heating, cooling, ventilating, and other applications by using energy-efficient appliances.
+- Energy efficiency helps to reduce greenhouse gas emissions as less energy is used to perform a certain task.
+- When less energy is used, the demand for energy decreases at a country level, which might be a relief for countries, specifically the ones that are heavily on imported energy, like Singapore. Singapore imports almost all the gas it uses to generate electricity.
+- Energy-efficient systems save money in the long term.
+- The upfront cost of energy-efficient systems is relatively higher. For example, an energy-efficient refrigerator will cost more than a conventional refrigerator.
+- However, over the lifetime of the appliance, money is saved due to the reduction in the electricity used.
+- There is a potential to adopt energy efficient systems in almost every sector of the economy, such as buildings, households, transport, or even electricity generation. Some examples include:
+  - Zero energy buildings: Buildings that have increased energy efficiency and use renewable energy.
+  - Efficient energy generation and distribution.
+  - Efficient vehicles.
+  - Behaviour change: Use less energy, adopt energy-efficient appliances, cut wastage. For example, using the air-con for 4 hours instead of 5 hours, switching off appliances when they are not in use, taking shorter showers to save water as well as electricity.
+  - Long-distance freight transport, maritime and shipping.
+
+- Technology alone is insufficient to solve the problem of climate change. No matter how many advanced technologies we have, if we don't mitigate emissions by changing our behaviour, adopting clean energy and energy-efficient systems, and making a shift in our consumption, there is a lower likelihood of solving the problem of climate change.
+- Renewable energy adoption remains low, at 29% of our total electricity generation. The remaining 71% is still being produced by fossil fuels.
+- Energy-efficiency improvement is much lower that the required number for the sustainable development scenario.
+- Policies that push the adoption of clean energy and energy efficiency a bit faster are needed.
+
+** Adaptation (climate resilience)
+- Adaptation keep us safe and buy us some time until we implement mitigation measures to slow down climate change and ultimately eliminate it.
+- The objective is to reduce our exposure to climate risks.
+- Some examples include:
+  - Building new flood defences and barriers against storm surge.
+  - Protecting crops from high temperatures and droughts.
+
+** Policies
+- Policy instruments may help to accelerate the adoption of clean energy and the overall decarbonisation of teh economy.
+
