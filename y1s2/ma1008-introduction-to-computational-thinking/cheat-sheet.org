@@ -2637,13 +2637,13 @@ new_dic = {
     "bill": 50,
     "petrol": 20
 }
+dic.update(new_dic)
 print(dic)
 #+end_src
 
 @@latex: \noindent@@ Output:
 
 #+RESULTS: dict-update
-: None
 : {'bill': 50, 'tax': 3, 'petrol': 20}
 
 @@latex: \newpage@@
