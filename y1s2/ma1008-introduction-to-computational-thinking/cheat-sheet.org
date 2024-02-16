@@ -254,6 +254,35 @@ print(string.upper().find("C"))
 : PYTHON IS COOL!
 : 10
 
+** Composite type
+- Composite type is a data type which is constructed (composed) using primitive and other composite types.
+- A composite type is basically a new data type that is made from existing ones.
+- Some examples in Python include tuples, lists, dictionaries (hash maps in most other programming languages) and strings.
+
+** Data structures
+- They have particular ways of storing data to make some operations easier or more efficient.
+  - They are tuned for certain tasks, and they are often associated with algorithms.
+- Different data structures have different characteristics.
+  - One suited to solving a *certain problem* may not be suited for another problem.
+- A few examples include arrays, linked lists, hash maps and trees.
+
+*** Built-in data structures
+Data structures that are so common that they are provided by most programming languages by default.
+
+*** User-defined data structures
+Data structures (classes in object-oriented programming) that are designed for a particular task.
+
+** Mutability
+The ability to change.
+
+** Mutable
+- After creation of the object, the object *can* be changed.
+- *Lists* are mutable as you *can* change them after creating them.
+
+** Immutable
+- After creation of the object, the object *cannot* be changed.
+- *Strings* are immutable as you *cannot* change them after creating them.
+
 @@latex: \newpage@@
 
 * Program translations
@@ -431,7 +460,7 @@ Python uses duck-typing to figure out the type of a variable.
 3. The objects we wish to represent in a computer program are of different types in nature and require different data types.
 
 ** String (~str~)
-- It is a sequence, typically a sequence of characters delimited by single quotes or double quotes.
+- It is a sequence, typically a sequence of characters delimited by single quotes ~'~ or double quotes ~"~.
 - The sequence of characters is important and is maintained.
 - Use either single or double quotes to create a string.
 - Do not use both single and double quotes to create a string.
@@ -445,6 +474,7 @@ Python uses duck-typing to figure out the type of a variable.
 - We can index a character from either end of the sequence.
   - Non-negative values: counting from left, starting at 0
   - Negative values: counting from right, starting at -1
+- The index operator is always at the end of the expression and is preceded by something, either a variable or a sequence.
 
 We can use ~[]~ to access particular characters in a string.
 #+NAME: string-indexing
@@ -454,6 +484,7 @@ print(string[0])
 print(string[1])
 print(string[-2])
 print(string)
+print("omg wow"[4])
 #+end_src
 
 @@latex: \noindent@@ Output:
@@ -463,10 +494,11 @@ print(string)
 : e
 : l
 : Hello World
+: w
 
 @@latex: \newpage@@
 
-*** Slicing (~[:]~)
+*** Slice (~[:]~)
 ~[start : end : step]~
 - ~start~ is the index of the start of the subsequence.
 - ~end~ is the index of the end of a subsequence (not included).
@@ -479,6 +511,7 @@ print(string[1:4])
 print(string[::2])
 print(string[::-2])
 print(string[0:14:-1])
+print("omg wow"[2:6])
 #+end_src
 
 @@latex: \noindent@@ Output:
@@ -488,8 +521,9 @@ print(string[0:14:-1])
 : HloWrd
 : drWolH
 :
+: g wo
 
-*** Length of a string (~len~)
+*** Length (~len~)
 #+NAME: length-of-a-string
 #+begin_src python :results output :exports both
 string = "Hello World"
@@ -501,7 +535,7 @@ print(len(string))
 #+RESULTS: length-of-a-string
 : 11
 
-*** Concatenate strings (~+~)
+*** Concatenation (~+~)
 #+NAME: concatenate-string
 #+begin_src python :results output :exports both
 string = "Hello World"
@@ -513,7 +547,7 @@ print(string + "!")
 #+RESULTS: concatenate-string
 : Hello World!
 
-*** Repeat string (~*~)
+*** Repeat (~*~)
 #+NAME: repeat-string
 #+begin_src python :results output :exports both
 string = "Hello World"
@@ -525,7 +559,7 @@ print(string * 3)
 #+RESULTS: repeat-string
 : Hello WorldHello WorldHello World
 
-*** Comparison of strings
+*** Comparison
 The ASCII or Unicode code obtained using the ~ord~ function is used to compare strings.
 #+NAME: string-comparison
 #+begin_src python :results output :exports both
@@ -564,7 +598,7 @@ print(string in string)
 
 *** Immutability
 - Strings are immutable, which means you cannot change a string after it has been created.
-  #+begin_src python
+  #+begin_src python :results none
   string = "spam"
   string[1] = "l"  # Error
   #+end_src
@@ -582,6 +616,694 @@ print(string in string)
   #+RESULTS: string-edit
   : slam
 
+@@latex: \newpage@@
+
+** Lists (~list~)
+- A list is an *ordered sequence of items*.
+- As with all data structures, lists have a *constructor* that is the same name as the data structure.
+- Lists are delimited with square brackets (~[]~).
+
+*** Creation
+Constructing a list or initialising a list both mean creating a list.
+
+- Creating an empty list
+  #+begin_src python :results none
+  l = list()
+  l = []
+  #+end_src
+
+- Creating a list from an iterable data structure, like a set, a tuple, or a string
+
+  #+NAME: list-create-from-iterable
+  #+begin_src python :results output :exports both
+  print("List from tuple: ", list((1, 2, 3, 4)))
+  print("List from set: ", list({1, 2, 3, 4}))
+  print("List from string: ", list("1234"))
+  #+end_src
+
+  @@latex: \noindent@@ Output:
+
+  #+RESULTS: list-create-from-iterable
+  : List from tuple:  [1, 2, 3, 4]
+  : List from set:  [1, 2, 3, 4]
+  : List from string:  ['1', '2', '3', '4']
+
+- Creating a list with predefined items
+  #+begin_src python :results none
+  l = [1, 2, 3, 4]
+  l = [1, 3.14159, "a", True]
+  #+end_src
+
+*** Index (~[]~)
+- Items in a list are in a sequence
+- We can identify each item in the list with a unique index (a position in the sequence).
+- We can index an item from either end of the sequence.
+  - Non-negative values: counting from left, starting at 0
+  - Negative values: counting from right, starting at -1
+- The index operator is always at the end of the expression and is preceded by something, either a variable or a sequence.
+
+We can use ~[]~ to access particular items in a list.
+#+NAME: list-indexing
+#+begin_src python :results output :exports both
+l = [1, "omg wow", 420.69, False]
+print(l[0])
+print(l[1])
+print(l[-2])
+print(l)
+print(["hey", 5, True][0])
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: list-indexing
+: 1
+: omg wow
+: 420.69
+: [1, 'omg wow', 420.69, False]
+: hey
+
+@@latex: \newpage@@
+
+*** Slice (~[:]~)
+~[start : end : step]~
+- ~start~ is the index of the start of the subsequence.
+- ~end~ is the index of the end of a subsequence (not included).
+- ~step~ specifies the step size to jump along the sequence.
+
+#+NAME: list-slicing
+#+begin_src python :results output :exports both
+l = [1, "omg wow", 420.69, False]
+print(l[1:4])
+print(l[::2])
+print(l[::-2])
+print(l[0:3:-1])
+print(["hey", 5, True, "lovely"][2:4])
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: list-slicing
+: ['omg wow', 420.69, False]
+: [1, 420.69]
+: [False, 'omg wow']
+: []
+: [True, 'lovely']
+
+*** Length (~len~)
+#+NAME: length-of-a-list
+#+begin_src python :results output :exports both
+l = [1, "omg wow", 420.69, False]
+print(len(l))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: length-of-a-list
+: 4
+
+*** Concatenation (~+~)
+#+NAME: concatenate-list
+#+begin_src python :results output :exports both
+l_1 = [1, "omg wow", 420.69, False]
+l_2 = ["Finger licking good!", True, "I'm loving it!"]
+print(l_1 + l_2)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: concatenate-list
+: [1, 'omg wow', 420.69, False, 'Finger licking good!', True, "I'm loving it!"]
+
+*** Repeat (~*~)
+#+NAME: repeat-list
+#+begin_src python :results output :exports both
+l = [1, "omg wow", 420.69, False]
+print(l * 2)
+l = [3]
+print(l * 5)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: repeat-list
+: [1, 'omg wow', 420.69, False, 1, 'omg wow', 420.69, False]
+: [3, 3, 3, 3, 3]
+
+*** Comparison
+- The items of a list are compared starting from the first item.
+- This means for the greater than, or less than operators, the list that has the higher value at the front of the list is considered to be greater than the list with the same value at the back of the list.
+- The boolean ~True~ is changed into 1 and the boolean ~False~ is changed to 0 comparing lists.
+- For two lists to be equal, all items in both lists must be the same, and have the same order.
+#+NAME: list-comparison
+#+begin_src python :results output :exports both
+print([4, 3, 2, 1] > [1, 2, 3, 4])
+print([4, 3, 2, 1] == [1, 2, 3, 4])
+print([True, 3, 2, 1] >= [1, 2, 3, 4])
+print([False, 2, 3, 4] <= [1, 2, 3, 4])
+print(["a", "list", "of", "strings"] <= ["string", "list"])
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: list-comparison
+: True
+: False
+: True
+: True
+: True
+
+*** Membership (~in~)
+~a in b~ is True if ~a~ is contained in the list ~b~.
+#+NAME: list-membership
+#+begin_src python :results output :exports both
+l = [1, "omg wow", 420.69, False]
+print(1 in l)
+print(420 in l)
+print("omg wow" in l)
+print("omg" in l)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: list-membership
+: True
+: False
+: True
+: False
+
+*** Minimum (~min~)
+- Gets the smallest element in the list.
+- Only applicable to *lists containing strings only* or *lists containing numeric values (~int~ and ~float~) and boolean values*.
+- The boolean ~True~ is changed into 1 and the boolean ~False~ is changed to 0 when evaluating the minimum of a list.
+
+#+NAME: list-min
+#+begin_src python :results output :exports both
+l_1 = [1, 2, 420.69, 699]
+l_2 = [1, 2, True, False]
+l_3 = ["ooo", "a", "list", "of", "Only", "Strings"]
+print(min(l_1))
+print(min(l_2))
+print(min(l_3))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: list-min
+: 1
+: False
+: Only
+
+*** Maximum (~max~)
+- Gets the largest element in the list.
+- Only applicable to *lists containing strings only* or *lists containing numeric values (~int~ and ~float~) and boolean values*.
+- The boolean ~True~ is changed into 1 and the boolean ~False~ is changed to 0 when evaluating the maximum of a list.
+
+#+NAME: list-max
+#+begin_src python :results output :exports both
+l_1 = [1, 2, 420.69, 699]
+l_2 = [1, 2, True, False]
+l_3 = ["ooo", "a", "list", "of", "Only", "Strings"]
+print(max(l_1))
+print(max(l_2))
+print(max(l_3))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: list-max
+: 699
+: 2
+: ooo
+
+*** Sum (~sum~)
+- Gets the sum of the elements of the list.
+- Only applicable to lists containing numeric values (~int~ and ~float~) and boolean values.
+- The boolean ~True~ is changed into 1 and the boolean ~False~ is changed to 0 when evaluating the maximum of a list.
+
+#+NAME: list-sum
+#+begin_src python :results output :exports both
+l_1 = [1, 2, 420.69, 699]
+l_2 = [1, 2, True, False]
+print(sum(l_1))
+print(sum(l_2))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: list-sum
+: 1122.69
+: 4
+
+*** Mutability
+Lists are mutable, which means you can change them after you create them.
+#+NAME: list-mutability
+#+begin_src python :results output :exports both
+l = [1, "omg wow", 420.69, False]
+l[1] = "changed the list hehe"
+print(l)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: list-mutability
+: [1, 'changed the list hehe', 420.69, False]
+
+*** List of lists
+A list can be nested inside another list.
+#+NAME: nested-list
+#+begin_src python :results output :exports both
+l = [1, [1, "a", "list", True], 420.69, False]
+print(l[1])
+print(l[2])
+print(l[1][2])
+l[1][3] = "hehe changed the inner list"
+print(l)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: nested-list
+: [1, 'a', 'list', True]
+: 420.69
+: list
+: [1, [1, 'a', 'list', 'hehe changed the inner list'], 420.69, False]
+
+*** Differences from strings
+- Lists can contain a *mixture of Python objects (types)* while strings can only hold characters. (This is not recommended though, your list should only hold items of the same type, otherwise it makes things very difficult to work with.)
+- Lists are mutable, which means you can change them.
+- Lists are designated with square brackets (~[]~), with elements separated by commas (~,~), while strings use double quotes ~"~ or single quotes ~'~.
+
+** Tuples (~tuple~)
+- Tuples are immutable lists, or lists that cannot be changed.
+- They are designated by *commas (~,~)*, *NOT* round brackets (~()~).
+- Round brackets are often used to make tuples more readable, and used to group the items (like in nested tuples), but they are not what makes a tuple.
+
+*** Creation
+Constructing a tuple or initialising a tuple both mean creating a tuple.
+
+- Creating an empty tuple
+  #+begin_src python :results none
+  t = tuple()
+  #+end_src
+
+- Creating a tuple from an iterable data structure, like a set, a list, or a string
+
+  #+NAME: tuple-create-from-iterable
+  #+begin_src python :results output :exports both
+  print("Tuple from list: ", tuple([1, 2, 3, 4]))
+  print("Tuple from set: ", tuple({1, 2, 3, 4}))
+  print("Tuple from string: ", tuple("1234"))
+  #+end_src
+
+  @@latex: \noindent@@ Output:
+
+  #+RESULTS: tuple-create-from-iterable
+  : Tuple from list:  (1, 2, 3, 4)
+  : Tuple from set:  (1, 2, 3, 4)
+  : Tuple from string:  ('1', '2', '3', '4')
+
+- Creating a tuple with predefined items
+  #+begin_src python :results none
+  t = (1, 2, 3, 4)
+  t = (1, 3.14159, "a", True)
+  t = (1, )
+  t = 1,
+  #+end_src
+
+*** Index (~[]~)
+- Items in a tuple are in a sequence
+- We can identify each item in the tuple with a unique index (a position in the sequence).
+- We can index an item from either end of the sequence.
+  - Non-negative values: counting from left, starting at 0
+  - Negative values: counting from right, starting at -1
+- The index operator is always at the end of the expression and is preceded by something, either a variable or a sequence.
+
+We can use ~[]~ to access particular items in a tuple.
+#+NAME: tuple-indexing
+#+begin_src python :results output :exports both
+t = (1, "omg wow", 420.69, False)
+print(t[0])
+print(t[1])
+print(t[-2])
+print(t)
+print(("hey", 5, True)[0])
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: tuple-indexing
+: 1
+: omg wow
+: 420.69
+: (1, 'omg wow', 420.69, False)
+: hey
+
+@@latex: \newpage@@
+
+*** Slice (~[:]~)
+~[start : end : step]~
+- ~start~ is the index of the start of the subsequence.
+- ~end~ is the index of the end of a subsequence (not included).
+- ~step~ specifies the step size to jump along the sequence.
+
+#+NAME: tuple-slicing
+#+begin_src python :results output :exports both
+t = (1, "omg wow", 420.69, False)
+print(t[1:4])
+print(t[::2])
+print(t[::-2])
+print(t[0:3:-1])
+print(("hey", 5, True, "lovely")[2:4])
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: tuple-slicing
+: ('omg wow', 420.69, False)
+: (1, 420.69)
+: (False, 'omg wow')
+: ()
+: (True, 'lovely')
+
+*** Length (~len~)
+#+NAME: length-of-a-tuple
+#+begin_src python :results output :exports both
+t = (1, "omg wow", 420.69, False)
+print(len(t))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: length-of-a-tuple
+: 4
+
+*** Concatenation (~+~)
+#+NAME: concatenate-tuple
+#+begin_src python :results output :exports both
+t_1 = (1, "omg wow", 420.69, False)
+t_2 = ("Finger licking good!", True, "I'm loving it!")
+print(t_1 + t_2)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: concatenate-tuple
+: (1, 'omg wow', 420.69, False, 'Finger licking good!', True, "I'm loving it!")
+
+*** Repeat (~*~)
+#+NAME: repeat-tuple
+#+begin_src python :results output :exports both
+t = (1, "omg wow", 420.69, False)
+print(t * 2)
+t = (3,)
+print(t * 5)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: repeat-tuple
+: (1, 'omg wow', 420.69, False, 1, 'omg wow', 420.69, False)
+: (3, 3, 3, 3, 3)
+
+*** Comparison
+- The items of a tuple are compared starting from the first item.
+- This means for the greater than, or less than operators, the tuple that has the higher value at the front of the tuple is considered to be greater than the tuple with the same value at the back of the tuple.
+- The boolean ~True~ is changed into 1 and the boolean ~False~ is changed to 0 comparing tuples.
+- For two tuples to be equal, all items in both tuples must be the same, and have the same order.
+#+NAME: tuple-comparison
+#+begin_src python :results output :exports both
+print((4, 3, 2, 1) > (1, 2, 3, 4))
+print((4, 3, 2, 1) == (1, 2, 3, 4))
+print((True, 3, 2, 1) >= (1, 2, 3, 4))
+print((False, 2, 3, 4) <= (1, 2, 3, 4))
+print(("a", "tuple", "of", "strings") <= ("string", "tuple"))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: tuple-comparison
+: True
+: False
+: True
+: True
+: True
+
+*** Membership (~in~)
+~a in b~ is True if ~a~ is contained in the tuple ~b~.
+#+NAME: tuple-membership
+#+begin_src python :results output :exports both
+t = (1, "omg wow", 420.69, False)
+print(1 in t)
+print(420 in t)
+print("omg wow" in t)
+print("omg" in t)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: tuple-membership
+: True
+: False
+: True
+: False
+
+*** Minimum (~min~)
+- Gets the smallest element in the tuple.
+- Only applicable to *tuples containing strings only* or *tuples containing numeric values (~int~ and ~float~) and boolean values*.
+- The boolean ~True~ is changed into 1 and the boolean ~False~ is changed to 0 when evaluating the minimum of a tuple.
+
+#+NAME: tuple-min
+#+begin_src python :results output :exports both
+t_1 = (1, 2, 420.69, 699)
+t_2 = (1, 2, True, False)
+t_3 = ("ooo", "a", "tuple", "of", "Only", "Strings")
+print(min(t_1))
+print(min(t_2))
+print(min(t_3))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: tuple-min
+: 1
+: False
+: Only
+
+*** Maximum (~max~)
+- Gets the largest element in the tuple.
+- Only applicable to *tuples containing strings only* or *tuples containing numeric values (~int~ and ~float~) and boolean values*.
+- The boolean ~True~ is changed into 1 and the boolean ~False~ is changed to 0 when evaluating the maximum of a tuple.
+
+#+NAME: tuple-max
+#+begin_src python :results output :exports both
+t_1 = (1, 2, 420.69, 699)
+t_2 = (1, 2, True, False)
+t_3 = ("ooo", "a", "tuple", "of", "Only", "Strings")
+print(max(t_1))
+print(max(t_2))
+print(max(t_3))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: tuple-max
+: 699
+: 2
+: tuple
+
+*** Sum (~sum~)
+- Gets the sum of the elements of the tuple.
+- Only applicable to tuples containing numeric values (~int~ and ~float~) and boolean values.
+- The boolean ~True~ is changed into 1 and the boolean ~False~ is changed to 0 when evaluating the maximum of a tuple.
+
+#+NAME: tuple-sum
+#+begin_src python :results output :exports both
+t_1 = (1, 2, 420.69, 699)
+t_2 = (1, 2, True, False)
+print(sum(t_1))
+print(sum(t_2))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: tuple-sum
+: 1122.69
+: 4
+
+*** Immutability
+- Tuples are immutable, which means you cannot change a tuple after it has been created.
+  #+begin_src python :results none
+  t = (1, "omg wow", 420.69, False)
+  t[1] = "tuple"  # Error
+  #+end_src
+
+- However, you can use it to make another tuple:
+  #+NAME: tuple-edit
+  #+begin_src python :results output :exports both
+  t = (1, "omg wow", 420.69, False)
+  new_tuple = t[:1] + ("tuple",) + t[2:]
+  print(new_tuple)
+  #+end_src
+
+  @@latex: \noindent@@ Output:
+
+  #+RESULTS: tuple-edit
+  : (1, 'tuple', 420.69, False)
+
+*** Tuple of tuples
+A tuple can be nested inside another tuple.
+#+NAME: nested-tuple
+#+begin_src python :results output :exports both
+t = (1, (1, "a", "tuple", True), 420.69, False)
+print(t[1])
+print(t[2])
+print(t[1][2])
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: nested-tuple
+: (1, 'a', 'tuple', True)
+: 420.69
+: tuple
+
+@@latex: \newpage@@
+
+** Dictionaries (~dict~)
+- A dictionary is an associative array, or associative list, or a map.
+- You can think of it as a list of pairs.
+  - The key, which is first element of the pair, is used to retrieve the second element, which is the value.
+- Hence, we map a key to a value in a dictionary.
+- The key acts as a "lookup" to find the associated value.
+- Just like a dictionary, you look up a word by its spelling to find the associated definition.
+- A dictionary can be searched to locate the value associated with a key.
+- The key of the dictionary must be immutable, so strings, integers and tuples are allowed, but *lists are NOT*.
+- The value can be any Python object.
+
+*** Creation
+Constructing a dictionary or initialising a dictionary both mean creating a dictionary.
+
+- Creating an empty dictionary
+  #+begin_src python :results none
+  dic = dict()
+  dic = {}
+  #+end_src
+
+- Creating a dictionary with predefined items
+  #+begin_src python :results none
+  dic = {"omg": "lol"}
+  dic = {1: "lol"}
+  dic = {5: 42069}
+  #+end_src
+
+*** Index (~[]~)
+Items in a dictionary can be indexed using its respective key.
+
+We can use ~[]~ to access particular values in a dictionary.
+#+NAME: dictionary-indexing
+#+begin_src python :results output :exports both
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+print(dic["bill"])
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: dictionary-indexing
+: 25
+
+*** Adding items (~[]~)
+Items can also be added to the dictionary using the indexing operator.
+#+NAME: add-to-dictionary
+#+begin_src python :results output :exports both
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+dic["petrol"] = 10
+print(dic)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: add-to-dictionary
+: {'bill': 25, 'tax': 3, 'petrol': 10}
+
+*** Removing items (~del~)
+Items can be removed from the dictionary using ~del~ keyword with the indexing operator.
+#+NAME: remove-from-dictionary
+#+begin_src python :results output :exports both
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+del dic["tax"]
+print(dic)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: remove-from-dictionary
+: {'bill': 25}
+
+*** Length (~len~)
+#+NAME: length-of-a-dictionary
+#+begin_src python :results output :exports both
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+print(len(dic))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: length-of-a-dictionary
+: 2
+
+*** Membership (~in~)
+~a in b~ is True if the key ~a~ is contained in the dictionary ~b~.
+#+NAME: dictionary-membership
+#+begin_src python :results output :exports both
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+print("bill" in dic)
+print(25 in dic)
+print("3" in dic)
+print("tax" in dic)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: dictionary-membership
+: True
+: False
+: False
+: True
+
+@@latex: \newpage@@
+
+*** For loop (~for~)
+A ~for~ loop iterates over the *keys* of the dictionary.
+#+NAME: dictionary-for-loop
+#+begin_src python :results output :exports both
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+for key in dic:
+    print(key)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: dictionary-for-loop
+: bill
+: tax
 
 ** Integers (~int~)
 Integers are like whole numbers, including the negative numbers. They can be negative (-1, -2, -3, etc), positive (1, 2, 3, etc) or zero (0).
@@ -616,7 +1338,7 @@ Python is sensitive to the end of line in text files, which marks the end of a s
 - An indentation must be used for the entire block
 
 *** Example
-#+begin_src python
+#+begin_src python :results none
 a = 5
 b = 1
 if a > b:
@@ -624,7 +1346,7 @@ if a > b:
 #+end_src
 
 *** If-else statements
-#+begin_src python
+#+begin_src python :results none
 a = 5
 b = 1
 if a > b:
@@ -634,7 +1356,7 @@ else:
 #+end_src
 
 *** If-elif-else statements
-#+begin_src python
+#+begin_src python :results none
 a = 5
 b = 10
 if a > b:
@@ -653,7 +1375,7 @@ else:
 - When the condition becomes False, repetition ends and control moves on to the code following the repetition.
 
 *** Syntax
-#+begin_src python
+#+begin_src python :results none
 count = 0
 while count < 10:
     count += 1
@@ -667,7 +1389,7 @@ while count < 10:
 - It is a handy way to perform some final tasks when the loop ends normally.
 
 *** Syntax
-#+begin_src python
+#+begin_src python :results none
 count = 0
 while count < 10:
     count += 1
@@ -681,12 +1403,12 @@ else:
 - The ~break~ statement is useful for stopping computation when the "answer" has been found or when continuing the computation is otherwise useless.
 
 *** Syntax
-#+begin_src python
+#+begin_src python :results none
 count = 0
 while count < 10:
     count += 1
-if count == 8:
-    break
+    if count == 8:
+        break
 
 # The else clause is skipped in this case
 # as the loop is broken out of when the count hits 8
@@ -702,7 +1424,7 @@ else:
 - The ~continue~ statement continues with the next iteration of the loop.
 
 *** Syntax
-#+begin_src python
+#+begin_src python :results none
 count = 0
 while count < 10:
     count += 1
@@ -722,7 +1444,7 @@ while count < 10:
 - The ~for~ loop completes when the last of the elements has been assigned to the iterating variable, or when the entire sequence is exhausted.
 
 *** Syntax
-#+begin_src python
+#+begin_src python :results none
 for i in range(10):
     print("i is", i)
 
@@ -734,7 +1456,7 @@ for drink in ("coffee", "tea", "milo"):
 #+end_src
 
 *** For-else
-#+begin_src python
+#+begin_src python :results none
 for i in range(10):
     print("i is", i)
 else:
@@ -742,7 +1464,7 @@ else:
 #+end_src
 
 *** For-else-break
-#+begin_src python
+#+begin_src python :results none
 for i in range(10):
     if i == 5:
         break
@@ -755,7 +1477,7 @@ else:
 #+end_src
 
 *** For-else-break-continue
-#+begin_src python
+#+begin_src python :results none
 for i in range(10):
     if i == 5:
         break
@@ -780,13 +1502,108 @@ else:
 - You can also use ~pass~ as a placeholder.
 
 *** Syntax
-#+begin_src python
+#+begin_src python :results none
 for i in range(10):
     pass
 #+end_src
 
+@@latex: \newpage@@
+
+** List comprehension
+- List comprehensions are a Python syntactic structure to construct lists concisely.
+- The first variable before the ~for~ is what is placed into the list.
+- The ~for~ loop is just a regular for loop.
+- Any ~for~ loops after the first for loop will be *nested inside* the for loop before it. If there is a ~if~ statement at the end of the previous for loop, the next ~for~ loop will be placed inside the ~if~ statement. (This is absolutely not recommended as it makes code impossible to read.)
+- Any ~if~ statements after the ~for~ loop will determine what will be added to the list. Basically, if the item doesn't meet the condition in the ~if~ statement, it's not added to the list.
+
+*** Syntax
+#+NAME: list-comprehension-syntax
+#+begin_src python :results output :exports both
+print([i for i in range(11)])
+print([i for i in range(21) if i % 2 == 0])
+print([i for i in range(21) if i % 2 == 0 and i >= 10])
+
+# Please don't do this, just use a regular for loop instead
+print([x + y for x in range(9) if x % 2 == 0 for y in range(9) if y % 2 != 0])
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: list-comprehension-syntax
+: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+: [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+: [10, 12, 14, 16, 18, 20]
+: [1, 3, 5, 7, 3, 5, 7, 9, 5, 7, 9, 11, 7, 9, 11, 13, 9, 11, 13, 15]
+
+@@latex: \newpage@@
+
+*** Equivalent code using for loops
+1. The first list comprehension:
+   #+NAME: list-comprehension-equivalent-1
+   #+begin_src python :results output :exports both
+   l = []
+   for i in range(11):
+       l.append(i)
+   print(l)
+   #+end_src
+
+   @@latex: \noindent@@ Output:
+
+   #+RESULTS: list-comprehension-equivalent-1
+   : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+2. The second list comprehension:
+   #+NAME: list-comprehension-equivalent-2
+   #+begin_src python :results output :exports both
+   l = []
+   for i in range(21):
+       if i % 2 == 0:
+           l.append(i)
+   print(l)
+   #+end_src
+
+   @@latex: \noindent@@ Output:
+
+   #+RESULTS: list-comprehension-equivalent-2
+   : [0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+3. The third list comprehension:
+   #+NAME: list-comprehension-equivalent-3
+   #+begin_src python :results output :exports both
+   l = []
+   for i in range(21):
+       if i % 2 == 0 and i >= 10:
+           l.append(i)
+   print(l)
+   #+end_src
+
+   @@latex: \noindent@@ Output:
+
+   #+RESULTS: list-comprehension-equivalent-3
+   : [10, 12, 14, 16, 18, 20]
+
+   @@latex: \newpage@@
+
+4. The fourth list comprehension:
+   #+NAME: list-comprehension-equivalent-4
+   #+begin_src python :results output :exports both
+   l = []
+   for x in range(9):
+       if x % 2 == 0:
+           for y in range(9):
+               if y % 2 != 0:
+                   l.append(x + y)
+   print(l)
+   #+end_src
+
+   @@latex: \noindent@@ Output:
+
+   #+RESULTS: list-comprehension-equivalent-4
+   : [1, 3, 5, 7, 3, 5, 7, 9, 5, 7, 9, 11, 7, 9, 11, 13, 9, 11, 13, 15]
+
+
 ** Method in general
-#+begin_src python
+#+begin_src python :results none
 object.method()
 #+end_src
 
@@ -805,11 +1622,13 @@ Purpose of indentation:
 - Makes the code more readable
 - For grouping, particularly for control flow such as branching and looping
 
+@@latex: \newpage@@
+
 ** Modulus operator (Remainder operator) (~%~)
 Returns the remainder of the division of the left operand by the right.
 
 *** Syntax
-#+begin_src python
+#+begin_src python :results none
 x % y
 #+end_src
 
@@ -926,11 +1745,9 @@ The modulus operator takes the remainder of the left number divided by the right
 - It returns a *string* no matter what is given, even a number.
 
 *** Usage
-#+begin_src python
+#+begin_src python :results none
 user_input = input("Please enter an input: ")
 #+end_src
-
-#+RESULTS:
 
 @@latex: \noindent@@ ~user_input~ will be a *string*.
 
@@ -1063,15 +1880,53 @@ string = "Shouting!"
 print(string.upper())
 #+end_src
 
-- Object: ~string~
-- Method: ~upper()~
-- Method call: ~string.upper()~
-
 @@latex: \noindent@@ Output:
 
 #+RESULTS: string-upper
 : SHOUTING!
 
+** String method: ~string.lower~
+This method will output a new string, which is the same as the string on which it was called, except all letters in the string will now be in lowercase.
+
+#+NAME: string-lower
+#+begin_src python :results output :exports both
+string = "WHISPERING"
+print(string.lower())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-lower
+: whispering
+
+** String method: ~string.title~
+This method will output a new string, which is the same as the string on which it was called, except that the string will be in title case, which means that every word in the string will be capitalised.
+
+#+NAME: string-title
+#+begin_src python :results output :exports both
+string = "john f. kennedy"
+print(string.title())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-title
+: John F. Kennedy
+
+** String method: ~string.capitalize~
+- This method will output a new string, which is the same as the string on which it was called, except that the first letter of the first word of the string will be capitalised.
+- Take note that capitalize is using the American spelling with a "z", instead of the British spelling with a "s".
+
+#+NAME: string-capitalise
+#+begin_src python :results output :exports both
+string = "this is a sentence."
+print(string.capitalize())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-capitalise
+: This is a sentence.
 
 ** String method: ~string.find~
 - This method takes a single character and outputs the *index* of the character (first seen from left to right).
@@ -1090,15 +1945,31 @@ print(string.find("a"))
 : 5
 : -1
 
+** String method: ~string.count~
+This method counts the number of occurrences of the substring you pass to the method.
+
+#+NAME: string-count
+#+begin_src python :results output :exports both
+string = "This is an pretty long sentence."
+print(string.count("i"))
+print(string.count("t"))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-count
+: 2
+: 3
+
 ** String method: ~string.join~
 This method takes a *string* to be joined and outputs a new string where the base string joins the target string.
 
 #+NAME: string-join
 #+begin_src python :results output :exports both
-string1 = "1234"
-string2 = "abcd"
-print(string1.join(string2))
-print(string2.join(string1))
+string_1 = "1234"
+string_2 = "abcd"
+print(string_1.join(string_2))
+print(string_2.join(string_1))
 #+end_src
 
 @@latex: \noindent@@ Output:
@@ -1106,6 +1977,674 @@ print(string2.join(string1))
 #+RESULTS: string-join
 : a1234b1234c1234d
 : 1abcd2abcd3abcd4
+
+@@latex: \newpage@@
+
+** String method: ~string.split~
+- This method takes a *string* and generates a list of strings by splitting the string at the given string.
+- The default character the string splits at is *whitespace*.
+- This method returns a list of strings.
+
+#+NAME: string-split
+#+begin_src python :results output :exports both
+l = "oooo a list of strings"
+print(l.split())
+print(l.split("o"))
+print(l.split("st"))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-split
+: ['oooo', 'a', 'list', 'of', 'strings']
+: ['', '', '', '', ' a list ', 'f strings']
+: ['oooo a li', ' of ', 'rings']
+
+@@latex: \newpage@@
+
+** String method: ~string.format~
+- This method takes any number of arguments and keyword arguments which are substituted into the string that the format method is being called on.
+- The string that calls this method should have placeholders inside curly brackets {}.
+- The placeholders can be either be identified using named indexes ~{price}~, or numbered indexes ~{0}~, or empty placeholders ~{}~.
+
+#+NAME: string-format
+#+begin_src python :results output :exports both
+print("{} is a nice number.".format(4200.696969))
+print("{meh:.2f} is a meh number.".format(meh=4200.696969))
+print("{0:.4f} is a meh number.".format(4200.696969))
+print("{:_.6f} is a nice number.".format(4200.696969))
+print("{nice:,.6f} is a nice number.".format(nice=4200.696969))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format
+: 4200.696969 is a nice number.
+: 4200.70 is a meh number.
+: 4200.6970 is a meh number.
+: 4_200.696969 is a nice number.
+: 4,200.696969 is a nice number.
+
+*** ~:<~ formatting type
+Left aligns the result (within the available space given).
+
+#+NAME: string-format-format-type-left-align
+#+begin_src python :results output :exports both
+print("{:<20} 20 spaces".format(4200.696969))
+print("{:*<15} 15 stars".format(4200.696969))
+print("{:#<10} 10 hashes".format(4200.696969))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-left-align
+: 4200.696969          20 spaces
+: 4200.696969**** 15 stars
+: 4200.696969 10 hashes
+
+
+*** ~:>~ formatting type
+Right aligns the result (within the available space given).
+
+#+NAME: string-format-format-type-right-align
+#+begin_src python :results output :exports both
+print("{:>20} 20 spaces".format(4200.696969))
+print("{:*>15} 15 stars".format(4200.696969))
+print("{:#>10} 10 hashes".format(4200.696969))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-right-align
+:          4200.696969 20 spaces
+: ****4200.696969 15 stars
+: 4200.696969 10 hashes
+
+*** ~:^~ formatting type
+Centre aligns the result (within the available space given).
+
+#+NAME: string-format-format-type-centre-align
+#+begin_src python :results output :exports both
+print("{:^20} 20 spaces".format(4200.696969))
+print("{:*^15} 15 stars".format(4200.696969))
+print("{:#^10} 10 hashes".format(4200.696969))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-centre-align
+:     4200.696969      20 spaces
+: **4200.696969** 15 stars
+: 4200.696969 10 hashes
+
+*** ~:=~ formatting type
+Places the sign to the left most position instead of just left of the number when there is padding.
+
+#+NAME: string-format-format-type-pad-number
+#+begin_src python :results output :exports both
+print("{:20} 20 spaces".format(-4200.696969))
+print("{:=20} 20 spaces".format(-4200.696969))
+#+end_src
+
+#+RESULTS: string-format-format-type-pad-number
+:         -4200.696969 20 spaces
+: -        4200.696969 20 spaces
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-add-sign
+: 4200.696969 positive number
+: -4200.696969 negative number
+: 0 zero
+
+*** ~:+~ formatting type
+Use a plus sign or a minus sign to indicate if the result is positive or negative respectively.
+
+#+NAME: string-format-format-type-add-plus-sign
+#+begin_src python :results output :exports both
+print("{:+} positive number".format(4200.696969))
+print("{:+} negative number".format(-4200.696969))
+print("{:+} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-add-plus-sign
+: +4200.696969 positive number
+: -4200.696969 negative number
+: +0 zero
+
+*** ~:-~ formatting type
+- Use a minus sign for negative values only.
+- This is the default behaviour.
+
+#+NAME: string-format-format-type-add-minus-sign
+#+begin_src python :results output :exports both
+print("{:-} positive number".format(4200.696969))
+print("{:-} negative number".format(-4200.696969))
+print("{:-} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-add-minus-sign
+: 4200.696969 positive number
+: -4200.696969 negative number
+: 0 zero
+
+*** ~:<space>~ formatting type
+- Replace the ~<space>~ with an actual space character.
+- Use a space to insert an extra space before positive numbers (and a minus sign before negative numbers).
+
+#+NAME: string-format-format-type-add-space
+#+begin_src python :results output :exports both
+print("{: } positive number".format(4200.696969))
+print("{: } negative number".format(-4200.696969))
+print("{: } zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-add-space
+:  4200.696969 positive number
+: -4200.696969 negative number
+:  0 zero
+
+*** ~:,~ formatting type
+Use a comma as a thousand separator.
+
+#+NAME: string-format-format-type-use-comma
+#+begin_src python :results output :exports both
+print("{:,} positive number".format(4200.696969))
+print("{:,} negative number".format(-4200.696969))
+print("{:,} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-use-comma
+: 4,200.696969 positive number
+: -4,200.696969 negative number
+: 0 zero
+
+*** ~:_~ formatting type
+Use an underscore as a thousand separator.
+
+#+NAME: string-format-format-type-use-underscore
+#+begin_src python :results output :exports both
+print("{:_} positive number".format(4200.696969))
+print("{:_} negative number".format(-4200.696969))
+print("{:_} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-use-underscore
+: 4_200.696969 positive number
+: -4_200.696969 negative number
+: 0 zero
+
+*** ~:b~ formatting type
+Binary format, only applicable to integers.
+
+#+NAME: string-format-format-type-binary-format
+#+begin_src python :results output :exports both
+print("{:b} positive number".format(42069))
+print("{:b} negative number".format(-42069))
+print("{:b} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-binary-format
+: 1010010001010101 positive number
+: -1010010001010101 negative number
+: 0 zero
+
+*** ~:c~ formatting type
+Converts the value into the corresponding Unicode character. Only applicable to positive integers.
+
+#+NAME: string-format-format-type-convert-to-unicode
+#+begin_src python :results output :exports both
+print("{:c} Unicode character 100".format(100))
+print("{:c} Unicode character 69".format(69))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-convert-to-unicode
+: d Unicode character 100
+: E Unicode character 69
+
+*** ~:d~ formatting type
+Decimal format.
+
+#+NAME: string-format-format-type-decimal-format
+#+begin_src python :results output :exports both
+print("{:d} positive number".format(42069))
+print("{:d} negative number".format(-42069))
+print("{:d} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-decimal-format
+: 42069 positive number
+: -42069 negative number
+: 0 zero
+
+*** ~:e~ formatting type
+Scientific format, with a lower case e.
+
+#+NAME: string-format-format-type-scientific-format-lower-e
+#+begin_src python :results output :exports both
+print("{:e} positive number".format(4200.696969))
+print("{:.2e} negative number".format(-4200.696969))
+print("{:.4e} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-scientific-format-lower-e
+: 4.200697e+03 positive number
+: -4.20e+03 negative number
+: 0.0000e+00 zero
+
+*** ~:E~ formatting type
+Scientific format, with an upper case E.
+
+#+NAME: string-format-format-type-scientific-format-upper-e
+#+begin_src python :results output :exports both
+print("{:E} positive number".format(4200.696969))
+print("{:.2E} negative number".format(-4200.696969))
+print("{:.4E} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-scientific-format-upper-e
+: 4.200697E+03 positive number
+: -4.20E+03 negative number
+: 0.0000E+00 zero
+
+*** ~:f~ formatting type
+Fix point number format.
+
+#+NAME: string-format-format-type-fix-point
+#+begin_src python :results output :exports both
+print("{:f} positive number".format(4200.696969))
+print("{:.2f} negative number".format(-4200.696969))
+print("{:.4f} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-fix-point
+: 4200.696969 positive number
+: -4200.70 negative number
+: 0.0000 zero
+
+*** ~:F~ formatting type
+Fix point number format, in uppercase format (show inf and nan as INF and NAN).
+
+#+NAME: string-format-format-type-fix-point-upper
+#+begin_src python :results output :exports both
+print("{:F} positive number".format(4200.696969))
+print("{:.2F} negative number".format(-4200.696969))
+print("{:.4F} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-fix-point-upper
+: 4200.696969 positive number
+: -4200.70 negative number
+: 0.0000 zero
+
+*** ~:g~ formatting type
+General format.
+
+#+NAME: string-format-format-type-general-format
+#+begin_src python :results output :exports both
+print("{:g} positive number".format(4200.696969))
+print("{:.2g} negative number".format(-4200.696969))
+print("{:.4g} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-general-format
+: 4200.7 positive number
+: -4.2e+03 negative number
+: 0 zero
+
+*** ~:G~ formatting type
+General format (using an upper case E for scientific notations).
+
+#+NAME: string-format-format-type-general-format-upper
+#+begin_src python :results output :exports both
+print("{:G} positive number".format(4200.696969))
+print("{:.2G} negative number".format(-4200.696969))
+print("{:.4G} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-general-format-upper
+: 4200.7 positive number
+: -4.2E+03 negative number
+: 0 zero
+
+*** ~:o~ formatting type
+Octal format, only applicable to integers.
+
+#+NAME: string-format-format-type-octal-format
+#+begin_src python :results output :exports both
+print("{:o} positive number".format(42069))
+print("{:o} negative number".format(-42069))
+print("{:o} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-octal-format
+: 122125 positive number
+: -122125 negative number
+: 0 zero
+
+*** ~:x~ formatting type
+Hex format, lowercase.
+
+#+NAME: string-format-format-type-hex-format-lower
+#+begin_src python :results output :exports both
+print("{:x} positive number".format(42069))
+print("{:x} negative number".format(-42069))
+print("{:x} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-hex-format-lower
+: a455 positive number
+: -a455 negative number
+: 0 zero
+
+*** ~:X~ formatting type
+Hex format, uppercase.
+
+#+NAME: string-format-format-type-hex-format-upper
+#+begin_src python :results output :exports both
+print("{:X} positive number".format(42069))
+print("{:X} negative number".format(-42069))
+print("{:X} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-hex-format-upper
+: A455 positive number
+: -A455 negative number
+: 0 zero
+
+*** ~:n~ formatting type
+Number format.
+
+#+NAME: string-format-format-type-number-format
+#+begin_src python :results output :exports both
+print("{:n} positive number".format(4200.696969))
+print("{:n} negative number".format(-4200.696969))
+print("{:n} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-number-format
+: 4200.7 positive number
+: -4200.7 negative number
+: 0 zero
+
+*** ~:%~ formatting type
+Percentage format.
+
+#+NAME: string-format-format-type-percentage-format
+#+begin_src python :results output :exports both
+print("{:%} positive number".format(4200.696969))
+print("{:.2%} negative number".format(-4200.696969))
+print("{:.4%} zero".format(0))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-format-format-type-percentage-format
+: 420069.696900% positive number
+: -420069.70% negative number
+: 0.0000% zero
+
+** List method: ~list.append~
+- This method takes an element, which can be any Python object, and adds it to the end of the list.
+- Note that this method *changes the list* in place and does *not* return any value.
+#+NAME: list-append
+#+begin_src python :results output :exports both
+l = [1, "omg wow", 420.69, False]
+l.append("lol")
+print(l)
+l.append(True)
+print(l)
+l.append(69)
+print(l)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: list-append
+: [1, 'omg wow', 420.69, False, 'lol']
+: [1, 'omg wow', 420.69, False, 'lol', True]
+: [1, 'omg wow', 420.69, False, 'lol', True, 69]
+
+@@latex: \newpage@@
+
+** List method: ~list.extend~
+- This method takes a *list* and adds the elements of the given list to the end of the original list.
+- This method cannot take an element to add to the back of the original list, use ~list.append~ for that.
+- Using this method to add a string to the list will add all the characters in the string into the list instead of the string as one item.
+- Note that this method *changes the list* in place and does *not* return any value.
+
+#+NAME: list-extend
+#+begin_src python :results output :exports both
+l_1 = [1, "omg wow", 420.69, False]
+l_2 = ["extended l_1 hehe", "lovely", 6969, True]
+l_1.extend(l_2)
+print(l_1)
+l_1.extend(5)    # Error
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: list-extend
+: [1, 'omg wow', 420.69, False, 'extended l_1 hehe', 'lovely', 6969, True]
+
+** List method: ~list.pop~
+- This method takes an index and removes the item corresponding to that index from the list.
+- Note that this method *changes the list* in place and does *not* return any value.
+#+NAME: list-pop
+#+begin_src python :results output :exports both
+l = [1, "omg wow", 420.69, False]
+l.pop(2)
+print(l)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: list-pop
+: [1, 'omg wow', False]
+
+** List method: ~list.insert~
+- This method takes an index and an element, which can be any Python object, and adds the element at the given index in the list.
+- The element that was in the given index will be pushed back.
+- Essentially, the given index will be the same index you can use to get the added element back from the list.
+- Note that this method *changes the list* in place and does *not* return any value.
+
+#+NAME: list-insert
+#+begin_src python :results output :exports both
+l = [1, "omg wow", 420.69, False]
+l.insert(3, 6969)
+print(l)
+print(l[3])
+l.insert(0, "I'm at the front")
+print(l)
+print(l[0])
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: list-insert
+: [1, 'omg wow', 420.69, 6969, False]
+: 6969
+: ["I'm at the front", 1, 'omg wow', 420.69, 6969, False]
+: I'm at the front
+
+** List method: ~list.remove~
+- This method takes an element and removes it from the list.
+- Note that this method *changes the list* in place and does *not* return any value.
+
+#+NAME: list-remove
+#+begin_src python :results output :exports both
+l = [1, "omg wow", 420.69, False]
+l.remove(420.69)
+print(l)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: list-remove
+: [1, 'omg wow', False]
+
+** List method: ~list.sort~
+- This method sorts the list lexicographically.
+- This means that everything is converted to a number if possible and the list can only be either a *list of strings* or a *list of numeric (~int~ and ~float~) and boolean values*.
+- Strings will be compared using their ASCII character code.
+- The boolean ~True~ is changed into 1 and the boolean ~False~ is changed to 0 when sorting a list.
+- Note that this method *changes the list* in place and does *not* return any value.
+
+#+NAME: list-sort
+#+begin_src python :results output :exports both
+l = [1, True, 420.69, False]
+l.sort()
+print(l)
+l = ["ooo", "a", "list", "of", "Only", "Strings"]
+l.sort()
+print(l)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: list-sort
+: [False, 1, True, 420.69]
+: ['Only', 'Strings', 'a', 'list', 'of', 'ooo']
+
+** List method: ~list.reverse~
+- This method reverses the list in place.
+- This means that the method will *change the list* in place and *not* return any value.
+#+NAME: list-reverse
+#+begin_src python :results output :exports both
+l = [1, "omg wow", 420.69, False]
+l.reverse()
+print(l)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: list-reverse
+: [False, 420.69, 'omg wow', 1]
+
+** Dictionary method: ~dict.items~
+This method returns all the key value pairs in a list-like structure called ~dict_items~, containing the key value pairs as tuples.
+#+NAME: dict-items
+#+begin_src python :results output :exports both
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+print(dic.items())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: dict-items
+: dict_items([('bill', 25), ('tax', 3)])
+
+** Dictionary method: ~dict.keys~
+This method returns all the keys of the dictionary in a list-like structure called ~dict_keys~.
+#+NAME: dict-keys
+#+begin_src python :results output :exports both
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+print(dic.keys())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: dict-keys
+: dict_keys(['bill', 'tax'])
+
+** Dictionary method: ~dict.values~
+This method returns all the values of the dictionary in a list-like structure called ~dict_values~.
+#+NAME: dict-values
+#+begin_src python :results output :exports both
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+print(dic.values())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: dict-values
+: dict_values([25, 3])
+
+** Dictionary method: ~dict.clear~
+- This method clears the dictionary, which means the dictionary becomes an empty dictionary again.
+- This method *changes* the dictionary in place and *does not* return any value.
+#+NAME: dict-clear
+#+begin_src python :results output :exports both
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+dic.clear()
+print(dic)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: dict-clear
+: {}
+
+** Dictionary method: ~dict.update~
+- This method takes a dictionary and updates the original dictionary with the keys and values from the new dictionary.
+- The *value in the new dictionary* is used if the new dictionary also has keys that are in the original dictionary
+- This method *changes* the dictionary in place and *does not* return any value.
+#+NAME: dict-update
+#+begin_src python :results output :exports both
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+new_dic = {
+    "bill": 50,
+    "petrol": 20
+}
+print(dic)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: dict-update
+: None
+: {'bill': 50, 'tax': 3, 'petrol': 20}
 
 @@latex: \newpage@@
 
