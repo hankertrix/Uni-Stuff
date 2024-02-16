@@ -597,6 +597,154 @@ fn print_sentence_stats() {
 ** Question 5
 Python implementation:
 #+begin_src python
+def encrypt_given_string() -> None:
+    "A function to ask the user for a string and encrypt it"
+
+    # Gets the user's input
+    user_input = input("Please enter a message you want to encrypt: ")
+
+    # Initialise the list of characters
+    list_of_chars: list[str] = []
+
+    # Iterates over the user's input
+    for char in user_input:
+
+        # If the character is not a digit or a letter
+        if not char.isalnum():
+
+            # Add the character to the list of characters
+            list_of_chars.append(char)
+
+            # Continue the loop
+            continue
+
+        # Otherwise, check if the character is uppercase
+        if char.isupper():
+
+            # Gets the number of the encrypted character
+            # 65 is because uppercase A is 65,
+            # so subtracting 64 will make uppercase A 0
+            new_ordinal = (ord(char) - 65 + 5) % 26 + 65
+
+            # The new character
+            new_char = chr(new_ordinal)
+
+        # Otherwise, check if the character is lowercase
+        elif char.islower():
+
+            # Gets the number of the encrypted character
+            # 97 is because lowercase a is 97,
+            # so subtracting 97 will make lowercase a 0
+            new_ordinal = (ord(char) - 97 + 5) % 26 + 97
+
+            # The new character
+            new_char = chr(new_ordinal)
+
+        # Otherwise, the character is a digit
+        else:
+
+            # Gets the number of the encrypted digit
+            new_number = (int(char) + 3) % 9
+
+            # The new character
+            new_char = str(new_number)
+
+        # Add the new character to the list of characters
+        list_of_chars.append(new_char)
+
+    # Prints the encrypted string
+    print("".join(list_of_chars))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// A function to ask the user for a string and encrypt it
+fn encrypt_given_string() {
+
+    // Initialise the string to store the user's input
+    let mut input = String::new();
+
+    // Prints the prompt
+    print!("Please enter a sentence: ");
+
+    // Flush the stdout
+    std::io::stdout().flush().unwrap();
+
+    // Read the user's input to the input variable
+    match std::io::stdin().read_line(&mut input) {
+        Ok(_number_of_bytes) => (),
+        Err(error) => println!("Error: {error}")
+    }
+
+    // Initialise the list of characters
+    let mut list_of_chars: Vec<char> = vec![];
+
+    // Iterates over the user's input
+    for char in input.trim().chars() {
+
+        // If the character is not a digit or a letter
+        if !char.is_alphanumeric() {
+
+            // Add the character to the list of characters
+            list_of_chars.push(char);
+
+            // Continue the loop
+            continue;
+        }
+
+        // Otherwise, initialise the new character to
+        // add to the list of characters
+        let mut new_char: char;
+
+        // Otherwise, check if the character is uppercase
+        if char.is_uppercase() {
+
+            // Gets the number of the encrypted character
+            // 65 is because uppercase A is 65,
+            // so subtracting 64 will make uppercase A 0
+            let new_ordinal = (char as u8 - 65 + 5) % 26 + 65;
+
+            // Set the new character
+            new_char = new_ordinal as char;
+        }
+
+        // Otherwise, check if the character is lowercase
+        else if char.is_lowercase() {
+
+            // Gets the number of the encrypted character
+            // 97 is because lowercase a is 97,
+            // so subtracting 97 will make lowercase a 0
+            let new_ordinal = (char as u8 - 97 + 5) % 26 + 97;
+
+            // Set the new character
+            new_char = new_ordinal as char;
+        }
+
+        // Otherwise, the character is a digit
+        else {
+
+            // Gets the number of the encrypted digit
+            let new_number = (char.to_digit(10).unwrap() + 3) % 9;
+
+            // Set the new character
+            new_char = char::from_digit(new_number, 10).unwrap();
+        }
+
+        // Add the new character to the list of characters
+        list_of_chars.push(new_char);
+    }
+
+    // Prints the encrypted string
+    println!("{}", list_of_chars.iter().collect::<String>());
+}
+#+end_src
+
+** Question 6
+Python implementation:
+#+begin_src python
 def is_valid_python_variable() -> None:
     """
     A function to print 'valid' if the given string is a valid Python variable
@@ -716,7 +864,7 @@ fn is_valid_python_variable() {
 }
 #+end_src
 
-** Question 6
+** Question 7
 Python implementation:
 #+begin_src python
 import re
