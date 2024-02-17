@@ -1624,29 +1624,6 @@ Purpose of indentation:
 
 @@latex: \newpage@@
 
-** Modulus operator (Remainder operator) (~%~)
-Returns the remainder of the division of the left operand by the right.
-
-*** Syntax
-#+begin_src python :results none
-x % y
-#+end_src
-
-@@latex: \noindent@@ The remainder of ~x/y~.
-
-*** Example
-#+NAME: modulus
-#+begin_src python :results output :exports both
-print(8 % 3)
-#+end_src
-
-@@latex: \noindent@@ Output:
-
-#+RESULTS: modulus
-: 2
-
-@@latex: \newpage@@
-
 ** Arithmetic operators
 
 #+ATTR_LATEX: :environment tabular :align |c|m{32em}|
@@ -1679,14 +1656,39 @@ print(8 % 3)
 | ~x *= 2~ | ~x = x * 2~ |
 | ~x %= 2~ | ~x = x % 2~ |
 
+@@latex: \newpage@@
+
+** "Truthy" and "falsy" values
+<<sec:truthy-and-falsy-values>>
+A "truthy" value is a value that will satisfy the check performed by ~if~ or ~while~ statements, while "falsy" values will not. "Truthy" and "falsy" are used to differentiate from the ~bool~ values ~True~ and ~False~.
+
+@@latex: \noindent@@ All values are considered "truthy", except for the following, which are considered "falsy":
+- ~None~
+- ~False~
+- ~0~
+- ~0.0~
+- ~0j~
+- ~Decimal(0)~
+- ~Fraction(0, 1)~
+- ~[]~ - an empty ~list~
+- ~{}~ - an empty ~dict~
+- ~tuple()~ - an empty ~tuple~
+- ~''~ - an empty ~str~
+- ~b''~ - an empty ~bytes~
+- ~set()~ - an empty ~set~
+- An empty range, like ~range(0)~
+- Objects for which:
+  - ~obj.__bool__()~ returns ~False~
+  - ~obj.__len__()~ returns ~0~
+
+@@latex: \newpage@@
+
 ** Chained comparisons
 In Python, chained comparisons work just like you would expect in a mathematical expression.
 
 *** Examples
 - ~0 <= x <= 5~ is the same as ~0 <= x and x <= 5~.
 - ~0 <= x <= 5 > 10~ is the same as ~0 <= x and x <= 5 and x > 10~.
-
-@@latex: \newpage@@
 
 ** Operator precedence
 
@@ -1736,8 +1738,110 @@ The modulus operator takes the remainder of the left number divided by the right
 *** Syntax
 ~x % y~
 
+@@latex: \noindent@@ The remainder of ~x / y~.
+
 *** Formula used to calculate the remainder
 ~x % y = x - y * (x // y)~
+
+*** Example
+#+NAME: modulus
+#+begin_src python :results output :exports both
+print(8 % 3)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: modulus
+: 2
+
+@@latex: \newpage@@
+
+** Boolean AND operator (~and~)
+Return the first *"falsy"* value if there are any, else return the *last* value in the expression. Refer to the [[sec:truthy-and-falsy-values][section on "truthy" and "falsy" values]] for an explanation of "falsy".
+
+*** Syntax
+#+begin_src python :results none
+a and b
+#+end_src
+
+*** Example
+#+NAME: boolean-and
+#+begin_src python :results output :exports both
+a = 1
+b = 5
+print(a > 1 and b < 10)
+print(a == 1 and b > 3)
+print(a and b)
+print(False and "something")
+print(1 and 5 and 6 and 0 and 10 and 9)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: boolean-and
+: False
+: True
+: 5
+: False
+: 0
+
+@@latex: \newpage@@
+
+** Boolean OR operator (~or~)
+Return the first *"truthy"* value if there are any, else return the *last* value in the expression. Refer to the [[sec:truthy-and-falsy-values][section on "truthy" and "falsy" values]] for an explanation of "truthy".
+
+*** Syntax
+#+begin_src python :results none
+a or b
+#+end_src
+
+*** Example
+#+NAME: boolean-or
+#+begin_src python :results output :exports both
+a = 1
+b = 5
+print(a > 1 or b < 10)
+print(a == 1 or b > 3)
+print(a or b)
+print(False or "something")
+print(1 or 5 or 6 or 0 or 10 or 9)
+print("" or "default value")
+print(False or "" or 0 or [] or "wow")
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: boolean-or
+: True
+: True
+: 1
+: something
+: 1
+: default value
+: wow
+
+@@latex: \newpage@@
+
+*** In combination with the boolean AND operator (~and~)
+#+NAME: boolean-or-and
+#+begin_src python :results output :exports both
+a = 5
+b = 10
+print((a == 5 or b > 30) and (a < 2 or b > 5))
+print(a >= 3 and b < 15 or a < 3 and b > 8)
+print(a and b or b or a)
+print(a and b or b and a or a or b or a)
+print(0 and 5 or 100)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: boolean-or-and
+: True
+: True
+: 10
+: 10
+: 100
 
 ** ~input~
 ~input~ is a built-in function in Python to get an input.
@@ -1978,8 +2082,6 @@ print(string_2.join(string_1))
 : a1234b1234c1234d
 : 1abcd2abcd3abcd4
 
-@@latex: \newpage@@
-
 ** String method: ~string.split~
 - This method takes a *string* and generates a list of strings by splitting the string at the given string.
 - The default character the string splits at is *whitespace*.
@@ -1999,6 +2101,274 @@ print(l.split("st"))
 : ['oooo', 'a', 'list', 'of', 'strings']
 : ['', '', '', '', ' a list ', 'f strings']
 : ['oooo a li', ' of ', 'rings']
+
+@@latex: \newpage@@
+
+** String method: ~string.isalnum~
+Returns ~True~ if all characters in the string are *alphanumeric*, which means all the letters of the alphabet and the numbers 0 to 9.
+
+#+NAME: string-isalnum
+#+begin_src python :results output :exports both
+print("abcdef12345".isalnum())
+print("abcdef12345_".isalnum())
+print("abcdef12345_(*&#)".isalnum())
+print("-1".isalnum())
+print("1.5".isalnum())
+print("-1.5".isalnum())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-isalnum
+: True
+: False
+: False
+: False
+: False
+: False
+
+** String method: ~string.isalpha~
+Returns ~True~ if all characters in the string are in the *alphabet*.
+
+#+NAME: string-isalpha
+#+begin_src python :results output :exports both
+print("abcdef".isalpha())
+print("abcdef12345".isalpha())
+print("abcdef12345_(*&#)".isalpha())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-isalpha
+: True
+: False
+: False
+
+@@latex: \newpage@@
+
+** String method: ~string.isascii~
+Returns ~True~ if all characters in the string are *ASCII characters*.
+
+#+NAME: string-isascii
+#+begin_src python :results output :exports both
+print("abcdef".isascii())
+print("abcdef12345".isascii())
+print("abcdef12345_(*&#)".isascii())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-isascii
+: True
+: True
+: True
+
+** String method: ~string.isdecimal~
+Returns ~True~ if all characters in the string are *decimals (0 to 9)*.
+
+#+NAME: string-isdecimal
+#+begin_src python :results output :exports both
+print("12392483".isdecimal())
+print("sldkfjd".isdecimal())
+print("abcdef12345".isdecimal())
+print("abcdef12345_(*&#)".isdecimal())
+print("-1".isdecimal())
+print("1.5".isdecimal())
+print("-1.5".isdecimal())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-isdecimal
+: True
+: False
+: False
+: False
+: False
+: False
+: False
+
+@@latex: \newpage@@
+
+** String method: ~string.isdigit~
+- Returns ~True~ if all characters in the string are *digits*.
+- Exponents like the superscript 2 in 1^{2} are also considered digits.
+- ~"-1"~, ~"1.5"~ and ~"-1.5"~ are *not* considered digits as all the characters in the string must be a digit. ~"-"~ and ~"."~ are not digits.
+
+#+NAME: string-isdigit
+#+begin_src python :results output :exports both
+print("12392483".isdigit())
+print("sldkfjd".isdigit())
+print("abcdef12345".isdigit())
+print("abcdef12345_(*&#)".isdigit())
+print("-1".isdigit())
+print("1.5".isdigit())
+print("-1.5".isdigit())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-isdigit
+: True
+: False
+: False
+: False
+: False
+: False
+: False
+
+** String method: ~string.isidentifier~
+Returns ~True~ if the string is *a valid Python identifier*. Basically, it checks if the string is a valid Python variable name.
+
+#+NAME: string-isidentifier
+#+begin_src python :results output :exports both
+print("12392483".isidentifier())
+print("varname".isidentifier())
+print("_private".isidentifier())
+print("string1".isidentifier())
+print("omg!".isidentifier())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-isidentifier
+: False
+: True
+: True
+: True
+: False
+
+** String method: ~string.islower~
+Returns ~True~ if all characters in the string are *lower case*.
+
+#+NAME: string-islower
+#+begin_src python :results output :exports both
+print("12093".islower())
+print("whispering...".islower())
+print("SHOUTING!".islower())
+print("39485943wow".islower())
+print("39485943WOW".islower())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-islower
+: False
+: True
+: False
+: True
+: False
+
+@@latex: \newpage@@
+
+** String method: ~string.isnumeric~
+- Returns ~True~ if all characters in the string are *numeric*.
+- Exponents like the superscript 2 in 1^{2}, as well as fractions, are also considered numeric.
+- ~"-1"~, ~"1.5"~ and ~"-1.5"~ are *not* considered numeric as all the characters in the string must be numeric. ~"-"~ and ~"."~ are not numeric characters.
+
+#+NAME: string-isnumeric
+#+begin_src python :results output :exports both
+print("12392483".isnumeric())
+print("sldkfjd".isnumeric())
+print("abcdef12345".isnumeric())
+print("abcdef12345_(*&#)".isnumeric())
+print("-1".isnumeric())
+print("1.5".isnumeric())
+print("-1.5".isnumeric())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-isnumeric
+: True
+: False
+: False
+: False
+: False
+: False
+: False
+
+** String method: ~string.isprintable~
+Returns ~True~ if all characters in the string are *printable*.
+
+#+NAME: string-isprintable
+#+begin_src python :results output :exports both
+print("12392483".isprintable())
+print("sldkfjd".isprintable())
+print("abcdef12345".isprintable())
+print("abcdef12345_(*&#)".isprintable())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-isprintable
+: True
+: True
+: True
+: True
+
+@@latex: \newpage@@
+
+** String method: ~string.isspace~
+Returns ~True~ if all characters in the string are *white spaces*.
+
+#+NAME: string-isspace
+#+begin_src python :results output :exports both
+print("      ".isspace())
+print("  alkdfjlas".isspace())
+print("    abc   def   12345    ".isspace())
+print("".isspace())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-isspace
+: True
+: False
+: False
+: False
+
+** String method: ~string.istitle~
+Returns ~True~ if the string is in *title case*.
+
+#+NAME: string-istitle
+#+begin_src python :results output :exports both
+print("Wow This Is Cool".istitle())
+print("wow this is cool".istitle())
+print("WOW THIS IS COOL".istitle())
+print("Wow this is cool".istitle())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-istitle
+: True
+: False
+: False
+: False
+
+@@latex: \newpage@@
+
+** String method: ~string.isupper~
+Returns ~True~ if all characters in the string are *upper case*.
+
+#+NAME: string-isupper
+#+begin_src python :results output :exports both
+print("12093".isupper())
+print("whispering...".isupper())
+print("SHOUTING!".isupper())
+print("39485943wow".isupper())
+print("39485943WOW".isupper())
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-isupper
+: False
+: False
+: True
+: False
+: True
 
 @@latex: \newpage@@
 
