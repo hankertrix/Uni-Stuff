@@ -533,10 +533,11 @@ use std::io::Write;
 fn compare_birthdays() {
 
     // Initialise the dictionary to store the data
-    let mut data_dict: HashMap<&str, Vec<i32>> = std::collections::HashMap::from([
-        ("first person", vec![]),
-        ("second person", vec![])
-    ]);
+    let mut data_dict: std::collections::HashMap<&str, Vec<i32>> =
+        std::collections::HashMap::from([
+            ("first person", vec![]),
+            ("second person", vec![])
+        ]);
 
     // Parts of the birthday
     let birthday_parts = ["day", "month", "year"];
