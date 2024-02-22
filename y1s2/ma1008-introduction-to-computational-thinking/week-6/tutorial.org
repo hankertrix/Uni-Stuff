@@ -394,8 +394,8 @@ def all_vowels_present(string: str) -> bool:
     # Iterates over the characters in the string
     for char in string:
 
-        # If the current character is a vowel
-        if char in vowels:
+        # If the current character, changed to lowercase, is a vowel
+        if char.lower() in vowels:
 
             # Add the character to the set of vowels in the string
             vowels_in_str.add(char)
@@ -407,6 +407,7 @@ def all_vowels_present(string: str) -> bool:
 
 Rust implementation:
 #+begin_src rust
+
 // Function to check if all the vowels are present in the string
 fn all_vowels_present(string: &str) -> bool {
 
@@ -419,8 +420,8 @@ fn all_vowels_present(string: &str) -> bool {
     // Iterates over the characters in the string
     for char in string.chars() {
 
-        // If the current character is a vowel
-        if vowels.contains(&char) {
+        // If the current character, changed to lowercase, is a vowel
+        if vowels.contains(&char.to_ascii_lowercase()) {
 
             // Add the character to the set of vowels in the string
             vowels_in_str.insert(char);
