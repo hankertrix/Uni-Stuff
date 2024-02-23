@@ -152,6 +152,171 @@ The process of evaluating the veracity of a story before it becomes the news.
 ** Fact-checking
 A process that occurs post publication and compares an explicit claim made publicly against trusted sources of facts.
 
+** Morality
+Morality is a subject that pertains to right and wrong action.
+- In all human societies on the ethnographic record, people make distinctions between right and wrong.
+- I take it that you have your own views about what is right and wrong.
+- In the branch of ethics called normative ethics, we try to arrive at well-founded views about morality.
+
+** Ethics
+Ethics is the study of morality.
+
+** Normative ethics
+- Normative ethics is a branch of ethics.
+- It tries to arrive at well-founded views about morality.
+- It tries to support our views about right and wrong in the most rational way possible.
+- Normative ethics relates to using, applying, and developing digital and online tools.
+- It has multiple branches, two of which are data ethics and digital ethics.
+
+*** Moral theories
+In normative ethics, moral theories are developed to achieve two aims:
+- Theoretical aim: To explain what features of actions make them morally right or wrong.
+- Practical aim: To offer practical guidance in making morally correct decisions.
+
+There are three moral theories that are the most influential in normative ethics.
+1. Utilitarianism (Jeremy Bentham, John Stuart Mill, Peter Singer, etc.): An action is morally right when it would likely produce at least as much well-being (welfare) as would any other action one would perform instead. Otherwise, the action is wrong.
+   - The classical utilitarians, such as Bentham and Mill, took well-being to consist of pleasure and the absence of pain.
+   - Peter Singer, a contemporary utilitarian, takes well-being to consist of the satisfaction of one's preferences or desires.
+
+2. Virtue ethics (Confucius, Aristotle, etc.): An action is morally right when it is what a virtuous person would do in the circumstances. Otherwise, the action is wrong.
+   - Commonly recognised virtues include honesty, courage, justice, temperance, beneficence, humility, loyalty, and gratitude.
+   - A truly virtuous person is one who has all the virtues. A virtuous person may only be a hypothetical ideal that we can strive to be.
+
+3. Immanuel Kant's deontological ethics: An action is morally right when it treats persons (including oneself) as ends in themselves and not merely as a means. Otherwise, the action is wrong.
+   - Kant's theory says that all persons are unconditionally valuable insofar as they are rational and autonomous.
+   - It also says that we should respect the value of persons, and not use them in a way that disrespects their value.
+
+** Cyberbullying
+Cyberbullying is the use of the internet or digital devices to inflict psychological harm on a person or group.
+
+*** Examples
+- Repeatedly texting or emailing hurtful messages to another person.
+- Spreading derogatory lies about another person.
+- Tricking someone into revealing highly personal information.
+- "Outing" or revealing someone's secrets online.
+- Posting embarrassing photographs or videos of other people without their consent.
+- Impersonating someone else online in order to damage that person's reputation.
+- Threatening or creating significant fear in another person.
+
+*** Prevalence
+- According to the 2020 Child Online Safety Index (Cosi) report, which includes data on 145,000 children across 30 countries, 45% of 8 to 12-year-olds experienced cyberbullying, either as the bullies or as the victims.
+- Within Singapore, 40% of 8 to 12-year-olds and 52% of 13 to 19-year-olds were exposed to cyberbullying.
+
+*** Effects
+- Depression and anxiety
+- Low self-esteem
+- Difficulty sleeping
+- Headaches, stomachaches
+- Suicidal thoughts
+- Suicide attempts
+- Eating disorders
+
+*** What to do if you are cyberbullied
+- Don't blame yourself.
+- Don't retaliate.
+- Save the evidence. Take screenshots of text, record audio, screen record videos etc.
+- Talk to someone you trust.
+- Block the bully.
+- Report the bully.
+- Keep social media passwords private.
+- Restrict others' access to your social media pages.
+- Change your social media accounts. If you're harassed, delete the account and create a new one.
+
+*** How to know if someone you are about is being cyberbullied
+- Changes in mood or personality.
+- Work or school performance declines.
+- Lack of desire to do things they normally enjoy.
+- Upset after using phone or going online.
+- Secretive about what they are doing online.
+- Unusual online behaviour, like not using the phone or computer at all, using the phone or computer all the time, and receiving lots of notifications.
+- Deleting social media accounts.
+
+** Informational privacy
+Informational privacy is the confidentiality, anonymity, data protection, and secrecy of facts about persons.
+
+** Whistleblower
+A whistleblower is someone who breaks ranks with an organisation in order to make an unauthorised disclosure of information about a harmful situation after attempts to report the concerns through authorised organisational channels have be ignored or rebuffed.
+- Whether to "blow the whistle" can arise in any organisation, not just in government agencies and private businesses.
+- NTU has its own dedicated whistleblowing channel, which is taken very seriously.
+
+** Intellectual property (IP)
+- Creations resulting from the exercise of the human brain.
+  - Examples include inventions, designs, ideas, plant hybrids, music, poems, paintings, photographs, logos, books, films, cartoon characters, and trade secrets.
+
+- Bundle of legal rights protecting such creations, i.e. intellectual property rights (IPRs).
+- IP law recognises that creators have the right to protect their work.
+  - IP law gives legal rights to IP creators, allowing them to control and exploit the use of their IP for a specific period of time.
+
+** Copyright
+- Copyright is the right to prevent the unauthorised copying of the tangible form in which a person has chosen to express his ideas, for example in a short story, musical composition, theatre script, painting, computer program, photograph, move or video game.
+- It can be described as a *bundle of exclusive rights belonging to the copyright owner*.
+- It allows owners to enforce their rights against infringement.
+- Singapore's copyright law is governed by the Copyright Act.
+
+** Contract
+- An agreement giving rise to obligations which are enforced or recognised by law.
+- It is a voluntary agreement between two or more parties.
+- The law exists to govern and regulate the parties' relationship in such agreements.
+- It can be verbal or written, simple or complicated.
+
+** Licence
+- A licence is a type of contract that gives permission to the holder or recipient to carry out a certain act, which would be infringing in nature otherwise.
+- A licence gives the owner the ability to use or exploit intellectual property commercially, most commonly requiring a fee in return for the grant of the licence.
+
+*** Non-exclusive licence
+Non-exclusive licences are granted to more than one person.
+
+*** Exclusive licence
+Exclusive licences are granted to one person only.
+
+*** Where are licences used?
+- All social media platforms
+- All software as a service (SaaS) platforms.
+- All media aggregation platforms where works can be assessed for use.
+
+*** Licensing vs assignment
+| Licensing                                                             | Assignment                                                         |
+|-----------------------------------------------------------------------+--------------------------------------------------------------------|
+| Grants someone else (other than the IP owner) the right to use the IP | Transfers the entire title and interest in someone's IP to another |
+| Less costly                                                           | More costly                                                        |
+| IP owner remains in control                                           | IP owner gives up control                                          |
+
+- Consider the situation where you want to own or license ("hire").
+- If someone is creating something new for you, and you wish to have complete control over it, you may want to take an assignment of the IP rights in the thing created.
+- If there is an IP already created by someone else that you wish to use for a specific reason, you may want to just license the IP.
+- There will be a cost difference.
+
+*** Licence of rights
+"In consideration of the Publisher paying the Advance Payment and the Royalty to the Author, the Author grants to the Publisher for a period of ______ years, beginning on _______ or date of this Agreement until _________, the sole and exclusive right to publish, use, and licence the Work and any parts of it in all media now known and yet to be invented, including but not limited to all methods of publication and reproduction including hardback, paperback, e-book/digital, serialization, translations, anthologies, quotations, mechanical reproduction, television, radio, theatre, film, media merchandising and the Internet in the Territory for the entirety of the Licence Period."
+
+*** Strength of licences
+- The way a licence is worded can make it almost as strong or effective as an assignment.
+- Thus, it is important to understand the language used in licences and assignment agreements.
+
+** Assignment
+An assignment is another type of contract. An assignment must be in writing and signed by or on behalf of the assigner.
+
+*** Legal meaning of "assign"
+To regard as belonging to.
+
+*** Legal effect
+- Under the assignment, the assigner (person making the assignment) transfers all entitlement and ownership rights that are the subject of the assignment to the assignee (the person receiving the rights).
+- The assignee is not the new owner of the property.
+
+*** Licensing vs assignment
+| Licensing                                                             | Assignment                                                         |
+|-----------------------------------------------------------------------+--------------------------------------------------------------------|
+| Grants someone else (other than the IP owner) the right to use the IP | Transfers the entire title and interest in someone's IP to another |
+| Less costly                                                           | More costly                                                        |
+| IP owner remains in control                                           | IP owner gives up control                                          |
+
+- Consider the situation where you want to own or license ("hire").
+- If someone is creating something new for you, and you wish to have complete control over it, you may want to take an assignment of the IP rights in the thing created.
+- If there is an IP already created by someone else that you wish to use for a specific reason, you may want to just license the IP.
+- There will be a cost difference.
+
+*** Assignment of rights
+"The Writer hereby assigns to the Company all copyright, title, interest and all other rights (including all vested future and contingent interests and rights) concerning the Story, the characters depicted in it and all other output of the Writer’s Services conferred under the laws of any country throughout the world (whether now in force or which may be enacted, promulgated or come into effect in the future) for the use and benefit of the Company fully for the entire period or periods of copyright protection including all reversions, renewals and extensions, provided by the laws of any country throughout the world."
 
 * Computational thinking competencies
 
@@ -650,3 +815,281 @@ A statement or material is communicated in Singapore if it is made available to 
 4. Use and support reliable and legitimate information sources.
 5. Maximise available resources.
 6. Equip ourselves with the proper tools and resources to fight fake news.
+
+
+* Data and digital ethics
+
+** Why do we need them?
+There is an intentional consensus that ethics is vital to the development, application, and use of digital and online technologies.
+- Technology shapes the way people live.
+- While digital and online technologies offer remarkable benefits, like knowledge, communication, efficiency, and personalisation, they also expose risks of significant harms to privacy, security, autonomy, fairness and transparency.
+- Lawmakers are often unable to keep up with the speed of technological advancement. Hence, not only expert technologists, but also ordinary users, must learn to develop and use technologies in ways that avoid harms while getting the most from the benefits.
+
+** Principles of data ethics
+- Moral theories are meant to provide very general explanations and guidance concerning what we morally ought to do.
+- While moral theories have the advantage of comprehensiveness, it can be difficult to deduce what they would prescribe in a particular context.
+- Several professional associations and private firms have formulated more specific principles to guide actions with respect to data and information technology.
+- The following principles are sampled from the Singapore Computer society's professional Code of Conduct.
+
+*** Integrity
+SCS members will act at all times with integrity.
+- They will not lay claim to a level of competence that they do not possess
+- They will act with complete discretion when entrusted with confidential information.
+- They will be impartial when giving advice and will disclose any relevant personal interests.
+- They will give credit for work done by others where credit is due.
+
+*** Professionalism
+SCS members will act with professionalism to enhance the prestige to the profession and the Society.
+- They will uphold and improve the professional standards of the society through participation in their formulation, establishment and enforcement.
+- They will not seek personal advantage to the detriment of the Society.
+- They will not speak on behalf of the Society without proper authority.
+- They will not slander the professional reputation of any other person.
+- They will use their special knowledge and skill for the advancement of human welfare.
+
+
+* Informational privacy
+- Digital and online technologies have a major impact on one's ability to secure privacy
+- In particular, these technologies affect what the philosopher Anita L. Allen describes as informational privacy: "Confidentiality, anonymity, data protection, and secrecy of facts about persons".
+
+** OkCupid incident
+- Some researchers released the personal profile details of 70,000 users on OkCupid, a dating website.
+- Critics maintained that the informational privacy of the OkCupid users was violated by the researchers, because the researchers stored and re-deployed the personal information of the users without their consent.
+
+** Right to informational privacy
+- A right to privacy is recognised in all international and regional human rights instruments, including Article 12 of the Universal Declaration of Human Rights.
+- "No one shall be subjected to arbitrary interference with his privacy, family, home or correspondence, nor to attacks upon his honour and reputation. Everyone has the right to the protection of the law against such interference or attacks."
+
+
+* Whistleblowing
+- In large organisations, it can be difficult to hold people accountable for unethical or illegal acts.
+  - Law enforcement and regulators are not able to constantly monitor the internal operations of organisations. Such constant surveillance isn't desirable.
+  - Leadership within the organisation may cover up any corrupt activities.
+- Sometimes it is up to ordinary, low-level people to "blow the whistle" on unacceptable conduct in their organisations.
+
+** Examples
+There are many examples of misconduct in organisations not being brought to light until much damage has already been done, or only after a private citizen reported it at great personal cost.
+- The 1986 Challenger Disaster is a memorable case where something catastrophic happened as a result of internal mismanagement.
+- A more recent case involving Wirecard, an electronic payment company, was reported in Singapore.
+- Data analytics firm Cambridge Analytica crossed many ethical lines.
+
+** When to whistle blow?
+Richard T. De George proposed that whistleblowing is *morally permissible* when the three conditions below are fulfilled:
+1. The firm will do, or has done, serious and considerable harm to employees or to the public.
+2. Once employees identify a serious threat to the user of a product or to the public, they should report it to their immediate superior and make their moral concern known.
+3. If one's immediate supervisor does nothing effective about the concern or complaint, the employee should exhaust the internal procedures and possibilities within the firm.
+
+He also suggests that if the two /additional conditions/ below are met, then it would be *morally obligatory* for someone to whistle blow.
+1. The whistleblower must have, or have accessible, documented evidence that would convince a reasonable, impartial observer that one's view of the situation is correct.
+2. The employee must have good reasons to believe that by going public the necessary changes will be brought about. The chance of being successful must be worth the risk one takes and the danger to which one is exposed.
+
+*** Objections
+1. The criteria are too stringent. It can be morally permissible to whistle blow, even when the first three conditions are not met.
+   - For instance, it may be morally permissible to whistle blow when you know that serious harm will be done to the public, but there is not enough time to lobby supervisors and exhaust all internal reporting procedures.
+   - By itself, the effort to prevent serious harm may be enough to make whistleblowing morally permissible.
+
+2. The criteria are not demanding enough. It can be morally obligatory to whistle blow even when the two additional conditions have not been fulfilled.
+   - For instance, a single employee may have satisfied conditions 1 through 3, but still be unable to acquire enough documented evidence to convince an impartial observer that any wrongdoing has been done.
+   - However, it may still be morally obligatory to whistle blow, if one is confident that another organisation, such as law enforcement or the media, would be able to persuade an impartial observer of the organisation's wrongdoing.
+
+
+* Copyright
+- Copyright is the right to prevent the unauthorised copying of the tangible form in which a person has chosen to express his ideas, for example in a short story, musical composition, theatre script, painting, computer program, photograph, move or video game.
+- It can be described as a *bundle of exclusive rights belonging to the copyright owner*.
+- It allows owners to enforce their rights against infringement.
+- Singapore's copyright law is governed by the Copyright Act.
+
+** Criteria for protection
+Copyright protection arises automatically be operation of law, so long as certain basic criteria are satisfied:
+- Falls within the categories of protection
+- Fixed in tangible form
+- Original, which means that the work was created independently by the author
+- Author or creator is a Singapore citizen or permanent resident (PR)
+
+** How does copyright work?
+- Copyright protects the form of expression, and not the idea or information itself.
+- The idea or information is protected by different means.
+- Many different media or forms of expression can be protected.
+- Expression must, as a general rule, be original.
+- No need for registration formalities.
+- Copyright arises "as soon as the ink dries".
+
+** The idea-expression dichotomy
+- Copyright protects the "*form*" of an idea and *NOT the idea itself*.
+- No need for novelty so long as there is independent creation.
+- Artistic merit is not a requirement for copyright to attach to a work as it is too subjective.
+
+** Things that are not protected by copyright
+- Ideas and concepts
+- Discoveries (e.g. a research finding)
+- Procedures (e.g. steps in applying for a grant)
+- Methods (e.g. solution to a mathematical problem)
+- Any subject matter that has not been reduced to a tangible form.
+- Works in the public domain.
+
+** Exclusive rights in copyright
+
+*** Literary, dramatic or musical works
+- Reproduce the work in a material form.
+- Publish the work if the work is unpublished.
+- Perform the work in public.
+- Communicate the work to the public.
+- Make an adaptation of the work.
+- Do any of the above in relation to an adaptation of the work.
+
+*** Sound recordings
+- Make a copy of the sound recording.
+- Enter into a commercial rental arrangement in respect of the recording.
+- Publish the sound recording if it is unpublished.
+- Make available to the public a sound recording by means of, or as part of, a digital audio transmission.
+
+*** Cinematographic films
+- Make a copy of the film.
+- Cause the film, insofar as it consists of visual images, to be seen in public.
+- Communicate the film to the public.
+
+*** Artistic works
+- Reproduce in material form.
+- Publish the work if the work is unpublished.
+- Communicate the work to the public.
+
+*** TV and sound broadcasts
+- Make a cinematographic film of a TV broadcast or a copy of a TV the film.
+- Make a sound recording of a TV or sound broadcast or a copy of the recording.
+- Cause it to be seen or heard in public by paying audience.
+- Communicate the work to the public.
+
+*** Cable programmes
+- Make a film of visual images, or a copy of such a film.
+- Make a sound recording of the work or a copy of such sound recording.
+- Cause work to be seen or heard by paying audience.
+- Communicate the programme to the public.
+
+*** Published editions
+- Make a reproduction of the edition, including by way of a photographic process.
+
+** Duration of copyright protection
+| Type of work                                   | Duration of protection                                                          |
+|------------------------------------------------+---------------------------------------------------------------------------------|
+| Literary, dramatic, musical and artistic works | Life of author plus 70 years from the end of the year in which the author died. |
+| Published editions                             | 25 years from the end of the year in which the edition was first published.     |
+| Sound recording and films                      | 70 years from the end of the year of release                                    |
+| Broadcasts and cable programmes                | 60 years from the end of the year of the first broadcast                        |
+| Performances                                   | 70 years from the end of the year of the performance                            |
+
+** Overlapping copyright
+- One product may contain a variety of copyright works. For example, a music album with songs contains lyrics, musical works and sound recordings.
+- Purchasing a physical product does not give rights to the underlying copyright works (e.g. purchasing an original music CD does not give the right to make copies).
+
+** Who owns the copyright?
+The person who creates or authors the work automatically owns it from the moment of creation.
+
+*** Exceptions
+- *Employment*: If the work is created by an employee pursuant to the terms of his employment, the employer owns the copyright in the work.
+- *By agreement*: The author can agree to transfer some or all of his rights.
+
+*** Joint authors
+- When work is created jointly by more than one author, the authors are all co-owners of the copyright in the work.
+- When more than one author creates inseparable or interdependent parts of a whole work. For example, two trainers involved in creating the training materials for a course.
+- Contributions must be original material expression, not just ideas or non-copyrightable materials.
+
+* Contract
+- An agreement giving rise to obligations which are enforced or recognised by law.
+- It is a voluntary agreement between two or more parties.
+- The law exists to govern and regulate the parties' relationship in such agreements.
+- It can be verbal or written, simple or complicated.
+
+** Function of contracts
+- Set out the extent of the agreement
+- Identify and clarify rights and obligations
+- Allocate risk
+- Provide certain guarantees
+- Set performance standards
+- Provide how non-fulfilment of obligations should be dealt with
+
+** What the law of contract covers
+- Formation of contracts, which are the elements required for a contract to exist.
+- Contents (terms) of a contract.
+- Performance of terms of the contract by its parties.
+- Remedies when there is no-fulfilment of either party's obligations (breach).
+
+** Elements of a contract
+Once all the below elements are in place, a contract is deemed to be formed. The absence of any one of these means that no contract is in existence.
+
+*** Offer
+It is an indication by the offerer of the willingness to contract
+
+*** Acceptance
+- The acceptance is absolute and unqualified. It must be communicated to the offerer.
+
+*** Consideration
+It is usually indicated by price or the carrying out of an act in return for the benefit.
+
+*** Intention to create legal relations
+It is reasonable to conclude that the parties involved have the intention to be legally bound from their conduct.
+
+*** Capacity
+- Both parties must have the capability to enter a contract.
+- Issue of minors (below the age of 18) and impaired mental capacity.
+
+** Contractual terms and performance
+- Set out and determine the rights and obligations of respective parties.
+- Provide for how obligations are to be performed.
+- Provide for how risks are to be allocated.
+- Provide for how the contractual relationship is to be regulated. For example, hot it begins, carries on, ends, or is renewed.
+
+** Common terms in contracts
+
+*** Purpose of contract or the description of collaboration
+What is the aim of the contract?
+
+*** Payment and fees
+How much, and how is payment to be made?
+
+*** Rights and obligations of each party
+What rights and obligations does each party have?
+
+*** Duration or termination
+How long is the contractual relationship going to last? How will the contract end?
+
+*** Warranties (fundamental promises)
+Basic assurance that the contract can be carried out effectively.
+
+*** Dispute resolution
+How will disagreements be resolved?
+
+** Breach and remedies
+- A contract is breached when there is non-performance of a term.
+- It does not automatically terminate the contract.
+- Breach entitles the wronged party to demand cure of the breach from the other party, as well as financial compensation (damages) if there is a loss.
+  - The wronged party may also be entitled to terminate the contract.
+
+
+* Intellectual property (IP)
+- Creations resulting from the exercise of the human brain.
+  - Examples include inventions, designs, ideas, plant hybrids, music, poems, paintings, photographs, logos, books, films, cartoon characters, and trade secrets.
+
+- Bundle of legal rights protecting such creations, i.e. intellectual property rights (IPRs).
+- IP law recognises that creators have the right to protect their work.
+  - IP law gives legal rights to IP creators, allowing them to control and exploit the use of their IP for a specific period of time.
+
+** Types of intellectual property
+- Copyright for original and related works.
+- Patents for inventions.
+- Trademarks, which are signs used in business.
+- Confidential information, which is non-public and valuable information.
+- Other types of intellectual property like:
+  - Registered designs
+  - Plant varieties
+  - Geographical indications
+  - Layout design of an integrated circuit
+
+** Why protect intellectual property?
+- Provides motivation for creators
+- Encourages constant creation and innovation.
+- Allows creators to exploit their works for commercial gain.
+- Allows creators to defend the works from infringement.
+
+** Dealing with intellectual property
+- The law regards intellectual property as a type of personal or movable property.
+- Intellectual property is capable of being owned and dealt with as other types of personal property.
+- In other words, you can buy, sell, lease or hire out or give away intellectual property as intellectual property has commercial value.
