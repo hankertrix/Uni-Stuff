@@ -970,8 +970,8 @@ Copyright protection arises automatically be operation of law, so long as certai
 ** Duration of copyright protection
 | Type of work                                   | Duration of protection                                                          |
 |------------------------------------------------+---------------------------------------------------------------------------------|
-| Literary, dramatic, musical and artistic works | Life of author plus 70 years from the end of the year in which the author died. |
-| Published editions                             | 25 years from the end of the year in which the edition was first published.     |
+| Literary, dramatic, musical and artistic works (e.g. photographs, paintings, drawings, sculptures, etc.) | Life of author plus 70 years from the end of the year in which the author died. |
+| Published editions (editions of a book, like the first edition of a physics textbook) | 25 years from the end of the year in which the edition was first published.     |
 | Sound recording and films                      | 70 years from the end of the year of release                                    |
 | Broadcasts and cable programmes                | 60 years from the end of the year of the first broadcast                        |
 | Performances                                   | 70 years from the end of the year of the performance                            |
