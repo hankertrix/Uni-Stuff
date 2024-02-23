@@ -121,7 +121,6 @@ A name given to an entity in a programming language.
 - Name of the entity must be unique to be identified during the execution of the program
 
 *** Attributes of identifiers in Python
-<<sec:python-identifiers>>
 - Uppercase and lower case letters A through Z
 - The underscore "_"
 - The digits 0 through 9
@@ -1650,7 +1649,7 @@ print([x + y for x in range(9) if x % 2 == 0 for y in range(9) if y % 2 != 0])
 
 *** Defining a function
 - Functions in Python are defined using the ~def~ keyword.
-- After the ~def~ keyword comes the name of the function, which has the same rules as Python identifiers. Refer to the [[sec:python-identifiers][section on Python identifiers]] for the rules.
+- After the ~def~ keyword comes the name of the function, which has the same rules as Python identifiers. Refer to section [[*Attributes of identifiers in Python]] for the rules.
 - After the name of the function, there are parentheses (~()~) to indicate the function parameters, which are the inputs to be passed to a function.
 - Each parameter inside the parentheses (~()~) is separated with a comma (~,~).
 - If there are no parameters, an empty pair of parentheses (~()~) is fine as well.
@@ -1750,7 +1749,6 @@ Purpose of indentation:
 @@latex: \newpage@@
 
 ** "Truthy" and "falsy" values
-<<sec:truthy-and-falsy-values>>
 A "truthy" value is a value that will satisfy the check performed by ~if~ or ~while~ statements, while "falsy" values will not. "Truthy" and "falsy" are used to differentiate from the ~bool~ values ~True~ and ~False~.
 
 @@latex: \noindent@@ All values are considered "truthy", except for the following, which are considered "falsy":
@@ -1850,7 +1848,7 @@ print(8 % 3)
 @@latex: \newpage@@
 
 ** Boolean AND operator (~and~)
-Return the first *"falsy"* value if there are any, else return the *last* value in the expression. Refer to the [[sec:truthy-and-falsy-values][section on "truthy" and "falsy" values]] for an explanation of "falsy".
+Return the first *"falsy"* value if there are any, else return the *last* value in the expression. Refer to section [[*"Truthy" and "falsy" values]] for an explanation of "falsy".
 
 *** Syntax
 #+begin_src python :results none
@@ -1881,7 +1879,7 @@ print(1 and 5 and 6 and 0 and 10 and 9)
 @@latex: \newpage@@
 
 ** Boolean OR operator (~or~)
-Return the first *"truthy"* value if there are any, else return the *last* value in the expression. Refer to the [[sec:truthy-and-falsy-values][section on "truthy" and "falsy" values]] for an explanation of "truthy".
+Return the first *"truthy"* value if there are any, else return the *last* value in the expression. Refer to section [[*"Truthy" and "falsy" values]] for an explanation of "truthy".
 
 *** Syntax
 #+begin_src python :results none
