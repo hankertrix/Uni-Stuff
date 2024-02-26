@@ -318,6 +318,58 @@ To regard as belonging to.
 *** Assignment of rights
 "The Writer hereby assigns to the Company all copyright, title, interest and all other rights (including all vested future and contingent interests and rights) concerning the Story, the characters depicted in it and all other output of the Writer’s Services conferred under the laws of any country throughout the world (whether now in force or which may be enacted, promulgated or come into effect in the future) for the use and benefit of the Company fully for the entire period or periods of copyright protection including all reversions, renewals and extensions, provided by the laws of any country throughout the world."
 
+** Artificial intelligence (AI)
+- Artificial intelligence refers to machines that are capable of performing tasks that typically require human intelligence.
+- The focus of artificial intelligence was on the engineering of making intelligent machines and programs.
+- It was implemented using rule-based expert systems and fuzzy logic.
+- This means that machines are just programs with specific rules for them to exhibit, which are programmed in by the programmer who is a domain expert.
+
+** Machine learning
+- Machine learning is the ability of machines to learn without being programmed.
+- Large amounts of data is needed to train the machines.
+
+*** Supervised learning
+Supervised learning is machine learning that is supervised with *labels*, such as for regression and classification.
+
+*** Unsupervised learning
+Unsupervised learning is machine learning that doesn't have any supervision from *label*. In other words, the machine is fed *unlabelled data*. An example of this approach is the clustering technique.
+
+*** Reinforcement learning
+Reinforcement learning is machine learning with the use of an "agent" that learns to maximise the "reward" in an environment.
+
+** Hidden layer
+- The hidden layer consists of parameters that can be trained when the model is fed with a large amount of data.
+- It is the layer that contains the "algorithm" that can learn and improve by itself.
+
+** Deep neural network
+A deep neural network is a neural network that consists of multiple hidden layers.
+
+** Deep learning
+- Deep learning is just machine learning using a deep neural network that mimics human brains and is a branch of machine learning.
+- It is the "algorithm" of deep neural networks.
+
+*** Artificial neural network (ANN)
+Artificial neural networks are usually used for classifying *numbers-based data*.
+
+*** Convolution neural network (CNN)
+Convolution neural networks are usually used for classifying *images*.
+
+*** Recurrent neural network (RNN)
+Recurrent Neural Networks are usually used for time series data, such as audio and video.
+
+*** Deep reinforcement learning
+Deep reinforcement learning is just regular reinforcement learning but with neural networks.
+
+*** Transfer learning
+Transfer learning is a technique where a model trained on one task is repurposed for another related task.
+
+** Big data
+Big data just means a massive amount of data.
+
+** Inference process
+Inference process is a training process that a machine goes through where it is fed with huge amounts of data for it to recognise and learn from a pattern to deal with similar data in the future.
+
+
 * Computational thinking competencies
 
 ** Abstraction
@@ -1093,3 +1145,160 @@ How will disagreements be resolved?
 - The law regards intellectual property as a type of personal or movable property.
 - Intellectual property is capable of being owned and dealt with as other types of personal property.
 - In other words, you can buy, sell, lease or hire out or give away intellectual property as intellectual property has commercial value.
+
+
+* Artificial intelligence (AI)
+Artificial intelligence refers to machines that are capable of performing tasks that typically require human intelligence.
+
+** History of AI
+
+*** 1950s
+- The term was coined in a proposal in 1955 when scientists applied for funding to study artificial intelligence.
+- There was also development of the LISP programming language as well as computers that could run LISP programs.
+- The results from such developments did not meet expectations mostly due to the lack of computing power, and the government stopped funding in the 1970s.
+- The focus of artificial intelligence was on the engineering of making intelligent machines and programs.
+
+*** 1973: The first winter
+From 1973 to the early 1980s, there was very little research interest in AI.
+
+*** 1982: The second spring
+- The Fifth Generation Computer Project in Japan reignited AI research in the 1980s.
+- The project was to develop a system for computers that can perform knowledge processing instead of information processing.
+- However, most of the goals of the project were too ambitious and could not be met, which resulted in funding being cut in the 1980s.
+
+*** 1985: The second winter
+From 1973 to the early 1980s, there was very little research interest in AI.
+
+*** 2000 - Present day: The Renaissance
+- In the late 1990s and early 2000s, AI had a resurgence and is considered as the Golden Age of AI.
+- The ability to learn without being explicitly programmed, or machine learning, was developed.
+- In the 2010s, deep learning was discovered, where machines could learn by using a deep neural network.
+
+** Reasons for the recent success of AI
+- Powerful computers became widely available and easily accessible through platforms like cloud computing, as well as using graphical processing units (GPUs) to train models.
+- The availability of big data, or large amounts of data, due to the internet and smart mobile phones that allow people to share their data to the internet.
+- The advancements in software algorithms, especially those used in machine learning and deep learning.
+
+** Neural networks
+- Neural networks used in deep learning mimics the human brain to recognise patterns and learn on its own.
+- The basic neural network has 3 layers, the input layer, the hidden layer, and the output layer.
+
+*** Hidden layer
+- The hidden layer consists of parameters that can be trained when the model is fed with a large amount of data.
+- It is the layer that contains the "algorithm" that can learn and improve by itself.
+- In practice, neural networks usually have far more than just one hidden layer.
+- Neural networks with multiple hidden layers are called deep neural networks, which are able to learn more sophisticated algorithms.
+
+*** AlexNet
+- An 8-layer deep convolution neural network used in the 2012 ImageNet computer image recognition competition by Alex Krizhevsky to beat handcrafted software written by computer vision domain experts for the first time in history.
+- This neural network is considered rudimentary compared to current neural networks that have hundreds of layers.
+
+*** Convolution Neural Networks (CNN)
+- The inputs in a CNN, usually images, go through a mathematical operation called convolution, which transforms the inputs into feature maps.
+- The feature maps then undergo subsampling to create smaller feature maps, which then go through another round of convolutions and subsampling to create increasingly smaller feature maps.
+- This process continues until the feature maps are fully connected, and the neural network produces an output.
+
+**** Example
+- An example is a convolution neural network built to detect human faces.
+- During the training process, many images of human faces are fed into the deep neural network.
+- This first input layer of the neural network extracts the local low-level features of faces based on the images provided.
+- The middle hidden layer then combines the low-level features to form the features that are found on various parts of the face.
+- The next hidden layer then combines the facial features to form typical human faces.
+- During the face detection process, which is known as inference, the result is obtained by comparing the input image against the features of faces that the neural network has been trained to recognise.
+
+** Applications
+- AI-powered robots can learn by themselves to perform more complicated tasks.
+- This will enable industries to improve on their efficiency, productivity, and maintain safety.
+- Robots are especially suitable for performing repetitive and dangerous tasks.
+- Robots today still don't have artificial general intelligence and are only capable of solving problems and thinking in a limited and narrow capacity.
+
+*** Autonomous automotives
+- AI-driven self-driving cars use sensors and images to automatically detect lanes and obstructions on the road, which can provide higher convenience and potentially lower running costs.
+- It can also remove potential human errors such as those due to tiredness and hence improve safety.
+- AI technology is also used to provide navigation functions, and optimise route planning as it can be used to provide the shortest path, or the fastest path, based on traffic conditions in real time.
+- It can also plan routes that avoid fare gates and tolls, such as the ERP gantries in Singapore.
+
+*** Recommendation algorithms
+- AI is also used extensively as a recommender in various social media apps.
+- It uses your likes and the accounts you follow to determine what news, posts, or products that you are interested in, and push relevant advertisements and contents to you when you are using these social media apps.
+
+*** Consumer electronics
+- Many consumer electronic devices also implement AI algorithms on the device.
+- Most smartphones nowadays consist of AI-driven apps that can respond to your voice commands.
+- The Google Pixel 6 even uses an AI chip, known as Tensor, to optimise performance, such as performing real-time translations on the phone itself.
+- Many household devices are also incorporated with AI nowadays.
+- With the help of object recognition, a smart fridge can detect the quantity of food available and make orders on behalf of the user through the internet.
+- A smart oven can detect the type of food that the user has and populate all possible recipes that the user can cook using the items that are already available.
+- AI-powered floor vacuum cleaners can learn the environment of the floor area to plan the most optimised way of cleaning the floor.
+- Smart security cameras can determine whether an intrusion is caused by a human or just due to other disturbances, such as an animal passing through the area.
+
+*** Business operations
+- AI technologies are also used to manage inventory and to forecast demand more precisely to improve business efficiency and reduce inventory costs.
+- AI is also used in personalised merchandising based on the customer online browsing history, preferences, and interests when they are visiting a web store.
+- Some e-commerce companies can even ship their products in advance to places near the potential customers while they are browsing the products in the web store in anticipation of potential sales.
+- Chatbots are software applications that are used to conduct conversations in real time with a customer.
+- They can be used as fully automated self-service tools, or sometimes they assist real people to handle multiple conversations at the same time.
+- AI-driven chatbots can be used to find the most appropriate responses during conversations with customers either via text or even using text-to-speech.
+- By using AI technologies, businesses can deliver highly targeted and personalised advertisements, which improve customer experience, build relationships, and loyalty.
+
+*** Banking and finance
+- The financial industry relies on accuracy, real-time reporting, and the need to process high volumes of quantitative data to make better decisions, which are the areas that AI excels in.
+- In trading, AI robot advisers are used to analyse millions of data points in real time to execute trades at the optimal price.
+- It could effectively crunch millions upon millions of data in real time to capture information that the current statistical models can't achieve.
+- Financial underwriters use AI to analyse huge amounts of data from credit bureau sources to assess credit risk for consumer and small business loan applicants.
+- This system acquires portfolio data and apply machine learning to find patterns to determine good and bad applications.
+- In wealth management, AI can be used to recommend sophisticated portfolios and to offer financial advice to high net worth clients to produce high potential returns.
+- By considering usage patterns, AI can help to reduce the possibility of credit card fraud taking place.
+
+*** Healthcare
+- Ai is able to analyse large amounts of data stored by healthcare organisations in the form of medical images to identify patterns and insights often undetected by humans.
+- It can also be used to detect potential problems earlier, such as in cancer cases where the cancer cells could have been detected at a much earlier stage by using AI.
+- AI is also now used by many drug companies to develop more effect new drugs, which have long been a trial and error process that cost drug companies a lot of time and money.
+- AI can help to identify which genes have been affected by harmful mutations so that they can be targeted in gene therapy.
+
+*** Agriculture
+- AI can be used to harvest crops at a higher volume and at a faster pace than human labourers can achieve at the moment.
+- AI can also be used to detect nutrition levels of farms to provide proper guidance to farmers about nutrition and water management of the farms.
+- AI can also be used to detect diseases in plants, and pests on the farms.
+- AI sensors can detect and target weeds, and then decide which herbicide to apply within the region.
+- By using drones to collect images of the crops, AI can then be used to analyse the crop health and provide appropriate measure for farmers.
+- All these will likely help to improve the overall harvest quality and accuracy, which is known as precision agriculture.
+
+*** Education
+- AI e-tutors can provide more precise coaching, automatic grading of written assignments and AI based e-proctoring for online assessments and exams.
+- These tools will allow schools and teachers to do more than ever before, freeing up more time to focus on other aspects of education, such as teaching higher-order thinking skills and promoting creativity, which AI is not able to perform as of now.
+
+** Concerns
+
+*** Job loss
+- Many jobs that can be done by AI systems at a lower cost and are more efficient will result in unemployment.
+- For example, the arrival of self-driving taxis would remove the need for taxi drivers in the future.
+
+*** Misuse of AI
+Deep fakes can be used to spread false information and create tensions among different groups of people.
+
+*** AI explainability
+- It is difficult or even impossible to understand how AI arrives at certain decisions, which is especially the case for AI that are based on deep learning.
+- This is an area that needs more research and studies.
+
+*** Bias
+- There could be bias built into AI algorithms that can lead to discrimination against certain groups of people, such as based on age, gender, race, and culture.
+- The bias could be due to the data the model is trained on being biased, which could in turn be the result of a lack of data on those specific groups of people.
+- In 2015, it was discovered that hiring algorithms used were biased against hiring females, as the algorithm was trained on resumes from the past 10 years, which were mainly male.
+- Hence, the algorithms were less likely to highly rate applications by females.
+
+*** AI ethics in decision-making
+- AI is ultimately programmed by humans, and different people have different upbringing, different cultural backgrounds with diverse ethical and moral values.
+- Furthermore, the use of AI in autonomous weapons will remove the human judgements based on moral considerations during battles.
+- Hence, the issue of making AI systems fair for everyone in society is an ethical issue that receives a lot of debate and research interest.
+
+** Summary
+- AI is rapidly changing the way we live:
+  - Helps to make things run more efficiently.
+  - Improves safety and work productivity
+  - Frees up time for human to do more creative things
+  - Enables better quality of life
+- Current generation of AI technologies are still considered as Artificial Narrow Intelligence (ANI)
+  - The goal is to eventually Artificial General Intelligence (AGI)
+- But there are also many concerns about the potential risk that we need to be aware of
+  - It is important for us to development appropriate frameworks to promote the responsible use of AI
