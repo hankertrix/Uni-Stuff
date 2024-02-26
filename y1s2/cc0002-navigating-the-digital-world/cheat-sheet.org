@@ -316,7 +316,7 @@ To regard as belonging to.
 - There will be a cost difference.
 
 *** Assignment of rights
-"The Writer hereby assigns to the Company all copyright, title, interest and all other rights (including all vested future and contingent interests and rights) concerning the Story, the characters depicted in it and all other output of the Writer’s Services conferred under the laws of any country throughout the world (whether now in force or which may be enacted, promulgated or come into effect in the future) for the use and benefit of the Company fully for the entire period or periods of copyright protection including all reversions, renewals and extensions, provided by the laws of any country throughout the world."
+"The Writer hereby assigns to the Company all copyright, title, interest and all other rights (including all vested future and contingent interests and rights) concerning the Story, the characters depicted in it and all other output of the Writer's Services conferred under the laws of any country throughout the world (whether now in force or which may be enacted, promulgated or come into effect in the future) for the use and benefit of the Company fully for the entire period or periods of copyright protection including all reversions, renewals and extensions, provided by the laws of any country throughout the world."
 
 ** Artificial intelligence (AI)
 - Artificial intelligence refers to machines that are capable of performing tasks that typically require human intelligence.
