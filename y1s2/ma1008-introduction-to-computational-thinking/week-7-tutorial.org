@@ -638,9 +638,7 @@ Rust implementation:
 fn add_two_vectors(vec_1: Vec<i32>, vec_2: Vec<i32>) -> Vec<i32> {
 
     // Returns the sum of the two vectors
-    return vec_1
-        .iter()
-        .enumerate()
+    vec_1.iter().enumerate()
         .map(|(index, value)| value + vec_2[index])
         .collect()
 }
@@ -663,11 +661,9 @@ Rust implementation:
 fn dot_product_vec(vec_1: Vec<i32>, vec_2: Vec<i32>) -> i32 {
 
     // Returns the dot product of the two vectors
-    return vec_1
-        .iter()
-        .enumerate()
+    vec_1.iter().enumerate()
         .map(|(index, value)| value * vec_2[index])
-        .sum();
+        .sum()
 }
 #+end_src
 
@@ -786,6 +782,9 @@ def print_words_of_a_given_input_no_split() -> None:
                                    if index + 1 < input_len
                                    else input_len - 1)
 
+    # Adds the last word to the list
+    word_list.append(user_input[previous_word_index:])
+
     # Print the list of words joined with a new line character
     print("\n".join(word_list))
 #+end_src
@@ -827,7 +826,7 @@ fn print_words_of_a_given_input_no_split() {
     let input_len = user_input.len();
 
     // The list of words to print
-    let mut word_list: Vec<&str> = vec![];
+    let mut word_list: Vec<String> = vec![];
 
     // The variable to store the position of the last word
     let mut previous_word_index = 0;
@@ -843,7 +842,9 @@ fn print_words_of_a_given_input_no_split() {
 
             // Adds the word to the list of words
             // if the word isn't an empty string
-            if word.len() > 0 { word_list.push(word.trim()) } else {};
+            if word.len() > 0 {
+                word_list.push(word.trim().to_string())
+            } else {};
 
             // Update the previous word index to the current index + 1
             // if the index is less than the length of the input
@@ -852,6 +853,13 @@ fn print_words_of_a_given_input_no_split() {
             } else { input_len - 1 };
         }
     }
+
+    // Add the last word to the list
+    word_list.push(
+        user_input.chars().collect::<Vec<_>>()[previous_word_index..]
+            .iter()
+            .collect()
+    );
 
     // Print the list of words joined with a new line character
     println!("{}", word_list.join("\n"));
