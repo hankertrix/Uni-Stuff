@@ -480,7 +480,7 @@ fn bet_against_a_dice() {
 
     // Use the random crate to generate a random number between 1 and 6
     // The last number is not included so 7 is used instead of 6
-    let random_number = rand::thread_rng().gen_range(0..7);
+    let random_number = rand::thread_rng().gen_range(1..=6);
 
     // Initialise the variable to store the user's input
     let mut user_input = 0;
