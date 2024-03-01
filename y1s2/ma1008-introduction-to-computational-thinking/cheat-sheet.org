@@ -326,6 +326,92 @@ The ability to change.
 - After creation of the object, the object *cannot* be changed.
 - *Strings* are immutable as you *cannot* change them after creating them.
 
+** Decomposition
+Decomposition is the process of *breaking down* a complex problem into smaller manageable parts (sub-problems).
+- Each sub-problem can then be examined or solved *individually*, as they are simpler to work with.
+- It is a natural way to solve problems.
+- It is also known as Divide-and-Conquer.
+
+*** Importance of decomposition
+1. Solve complex problems
+   - If a complex problem is not decomposed, it is much harder to solve at once. Sub-problems are usually easy to tackle.
+
+2. Enable collaboration and teamwork.
+   - Each sub-problem can be solved by different parties.
+
+3. Analysis
+   - Decomposition forces you to analyse your problem from different aspects.
+
+** Divide-and-Conquer
+1. Decompose a problem into several sub-problems.
+2. Solve each sub-problem.
+3. Compose the solution to the sub-problems.
+
+*Recursion* naturally supports divide-and-conquer.
+
+** Recursive function
+A recursive function is a function that invokes itself.
+
+*** General form
+- A recursive function is like a mathematical proof by induction, where you solve the problem for the base case, then solve the problem for the general until it reaches the base case.
+- Generally, you will have a base case inside an if block where the function will return a value to stop the recursion.
+- Then you will have the general case where the function will call itself on a new value.
+- This general case will continue until the function reaches the base case and finally returns a value to stop the recursion.
+
+*** Writing a recursive function
+1. Determine the interface (signature) of the function
+   - How many *parameters*? What are they?
+   - What is the *return object*?
+   - What is the *functionality* of the function?
+
+2. Assume you have finished the implementation of the function
+3. Develop the function body
+   - Base case (Conquer)
+     Solve the primitive case, and then return the result
+   - Recursive step (Divide)
+     - Decompose the problem into sub-problems (with the same structure)
+     - Call the function to solve each sub-problem
+     - Compose the final result from the sub-problems, and then return it.
+
+*** Performance
+A recursive function may be inefficient as it usually has redundant computation.
+
+** Binary tree
+- A binary tree is a type of data structure that is made of nodes.
+- It looks like an upside-down or inverted tree.
+- The first node in the tree is called the root node, and there is only *one* of them
+- The nodes that are connected to nodes below them are called *parent nodes*.
+- The nodes that are only connected to nodes above them are called *leaf nodes*. These nodes have nothing after them and hence are like the leaves of an actual tree.
+- Each node can only be connected to 2 nodes below them, hence the name binary tree.
+
+** Complete Binary Tree (CBT)
+A complete binary tree is a binary tree where every parent node has *exactly two* child nodes.
+
+** Exceptions (Python-specific concept)
+- Exceptions in Python can be thought of as *errors*.
+- It usually means that the Python program has reached an *"exceptional"* situation that it *doesn't know* how to handle.
+
+*** Why do we need exception handling?
+- Most modern languages provide ways to deal with *"exceptional situations"*.
+- Dealing with problems
+- To try to capture certain situations or failures and deal with them gracefully.
+
+*** What counts as an exception?
+1. Errors
+   - Indexing past the end of a list
+   - Trying to open a non-existent file
+   - Fetching a non-existent key from a dictionary, etc.
+
+2. Events (not really errors)
+   - Search algorithm doesn't find a value
+   - Mail message arrives, queue event occurs
+
+*** General idea
+1. Keep *watching* a particular section of code.
+2. If we get an exception, look for a catcher that can *handle* that kind of exception.
+3. If *found* handle it.
+4. Otherwise, let Python handle it (which usually halts the program).
+
 @@latex: \newpage@@
 
 * Program translations
@@ -488,6 +574,41 @@ Decode the machine instruction by the control unit, which is now stored in the i
 
 ** Execute
 Execute the instruction. For example, loading the operands into the arithmetic/logic unit (ALU) and get the ALU to operate on them.
+
+@@latex: \newpage@@
+
+* Ways to handle errors
+
+** Look before you leap (LBYL)
+- Be very cautious!
+- Check *all aspects* before execution
+  - If a string is required, check that it is a string.
+  - If the values should be positive, check that it is indeed positive.
+- This can make code quite lengthy, which can reduce readability.
+
+*** Example
+#+begin_src python :results none
+if not isinstance(string, str):
+    return None
+elif not string.isdigit():
+    return None
+else:
+    return int(string)
+#+end_src
+
+** Easier to Ask for Forgiveness than Permission (EAFP)
+- Run anything you like!
+- Be ready to *clean up* in case of error
+- The ~try~ block reflects what you want to do, and the ~except~ block reflects what you want to do on error.
+- Cleaner separation
+
+*** Example
+#+begin_src python :results none
+try:
+    return int(string)
+except (TypeError, ValueError, OverflowError):
+    return None
+#+end_src
 
 @@latex: \newpage@@
 
@@ -1378,7 +1499,7 @@ Python is sensitive to the end of line in text files, which marks the end of a s
 
 @@latex: \newpage@@
 
-** If statements
+** ~if~ statements
 - A colon must be used to mark the start of a block
 - An indentation must be used for the entire block
 
@@ -1390,7 +1511,7 @@ if a > b:
     print("a > b")
 #+end_src
 
-*** If-else statements
+*** ~if~-~else~ statements
 #+begin_src python :results none
 a = 5
 b = 1
@@ -1400,7 +1521,7 @@ else:
     print("b < a")
 #+end_src
 
-*** If-elif-else statements
+*** ~if~-~elif~-~else~ statements
 #+begin_src python :results none
 a = 5
 b = 10
@@ -1414,7 +1535,7 @@ else:
 
 @@latex: \newpage@@
 
-** While loops
+** ~while~ loops
 - The ~while~ statement allows repetition of a group of Python code as long as a condition (Boolean expression) is True.
 - It is structurally similar to an if statement but repeats the block until the condition becomes False.
 - When the condition becomes False, repetition ends and control moves on to the code following the repetition.
@@ -1426,7 +1547,7 @@ while count < 10:
     count += 1
 #+end_src
 
-** While-else loops (avoid using as much as possible)
+** ~while~-~else~ loops (avoid using as much as possible)
 - The ~while~ loop can have an associated ~else~ statement.
 - The ~else~ block is executed when the loop finishes under normal conditions. It is the last thing the loop does as it exits.
 - The ~else~ block is entered after the ~while~ loop's Boolean expression becomes False.
@@ -1442,7 +1563,7 @@ else:
     print("Done looping")
 #+end_src
 
-** Break statement
+** ~break~ statement
 - The ~break~ statement can be used to *immediately* exit the execution of the current loop and skip past all the remaining parts of the loop.
 - Note that "skip past" also means that the ~break~ statement also *skips* the ~else~ block as well.
 - The ~break~ statement is useful for stopping computation when the "answer" has been found or when continuing the computation is otherwise useless.
@@ -1463,7 +1584,7 @@ else:
 
 @@latex: \newpage@@
 
-** Continue statement
+** ~continue~ statement
 - The ~continue~ statement skips some portion of the ~while~ block that we are executing and have control flow back to the beginning of the ~while~ loop.
 - Exit early from this iteration of the loop (not the loop itself), and keep executing the ~while~ loop.
 - The ~continue~ statement continues with the next iteration of the loop.
@@ -1483,8 +1604,8 @@ while count < 10:
 
 @@latex: \newpage@@
 
-** For loops
-- For loops have the ability to iterate over the items of any sequence, such as a list or a string.
+** ~for~ loops
+- ~for~ loops have the ability to iterate over the items of any sequence, such as a list or a string.
 - Each item in the sequence is assigned to the iterating variable, which can be any variable.
 - The ~for~ loop completes when the last of the elements has been assigned to the iterating variable, or when the entire sequence is exhausted.
 
@@ -1500,7 +1621,7 @@ for drink in ("coffee", "tea", "milo"):
     print("Current drink is", drink)
 #+end_src
 
-*** For-else
+*** ~for~-~else~
 #+begin_src python :results none
 for i in range(10):
     print("i is", i)
@@ -1508,7 +1629,7 @@ else:
     print("Done looping")
 #+end_src
 
-*** For-else-break
+*** ~for~-~else~-~break~
 #+begin_src python :results none
 for i in range(10):
     if i == 5:
@@ -1521,7 +1642,7 @@ else:
     print("Done looping")
 #+end_src
 
-*** For-else-break-continue
+*** ~for~-~else~-~break~-~continue~
 #+begin_src python :results none
 for i in range(10):
     if i == 5:
@@ -1539,7 +1660,7 @@ else:
     print("Done looping")
 #+end_src
 
-** Pass statement
+** ~pass~ statement
 - The ~pass~ statement has no effect (it does nothing) but it helps in indicating an *empty* statement, suite, or block.
 - Use the ~pass~ statement when you have to put something in a statement (syntactically, you cannot leave it blank or Python will complain), but what you really want is nothing.
 - Python has the syntactical requirement that code blocks after ~if~, ~for~, ~while~, ~except~, ~def~, ~class~, etc cannot be empty.
@@ -1693,6 +1814,101 @@ print()
 print("Hi there!")
 #+end_src
 
+@@latex: \newpage@@
+
+** Exception handling (~try~-~except~ block)
+
+*** ~try~ block
+- The ~try~ block contains code that *we want to monitor* for errors during execution.
+- If an error occurs anywhere in that ~try~ block, Python looks for a *handler* that can deal with the error.
+- If no specific handler exists, Python handles it.
+  - The program halts with an error message.
+
+*** ~except~ block
+- The ~except~ block is associated with a ~try~ block.
+- A ~try~ block can have *multiple* ~except~ blocks after it.
+- Each ~except~ block names a type of exception it is monitoring for and can *handle*.
+- If the error occurring in the ~try~ block matches the type of exception, then the *first* ~except~ block is activated.
+
+*** ~try~-~except~ block
+- If no exception is in the ~try~ block, skip to the next line of code after the ~try~-~except~ block.
+- If an error occurs in a ~try~ block, look for the correct exception handler in the ~except~ blocks.
+
+*** Syntax
+#+begin_src python :results none
+try:
+    do_something()
+    do_something_else()
+    do_something_with_error()
+except TypeError:
+    handle_type_error()
+except IndexError:
+    handle_index_error()
+#+end_src
+
+*** Example
+#+begin_src python :results none
+try:
+    print("Entering the try block")
+    dividend = float(input("Enter the dividend: "))
+    divisor = float(input("Enter the divisor: "))
+    result = dividend / divisor
+    print("The result is ", result)
+
+except ZeroDivisionError:
+    print("Can't divide by 0!")
+
+except ValueError:
+    print("Couldn't convert your input to a float")
+
+print("Continuing with the rest of the program...")
+#+end_src
+
+*** Built-in exceptions
+- Python has a list of exceptions that are built-in.
+- To find an exception that you're interested in, you can try it in the Python interpreter.
+- You can also look at the Python documentation on exceptions.
+
+*** ~else~ block
+The ~else~ block is used to execute code when *no exception* occurs.
+
+#+begin_src python :results none
+try:
+    result = do_something_with_error()
+except IndexError:
+    handle_index_error()
+else:
+    do_something_with_result(result)
+#+end_src
+
+@@latex: \newpage@@
+
+*** ~finally~ block
+- The ~finally~ block is used to execute code at the end of a ~try~-~except~ block, regardless of whether an error has occurred.
+- The ~finally~ block must be placed *after all the other blocks* in the ~try~-~except~ code block.
+
+#+begin_src python :results none
+try:
+    do_something_with_error()
+except TypeError:
+    handle_type_error()
+finally:
+    always_do_this_regardless_of_error()
+#+end_src
+
+*** ~try~-~except~-~else~-~finally~
+Note that the ~else~ block must always come *before* the ~finally~ block.
+#+begin_src python :results none
+try:
+    result = x / y
+except ZeroDivisionError:
+    print("Divide by zero!")
+else:
+    print(result)
+finally:
+    print("Goodbye!")
+#+end_src
+
 ** Method in general
 #+begin_src python :results none
 object.method()
@@ -1712,8 +1928,6 @@ An indentation is a leading whitespace at the start of a statement. In Python, a
 Purpose of indentation:
 - Makes the code more readable
 - For grouping, particularly for control flow such as branching and looping
-
-@@latex: \newpage@@
 
 ** Arithmetic operators
 
