@@ -189,7 +189,7 @@ fn get_max_or_min(number_list: Vec<f64>, max: bool) -> f64 {
     }
 
     // Return the critical number
-    return critical_number;
+    critical_number
 }
 #+end_src
 
