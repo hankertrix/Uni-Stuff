@@ -889,7 +889,7 @@ fn convert_integer_to_words(mut supposed_integer: String) -> Option<String> {
     fn convert_int_to_words(
         integer: u64,
         power_of_10_index: u8,
-        number_to_word_hashmap: std::collections::HashMap<u64, String>,
+        number_to_word_hashmap: &std::collections::HashMap<u64, String>,
         powers_of_10: [u32; 6],
         powers_of_10_len: usize
     ) -> String {
@@ -943,7 +943,7 @@ fn convert_integer_to_words(mut supposed_integer: String) -> Option<String> {
                     convert_int_to_words(
                         quotient,
                         power_of_10_index + 1,
-                        number_to_word_hashmap.clone(),
+                        number_to_word_hashmap,
                         powers_of_10,
                         powers_of_10_len
                     ),
@@ -979,7 +979,7 @@ fn convert_integer_to_words(mut supposed_integer: String) -> Option<String> {
         convert_int_to_words(
             integer,
             0,
-            number_to_word_hashmap,
+            &number_to_word_hashmap,
             powers_of_10,
             powers_of_10_len
         )
