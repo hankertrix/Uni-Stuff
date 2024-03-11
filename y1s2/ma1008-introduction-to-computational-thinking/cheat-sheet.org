@@ -412,6 +412,72 @@ A complete binary tree is a binary tree where every parent node has *exactly two
 3. If *found* handle it.
 4. Otherwise, let Python handle it (which usually halts the program).
 
+** Pattern
+A pattern is a discernible regularity.
+- The elements of a pattern repeat *predictably*.
+
+In computational thinking, a pattern is the spotted *similarities* and *common differences* between problems.
+
+** Pattern recognition
+Pattern recognition involves finding the similarities or patterns among small, decomposed problems, which can help in solving complex problems more efficiently.
+
+*** Importance
+- Patterns make problems simpler and easier to solve.
+- Problems are easier to solve when they share patterns, as we can use the same problem-solving solution wherever the pattern exists.
+- The more patterns we can find, the easier and quicker out problem-solving will be.
+
+*** How to recognise patterns?
+1. Identifying common elements or features in problems.
+2. Identifying and interpreting common differences between problems.
+3. Identifying individual elements within problems.
+4. Describing patterns that have been identified.
+5. Making predictions based on identified patterns.
+
+@@latex: \newpage@@
+
+** Iterative accumulation
+Iterative accumulation accumulate *target values* by iterating over them.
+
+*** Important elements
+1. Result variable to store the accumulation result.
+2. A for loop.
+3. A target value in each iteration to add to the result variable.
+
+** File
+- A *collection of data* that is stored on *secondary storage*, like a disk.
+- Accessing a file means establishing a *connection* between the *file* and the *program* and moving data between the two.
+- When *opening* a file, you create a *file object* or *file stream* that is a connection between the file and the program.
+
+*** Types of files
+1. Text files
+   - Organised as ASCII or Unicode characters
+   - Generally human-readable, which is useful for certain file types
+   - Text files are inefficient to store as each character takes up a few bits.
+     - ASCII: 8 bits → 1 byte
+     - Unicode: 32 bits → 4 bytes
+
+2. Binary files
+   - All the information is based on specific encodings
+   - Not human-readable and contains non-readable information
+   - It is a custom format that has more efficient storage
+
+*** Current file position
+- Every file maintains a *current file position*.
+- It is the *current position* in the file and indicates what will be read next.
+- It is set by the file mode.
+
+** File buffer
+- When a file on the disk is opened, the contents of the file are *copied* into the *buffer* of the file object.
+- The file object can be thought of as a very big list.
+- The *current file position* is the *current index* to access the list.
+
+** Buffering
+- Reading from and writing to a *disk* is *very slow*.
+- Hence, a computer tries to read a lot of data from a file first.
+  - If the data is needed, it will be "buffered" in the file object.
+- The file object contains a copy of the information from the file, called a *cache*.
+- The *file buffer* contains the information from the file and provides the information to the program, and it is located in the *file object*.
+
 @@latex: \newpage@@
 
 * Program translations
@@ -608,6 +674,241 @@ try:
     return int(string)
 except (TypeError, ValueError, OverflowError):
     return None
+#+end_src
+
+@@latex: \newpage@@
+
+* Complete Binary Tree (CBT) implementation in Python
+A complete binary tree can be represented as a list in Python:
+#+begin_src python :results none
+complete_binary_tree = [left_subtree, root, right_subtree]
+example = [[[7], 1, [9]], 3, [[8], 2, [4]]]
+#+end_src
+
+** Total number of nodes in a complete binary tree
+#+begin_src python :results none
+def num_of_nodes(binary_tree: list) -> int:
+    "A function to return the number of nodes in a complete binary tree"
+
+    # Gets the length of the complete binary tree
+    length = len(binary_tree)
+
+    # If the length of the binary tree is 0 or 1,
+    # return the length of the binary tree
+    if length <= 1:
+        return length
+
+    # Otherwise
+    else:
+
+        # Get the number of nodes in the left subtree
+        # Remember that the left subtree is the first item in the list
+        num_of_nodes_in_left_subtree = num_of_nodes(binary_tree[0])
+
+        # Get the number of nodes in the right subtree
+        # Remember that the right subtree is the last item in the list
+        num_of_nodes_in_right_subtree = num_of_nodes(binary_tree[-1])
+
+        # Add the number of nodes in the left and right subtrees,
+        # adding one because of the middle root node,
+        # and return the value
+        return (num_of_nodes_in_left_subtree + num_of_nodes_in_right_subtree + 1)
+#+end_src
+
+@@latex: \newpage@@
+
+** Sum of the node values in a complete binary tree
+#+begin_src python :results none
+def sum_of_node_values(binary_tree: list) -> int:
+    "A function to return the sum of node values in a complete binary tree"
+
+    # Gets the length of the complete binary tree
+    length = len(binary_tree)
+
+    # If the length of the binary tree is 0
+    # return zero
+    if length <= 0:
+        return 0
+
+    # Otherwise, if the length of the binary tree is 1
+    # return the value of the root node
+    elif length == 1:
+        return binary_tree[0]
+
+    # Otherwise
+    else:
+
+        # Get the sum of the node values in the left subtree
+        # Remember that the left subtree is the first item in the list
+        sum_of_node_values_in_left_subtree = sum_of_node_values(binary_tree[0])
+
+        # Get the sum of the node values in the right subtree
+        # Remember that the right subtree is the last item in the list
+        sum_of_node_values_in_right_subtree = sum_of_node_values(binary_tree[-1])
+
+        # Add the sum of the node values in the left and right subtrees,
+        # as well as add the value of the root node,
+        # which is the second item in the list
+        # and return the value
+        return (
+            sum_of_node_values_in_left_subtree
+            + sum_of_node_values_in_right_subtree
+            + binary_tree[1]
+        )
+#+end_src
+
+@@latex: \newpage@@
+
+** Obtain the highest value found in the complete binary tree
+#+begin_src python :results none
+def get_max_value(binary_tree: list) -> int:
+    "A function to return the highest value found in a complete binary tree."
+
+    # Gets the length of the complete binary tree
+    length = len(binary_tree)
+
+    # If the length of the binary tree is 0, return 0
+    if length <= 0:
+        return 0
+
+    # Otherwise, if the length of the binary tree is 1
+    # return the value of the root node
+    elif length == 1:
+        return binary_tree[0]
+
+    # Otherwise
+    else:
+
+        # Get the maximum values of the left and right subtrees
+        max_value_left_subtree = get_max_value(binary_tree[0])
+        max_value_right_subtree = get_max_value(binary_tree[-1])
+
+        # Set the max value to the value of the root node
+        max_value = binary_tree[1]
+
+        # If the left subtree has a greater max value than the root node,
+        # set the max value to the one from the left subtree
+        if max_value_left_subtree > max_value:
+            max_value = max_value_left_subtree
+
+        # If the right subtree has a greater max value than the left subtree
+        # or the root node, set the max value to the one from the right subtree
+        if max_value_left_subtree > max_value:
+            max_value = max_value_right_subtree
+
+        # Return the max value
+        return max_value
+#+end_src
+
+@@latex: \newpage@@
+
+** Obtain the lowest value found in the complete binary tree
+#+begin_src python :results none
+def get_min_value(binary_tree: list) -> int:
+    "A function to return the lowest value found in a complete binary tree."
+
+    # Gets the length of the complete binary tree
+    length = len(binary_tree)
+
+    # If the length of the binary tree is 0, return 0
+    if length <= 0:
+        return 0
+
+    # Otherwise, if the length of the binary tree is 1
+    # return the value of the root node
+    elif length == 1:
+        return binary_tree[0]
+
+    # Otherwise
+    else:
+
+        # Get the minimum values of the left and right subtrees
+        min_value_left_subtree = get_min_value(binary_tree[0])
+        min_value_right_subtree = get_min_value(binary_tree[-1])
+
+        # Set the minimum value to the value of the root node
+        min_value = binary_tree[1]
+
+        # If the left subtree has a smaller minimum value than the root node,
+        # set the min value to the one from the left subtree
+        if min_value_left_subtree < min_value:
+            min_value = min_value_left_subtree
+
+        # If the right subtree has a smaller minimum value than the left subtree
+        # or the root node, set the minimum value to the one from the right subtree
+        if min_value_left_subtree < min_value:
+            min_value = min_value_right_subtree
+
+        # Return the min value
+        return min_value
+#+end_src
+
+** Mirroring a complete binary tree
+#+begin_src python :results none
+def mirror_binary_tree(binary_tree: list) -> list:
+    "Function to mirror a complete binary tree"
+
+    # If the length of the binary tree is 0 or 1,
+    # return the binary tree itself
+    if len(binary_tree) <= 1:
+        return binary_tree
+
+    # Otherwise
+    else:
+
+        # Set the parent node to the root node of the binary tree
+        parent_node = binary_tree[1]
+
+        # Gets the mirrored version of the left and right subtrees
+        mirrored_left_subtree = mirror_binary_tree(binary_tree[0])
+        mirrored_right_subtree = mirror_binary_tree(binary_tree[-1])
+
+        # Returns the mirrored binary tree
+        return [mirrored_left_subtree, parent_node, mirrored_right_subtree]
+#+end_src
+
+@@latex: \newpage@@
+
+** Printing a complete binary tree
+#+begin_src python :results none
+def print_binary_tree(binary_tree: list, depth: int) -> None:
+    """
+    Function to print a complete binary tree.
+
+    The depth represents how deep a node is in the binary tree,
+    and affects how indented the value should be when printed.
+
+    The binary tree is printed with the root node at the leftmost side
+    of the screen, and the left subtree BELOW the root node
+    and the right subtree ABOVE the root node.
+    """
+
+    # If the length of the binary tree is 0
+    # don't print anything and exit the function
+    if len(binary_tree) <= 0:
+        return
+
+    # If the length of the binary tree is 1
+    elif len(binary_tree) == 1:
+
+        # Print 2 spaces x the depth of the node, which is the indent,
+        # before the printing the only value of the binary tree.
+        # There is no need for a separator between the indent and the value
+        print("  " * depth, binary_tree[0], sep="")
+
+    # Otherwise
+    else:
+
+        # Print the right subtree of the binary tree first,
+        # as it is at the top, increasing the depth by 1
+        print_binary_tree(binary_tree[-1], depth + 1)
+
+        # Print the value of the parent node
+        print("  " * depth, binary_tree[0], sep="")
+
+        # Print the left subtree of the binary tree last,
+        # as it is at the bottom, increasing the depth by 1
+        print_binary_tree(binary_tree[0], depth + 1)
 #+end_src
 
 @@latex: \newpage@@
@@ -2130,6 +2431,8 @@ user_input = input("Please enter an input: ")
 
 @@latex: \noindent@@ ~user_input~ will be a *string*.
 
+@@latex: \newpage@@
+
 ** ~print~
 ~print~ is another built-in function in Python that displays related messages and data on the shell screen. It uses a *comma* to separate the elements.
 
@@ -2177,6 +2480,18 @@ print("My first program.")
 : Hello world!
 : My first program.
 : Hello world! My first program.
+
+*** ~file~ parameter (optional)
+- ~file~ takes a *file object* as the file to print to.
+- Nothing will be printed to the screen when this parameter is given.
+- Instead, the file will be written to with the items given to the ~print~ function.
+#+begin_src python :results none
+file = open("temp.txt", "w")
+print("First line", file=file)
+print("Second line", file=file)
+print("Third line", file=file)
+file.close()
+#+end_src
 
 ** ~range~
 ~range([start], end[, step])~
@@ -3251,7 +3566,7 @@ print(dic.values())
 : dict_values([25, 3])
 
 ** Dictionary method: ~dict.clear~
-- This method clears the dictionary, which means the dictionary becomes an empty dictionary again.
+- This method clears the *dictionary*, which means the dictionary becomes an empty dictionary again.
 - This method *changes* the dictionary in place and *does not* return any value.
 #+NAME: dict-clear
 #+begin_src python :results output :exports both
@@ -3290,6 +3605,309 @@ print(dic)
 
 #+RESULTS: dict-update
 : {'bill': 50, 'tax': 3, 'petrol': 20}
+
+** ~open~
+- Opens a file located on the disk.
+- The function takes two strings, the first string contains either the name of the file or the file path.
+- The second string tells Python what mode to open the file in.
+- The default mode is read-only mode, or ~"r"~.
+
+@@latex: \noindent@@ Opening a file in the *current program directory* on Windows:
+#+begin_src python :results none
+file = open("A_text_file.txt")
+file = open(".\A_text_file.txt")
+#+end_src
+
+@@latex: \noindent@@ Opening a file in the *parent directory* on Windows:
+#+begin_src python :results none
+file = open("..\A_text_file.txt")
+#+end_src
+
+@@latex: \noindent@@ Opening a file using its *absolute path* on Windows:
+#+begin_src python :results none
+file = open("C:\Users\Draykoth\Documents\A_text_file.txt")
+#+end_src
+
+*** File modes
+#+ATTR_LATEX: :environment tabular :align |c|c|m{10em}|m{10em}|
+|-------------+----------------+-----------------------------------------------------------------------------------------------------------------+------------------------------|
+| Mode String | Mode           | File exists                                                                                                     | File doesn't exist           |
+|-------------+----------------+-----------------------------------------------------------------------------------------------------------------+------------------------------|
+| "r"         | Read-only      | Opens the file.                                                                                                 | Error                        |
+|-------------+----------------+-----------------------------------------------------------------------------------------------------------------+------------------------------|
+| "w"         | Write-only     | Clears the file contents.                                                                                       | Creates and opens a new file |
+|-------------+----------------+-----------------------------------------------------------------------------------------------------------------+------------------------------|
+| "a"         | Write-only     | The file contents are left intact and new data is appended at the end of the file.                              | Creates and opens a new file |
+|-------------+----------------+-----------------------------------------------------------------------------------------------------------------+------------------------------|
+| "r+"        | Read and write | Reads and overwrites from the beginning of the file.                                                   | Error                        |
+|-------------+----------------+-----------------------------------------------------------------------------------------------------------------+------------------------------|
+| "w+"        | Read and write | Clears the file contents.                                                                                       | Creates and opens a new file |
+|-------------+----------------+-----------------------------------------------------------------------------------------------------------------+------------------------------|
+| "a+"        | Read and write | The file contents are left intact and reading and writing starts at the end of the file. | Creates and opens a new file |
+|-------------+----------------+-----------------------------------------------------------------------------------------------------------------+------------------------------|
+
+*** ~encoding~ parameter (optional)
+- ~encoding~ takes a *string* that specifies the file encoding for reading the file.
+- The default value is ~"UTF-8"~, which is for text files.
+- Binary files, depending on language or operating system, will have *different* encodings, and hence the encoding for binary files needs to be specified explicitly, like the example below.
+- For more information about encodings, visit [[http://getpython3.com/diveintopython3/strings.html#boring-stuff][this website]].
+#+begin_src python :results none
+open("table.csv", "r", encoding="windows-1252")
+#+end_src
+
+*** Reading a file
+#+NAME: reading-a-file
+#+begin_src python :results output :exports both
+# Opens the file in read-only mode
+file = open("A_text_file.txt", "r")
+
+# Iterates over the file and prints the lines.
+# No end character as the lines in the file already
+# include the new line character.
+for line in file:
+    print(line, end="")
+
+# Close the file
+file.close()
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: reading-a-file
+: First line: €
+: Second line
+: Third line
+: Fourth line
+: Fifth line
+
+@@latex: \newpage@@
+
+** File method: ~file.close~
+- This method closes the file.
+- It is important to call this method once you're done with the file to save your changes to the disk.
+- The information in the file buffer is "flushed" out of the buffer and into the file on the disk when this method is called.
+- If you don't call this method, your changes WILL NOT be saved to the disk.
+#+begin_src python :results none
+file.close()
+#+end_src
+
+*** Automatically closing a file
+- The file is opened at the ~with~ statement.
+- The file mode is read-only, and the file type is text in the example below.
+- The file is automatically closed at the end of the ~with~ block.
+
+#+NAME: auto-close-file
+#+begin_src python :results output :exports both
+with open("A_text_file.txt", "r") as file:
+    for line in file:
+        print(line)
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: auto-close-file
+#+begin_example
+First line: €
+
+Second line
+
+Third line
+
+Fourth line
+
+Fifth line
+
+#+end_example
+
+** File method: ~file.readline~
+- This method returns the next line as a *string*.
+- This method also moves the current file position forward.
+- When the current file position reaches the end of the file, every read will yield an empty string ~""~.
+- Using the ~seek~ method is required to read the file again.
+- Closing and reopening the file also works, but is far less efficient.
+
+#+NAME: file-readline
+#+begin_src python :results output :exports both
+file = open("A_text_file.txt", "r")
+
+# No end character as the lines in the file already
+# include the new line character
+print(file.readline(), end="")
+print(file.readline(), end="")
+print(file.readline(), end="")
+file.close()
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: file-readline
+: First line: €
+: Second line
+: Third line
+
+@@latex: \newpage@@
+
+** File method: ~file.readlines~
+- This method returns a list of all the lines from the file.
+- This method also moves the current file position forward.
+- When the current file position reaches the end of the file, every read will yield an empty string ~""~.
+- Using the ~seek~ method is required to read the file again.
+- Closing and reopening the file also works, but is far less efficient.
+
+#+NAME: file-readlines
+#+begin_src python :results output :exports both
+file = open("A_text_file.txt", "r")
+print(file.readlines())
+file.close()
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: file-readlines
+: ['First line: €\n', 'Second line\n', 'Third line\n', 'Fourth line\n', 'Fifth line\n']
+
+@@latex: \newpage@@
+
+** File method: ~file.read~
+- This method takes an *integer*, which represents how many *characters* is to be read from the file.
+- If this integer is not given, then the entire file is read and returned as a single string.
+- This method also moves the current file position forward.
+- When the current file position reaches the end of the file, every read will yield an empty string ~""~.
+- Using the ~seek~ method is required to read the file again.
+- Closing and reopening the file also works, but is far less efficient.
+
+#+NAME: file-read-given-int
+#+begin_src python :results output :exports both
+file = open("A_text_file.txt", "r")
+print(file.read(5))
+file.close()
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: file-read-given-int
+: First
+
+#+NAME: file-read
+#+begin_src python :results output :exports both
+file = open("A_text_file.txt", "r")
+print(file.read())
+file.close()
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: file-read
+: First line: €
+: Second line
+: Third line
+: Fourth line
+: Fifth line
+:
+
+** File method: ~file.write~
+This method takes a *string* and writes it to the file.
+#+begin_src python :results none
+file = open("temp.txt", "w")
+file.write("First line\n")
+file.write("Second line\n")
+file.close()
+#+end_src
+
+** File method: ~file.writelines~
+This method takes a *list of strings* and writes it to the file.
+#+begin_src python :results none
+file = open("temp.txt", "w")
+lines = ["First line\n", "Second line\n"]
+file.writelines(lines)
+file.close()
+#+end_src
+
+** File method: ~file.tell~
+- This method tells returns an *integer* representing the *current file position*.
+- The positions are in *bytes* from the *beginning* of the file.
+- This is not necessarily the same as the number of characters, as it depends on encoding.
+- Some characters may take multiple bytes, like the euro symbol in the example below.
+
+#+NAME: file-tell
+#+begin_src python :results output :exports both
+file = open("A_text_file.txt", "r")
+print(file.tell())
+print(file.read(11))
+print(file.tell())
+print(file.read(1))
+print(file.tell())
+print(file.read(1))
+print(file.tell())
+file.close()
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: file-tell
+: 0
+: First line:
+: 11
+:
+: 12
+: €
+: 15
+
+** File method: ~file.seek~
+This method takes an *integer* representing the offset in *bytes* from the *beginning* of the file and updates the current file position that position.
+#+begin_src python :results none
+# Seek to the beginning of the file
+file.seek(0)
+
+# Seek to 100 bytes from the beginning of the file
+file.seek(100)
+#+end_src
+
+*** Example
+#+NAME: file-seek
+#+begin_src python :results output :exports both
+file = open("A_text_file.txt", "r")
+print(file.read(12))
+print(file.tell())
+print(file.read(1))
+print(file.tell())
+print(file.seek(6))
+print(file.read(4))
+file.close()
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: file-seek
+: First line:
+: 12
+: €
+: 15
+: 6
+: line
+
+@@latex: \newpage@@
+
+*** ~whence~ parameter (optional)
+- ~whence~ takes an *integer*, either ~0~, ~1~ or ~2~, and represents file positioning.
+- This parameter defaults to ~0~, which is to count from the beginning of the file.
+  - ~0~ means to count from the beginning of the file.
+  - ~1~ means to count from the current position in the file.
+  - ~2~ means to count from the end of the file. This option is usually paired with a negative offset.
+
+- In text files, only seeks relative to the beginning of the file are allowed.
+- An exception to this is the seek to the end of the file, like ~file.seek(0, 2)~.
+
+#+begin_src python :results none
+
+# Go to 100 bytes before the end of the file
+file.seek(-100, 2)
+
+# Go to 5 bytes from the current file position
+file.seek(5, 1)
+#+end_src
+
+@@latex: \newpage@@
 
 ** ~math~ module method: ~math.floor~
 - This method takes a number and returns an *integer (~int~)* rounded *down* to the nearest integer.
