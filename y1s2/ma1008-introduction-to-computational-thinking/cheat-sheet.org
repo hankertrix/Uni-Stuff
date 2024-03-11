@@ -1995,38 +1995,6 @@ In Python, chained comparisons work just like you would expect in a mathematical
 - ~0 <= x <= 5~ is the same as ~0 <= x and x <= 5~.
 - ~0 <= x <= 5 > 10~ is the same as ~0 <= x and x <= 5 and x > 10~.
 
-** Operator precedence
-
-#+ATTR_LATEX: :environment tabular :align c|c|c|c
-| *Precedence* | *Associativity* | *Operator*                     | *Description*               |
-|--------------+-----------------+--------------------------------+-----------------------------|
-|           18 | Left-to-right   | ~()~                           | Parentheses (grouping)      |
-|           17 | Left-to-right   | ~f(args...)~                   | Function call               |
-|           16 | Left-to-right   | ~x[index:index]~               | Slicing                     |
-|           15 | Left-to-right   | ~x[index]~                     | Indexing an array           |
-|           14 | Right-to-left   | ~**~                           | Exponentiation              |
-|           13 | Left-to-right   | ~~x~                           | Bitwise not                 |
-|           12 | Left-to-right   | ~+x~                           | Positive                    |
-|           12 | Left-to-right   | ~-x~                           | Negative                    |
-|           11 | Left-to-right   | ~*~                            | Multiplication              |
-|           11 | Left-to-right   | ~/~                            | Division                    |
-|           11 | Left-to-right   | ~%~                            | Modulo (Remainder operator) |
-|           10 | Left-to-right   | ~+~                            | Addition                    |
-|           10 | Left-to-right   | ~-~                            | Subtraction                 |
-|            9 | Left-to-right   | ~<<~                           | Bitwise left shift          |
-|            9 | Left-to-right   | ~>>~                           | Bitwise right shift         |
-|            8 | Left-to-right   | ~&~                            | Bitwise AND                 |
-|            7 | Left-to-right   | ~^~                            | Bitwise XOR                 |
-|            6 | Left-to-right   | \vert                          | Bitwise OR                  |
-|            5 | Left-to-right   | ~in~, ~not in~, ~is~, ~is not~ | Membership                  |
-|            5 | Left-to-right   | ~<~, ~<=~, ~>~, ~>=~           | Relational                  |
-|            5 | Left-to-right   | ~<>~, ~==~                     | Equality                    |
-|            5 | Left-to-right   | ~!=~                           | Inequality                  |
-|            4 | Left-to-right   | ~not x~                        | Boolean NOT                 |
-|            3 | Left-to-right   | ~and~                          | Boolean AND                 |
-|            2 | Left-to-right   | ~or~                           | Boolean OR                  |
-|            1 | Left-to-right   | ~lambda~                       | Lambda expression           |
-
 @@latex: \newpage@@
 
 * Documentation for Python functions
@@ -3382,6 +3350,40 @@ print(math.cos(90))
 : 6.123233995736766e-17
 : 1.0
 : -0.4480736161291701
+
+@@latex: \newpage@@
+
+* Operator precedence
+
+#+ATTR_LATEX: :environment tabular :align c|c|c|c
+| *Precedence* | *Associativity* | *Operator*                     | *Description*               |
+|--------------+-----------------+--------------------------------+-----------------------------|
+|           18 | Left-to-right   | ~()~                           | Parentheses (grouping)      |
+|           17 | Left-to-right   | ~f(args...)~                   | Function call               |
+|           16 | Left-to-right   | ~x[index:index]~               | Slicing                     |
+|           15 | Left-to-right   | ~x[index]~                     | Indexing an array           |
+|           14 | Right-to-left   | ~**~                           | Exponentiation              |
+|           13 | Left-to-right   | ~~x~                           | Bitwise not                 |
+|           12 | Left-to-right   | ~+x~                           | Positive                    |
+|           12 | Left-to-right   | ~-x~                           | Negative                    |
+|           11 | Left-to-right   | ~*~                            | Multiplication              |
+|           11 | Left-to-right   | ~/~                            | Division                    |
+|           11 | Left-to-right   | ~%~                            | Modulo (Remainder operator) |
+|           10 | Left-to-right   | ~+~                            | Addition                    |
+|           10 | Left-to-right   | ~-~                            | Subtraction                 |
+|            9 | Left-to-right   | ~<<~                           | Bitwise left shift          |
+|            9 | Left-to-right   | ~>>~                           | Bitwise right shift         |
+|            8 | Left-to-right   | ~&~                            | Bitwise AND                 |
+|            7 | Left-to-right   | ~^~                            | Bitwise XOR                 |
+|            6 | Left-to-right   | \vert                          | Bitwise OR                  |
+|            5 | Left-to-right   | ~in~, ~not in~, ~is~, ~is not~ | Membership                  |
+|            5 | Left-to-right   | ~<~, ~<=~, ~>~, ~>=~           | Relational                  |
+|            5 | Left-to-right   | ~<>~, ~==~                     | Equality                    |
+|            5 | Left-to-right   | ~!=~                           | Inequality                  |
+|            4 | Left-to-right   | ~not x~                        | Boolean NOT                 |
+|            3 | Left-to-right   | ~and~                          | Boolean AND                 |
+|            2 | Left-to-right   | ~or~                           | Boolean OR                  |
+|            1 | Left-to-right   | ~lambda~                       | Lambda expression           |
 
 @@latex: \newpage@@
 
