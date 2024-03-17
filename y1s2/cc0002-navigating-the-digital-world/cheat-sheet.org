@@ -2,6 +2,7 @@
 #+AUTHOR: Hankertrix
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{array}
 
 * Definitions
 
@@ -186,6 +187,8 @@ There are three moral theories that are the most influential in normative ethics
    - Kant's theory says that all persons are unconditionally valuable insofar as they are rational and autonomous.
    - It also says that we should respect the value of persons, and not use them in a way that disrespects their value.
 
+@@latex: \newpage@@
+
 ** Cyberbullying
 Cyberbullying is the use of the internet or digital devices to inflict psychological harm on a person or group.
 
@@ -275,10 +278,13 @@ Exclusive licences are granted to one person only.
 - All media aggregation platforms where works can be assessed for use.
 
 *** Licensing vs assignment
+#+ATTR_LATEX: :align m{16em}|m{16em}
 | Licensing                                                             | Assignment                                                         |
 |-----------------------------------------------------------------------+--------------------------------------------------------------------|
 | Grants someone else (other than the IP owner) the right to use the IP | Transfers the entire title and interest in someone's IP to another |
+|-----------------------------------------------------------------------+--------------------------------------------------------------------|
 | Less costly                                                           | More costly                                                        |
+|-----------------------------------------------------------------------+--------------------------------------------------------------------|
 | IP owner remains in control                                           | IP owner gives up control                                          |
 
 - Consider the situation where you want to own or license ("hire").
@@ -293,6 +299,8 @@ Exclusive licences are granted to one person only.
 - The way a licence is worded can make it almost as strong or effective as an assignment.
 - Thus, it is important to understand the language used in licences and assignment agreements.
 
+@@latex: \newpage@@
+
 ** Assignment
 An assignment is another type of contract. An assignment must be in writing and signed by or on behalf of the assigner.
 
@@ -304,16 +312,21 @@ To regard as belonging to.
 - The assignee is not the new owner of the property.
 
 *** Licensing vs assignment
+#+ATTR_LATEX: :align m{16em}|m{16em}
 | Licensing                                                             | Assignment                                                         |
 |-----------------------------------------------------------------------+--------------------------------------------------------------------|
 | Grants someone else (other than the IP owner) the right to use the IP | Transfers the entire title and interest in someone's IP to another |
+|-----------------------------------------------------------------------+--------------------------------------------------------------------|
 | Less costly                                                           | More costly                                                        |
+|-----------------------------------------------------------------------+--------------------------------------------------------------------|
 | IP owner remains in control                                           | IP owner gives up control                                          |
 
 - Consider the situation where you want to own or license ("hire").
 - If someone is creating something new for you, and you wish to have complete control over it, you may want to take an assignment of the IP rights in the thing created.
 - If there is an IP already created by someone else that you wish to use for a specific reason, you may want to just license the IP.
 - There will be a cost difference.
+
+@@latex: \newpage@@
 
 *** Assignment of rights
 "The Writer hereby assigns to the Company all copyright, title, interest and all other rights (including all vested future and contingent interests and rights) concerning the Story, the characters depicted in it and all other output of the Writer's Services conferred under the laws of any country throughout the world (whether now in force or which may be enacted, promulgated or come into effect in the future) for the use and benefit of the Company fully for the entire period or periods of copyright protection including all reversions, renewals and extensions, provided by the laws of any country throughout the world."
@@ -405,6 +418,8 @@ The process of creating a law can be broken down in the these steps:
 *** Other examples
 - Traditional poetry, which is defined due to its regular rhythm, verse structure and rhyme scheme.
 
+@@latex: \newpage@@
+
 ** Decomposition
 - Breaking down data, processes or problems into smaller and more manageable components to solve a problem.
 - Each sub problem can then be examined or solved individually, as they are simpler to work with
@@ -419,6 +434,8 @@ The process of creating a law can be broken down in the these steps:
 - Counting up the coins in a piggy bank, as we would normally separate the coins into bundles of the same type and then count them up separately, before adding their totals together.
 - Organisational structure in an organisation, where it would have different departments and teams that hold different sets of responsibilities and powers to ensure a sustained and effective working environment. Each department will then have to submit reports on the work that they have done, which allows organisations to operate efficiently.
 - Essay writing in school, as the essay is usually broken down into parts like the introduction, body, and the conclusion. Then, we can tackle each part of the essay separately.
+
+@@latex: \newpage@@
 
 ** Pattern recognition
 - Is observing patterns, trends and regularities in data (Google's definition)
@@ -626,6 +643,8 @@ Because cyberspace is a dynamic environment with evergreen challenges, there is 
 - Keep software applications updated and patched in a timely manner.
 - Enable auto updates or auto patch because doing so will help protect against known security vulnerabilities and exploits.
 
+@@latex: \newpage@@
+
 ** Safe use of public Wi-Fi
 
 *** Cyber threats
@@ -639,6 +658,8 @@ Because cyberspace is a dynamic environment with evergreen challenges, there is 
 - Use a virtual private network (VPN), which encrypts the data transmitting to and from your devices.
 - Disable file sharing to prevent anyone from accessing your files or from sending you malicious files when they are connected to the same Wi-Fi network.
 - Disable auto-connect to avoid connecting to bogus networks unknowingly.
+
+@@latex: \newpage@@
 
 ** Using e-payment services
 
@@ -659,6 +680,7 @@ Because cyberspace is a dynamic environment with evergreen challenges, there is 
 - Always verify the authenticity of the information with official sources, such as official websites.
 - Never disclose personal or internet banking information and one-time passwords (OTP).
 
+@@latex: \newpage@@
 
 * Fake news
 A specific type of falsehood intentionally packaged to look like news to deceive others.
@@ -733,6 +755,8 @@ Trusted sources are sources that people trust, be it their friends, or a news si
 *** Disregarded sources
 Disregarded sources are sources that people don't trust, and hence dismiss the sources' claims, even if they may be true.
 
+@@latex: \newpage@@
+
 ** Message characteristics to take note
 - Plausible?
 - Mentions experts?
@@ -754,6 +778,8 @@ Informational apathy refers to people not bothering to take an action to correct
 - Protecting interpersonal relationships
 - Personal inefficacy, people believe that even if they correct the fake news, there's nothing that will come out of it
 
+@@latex: \newpage@@
+
 ** The consequences of fake news
 
 *** Short-term effects
@@ -767,6 +793,8 @@ Informational apathy refers to people not bothering to take an action to correct
 - Erosion of trust in institutions
 - Larger social divisions
 - Chilling effect, where the press or news outlets just report positive news regarding a certain entity when the entity labels them as fake news
+
+@@latex: \newpage@@
 
 ** How do we authenticate information?
 
@@ -810,6 +838,8 @@ An Act to prevent the electronic communication in Singapore of false statement o
 
 *** What constitutes communicating?
 A statement or material is communicated in Singapore if it is made available to one or more end-users in Singapore on or through the internet, MMS or SMS.
+
+@@latex: \newpage@@
 
 *** What is "in the public interest"?
 - It is in the interest of the security of Singapore or any part of Singapore.
@@ -876,6 +906,8 @@ There is an intentional consensus that ethics is vital to the development, appli
 - Technology shapes the way people live.
 - While digital and online technologies offer remarkable benefits, like knowledge, communication, efficiency, and personalisation, they also expose risks of significant harms to privacy, security, autonomy, fairness and transparency.
 - Lawmakers are often unable to keep up with the speed of technological advancement. Hence, not only expert technologists, but also ordinary users, must learn to develop and use technologies in ways that avoid harms while getting the most from the benefits.
+
+@@latex: \newpage@@
 
 ** Principles of data ethics
 - Moral theories are meant to provide very general explanations and guidance concerning what we morally ought to do.
@@ -970,6 +1002,8 @@ Copyright protection arises automatically be operation of law, so long as certai
 - No need for novelty so long as there is independent creation.
 - Artistic merit is not a requirement for copyright to attach to a work as it is too subjective.
 
+@@latex: \newpage@@
+
 ** Things that are not protected by copyright
 - Ideas and concepts
 - Discoveries (e.g. a research finding)
@@ -1019,13 +1053,20 @@ Copyright protection arises automatically be operation of law, so long as certai
 *** Published editions
 - Make a reproduction of the edition, including by way of a photographic process.
 
+@@latex: \newpage@@
+
 ** Duration of copyright protection
+#+ATTR_LATEX: :align m{16em}|m{16em}
 | Type of work                                                                                             | Duration of protection                                                          |
 |----------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------|
 | Literary, dramatic, musical and artistic works (e.g. photographs, paintings, drawings, sculptures, etc.) | Life of author plus 70 years from the end of the year in which the author died. |
+|----------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------|
 | Published editions (editions of a book, like the first edition of a physics textbook)                    | 25 years from the end of the year in which the edition was first published.     |
+|----------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------|
 | Sound recording and films                                                                                | 70 years from the end of the year of release                                    |
+|----------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------|
 | Broadcasts and cable programmes                                                                          | 60 years from the end of the year of the first broadcast                        |
+|----------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------|
 | Performances                                                                                             | 70 years from the end of the year of the performance                            |
 
 ** Overlapping copyright
@@ -1057,6 +1098,8 @@ The person who creates or authors the work automatically owns it from the moment
 - Provide certain guarantees
 - Set performance standards
 - Provide how non-fulfilment of obligations should be dealt with
+
+@@latex: \newpage@@
 
 ** What the law of contract covers
 - Formation of contracts, which are the elements required for a contract to exist.
@@ -1108,6 +1151,8 @@ Basic assurance that the contract can be carried out effectively.
 
 *** Dispute resolution
 How will disagreements be resolved?
+
+@@latex: \newpage@@
 
 ** Breach and remedies
 - A contract is breached when there is non-performance of a term.
@@ -1193,6 +1238,8 @@ From 1973 to the early 1980s, there was very little research interest in AI.
 - An 8-layer deep convolution neural network used in the 2012 ImageNet computer image recognition competition by Alex Krizhevsky to beat handcrafted software written by computer vision domain experts for the first time in history.
 - This neural network is considered rudimentary compared to current neural networks that have hundreds of layers.
 
+@@latex: \newpage@@
+
 *** Convolution Neural Networks (CNN)
 - The inputs in a CNN, usually images, go through a mathematical operation called convolution, which transforms the inputs into feature maps.
 - The feature maps then undergo subsampling to create smaller feature maps, which then go through another round of convolutions and subsampling to create increasingly smaller feature maps.
@@ -1205,6 +1252,8 @@ From 1973 to the early 1980s, there was very little research interest in AI.
 - The middle hidden layer then combines the low-level features to form the features that are found on various parts of the face.
 - The next hidden layer then combines the facial features to form typical human faces.
 - During the face detection process, which is known as inference, the result is obtained by comparing the input image against the features of faces that the neural network has been trained to recognise.
+
+@@latex: \newpage@@
 
 ** Applications
 - AI-powered robots can learn by themselves to perform more complicated tasks.
@@ -1232,6 +1281,8 @@ From 1973 to the early 1980s, there was very little research interest in AI.
 - AI-powered floor vacuum cleaners can learn the environment of the floor area to plan the most optimised way of cleaning the floor.
 - Smart security cameras can determine whether an intrusion is caused by a human or just due to other disturbances, such as an animal passing through the area.
 
+@@latex: \newpage@@
+
 *** Business operations
 - AI technologies are also used to manage inventory and to forecast demand more precisely to improve business efficiency and reduce inventory costs.
 - AI is also used in personalised merchandising based on the customer online browsing history, preferences, and interests when they are visiting a web store.
@@ -1240,6 +1291,8 @@ From 1973 to the early 1980s, there was very little research interest in AI.
 - They can be used as fully automated self-service tools, or sometimes they assist real people to handle multiple conversations at the same time.
 - AI-driven chatbots can be used to find the most appropriate responses during conversations with customers either via text or even using text-to-speech.
 - By using AI technologies, businesses can deliver highly targeted and personalised advertisements, which improve customer experience, build relationships, and loyalty.
+
+@@latex: \newpage@@
 
 *** Banking and finance
 - The financial industry relies on accuracy, real-time reporting, and the need to process high volumes of quantitative data to make better decisions, which are the areas that AI excels in.
@@ -1291,6 +1344,8 @@ Deep fakes can be used to spread false information and create tensions among dif
 - AI is ultimately programmed by humans, and different people have different upbringing, different cultural backgrounds with diverse ethical and moral values.
 - Furthermore, the use of AI in autonomous weapons will remove the human judgements based on moral considerations during battles.
 - Hence, the issue of making AI systems fair for everyone in society is an ethical issue that receives a lot of debate and research interest.
+
+@@latex: \newpage@@
 
 ** Summary
 - AI is rapidly changing the way we live:
