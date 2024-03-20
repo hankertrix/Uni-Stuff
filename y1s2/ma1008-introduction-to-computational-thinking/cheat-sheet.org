@@ -478,6 +478,75 @@ Iterative accumulation accumulate *target values* by iterating over them.
 - The file object contains a copy of the information from the file, called a *cache*.
 - The *file buffer* contains the information from the file and provides the information to the program, and it is located in the *file object*.
 
+** Sorting algorithms
+- Sorting algorithms are algorithms that puts elements in a list of a certain order.
+- The most frequently used orders are *numerical* and *alphabetical orders*.
+- Efficient sorting is important for optimising the efficiency of other algorithms (such as search and merge algorithms).
+- Most of the primary sorting algorithms run on different space and time complexity.
+
+*** Importance
+- *Practical applications*: Sorting people by last name, countries by population, and websites by search engine relevance.
+- *Sorting algorithms are fundamental to other algorithms*.
+
+*** Trade-offs
+- Different algorithms have different trade-offs.
+- There is no single "best" sort for all scenarios.
+- So, knowing just one way to sort is not enough.
+
+** Time complexity
+Time complexity is defined to be the time the computer takes to run a program or algorithm.
+
+** Space complexity
+Space complexity is defined to be the amount of memory the computer needs to run a program.
+
+** Bubble sort (Sinking sort)
+- One of the simplest sorting algorithms.
+- It repeatedly steps through the list to be sorted, compares each pair of adjacent items, and swaps them if they are in the wrong order.
+- The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted.
+- The algorithm, which is a comparison sort, is named for the way smaller or larger elements "bubble" to the top of the list."
+- It is easier to implement but slower than other sorts.
+
+*** Overview
+Bubble sort makes multiple passes through a list. For each pass, bubble sort goes through the steps below:
+1. Compare the first two items in the list, and if the second item is smaller than the first, then the items are swapped.
+2. Then move to the next item, compare the item and the item after it, and swap the two items if necessary.
+3. Repeat the process.
+
+*** After the first pass
+Each sequence of comparison is called a pass. Once the first pass through the list has completed, the largest number has now been moved to the end of the list.
+
+*** Start of the second pass
+At the start of the second pass:
+- The largest value is now in place, at the end of the list.
+- There are (n - 1) items left to sort, which means there will be (n - 2) pairs.
+
+*** Repeat the process
+- Since each pass places the next largest value in place, the total number of passes necessary will be (n - 1).
+- After completing the (n - 1) passes, the smallest items must be in the correct position with no further processing required.
+
+@@latex: \newpage@@
+
+** Merge sort
+- Merge sort is an example of a divide-and-conquer style of algorithm.
+- A problem is repeatedly broken up into sub-problems, often using recursion, until they are small enough to be solved.
+- The solutions are combined to solve the larger problem.
+- Merge sort breaks the data into parts that can be sorted trivially, then combine those parts knowing that they are sorted.
+
+*** Overview
+1. Split the list into 2 parts, usually at the middle point.
+2. Compare the first elements of both lists 1 by 1.
+3. Move the smaller element out of the list that it was found in and add this value to the list of "sorted items".
+4. Repeat the process until only a single list remains.
+5. One list should still contain elements, which is sorted. Hence, the contents are moved into the result list.
+
+** Timsort
+- Timsort is a hybrid sorting algorithm used by Python.
+- It is derived from merge sort and insertion sort and is designed to perform well on many kinds of real-world data.
+- It is invented by Tim Peters in 2002 for use in the Python programming langugage.
+- It finds subsets of the data that are already ordered, and uses the subsets to sort the data more efficiently. This is done by merging an identified subset, called a run, with existing runs until certain criteria are fulfilled.
+- Timsort has been Python's standard sorting algorithm since version 2.3.
+- It is now also used to sort arrays in Java SE 7 and on the Android platform.
+
 @@latex: \newpage@@
 
 * Program translations
@@ -912,6 +981,150 @@ def print_binary_tree(binary_tree: list, depth: int) -> None:
 #+end_src
 
 @@latex: \newpage@@
+
+* Sorting algorithm implementation in Python
+
+** Bubble sort
+This implementation *modifies* the list and *does not return* any value.
+#+begin_src python :results none
+def bubble_sort(list_of_items: list) -> None:
+    "A function to sort a list of items using bubble sort."
+
+    # Length of the list of items
+    n = len(list_of_items)
+
+    # Iterates from the first item to the second last item of the list
+    for pass_number in range(n - 1):
+
+        # Intialise the swapped variable to False
+        swapped = False
+
+        # Iterates over the items in the shortened list
+        # The items at the back of the list is sorted and the
+        # number of items at that back that are sorted
+        # depends on the number of passes, so this makes the sort more efficient.
+        for i in range(n - pass_number - 1):
+
+            # Get the current item and the next item
+            current_item = list_of_items[i]
+            next_item = list_of_items[i+1]
+
+            # If the current item is greater than the next item
+            if current_item > next_item:
+
+                # Swap the items and set the swapped variable to True
+                list_of_items[i] = next_item
+                list_of_items[i+1] = current_item
+                swapped = True
+
+        # If no swaps have been performed in the inner for loop,
+        # break out of the loop as the entire list is sorted.
+        # This is also to improve the efficiency of the sort.
+        if not swapped:
+            break
+#+end_src
+
+** Merge sort
+This implementation *returns a sorted list* of the items and *does not modify* the original list.
+
+*** Merge function (used in the merge sort function)
+#+begin_src python :results none
+def merge(left_list: list, right_list: list) -> list:
+    "A function to merge the left list and the right list for merge sort."
+
+    # Gets the length of the sorted list
+    sorted_list_length = len(left_list) + len(right_list)
+
+    # Initialise a list of Nones with the length of the sorted list
+    sorted_list = [None] * sorted_list_length
+
+    # Initialise the iterating variables
+    left_list_index, right_list_index, sorted_list_index = (0, 0, 0)
+
+    # While there are items in both the left and right lists
+    while left_list_index < len(left_list) and right_list_index < len(right_list):
+
+        # If the value of the left item is less than the right item,
+        # put the value from the left list into the sorted list
+        # and increment the index of the left list by 1
+        if left_list[left_list_index] < right_list[right_list_index]:
+            sorted_list[sorted_list_index] = left_list[left_list_index]
+            left_list_index += 1
+
+        # Otherwise, put the value from the left list into the sorted list
+        # and increment the index of the left list by 1
+        else:
+            sorted_list[sorted_list_index] = right_list[right_list_index]
+            right_list_index += 1
+
+        # Always increment the index of the sorted list by 1
+        sorted_list_index += 1
+
+    # Continued on the next page...
+
+    # The following blocks of code are NOT inside the while loop above.
+    # They are in the main block of the function,
+    # which is the same indentation level
+    # as the "Continued on the next page..." comment
+
+    # If there are still items in the left list
+    while left_list_index < len(left_list):
+
+        # Add the item to the sorted list
+        sorted_list[sorted_list_index] = left_list[left_list_index]
+
+        # Increment the indexes for both lists by 1
+        sorted_list_index += 1
+        left_list_index += 1
+
+    # If there are still items in the right list
+    while right_list_index < len(right_list):
+
+        # Add the item to the sorted list
+        sorted_list[sorted_list_index] = right_list[right_list_index]
+
+        # Increment the indexes for both lists by 1
+        sorted_list_index += 1
+        right_list_index += 1
+
+    # Return the sorted list
+    return sorted_list
+#+end_src
+
+@@latex: \newpage@@
+
+*** Merge sort function (the actual sorting function)
+This is *the function to use* to sort a list using the merge sort algorithm.
+#+begin_src python :results none
+def merge_sort(list_of_items: list) -> list:
+    "A function to sort the list of items using merge sort."
+
+    # Get the length of the list
+    length = len(list_of_items)
+
+    # If the length of the list is less than 2, then return the list of items.
+    # This is the base case.
+    if length < 2:
+        return list_of_items
+
+    # Get the middle of the list.
+    # Use the floor division operator to get an integer for lists of odd length.
+    middle = length // 2
+
+    # Split the list into 2, and get the left and right list.
+    left_list = list_of_items[:middle]
+    right_list = list_of_items[middle:]
+
+    # Recursively sort the left and right list
+    sorted_left_list = merge_sort(left_list)
+    sorted_right_list = merge_sort(right_list)
+
+    # Merge the two lists together and return the sorted list
+    return merge(sorted_left_list, sorted_right_list)
+#+end_src
+
+@@latex: \newpage@@
+
 
 * Data types in Python
 Python uses duck-typing to figure out the type of a variable.
@@ -2565,6 +2778,107 @@ print(chr(97))
 #+RESULTS: chr
 : a
 
+@@latex: \newpage@@
+
+** ~sorted~
+- This function takes a collection, like a *list*, *tuple*, *dictionary*, or a *set*, and returns a *sorted list* of the items in the collection.
+- This function does not modify the original collection, and returns a *new* list.
+- This function uses a sorting algorithm called [[https://en.wikipedia.org/wiki/Timsort][Timsort]].
+
+#+NAME: sorted
+#+begin_src python :results output :exports both
+num_list = [10, 6, 3, 1, 9]
+num_tuple = (10, 6, 3, 1, 9)
+num_set = {10, 6, 3, 1, 9}
+num_dict = {
+    10: "ten",
+    6: "six",
+    3: "three",
+    1: "one",
+    9: "nine"
+}
+
+print(sorted(num_list))
+print(sorted(num_tuple))
+print(sorted(num_set))
+print(sorted(num_dict))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: sorted
+: [1, 3, 6, 9, 10]
+: [1, 3, 6, 9, 10]
+: [1, 3, 6, 9, 10]
+: [1, 3, 6, 9, 10]
+
+@@latex: \newpage@@
+
+*** ~key~ parameter (optional)
+- ~key~ takes a function that acts on the *items* in the collection that is being sorted.
+- The sorting algorithm uses the *result* of that function to sort the values.
+
+#+NAME: sorted-key
+#+begin_src python :results output :exports both
+num_list = [10, 6, 3, 1, 9]
+num_dict = {
+    10: "ten",
+    6: "six",
+    3: "three",
+    1: "one",
+    9: "nine"
+}
+
+def get_dict_value(dict_item: tuple):
+    "Function to get the value from the dictionary when calling dict.items()"
+    return dict_item[1]
+
+def alternate(num: int) -> int:
+    """
+    Function to change the sign of the number based on its value.
+
+    For example, for 10, this function will return:
+    result = 10 * (-1) ** (10 + 1)
+    result = 10 * (-1) ** 11
+    result = 10 * (-1)
+    result = -10
+    """
+    return num * (-1) ** (num + 1)
+
+# Sort based on the dictionary value, which is to sort using alphabetical order
+print(sorted(num_dict.items(), key=get_dict_value))
+
+print(sorted(num_list, key=alternate))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: sorted-key
+: [(9, 'nine'), (1, 'one'), (6, 'six'), (10, 'ten'), (3, 'three')]
+: [10, 6, 1, 3, 9]
+
+*** ~reverse~ parameter (optional)
+- ~reverse~ takes a boolean that tells the sorted function to reverse the list.
+- The value of ~True~ will *reverse* the list.
+- The value of ~False~ will *not* reverse the list.
+- The default value is ~False~.
+
+#+NAME: sorted-reverse
+#+begin_src python :results output :exports both
+num_list = [10, 6, 3, 1, 9]
+
+print(sorted(num_list))
+print(sorted(num_list, reverse=True))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: sorted-reverse
+: [1, 3, 6, 9, 10]
+: [10, 9, 6, 3, 1]
+
+@@latex: \newpage@@
+
 ** String method: ~string.upper~
 This method will output a new string, which is the same as the string on which it was called, except all letters in the string will now be in uppercase.
 
@@ -3968,6 +4282,41 @@ print(math.cos(90))
 : 6.123233995736766e-17
 : 1.0
 : -0.4480736161291701
+
+@@latex: \newpage@@
+
+** ~operator~ module method: ~operator.itemgetter~
+- This method takes *indexes* for a list or tuple, or *keys* for a dictionary and returns a *function*.
+- When there is *only one* index or key given, the *value* is returned.
+- When there is *more than one* index or key given, a *tuple* of the values is returned.
+- This method can be used with the ~sorted~ function to get the value for sorting.
+
+#+NAME: operator-itemgetter
+#+begin_src python :results output :exports both
+import operator
+
+num_list = [10, 6, 3, 1, 9]
+num_dict = {
+    10: "ten",
+    6: "six",
+    3: "three",
+    1: "one",
+    9: "nine"
+}
+
+# Print the second item of the list
+print(operator.itemgetter(1)(num_list))
+
+# Sort the dictionary based on the values of the dictionary,
+# which is to sort by alphabetical order
+print(sorted(num_dict.items(), key=operator.itemgetter(1)))
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: operator-itemgetter
+: 6
+: [(9, 'nine'), (1, 'one'), (6, 'six'), (10, 'ten'), (3, 'three')]
 
 @@latex: \newpage@@
 
