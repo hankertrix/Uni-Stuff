@@ -214,6 +214,13 @@ Planetary boundaries are the idea that the Earth can only do so much when it com
 ** Sustainable City
 A sustainable city manages all the resources that are dependent on in ways that guarantee the well-being of current and future generations, also ensuring distributional equity.
 
+** Doughnut economics
+- A compass for human prosperity in the 21st century.
+- The doughnut consists of:
+  - A *social foundation*: To ensure that no one is left falling short on life's essentials.
+  - An *ecological ceiling*: To ensure that humanity does not collectively overshoot planetary boundaries.
+- Between these two boundaries lies a doughnut-shaped space that is both ecologically safe and socially just, which is a space in which humanity can thrive.
+
 ** Blue and green infrastructure
 - Blue and green infrastructure is an area or a system made of naturally occurring or engineered ecosystems, like forests, green roofs, road trees, etc.
 - They are managed to provide benefits for people and the environment.
@@ -780,7 +787,7 @@ Ecosystems are preserved and can deliver their services, on which both nature an
 Mitigation is essential and is our only shot to deal with climate change. The two methods to mitigate climate change are energy efficiency and low carbon transition.
 
 *** Low carbon transition
-- Low carbon transition means transitioning to an economy where as little carbon is used as possible.
+- Low carbon transition means transitioning to an economy, where as little carbon is used as possible.
 - There are two ways to achieve a low-carbon transition
   1. Decarbonising the energy system, which is to produce and use energy with lower emissions of carbon dioxide.
   2. Making shifts in sectors of the economy that contribute a lot to greenhouse gas emissions, such as transport. Instead of using diesel or petrol-powered vehicles, electric vehicles or vehicles powered by other clean fuels, such as hydrogen fuel, should be used instead.
@@ -1119,7 +1126,7 @@ Mitigation is essential and is our only shot to deal with climate change. The tw
 - The primary nanoplastics are intentionally manufactured and are added to products like cosmetics or are used in research or diagnostics.
 - The continuous process of unintentional fragmentation of mismanaged plastic waste leads to secondary nanoplastics.
 - Measuring the concentration of nanoplastic particles is quite challenging for our current analytical methods.
-- The amount of nanoplastic and microplastic particles in the environment will increase due to the enormous amount of large plastic compartments in the environment.
+- The amount of nano plastic and microplastic particles in the environment will increase due to the enormous amount of large plastic compartments in the environment.
 - Nanoplastics also undergo environmental transformation processes, such as agglomeration with other particles, thus accumulating in the different environmental compartments.
 - For the time being, researchers can only use the data that exists on microplastics to make educated guesses on what might also be happening in the human body.
 - We have seen in marine environments how microplastics disrupt reproductive systems, stunt growth, diminish appetite, and cause tissue inflammation and liver damage.
@@ -1218,7 +1225,7 @@ Mitigation is essential and is our only shot to deal with climate change. The tw
 *** Fourth stage: 1930s - 1970s
 - The fourth stage is marked by the widespread acceptance of the idea that a modern democratic society requires an economy based mainly on the production and distribution of consumer goods.
 - Economists believe it could improve living standards, avoid social conflict and increase prosperity for all.
-- An article published in the Journal of Retailing in 1955 states that, "Our enormously productive economy demands that we make consumption our way of life, that we convert the buying and use of goods into rituals, that we seek our spiritual satisfaction, our ego satisfaction, in consumption... We need things consumed, burned up, worn out, replaced, and discarded at an ever-increasing pace."
+- An article published in the Journal of Retailing in 1955 states, "Our enormously productive economy demands that we make consumption our way of life, that we convert the buying and use of goods into rituals, that we seek our spiritual satisfaction, our ego satisfaction, in consumption... We need things consumed, burned up, worn out, replaced, and discarded at an ever-increasing pace."
 - With a massive increase in oil production and a decline in its price relative to that of other goods and services, the post-war economics was accompanied by the expansion of new industries, such as large-scale car manufacturing, chemicals, plastics and electronics, which are all heavy emitters in their own right.
 - Individual choices in consumption became opportunities for revealing and remaking identity, a way for expressing your dedication, for example, to peace and social equality, or to saving the environment.
 
@@ -1472,7 +1479,7 @@ The urban heat island effect is the phenomenon by which a city experiences warme
 - Singapore promotes diverse recycling initiatives through the National Environment Agency.
 - Sustainability is linked to resilience, meaning a city and urban dwellers should be able to continue to thrive even in the face of a disaster.
 - A sound disaster risk management plan will help with achieving these goals.
-- Singapore is very fortunate to have low hazard levels for most of the natural hazards that threaten Southeast Asia, like tsunamis, cyclones, etc.
+- Singapore is fortunate to have low hazard levels for most of the natural hazards that threaten Southeast Asia, like tsunamis, cyclones, etc.
 - Sea level rise is one of the hazards that's currently getting a lot of attention in the redevelopment of our coast, like the East Coast.
 
 *** Nature-based solutions
