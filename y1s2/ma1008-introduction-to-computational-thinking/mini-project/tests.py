@@ -1066,6 +1066,59 @@ class TestSaveLibrary(unittest.TestCase):
             },
         )
 
+    def test_convert_all_floats_to_decimal(self) -> None:
+        "Test cases for the convert_all_floats_to_decimal function"
+
+        # Test case for a float
+        self.assertEqual(
+            save_lib.convert_all_floats_to_decimal(6.9), Decimal(6.9)
+        )
+
+        # Test case for an integer
+        self.assertEqual(save_lib.convert_all_floats_to_decimal(10), 10)
+
+        # Test case for a string
+        self.assertEqual(save_lib.convert_all_floats_to_decimal("wow"), "wow")
+
+        # Test case for a boolean
+        self.assertEqual(save_lib.convert_all_floats_to_decimal(False), False)
+
+        # Test case for a tuple
+        self.assertEqual(
+            save_lib.convert_all_floats_to_decimal((1, 9.5, "lol", True)),
+            (1, Decimal(9.5), "lol", True),
+        )
+
+        # Test case for a list
+        self.assertEqual(
+            save_lib.convert_all_floats_to_decimal(["omg", 68.7, 100, True]),
+            ["omg", Decimal(68.7), 100, True],
+        )
+
+        # Test case for a dictionary
+        self.assertEqual(
+            save_lib.convert_all_floats_to_decimal(
+                {
+                    "omg": "wow",
+                    "heh": 0,
+                    1: 5,
+                    (1, 4.5): -0.6,
+                    "man": "up",
+                    "math": True,
+                    "list": [5.6, "omg", 420, 6.9, False]
+                }
+            ),
+            {
+                "omg": "wow",
+                "heh": 0,
+                1: 5,
+                (1, 4.5): Decimal(-0.6),
+                "man": "up",
+                "math": True,
+                "list": [Decimal(5.6), "omg", 420, Decimal(6.9), False]
+            },
+        )
+
 
 # Name safeguard
 if __name__ == "__main__":

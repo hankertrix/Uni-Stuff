@@ -137,9 +137,43 @@ def convert_dict_to_toml_str(dic: dict, table_name: str = "") -> str:
     return "\n".join(toml_str).strip()
 
 
+def convert_all_floats_to_decimal(data: Any) -> Any:
+    "Convert all the floats in an object to a decimal"
+
+    # If the data given is a list or a tuple
+    if isinstance(data, (list, tuple)):
+
+        # Gets the converted list
+        converted_list = [convert_all_floats_to_decimal(item) for item in data]
+
+        # Return the converted list if the data is a list,
+        # otherwise, return a tuple
+        return (
+            converted_list if isinstance(data, list) else tuple(converted_list)
+        )
+
+    # Otherwise, if the data given is a dictionary,
+    # convert all the float values to a decimal
+    elif isinstance(data, dict):
+        return {
+            key: convert_all_floats_to_decimal(value)
+            for key, value in data.items()
+        }
+
+    # Otherwise, if the data given is a float,
+    # convert it to a decimal
+    elif isinstance(data, float):
+        return Decimal(data)
+
+    # Otherwise, just return the object
+    else:
+        return data
+
+
 def read_saved_data(file_name: str) -> dict:
     "Function to read the saved data from a TOML file"
 
-    # Open the file and return the dictionary
+    # Open the file and return the dictionary,
+    # with the floats all converted to decimals
     with open(file_name, "rb") as file:
-        return tomllib.load(file)
+        return convert_all_floats_to_decimal(tomllib.load(file))
