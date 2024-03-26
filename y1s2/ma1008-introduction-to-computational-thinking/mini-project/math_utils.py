@@ -403,6 +403,40 @@ def multiply_matrices(
     return result_matrix
 
 
+def vec_dot_product(
+    vector_1: list[list[int | Decimal]], vector_2: list[list[int | Decimal]]
+) -> int | Decimal:
+    "Function to get the dot product of the vectors given"
+
+    # Get the number of rows and columns of the first vector
+    vector_1_shape = matrix_shape(vector_1)
+
+    # Get the number of columns of the first vector
+    _, vector_1_num_of_columns = vector_1_shape
+
+    # If the number of columns of the first vector is not 1,
+    # or the number of rows and columns of the two vectors
+    # are not the same, then raise an error
+    if vector_1_num_of_columns != 1 or vector_1_shape != matrix_shape(
+        vector_2
+    ):
+        raise ValueError(
+            "The dot product cannot be calculated for the given vectors"
+        )
+
+    # Take the transpose of the first vector
+    vector_1_transpose = matrix_transpose(vector_1)
+
+    # Multiply the transpose of the first vector with the second vector
+    dot_product_matrix = multiply_matrices(vector_1_transpose, vector_2)
+
+    # Pull out the dot product result
+    dot_product = dot_product_matrix[0][0]
+
+    # Return the dot product
+    return dot_product
+
+
 def vec_3d_translate(
     x_translation: float | int | Decimal = 0,
     y_translation: float | int | Decimal = 0,
@@ -487,6 +521,63 @@ def vec_3d_rotate(
         rotation_matrix = [
             [math_cos(angle), math_sin(angle), 0],
             [-math_sin(angle), math_cos(angle), 0],
+            [0, 0, 1],
+        ]
+
+    # If multiplication is not wanted, or the vector given is None
+    if not perform_multiplication or vec_3d is None:
+        return rotation_matrix
+
+    # If the vector given isn't a 3D vector, raise an error
+    if (shape := matrix_shape(vec_3d)) != (3, 1):
+        raise ValueError(
+            "Vector given is not a 3D vector, "
+            f"it is a {shape[0]} x {shape[1]} matrix."
+        )
+
+    # Otherwise, perform the matrix multiplication and return the result
+    return multiply_matrices(rotation_matrix, vec_3d)
+
+
+def vec_3d_rotate_90_degrees(
+    anti_clockwise: bool = True,
+    perform_multiplication: bool = False,
+    vec_3d: list[list[int | Decimal]] | None = None,
+) -> list[list[int | Decimal]]:
+    """
+    The function to rotate a vector anti-clockwise about the
+    origin in the x-y plane by 90 degrees.
+
+    For example:
+        (3, 5, 9) rotated 90 degrees anti-clockwise about the
+        origin in the x-y plane will give
+        (-5, 3, 9)
+
+    By default, this function will just return the matrix that
+    will translate the given vector by the desired amount.
+    Only if multiplication is desired will the multiplication be done.
+    """
+
+    # Initialise the rotation matrix as the correct type
+    rotation_matrix: list[list[int | Decimal]]
+
+    # If the angle is anti-clockwise
+    if anti_clockwise:
+
+        # The matrix to perform the anti-clockwise rotation
+        rotation_matrix = [
+            [0, -1, 0],
+            [1, 0, 0],
+            [0, 0, 1],
+        ]
+
+    # Otherwise
+    else:
+
+        # The matrix to perform the clockwise rotation
+        rotation_matrix = [
+            [0, 1, 0],
+            [-1, 0, 0],
             [0, 0, 1],
         ]
 

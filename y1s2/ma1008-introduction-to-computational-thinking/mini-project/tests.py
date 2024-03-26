@@ -521,6 +521,52 @@ class TestMathUtils(unittest.TestCase):
                 math_utils.vec_3d(6, 9, 10), math_utils.vec_2d(20, 19)
             )
 
+    def test_vec_dot_product(self) -> None:
+        "Test cases for the vec_dot_product function"
+
+        # Test for 2D vectors
+        self.assertEqual(
+            math_utils.vec_dot_product(
+                math_utils.vec_2d(10, 5), math_utils.vec_2d(6, 7)
+            ),
+            95,
+        )
+
+        # Test for 3D vectors
+        self.assertEqual(
+            math_utils.vec_dot_product(
+                math_utils.vec_3d(6, 2, 9), math_utils.vec_3d(22, 0.5, 22)
+            ),
+            331,
+        )
+
+        # Test for 6D vectors
+        self.assertEqual(
+            math_utils.vec_dot_product(
+                math_utils.vec(5, 30, 40, 20, 88, 106),
+                math_utils.vec(56, 90, 35, 27, 40, 18),
+            ),
+            10348,
+        )
+
+        # Test for matrices with the same number of rows and columns
+        with self.assertRaises(ValueError):
+            math_utils.vec_dot_product(
+                math_utils.init_matrix(3, 4), math_utils.init_matrix(3, 4)
+            )
+
+        # Test for matrices with different number of rows and columns
+        with self.assertRaises(ValueError):
+            math_utils.vec_dot_product(
+                math_utils.init_matrix(6, 9), math_utils.init_matrix(10, 20)
+            )
+
+        # Test for vectors of different dimensions
+        with self.assertRaises(ValueError):
+            math_utils.vec_dot_product(
+                math_utils.vec_3d(9, 3, 7), math_utils.vec_2d(10, 99)
+            )
+
     def test_vec_3d_translate(self) -> None:
         "Test cases for the vec_3d_translate function"
 
@@ -658,6 +704,40 @@ class TestMathUtils(unittest.TestCase):
                 vec_3d=math_utils.vec_3d(6, 9, 1),
             ),
             [[-9], [6], [1]],
+        )
+
+    def test_vec_3d_rotate_90_degrees(self) -> None:
+        "Test cases for the vec_3d_rotate_90_degrees function"
+
+        # Test case for anti-clockwise rotation
+        self.assertEqual(
+            math_utils.vec_3d_rotate_90_degrees(),
+            [[0, -1, 0], [1, 0, 0], [0, 0, 1]],
+        )
+
+        # Test case for clockwise rotation
+        self.assertEqual(
+            math_utils.vec_3d_rotate_90_degrees(anti_clockwise=False),
+            [[0, 1, 0], [-1, 0, 0], [0, 0, 1]],
+        )
+
+        # Test case for actually rotating a vector anti-clockwise
+        self.assertEqual(
+            math_utils.vec_3d_rotate_90_degrees(
+                perform_multiplication=True,
+                vec_3d=math_utils.vec_3d(69, 420, 1),
+            ),
+            [[-420], [69], [1]],
+        )
+
+        # Test case for actually rotating a vector clockwise
+        self.assertEqual(
+            math_utils.vec_3d_rotate_90_degrees(
+                anti_clockwise=False,
+                perform_multiplication=True,
+                vec_3d=math_utils.vec_3d(75, 23, 1),
+            ),
+            [[23], [-75], [1]],
         )
 
     def test_vec_3d_scale(self) -> None:
@@ -1105,7 +1185,7 @@ class TestSaveLibrary(unittest.TestCase):
                     (1, 4.5): -0.6,
                     "man": "up",
                     "math": True,
-                    "list": [5.6, "omg", 420, 6.9, False]
+                    "list": [5.6, "omg", 420, 6.9, False],
                 }
             ),
             {
@@ -1115,7 +1195,7 @@ class TestSaveLibrary(unittest.TestCase):
                 (1, 4.5): Decimal(-0.6),
                 "man": "up",
                 "math": True,
-                "list": [Decimal(5.6), "omg", 420, Decimal(6.9), False]
+                "list": [Decimal(5.6), "omg", 420, Decimal(6.9), False],
             },
         )
 
