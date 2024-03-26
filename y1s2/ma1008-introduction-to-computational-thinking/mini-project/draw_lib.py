@@ -4,6 +4,9 @@ import turtle
 import typing
 from decimal import Decimal
 
+# The default number of segments
+DEFAULT_NUMBER_OF_SEGMENTS = 100
+
 
 def init_turtle() -> None:
     "Function to initialise turtle with the default settings"
@@ -24,7 +27,7 @@ def init_turtle() -> None:
 
 def draw_cubic_bezier_curve(
     vertices: list[list[list[int | Decimal]]],
-    number_of_segments: int | None = 100,
+    number_of_segments: int | None = DEFAULT_NUMBER_OF_SEGMENTS,
     pen_remains_down: bool = False,
 ) -> None:
     """
@@ -47,7 +50,7 @@ def draw_cubic_bezier_curve(
 
     # If the number of segments given is None, set it to 100
     if number_of_segments is None:
-        number_of_segments = 100
+        number_of_segments = DEFAULT_NUMBER_OF_SEGMENTS
 
     # Get the 4 points
     point_1, point_2, point_3, point_4 = vertices
