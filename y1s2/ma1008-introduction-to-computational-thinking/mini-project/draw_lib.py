@@ -169,7 +169,7 @@ def draw(data: dict | list | tuple) -> None:
         The vertices is a list of points, and the points
         are matrices of type list[[int | Decimal]] and is required.
 
-        Fill colour and pen colour are optional.
+        Fill colour, pen colour, and the number of segments are optional.
 
     For a list, the data structure should be a list of dictionaries
     like the one above or a list of a list of dictionaries
