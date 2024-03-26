@@ -75,7 +75,7 @@ def vec_2d(
 
 
 def vec_3d(
-    x: float | int | Decimal, y: float | int, z: float | int
+    x: float | int | Decimal, y: float | int | Decimal, z: float | int | Decimal
 ) -> list[list[int | Decimal]]:
     "Function to initialise a 3D vector"
     return [[Decimal(x)], [Decimal(y)], [Decimal(z)]]
@@ -109,7 +109,7 @@ def matrix_shape(matrix: list[list[int | Decimal]]) -> tuple[int, int]:
 
 
 def convert_2d_to_3d(
-    vector: list[list[int | Decimal]], z_coordinate: float | int = 1
+    vector: list[list[int | Decimal]], z_coordinate: float | int | Decimal = 1
 ) -> list[list[int | Decimal]]:
     "Function to convert a 2D vector to a 3D vector"
 
