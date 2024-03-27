@@ -166,13 +166,15 @@ def draw(data: dict | list | tuple) -> None:
             "vertices": list[list[list[int | Decimal]]],
             "fill_colour": tuple | str = "blue",
             "pen_colour": tuple | string = "red",
+            "pen_size": int = 1,
             "number_of_segments": int = 100,
         }
 
         The vertices is a list of points, and the points
         are matrices of type list[[int | Decimal]] and is required.
 
-        Fill colour, pen colour, and the number of segments are optional.
+        Fill colour, pen colour, pen size,
+        and the number of segments are optional.
 
     For a list, the data structure should be a list of dictionaries
     like the one above or a list of a list of dictionaries
@@ -217,11 +219,17 @@ def draw(data: dict | list | tuple) -> None:
     # Get the pen colour
     pen_colour = data.get("pen_colour", turtle.pencolor())
 
+    # Get the pen size
+    pen_size = data.get("pen_size", turtle.pensize())
+
     # Get the number of segments
     number_of_segments = data.get("number_of_segments")
 
     # Get the type of edge
     edge_type = get_edge_type(vertices)
+
+    # Set the pen size
+    turtle.pensize(pen_size)
 
     # Set the pen colour and fill colour
     turtle.fillcolor(fill_colour)
