@@ -164,8 +164,8 @@ def draw(data: dict | list | tuple) -> None:
 
         {
             "vertices": list[list[list[int | Decimal]]],
-            "fill_colour": tuple | str = "blue",
-            "pen_colour": tuple | string = "red",
+            "fill_colour": tuple[int] | list[int] | str = "blue",
+            "pen_colour": tuple[int] | list[int] | str = "red",
             "pen_size": int = 1,
             "number_of_segments": int = 100,
         }
@@ -263,7 +263,10 @@ def main() -> None:
     point_4 = [[-150], [100]]
 
     # Put the points into a dictionary
-    edge = {"vertices": [point_1, point_2, point_3, point_4]}
+    edge = {
+        "vertices": [point_1, point_2, point_3, point_4],
+        "pen_colour": [255, 0, 0],
+    }
 
     # Draw the bezier curve
     draw(edge)
