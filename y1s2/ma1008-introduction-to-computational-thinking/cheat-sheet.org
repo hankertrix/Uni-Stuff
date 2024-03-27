@@ -547,6 +547,71 @@ At the start of the second pass:
 - Timsort has been Python's standard sorting algorithm since version 2.3.
 - It is now also used to sort arrays in Java SE 7 and on the Android platform.
 
+** Searching
+- Given a list of data, searching is finding the location of a particular value or reporting that the value is not present.
+- It is one of the fundamental problems in computer science and programming.
+- Sorting is done to make searching easier.
+- There are multiple searching algorithms to solve problems.
+
+** Search key
+Search key is basically the element that needs to be found in a search.
+
+** Linear search
+- Linear search iterates over the sequence, one item at a time, until the specific item is found or all items have been examined.
+  - The approach is intuitive.
+  - Starts at the first item.
+  - Is it the one I am looking for?
+  - If not, go to the next item.
+  - Repeats until the item is found or all the items are checked.
+
+- This approach is necessary if items are not sorted.
+
+@@latex: \newpage@@
+
+** Binary search
+- Binary search uses a divide-and-conquer strategy to search for an item, which divides the work in half with each step.
+- However, the list of items must be sorted, otherwise this method of searching will not work.
+
+*** Procedure
+- Start at the middle of the list.
+- Check if the middle item is what we are looking for.
+- If it is not, check if the middle item is greater or lower than the item we are looking for.
+- If it is lower, take the lower half of the list and look for the item using the same procedure above.
+- If it is higher, take the higher half of the list and look for the item using the same procedure above.
+- Repeat until the item is found, or the sublist is of size 0.
+
+@@latex: \newpage@@
+
+*** Binary search vs linear search
+#+ATTR_LATEX: :environment tabular :align |m{6.5em}|m{5em}|m{7em}|m{6em}|m{6em}|
+|---------------+-----------------------------+---------------------------+------------------------------+-------------------------------|
+| *Algorithm*   | *Best-case time complexity* | *Average time complexity* | *Worst-case time complexity* | *Worst-case space complexity* |
+|---------------+-----------------------------+---------------------------+------------------------------+-------------------------------|
+| Linear Search | O(1)                        | O(n)                      | O(n)                         | O(1)                          |
+| Binary Search | O(1)                        | O(log n)                  | O(log n)                     | O(1)                          |
+|---------------+-----------------------------+---------------------------+------------------------------+-------------------------------|
+
+#+ATTR_LATEX: :environment tabular :align |m{17em}|m{17em}|
+|-------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------|
+| *Linear search*                                                         | *Binary search*                                                                                                                  |
+|-------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------|
+| Checks the item in the sequence until the desired item is found.        | Checks the middle item of the list.                                                                                              |
+|-------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------|
+| Often used for short lists.                                             | Requires sorted list.                                                                                                            |
+|-------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------|
+| Inefficient for large sorted lists.                                     | Repeated discarding of half of the list, which contains values that are all definitely larger or smaller than the desired value. |
+|-------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------|
+| Simple and easy to implement but inefficient compared to binary search. | Algorithms for binary search can be implemented in an iterative or recursive manner.                                             |
+|-------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------|
+
+** Searching algorithms
+- Interpolation search
+- Grover's algorithm, which requires quantum computers
+- Indexed searching
+- Binary search trees
+- Hash table searching
+- Best-first
+
 @@latex: \newpage@@
 
 * Program translations
@@ -1125,6 +1190,84 @@ def merge_sort(list_of_items: list) -> list:
 
 @@latex: \newpage@@
 
+* Binary search implementation in Python
+
+** Iterative binary search
+#+begin_src python :results none
+def iterative_binary_search(sorted_items: list | tuple, target) -> bool:
+    "Function to binary search a sorted collection of items using a loop."
+
+    # Get the index of the lowest item and the highest item
+    lowest_item_index = 0
+    highest_item_index = len(sorted_items) - 1
+
+    # Iterate while the lowest item index is less than the highest item index
+    while lowest_item_index < highest_item_index:
+
+        # Get the middle of the list
+        middle_item_index = (lowest_item_index + highest_item_index) // 2
+
+        # Get the middle item of the list
+        middle_item = sorted_items[middle_item_index]
+
+        # If the middle item of the list is the target value, return True
+        if middle_item == target:
+            return True
+
+        # Otherwise, if the target value is less than the middle item,
+        # set the highest item index to the middle item index - 1
+        elif target < middle_item:
+            highest_item_index = middle_item_index - 1
+
+        # Otherwise, if the target value is more than the middle item,
+        # set the lowest item index to the middle item index + 1
+        else:
+            lowest_item_index = middle_item_index + 1
+
+    # If the item is still not found, then return False
+    return False
+#+end_src
+
+@@latex: \newpage@@
+
+** Recursive binary search
+#+begin_src python :results none
+def recursive_binary_search(sorted_items: list | tuple, target) -> bool:
+    "Function to binary search a sorted collection of items using recursion."
+
+    # Get the index of the lowest item and the highest item
+    lowest_item_index = 0
+    highest_item_index = len(sorted_items) - 1
+
+    # If the index of the highest item is less than or equal to
+    # the index of the lowest item, return False
+    if highest_item_index <= lowest_item_index:
+        return False
+
+    # Gets the middle item index
+    middle_item_index = (lowest_item_index + highest_item_index) // 2
+
+    # Gets the middle item
+    middle_item = sorted_items[middle_item_index]
+
+    # If the middle item is the target value, return True
+    if middle_item == target:
+        return True
+
+    # Otherwise, if the target value is less than the middle item,
+    # call the function with the sorted list being truncated to
+    # the list before the middle item and return the result
+    elif target < middle_item:
+        return recursive_binary_search(sorted_items[:middle_item_index], target)
+
+    # Otherwise, if the target value is more than the middle item,
+    # call the function with the sorted list being truncated to
+    # the list after the middle item and return the result
+    else:
+        return recursive_binary_search(sorted_items[middle_item_index + 1:], target)
+#+end_src
+
+@@latex: \newpage@@
 
 * Data types in Python
 Python uses duck-typing to figure out the type of a variable.
@@ -2938,7 +3081,7 @@ print(string.capitalize())
 
 ** String method: ~string.find~
 - This method takes a single character and outputs the *index* of the character (first seen from left to right).
-- If the character is not found ~-1~ is returned.
+- If the character is not found, ~-1~ is returned.
 
 #+NAME: string-find
 #+begin_src python :results output :exports both
@@ -2952,6 +3095,26 @@ print(string.find("a"))
 #+RESULTS: string-find
 : 5
 : -1
+
+@@latex: \newpage@@
+
+** String method: ~string.index~
+- This method takes a single character and outputs the *index* of the character (first seen from left to right).
+- If the character is not found, a ~ValueError~ is thrown.
+- This method is essentially the same as the above ~string.find~ method, but it throws an error when the value isn't found.
+- In a way, it's the worse version of the ~string.find~ method.
+
+#+NAME: string-index
+#+begin_src python :results output :exports both
+string = "Find me!"
+print(string.index("m"))
+print(string.index("a"))    # Error
+#+end_src
+
+@@latex: \noindent@@ Output:
+
+#+RESULTS: string-index
+: 5
 
 ** String method: ~string.count~
 This method counts the number of occurrences of the substring you pass to the method.
@@ -2968,6 +3131,8 @@ print(string.count("t"))
 #+RESULTS: string-count
 : 2
 : 3
+
+@@latex: \newpage@@
 
 ** String method: ~string.join~
 This method takes a *string* to be joined and outputs a new string where the base string joins the target string.
