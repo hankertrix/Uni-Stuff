@@ -988,8 +988,14 @@ def approximate_arc_less_than_90_degrees_as_bezier(
     This function shouldn't be used directly, but called from the
     approximate_arc_as_bezier function.
 
-    The angle and the start angle is in radians, and the
-    approximate_arc_as_bezier function should have converted them to radians.
+    The angle and the start angle are in radians,
+    and are measured anti-clockwise from the x-axis,
+    so the x-axis has an angle of 0 radians.
+    This is like the standard mathematical definition for the angle in a
+    circular arc.
+
+    The approximate_arc_as_bezier function should have converted
+    both the angle and the start angle to radians.
     """
 
     # Get the first point of the bezier
@@ -1045,9 +1051,13 @@ def approximate_arc_as_bezier(
 
     The start point is optional only if the start angle and the radius is given.
 
-    The start angle is measured anti-clockwise from the x-axis,
-    so the x-axis has an angle of 0 radians. If the start angle
-    and the radius is not given, a value error is raised.
+    The angle and the start angle are measured anti-clockwise from the x-axis,
+    so the x-axis has an angle of 0 radians.
+    This is like the standard mathematical definition for the angle in a
+    circular arc.
+
+    If both the start angle and the radius are not given,
+    a value error is raised.
     """
 
     # If the start angle and the radius are both not given,
