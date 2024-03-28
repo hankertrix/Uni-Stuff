@@ -16,6 +16,9 @@
 - This makes texts files human-readable, and text editors can easily open them to display the contents of the file easily.
 - Text files are usually not executable, and require some kind of program to parse or interpret what is written in them to run its contents, if it is code.
 
+** Model answer
+A binary file is a file stored in binary format, and a text file is stored in ASCII characters. Text files are human-readable whereas binary files are not. Binary files tend to be smaller in volume and text files are larger. That's because binary files store numerical values in binary format, whereas text files store them as individual digits. Hence, 10 can be stored in 1 byte in binary but 2 bytes in text.
+
 
 * Question 2
 Python implementation:
