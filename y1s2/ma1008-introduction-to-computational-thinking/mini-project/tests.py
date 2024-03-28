@@ -21,12 +21,12 @@ class TestMathUtils(unittest.TestCase):
         # Test case for 45 degrees
         self.assertAlmostEqual(
             math_utils.math_sin(math.radians(45)),
-            Decimal(1 / (2 ** Decimal(1 / 2))),
+            Decimal(1 / (math_utils.sqrt(2))),
         )
 
         # Test case for pi/3 radians
         self.assertAlmostEqual(
-            math_utils.math_sin(math.pi / 3), Decimal(3 ** Decimal(1 / 2)) / 2
+            math_utils.math_sin(math.pi / 3), math_utils.sqrt(3) / 2
         )
 
         # Test case for pi
@@ -41,7 +41,7 @@ class TestMathUtils(unittest.TestCase):
         # Test case for 45 degrees
         self.assertAlmostEqual(
             math_utils.math_cos(math.radians(45)),
-            Decimal(1 / (2 ** Decimal(1 / 2))),
+            Decimal(1 / (math_utils.sqrt(2))),
         )
 
         # Test case for pi/3 radians
@@ -55,7 +55,7 @@ class TestMathUtils(unittest.TestCase):
 
         # Test case for 30 degrees
         self.assertAlmostEqual(
-            math_utils.math_tan(math.radians(30)), 1 / (3 ** (Decimal(1 / 2)))
+            math_utils.math_tan(math.radians(30)), 1 / (math_utils.sqrt(3))
         )
 
         # Test case for 45 degrees
@@ -66,11 +66,26 @@ class TestMathUtils(unittest.TestCase):
 
         # Test case for pi/3 radians
         self.assertAlmostEqual(
-            math_utils.math_tan(math.pi / 3), Decimal(3 ** Decimal(1 / 2))
+            math_utils.math_tan(math.pi / 3), math_utils.sqrt(3)
         )
 
         # Test case for pi
         self.assertEqual(math_utils.math_tan(math.pi), 0)
+
+    def test_sqrt(self) -> None:
+        "Test cases for the sqrt function"
+
+        # Test for the square root of 9
+        self.assertEqual(math_utils.sqrt(9), 3)
+
+        # Test for the square root of 25
+        self.assertEqual(math_utils.sqrt(25), 5)
+
+        # Test for the square root of 2
+        self.assertAlmostEqual(math_utils.sqrt(2), Decimal(2 ** (1 / 2)))
+
+        # Test for the square root of 3
+        self.assertAlmostEqual(math_utils.sqrt(3), Decimal(3 ** (1 / 2)))
 
     def test_init_matrix(self) -> None:
         "Test cases for the init_matrix function"
@@ -145,6 +160,27 @@ class TestMathUtils(unittest.TestCase):
         # Test for (2, 2)
         self.assertEqual(math_utils.vec(2, 2), [[2], [2]])
 
+    def test_matrix_shape(self) -> None:
+        "Test cases for the matrix_shape function"
+
+        # Test for 9 x 9 matrix
+        self.assertEqual(
+            math_utils.matrix_shape(math_utils.init_matrix(9, 9)), (9, 9)
+        )
+
+        # Test for 1 x 3 column matrix
+        self.assertEqual(
+            math_utils.matrix_shape(math_utils.init_matrix(1, 3)), (1, 3)
+        )
+
+        # Test for a 2 x 1 row matrix
+        self.assertEqual(
+            math_utils.matrix_shape(math_utils.init_matrix(2, 1)), (2, 1)
+        )
+
+        # Test for a 2 x 0 row matrix
+        self.assertEqual(math_utils.matrix_shape([[], []]), (2, 0))
+
     def test_convert_2d_to_3d(self) -> None:
         "Test cases for the convert_2d_to_3d function"
 
@@ -214,26 +250,84 @@ class TestMathUtils(unittest.TestCase):
         with self.assertRaises(ValueError):
             math_utils.convert_3d_to_2d(math_utils.vec(69))
 
-    def test_matrix_shape(self) -> None:
-        "Test cases for the matrix_shape function"
+    def test_convert_vertices(self) -> None:
+        "Test cases for the convert_vertices function"
 
-        # Test for 9 x 9 matrix
+        # Test for a bezier curve
         self.assertEqual(
-            math_utils.matrix_shape(math_utils.init_matrix(9, 9)), (9, 9)
+            math_utils.convert_vertices(
+                {
+                    "vertices": [
+                        math_utils.vec_2d(2, 4),
+                        math_utils.vec_2d(5, 8),
+                        math_utils.vec_2d(6, 4),
+                        math_utils.vec_2d(5, 4),
+                    ]
+                }
+            ),
+            {
+                "vertices": [
+                    math_utils.vec_3d(2, 4, 1),
+                    math_utils.vec_3d(5, 8, 1),
+                    math_utils.vec_3d(6, 4, 1),
+                    math_utils.vec_3d(5, 4, 1),
+                ]
+            },
         )
 
-        # Test for 1 x 3 column matrix
+        # Test for a straight edge
         self.assertEqual(
-            math_utils.matrix_shape(math_utils.init_matrix(1, 3)), (1, 3)
+            math_utils.convert_vertices(
+                {
+                    "vertices": [
+                        math_utils.vec_3d(6, 9, 69),
+                        math_utils.vec_3d(4, 5, 98),
+                    ]
+                },
+                to_3d=False,
+            ),
+            {"vertices": [math_utils.vec_2d(6, 9), math_utils.vec_2d(4, 5)]},
         )
 
-        # Test for a 2 x 1 row matrix
+        # Test for a list of a points
         self.assertEqual(
-            math_utils.matrix_shape(math_utils.init_matrix(2, 1)), (2, 1)
+            math_utils.convert_vertices(
+                [
+                    {
+                        "vertices": [
+                            math_utils.vec_2d(7, 19),
+                            math_utils.vec_2d(5, 6),
+                            math_utils.vec_2d(7, 43),
+                        ]
+                    },
+                    {
+                        "vertices": [
+                            math_utils.vec_3d(5, 87, 23),
+                            math_utils.vec_3d(73, 13, 34),
+                            math_utils.vec_3d(45, 2, 81),
+                            math_utils.vec_3d(2, 75, 92),
+                        ]
+                    },
+                ]
+            ),
+            [
+                {
+                    "vertices": [
+                        math_utils.vec_3d(7, 19, 1),
+                        math_utils.vec_3d(5, 6, 1),
+                        math_utils.vec_3d(7, 43, 1),
+                    ]
+                },
+                {
+                    "vertices": [
+                        math_utils.vec_3d(5, 87, 23),
+                        math_utils.vec_3d(73, 13, 34),
+                        math_utils.vec_3d(45, 2, 81),
+                        math_utils.vec_3d(2, 75, 92),
+                    ]
+                },
+            ],
         )
-
-        # Test for a 2 x 0 row matrix
-        self.assertEqual(math_utils.matrix_shape([[], []]), (2, 0))
 
     def test_is_valid_matrix(self) -> None:
         "Test cases for the is_valid_matrix function"
@@ -567,6 +661,28 @@ class TestMathUtils(unittest.TestCase):
                 math_utils.vec_3d(9, 3, 7), math_utils.vec_2d(10, 99)
             )
 
+    def test_vec_norm(self) -> None:
+        "Test cases for the test_vec_norm function"
+
+        # Test for (2, 0)
+        self.assertEqual(math_utils.vec_norm(math_utils.vec_2d(2, 0)), 2)
+
+        # Test for (2, 2)
+        self.assertEqual(
+            math_utils.vec_norm(math_utils.vec_2d(2, 2)), math_utils.sqrt(8)
+        )
+
+        # Test for (1, 0, 2)
+        self.assertEqual(
+            math_utils.vec_norm(math_utils.vec_3d(1, 0, 2)), math_utils.sqrt(5)
+        )
+
+        # Test for (9, 9, 9)
+        self.assertEqual(
+            math_utils.vec_norm(math_utils.vec_3d(9, 9, 9)),
+            math_utils.sqrt(243),
+        )
+
     def test_vec_3d_translate(self) -> None:
         "Test cases for the vec_3d_translate function"
 
@@ -874,6 +990,207 @@ class TestMathUtils(unittest.TestCase):
                 vec_3d=math_utils.vec_3d(-56, -22, 1),
             ),
             [[22], [56], [1]],
+        )
+
+    def test_get_tangent_vector(self) -> None:
+        "Test cases for the get_tangent_vector function"
+
+        # Test case for (2, 9)
+        self.assertEqual(
+            math_utils.get_tangent_vector(math_utils.vec_2d(2, 9)), [[-9], [2]]
+        )
+
+        # Test case for (-7, 4)
+        self.assertEqual(
+            math_utils.get_tangent_vector(math_utils.vec_2d(-7, 4)),
+            [[-4], [-7]],
+        )
+
+        # Test case for (2, -8)
+        self.assertEqual(
+            math_utils.get_tangent_vector(math_utils.vec_2d(2, -8)), [[8], [2]]
+        )
+
+    def test_approximate_arc_less_than_90_degrees_as_bezier(self) -> None:
+        "Test cases for the approximate_arc_less_than_90_degrees_as_bezier"
+
+        # Test case for circle of centre (2, 2), an angle pi / 3,
+        # start angle of 0 and a radius of 5
+        self.assertEqual(
+            math_utils.approximate_arc_less_than_90_degrees_as_bezier(
+                math_utils.vec_2d(2, 2),
+                math_utils.math_pi / 3,
+                Decimal(0),
+                Decimal(5),
+            ),
+            [
+                [[Decimal("7")], [Decimal("2")]],
+                [
+                    [Decimal("6.285468820266666719239386415")],
+                    [Decimal("4.500859129066666482662147548")],
+                ],
+                [
+                    [Decimal("6.761536563373959174926419184")],
+                    [Decimal("4.722431864600000306353422275")],
+                ],
+                [[Decimal("4.5")], [Decimal("6.330127019000000188064802842")]],
+            ],
+        )
+
+        # Test case for circle of centre (6, 10), an angle pi / 4,
+        # start angle of pi / 2, an a radius of 100
+        self.assertEqual(
+            math_utils.approximate_arc_less_than_90_degrees_as_bezier(
+                math_utils.vec_2d(6, 10),
+                math_utils.math_pi / 4,
+                math_utils.math_pi / 2,
+                Decimal(100),
+            ),
+            [
+                [[Decimal("6")], [Decimal("110")]],
+                [
+                    [Decimal("-23.17381388533333508306100156")],
+                    [Decimal("111.5912989392000000954396910")],
+                ],
+                [
+                    [Decimal("-43.30487537425522617143408562")],
+                    [Decimal("97.87301702787811372827170281")],
+                ],
+                [
+                    [Decimal("-64.71067812000000341043914887")],
+                    [Decimal("80.71067812000000341043914887")],
+                ],
+            ],
+        )
+
+    def test_approximate_arc_as_bezier(self) -> None:
+        "Test cases for the approximate_arc_as_bezier function"
+
+        # Test case for a circle of centre (100, 5), an angle of pi / 5,
+        # start angle of pi, radius of 300
+        self.assertEqual(
+            math_utils.approximate_arc_as_bezier(
+                math_utils.vec_2d(100, 5),
+                math_utils.math_pi / 5,
+                start_angle=math_utils.math_pi,
+                radius=300,
+            ),
+            [
+                {
+                    "vertices": [
+                        [[Decimal("-200")], [Decimal("5")]],
+                        [
+                            [Decimal("-201.0558962686666667485368976")],
+                            [Decimal("-37.23585074666666994147590230")],
+                        ],
+                        [
+                            [Decimal("-178.8876173321852416033707127")],
+                            [Decimal("-141.1992195228404409032840837")],
+                        ],
+                        [
+                            [Decimal("-142.7050983199999900641330441")],
+                            [Decimal("-171.3355756900000015363616512")],
+                        ],
+                    ]
+                }
+            ],
+        )
+
+        # Test case for a circle of centre (4, 6), an angle of pi / 3,
+        # start angle of pi / 4, radius of 15
+        self.assertEqual(
+            math_utils.approximate_arc_as_bezier(
+                math_utils.vec_2d(4, 6),
+                math_utils.math_pi / 3,
+                start_angle=math_utils.math_pi / 4,
+                radius=15,
+            ),
+            [
+                {
+                    "vertices": [
+                        [
+                            [Decimal("14.60660171800000051156587233")],
+                            [Decimal("16.60660171800000051156587233")],
+                        ],
+                        [
+                            [Decimal("8.673634359537930707728098241")],
+                            [Decimal("21.82503789672873703464303283")],
+                        ],
+                        [
+                            [Decimal("7.437688764207753457734583537")],
+                            [Decimal("20.44683211727901694691122705")],
+                        ],
+                        [
+                            [Decimal("0.117714323500000328515113779")],
+                            [Decimal("20.48888739450000018305075855")],
+                        ],
+                    ]
+                }
+            ],
+        )
+
+        # Test case for a circle of centre (3, 1), an angle of pi / 4,
+        # start point of (6, 9)
+        self.assertEqual(
+            math_utils.approximate_arc_as_bezier(
+                math_utils.vec_2d(3, 1),
+                math_utils.math_pi / 4,
+                math_utils.vec_2d(6, 9),
+            ),
+            [
+                {
+                    "vertices": [
+                        [
+                            [Decimal("6.000000000099181212546588185")],
+                            [Decimal("9.000000000264483865840880530")],
+                        ],
+                        [
+                            [Decimal("3.613051591229035586862366972")],
+                            [Decimal("10.59129893949078845433289744")],
+                        ],
+                        [
+                            [Decimal("1.792582747168129234967246754")],
+                            [Decimal("8.920207016104911289412334612")],
+                        ],
+                        [
+                            [Decimal("-0.535533905922621523663195874")],
+                            [Decimal("8.778174593371527909579080980")],
+                        ],
+                    ]
+                }
+            ],
+        )
+
+        # Test case for a circle of centre (10, 200), an angle of pi / 2,
+        # start point of (20, 255)
+        self.assertEqual(
+            math_utils.approximate_arc_as_bezier(
+                math_utils.vec_2d(10, 200),
+                math_utils.math_pi / 2,
+                math_utils.vec_2d(20, 255),
+            ),
+            [
+                {
+                    "vertices": [
+                        [
+                            [Decimal("20.00000000000094031123021987")],
+                            [Decimal("255.0000000000051740391419780")],
+                        ],
+                        [
+                            [Decimal("-120.8326112160019215488779014")],
+                            [Decimal("266.0456949973390270306314034")],
+                        ],
+                        [
+                            [Decimal("70.97979747199534883574748975")],
+                            [Decimal("234.8528137440037986160014523")],
+                        ],
+                        [
+                            [Decimal("-45.00000000000517403914197795")],
+                            [Decimal("210.0000000000009403112302199")],
+                        ],
+                    ]
+                }
+            ],
         )
 
 

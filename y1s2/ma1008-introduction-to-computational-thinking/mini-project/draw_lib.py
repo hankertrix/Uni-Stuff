@@ -4,6 +4,8 @@ import turtle
 import typing
 from decimal import Decimal
 
+import math_utils
+
 # The default number of segments
 DEFAULT_NUMBER_OF_SEGMENTS = 100
 
@@ -255,6 +257,28 @@ def main() -> None:
 
     # Initialise the turtle module
     init_turtle()
+
+    # Approximate an circle as a bezier
+    circle = math_utils.approximate_arc_as_bezier(
+        math_utils.vec_2d(0, 0),
+        math_utils.math_pi,
+        start_angle=0,
+        radius=500,
+        pen_size=5,
+    )
+
+    draw(circle)
+
+    # Approximate an circle as a bezier
+    circle = math_utils.approximate_arc_as_bezier(
+        math_utils.vec_2d(0, 0),
+        math_utils.math_pi / 3,
+        math_utils.vec_2d(0, 500),
+        pen_colour="blue",
+        pen_size=3,
+    )
+
+    draw(circle)
 
     # The four points for the bezier curve
     point_1 = [[200], [-100]]

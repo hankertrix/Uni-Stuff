@@ -2,6 +2,10 @@
 
 import math
 from decimal import Decimal
+from typing import Any, Callable
+
+# Pi as a decimal
+math_pi = Decimal(math.pi)
 
 
 def math_sin(angle_in_radians: float | int | Decimal) -> Decimal:
@@ -32,6 +36,11 @@ def math_tan(angle_in_radians: float | int | Decimal) -> Decimal:
 
     # Return the result as a decimal rounded to 10 decimal places
     return Decimal(round(result, 10))
+
+
+def sqrt(number: float | int | Decimal) -> Decimal:
+    "Function to take the square root of a number"
+    return Decimal(number) ** Decimal(1 / 2)
 
 
 def init_matrix(
@@ -164,6 +173,53 @@ def convert_3d_to_2d(
 
     # Return the 2D vector
     return vector_in_2d
+
+
+def convert_vertices(data: list[dict] | dict, to_3d: bool = True) -> Any:
+    "Function to convert all the vertices inside the data dictionary"
+
+    # Initialise the conversion function variable
+    conversion_function: Callable
+
+    # If converting the vertices to 3D is wanted,
+    # set the conversion function to the convert_2d_to_3d function
+    if to_3d:
+        conversion_function = convert_2d_to_3d
+
+    # Otherwise, set the conversion function to the convert_3d_to_2d function
+    else:
+        conversion_function = convert_3d_to_2d
+
+    # If the data given is a list or a tuple
+    if isinstance(data, (list, tuple)):
+
+        # Call the function on all the items in the list and return the result
+        return [convert_vertices(item, to_3d) for item in data]
+
+    # Otherwise, if the data given not a dictionary
+    elif not isinstance(data, dict):
+        raise ValueError(
+            "This function expects a dictionary. "
+            f"Received {repr(type(data))} instead"
+        )
+
+    # Otherwise, get the list of vertices
+    vertices = data.get("vertices")
+
+    # If the dictionary doesn't have the key called vertices
+    if vertices is None:
+        raise ValueError(
+            "This function expects the dictionary "
+            "to contain a list of vertices. "
+            "The given dictionary doesn't contain a list of vertices."
+        )
+
+    # Otherwise, return the data dictionary with all the vertices converted
+    # to the correct dimension
+    return {
+        **data,
+        "vertices": [conversion_function(vertex) for vertex in vertices],
+    }
 
 
 def is_valid_matrix(matrix: list[list[int | Decimal]]) -> bool:
@@ -417,9 +473,7 @@ def vec_dot_product(
     # If the number of columns of the first vector is not 1,
     # or the number of rows and columns of the two vectors
     # are not the same, then raise an error
-    if vector_1_num_of_columns != 1 or vector_1_shape != matrix_shape(
-        vector_2
-    ):
+    if vector_1_num_of_columns != 1 or vector_1_shape != matrix_shape(vector_2):
         raise ValueError(
             "The dot product cannot be calculated for the given vectors"
         )
@@ -435,6 +489,11 @@ def vec_dot_product(
 
     # Return the dot product
     return dot_product
+
+
+def vec_norm(vector: list[list[int | Decimal]]) -> Decimal:
+    "Function to get the norm, or the length of a vector"
+    return sqrt(vec_dot_product(vector, vector))
 
 
 def vec_3d_translate(
@@ -827,3 +886,192 @@ def vec_3d_reflect_about_line_y_equal_minus_x(
 
     # Otherwise, perform the matrix multiplication and return the result
     return multiply_matrices(reflection_matrix, vec_3d)
+
+
+def get_tangent_vector(
+    vector: list[list[int | Decimal]],
+) -> list[list[int | Decimal]]:
+    "Function to get the tangent vector of the given vector"
+
+    # Convert the given vector to 3D
+    converted_vector = convert_2d_to_3d(vector)
+
+    # Rotate the vector by 90 degrees anti-clockwise
+    rotated_vector = vec_3d_rotate_90_degrees(True, True, converted_vector)
+
+    # Convert the rotated vector back to 2D
+    tangent_vector = convert_3d_to_2d(rotated_vector)
+
+    # Return the tangent vector
+    return tangent_vector
+
+
+def approximate_arc_less_than_90_degrees_as_bezier(
+    centre_of_circle: list[list[int | Decimal]],
+    angle: Decimal,
+    start_angle: Decimal,
+    radius: Decimal,
+) -> list[list[list[int | Decimal]]]:
+    """
+    Function to approximate a circular arc of less than 90 degrees as a bezier.
+
+    This function shouldn't be used directly, but called from the
+    approximate_arc_as_bezier function.
+
+    The angle and the start angle is in radians, and the
+    approximate_arc_as_bezier function should have converted them to radians.
+    """
+
+    # Get the first point of the bezier
+    point_1 = add_matrices(
+        centre_of_circle,
+        scalar_product_matrix(
+            radius, vec_2d(math_cos(start_angle), math_sin(start_angle))
+        ),
+    )
+
+    # Get the last point of the bezier
+    point_4 = add_matrices(
+        centre_of_circle,
+        scalar_product_matrix(
+            radius,
+            vec_2d(
+                math_cos(start_angle + angle), math_sin(start_angle + angle)
+            ),
+        ),
+    )
+
+    # The constant to multiply with the vector
+    k = (Decimal(4) / 3) * (math_tan(angle / 4))
+
+    # Calculate point 2
+    point_2 = add_matrices(
+        point_1, scalar_product_matrix(k, get_tangent_vector(point_1))
+    )
+
+    # Calculate point 3
+    point_3 = subtract_matrix(
+        point_4, scalar_product_matrix(k, get_tangent_vector(point_4))
+    )
+
+    # Return the list of points
+    return [point_1, point_2, point_3, point_4]
+
+
+def approximate_arc_as_bezier(
+    centre_of_circle: list[list[int | Decimal]],
+    angle: float | int | Decimal,
+    start_point: list[list[int | Decimal]] | None = None,
+    start_angle: float | int | Decimal | None = None,
+    radius: float | int | Decimal | None = None,
+    angle_is_in_degrees: bool = False,
+    **properties: Any,
+) -> list[dict]:
+    """
+    Function to approximate a circular arc as a bezier.
+
+    The angle is the angle it the circle can either by in degrees or radians,
+    but it is by default in radians.
+
+    The start point is optional only if the start angle and the radius is given.
+
+    The start angle is measured anti-clockwise from the x-axis,
+    so the x-axis has an angle of 0 radians. If the start angle
+    and the radius is not given, a value error is raised.
+    """
+
+    # If the start angle and the radius are both not given,
+    # when the start point isn't given, raise an error
+    if start_point is None and (start_angle is None or radius is None):
+        raise ValueError(
+            "Insufficient information given. "
+            "The function requires both a start angle "
+            "and a radius to draw an arc"
+        )
+
+    # If the angle is in degrees, convert it to radians
+    if angle_is_in_degrees:
+        angle = math.radians(angle)
+
+    # Change the angle to be within 0 to 2 pi
+    angle = Decimal(angle) % (2 * math_pi)
+
+    # If the angle is 0, then change it to 2 pi
+    if round(angle) == 0:
+        angle = 2 * math_pi
+
+    # If the start point is given
+    if start_point is not None:
+
+        # Calculate the vector from the start point to the centre of the circle
+        radius_vector = subtract_matrix(start_point, centre_of_circle)
+
+        # Calculate the radius of the circle
+        radius = vec_norm(radius_vector)
+
+        # Calculate the start angle
+        start_angle = Decimal(math.acos(radius_vector[0][0] / radius))
+
+    # Otherwise, if the start angle isn't None
+    elif start_angle is not None:
+
+        # Convert the start angle to radians if it is in degrees
+        if angle_is_in_degrees:
+            start_angle = math.radians(start_angle)
+
+    # If the radius or the start angle is None somehow, then raise an error.
+    # This shouldn't ever happen
+    if radius is None or start_angle is None:
+        raise ValueError(
+            "The radius or the start angle is somehow None, "
+            "there is something very wrong here."
+        )
+
+    # Convert the start angle and the radius to a decimal
+    start_angle = Decimal(start_angle)
+    radius = Decimal(radius)
+
+    # Divide the angle by pi / 2 (90 degrees)
+    # as only one quarter circle is approximated correctly by a bezier
+    number_of_quarter_circles, remainder = divmod(angle, math_pi / 2)
+
+    # The list to store the beziers
+    list_of_beziers: list[dict] = []
+
+    # Iterate over the number of quarter circles
+    for num in range(int(number_of_quarter_circles)):
+
+        # Create the list of vertices for the quarter circle
+        vertices = approximate_arc_less_than_90_degrees_as_bezier(
+            centre_of_circle,
+            math_pi / 2,
+            start_angle + (num * (math_pi / 2)),
+            radius,
+        )
+
+        # Create a dictionary with the vertices and the properties given
+        bezier_dict = {"vertices": vertices, **properties}
+
+        # Add the dictionary to the list of points
+        list_of_beziers.append(bezier_dict)
+
+    # If the remainder is 0, then return the list of beziers immediately
+    if round(remainder) == 0:
+        return list_of_beziers
+
+    # Create the vertices for the last portion of the arc
+    vertices = approximate_arc_less_than_90_degrees_as_bezier(
+        centre_of_circle,
+        remainder,
+        start_angle + number_of_quarter_circles * (math_pi / 2),
+        radius,
+    )
+
+    # Create the dictionary for the last portion of the arc
+    bezier_dict = {"vertices": vertices, **properties}
+
+    # Add the bezier dictionary to the list of beziers
+    list_of_beziers.append(bezier_dict)
+
+    # Return the list of beziers
+    return list_of_beziers
