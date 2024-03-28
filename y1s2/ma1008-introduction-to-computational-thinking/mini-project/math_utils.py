@@ -196,7 +196,8 @@ def convert_vertices(data: list[dict] | dict, to_3d: bool = True) -> Any:
         # Call the function on all the items in the list and return the result
         return [convert_vertices(item, to_3d) for item in data]
 
-    # Otherwise, if the data given not a dictionary
+    # Otherwise, if the data given not a dictionary,
+    # raise an error
     elif not isinstance(data, dict):
         raise ValueError(
             "This function expects a dictionary. "
@@ -206,7 +207,8 @@ def convert_vertices(data: list[dict] | dict, to_3d: bool = True) -> Any:
     # Otherwise, get the list of vertices
     vertices = data.get("vertices")
 
-    # If the dictionary doesn't have the key called vertices
+    # If the dictionary doesn't have the key called vertices,
+    # raise an error
     if vertices is None:
         raise ValueError(
             "This function expects the dictionary "
@@ -886,6 +888,74 @@ def vec_3d_reflect_about_line_y_equal_minus_x(
 
     # Otherwise, perform the matrix multiplication and return the result
     return multiply_matrices(reflection_matrix, vec_3d)
+
+
+def apply_transformations_to_vertices(
+    list_of_transformations: list[list[list[int | Decimal]]],
+    data: list[dict] | dict,
+) -> Any:
+    """
+    Function to apply the various transformations to all the vertices given.
+
+    The list of transformations should have the first transformation
+    to be applied in the first position of the list, and the second
+    transformation to be applied in the second position of the list,
+    and so on.
+
+
+    The data dictionary should contain vertices in 2D, not 3D.
+    """
+
+    # If the data given is a list or a tuple
+    if isinstance(data, (list, tuple)):
+
+        # Call the function on all the items in the list and return the result
+        return [
+            apply_transformations_to_vertices(list_of_transformations, item)
+            for item in data
+        ]
+
+    # Otherwise, if the data given not a dictionary,
+    # raise an error
+    elif not isinstance(data, dict):
+        raise ValueError(
+            "This function expects a dictionary. "
+            f"Received {repr(type(data))} instead"
+        )
+
+    # Otherwise, get the list of vertices
+    vertices = data.get("vertices")
+
+    # If the dictionary doesn't have the key called vertices,
+    # raise an error
+    if vertices is None:
+        raise ValueError(
+            "This function expects the dictionary "
+            "to contain a list of vertices. "
+            "The given dictionary doesn't contain a list of vertices."
+        )
+
+    # Otherwise, return the data dictionary with the transformation applied
+    # to the vertices.
+    # The vertices are converted from 2D to 3D to be matrix multiplied,
+    # then are converted back from 3D to 2D to make the dictionary drawable.
+    # The list of transformations is in the order of the transformations
+    # to be applied, so the list needs to be reversed as the transformation
+    # matrices are applied right to left, with the matrix representing the
+    # first transformation being on the right, beside the vertex matrix, and
+    # the matrix second representing the second transformation being on the
+    # right, beside the matrix for the first transformation, and so on.
+    return {
+        **data,
+        "vertices": [
+            convert_3d_to_2d(
+                multiply_matrices(
+                    *list_of_transformations[::-1], convert_2d_to_3d(vertex)
+                )
+            )
+            for vertex in vertices
+        ],
+    }
 
 
 def get_tangent_vector(

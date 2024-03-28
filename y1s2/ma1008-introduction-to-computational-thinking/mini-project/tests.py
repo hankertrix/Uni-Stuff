@@ -992,6 +992,92 @@ class TestMathUtils(unittest.TestCase):
             [[22], [56], [1]],
         )
 
+    def test_apply_transformations_to_vertices(self) -> None:
+        "Test cases for the apply_transformations_to_vertices function"
+
+        # Test case for one transformation and two vertices
+        self.assertEqual(
+            math_utils.apply_transformations_to_vertices(
+                [math_utils.vec_3d_reflect_about_x()],
+                {
+                    "vertices": [
+                        math_utils.vec_2d(45, 31),
+                        math_utils.vec_2d(3, -4),
+                    ]
+                },
+            ),
+            {"vertices": [[[45], [-31]], [[3], [4]]]},
+        )
+
+        # Test case for 2 transformations and 4 vertices
+        self.assertEqual(
+            math_utils.apply_transformations_to_vertices(
+                [
+                    math_utils.vec_3d_rotate_90_degrees(),
+                    math_utils.vec_3d_scale(-5, 20),
+                ],
+                {
+                    "vertices": [
+                        math_utils.vec_2d(-84, 31),
+                        math_utils.vec_2d(56, 1),
+                        math_utils.vec_2d(-9, 48),
+                        math_utils.vec_2d(5, -38),
+                    ]
+                },
+            ),
+            {
+                "vertices": [
+                    [[155], [-1680]],
+                    [[5], [1120]],
+                    [[240], [-180]],
+                    [[-190], [100]],
+                ]
+            },
+        )
+
+        # Test case for multiple transformations and a list of dictionaries
+        self.assertEqual(
+            math_utils.apply_transformations_to_vertices(
+                [
+                    math_utils.vec_3d_translate(5, 8),
+                    math_utils.vec_3d_reflect_about_y(),
+                    math_utils.vec_3d_scale(7, 2),
+                ],
+                [
+                    {
+                        "vertices": [
+                            math_utils.vec_2d(78, 3),
+                            math_utils.vec_2d(23, 54),
+                            math_utils.vec_2d(5, 1),
+                        ]
+                    },
+                    {
+                        "vertices": [
+                            math_utils.vec_2d(3, 13),
+                            math_utils.vec_2d(8, 41),
+                            math_utils.vec_2d(7, 85),
+                        ]
+                    },
+                ],
+            ),
+            [
+                {
+                    "vertices": [
+                        [[-581], [22]],
+                        [[-196], [124]],
+                        [[-70], [18]],
+                    ]
+                },
+                {
+                    "vertices": [
+                        [[-56], [42]],
+                        [[-91], [98]],
+                        [[-84], [186]],
+                    ]
+                },
+            ],
+        )
+
     def test_get_tangent_vector(self) -> None:
         "Test cases for the get_tangent_vector function"
 
