@@ -1,0 +1,480 @@
+% Created 2023-08-21 Mon 20:27
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{tikz, pgfplots, xcolor}
+\author{Hankertrix}
+\date{\today}
+\title{Math Module 1A Tutorial}
+\hypersetup{
+ pdfauthor={Hankertrix},
+ pdftitle={Math Module 1A Tutorial},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.1 (Org mode 9.6.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\newpage
+
+\section{Question 1}
+\label{sec:orgadf87b2}
+
+\subsection{(a)}
+\label{sec:org4bdcd61}
+
+\begin{align*}
+|A| &= 5 \\
+|B| &= 4 \\
+|A \cup B| &= 7 \\
+|A \cap B| &= 2
+\end{align*}
+
+
+\subsection{(b)}
+\label{sec:orge3e0b1d}
+
+\[|A \cup B| = |A| + |B| - |A \cap B|\]
+
+
+\subsection{(c)}
+\label{sec:orgaa29ad8}
+
+Let the set of \(1^{st}\) year students registered at CNYSP be \(A\), and the set of students registered at SPMS be \(B\).
+
+\[|A| = 50\]
+\[|B| = 1102\]
+\[|A \cup B| = 1138\]
+
+The number of \(1^{st}\) year students registered at SPMS and CNYSP together will be \(|A \cap B|\). From (b):
+
+\[|A \cup B| = |A| + |B| - |A \cap B| \]
+\[|A \cap B| = |A| + |B| - |A \cup B| \]
+\[|A \cap B| = 50 + 1102 - 1138 \]
+\[|A \cap B| = 14\]
+
+Hence, there are 14 \(1^{st}\) year CNYSP students who also registered at SPMS.
+
+
+\subsection{(d)}
+\label{sec:org4a9079a}
+
+\[|A \cup B \cup C| = |A| + |B| + |C| - |A \cap B| - |A \cap C| - |B \cap C| + |A \cap B \cap C| \]
+
+
+\section{Question 2}
+\label{sec:org4c2cf06}
+
+\[|A \times B| = |A| \times |B|\]
+
+
+\section{Question 3}
+\label{sec:orgd35cc53}
+
+\subsection{(a)}
+\label{sec:orgfe3d578}
+
+\[A = \{0\}\]
+\[\mathcal{P}(A) = \{ \emptyset, \{0\} \}\]
+\[\mathcal{P}(\mathcal{P}(A)) = \{ \emptyset, \{\emptyset\}, \{ \{0\} \}, \{ \emptyset, \{0\} \} \}\]
+
+
+\subsection{(b)}
+\label{sec:org53d150d}
+
+\[2^n = 2^{|A|}\]
+
+
+\section{Question 4}
+\label{sec:org07c11c4}
+
+\subsection{(a)}
+\label{sec:org86c1bab}
+
+\[not \text{ } (P \text{ or } Q) \Leftrightarrow (not \text{ } P) \text{ and } (not \text{ } Q)\]
+\[not \text{ } (P \text{ and } Q) \Leftrightarrow (not \text{ } P) \text{ or } (not \text{ } Q)\]
+
+
+\subsection{(b)}
+\label{sec:org685c8d5}
+
+\begin{align*}
+P \Rightarrow Q &\Leftrightarrow not \text{ } (P \text{ and } (not \text{ } Q)) \\
+&\Leftrightarrow (not \text{ } P) \text{ or } (not \text{ } (not \text{ } Q)) \\
+&\Leftrightarrow (not \text{ } P) \text{ or } Q
+\end{align*}
+
+
+\subsection{(c)}
+\label{sec:orgec27c78}
+
+\[P \text{ and } Q \text{ or } ((not \text{ } P) \text{ and } (not \text{ } Q))\]
+
+\newpage
+
+\section{Question 5}
+\label{sec:orgd29172a}
+
+\subsection{(a)}
+\label{sec:orge70be2a}
+
+\[(A \cup B)^c = (A^c \cap B^c)\]
+
+\subsection{(b)}
+\label{sec:org86d8173}
+
+\[(A \cap B)^c = (A^c \cup B^c)\]
+
+
+\section{Question 6}
+\label{sec:orgab83a65}
+
+\subsection{(a)}
+\label{sec:orgaf47640}
+
+For \(f(x) \in \mathbb{R}\), \(\sqrt(3x - x^3)\) must be real. Hence:
+
+\[3x - x^3 \ge 0 \]
+\[x(3 - x^2) \ge 0 \]
+\[x(3 - x^2) \ge 0 \]
+\[x(x^2 - 3) \le 0 \]
+\[x(x + \sqrt{3})(x - \sqrt{3}) \le 0\]
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = middle, ymin = -10, ymax = 10]
+\addplot[domain = -3:3, color = blue]{x * (x + sqrt(3)) * (x - sqrt(3))};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\[\text{Thus, the domain of } f(x) \text{ is } (-\infty, -\sqrt{3}] \cup [0, \sqrt{3}].\]
+
+
+\subsection{(b)}
+\label{sec:org4898302}
+
+For \(f(x) \in \mathbb{R}\), \(\sqrt{\frac{1 + x}{1 - x}}\) must be real. Hence:
+
+\[\frac{1 + x}{1 - x} \ge 0 \]
+\[(1 + x)(1 - x) \ge 0, \text{ }(1 - x) \neq 0\]
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = middle, ymin = -5, ymax = 5]
+\addplot[domain = -3:3, color = blue]{(1 + x) * (1 - x)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Thus, the domain of \(f(x)\) is \([-1, 1)\).
+
+\newpage
+
+
+\section{Question 7}
+\label{sec:org1d879f5}
+
+\subsection{(a)}
+\label{sec:org4ac19b0}
+
+For \(f(x) \in \mathbb{R}\), \(\sqrt{2 + x - x^2}\) must be real. Hence:
+
+\[2 + x - x^2 \ge 0\]
+\[x^2 - x - 2 \le 0\]
+\[(x - 2)(x + 1) \le 0\]
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = middle, ymin = -5, ymax = 5]
+\addplot[domain = -3:3, color = blue]{(x - 2) * (x + 1)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\[\text{Hence, the domain of } f(x) \text{ is } [-1, 2].\]
+
+\newpage
+
+Plotting the graph for \(f(x)\) for \(x \in [-2, 1]\):
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = middle, ymin = -2, ymax = 2]
+\addplot[domain = -2:1, color = blue]{sqrt(2 + x - x^2)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\[\text{The range of } f(x) \text{ is } \left[0, \frac{3}{2}\right].\]
+
+\newpage
+
+\subsection{(b)}
+\label{sec:org537abeb}
+
+For \(f(x) \in \mathbb{R}\), since \(x^2 > 0\), \((1 + x)\) must be not be 0 for \(f(x)\) to be real. Hence, the domain of \(f(x)\) is \(\mathbb{R} \setminus \{-1\}\).
+\\[0pt]
+
+Plotting the graph for \(f(x), x \in \mathbb{R} \setminus \{-1\}\):
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = middle, ymin = -10, ymax = 10, samples = 100]
+\addplot[domain = -10:10, color = blue]{(x^2) / (1 + x)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+\[\text{Hence, the range of } f(x) \text{ is } (-\infty, -4] \cup [0, \infty].\]
+
+
+\section{Question 8}
+\label{sec:orgee72436}
+
+\subsection{(a)}
+\label{sec:org509353d}
+
+For \(f : \mathbb{R} \rightarrow \mathbb{R}\) to be both increasing and decreasing at the same time, it must satisfy the two conditions below:
+
+\[\text{1. } x_1, x_2 \in A, x_1 < x_2 \Rightarrow f(x_1) \le f(x_2)\]
+\[\text{2. } x_1, x_2 \in A, x_1 < x_2 \Rightarrow f(x_1) \ge f(x_2)\]
+
+For \(f\) to satisfy the conditions \(f(x_1) \le f(x_2) \text{ and } f(x_1) \ge f(x_2)\), \(f(x_1)\) must be equal to \(f(x_2)\). Thus, \(f\) is constant.
+
+\newpage
+
+
+\subsection{(b)}
+\label{sec:org4c7788b}
+
+For \(f : \mathbb{R} \rightarrow \mathbb{R}\) to be even and odd at the same time, it must satisfy the two conditions below:
+
+\[\text{1. } x \in A \Rightarrow -x \in A \text{ and } f(-x) = -f(x).\]
+\[\text{2. } x \in A \Rightarrow -x \in A \text{ and } f(-x) = f(x).\]
+\[\text{Hence, } f(-x) = -f(x) = f(x)\]
+
+The only number that satisfies this condition is 0, thus \(f(x) = 0\) for all \(x \in \mathbb{R}\).
+
+
+\section{Question 9}
+\label{sec:org501a32f}
+
+\subsection{(a)}
+\label{sec:org6e5c584}
+
+For a function to be even, \(f(-x) = f(x)\):
+
+\begin{align*}
+E(-x) &= \frac{1}{2}(f(-x) + f(x)) \\
+&= \frac{1}{2}(f(x) + f(-x)) \\
+&= E(x)
+\end{align*}
+
+Hence, \(E(x)\) is even.
+\\[0pt]
+
+For a function to be odd, \(f(-x) = -f(x)\):
+
+\begin{align*}
+O(-x) &= \frac{1}{2}(f(-x) - f(x)) \\
+&= -\frac{1}{2}(f(x) - f(-x)) \\
+&= -O(x)
+\end{align*}
+
+Hence, \(O(x)\) is odd.
+
+
+\subsection{(b)}
+\label{sec:orgd47262a}
+
+\[E(x) + O(x) = \frac{1}{2}(f(x) + f(-x)) + \frac{1}{2}(f(x) - f(-x))\]
+\[E(x) + O(x) = \frac{1}{2}(f(x) + f(-x) + f(x) - f(-x))\]
+\[E(x) + O(x) = \frac{1}{2}(2f(x))\]
+\[E(x) + O(x) = f(x) \rightarrow \text{ Proven }\]
+
+\newpage
+
+
+\subsection{(c)}
+\label{sec:orgb445db6}
+
+Suppose \(f(x) = e(x) + o(x)\) where \(e(x)\) is even and \(o(x)\) is odd.
+
+\[f(-x) = e(-x) + o(-x)\]
+
+Since \(e(-x) = e(x)\) as \(e(x)\) is even and \(o(-x) = -o(x)\) as \(o(x)\) is odd:
+
+\begin{equation}
+f(-x) = e(x) - o(x)
+\end{equation}
+
+\begin{equation}
+f(x) = e(x) + o(x)
+\end{equation}
+
+Solving for \((2) - (1)\):
+
+\[f(-x) - f(x) = e(x) - o(x) - (e(x) + o(x))\]
+\[f(-x) - f(x) = - 2o(x)\]
+\[2o(x) = - f(-x) + f(x)\]
+\begin{align}
+o(x) &= \frac{1}{2}(f(x) - f(-x)) \\
+&= O(x) \nonumber
+\end{align}
+
+Substituting \((3)\) into \((2)\):
+
+\[f(x) = e(x) + \frac{1}{2}(f(x) - f(-x))\]
+\[e(x) = f(x) - \frac{1}{2}(f(x) - f(-x))\]
+\begin{align*}
+e(x) &= \frac{1}{2}(f(x) + f(-x)) \\
+&= E(x)
+\end{align*}
+
+Since \(e(x) = E(x)\) and \(o(x) = O(x)\), there is no other way to write \(f(x)\) as a sum of odd and even functions.
+
+\section{Question 10}
+\label{sec:orga932a4a}
+
+\subsection{(a)}
+\label{sec:orga731732}
+
+\(\indent\) Recurrent formula:
+
+\[v(n) = a_0 = 1, a_1 = 2, a_n = 2a_{n-1}\]
+\\[0pt]
+
+Explicit formula:
+
+\[v(n) = 2^n\]
+
+
+\subsection{(b)}
+\label{sec:orga8a7f73}
+
+Let \(b(n)\) be the number of humans that were bitten on night \(n\).
+
+\[b(1) = v(0) = 1\]
+\begin{align*}
+v(1) &= 1 + b(1) \\
+&= 1 + v(0) \\
+&= 1 + 1 \\
+&= 2
+\end{align*}
+
+For \(n \ge 2\):
+
+\[b(n) = v(n - 2)\]
+\[v(n) = v(n - 1) + b(n)\]
+\[v(n) = v(n - 1) + v(n - 2)\]
+
+Recurrent formula:
+
+\[v(n) = a_0 = 1, a_1 = 2, a_n = a_{n - 1} + a_{n - 2}\]
+
+\subsection{Bonus}
+\label{sec:org710ab2b}
+
+Proving the base cases:
+\\[0pt]
+
+\begin{align*}
+v(0) &= \frac{(\frac{1 + \sqrt{5}}{2})^{0+2} - (\frac{1 - \sqrt{5}}{2})^{0+2}}{\sqrt{5}} \\
+&= 1
+\end{align*}
+
+\begin{align*}
+v(1) &= \frac{(\frac{1 + \sqrt{5}}{2})^{1+2} - (\frac{1 - \sqrt{5}}{2})^{1+2}}{\sqrt{5}} \\
+&= 2
+\end{align*}
+
+Let \(n \in \mathbb{Z}^+\):
+\\[0pt]
+
+\[v(n) = \frac{(\frac{1 + \sqrt{5}}{2})^{n+2} - (\frac{1 - \sqrt{5}}{2})^{n+2}}{\sqrt{5}}\]
+\[v(n - 1) = \frac{(\frac{1 + \sqrt{5}}{2})^{n+1} - (\frac{1 - \sqrt{5}}{2})^{n+1}}{\sqrt{5}}\]
+\\[0pt]
+
+\begin{align*}
+v(n) + v(n - 1) &= \frac{(\frac{1 + \sqrt{5}}{2})^{n+2} - (\frac{1 - \sqrt{5}}{2})^{n+2}}{\sqrt{5}} + \frac{(\frac{1 + \sqrt{5}}{2})^{n+1} - (\frac{1 - \sqrt{5}}{2})^{n+1}}{\sqrt{5}} \\
+&= \frac{(\frac{1 + \sqrt{5}}{2})^{n+2} - (\frac{1 - \sqrt{5}}{2})^{n+2} + (\frac{1 + \sqrt{5}}{2})^{n+1} - (\frac{1 - \sqrt{5}}{2})^{n+1}}{\sqrt{5}} \\
+&= \frac{(\frac{1 + \sqrt{5}}{2})^{n+1}(\frac{1 + \sqrt{5}}{2} + 1) + (\frac{1 - \sqrt{5}}{2})^{n+1}(-\frac{1 - \sqrt{5}}{2} - 1)}{\sqrt{5}} \\
+&= \frac{(\frac{1 + \sqrt{5}}{2})^{n+1}(\frac{1 + \sqrt{5}}{2} + 1) - (\frac{1 - \sqrt{5}}{2})^{n+1}(\frac{1 + \sqrt{5}}{2} + 1)}{\sqrt{5}}
+\end{align*}
+
+Let \(a = \frac{1 + \sqrt{5}}{2}\) and \(b = \frac{1 - \sqrt{5}}{2}\):
+
+\begin{equation}
+v(n) + v(n - 1) = \frac{a^{n+1}(a + 1) - b^{n+1}(b + 1)}{\sqrt{5}} \tag{1}
+\end{equation}
+
+Getting the value of \(a + 1\) and \(a^2\):
+
+\begin{align*}
+a + 1 &= \frac{1 + \sqrt{5}}{2} + 1 \\
+&= \frac{3 + \sqrt{5}}{2}
+\end{align*}
+
+\begin{align*}
+a^2 &= \left(\frac{1 + \sqrt{5}}{2}\right)^2 \\
+&= \frac{1 + 2\sqrt{5} + 5}{4} \\
+&= \frac{6 + 2\sqrt{5}}{4} \\
+&= \frac{3 + \sqrt{5}}{2} \\
+&= a + 1
+\end{align*}
+
+Hence,
+\begin{equation}
+a + 1 = a^2 \tag{2}
+\end{equation}
+
+\newpage
+
+Getting the value of \(b + 1\) and \(b^2\):
+
+\begin{align*}
+b + 1 &= \frac{1 - \sqrt{5}}{2} + 1 \\
+&= \frac{3 - \sqrt{5}}{2}
+\end{align*}
+
+\begin{align*}
+b^2 &= \left(\frac{1 - \sqrt{5}}{2}\right)^2 \\
+&= \frac{1 - 2\sqrt{5} + 5}{4} \\
+&= \frac{6 - 2\sqrt{5}}{4} \\
+&= \frac{3 - \sqrt{5}}{2} \\
+&= b + 1
+\end{align*}
+
+Hence,
+\begin{equation}
+b + 1 = b^2 \tag{3}
+\end{equation}
+\\[0pt]
+
+Substituting \((2)\) and \((3)\) into \((1)\):
+
+\begin{align*}
+v(n) + v(n - 1) &= \frac{a^{n+1}(a^2) - b^{b+1}(b^2)}{\sqrt{5}} \\
+&= \frac{a^{n+3} - b^{n+3}}{\sqrt{5}} \\
+&= \frac{(\frac{1 + \sqrt{5}}{2})^{n+3} - (\frac{1 - \sqrt{5}}{2})^{n+3}}{\sqrt{5}} \\
+&= v(n + 1) \rightarrow \textbf{ Proven by induction}
+\end{align*}
+
+Thus,
+\[v(n) = \frac{(\frac{1 + \sqrt{5}}{2})^{n+2} - (\frac{1 - \sqrt{5}}{2})^{n+2}}{\sqrt{5}}\]
+\end{document}

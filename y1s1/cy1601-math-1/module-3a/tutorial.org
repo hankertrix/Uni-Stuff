@@ -1,0 +1,466 @@
+#+TITLE: Math Module 3A Tutorial
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{pgfplots, siunitx}
+
+\newpage
+
+* Question 1
+
+Let \(f(x) = 2\sqrt{x} - (3 - \frac{1}{x})\).
+\[f(x) = 2\sqrt{x} - 3 + \frac{1}{x}\]
+
+Finding \(f'(x)\):
+\begin{align*}
+f'(x) &= \frac{2}{\sqrt{x}} \cdot \frac{1}{2} - \frac{1}{x^2} \\
+&= \frac{1}{\sqrt{x}} - \frac{1}{x^2}
+\end{align*}
+
+At \(x = 1\):
+\begin{align*}
+f(1) &= 2 \sqrt{1} - 3 + \frac{1}{1} \\
+&= 0
+\end{align*}
+
+\begin{align*}
+f'(1) &= \frac{1}{\sqrt{1}} - \frac{1}{1^2} \\
+&= 0
+\end{align*}
+
+This means that \(x = 1\) is a stationary point.
+
+At \(x = 1^+\):
+\begin{align*}
+f'(1^+) &= \frac{1}{\sqrt{1^+} - \frac{1}{(1^+)^2}} \\
+&> 0
+\end{align*}
+
+Thus, when \(x > 1\):
+\[f(x) > 0\]
+\[2 \sqrt{x} - (3 - \frac{1}{x}) > 0\]
+\[2 \sqrt{x} > 3 - \frac{1}{x} \textbf{ (Proven)}\]
+
+
+* Question 2
+
+\[|\arctan x - \arctan y| \le | x - y |\]
+\[\frac{|\arctan x - \arctan y|}{| x - y |} \le 1\]
+
+Let $f(x)$ be \(\arctan x\):
+\[f'(x) = \frac{1}{1 + x^2}\]
+
+At an arbitrary point \(c\):
+\[\left|\frac{\arctan x - \arctan y}{x - y}\right| = |f'(c)|\]
+\[\frac{|\arctan x - \arctan y|}{|x - y|} = \left|\frac{1}{1 + c^2}\right|\]
+
+The maximum value of \(\left| \frac{1}{1 + c^2}\right|\) is 1, when $c = 0$. When \(c > 0\), \(\left| \frac{1}{1 + c^2} \right| < 1\).
+
+Hence:
+\[\frac{|\arctan x - \arctan y|}{|x - y|} \le 1 \textbf{ (Proven)}\]
+
+\newpage
+
+* Question 3
+
+** (a)
+
+Proving the base cases:
+\\
+
+When \(r = 0\):
+\[(fg)^{(0)} = \sum_{k = 0}^{0} {0 \choose k} f^{(k)} g^{(0 - k)}\]
+\[fg = {0 \choose 0} f^{(0)} g^{(0)}\]
+\[fg = 1 f g\]
+\[fg = fg \textbf{ (Proven)}\]
+
+When \(r = 1\):
+\[(fg)^{(1)} = \sum_{k = 0}^{1} {1 \choose k} f^{(k)} g^{(1 - k)}\]
+\[f'g + fg' = {1 \choose 0} f^{(0)} g^{(1 - 0)} + {1 \choose 1} f^{(1)} g^{(1 - 1)}\]
+\[f'g + fg' = fg' + f'g\]
+\[f'g + fg' = f'g + fg' \textbf{ (Proven)}\]
+
+Assuming the equation holds for all \(n \in \mathbb{R}\):
+\begin{align*}
+(fg)^{(n + 1)} &= \left(\sum_{k = 0}^{n} {n \choose k} f^{(k)} g^{(n - k)}\right)' \\
+&= \sum_{k = 0}^{n} {n \choose k} f^{(k + 1)} g^{(n - k)} + \sum_{k = 0}^{n} {n \choose k} f^{(k)} g^{(n - k + 1)} \\
+&= \sum_{k' = 1}^{n} {n \choose k' - 1} f^{(k')} g^{(n - (k' - 1))} + \sum_{k = 0}^{n} {n \choose k} f^{(k)} g^{(n + 1 - k)} \\
+&= \sum_{k' = 1}^{n} {n \choose k' - 1} f^{(k')} g^{(n - k' + 1)} + \sum_{k = 0}^{n} {n \choose k} f^{(k)} g^{(n + 1 - k)} \\
+&= \sum_{k' = 1}^{n} {n \choose k' - 1} f^{(k')} g^{(n + 1 - k')} + \sum_{k = 0}^{n} {n \choose k} f^{(k)} g^{(n + 1 - k)} \\
+&= \sum_{k' = 1}^{n} {n \choose k' - 1} f^{(k')} g^{(n + 1 - k')} + \sum_{k = 1}^{n} {n \choose k} f^{(k)} g^{(n + 1 - k)} + {n \choose 0} f^{(0)} g^{(n + 1 - 0)} \\
+&= \sum_{k' = 1}^{n} {n \choose k' - 1} f^{(k')} g^{(n + 1 - k')} + \sum_{k = 1}^{n} {n \choose k} f^{(k)} g^{(n + 1 - k)} + f g^{(n + 1)} \\
+&= \sum_{k = 1}^{n} \left( {n \choose k - 1} + {n \choose k} \right) f^{(k)} g^{(n + 1 - k)} + f g^{(n + 1)} \\
+&= \sum_{k = 1}^{n + 1} {n + 1 \choose k} f^{(k)} g^{(n + 1 - k)} + f g^{(n + 1)} \\
+&= \sum_{k = 0}^{n + 1} {n + 1 \choose k} f^{(k)} g^{(n + 1 - k)} \quad (\because fg^{(n + 1)} = f^{(k)} g^{(n + 1 - k)} \text{ when } k = 0) \ \textbf{ (Proven)} \\
+\end{align*}
+
+** (b)
+
+\begin{align*}
+{n \choose k - 1} + {n \choose k} &= \frac{n!}{(k - 1)!(n - (k - 1))!} + \frac{n!}{k!(n - k)!} \\
+&= \frac{n!}{(k - 1)!(n - k + 1)!} + \frac{n!}{k!(n - k)!} \\
+&= \frac{kn!}{k(k - 1)!(n - k + 1)!} + \frac{n!(n - k + 1)}{k!(n - k + 1)(n - k)!} \\
+&= \frac{kn!}{k!(n - k + 1)!} + \frac{n!(n - k + 1)}{k!(n - k + 1)!} \\
+&= \frac{n!(k + n - k + 1)}{k!(n - k + 1)!} \\
+&= \frac{n!(n + 1)}{k!(n + 1 - k)!} \\
+&= \frac{(n + 1)!}{k!(n + 1 - k)!} \\
+&= {n + 1 \choose k} \quad \textbf{ (Proven)}
+\end{align*}
+
+\newpage
+
+* Question 4
+
+\[
+g(x) = \begin{cases}
+x + \sin 2x, & \text{for } x \in (0, \frac{\pi}{2}) \\
+x - \sin 2x, & \text{for } x \in \left(\frac{\pi}{2}, \pi \right)
+\end{cases}
+\]
+
+Differentiating $g$ with respect to \(x\):
+\[
+g'(x) = \begin{cases}
+1 + 2\cos 2x, & \text{for } x \in (0, \frac{\pi}{2}) \\
+1 - 2\cos 2x, & \text{for } x \in \left(\frac{\pi}{2}, \pi \right)
+\end{cases}
+\]
+
+Finding the stationary points:
+\[g'(x) = 0\]
+\begin{align*}
+1 + 2\cos 2x = 0 && 1 - 2\cos 2x &= 0 \\
+2\cos 2x = -1 && - 2\cos 2x &= -1 \\
+2\cos 2x = -1 && 2\cos 2x &= 1 \\
+\cos 2x = -\frac{1}{2} && \cos 2x &= \frac{1}{2} \\
+2x = \frac{2\pi}{3} && 2x &= 2\pi - \frac{\pi}{3} \quad \left(\because x \in \left(\frac{\pi}{2}, \pi \right) \right) \\
+x = \frac{\pi}{3} && 2x &= \frac{5}{3} \pi \\
+&& x &= \frac{5\pi}{6} \\
+\end{align*}
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$ & \(\left( \frac{\pi}{3} \right)^-\) & \(\frac{\pi}{3}\) & \(\left( \frac{\pi}{3} \right)^+\) \\
+\hline
+$g'(x)$ & $0^+$ & 0 & $0^-$ \\
+\hline
+Shape & $\slash$ & $-$ & $\backslash$ \\
+\hline
+\end{tabular}
+\hskip 3em
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$ & \(\left( \frac{5\pi}{6} \right)^-\) & \(\frac{5\pi}{6}\) & \(\left( \frac{5\pi}{6} \right)^+\) \\
+\hline
+$g'(x)$ & $0^+$ & 0 & $0^-$ \\
+\hline
+Shape & $\slash$ & $-$ & $\backslash$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Hence, both \(x = \frac{\pi}{3}\) and \(x = \frac{5\pi}{6}\) are maximum points.
+\\
+
+Since $f$ is $g$ repeated over the entire domain of $x \in \mathbb{R}$, the maximum points will be:
+
+\[x = \frac{\pi}{3} + k \pi \text{ and } x = \frac{5\pi}{6} + k \pi, \text{ where } k \in \mathbb{Z}\]
+
+Thus, the part of the graph that will be increasing are in the intervals \((0 + k\pi, \frac{\pi}{3} + k\pi)\) and \((\frac{\pi}{2} + k \pi, \frac{5\pi}{6} + k\pi)\), where \(k \in \mathbb{Z}\). The part of the graph that will be decreasing are in the intervals \((\frac{\pi}{3} + k\pi, \frac{\pi}{2} + k \pi)\) and \(\frac{5\pi}{6} + k\pi, \pi + k\pi\), where \(k \in \mathbb{Z}\).
+
+
+* Question 5
+
+\[f(x) = \frac{x^2}{x^2 + 3}\]
+
+Differentiating $f$ with respect to \(x\):
+\begin{align*}
+f'(x) &= \frac{(x^2 + 3) \cdot 2x - x^2 \cdot 2x}{(x^2 + 3)^2} \\
+&= \frac{2x^3 + 6x - 2x^3}{(x^2 + 3)^2} \\
+&= \frac{6x}{(x^2 + 3)^2}
+\end{align*}
+
+Finding all the stationary points of \(f\):
+\[f'(x) = 0\]
+\[\frac{6x}{(x^2 + 3)^2} = 0\]
+\[6x = 0\]
+\[x = 0\]
+
+Hence, \(x = 0\) is a stationary point. At \(x = 0\):
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+$x$ & \(0^-\) & \(0\) & \(0^+\) \\
+\hline
+$f'(x)$ & $0^-$ & 0 & $0^+$ \\
+\hline
+Shape & $\backslash$ & $-$ & $\slash$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Thus, \(x = 0\) is a local and global minimum.
+\\
+
+Since \(x = 0\) is a global minimum, $f$ is strictly decreasing in the interval \((- \infty, 0)\) and strictly increasing in the interval \((0, \infty)\).
+
+Differentiating $f'(x)$ with respect to \(x\):
+\begin{align*}
+f''(x) &= \frac{6(x^2 + 3)^2 - 2(x^2 + 3) \cdot 2x \cdot 6x}{((x^2 + 3)^2)^2} \\
+&= \frac{6(x^2 + 3)^2 - 24x^2(x^2 + 3)}{(x^2 + 3)^4} \\
+&= \frac{(x^2 + 3) (6(x^2 + 3) - 24x^2)}{(x^2 + 3)^4} \\
+&= \frac{6(x^2 + 3) - 24x^2}{(x^2 + 3)^3} \\
+&= \frac{6x^2 + 18 - 24x^2}{(x^2 + 3)^3} \\
+&= \frac{6x^2 - 24x^2 + 18}{(x^2 + 3)^3} \\
+&= \frac{-18x^2 + 18}{(x^2 + 3)^3} \\
+&= \frac{18(1 - x^2)}{(x^2 + 3)^3} \\
+\end{align*}
+
+Since \((x^2 + 3)^3 > 0\) for \(x \in \mathbb{R}\), we can look at the numerator of \(f''(x)\):
+\\
+
+\(18(1 - x^2) > 0\) when \(x^2 < 1\), which is when \(-1 < x < 1\). Thus, $f$ is concave up from $(-1, 1)$ and $f$ is concave down elsewhere, which is on the intervals $(-\infty, -1)$ and $(1, \infty)$.
+
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[axis lines = center, ymin = -1, ymax = 2]
+\addplot[color = blue, samples = 500, domain = -10:10]{(x^2)/(x^2 + 3)};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+* Question 6
+
+Let \(\theta\) be the angle of inclination of the ladder and $L(\theta)$ be the length of the ladder.
+\[L(\theta) = \frac{1}{\cos \theta} + \frac{2}{\sin \theta}, \quad \theta \in \left(0, \frac{\pi}{2} \right)\]
+
+Differentiating $L(\theta)$ with respect to \(\theta\):
+\begin{align*}
+L'(\theta) &= \frac{1}{\cos^2 \theta} \cdot \sin \theta + \frac{2}{\sin^2 \theta} \cdot - \cos \theta \\
+&= \frac{\sin \theta}{\cos^2 \theta} - \frac{2\cos \theta}{\sin^2 \theta}
+\end{align*}
+
+Setting $L'(\theta)$ to \(0\) to find the stationary points:
+\[L'(\theta) = 0\]
+\[\frac{\sin \theta}{\cos^2 \theta} - \frac{2 \cos \theta}{\sin^2 \theta} = 0\]
+\[\frac{\sin \theta}{\cos^2 \theta} = \frac{2 \cos \theta}{\sin^2 \theta}\]
+\[\frac{\sin \theta}{\cos^3 \theta} = \frac{2}{\sin^2 \theta}\]
+\[\frac{\sin^3 \theta}{\cos^3 \theta} = 2\]
+\[\tan^3 \theta = 2\]
+\[\tan \theta = 2^{\frac{1}{3}}\]
+\[\theta = \arctan 2^{\frac{1}{3}}\]
+
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\(\theta\) & \(\left(\arctan 2^{\frac{1}{3}}\right)^-\) & \(\arctan 2^{\frac{1}{3}}\) & \(\left(\arctan 2^{\frac{1}{3}}\right)^+\) \\
+\hline
+\(L'(\theta)\) & $0^-$ & $0$ & $0^+$ \\
+\hline
+Shape & $\backslash$ & $-$ & $\slash$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Hence, \(\arctan 2^{\frac{1}{3}}\) is a minimum point. The minimum length would be:
+\begin{align*}
+L(\arctan 2^{\frac{1}{3}}) &= \frac{1}{\cos \left( \arctan 2^{\frac{1}{3}} \right)} + \frac{2}{\sin \left( \arctan 2^{\frac{1}{3}} \right)} \\
+&= 4.161938185 \\
+&= \qty{4.16}{\unit{m}}
+\end{align*}
+
+
+* Question 7
+
+Let the width of the wooden beam be $w$ and the height of the wooden beam be $h$. Let the stiffness of the wooden beam be $s$.
+\[s = kwh^3, \quad \text{where } k \text{ is an arbitrary constant}\]
+
+By Pythagoras' Theorem:
+\[R^2 = \left( \frac{w}{2} \right)^2 + \left( \frac{h}{2} \right)^2\]
+\[\frac{w}{2} = \sqrt{R^2 - \frac{h^2}{4}}\]
+\[w = 2\sqrt{R^2 - \frac{h^2}{4}}\]
+
+Hence,
+\begin{align*}
+s &= 2kh^3 \sqrt{R^2 - \frac{h^2}{4}}, \quad h \in (0, 2R) \\
+&= Ch^3 \sqrt{R^2 - \frac{h^2}{4}}, \quad \text{where } C = 2k
+\end{align*}
+
+Differentiating $s$ with respect to \(h\):
+\begin{align*}
+\frac{ds}{dh} &= 3Ch^2 \sqrt{R^2 - \frac{h^2}{4}} + Ch^3 \frac{1}{\sqrt{R^2 - \frac{h^2}{4}}} \cdot - \frac{2h}{4} \cdot \frac{1}{2} \\
+&= 3Ch^2 \sqrt{R^2 - \frac{h^2}{4}} - \frac{Ch^4}{4\sqrt{R^2 - \frac{h^2}{4}}} \\
+&= \frac{12Ch^2 \left( R^2 - \frac{h^2}{4} \right) - Ch^4}{4 \sqrt{R^2 - \frac{h^2}{4}}} \\
+&= \frac{12Ch^2R^2 - \frac{12Ch^4}{4} - Ch^4}{4 \sqrt{R^2 - \frac{h^2}{4}}} \\
+&= \frac{12Ch^2R^2 - 4Ch^4}{4 \sqrt{R^2 - \frac{h^2}{4}}} \\
+&= \frac{3Ch^2R^2 - 4Ch^4}{\sqrt{R^2 - \frac{h^2}{4}}} \\
+&= \frac{Ch^2(3R^2 - Ch^2)}{\sqrt{R^2 - \frac{h^2}{4}}}
+\end{align*}
+
+Finding the stationary points by setting $\frac{ds}{dh}$ to \(0\):
+\[\frac{ds}{dh} = 0\]
+\[\frac{Ch^2(3R^2 - Ch^2)}{\sqrt{R^2 - \frac{h^2}{4}}} = 0\]
+\[Ch^2(3R^2 - Ch^2) = 0\]
+\[3Ch^2R^2 = Ch^4\]
+\[h^2 = 3R^2\]
+\[h = \sqrt{3}R\]
+
+We see that \(f'(x)\) exists everywhere on $(0, 2R)$ and the only $x \in (0, 2R)$ where $f'(x) = 0$ is $x = \sqrt{3}R$. We also note that:
+\[\lim_{x \rightarrow 0} f(x) = \lim_{x \rightarrow 2R} f(x) = 0, \quad \text{when } f \left(\sqrt{3}R \right) \text{ is positive}\]
+
+This makes $x \sqrt{3}R$ the global maximum on $(0, 2R)$ and the corresponding width is:
+\begin{align*}
+w &= 2\sqrt{R^2 - \frac{h^2}{4}} \\
+&= 2\sqrt{R^2 - \frac{\left(\sqrt{3}R \right)^2}{4}} \\
+&= 2\sqrt{R^2 - \frac{3R^2}{4}} \\
+&= 2\sqrt{\frac{1}{4} R^2} \\
+&= 2 \cdot \frac{1}{2}R^2 \\
+&= R
+\end{align*}
+
+Hence, the stiffness of the beam is the maximum when the height is $\sqrt{3}R$ and the width is $R$.
+
+\newpage
+
+* Question 8
+
+Considering the two points $P_1$ and $P_2$, which are both distance $1$ away from the plane interface separating the two mediums. Let $x$ be the horizontal distance from point $P_1$ to the vertical line from which the angles $\theta_1$ and $\theta_2$ are drawn. Let $d$ be the distance between the point $P_1$ and $P_2$. Furthermore, let $d_1$ and $d_2$ be the separation be the distance travelled by light in the 2 mediums.
+\\
+
+Using Pythagoras' Theorem:
+\[d_1^2 = 1 + x^2\]
+\[d_2^2 = 1 + (d - x)^2\]
+
+The time taken for the light to travel would be given by:
+\begin{align*}
+T(x) &= \frac{d_1}{v_1} + \frac{d_2}{v_2} \\
+&= \frac{\sqrt{1 + x^2}}{v_1} + \frac{\sqrt{1 + (d - x)^2}}{v_2} \\
+&= \frac{\sqrt{1 + x^2}}{v_1} + \frac{\sqrt{1 + d^2 - 2dx + x^2}}{v_2}
+\end{align*}
+
+Differentiating with respect to \(x\):
+\begin{align*}
+T'(x) &= \frac{2x}{v_1\sqrt{1 + x^2}} \cdot \frac{1}{2} + \frac{-2d + 2x}{v_2\sqrt{1 + (d - x)^2}} \cdot \frac{1}{2} \\
+&= \frac{x}{v_1 \sqrt{1 + x^2}} + \frac{x - d}{v_2\sqrt{1 + (d - x)^2}}
+\end{align*}
+
+\newpage
+
+Finding the stationary points by setting \(T'(x) = 0\):
+\[T'(x) = 0\]
+\[\frac{x}{v_1 \sqrt{1 + x^2}} + \frac{x - d}{v_2\sqrt{1 + (d - x)^2}} = 0\]
+\[\frac{x}{v_1 \sqrt{1 + x^2}} = -\frac{x - d}{v_2\sqrt{1 + (d - x)^2}}\]
+\[\frac{x}{v_1 \sqrt{1 + x^2}} = \frac{d - x}{v_2\sqrt{1 + (d - x)^2}}\]
+\[xv_2\sqrt{1 + (d - x)^2} = (d - x)v_1\sqrt{1 + x^2}\]
+\[v_2\frac{x}{\sqrt{1 + x^2}} = v_1\frac{d - x}{1 + (d - x)^2}\]
+
+Since \(\sin \theta_1 = \frac{x}{\sqrt{1 + x^2}}\) and \(\sin \theta_2 = \frac{d - x}{\sqrt{1 + (d - x)^2}}\):
+\begin{align*}
+v_2 \sin \theta_1 &= v_1 \sin \theta_2 \\
+\frac{\sin \theta_1}{\sin \theta_2} &= \frac{v_1}{v_2} \quad \textbf{(Shown)}
+\end{align*}
+
+Differentiating \(T'(x)\) with respect to \(x\):
+\begin{align*}
+T''(x) &= \frac{1}{v_1} \frac{\sqrt{1 + x^2} - x \frac{1}{\sqrt{1 + x^2}} \cdot \frac{1}{2} \cdot 2x}{1 + x^2}
++ \frac{1}{v_2} \frac{\sqrt{1 + (d - x)^2} - (d - x) \frac{1}{\sqrt{1 + (d - x)^2}} \cdot \frac{1}{2} \cdot (2x - 2d) }{1 + (d - x)^2} \\
+&= \frac{1}{v_1} \frac{\sqrt{1 + x^2} - \frac{x^2}{\sqrt{1 + x^2}}}{1 + x^2}
++ \frac{1}{v_2} \frac{\sqrt{1 + (d - x)^2} - \frac{(x - d)(d - x)}{\sqrt{1 + (d - x)^2}}}{1 + (d - x)^2} \\
+&= \frac{1}{v_1} \frac{\frac{1 + x^2 - x^2}{\sqrt{1 + x^2}}}{1 + x^2}
++ \frac{1}{v_2} \frac{\frac{1 + (d - x)^2 - (x - d)(d - x)}{\sqrt{1 + (d - x)^2}}}{1 + (d - x)^2} \\
+&= \frac{1}{v_1(1 + x^2)^{\frac{3}{2}}}
++ \frac{1 + (d - x)(d - x - (x - d))}{v_2(1 + (d - x)^2)^{\frac{3}{2}}} \\
+&= \frac{1}{v_1(1 + x^2)^{\frac{3}{2}}}
++ \frac{1}{v_2(1 + (d - x)^2)^{\frac{3}{2}}} > 0 \text{ for } x \in \mathbb{R} \\
+\end{align*}
+
+Since the second derivative of $T$ is always positive, and we only have 1 critical point for $T$, that means the critical point is a global minimum. Hence:
+\[\frac{\sin \theta_1}{\sin \theta_2} = \frac{v_1}{v_2} \ \ \text{is minimum}\]
+
+
+* Question 9
+
+** (a)
+\begin{align*}
+\lim_{x \rightarrow 1} \frac{\ln x}{x - 1} &= \lim_{x \rightarrow 1} \frac{\frac{1}{x}}{1} \\
+&= \frac{\frac{1}{1}}{1} \\
+&= 1
+\end{align*}
+
+** (b)
+\begin{align*}
+\lim_{x \rightarrow 0} \frac{\tan x - x}{x^3} &= \lim_{x \rightarrow 0} \frac{\frac{1}{\cos^2 x} - 1}{3x^2} \\
+&= \lim_{x \rightarrow 0} \frac{\frac{-2 (- \sin x)}{\cos^3 x}}{6x} \\
+&= \lim_{x \rightarrow 0} \frac{\sin x}{3x\cos^3 x} \\
+&= \lim_{x \rightarrow 0} \frac{\cos x}{3x \cos^2 x \cdot - \sin x \cdot 3 + 3\cos^3 x} \\
+&= \lim_{x \rightarrow 0} \frac{\cos x}{3\cos^3 x - 9x \cos^2 x \sin x} \\
+&= \frac{1}{3(1)^3 - 0} \\
+&= \frac{1}{3}
+\end{align*}
+
+** (c)
+
+Using limit laws:
+\begin{align*}
+\lim_{x \rightarrow \pi} \frac{\sin x}{1 - \cos x} &= \frac{0}{1 - (- 1)} \\
+&= 0
+\end{align*}
+
+** (d)
+
+\begin{align*}
+\lim_{x \rightarrow 1} \frac{x^a - 1}{x^b - 1} &= \lim_{x \rightarrow 1} \frac{ax^{a - 1}}{bx^{b - 1}} \\
+&= \lim_{x \rightarrow 1} \frac{a}{b} x^{a - 1 - (b - 1)} \\
+&= \lim_{x \rightarrow 1} \frac{a}{b} x^{a - b} \\
+&= \frac{a}{b}
+\end{align*}
+
+** (e)
+
+We have
+\begin{align*}
+\lim_{x \rightarrow \infty} x \ln \left(1 + \frac{a}{x} \right) &= \lim_{x \rightarrow \infty} \left( \frac{\ln (1 + \frac{a}{x})}{\frac{1}{x}} \right) \\
+&= \lim_{x \rightarrow \infty} \frac{\frac{1}{1 + \frac{a}{x}} \cdot \frac{-a}{x^2}}{\frac{-1}{x^2}} \\
+&= \lim_{x \rightarrow \infty} \frac{a}{1 + \frac{a}{x}} \\
+&= a
+\end{align*}
+
+Hence:
+\begin{align*}
+\lim_{x \rightarrow \infty} \left( 1 + \frac{a}{x} \right)^{bx} &= \lim_{x \rightarrow \infty} e^{bx \ln(1 + \frac{a}{x})} \\
+&= e^{\lim_{x \rightarrow \infty} b x \ln \left( 1 + \frac{a}{x} \right)} \\
+&= e^{ba} \\
+&= e^{ab}
+\end{align*}
+
+\newpage
+
+* Question 10
+
+For $\varepsilon, p > 0$, we have:
+\begin{align*}
+\lim_{x \rightarrow \infty} \frac{(\ln x)^p}{x^{\varepsilon}} &= \lim_{x \rightarrow \infty} \left( \frac{\ln x}{x^{\frac{\varepsilon}{p}}} \right)^p \\
+&= \lim_{x \rightarrow \infty} \left( \frac{\frac{1}{x}}{\frac{\varepsilon}{p}x^{\frac{\varepsilon}{p} - 1}} \right)^p \\
+&= \lim_{x \rightarrow \infty} \left( \frac{1}{\frac{\varepsilon}{p}x^{\frac{\varepsilon}{p}}} \right)^p \\
+&= 0^p \\
+&= 0 \quad \textbf{(Shown)}
+\end{align*}
+
+
+* Question 11
+By definition, $f$ is concave upwards on $I$ if and only if for all $a, b \in I$, the line segment joining the points $(a, f(a)), (b, f(b))$ lies above the graph of $f(x)$.
+\\
+
+Since the line segment joining the two points is the graph of the function:
+\[l(x) = f(a) + \frac{f(b) - f(a)}{b - a}(x - a)\]
+
+We see that $f$ is concave up on $I$ if and only if for every $a < x < b$, we have $l(x) > f(x)$, or:
+\[f(a) + \frac{f(b) - f(a)}{b - a}(x - a) > f(x)\]
+
+Since $x - a > 0$, we have:
+\[f(a) + \frac{f(b) - f(a)}{b - a}(x - a) > f(x)\]
+\[\frac{f(b) - f(a)}{b - a}(x - a) > f(x) - f(a)\]
+\[\frac{f(b) - f(a)}{b - a} > \frac{f(x) - f(a)}{x - a} \quad \textbf{(Shown)}\]

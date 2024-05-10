@@ -1,0 +1,867 @@
+#+TITLE: Intro To Comp Thinking Week 7 Tutorial
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Question 1
+
+** (i)
+
+*** Immutable data types
+- Immutable data types are data types that cannot be changed.
+- Some examples include strings and tuples.
+
+*** Mutable data types
+- Mutable data types are data types that can be changed.
+- Some examples include lists and dictionaries.
+
+** (ii)
+An iterable is basically anything that you can iterate over using a for loop. Examples include strings, tuples, lists and dictionaries.
+
+
+* Question 2
+- Modifying an item in the list. Strings are immutable so they cannot be modified.
+- Removing an item from a list. Strings are immutable, so none of the characters can be removed once the string is created.
+- Sorting a list. Strings are immutable, so the characters cannot be moved around once the string is created.
+
+
+* Question 3
+
+** (i)
+Yes. Lists can contain anything.
+
+** (ii)
+Yes. Tuples, like lists, can contain anything.
+
+** (iii)
+Yes. Lists are mutable and hence can be modified.
+
+** (iv)
+No. Tuples are immutable and hence cannot be modified.
+
+** (v)
+Yes as we are modifying the list inside the tuple. Lists are mutable and hence can be modified.
+
+
+* Question 4
+
+** (i)
+#+begin_src python
+[(i**2) for i in range(0, 21)]
+#+end_src
+
+** (ii)
+#+begin_src python :results output
+print([(n*n) for n in range(13) if n % 2 == 0])
+#+end_src
+
+#+RESULTS:
+: [0, 4, 16, 36, 64, 100, 144]
+
+
+* Question 5
+
+** (i)
+#+begin_src python :results output
+list1 = [1, 2, 99]
+list2 = list1
+list3 = list2
+list1 = list1.remove(1)
+print(list1, list2, list3)
+#+end_src
+
+#+RESULTS:
+: None [2, 99] [2, 99]
+
+Explanation:
+- The variable ~list2~ contains a reference to ~list1~.
+- This means that any changes to the ~list1~ will affect ~list2~, since ~list2~ just returns ~list1~.
+- Similarly, the variable ~list3~ just contains a reference to ~list2~, which is just a reference to ~list1~.
+- Thus, ~list3~ and ~list2~ all just point back to ~list1~, so when ~list1~ is modified, both ~list2~ and ~list3~ are changed.
+- As a result, when ~1~ is removed from ~list1~, ~list2~ and ~list3~ will also have ~1~ removed from them, as ~list1~, ~list2~ and ~list3~ are all references to the same list.
+- ~list.remove()~ is a function that modifies a list in place and does not return any value, which is ~None~ in Python.
+- So, assigning ~list1~ to the result of ~list1.remove(1)~ is basically assigning ~list1~ to ~None~.
+
+
+** (ii)
+#+begin_src python :results output
+list1 = [1, 2, 99]
+list2 = list1
+list3 = list1[:]
+list1.remove(1)
+print(list1, list2, list3)
+#+end_src
+
+#+RESULTS:
+: [2, 99] [2, 99] [1, 2, 99]
+
+
+* Question 6
+
+** (i)
+
+*** (a)
+#+begin_src python :results output
+L1 = L2 = []
+#+end_src
+
+(a) initialises L1 and L2 to point to the same list. This means that when ~L1~ is modified, ~L2~ will also be modified as they are both pointing to the same list.
+
+*** (b)
+#+begin_src python :results output
+L1, L2 = [], []
+#+end_src
+
+(b) initialises L1 and L2 to two different lists. This means that when ~L1~ is modified, ~L2~ will not change as ~L1~ and ~L2~ are pointing to two different lists.
+
+
+** (ii)
+
+*** (a)
+#+begin_src python :results output
+L1 = L2 = []
+L1.append(1)
+L2.append(2)
+print(L1)
+print(L2)
+#+end_src
+
+#+RESULTS:
+: [1, 2]
+: [1, 2]
+
+*** (b)
+#+begin_src python :results output
+L1, L2 = [], []
+L1.append(1)
+L2.append(2)
+print(L1)
+print(L2)
+#+end_src
+
+#+RESULTS:
+: [1]
+: [2]
+
+
+* Question 7
+#+begin_src python :results output
+langs = ["Python", "C++", "Fortran", "Algol", "Java"]
+print(langs)
+del langs[1]
+print(langs)
+del langs[:]
+print(langs)
+#+end_src
+
+#+RESULTS:
+: ['Python', 'C++', 'Fortran', 'Algol', 'Java']
+: ['Python', 'Fortran', 'Algol', 'Java']
+: []
+
+
+* Question 8
+#+begin_src python
+L = [1, 2, 3, 4]
+newString = "".join([str(a) for a in L])
+#+end_src
+
+
+* Question 9
+#+begin_src python :results output
+
+# The dictionary of months
+month_dict = {
+    1: "January",
+    2: "February",
+    3: "March",
+    4: "April",
+    5: "May",
+    6: "June",
+    7: "July",
+    8: "August",
+    9: "September",
+    10: "October",
+    11: "November",
+    12: "December",
+}
+
+# The list of strings to print
+str_list: list[str] = []
+
+# Iterates over the keys of the dictionary
+for month_num in month_dict:
+    str_list.append(month_dict[month_num])
+
+# Prints the string list
+print("\n".join(str_list))
+#+end_src
+
+#+RESULTS:
+#+begin_example
+January
+February
+March
+April
+May
+June
+July
+August
+September
+October
+November
+December
+#+end_example
+
+
+* Lab
+
+** Question 1
+Python implementation:
+#+begin_src python
+def is_valid_python_variable_with_keywords_and_reason() -> None:
+    """
+    A function to print 'valid' if the given string is a valid Python variable
+    name and 'invalid' otherwise. This accounts for Python keywords and gives
+    a reason for the variable name being invalid.
+    """
+
+    # Gets the user's input and strips it
+    user_input = input("Please enter a variable name: ").strip()
+
+    # If the user's input is empty, print "Invalid" and exit the function
+    if len(user_input) == 0:
+        return print("Invalid. Reason: Empty string.")
+
+    # The set of Python keywords
+    python_keywords = {
+        "and",
+        "as",
+        "assert",
+        "break",
+        "class",
+        "continue",
+        "def",
+        "del",
+        "elif",
+        "else",
+        "except",
+        "False",
+        "finally",
+        "for",
+        "from",
+        "global",
+        "if",
+        "import",
+        "in",
+        "is",
+        "lambda",
+        "None",
+        "nonlocal",
+        "not",
+        "or",
+        "pass",
+        "raise",
+        "return",
+        "True",
+        "try",
+        "while",
+        "with",
+        "yield",
+    }
+
+    # If the user's input is a keyword, print "Invalid" and exit the function
+    if user_input in python_keywords:
+        return print("Invalid. Reason: The name is a Python keyword.")
+
+    # The list of ordinals for the numbers
+    number_ordinals = [i for i in range(ord("0"), ord("9") + 1)]
+
+    # The list of ordinals for the alphabets
+    alphabet_ordinals = [i for i in range(ord("A"), ord("z") + 1)]
+
+    # The set containing the ordinals of all the accepted characters
+    # for a Python variable
+    valid_char_ordinals = set(number_ordinals + alphabet_ordinals + [ord("_")])
+
+    # If the first character of the string is a digit,
+    # print "Invalid" and the reason and exit the function
+    if user_input[0].isdigit():
+        return print(
+            "Invalid. Reason: Python variables cannot start with numbers."
+        )
+
+    # Otherwise, iterate over the string
+    for char in user_input:
+
+        # If the ordinal of the character isn't in the set of valid characters,
+        # print "Invalid" and the reason and exit the function
+        if ord(char) not in valid_char_ordinals:
+            return print(
+                f"Invalid. Reason: {char} is not allowed in "
+                "Python variable names."
+            )
+
+    # Print "Valid"
+    print("Valid")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// A function to print 'valid' if the given string is a valid Python variable
+// name and 'invalid' otherwise. This accounts for Python keywords and gives
+// a reason for the variable name being invalid.
+fn is_valid_python_variable_with_keywords_and_reason() {
+
+    // Initialise the string to store the user's input
+    let mut input = String::new();
+
+    // Prints the prompt
+    print!("Please enter a variable name: ");
+
+    // Flush the stdout
+    std::io::stdout().flush().unwrap();
+
+    // Read the user's input to the input variable
+    match std::io::stdin().read_line(&mut input) {
+        Ok(_number_of_bytes) => (),
+        Err(error) => println!("Error: {error}")
+    }
+
+    // Trims the user input
+    let user_input = input.trim();
+
+    // If the user's input is empty, print "Invalid" and exit the function
+    if user_input.len() == 0 {
+        return println!("Invalid. Reason: Empty string.");
+    }
+
+    // The set of Python keywords
+    let python_keywords = std::collections::HashSet::from([
+        "and",
+        "as",
+        "assert",
+        "break",
+        "class",
+        "continue",
+        "def",
+        "del",
+        "elif",
+        "else",
+        "except",
+        "False",
+        "finally",
+        "for",
+        "from",
+        "global",
+        "if",
+        "import",
+        "in",
+        "is",
+        "lambda",
+        "None",
+        "nonlocal",
+        "not",
+        "or",
+        "pass",
+        "raise",
+        "return",
+        "True",
+        "try",
+        "while",
+        "with",
+        "yield",
+    ]);
+
+    // If the user's input is a keyword, print "Invalid" and the reason
+    // and exit the function
+    if python_keywords.contains(user_input) {
+        return println!("Invalid. Reason: The name is a Python keyword.")
+    }
+
+    // The list of ordinals for the numbers
+    let mut number_ordinals: Vec<u8> = (('0' as u8)..=('9' as u8)).collect();
+
+    // The list of ordinals for the alphabets
+    let mut alphabet_ordinals: Vec<u8> = (('A' as u8)..=('z' as u8)).collect();
+
+    // Append the number ordinals to the alphabet ones
+    alphabet_ordinals.append(&mut number_ordinals);
+
+    // Add the ordinal for the underscore to the list of ordinals
+    alphabet_ordinals.push('_' as u8);
+
+    // Create a set containing the ordinals of all the accepted characters
+    let valid_char_ordinals = std::collections::HashSet::<u8>::from_iter(
+        alphabet_ordinals
+    );
+
+    // Gets the first character of the user's input
+    let first_char = user_input.chars().nth(0).unwrap();
+
+    // If the first character of the string is a digit
+    // print "Invalid" and the reason and exit the function
+    if first_char.is_digit(10) {
+        return println!(
+            "Invalid. Reason: Python variables cannot start with numbers."
+        );
+    }
+
+    // Otherwise, iterate over the string
+    for char in user_input.chars() {
+
+        // If the ordinal of the character isn't
+        // in the set of valid characters,
+        // print "Invalid" and exit the function
+        if !valid_char_ordinals.contains(&(char as u8)) {
+            return println!(
+                "Invalid. Reason: {char} is not allowed in Python variable names."
+            );
+        }
+    }
+
+    // Print "Valid"
+    println!("Valid");
+}
+#+end_src
+
+
+** Question 2
+Python implementation:
+#+begin_src python
+def print_list_of_numbers_as_matrix(list_of_list: list[list[float]]) -> None:
+    """
+    Function to print a list of list as a matrix.
+    It also prints its transpose.
+    """
+
+    # The list of strings to print for the matrix
+    matrix_str_list: list[str] = []
+
+    # The list of strings to print for the matrix transpose
+    transpose_str_list: list[str] = ["" for i in range(len(list_of_list))]
+
+    # Iterates over the list
+    for row in list_of_list:
+
+        # The list of strings for the row
+        row_str_list: list[str] = []
+
+        # Iterates over the numbers in the row
+        for index, number in enumerate(row):
+
+            # Add the number to the list of strings for the row
+            row_str_list.append(str(number))
+
+            # Add the number to the transpose at the index
+            transpose_str_list[index] += f"{str(number)} "
+
+        # Add the row to the matrix string list joined by spaces
+        matrix_str_list.append(" ".join(row_str_list))
+
+    # Prints the matrix
+    print("\n".join(matrix_str_list))
+
+    # Print a new line
+    print()
+
+    # Print the transpose
+    print("\n".join(string.strip() for string in transpose_str_list))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to print a list of list as a matrix
+// It also prints its transpose
+fn print_list_of_numbers_as_matrix(list_of_list: Vec<Vec<i32>>) {
+
+    // THe list of strings to print for the matrix
+    let mut matrix_str_list: Vec<String> = vec![];
+
+    // The list of strings to print for the matrix transpose
+    let mut transpose_str_list: Vec<Vec<String>> = (0..list_of_list.len())
+        .map(|_| vec![])
+        .collect();
+
+    // Iterates over the list
+    for row in list_of_list {
+
+        // Initialise the list of strings for the row
+        let mut row_str_list: Vec<String> = vec![];
+
+        // Iterates over the numbers in the row
+        for (index, number) in row.iter().enumerate() {
+
+            // Add the number to the list of strings for the row
+            row_str_list.push(number.to_string());
+
+            // Add the number to the transpose at the index
+            transpose_str_list[index].push(number.to_string());
+        }
+
+        // Add the row to the matrix string list joined by spaces
+        matrix_str_list.push(row_str_list.join(" "));
+    }
+
+    // Prints the matrix
+    println!("{}", matrix_str_list.join("\n"));
+
+    // Prints a new line
+    println!();
+
+    // Print the transpose
+    println!(
+        "{}",
+        transpose_str_list
+            .iter()
+            .map(|row| row.join(" "))
+            .collect::<Vec<String>>()
+            .join("\n")
+    );
+}
+#+end_src
+
+** Question 3
+Python implementation:
+#+begin_src python
+def convert_date_to_list(short_date: str) -> list[int]:
+    "Function to convert a date 'dd/mm/yyyy' to a list [dd, mm, yyyy]"
+    return [int(date_part) for date_part in short_date.split("/")]
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to convert a date 'dd/mm/yyyy' to a list [dd, mm, yyyy]
+fn convert_date_to_list(short_date: &str) -> Vec<i32> {
+    return short_date.split("/")
+        .map(|date_part| date_part.parse::<i32>().unwrap())
+        .collect();
+}
+#+end_src
+
+
+** Question 4
+Python implementation:
+#+begin_src python
+def print_long_date(short_date: str) -> None:
+    """
+    Function to print the long date format 'dd Month, yyyy' from the
+    short date format 'dd/mm/yyyy'
+    """
+
+    # The month dictionary
+    month_dict = {
+        1: "January",
+        2: "February",
+        3: "March",
+        4: "April",
+        5: "May",
+        6: "June",
+        7: "July",
+        8: "August",
+        9: "September",
+        10: "October",
+        11: "November",
+        12: "December",
+    }
+
+    # Convert the date to a list and grab the date, month and year
+    date, month, year = [int(date_part) for date_part in short_date.split("/")]
+
+    # Gets the long month from the month
+    long_month = month_dict[month]
+
+    # Prints the date in the long date format
+    print(f"{date} {long_month}, {year}")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to print the long date format 'dd Month, yyyy'
+// from the short date format 'dd/mm/yyyy'
+fn print_long_date(short_date: &str) {
+
+    // The month dictionary
+    let month_dict = std::collections::HashMap::from([
+        (1, "January"),
+        (2, "February"),
+        (3, "March"),
+        (4, "April"),
+        (5, "May"),
+        (6, "June"),
+        (7, "July"),
+        (8, "August"),
+        (9, "September"),
+        (10, "October"),
+        (11, "November"),
+        (12, "December"),
+    ]);
+
+    // Convert the date to a list and grab the date list
+    let date_list = short_date.split("/")
+        .map(|date_part| date_part.parse::<i32>().unwrap())
+        .collect::<Vec<i32>>();
+
+    // Gets the date, month and year from the date list
+    let (date, month, year) = (date_list[0], date_list[1], date_list[2]);
+
+    // Gets the long month from the month
+    let long_month = month_dict.get(&month).unwrap();
+
+    // Prints the date in the long date format
+    println!("{date} {long_month}, {year}");
+}
+#+end_src
+
+** Question 5
+
+*** (i)
+Python implementation:
+#+begin_src python
+def add_two_vectors(vec_1: list[float], vec_2: list[float]) -> list[float]:
+    "Function to add two vectors together"
+
+    # Returns the sum of the two vectors
+    return [vec_1[i] + vec_2[i] for i in range(len(vec_1))]
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to add two vectors together
+fn add_two_vectors(vec_1: Vec<i32>, vec_2: Vec<i32>) -> Vec<i32> {
+
+    // Returns the sum of the two vectors
+    vec_1.iter().enumerate()
+        .map(|(index, value)| value + vec_2[index])
+        .collect()
+}
+#+end_src
+
+*** (ii)
+Python implementation:
+#+begin_src python
+def dot_product_vec(vec_1: list[float], vec_2: list[float]) -> float:
+    "Function to get the dot product of two vectors"
+
+    # Returns the dot product of the two vectors
+    return sum(vec_1[i] * vec_2[i] for i in range(len(vec_1)))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to get the dot product of two vectors
+fn dot_product_vec(vec_1: Vec<i32>, vec_2: Vec<i32>) -> i32 {
+
+    // Returns the dot product of the two vectors
+    vec_1.iter().enumerate()
+        .map(|(index, value)| value * vec_2[index])
+        .sum()
+}
+#+end_src
+
+** Question 6
+
+*** (i)
+Python implementation:
+#+begin_src python
+import re
+
+# The regex to match all the punctuation marks
+punctuation_regex = re.compile(r"[.,?!;:'\"()\[\]{}-]")
+
+
+def print_words_of_a_given_input() -> None:
+    "Function to print all the words in a given input, separated by new lines"
+
+    # Gets the user's input
+    user_input = input("Please enter a sentence: ").strip()
+
+    # Replace all the punctuation marks with a space
+    user_input = re.sub(punctuation_regex, " ", user_input)
+
+    # Splits the string using spaces
+    splitted_string = user_input.split()
+
+    # Print all the words joined by new lines
+    print("\n".join(splitted_string))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+use regex::Regex;
+
+
+// Function to print all the words in a given input, separated by new lines
+fn print_words_of_a_given_input() {
+
+    // Initialise the string to store the user's input
+    let mut input = String::new();
+
+    // Prints the prompt
+    print!("Please enter a sentence: ");
+
+    // Flush the stdout
+    std::io::stdout().flush().unwrap();
+
+    // Read the user's input to the input variable
+    match std::io::stdin().read_line(&mut input) {
+        Ok(_number_of_bytes) => (),
+        Err(error) => println!("Error: {error}")
+    }
+
+    // Trims the user input
+    let user_input = input.trim();
+
+    // The punctuation regex to find all the punctuation characters
+    let punctuation_regex = Regex::new(r#"[.,?!;:'"()\[\]{}-]"#).unwrap();
+
+    // Replace all the punctuations marks with a space
+    let processed_input = punctuation_regex.replace_all(user_input, " ");
+
+    // Iterates over all the words in the string split using spaces
+    // and filter out all the empty strings
+    for word in processed_input
+        .split(" ")
+            .filter(|string| !string.is_empty()) {
+
+        // Print the word
+        println!("{word}");
+    }
+}
+#+end_src
+
+*** (ii)
+Python implementation:
+#+begin_src python
+def print_words_of_a_given_input_no_split() -> None:
+    """
+    Function to print all the words in a given input, separated by new lines,
+    but this time without using the str.split function.
+    """
+
+    # The set of all punctuation
+    punctuation_set = set(".,?!;:'\"()[]{}-")
+
+    # Gets the user's input
+    user_input = input("Please enter a sentence: ").strip()
+
+    # Gets the length of the user's input
+    input_len = len(user_input)
+
+    # The list of words to print
+    word_list: list[str] = []
+
+    # The variable to store the position of the last word
+    previous_word_index = 0
+
+    # Iterates over the characters in the input
+    for index, char in enumerate(user_input):
+
+        # If the character is punctuation or a space
+        if char.isspace() or char in punctuation_set:
+
+            # Gets the word
+            word = user_input[previous_word_index:index]
+
+            # Adds the word to the list of words
+            # if the word isn't an empty string
+            word_list.append(word.strip()) if len(word) > 0 else None
+
+            # Update the previous word index to the current index + 1
+            # if the index is less than the length of the input
+            previous_word_index = (index + 1
+                                   if index + 1 < input_len
+                                   else input_len - 1)
+
+    # Adds the last word to the list
+    word_list.append(user_input[previous_word_index:])
+
+    # Print the list of words joined with a new line character
+    print("\n".join(word_list))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// Function to print all the words in a given input, separated by new lines,
+// but this time without using the str.split function
+fn print_words_of_a_given_input_no_split() {
+
+    // The set of all punctuation
+    let punctuation_set: std::collections::HashSet<char> =
+        std::collections::HashSet::from_iter(
+        ".,?!;:'\"()[]{}-".chars()
+    );
+
+    // Initialise the string to store the user's input
+    let mut input = String::new();
+
+    // Prints the prompt
+    print!("Please enter a sentence: ");
+
+    // Flush the stdout
+    std::io::stdout().flush().unwrap();
+
+    // Read the user's input to the input variable
+    match std::io::stdin().read_line(&mut input) {
+        Ok(_number_of_bytes) => (),
+        Err(error) => println!("Error: {error}")
+    }
+
+    // Trims the user input
+    let user_input = input.trim();
+
+    // Get the length of the user's input
+    let input_len = user_input.len();
+
+    // The list of words to print
+    let mut word_list: Vec<String> = vec![];
+
+    // The variable to store the position of the last word
+    let mut previous_word_index = 0;
+
+    // Iterates over the characters in the input
+    for (index, char) in user_input.chars().enumerate() {
+
+        // If the character is punctuation or space
+        if char.is_whitespace() || punctuation_set.contains(&char) {
+
+            // Gets the word
+            let word = &user_input[previous_word_index..index];
+
+            // Adds the word to the list of words
+            // if the word isn't an empty string
+            if word.len() > 0 {
+                word_list.push(word.trim().to_string())
+            } else {};
+
+            // Update the previous word index to the current index + 1
+            // if the index is less than the length of the input
+            previous_word_index = if index + 1 < input_len {
+                index + 1
+            } else { input_len - 1 };
+        }
+    }
+
+    // Add the last word to the list
+    word_list.push(
+        user_input.chars().collect::<Vec<_>>()[previous_word_index..]
+            .iter()
+            .collect()
+    );
+
+    // Print the list of words joined with a new line character
+    println!("{}", word_list.join("\n"));
+}
+#+end_src

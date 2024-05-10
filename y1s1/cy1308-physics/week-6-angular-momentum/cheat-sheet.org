@@ -1,0 +1,115 @@
+#+TITLE: Angular Momentum Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \graphicspath{ {./images/} }
+
+\newpage
+
+* Definitions
+
+** Torque (\(\tau\))
+Torque is a measure of the force that can cause an object to rotate about a point, in this case, point $O$. It is also called the moment of a force. It is given by:
+\[\tau = \vec{r} \times \vec{F}\]
+
+Where $\vec{r}$ is the perpendicular distance of the object from a point $O$, and $\vec{F}$ is the force acting on the object.
+
+** Power (\(P\))
+The power of a rotating object with *constant torque* is given by:
+\[P = \tau \omega\]
+
+\newpage
+
+** Right-hand rule
+When the fingers of your right hand are curled in the direction of rotation, your right thumb points in the direction of \(\vec{\omega}\). If the rotation axis is also an axis of symmetry, this is also the direction of \(\vec{L}\).
+
+\[\includegraphics[width = \textwidth]{right-hand-rule}\]
+
+\newpage
+
+** Conservation of angular momentum
+When the net external torque acting on a system is zero, the total angular momentum of the system is constant.
+\\
+
+Essentially:
+\[\frac{dL}{dt} = 0\]
+\[L = I \vec{\omega} = \text{constant}\]
+
+** Precession
+Precession is the slow movement of the axis of a spinning body around another axis due to a torque, such as gravitational influence acting to change the direction of the first axis. It is seen in the circle slowly traced out by the pole of a spinning gyroscope.
+
+
+* Formulas
+
+** Angular momentum (\(L\))
+The angular momentum of a point object rotating around a point $O$ is given by:
+\[\vec{L} = \vec{r} \times \vec{p}\]
+\[\vec{L} = \vec{r} \times m \vec{v}\]
+\[\vec{L} = r \sin \theta \cdot m \vec{v}\]
+
+Where $\vec{r}$ is the distance of the object from the point $O$, $\vec{p}$ is the linear momentum of the object and $\vec{v}$ is the velocity of the object.
+\\
+
+The angular momentum (\(L\)) of a rigid body rotating around a symmetry axis is given by:
+\[\vec{L} = I \vec{\omega}\]
+
+- \(I\) is the moment of inertia of rigid body about the symmetry axis
+- $\vec{\omega}$ is the angular velocity vector of the rigid body
+
+If the axis is *not* an axis of symmetry, or *not* parallel to the angular velocity, the above relation holds, but the moment of inertia is written as a 3 by 3 matrix.
+
+\newpage
+
+** Rate of change of total angular momentum
+For any system of particles, the rate of change of the total angular momentum equals the sum of the torques of all forces acting on all the particles:
+
+\[\sum \vec{\tau} = \frac{d \vec{L}}{dt}\]
+\[\sum \vec{\tau} = I \alpha\]
+
+This is only valid when the net external torque, and the angular moment $L$, are calculated with respect to either:
+1. The origin of an inertial reference frame.
+2. The *centre of mass* of a system of particles or rigid body.
+
+
+* Flywheel
+
+** Non-rotating flywheel
+When the flywheel is not rotating, its weight creates a torque around the pivot, causing is to fall along a circular path until its axis rests on the table surface.
+\\
+
+In falling, the flywheel rotates about the pivot and thus acquires an angular momentum $\vec{L}$. The direction of $\vec{L}$ stays constant.
+
+** Rotating flywheel
+When the flywheel is rotating, the system starts with an angular momentum $\vec{L_i}$ parallel to the flywheel's axis of rotation.
+\\
+
+Now when the flywheel falls, the effect of the torque due to the weight is to cause the angular momentum to precess around the pivot. The gyroscope circles around is pivot *without falling*.
+
+\newpage
+
+* Derivation of the precession rate of gyroscopes
+Changes in angular momentum as a result of external torque due to weight is:
+\[d \vec{L} = \vec{\tau}_{ext} \, dt\]
+\[dL = L \sin \theta \, d \phi\]
+
+The angular velocity of precession is:
+\begin{align*}
+\Omega &= \frac{d \phi}{dt} \\
+&= \frac{1}{L \sin \theta} \frac{dL}{dt} \\
+&= \frac{\tau_{ext}}{L \sin \theta} \\
+&= \frac{M gr \sin \theta}{L \sin \theta} \\
+&= \frac{Mgr}{L} \\
+&= \frac{Mgr}{(kMR_0^2) \omega} \\
+&= \frac{gr}{kR_0^2 \omega}
+\end{align*}
+
+- $k$ is the dimensionless pre-factor of the moment of inertia
+- $R_0$ is the radius of the flywheel
+
+The angular velocity of precession in general is:
+\[\Omega = \frac{\tau_{ext}}{L \sin \theta}\]
+
+* Moment of inertia for various objects
+\[\includegraphics[width = \textwidth]{moments-of-inertia-1}\]
+\[\includegraphics[width = \textwidth]{moments-of-inertia-2}\]

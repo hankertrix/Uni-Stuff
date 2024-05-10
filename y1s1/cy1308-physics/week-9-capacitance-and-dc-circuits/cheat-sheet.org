@@ -1,0 +1,337 @@
+#+TITLE: Physics Capacitance & DC Circuits Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{graphicx, siunitx}
+#+LATEX_HEADER: \graphicspath{ {./images/} }
+
+\newpage
+
+* Definitions
+
+** Resistance
+Resistance is defined as:
+\[R = \frac{V}{I}\]
+
+Where:
+- $I$ is the current passing through the resistor
+- $V$ is the potential difference, or the voltage, across the resistor
+
+** Ohm's law
+Ohm's law states that the ratio of the potential difference $V$ across a device to the current $I$ passing through it is a constant. Essentially, Ohm's law states that resistance $R$ is a constant.
+
+*** Ohmic resistor
+An ohmic resistor, such as a typical metal wire, is a resistor that obeys Ohm's law. The potential difference across the resistor is proportional to the current passing through the resistor at a given temperature.
+
+*** Non-ohmic resistor
+For non-ohmic resistors, the graph is typically a curve and hence it is incorrect to say that $\frac{1}{R}$ is the *slope* of an $I-V$ graph.
+
+** Electromotive force (\(emf\) or \(\varepsilon\))
+The electromotive force is defined as the electric potential produced by a source, such as an electrochemical cell, i.e. a battery, or a changing magnetic field. The calculation of the electromotive force is the same as the potential difference.
+\\
+
+Electromotive force is also the work done per unit charge:
+\[\varepsilon = \frac{W}{Q}\]
+
+- $W$ is the work done by a source
+- $Q$ is the total charge
+
+** Internal resistance of a battery
+The internal resistance of a battery is given as:
+\[V_{ab} = \varepsilon - Ir\]
+
+Where:
+- $V_{ab}$ is the terminal voltage of the source with internal resistance
+- $\varepsilon$ is the electromotive force of the source
+- $I$ is the current through the source
+- $r$ is the internal resistance of the source
+
+** Kirchhoff's current rule
+Kirchhoff's current rule states that the sum of the currents into any junction is equal to 0.
+\[\sum I = 0\]
+
+** Kirchhoff's voltage rule
+Kirchhoff's voltage rule states that the sum of the potential differences around any closed loop is equal to 0.
+\[\sum V = 0\]
+
+\newpage
+
+** Power
+The power of a circuit is defined as follows:
+\[P = V_{ab} I\]
+
+Where:
+- $P$ is the power delivered to or extracted from a circuit element
+- $V_{ab}$ is the voltage across the circuit element
+- $I$ is the current in the circuit element
+
+Power is can also be defined using resistance:
+\[P = I^2 R = \frac{V_{ab}^2}{R}\]
+
+Where:
+- $P$ is the power delivered to or extracted from a circuit element
+- $V_{ab}$ is the voltage across the circuit element
+- $I$ is the current in the circuit element
+- $R$ is the resistance of the circuit element
+
+** Capacitance (\(C\)) (SI Unit: \(\unit{F}\))
+The capacitance $C$ of a capacitor is defined as the ratio of the magnitude of the charge $Q$ on either conductor to the magnitude of the potential difference between the conductors $V_{ab}$.
+
+\[C = \frac{Q}{V_{ab}}\]
+
+Where:
+- $C$ is the capacitance of a capacitor
+- $Q$ is the magnitude of charge on each conductor
+- $V_{ab}$ is the potential difference between conductors ($a$ has charge $+Q$ and $b$ has charge $-Q$)
+
+Thus, a capacitor with large capacitance is one which can hold a huge charge even when the potential difference across the two plates is small. The SI unit for capacitance is farad ($\unit{F}$).
+
+*** Capacitance of a parallel plate capacitor
+\[C = \frac{Q}{V_{ab}} = \frac{\varepsilon_0 A}{d}\]
+
+Where:
+- $C$ is the capacitance of a parallel-plate capacitor in vacuum
+- $Q$ is the magnitude of the charge on each plate
+- $V_{ab}$ is the potential difference between the two plates
+- $\varepsilon_0$ is the permittivity of vacuum
+- $A$ is the area of each plate
+- $d$ is the distance between the two plates
+
+*** Capacitance of a conducting sphere
+\[C = 4 \pi \varepsilon_0 r\]
+
+Where:
+- $C$ is the capacitance of the conducting sphere
+- $\varepsilon_0$ is the permittivity of vacuum
+- $r$ is the radius of the sphere
+
+*** Capacitance of a co-axial cylindrical capacitor
+\[\includegraphics[scale = 0.7]{co-axial-cyclindrical-capacitor}\]
+\[C = \frac{2 \pi \varepsilon_0 L}{\ln \left| \frac{R_a}{R_b} \right|}\]
+
+Where:
+- $C$ is the capacitance of the co-axial cylindrical capacitor
+- $\varepsilon_0$ is the permittivity of vacuum
+- $L$ is the length of the capacitor
+- $R_a$ is the radius of the *inner* surface of the *larger outer* cylinder
+- $R_b$ is the radius of the *smaller* cylinder on the inside of the capacitor
+
+** Dielectric
+Dielectric is just another word for an insulator.
+
+** Dielectric breakdown
+Dielectric breakdown refers to the phenomenon where the dielectric or the insulator becomes a conductor due to a strong electric field.
+
+** Dielectric strength
+Dielectric strength refers to the maximum electric field a dielectric or insulator can handle before it becomes a conductor.
+
+
+* Formulas
+
+** Resistors in series
+- The resistors have the same current $I$.
+- Their potential differences add.
+\[R_{eq} = R_1 + R_2 + R_3 + \cdots\]
+
+Where:
+- $R_{eq}$ is the equivalent resistance of the resistors in series
+- $R_n$, where $n = 1, 2, 3, \ldots$, is the resistances of the individual resistors
+
+** Resistors in parallel
+- The resistors have the same potential $V$.
+- The current passing through each resistor is dependent on its resistance: \(I_1 = \frac{V}{R_1}\)
+\[\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} + \cdots\]
+
+Where:
+- $R_{eq}$ is the equivalent resistance of the resistors in series
+- $R_n$, where $n = 1, 2, 3, \ldots$, is the resistances of the individual resistors
+
+** Capacitors in series
+- The capacitors have the same charge $Q$.
+- Their potential differences add.
+
+\[\frac{1}{C_{eq}} = \frac{1}{C_1} + \frac{1}{C_2} + \frac{1}{C_3} + \cdots\]
+
+Where:
+- $C_{eq}$ is the equivalent capacitance of the capacitors in series
+- $C_n$, where $n = 1, 2, 3, \ldots$, is the capacitances of the individual capacitors
+
+** Capacitors in parallel
+- The capacitors have the same potential $V$.
+- The charge on each capacitor depends on its capacitance: \(Q_1 = C_1 V\)
+\[C_{eq} = C_1 + C_2 + C_3 + \cdots\]
+
+Where:
+- $C_{eq}$ is the equivalent capacitance of the capacitors in parallel
+- $C_n$, where $n = 1, 2, 3, \ldots$, is the capacitances of the individual capacitors
+
+** Potential energy stored in a capacitor
+\begin{align*}
+U &= \frac{Q^2}{2C} \\
+&= \frac{1}{2} CV^2 \\
+&= \frac{1}{2} QV
+\end{align*}
+
+Where:
+- $U$ is the potential energy stored in a capacitor
+- $Q$ is the magnitude of charge on each plate
+- $C$ is the capacitance of the capacitor
+- $V$ is the potential difference between plates
+
+** Electric energy density in a vacuum
+\[u = \frac{1}{2} \varepsilon_0 E^2\]
+
+Where:
+- $u$ is the electric energy density in a vacuum
+- $\varepsilon_0$ is the permittivity of vacuum
+- $E$ is the magnitude of the electric field
+
+** Electric energy density in the presence of a dielectric or insulator
+\begin{align*}
+u &= \frac{1}{2} \varepsilon_r \varepsilon_0 E^2 \\
+&= \frac{1}{2} K \varepsilon_0 E^2 \\
+&= \frac{1}{2} \varepsilon E^2
+\end{align*}
+
+Where:
+- $u$ is the electric energy density in vacuum
+- $\varepsilon_0$ is the permittivity of vacuum
+- $\varepsilon_r$ is the relative permittivity of the dielectric or insulator
+- $K$ is the dielectric constant
+- $E$ is the magnitude of the electric field
+- $\varepsilon$ is the permittivity and it is equal to $K \varepsilon_0$
+
+\newpage
+
+** Capacitance with a dielectric
+\begin{align*}
+C &= KC_0 \\
+&= K \varepsilon_0 \frac{A}{d} \\
+&= \varepsilon \frac{A}{d}
+\end{align*}
+
+Where:
+- $C$ is the capacitance of a parallel-plate capacitor with dielectric between the plates
+- $K$ is the dielectric constant
+- $C_0$ is the capacitance without the dielectric
+- $\varepsilon_0$ is the permittivity of vacuum
+- $A$ is the area of each plate
+- $d$ is the distance between the plates
+- $\varepsilon$ is the permittivity and it is equal to $K \varepsilon_0$
+
+** Gauss' law in dielectrics
+\[\oint K \vec{E} \cdot \, d \vec{A} = \frac{Q_{encl-free}}{\varepsilon_0}\]
+
+Where:
+- $\oint K \vec{E} \cdot \, d \vec{A}$ is the surface integral of $K \vec{E}$ over a closed surface
+- $K$ is the dielectric constant
+- $Q_{encl-free}$ is the total free charge enclosed by the surface
+- $\varepsilon_0$ is the permittivity of vacuum
+
+\newpage
+
+** Charging a capacitor
+
+*** Capacitor charge
+\begin{align*}
+q &= C \mathcal{E} (1 - e^{- \frac{t}{RC}}) \\
+&= Q_f(1 - e^{-\frac{t}{RC}})
+\end{align*}
+
+Where:
+- $q$ is the capacitor charge
+- $R$ is the resistance
+- $C$ is the capacitance
+- $\mathcal{E}$ is the electromotive force of the battery
+- $t$ is the time since the switch is closed
+- $Q_f$ is the final capacitor charge, which is equal to $C \mathcal{E}$
+
+*** Resulting current in the circuit
+\begin{align*}
+i &= \frac{dq}{dt} \\
+&= \frac{\mathcal{E}}{R} e^{-\frac{t}{RC}} \\
+&= I_0 e^{-\frac{t}{RC}}
+\end{align*}
+
+Where:
+- $i$ is the current in the circuit
+- $\frac{dq}{dt}$ is the rate of change of capacitor charge
+- $\mathcal{E}$ is the electromotive force of the battery
+- $R$ is the resistance
+- $C$ is the capacitance
+- $t$ is the time since the switch is closed
+- $I_0$ is the initial current, which is equal to $\frac{\mathcal{E}}{R}$
+
+** Discharging a capacitor
+
+*** Capacitor charge
+\[q = Q_0 e^{-\frac{t}{RC}}\]
+
+Where:
+- $q$ is the capacitor charge
+- $Q_0$ is the initial capacitor charge
+- $t$ is the time since the switch is closed
+- $R$ is the resistance
+- $C$ is the capacitance
+
+*** Resulting current in the circuit
+\begin{align*}
+i &= \frac{dq}{dt} \\
+&= - \frac{Q_0}{RC} e^{-\frac{t}{RC}} \\
+&= I_0 e^{- \frac{t}{RC}}
+\end{align*}
+
+Where:
+- $i$ is the current in the circuit due to the capacitor discharging
+- $\frac{dq}{dt}$ is the rate of change of capacitor charge
+- $Q_0$ is the initial capacitor charge
+- $t$ is the time since the switch is closed
+- $R$ is the resistance
+- $C$ is the capacitance
+- $I_0$ is the initial current, which is equal to $- \frac{Q_0}{RC}$
+
+
+* Sign conventions and procedures in Kirchhoff's rules
+
+** Procedures for applying Kirchhoff's rules
+1. Give arbitrary (guessed) directions for current. Indicate them in the circuit.
+2. Apply Kirchhoff's current rule at junctions.
+3. Choose any closed loop in the circuit to apply Kirchhoff's voltage rule.
+4. The changes in the potential are determined by the direction of "travel" as you trace around the loop, and the terminal potential differences across the devices.
+5. Upon arriving at a solution, if the current is positive, it means the guessed direction was correct. If the current is negative, it means the correct direction is opposite to the guess. The rules are self-consistent in this way.
+
+** Important notes
+- For a battery, the terminal potentials are determined by the polarity of the terminals.
+- For a resistor, the terminal potentials are determined by the direction of current flow.
+- When the current passes through a component that is from negative to positive, add the potential difference across that component. This is because the *potential is increasing* from the negative terminal to the positive terminal. In simpler terms: \((- \rightarrow +) \text{ means } + V\).
+- When the current passes through a component that is from positive to negative, subtract the potential difference across that component. This is because the *potential is decreasing* from the positive terminal to the negative terminal. In simpler terms: \((+ \rightarrow -) \text{ means } - V\).
+
+\newpage
+
+* Capacitors in circuits
+- When the capacitor is *uncharged*, or has *just begun charging*, the capacitor acts as a *regular metal wire*, or a *short circuit*.
+- When the capacitor is *fully charged*, the capacitor acts like a *break in the circuit* and effectively has *infinite resistance*.
+- When two charged capacitors are connected to each other, *positive plate to positive plate*, the charges will transfer until the *potential difference is the same* for both capacitors.
+
+\newpage
+
+* Voltmeters and ammeters in a DC circuit
+\[\includegraphics{voltmeter-and-ammeter-configuration-1}\]
+The reading of the voltmeter above is an over-estimate, as it includes the potential difference across the ammeter. Ideally, the resistance of an ammeter is zero, so as not to distort the current it aims to measure.
+
+\[\includegraphics{voltmeter-and-ammeter-configuration-2}\]
+The reading of the ammeter above is an over-estimate. It includes the current drawn by the voltmeter. Ideally, the resistance of a voltmeter is infinite, so as not to draw any current which will distort the potential difference it aims to measure.
+
+
+* Electrostatic equilibrium
+For a conductor that is in electrostatic equilibrium:
+1. The electric field is zero everywhere inside the conductor.
+2. The surface of the conductor is an equipotential surface.
+3. If the conductor is isolated, any net charge resides on the surface.
+4. The electric field near the surface of the conductor is normal (\(90^{\circ}\)) to the surface.
+5. For irregularly shaped conductors, the surface charge density is greatest at regions where the radius of curvature of the surface is the smallest.
+6. If excess charges are added to the conductor, the excess charges move to the surfaces of the conductor until a new equilibrium is established where the electric field is zero within the conductor again.
+
+
+* Energy deficit
+A battery puts out energy $QV_b$ in the process of charging the capacitor to equilibrium at battery voltage $V_b$. However, *only half* ($\frac{QV_b}{2}$) is finally stored on the capacitor. The energy is lost in the form of heat in high resistance charging, and is lost in the form of electromagnetic radiation in low resistance charging. This *energy loss* is always *half* of the *work done* by the battery.

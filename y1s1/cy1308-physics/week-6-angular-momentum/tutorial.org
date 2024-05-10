@@ -1,0 +1,332 @@
+#+TITLE: Angular Momentum Tutorial
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{siunitx}
+
+\newpage
+
+* Question 1
+
+Let the mass of the smaller sphere be $m$ and the height of the spheres at the starting line be $h$.
+\\
+
+Assuming that both of the spheres are rolling without slipping, so \(v_{tan} = v_{CM}\):
+
+\[mgh = \frac{1}{2}I_{CM} \omega^2 + \frac{1}{2} m v_{CM}^2\]
+\[mgh = \frac{1}{2} \cdot \frac{2}{5}mr^2 \left( \frac{v_{tan}}{r} \right)^2 + \frac{1}{2}mv_{CM}^2\]
+\[gh = \frac{1}{5}r^2 \left( \frac{v_{tan}}{r} \right)^2 + \frac{1}{2}v_{CM}^2\]
+\[gh = \frac{1}{5}r^2 \left( \frac{v_{CM}}{r} \right)^2 + \frac{1}{2}v_{CM}^2\]
+\[gh = \frac{1}{5}r^2 \frac{v_{CM}^2}{r^2} + \frac{1}{2}v_{CM}^2\]
+\[gh = \frac{1}{5} v_{CM}^2 + \frac{1}{2}v_{CM}^2\]
+\[gh = \frac{7}{10} v_{CM}^2\]
+\[v_{CM}^2 = \frac{10}{7} gh \]
+\[v_{CM} = \sqrt{\frac{10}{7} gh}\]
+
+Since the velocity of the centre of mass for both of the spheres are independent of their mass and their radius, both of the spheres will move at the exact same velocity at all points. Thus, both of the spheres will reach the bottom of the incline at the same time and both will have the same speed at the bottom of the incline.
+\\
+
+Since the mass of the larger sphere is 8 times the mass of the other, it will have greater gravitational potential energy at the top of the incline. By conservation of energy, the kinetic energy of the larger sphere will be greater than that of the smaller sphere. Thus, the larger sphere has greater total kinetic energy at the bottom.
+
+
+* Question 2
+
+** (i)
+Let \(T\) be the tension.
+\\
+
+Net torque around the pulley would be:
+\[\tau_{net} = T_B R - T_A R \tag{1}\]
+
+Finding the tension for mass \(B\):
+\[m_B g - T_B = m_B a\]
+\[T_B = m_B g - m_B a \tag{2}\]
+
+Finding the tension for mass \(A\):
+\[T_A - m_A g = m_A a\]
+\[T_A = m_A g + m_A a \tag{3}\]
+
+Substituting $(2)$ and $(3)$ into \((1)\):
+\[\tau_{net} = R(m_B g - m_B a) - R(m_A g + m_A a) \]
+\[\tau_{net} = m_B gR - m_B aR - m_A gR - m_A aR \]
+\[\tau_{net} = m_B gR - m_A gR - m_B aR - m_A aR \]
+\[\tau_{net} = gR(m_B - m_A) - aR(m_B + m_A) \]
+
+Since \(\tau_{net} = \frac{d \vec{L}}{dt}\):
+\[\tau_{net} = \frac{d \vec{L}}{dt}\]
+\[\tau_{net} = I \alpha \tag{4}\]
+
+Equating $(3)$ and \((4)\):
+\[I \alpha = gR(m_B - m_A) - aR(m_B + mA)\]
+
+\newpage
+
+Since \(a = R \alpha\):
+\[I \frac{a}{R} = gR(m_B - m_A) - aR(m_B + m_A)\]
+\[I \frac{a}{R^2} = g(m_B - m_A) - a(m_B + m_A)\]
+\[I \frac{a}{R^2} + a (m_B + m_A) = g(m_B - m_A)\]
+\[a \left(\frac{I}{R^2} + m_B + m_A \right) = g(m_B - m_A)\]
+\[a = \frac{g(m_B - m_A)}{\left(m_B + m_A + \frac{I}{R^2} \right)}\]
+
+** (ii)
+Since the pulley is in equilibrium:
+\[F - T_A - T_B - Mg = 0\]
+\[F = T_A + T_B + Mg \tag{1}\]
+
+From the previous part:
+\[T_B = m_B g - m_B a \tag{2}\]
+\[T_A = m_A g + m_A a \tag{3}\]
+\[a = \frac{g(m_B - m_A)}{\left(m_B + m_A + \frac{I}{R^2} \right)}\]
+
+Since \(I = \frac{1}{2}MR^2\):
+\begin{align*}
+a &= \frac{g(m_B - m_A)}{\left(m_B + m_A + \frac{\frac{1}{2} M R^2}{R^2} \right)} \\
+&= \frac{g(m_B - m_A)}{\left(m_B + m_A + \frac{1}{2} M \right)} \\
+&= \frac{2g(m_B - m_A)}{2m_B + 2m_A + M} \tag{4} \\
+\end{align*}
+
+Substituting $(2)$ and $(3)$ into \((1)\):
+\begin{align*}
+F &= m_A g + m_A a + m_B g - m_B a + Mg \\
+&= (m_A + m_B + M)g + (m_A - m_B)a \tag{5}
+\end{align*}
+
+Substituting $(4)$ into \((5)\):
+\begin{align*}
+F &= (m_A + m_B + M)g + (m_A - m_B) \left( \frac{2g(m_B - m_A)}{2m_B + 2m_A + M} \right) \\
+&= (m_A + m_B + M)g - (m_B - m_A) \left( \frac{2g(m_B - m_A)}{2m_B + 2m_A + M} \right) \\
+&= (m_A + m_B + M)g - \frac{2g(m_B - m_A)^2}{2m_B + 2m_A + M} \\
+&= (m_A + m_B + M)g - \frac{2g(m_B^2 - 2m_Am_B + m_A^2)}{2m_B + 2m_A + M} \\
+&= \frac{(m_A + m_B + M)(2m_B + 2m_A + M)g}{2m_B + 2m_A + M} - \frac{2g(m_B^2 - 2m_Am_B + m_A^2)}{2m_B + 2m_A + M} \\
+&= \frac{(2m_Am_B + 2m_A^2 + Mm_A + 2m_B^2 + 2m_Am_B + Mm_B + 2Mm_B + 2Mm_A + M^2)g}{2m_B + 2m_A + M} \\
+&\qquad - \frac{2g(m_B^2 - 2m_Am_B + m_A^2)}{2m_B + 2m_A + M} \\
+&= \frac{(2m_A^2 + 2m_B^2 + M^2 + 4m_Am_B + 3Mm_A + 3Mm_B)g}{2m_B + 2m_A + M} - \frac{2g(m_B^2 - 2m_Am_B + m_A^2)}{2m_B + 2m_A + M} \\
+&= \frac{(2m_A^2 + 2m_B^2 + M^2 + 4m_Am_B + 3Mm_A + 3Mm_B - 2m_B^2 + 4m_Am_B - 2m_A^2)g}{2m_B + 2m_A + M} \\
+&= \frac{(M^2 + 3Mm_A + 3Mm_B + 8m_Am_B)g}{2m_B + 2m_A + M} \\
+&= \frac{(M^2 + 3M(m_A + m_B) + 8m_Am_B)g}{M + 2(m_B + m_A)}
+\end{align*}
+
+\newpage
+
+* Question 3
+
+** (a)
+\[P = \tau \omega\]
+\[P = 255 \cdot 2 \pi f\]
+\[P = 255 \cdot 2 \pi \cdot \frac{3750}{60}\]
+\[P = \qty{100.1382658}{\unit{kW}}\]
+\[P \approx \qty{100}{\unit{kW}}\]
+
+
+** (b)
+\[E_k = \frac{1}{2} I \omega^2\]
+\[E_k = \frac{1}{2} \cdot \frac{42.5}{1000} \left(2 \pi \cdot \frac{9750}{60} \right)^2\]
+\[E_k = \qty{22.152633}{\unit{kJ}}\]
+\[E_k \approx \qty{22.2}{\unit{kJ}}\]
+
+\newpage
+
+* Question 4
+
+** (a)
+Since the cylinder rolls without slipping:
+\[v_{tan} = v_{CM}\]
+
+By conservation of energy, the loss in gravitational potential energy must be equal to the gain in kinetic energy:
+\[mgh = \frac{1}{2}mv_{CM}^2 + \frac{1}{2}I \omega^2\]
+\[2mgh = mv_{CM}^2 + I \omega^2\]
+\[2mgh = mv_{CM}^2 + \frac{1}{2} m \left[(20 \cdot 10^{-2}) + (35 \cdot 10^{-2}) \right] \omega^2\]
+\[2mgh = mv_{CM}^2 + \frac{13}{160} m \omega^2\]
+\[2gh = v_{CM}^2 + \frac{13}{160} \omega^2\]
+\[2gh = v_{CM}^2 + \frac{13}{160} \left( \frac{v_{tan}}{(35 \cdot 10^{-2})} \right)^2\]
+\[2gh = v_{CM}^2 + \frac{13}{160} \left( \frac{v_{CM}}{(35 \cdot 10^{-2})} \right)^2 (\because v_{tan} = v_{CM})\]
+\[2gh = \frac{163}{98}v_{CM}^2 \]
+\[h = \frac{163}{196g}v_{CM}^2 \]
+\[h = \frac{163}{196 \cdot 9.81} (6.44)^2 \]
+\[h = 3.515881753\]
+\[h \approx \qty{3.52}{\unit{m}}\]
+
+** (b)
+\[v^2 = u^2 + 2as\]
+\[v^2 = 0 + 2(9.81)(3.515881753)\]
+\[v = \sqrt{2(9.81)(3.515881753)}\]
+\[v = 8.305516239\]
+\[v \approx \qty{8.31}{\unit{m.s^{-1}}}\]
+
+** (c)
+When the cylinder is rolling down the string, some of the gravitational potential energy is used to get the cylinder to rotate, which decreases the amount of energy that is used for the translation of the cylinder. Since the kinetic energy of the cylinder is dependent on the velocity of the cylinder, the velocity of the cylinder is also decreased when the cylinder is rolled down the string.
+
+
+* Question 5
+
+** (a)
+The centre of mass moves to the left.
+
+** (b)
+Finding the work done by the force:
+\[W = F \cdot d\]
+\[W = 35 \cdot 5.5\]
+\[W = \qty{192.5}{\unit{J}} \]
+
+The work done by the force provides for the translational kinetic energy:
+\[W = E_k\]
+\[192.5 = \frac{1}{2}mv_{CM}^2\]
+\[385 = mv_{CM}^2\]
+\[385 = 21v_{CM}^2\]
+\[v_{CM}^2 = \frac{385}{21}\]
+\[v_{CM} = \sqrt{\frac{385}{21}}\]
+\[v_{CM} = 4.281744193\]
+\[v_{CM} \approx \qty{4.28}{\unit{m.s^{-1}}}\]
+
+** (c)
+Finding the time taken for the disk to move \(\qty{5.5}{\unit{m}}\):
+\[s = \frac{1}{2} at^2\]
+\[5.5 = \frac{1}{2} \frac{35}{21} t^2\]
+\[\frac{5}{6} t^2 = 5.5\]
+\[t^2 = \frac{33}{5}\]
+\[t = \sqrt{\frac{33}{5}}\]
+
+Finding the angular acceleration of the disk using Newton's \(2^{nd}\) law for rotation:
+\[\tau = I \alpha\]
+\[\alpha = \frac{\tau}{I}\]
+\[\alpha = \frac{rF}{\frac{1}{2}mr^2}\]
+\[\alpha = \frac{2F}{mr}\]
+\[\alpha = \frac{2 \cdot 35}{21 \cdot 85 \cdot 10^{-2}}\]
+\[\alpha = \frac{200}{51}\]
+
+Finding the final angular velocity:
+\[\omega_f = \omega_i + \alpha t\]
+\[\omega_f = 0 + \frac{200}{51} \sqrt{\frac{33}{5}}\]
+\[\omega_f = 10.07469222\]
+\[\omega_f \approx \qty{10.1}{\unit{rad.s^{-1}}}\]
+
+** (d)
+The length of string unwrapped from the rim is the product of the radius and the angular displacement:
+\[l = r \theta\]
+\[l = r \frac{1}{2} \alpha t^2\]
+\[l = 85 \cdot 10^{-2} \frac{1}{2} \cdot \frac{200}{51} \sqrt{\frac{33}{5}}^2\]
+\[l = \qty{11}{\unit{m}}\]
+
+
+* Question 6
+Finding the density of the cam:
+\[\rho = \frac{M}{V}\]
+\[\rho = \frac{M}{h \left(2 \pi R^2 - 2 \pi \left(\frac{1}{2} R \right)^2 \right)}\]
+\[\rho = \frac{M}{\frac{3}{2} \pi R^2h}\]
+\[\rho = \frac{2M}{3 \pi R^2h}\]
+
+Finding the mass of the entire cam:
+\[m_{\text{full cam}} = \rho V\]
+\[m_{\text{full cam}} = \frac{2M}{3 \pi R^2h} \cdot (2 \pi R^2) h\]
+\[m_{\text{full cam}} = \frac{4M}{3}\]
+
+\newpage
+
+Finding the moment of inertia of the full cam about the rotation axis using parallel axis theorem:
+\[I_{\text{full cam}} = I_{\text{cam about centre}} + md^2\]
+\[I_{\text{full cam}} = \frac{1}{2} \cdot \frac{4M}{3} R^2 + \frac{4M}{3} \cdot \left(\frac{1}{2}R \right)^2\]
+\[I_{\text{full cam}} = \frac{2M}{3} R^2 + \frac{4M}{3} \cdot \frac{1}{4}R^2\]
+\[I_{\text{full cam}} = \frac{2M}{3} R^2 + \frac{M}{3}R^2\]
+\[I_{\text{full cam}} = MR^2\]
+
+Finding the moment of inertia of the cam about the rotation axis:
+\[I_{cam} = I_{\text{full cam}} - I_{\text{cut-out}}\]
+\[I_{cam} = MR^2 - \frac{1}{2} \cdot \frac{1}{3} M \left( \frac{1}{2} R \right)^2\]
+\[I_{cam} = MR^2 - \frac{1}{24} MR^2\]
+\[I_{cam} = \frac{23}{24} MR^2\]
+
+Finding the moment of inertia of the entire object:
+\[I = I_{cam} + I_{shaft}\]
+\[I = \frac{23}{24}MR^2 + \frac{1}{2}M \left( \frac{1}{2} R \right)^2\]
+\[I = \frac{13}{12}MR^2\]
+
+Finding the kinetic energy of the entire object when it is rotating with angular speed \(\omega\):
+\[E_k = \frac{1}{2}I \omega^2\]
+\[E_k = \frac{1}{2} \cdot \frac{13}{12}MR^2 \omega^2\]
+\[E_k = \frac{13}{24}MR^2 \omega^2\]
+
+
+* Question 7
+
+** (a)
+Finding the moment of inertia of the rod:
+\[I_{rod} = \frac{1}{3} M l^2\]
+
+Finding the moment of inertia of the masses:
+\[I_{masses} = m \left(\frac{l}{3} \right)^2 + m \left(\frac{2}{3} \right)^2 + m l^2\]
+\[I_{masses} = \frac{14}{9} m l^2\]
+
+Finding the total moment of inertia of the system:
+\[I = \frac{14}{9} m l^2 + \frac{1}{3} M l^2\]
+
+Finding the kinetic energy of the entire object:
+\[E_k = \frac{1}{2} I \omega^2\]
+\[E_k = \frac{1}{2} \left(\frac{1}{3}Ml^2 + \frac{14}{9}ml^2 \right) \omega^2\]
+\[E_k = \left( \frac{7}{9}ml^2 + \frac{1}{6}Ml^2 \right) \omega^2\]
+\[E_k = \left( \frac{7}{9}m + \frac{1}{6}M \right) l^2 \omega^2\]
+
+** (b)
+Finding the angular momentum of the system:
+\[L = I \omega\]
+\[L = \left(\frac{1}{3}Ml^2 + \frac{14}{9}ml^2 \right) \omega\]
+\[L = \left(\frac{1}{3}M + \frac{14}{9}m \right) l^2 \omega\]
+
+
+* Question 8
+By conservation of linear momentum:
+\[mv + 0 = (m + M)v_{CM}\]
+\[v_{CM} = \frac{mv}{m + M}\]
+
+Getting the position of the new centre of mass of the combined object, by taking the old centre of mass of the rod as the origin:
+\[x_{CM} = \frac{1}{M} \sum_{i = 1}^n m_i x_i\]
+\[x_{CM} = \frac{1}{m + M} \left(M \cdot 0 + m \cdot \frac{l}{4} \right)\]
+\[x_{CM} = \frac{ml}{4(m + M)}\]
+
+Getting the distance of ball to the centre of mass:
+\[r_{ball} = \frac{l}{4} - \frac{ml}{4(m + M)}\]
+\[r_{ball} = \frac{l(m + M)}{4(m + M)} - \frac{ml}{4(m + M)}\]
+\[r_{ball} = \frac{lm + lM}{4(m + M)} - \frac{ml}{4(m + M)}\]
+\[r_{ball} = \frac{Ml}{4(m + M)}\]
+
+Getting the moment of inertia of the rod around the new centre of mass using the parallel axis theorem:
+\[I_{rod} = I_{CM} + md^2\]
+\[I_{rod} = \frac{1}{12}Ml^2 + M \left( \frac{ml}{4(m + M)} \right)^2\]
+\[I_{rod} = \frac{1}{12}Ml^2 + M \frac{m^2l^2}{16(m + M)^2}\]
+\[I_{rod} = \frac{1}{12}Ml^2 + \frac{Mm^2l^2}{16(m + M)^2}\]
+
+Getting the total moment of inertia of the object when the ball has stuck to the rod:
+\[I = I_{ball} + I_{rod}\]
+\[I = m \left(\frac{Ml}{4(m + M)} \right)^2 + \frac{1}{12}Ml^2 + \frac{Mm^2l^2}{16(m + M)^2}\]
+\[I = m \frac{M^2l^2}{16(m + M)^2} + \frac{1}{12}Ml^2 + \frac{Mm^2l^2}{16(m + M)^2}\]
+\[I = \frac{mM^2l^2}{16(m + M)^2} + \frac{1}{12}Ml^2 + \frac{Mm^2l^2}{16(m + M)^2}\]
+
+By conservation of linear momentum:
+\[L_{ball} = L_{object}\]
+\[mv \left(\frac{Ml}{4(m + M)} \right) = \left[\frac{mM^2l^2}{16(m + M)^2} + \frac{1}{12}Ml^2 + \frac{Mm^2l^2}{16(m + M)^2} \right] \omega\]
+\[mv = \left[\frac{mMl}{4(m + M)} + \frac{4l(m + M)}{12} + \frac{m^2l}{4(m + M)} \right] \omega\]
+\[12mv = \left[\frac{3mMl}{m + M} + 4l(m + M) + \frac{3m^2l}{m + M} \right] \omega\]
+\[12mv = \left[\frac{3l (mM + m^2)}{m + M} + 4l(m + M) \right] \omega\]
+\[12mv = \left[\frac{3ml (M + m)}{m + M} + 4l(m + M) \right] \omega\]
+\[12mv = \left[\frac{3ml (m + M)}{m + M} + 4l(m + M) \right] \omega\]
+\[12mv = \left[3ml + 4l(m + M) \right] \omega\]
+\[12mv = \left[3ml + 4lm + 4lM \right] \omega\]
+\[12mv = \left[7ml + 4lM \right] \omega\]
+\[12mv = \left[l(7m + 4M) \right] \omega\]
+\[\omega = \frac{12mv}{l(7m + 4M)}\]
+
+
+* Question 9
+Finding the moment of inertia of the gyroscope:
+\[I = 2.0 \cdot (5 \cdot 10^{-2})^2\]
+\[I = 5.0 \cdot 10^{-3}\]
+
+Finding the external torque required:
+\[\Omega = \frac{\tau}{L}\]
+\[\frac{1.20 \cdot 10^{-6} \cdot \frac{\pi}{180}}{5.50 \cdot 60 \cdot 60} = \frac{\tau}{L}\]
+\[\tau = 1.057775304 \cdot 10^{-12} \cdot L\]
+\[\tau = 1.057775304 \cdot 10^{-12} (I \omega)\]
+\[\tau = 1.057775304 \cdot 10^{-12} (2.0 \cdot ((5.0 \div 2) \cdot 10^{-2})^2 \omega)\]
+\[\tau = 1.32221913 \cdot 10^{-15} \omega\]
+\[\tau = 1.32221913 \cdot 10^{-15} \cdot 2 \pi \frac{19200}{60}\]
+\[\tau = 2.6584793 \cdot 10^{-12}\]
+\[\tau \approx 2.66 \cdot 10^{-12} \ \unit{N.m}\]

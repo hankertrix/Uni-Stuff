@@ -1,0 +1,239 @@
+% Created 2023-09-19 Tue 20:35
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Hankertrix}
+\date{\today}
+\title{Newton's Laws of Motion Cheat Sheet}
+\hypersetup{
+ pdfauthor={Hankertrix},
+ pdftitle={Newton's Laws of Motion Cheat Sheet},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.1 (Org mode 9.6.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\newpage
+
+\section{Definitions}
+\label{sec:orga5e9283}
+
+\(\sum \vec{F}\) represents net force (\(F_{net}\)).
+
+\subsection{Newton's First Law}
+\label{sec:org7824a29}
+When a body is either at rest or moving with constant velocity (in a straight line at constant speed), we say that the body is in \textbf{equilibrium}. It will not change its state of motion.
+\\[0pt]
+
+For a body to be in equilibrium, the net force acting on the object must be zero:
+\[\sum \vec{F} = 0\]
+
+\subsection{Newton's Second Law}
+\label{sec:org73e5c1c}
+The net force on a body is proportional to the rate of change of momentum of the body (with proportionality constant of unity).
+\[\sum \vec{F} = \frac{d \vec{p}}{dt} = \frac{d(m \vec{v})}{dt}\]
+
+The \textbf{extremely useful} equation \(F = ma\) can be derived from the above (\(v_f\) is the final velocity and \(v_i\) is the initial velocity):
+\begin{align*}
+\sum \vec{F} &= \frac{d \vec{p}}{dt} \\
+&= \frac{mv_f - mv_i}{t} \\
+&= m \frac{v_f - v_i}{t} \\
+&= ma \ \because \ a = \frac{v_f - v_i}{t}
+\end{align*}
+
+\subsection{Newton's Third Law}
+\label{sec:org8aa3b3f}
+If body A exerts a force on Body B, \(\vec{F}_{A \text{ on } B}\), then body B necessarily exerts a force on body A, \(\vec{F}_{A \text{ on } B}\). The two forces have the same magnitude and are opposite in direction.
+\\[0pt]
+
+The forces act on different bodies and the nature of the forces must also be the same.
+
+\subsection{Inertial frame of reference}
+\label{sec:orgc448273}
+An inertial frame of reference is a frame of reference that is \textbf{not} undergoing any acceleration. Newton's laws are \textbf{only valid} in inertial frames of reference.
+
+\subsection{Non-inertial frame of reference}
+\label{sec:orgfcc3d74}
+A non-inertial frame of reference is a frame that is \textbf{undergoing acceleration}. Newton's laws \textbf{do not} apply in non-inertial frames of reference.
+
+\subsection{Archimedes' Principle}
+\label{sec:org80e430c}
+Archimedes's principle states that the upthrust is equivalent in magnitude to the weight of the fluid displaced.
+\[\text{Upthrust} = m_{\text{fluid}} \, g = \rho_{\text{fluid}} \, V_{\text{displaced}} \, g\]
+
+\section{Everyday forces}
+\label{sec:orgb552ff0}
+
+\subsection{Weight (\(\vec{w}\))}
+\label{sec:org9afd3f0}
+The pull of gravity on an object is a long-range force, which is a force that acts over a distance.
+
+\subsection{Tension force (\(\vec{T}\))}
+\label{sec:orgb58f955}
+A pulling force exerted on an object by a rope, cord, string, etc.
+
+\subsection{Normal force (\(\vec{n}\))}
+\label{sec:orgd18c80e}
+Whenever an object rests or pushes on a surface, the surface exerts a push on it that is directed \textbf{perpendicular} to the surface. The normal force is also called the normal contact force.
+
+\subsection{Frictional force (\(\vec{f}\))}
+\label{sec:org9f2a958}
+In additional to the normal force, a surface may exert a frictional force on an object, directed parallel to the surface.
+
+\section{Weight and apparent weight}
+\label{sec:orged58ebf}
+In a non-inertial frame of reference, such as a lift accelerating upwards or downwards, a weighing scale would measure a different weight from the person's actual weight. This is due to the weighing scale measuring the force that it exerts back on the person, which is the normal contact force of the weighing scale on the person. A person feeling heavier or lighter due to a lift accelerating upwards or downwards is also experiencing the normal contact force of the floor of the lift on the person.
+\\[0pt]
+
+When the lift is accelerating upwards with acceleration \(a\), the normal contact force of the weighing scale on the person is \textbf{increased} by \(ma\), where \(m\) is the mass of the person. This would mean that the weighing scale will read a \textbf{larger} weight than the actual weight of the person, and the person will feel \textbf{heavier} in the lift.
+\\[0pt]
+
+When the lift is accelerating downwards with acceleration \(a\), the normal contact force of the weighing scale on the person is \textbf{decreased} by \(ma\), where \(m\) is the mass of the person. This would mean that the weighing scale will read a \textbf{smaller} weight than the actual weight of the person, and the person will feel \textbf{lighter} in the lift.
+
+\section{Inclines}
+\label{sec:org1520683}
+For an object on an incline, the weight is vertically downwards and hence cannot provide for the horizontal acceleration of the object down the slope. This is because the weight is perpendicular to the force that provides for the horizontal acceleration of the object down the slope. Thus, it is the horizontal component of the normal contact force of the incline on the body that provides for the horizontal acceleration of the object down the slope.
+
+\newpage
+
+\section{Friction}
+\label{sec:org45441f6}
+Friction between two surfaces arises from interactions between molecules on the surfaces.
+\\[0pt]
+
+\textbf{Kinetic friction} acts when a body slides over a surface and is defined as:
+\[f_k = \mu_k n\]
+
+\textbf{Static friction} acts when there is no relative motion between bodies, and it can vary between zero and its maximum value. It is defined as:
+\[f_s \le \mu_s n\]
+
+When a body rests or slides on a surface, the frictional force acting on the body is always \textbf{parallel to the surface}. The frictional force and the normal contact force are components of a single \textbf{contact force}.
+
+\section{Fluid resistance (drag)}
+\label{sec:org7713d17}
+\(\indent\) Laminar (smooth) flow:
+\[F_D = bv\]
+
+Turbulent flow (with vortices):
+\[F_D = kv^2\]
+
+Reynolds number is a rough measure of the type of flow.
+
+\section{Terminal velocity}
+\label{sec:org9a65d66}
+Terminal velocity is the velocity of an object when the drag force is equal to weight of the object, which means it experiences no acceleration.
+\\[0pt]
+
+The velocity of an object that experiences a drag force is:
+\[v(t) = \frac{mg}{b} (1 - e^{-\frac{bt}{m}})\]
+
+\subsection{Deriving the velocity of an object that experiences a drag force}
+\label{sec:orgdad7f58}
+\(\indent\) The drag force on an object is proportional to the object's velocity, so:
+\[F_D = bv\]
+
+The net force on the object that is falling in air due to gravity would hence be:
+\[F_{net} = mg - bv\]
+
+By Newton's Second Law,
+\[F_{net} = ma\]
+
+Hence:
+\[mg - bv = ma\]
+\[mg - bv = m \frac{dv}{dt}\]
+\[1 = m \frac{ \frac{dv}{dt} }{mg - bv}\]
+
+\newpage
+
+Integrating with respect to \(t\):
+\[\int_0^t 1 \, dt = m \int_0^v \frac{ \frac{dv}{dt} }{mg - bv} \, dt\]
+\[\int_0^t 1 \, dt = m \int_0^v \frac{1}{mg - bv} \, dv\]
+\[\int_0^t 1 \, dt = m \int_0^v \frac{1}{m(g - \frac{bv}{m})} \, dv\]
+\[\int_0^t 1 \, dt = \int_0^v \frac{1}{g - \frac{bv}{m}} \, dv\]
+\[t = - \frac{m}{b} \ln \left| g - \frac{bv}{m} \right| + c, \text{ where c is an arbitrary constant.}\]
+\[- \frac{bt}{m} - c = \left| g - \frac{bv}{m} \right|\]
+\[e^{- \frac{bt}{m} - c} = g - \frac{bv}{m}\]
+\[\frac{bv}{m} - g = Ae^{-\frac{bt}{m}}, \text{ where } A = e^{-c}\]
+\[\frac{bv}{m} = Ae^{-\frac{bt}{m}} + g\]
+\[v = \frac{m}{b} (Ae^{-\frac{bt}{m}} + g)\]
+\\[0pt]
+
+When the object is at rest at the beginning of the motion, i.e. v = 0 and t = 0:
+
+\[v = \frac{m}{b} (Ae^{-\frac{bt}{m}} + g)\]
+\[0 = \frac{m}{b} (Ae^{-\frac{b(0)}{m}} + g)\]
+\[0 = A + g\]
+\[A = -g\]
+
+\newpage
+
+Thus:
+
+\[v = \frac{m}{b} (Ae^{-\frac{bt}{m}} + g)\]
+\[v = \frac{m}{b} (-ge^{-\frac{bt}{m}} + g)\]
+\[v = \frac{m}{b} (g - ge^{-\frac{bt}{m}})\]
+\[v = \frac{mg}{b} (1 - e^{-\frac{bt}{m}})\]
+\[v(t) = \frac{mg}{b} (1 - e^{-\frac{bt}{m}})\]
+
+\section{Circular motion}
+\label{sec:org05cff7b}
+\[\text{Arc length, } s = r \theta, \text{ where } \theta \text{ is in radians}\]
+\[\text{Angular displacement: } \theta = \frac{s}{r}\]
+\[\text{Angular velocity, } \omega = \frac{d \theta}{dt}\]
+\[\text{Angular acceleration, } \alpha = \frac{d \omega}{dt}\]
+\[\text{Centripetal acceleration, } a_{radial} = \frac{v^2}{r}\]
+
+\subsection{Relationship between angular quantities and their linear counterparts}
+\label{sec:org3582b34}
+The linear counterpart refers to the quantity in the tangential direction.
+
+\begin{center}
+\begin{tabular}{ c|c }
+\(\textbf{Angular}\) & \(\textbf{Linear}\) \\
+\hline
+\(\theta\) & \(s = r\theta\) \\
+\(\omega\) & \(v_{tan} = r\omega\) \\
+\(\alpha\) & \(a_{tan} = r\alpha\) \\
+\end{tabular}
+\end{center}
+
+For constant acceleration (both angular and linear), we have the following relations:
+\begin{center}
+\begin{tabular}{ c|c }
+\(\textbf{Angular}\) & \(\textbf{Linear}\) \\
+\hline
+\(\omega_f = \omega_i + \alpha t\) & \(v_f = v_i + at\) \\
+\(\theta - \theta_0 = \omega_i t + \frac{1}{2} \alpha t^2\) & \(x - x_0 = v_i + \frac{1}{2} a t^2\) \\
+\(\omega_f^2 = \omega_i^2 + 2 \alpha(\theta - \theta_0)\) & \(v_f^2 = v_i^2 + 2a(x - x_0)\)
+\end{tabular}
+\end{center}
+
+\subsection{Non-uniform circular motion}
+\label{sec:org883c101}
+\[\vec{a} = \vec{a}_r + \vec{a}_{tan}\]
+
+An example of non-uniform circular motion is vertical circular motion, like whirling a bucket of water in a vertical circle.
+\\[0pt]
+
+In contrast, uniform circular motion is where \(\vec{a}_{tan} = 0\), so \(\vec{a} = \vec{a}_r\).
+
+
+\section{Fictitious forces}
+\label{sec:org6c62571}
+Fictitious forces are "forces" that a body experiences when they are in a non-inertial frame of reference. Examples include the "centrifugal" force and the Coriolis effect.
+\end{document}
