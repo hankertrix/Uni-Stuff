@@ -3,3 +3,6 @@ __pycache__/
 
 # Ignore the target directory for Rust
 target/
+
+# Ignore the data files for BS1009
+*/bs1009-introduction-to-computational-thinking/ay-*/data/
