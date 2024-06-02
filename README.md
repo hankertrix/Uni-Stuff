@@ -1,6 +1,7 @@
 # Uni Stuff
+Hello! This is the repository where I am storing all of my university related things, so you can find my lecture notes and tutorial answers here. Hopefully this resource will help you in your university journey!
 
-Hello! This is the repository where I am storing all of my university related things, so you can find my lecture notes and tutorial answers here. Hopefully this resource will help you in your university journey! 
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 <br>
 
@@ -25,5 +26,17 @@ There are usually three files with three different file extensions, one with the
 <br>
 
 ## Errors
-
 If you find any errors inside my notes or tutorials, feel free to open an issue or submit a pull request to fix the error. Alternatively, you can contact me on Telegram using my Telegram handle [@hankertrix](https://t.me/hankertrix).
+
+<br>
+
+## Licence
+All files in this repository are licensed under a
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Licence][cc-by-nc-sa]
+unless another licence is found inside the folder.
+An example is the licence file found in the MA1008 mini project folder.
+
+[cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
+[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
+
