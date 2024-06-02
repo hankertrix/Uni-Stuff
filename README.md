@@ -1,8 +1,6 @@
 # Uni Stuff
 Hello! This is the repository where I am storing all of my university related things, so you can find my lecture notes and tutorial answers here. Hopefully this resource will help you in your university journey!
 
-[![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
-
 <br>
 
 ## How the repository is organised
@@ -36,7 +34,8 @@ All files in this repository are licensed under a
 unless another licence is found inside the folder.
 An example is the licence file found in the MA1008 mini project folder.
 
+[![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
+
 [cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
-[cc-by-nc-sa-shield]: https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg
 
