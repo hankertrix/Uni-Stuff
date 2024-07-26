@@ -1,90 +1,375 @@
 // The module containing the serial handler
+//
+// References:
+// https://github.com/derchr/EQPlatform-Guiding/blob/master/firmware/src/serial.rs
+// https://github.com/derchr/EQPlatform-Guiding/blob/master/firmware/src/main.rs
+// https://github.com/Rahix/avr-hal/issues/248
 
 use avr_device::interrupt::Mutex;
-use core::{cell::RefCell, ops::DerefMut};
+use core::{
+    cell::{Cell, RefCell},
+    ops::DerefMut,
+};
 
 use arduino_hal::{
     hal::{
-        port::{PD2, PD3},
-        usart::{Event, UsartReader, UsartWriter},
+        port::{PD2, PD3, PE0, PE1, PH0, PH1, PJ0, PJ1},
+        usart::{UsartReader, UsartWriter},
     },
-    pac::USART1,
+    pac::{USART0, USART1, USART2, USART3},
     port::{mode, Pin},
-    Peripherals, Pins, Usart,
+    prelude::_embedded_hal_serial_Read,
 };
 
+use crate::utils::enum_dispatch;
+
+/// The stop command.
+/// The new line character is because the buffer is considered
+/// complete when the new line character is read.
+const STOP_COMMAND: &str = "stop\n";
+
+/// The variable to store whether the program has been stopped
+static PROGRAM_STOPPED: Mutex<Cell<bool>> = Mutex::new(Cell::new(false));
+
+/// The serial buffer to store the received data from the computer console
+/// through the serial to USB port
+static CONSOLE_SERIAL_BUFFER: Mutex<RefCell<Option<SerialBuffer>>> =
+    Mutex::new(RefCell::new(None));
+
+/// The serial buffer to store the received data from the phone application
+/// via bluetooth
+static BLUETOOTH_SERIAL_BUFFER: Mutex<RefCell<Option<SerialBuffer>>> =
+    Mutex::new(RefCell::new(None));
+
+/// The enum for the serial buffer type
+#[derive(Copy, Clone)]
+pub enum SerialBufferType {
+    Console,
+    Bluetooth,
+}
+
+/// The enum for the possible USART writers
+pub enum UsartWriterInterface {
+    USART0(
+        UsartWriter<
+            USART0,
+            Pin<mode::Input<mode::AnyInput>, PE0>,
+            Pin<mode::Output, PE1>,
+            arduino_hal::DefaultClock,
+        >,
+    ),
+    USART1(
+        UsartWriter<
+            USART1,
+            Pin<mode::Input<mode::AnyInput>, PD2>,
+            Pin<mode::Output, PD3>,
+            arduino_hal::DefaultClock,
+        >,
+    ),
+    USART2(
+        UsartWriter<
+            USART2,
+            Pin<mode::Input<mode::AnyInput>, PH0>,
+            Pin<mode::Output, PH1>,
+            arduino_hal::DefaultClock,
+        >,
+    ),
+    USART3(
+        UsartWriter<
+            USART3,
+            Pin<mode::Input<mode::AnyInput>, PJ0>,
+            Pin<mode::Output, PJ1>,
+            arduino_hal::DefaultClock,
+        >,
+    ),
+}
+
+/// The enum for the possible USART writers
+pub enum UsartReaderInterface {
+    USART0(
+        UsartReader<
+            USART0,
+            Pin<mode::Input<mode::AnyInput>, PE0>,
+            Pin<mode::Output, PE1>,
+            arduino_hal::DefaultClock,
+        >,
+    ),
+    USART1(
+        UsartReader<
+            USART1,
+            Pin<mode::Input<mode::AnyInput>, PD2>,
+            Pin<mode::Output, PD3>,
+            arduino_hal::DefaultClock,
+        >,
+    ),
+    USART2(
+        UsartReader<
+            USART2,
+            Pin<mode::Input<mode::AnyInput>, PH0>,
+            Pin<mode::Output, PH1>,
+            arduino_hal::DefaultClock,
+        >,
+    ),
+    USART3(
+        UsartReader<
+            USART3,
+            Pin<mode::Input<mode::AnyInput>, PJ0>,
+            Pin<mode::Output, PJ1>,
+            arduino_hal::DefaultClock,
+        >,
+    ),
+}
+
 /// The structure of the serial buffer object
-struct SerialBuffer {
-    usart_receiver: UsartReader<
-        USART1,
-        Pin<mode::Input<mode::AnyInput>, PD2>,
-        Pin<mode::Output, PD3>,
-        arduino_hal::DefaultClock,
-    >,
-    buffer: heapless::String<512>,
-    is_complete: bool,
+pub struct SerialBuffer {
+    pub serial_receiver: UsartReaderInterface,
+    pub buffer: heapless::String<512>,
+    pub is_complete: bool,
 }
 
 /// The structure of the serial handler object
 pub struct SerialHandler {
-    usart_transmitter: UsartWriter<
-        USART1,
-        Pin<mode::Input<mode::AnyInput>, PD2>,
-        Pin<mode::Output, PD3>,
-        arduino_hal::DefaultClock,
-    >,
+    pub serial_buffer_type: SerialBufferType,
+    pub serial_transmitter: UsartWriterInterface,
 }
 
-/// The enum containing the different types of commands
-/// that can be executed
-pub enum Command {
-    Move,
+/// The function to get the correct serial buffer
+/// based on the serial buffer type given
+pub fn get_serial_buffer(
+    serial_buffer_type: SerialBufferType,
+) -> &'static Mutex<RefCell<Option<SerialBuffer>>> {
+    match serial_buffer_type {
+        SerialBufferType::Console => &CONSOLE_SERIAL_BUFFER,
+        SerialBufferType::Bluetooth => &BLUETOOTH_SERIAL_BUFFER,
+    }
 }
 
-/// The serial buffer to store the received data
-static SERIAL_BUFFER: Mutex<RefCell<Option<SerialBuffer>>> =
-    Mutex::new(RefCell::new(None));
+/// The function to get whether the program has been stopped.
+/// This function must be called periodically called by the functions that
+/// run in the main loop so that they can stop execution immediately
+/// when the stop command is issued.
+/// The function must be called in an interrupt free context to get
+/// the PROGRAM_STOPPED global variable.
+pub fn program_stopped() -> bool {
+    avr_device::interrupt::free(|critical_section_token| {
+        PROGRAM_STOPPED.borrow(critical_section_token).get()
+    })
+}
 
-/// The serial handler class
-impl SerialHandler {
+/// The function to set the PROGRAM_STOPPED global variable to true,
+/// which stops the arduino from continuing to execute further commands.
+/// The function must be called in an interrupt free context to set
+/// the PROGRAM_STOPPED global variable.
+pub fn stop_program() {
+    avr_device::interrupt::free(|critical_section_token| {
+        PROGRAM_STOPPED.borrow(critical_section_token).set(true)
+    })
+}
+
+/// The function to set the PROGRAM_STOPPED variable back to false,
+/// which allows the arduino to start executing commands again.
+/// The function must be called in an interrupt free context to set
+/// the PROGRAM_STOPPED global variable.
+pub fn start_program() {
+    avr_device::interrupt::free(|critical_section_token| {
+        PROGRAM_STOPPED.borrow(critical_section_token).set(false)
+    })
+}
+
+/// The macro to easily dispatch the function to the right USART interface.
+/// This macro is just a wrapper around the enum dispatch macro
+/// with the enum and enum variants filled in.
+macro_rules! usart_dispatch {
+    (
+        $match_variable:expr,
+        $enum_name:ident,
+        |$enum_variant_obj:ident| $body:block) => {
+        enum_dispatch!(
+            $match_variable,
+            $enum_name,
+            USART0,
+            USART1,
+            USART2,
+            USART3,
+            |$enum_variant_obj| $body
+        )
+    };
+}
+
+/// The macro to initialise a serial handler
+macro_rules! new_serial_handler {
     //
 
-    // The constructor for the serial handler
-    pub fn new(peripherals: Peripherals, pins: Pins) -> Self {
+    // USART0
+    // Pins on the Pololu Shield:
+    // D1 for the RX (receiving) pin
+    // D2 for the TX (transmitting) pin
+    (USART0, $peripherals:expr, $pins:expr) => {{
         //
 
-        // Initialise the serial connection
-        let mut serial_connection = Usart::new(
-            peripherals.USART1,
-            pins.d19,
-            pins.d18.into_output(),
-            arduino_hal::hal::usart::BaudrateArduinoExt::into_baudrate(57600),
+        // Initialise the USART0 interface
+        let mut usart = arduino_hal::Usart::new(
+            $peripherals.USART0,
+            $pins.d0,
+            $pins.d1.into_output(),
+            arduino_hal::hal::usart::BaudrateArduinoExt::into_baudrate(
+                constants::BAUDRATE,
+            ),
         );
 
-        // Enable interrupts
-        serial_connection.listen(Event::RxComplete);
+        // Initialise the serial interface
+        let serial_handler = new_serial_handler!(
+            @init_serial usart,
+            USART0,
+            crate::serial::SerialBufferType::Console
+        );
 
-        // Split the USART connection into the transmitter and receiver
-        let (usart_receiver, usart_transmitter) = serial_connection.split();
+        // Return the serial handler
+        serial_handler
+    }};
+    //
+
+    // USART1
+    // Pins on the Pololu Shield:
+    // Z-MAX for the RX (receiving) pin
+    // Z-MIN for the TX (transmitting) pin
+    (USART1, $peripherals:expr, $pins:expr) => {{
+        //
+
+        // Initialise the USART interface
+        let mut usart = ::arduino_hal::Usart::new(
+            $peripherals.USART1,
+            $pins.d19,
+            $pins.d18.into_output(),
+            arduino_hal::hal::usart::BaudrateArduinoExt::into_baudrate(
+                constants::BAUDRATE,
+            ),
+        );
+
+        // Initialise the serial interface
+        let serial_handler = new_serial_handler!(
+            @init_serial usart,
+            USART1,
+            crate::serial::SerialBufferType::Bluetooth
+        );
+
+        // Return the serial handler
+        serial_handler
+    }};
+    //
+
+    // USART2
+    // Pins on the Pololu Shield:
+    // D17 for the RX (receiving) pin
+    // D16 for the TX (transmitting) pin
+    (USART2, $peripherals:expr, $pins:expr) => {{
+        //
+
+        // Initialise the USART interface
+        let mut usart = arduino_hal::hal::Usart::new(
+            $peripherals.USART2,
+            $pins.d17,
+            $pins.d16.into_output(),
+            arduino_hal::hal::usart::BaudrateArduinoExt::into_baudrate(
+                constants::BAUDRATE,
+            ),
+        );
+
+        // Initialise the serial interface
+        let serial_handler = new_serial_handler!(
+            @init_serial usart,
+            USART2,
+            crate::serial::SerialBufferType::Bluetooth
+        );
+
+        // Return the serial handler
+        serial_handler
+    }};
+    //
+
+    // USART3
+    // Pins on the Pololu Shield:
+    // Y-MAX for the RX (receiving) pin
+    // Y-MIN for the TX (transmitting) pin
+    (USART3, $peripherals:expr, $pins:expr) => {{
+        //
+
+        // Initialise the USART interface
+        let mut usart = arduino_hal::Usart::new(
+            $peripherals.USART3,
+            $pins.d15,
+            $pins.d14.into_output(),
+            arduino_hal::hal::usart::BaudrateArduinoExt::into_baudrate(
+                constants::BAUDRATE,
+            ),
+        );
+
+        // Initialise the serial interface
+        let serial_handler = new_serial_handler!(
+            @init_serial usart,
+            USART3,
+            crate::serial::SerialBufferType::Bluetooth
+        );
+
+        // Return the serial handler
+        serial_handler
+    }};
+    //
+
+    // The match arm to initialise the serial handler
+    (
+        @init_serial $usart_variable:ident,
+        $usart_interface:ident,
+        $serial_buffer_type:path
+    ) => {{
+        //
+
+        // Listen for the RX complete event
+        $usart_variable.listen(arduino_hal::hal::usart::Event::RxComplete);
+
+        // Split the USART into the receiver and the transmitter
+        let (usart_receiver, usart_transmitter) = $usart_variable.split();
 
         // Initialise the serial buffer with the USART receiver,
         // and execute the block in an interrupt-free context
-        avr_device::interrupt::free(|critical_section| {
+        avr_device::interrupt::free(|critical_section_token| {
             //
 
             // Grab the global serial buffer object and replace it
-            SERIAL_BUFFER
-                .borrow(critical_section)
-                .replace(Some(SerialBuffer {
-                    usart_receiver,
+            // with a new SerialBuffer object to initialise it
+            crate::serial::get_serial_buffer($serial_buffer_type)
+                .borrow(critical_section_token)
+                .replace(Some(crate::serial::SerialBuffer {
+                    serial_receiver:
+                        crate::serial::UsartReaderInterface::$usart_interface(
+                            usart_receiver,
+                        ),
                     buffer: heapless::String::new(),
                     is_complete: false,
                 }))
         });
 
         // Return the serial handler with the USART transmitter
-        Self { usart_transmitter }
+        crate::serial::SerialHandler {
+            serial_buffer_type: $serial_buffer_type,
+            serial_transmitter:
+                crate::serial::UsartWriterInterface::$usart_interface(
+                    usart_transmitter,
+                ),
+        }}
+    };
+}
+
+/// Implement the read function for the USART reader interface
+impl UsartReaderInterface {
+    pub fn read(&mut self) -> Result<u8, nb::Error<core::convert::Infallible>> {
+        usart_dispatch!(self, UsartReaderInterface, |reader| { reader.read() })
     }
+}
+
+/// The implementation of the serial handler class
+impl SerialHandler {
+    //
 
     /// The function to handle input from the serial connection
     pub fn handle_input(&mut self) {
@@ -92,14 +377,15 @@ impl SerialHandler {
 
         // Execute the code to handle the input in an
         // interrupt-free context.
-        avr_device::interrupt::free(|critcal_section| {
+        avr_device::interrupt::free(|critical_section_token| {
             //
 
             // Borrow the global serial buffer object
-            if let Some(ref mut serial_buffer) = SERIAL_BUFFER
-                .borrow(critcal_section)
-                .borrow_mut()
-                .deref_mut()
+            if let Some(ref mut serial_buffer) =
+                get_serial_buffer(self.serial_buffer_type)
+                    .borrow(critical_section_token)
+                    .borrow_mut()
+                    .deref_mut()
             {
                 // If the serial buffer is complete
                 if serial_buffer.is_complete {
@@ -107,6 +393,23 @@ impl SerialHandler {
 
                     // Get the string from the buffer
                     let buffer = serial_buffer.buffer.as_str();
+
+                    // If the string in the buffer is the stop command,
+                    // stop the arduino from executing further commands
+                    // by setting the PROGRAM_STOPPED variable to true.
+                    if buffer == STOP_COMMAND {
+                        stop_program();
+                    }
+                    //
+
+                    // Otherwise
+                    else {
+                        //
+
+                        // Start the program to get ready
+                        // to handle the incoming command.
+                        start_program();
+                    }
 
                     // Clear the buffer
                     serial_buffer.buffer.clear();
@@ -117,33 +420,54 @@ impl SerialHandler {
             }
         });
     }
+
+    /// The function to write a string to the serial connection
+    pub fn write_string(&mut self, string: &str) {
+        usart_dispatch!(
+            &mut self.serial_transmitter,
+            UsartWriterInterface,
+            |serial_transmitter| {
+                ufmt::uwrite!(serial_transmitter, "{}", string).ok();
+            }
+        )
+    }
+
+    /// The function to write a number to the serial connection
+    pub fn write_number<T: num::Integer + ufmt::uDisplay>(&mut self, value: T) {
+        usart_dispatch!(
+            &mut self.serial_transmitter,
+            UsartWriterInterface,
+            |serial_transmitter| {
+                ufmt::uwrite!(serial_transmitter, "{}", value).ok();
+            }
+        )
+    }
 }
 
 /// The module containing
 /// the interrupt service routines needed for serial communication
 mod serial_isr {
-    use arduino_hal::prelude::_embedded_hal_serial_Read;
     use core::ops::DerefMut;
 
-    use super::SERIAL_BUFFER;
+    use super::{get_serial_buffer, SerialBufferType};
 
-    // The interrupt service routine on the USART1 interface
-    #[avr_device::interrupt(atmega2560)]
-    fn USART1_RX() {
+    // The interrupt service routine to write to the serial buffer
+    fn interrupt_service_routine(serial_buffer_type: SerialBufferType) {
         //
 
         // Write to the serial buffer in an interrupt-free context
-        avr_device::interrupt::free(|critical_section| {
+        avr_device::interrupt::free(|critical_section_token| {
             //
 
             // Borrow the global serial buffer
-            if let Some(ref mut serial_buffer) = SERIAL_BUFFER
-                .borrow(critical_section)
-                .borrow_mut()
-                .deref_mut()
+            if let Some(ref mut serial_buffer) =
+                get_serial_buffer(serial_buffer_type)
+                    .borrow(critical_section_token)
+                    .borrow_mut()
+                    .deref_mut()
             {
                 // Get the byte
-                let byte = serial_buffer.usart_receiver.read().unwrap();
+                let byte = serial_buffer.serial_receiver.read().unwrap();
 
                 // If the byte is the newline character,
                 // set the serial buffer to complete
@@ -163,13 +487,38 @@ mod serial_isr {
                         // Try to push to the buffer.
                         // If the push fails, which means the buffer
                         // is full, ignore the characters.
-                        match serial_buffer.buffer.push(character) {
-                            Ok(_) => (),
-                            Err(_) => (),
-                        }
+                        serial_buffer
+                            .buffer
+                            .push(character)
+                            .ok()
+                            .unwrap_or_default();
                     }
                 }
             }
         });
     }
+
+    // Place the interrupt service routine on the USART0 interface
+    #[avr_device::interrupt(atmega2560)]
+    fn USART0_RX() {
+        //
+
+        // Call the interrupt service routine with the console
+        // serial buffer type
+        interrupt_service_routine(SerialBufferType::Console);
+    }
+
+    // Place the interrupt service routine on the USART1 interface.
+    // Change the function name to the correct USART interface
+    // when it is changed.
+    #[avr_device::interrupt(atmega2560)]
+    fn USART1_RX() {
+        //
+
+        // Call the interrupt service routine with the bluetooth
+        // serial buffer type
+        interrupt_service_routine(SerialBufferType::Bluetooth);
+    }
 }
+
+pub(crate) use new_serial_handler;
