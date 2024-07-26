@@ -213,7 +213,7 @@ macro_rules! new_serial_handler {
             $pins.d0,
             $pins.d1.into_output(),
             arduino_hal::hal::usart::BaudrateArduinoExt::into_baudrate(
-                constants::BAUDRATE,
+                crate::constants::BAUDRATE,
             ),
         );
 
@@ -242,7 +242,7 @@ macro_rules! new_serial_handler {
             $pins.d19,
             $pins.d18.into_output(),
             arduino_hal::hal::usart::BaudrateArduinoExt::into_baudrate(
-                constants::BAUDRATE,
+                crate::constants::BAUDRATE,
             ),
         );
 
@@ -271,7 +271,7 @@ macro_rules! new_serial_handler {
             $pins.d17,
             $pins.d16.into_output(),
             arduino_hal::hal::usart::BaudrateArduinoExt::into_baudrate(
-                constants::BAUDRATE,
+                crate::constants::BAUDRATE,
             ),
         );
 
@@ -300,7 +300,7 @@ macro_rules! new_serial_handler {
             $pins.d15,
             $pins.d14.into_output(),
             arduino_hal::hal::usart::BaudrateArduinoExt::into_baudrate(
-                constants::BAUDRATE,
+                crate::constants::BAUDRATE,
             ),
         );
 
