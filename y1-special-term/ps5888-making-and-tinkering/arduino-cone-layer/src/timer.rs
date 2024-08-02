@@ -8,6 +8,7 @@
 use core::{cell::RefCell, ops::Deref};
 
 use arduino_hal::{pac::TC0, simple_pwm::Prescaler};
+use avr_device::interrupt::Mutex;
 
 // Some possible values for the prescaler and the timer counts:
 //
@@ -60,8 +61,8 @@ const MICROSECONDS_PER_COUNTER_VALUE: u32 =
 
 /// The global variable to store the number of milliseconds elapsed
 /// since the program started.
-static TIMER_STRUCTURE: avr_device::interrupt::Mutex<RefCell<Option<Timer>>> =
-    avr_device::interrupt::Mutex::new(RefCell::new(None));
+static TIMER_STRUCTURE: Mutex<RefCell<Option<Timer>>> =
+    Mutex::new(RefCell::new(None));
 
 /// Constant function to convert the prescaler
 /// enum to a value.
@@ -230,8 +231,8 @@ pub fn millis() -> u32 {
         {
             // Get the number of milliseconds that have passed since
             // the program has started by calling the millis function
-            // on the timer structure.
-            timer_structure.millis();
+            // on the timer structure and returning the result
+            return timer_structure.millis();
         }
 
         // Otherwise, return 0
@@ -258,8 +259,8 @@ pub fn micros() -> u32 {
             .deref()
         {
             // Get the number of microseconds that have passed since
-            // the program has started
-            timer_structure.micros();
+            // the program has started and return the result
+            return timer_structure.micros();
         }
 
         // Otherwise, return 0
