@@ -31,39 +31,49 @@ fn main() -> ! {
     let peripherals = arduino_hal::Peripherals::take().unwrap();
     let pins = arduino_hal::pins!(peripherals);
 
-    // Initialise the timer
-    timer::init_and_start(peripherals.TC0);
-
     // Initialise the console serial handler
     let mut console_serial_handler =
         new_serial_handler!(USART0, peripherals, pins);
+
+    // Initialise the timer
+    timer::init_and_start(peripherals.TC0);
 
     // Initialise a new stepper driver
     let mut stepper_driver_e0 = new_stepper_driver!(E0, pins);
     let mut stepper_driver_e1 = new_stepper_driver!(E1, pins);
     let mut stepper_driver_x = new_stepper_driver!(X, pins);
+    let mut stepper_driver_y = new_stepper_driver!(Y, pins);
+    let mut stepper_driver_z = new_stepper_driver!(Z, pins);
 
     // Enable the stepper driver
     stepper_driver_e0.enable();
     stepper_driver_e1.enable();
     stepper_driver_x.enable();
+    stepper_driver_y.enable();
+    stepper_driver_z.enable();
 
     // Set the acceleration to 50 steps/s^2
     stepper_driver_e0.set_acceleration(50.0);
     stepper_driver_e1.set_acceleration(50.0);
     stepper_driver_x.set_acceleration(50.0);
+    stepper_driver_y.set_acceleration(50.0);
+    stepper_driver_z.set_acceleration(50.0);
 
     // Set the maximum speed to 500 steps/s
     stepper_driver_e0.set_maximum_speed(500.0);
     stepper_driver_e1.set_maximum_speed(500.0);
     stepper_driver_x.set_maximum_speed(500.0);
+    stepper_driver_y.set_maximum_speed(500.0);
+    stepper_driver_z.set_maximum_speed(500.0);
 
     // Move the stepper motor for 1,000,000 steps
     stepper_driver_e0.move_by_steps(1_000_000);
     stepper_driver_e1.move_by_steps(1_000_000);
     stepper_driver_x.move_by_steps(1_000_000);
+    stepper_driver_y.move_by_steps(1_000_000);
+    stepper_driver_z.move_by_steps(1_000_000);
 
-    // Write a string to show that the arduino is initialised
+    // Print that the Arduino is initialised
     console_serial_handler.write_string("Arduino initialised!\n");
 
     // Safety: We are not in a critical section,
@@ -75,8 +85,11 @@ fn main() -> ! {
     loop {
         //
 
+        // Run the stepper motors
         stepper_driver_e0.run();
         stepper_driver_e1.run();
         stepper_driver_x.run();
+        stepper_driver_y.run();
+        stepper_driver_z.run();
     }
 }
