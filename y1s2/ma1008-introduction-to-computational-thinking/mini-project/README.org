@@ -167,7 +167,7 @@ sudo xbps-install -S tk
 
 
 * Getting the program :noexport:
-You can download all the files for this program by using this [[https://download-directory.github.io/?url=https://github.com/hankertrix/Uni-Stuff/tree/master/y1s2/ma1008-introduction-to-computational-thinking/mini-project][link]]. The link downloads all the files for the program from the GitHub repository as a zip file. You'd probably want to rename the file to something like "logographer.zip" instead of the extremely long name that is used by default for the zip file. After downloading, all you need to do is to extract the files, and you're done.
+You can download all the files for this program by using this [[https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fhankertrix%2FUni-Stuff%2Ftree%2Fmain%2Fy1s2%2Fma1008-introduction-to-computational-thinking%2Fmini-project][link]]. The link downloads all the files for the program from the GitHub repository as a zip file. You'd probably want to rename the file to something like "logographer.zip" instead of the extremely long name that is used by default for the zip file. After downloading, all you need to do is to extract the files, and you're done.
 
 Alternatively, if you have Git installed, you can use the command below to clone the Git repository from GitHub:
 #+begin_src shell
