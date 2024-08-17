@@ -5,11 +5,15 @@
 // https://github.com/derchr/EQPlatform-Guiding/blob/master/firmware/src/main.rs
 // https://github.com/Rahix/avr-hal/issues/248
 
+use crate::movement::{
+    Command, DropConeArgs, HandleJoystickArgs, LayConesInAStraightLineArgs,
+};
 use avr_device::interrupt::Mutex;
 use core::{
     cell::{Cell, RefCell},
     ops::DerefMut,
 };
+use heapless::Vec;
 
 use arduino_hal::{
     hal::{
@@ -367,13 +371,77 @@ impl UsartReaderInterface {
     }
 }
 
+/// The function to parse the input
+fn parse_input(input: &str) -> Option<Command> {
+    //
+
+    // Split the string at the whitespace character
+    let splitted_string = input
+        .trim()
+        .splitn(2, char::is_whitespace)
+        .collect::<Vec<_, 2>>();
+
+    // Get the command and arguments from the splitted string
+    let [command_str, argument_str] = splitted_string[..] else {
+        return None;
+    };
+
+    // Parse the arguments into floats.
+    //
+    // This is fine for now since both of the commands
+    // take two floats as arguments.
+    let parsed_args = argument_str
+        .split_whitespace()
+        .map(|arg| arg.parse::<f32>().unwrap_or_default())
+        .collect::<Vec<_, 2>>();
+
+    // Initialise the first and second arguments
+    let mut first_arg: f32 = 0.0;
+    let mut second_arg: f32 = 0.0;
+
+    // Try to get the two arguments
+    if let [first_argument, second_argument] = parsed_args[..] {
+        // Set the first and second arguments
+        first_arg = first_argument;
+        second_arg = second_argument;
+    }
+    // Otherwise, try to get the first argument
+    else if let [first_argument] = parsed_args[..] {
+        // Set the first argument
+        first_arg = first_argument;
+    }
+
+    // Match the command
+    match command_str {
+        "handle_joystick" => {
+            Some(Command::HandleJoystick(HandleJoystickArgs {
+                x_coordinate: first_arg,
+                y_coordinate: second_arg,
+            }))
+        }
+        "lay_cones_in_a_straight_line" => Some(
+            Command::LayConesInAStraightLine(LayConesInAStraightLineArgs {
+                cone_spacing_in_cm: first_arg,
+                number_of_cones_to_lay: second_arg,
+            }),
+        ),
+        "drop_cone" => Some(Command::DropCone(DropConeArgs {
+            dispenser_motor_speed: first_arg,
+        })),
+        _ => None,
+    }
+}
+
 /// The implementation of the serial handler class
 impl SerialHandler {
     //
 
     /// The function to handle input from the serial connection
-    pub fn handle_input(&mut self) {
+    pub fn handle_input(&mut self) -> Option<Command> {
         //
+
+        // Initialise the variable to store the parsed input
+        let mut parsed_input = None;
 
         // Execute the code to handle the input in an
         // interrupt-free context.
@@ -407,9 +475,12 @@ impl SerialHandler {
                         //
 
                         // Start the program to get ready
-                        // to handle the incoming command.
+                        // to handle the incoming command
                         start_program();
                     }
+
+                    // Parse the input and set the variable
+                    parsed_input = parse_input(buffer);
 
                     // Clear the buffer
                     serial_buffer.buffer.clear();
@@ -419,6 +490,9 @@ impl SerialHandler {
                 }
             }
         });
+
+        // Return the parsed input
+        return parsed_input;
     }
 
     /// The function to write a string to the serial connection

@@ -16,9 +16,11 @@ mod timer;
 mod utils;
 
 // Use declarations
+use heapless::Vec;
+use movement::{Command, MovementHandler};
 use panic_halt as _;
 use serial::new_serial_handler;
-use stepper_driver::new_stepper_driver;
+use stepper_driver::{new_stepper_driver, StepperDriver};
 
 /// Function to execute
 #[arduino_hal::entry]
@@ -35,43 +37,42 @@ fn main() -> ! {
     let mut console_serial_handler =
         new_serial_handler!(USART0, peripherals, pins);
 
+    // Initialise the bluetooth serial handler
+    let mut bluetooth_serial_handler =
+        new_serial_handler!(USART2, peripherals, pins);
+
     // Initialise the timer
     timer::init_and_start(peripherals.TC0);
 
     // Initialise a new stepper driver
-    let mut stepper_driver_e0 = new_stepper_driver!(E0, pins);
-    let mut stepper_driver_e1 = new_stepper_driver!(E1, pins);
-    let mut stepper_driver_x = new_stepper_driver!(X, pins);
-    let mut stepper_driver_y = new_stepper_driver!(Y, pins);
-    let mut stepper_driver_z = new_stepper_driver!(Z, pins);
+    let stepper_driver_e0 = new_stepper_driver!(E0, pins);
+    let stepper_driver_e1 = new_stepper_driver!(E1, pins);
+    let stepper_driver_x = new_stepper_driver!(X, pins);
+    let stepper_driver_y = new_stepper_driver!(Y, pins);
+    let stepper_driver_z = new_stepper_driver!(Z, pins);
 
-    // Enable the stepper driver
-    stepper_driver_e0.enable();
-    stepper_driver_e1.enable();
-    stepper_driver_x.enable();
-    stepper_driver_y.enable();
-    stepper_driver_z.enable();
+    // Initialise the vector holding the left side motors
+    let mut left_side_motors: Vec<StepperDriver, 2> = heapless::Vec::new();
 
-    // Set the acceleration to 50 steps/s^2
-    stepper_driver_e0.set_acceleration(50.0);
-    stepper_driver_e1.set_acceleration(50.0);
-    stepper_driver_x.set_acceleration(50.0);
-    stepper_driver_y.set_acceleration(50.0);
-    stepper_driver_z.set_acceleration(50.0);
+    // Add the stepper drivers on the left side to the vector
+    left_side_motors.push(stepper_driver_e0).unwrap_or_default();
+    left_side_motors.push(stepper_driver_e1).unwrap_or_default();
 
-    // Set the maximum speed to 500 steps/s
-    stepper_driver_e0.set_maximum_speed(500.0);
-    stepper_driver_e1.set_maximum_speed(500.0);
-    stepper_driver_x.set_maximum_speed(500.0);
-    stepper_driver_y.set_maximum_speed(500.0);
-    stepper_driver_z.set_maximum_speed(500.0);
+    // Initialise the vector holding the right side motors
+    let mut right_side_motors: Vec<StepperDriver, 2> = heapless::Vec::new();
 
-    // Move the stepper motor for 1,000,000 steps
-    stepper_driver_e0.move_by_steps(1_000_000);
-    stepper_driver_e1.move_by_steps(1_000_000);
-    stepper_driver_x.move_by_steps(1_000_000);
-    stepper_driver_y.move_by_steps(1_000_000);
-    stepper_driver_z.move_by_steps(1_000_000);
+    // Add the stepper drivers on the right side to the vector
+    right_side_motors.push(stepper_driver_x).unwrap_or_default();
+    right_side_motors.push(stepper_driver_y).unwrap_or_default();
+
+    // Initialise the movement handler
+    let mut movement_handler = MovementHandler::new(
+        left_side_motors,
+        right_side_motors,
+        stepper_driver_z,
+        true,
+        true,
+    );
 
     // Print that the Arduino is initialised
     console_serial_handler.write_string("Arduino initialised!\n");
@@ -85,11 +86,24 @@ fn main() -> ! {
     loop {
         //
 
-        // Run the stepper motors
-        stepper_driver_e0.run();
-        stepper_driver_e1.run();
-        stepper_driver_x.run();
-        stepper_driver_y.run();
-        stepper_driver_z.run();
+        // Parse the input from the serial connection
+        let input = bluetooth_serial_handler.handle_input();
+
+        // Match the input
+        match input {
+            Some(Command::HandleJoystick(arguments)) => {
+                movement_handler.handle_joystick(arguments)
+            }
+            Some(Command::LayConesInAStraightLine(arguments)) => {
+                movement_handler.lay_cones_in_a_straight_line(arguments)
+            }
+            Some(Command::DropCone(arguments)) => {
+                movement_handler.drop_cone(arguments)
+            }
+            None => {},
+        }
+
+        // Call the function to run all of the motors
+        movement_handler.run_all_motors();
     }
 }

@@ -1,6 +1,15 @@
 Arduino
 arduino
+Initialise
+initialise
+Initialised
+initialised
+Centimetres
+centimetres
+Travelled
+travelled
 Pololu
+splitn
 heapless
 Baudrate
 baudrate
@@ -23,3 +32,5 @@ TCNT
 tcnt
 tifr
 COMPA
+USART
+usart

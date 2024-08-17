@@ -53,14 +53,20 @@ pub struct StepperDriverState {
 
     // Public variables
 
+    /// The boolean to represent whether the motor
+    /// is enabled or disabled.
+    enabled: bool,
+
     /// The speed of the motor in steps/s
     speed: f32,
 
     /// The maximum speed of the motor in steps/s.
     /// The motor will accelerate up to this maximum speed.
     /// This is NOT the theoretical maximum speed of the motor.
-    /// The theoretical maximum speed speed for the stepper motor
-    /// is about 4000 steps per second.
+    /// Each stepper motor driver takes about 67.2 - 68 microseconds
+    /// to run at constant speed.
+    /// Each stepper motor takes about 425.6 - 427.2 microseconds
+    /// to run with acceleration.
     maximum_speed: f32,
 
     /// The acceleration is in steps/s^2
@@ -159,6 +165,7 @@ impl Default for StepperDriverState {
             //
 
             // Public variables
+            enabled: true,
             speed: 0.0,
             maximum_speed: 0.0,
             acceleration: 0.0,
@@ -311,7 +318,10 @@ impl StepperDriver {
     /// Somehow, the enable pin when set to low enables the stepper motor,
     /// not when it is set to high.
     pub fn enable(&mut self) {
-        stepper_driver_dispatch!(self, |driver| { driver.enable_pin.set_low() })
+        stepper_driver_dispatch!(self, |driver| {
+            driver.enable_pin.set_low();
+            driver.state.enabled = true;
+        })
     }
 
     /// The function to disable the motor (pin change)
@@ -319,8 +329,14 @@ impl StepperDriver {
     /// not when it is set to low.
     pub fn disable(&mut self) {
         stepper_driver_dispatch!(self, |driver| {
-            driver.enable_pin.set_high()
+            driver.enable_pin.set_high();
+            driver.state.enabled = true;
         })
+    }
+
+    /// The function to get whether the motor is enabled
+    pub fn is_enabled(&self) -> bool {
+        stepper_driver_dispatch!(self, |driver| { driver.state.enabled })
     }
 
     /// The function to get the current position
@@ -747,6 +763,8 @@ impl StepperDriver {
                 }
             }
         }
+        //
+
         // Otherwise, if the distance to go is less than zero,
         // that means that we are clockwise with respect
         // to the target position, and need to move anti-clockwise.
@@ -823,7 +841,6 @@ impl StepperDriver {
             // Set the new step interval to the current step interval
             self.set_current_step_interval_in_us(new_step_interval);
         }
-        //
 
         // Increment the step number
         self.increment_step_number(1);
