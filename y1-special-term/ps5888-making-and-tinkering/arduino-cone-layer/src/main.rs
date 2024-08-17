@@ -71,7 +71,7 @@ fn main() -> ! {
         right_side_motors,
         stepper_driver_z,
         true,
-        true,
+        false,
     );
 
     // Print that the Arduino is initialised
