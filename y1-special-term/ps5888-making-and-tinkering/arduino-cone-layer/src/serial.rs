@@ -572,7 +572,7 @@ mod serial_isr {
         });
     }
 
-    // Place the interrupt service routine on the USART0 interface
+    // Place the interrupt service routine on the console interface (USART0)
     #[avr_device::interrupt(atmega2560)]
     fn USART0_RX() {
         //
@@ -582,11 +582,11 @@ mod serial_isr {
         interrupt_service_routine(SerialBufferType::Console);
     }
 
-    // Place the interrupt service routine on the USART1 interface.
+    // Place the interrupt service routine on the bluetooth interface.
     // Change the function name to the correct USART interface
     // when it is changed.
     #[avr_device::interrupt(atmega2560)]
-    fn USART1_RX() {
+    fn USART2_RX() {
         //
 
         // Call the interrupt service routine with the bluetooth
