@@ -1,4 +1,4 @@
-#+TITLE: SP0061 Science & Tech for Humanity Cheat Sheet
+#+TITLE: SP0061 Science & Tech for Humanity Week 2 Cheat Sheet
 #+AUTHOR: Hankertrix
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
@@ -23,7 +23,7 @@ Theoretically, the removal of senescent cells should allow the proliferation of 
 Senolytics are drugs that target and kill senescent cells.
 
 ** Telomeres
-- They are the bits of repetitive DNA sequences that are found at the end of the chromosome, to protect the chromosome ends.
+- They are the bits of repetitive DNA sequences that are found at the end of the chromosome, to protect the chromosome ends from being recognised as broken pieces of DNA.
 - The name comes from the Greek word *"telos"*.
 - They also limit cell proliferation.
 
@@ -61,6 +61,15 @@ Senescence biomarkers are biological markers of senescent cells.
 - Weighs up to 2 kg
 - Bacteria in the gut eat the food and produce *nutrients*.
 - Probiotics and prebiotics can help our gut microbiome function better.
+
+** Fecal Microbiota Transplant (FMT)
+Fecal microbiota transplant is a procedure to implant the gut bacteria of another person into a target individual to replenish or increase the diversity of the gut microbiome of that target individual
+
+** Prebiotics
+Prebiotics are compounds in food that foster growth or activity of beneficial microorganisms such as bacteria and fungi. Prebiotics can alter the composition of organisms in the gut microbiome.
+
+** Probiotics
+Probiotics are live microorganisms promoted with claims that they provide health benefits when consumed, generally by improving or restoring the gut microbiota.
 
 ** Dementia
 - Dementia is just rapid cognitive decline.
@@ -143,7 +152,7 @@ Telomere shortening is associated with an earlier onset of developing chronic ag
 - Telomere attrition or dysfunction
 - Epigenetic alterations
 - Loss of proteostasis
-- Impaired nutrient sensing, which means the body is less able to process and absorb nutrients as we get age
+- Impaired nutrient sensing, which means the body is less able to process and absorb nutrients as we age
 - Mitochondrial dysfunction
 - Cellular senescence
 - Stem cell exhaustion
