@@ -143,7 +143,7 @@ Telomere shortening is associated with an earlier onset of developing chronic ag
 - Telomere attrition or dysfunction
 - Epigenetic alterations
 - Loss of proteostasis
-- Impaired nutrient sensing
+- Impaired nutrient sensing, which means the body is less able to process and absorb nutrients as we get age
 - Mitochondrial dysfunction
 - Cellular senescence
 - Stem cell exhaustion
