@@ -6,7 +6,7 @@
 * Definitions
 
 ** Germ line cells
-Germ line cells are cell that are "immortal", in the sense that they can keep replicating and never cause us to die.
+Germ line cells are cells that are "immortal", in the sense that they can keep replicating and never cause us to die.
 
 ** Somatic cells
 Somatic cells are cells that are subject to ageing and cause us to ultimately die as they stop dividing after a finite number of cell divisions.
