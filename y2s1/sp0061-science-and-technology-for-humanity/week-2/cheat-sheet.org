@@ -133,7 +133,7 @@ By 2050:
 - Cancer
 - Diabetes
 - Chronic wounds
-- Fraility
+- Frailty
 
 * Risks for telomere shortening
 - Exposure to pollution
