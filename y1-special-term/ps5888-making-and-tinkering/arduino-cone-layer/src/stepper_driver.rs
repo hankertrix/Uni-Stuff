@@ -817,6 +817,15 @@ impl StepperDriver {
             self.set_current_step_interval_in_us(
                 self.initial_step_interval_in_us(),
             );
+
+            // Set the direction of the based on the distance to go.
+            // If the distance to go is positive, the direction is clockwise.
+            // Otherwise, the direction is anti-clockwise.
+            self.set_direction(if self.distance_to_go() > 0 {
+                Direction::Clockwise
+            } else {
+                Direction::AntiClockwise
+            });
         }
         //
 
@@ -831,7 +840,7 @@ impl StepperDriver {
 
             // Compute the current step interval using equation 13
             // from the PDF file
-            let mut new_step_interval = (2.0 * c_n) / ((4.0 * n) + 1.0);
+            let mut new_step_interval = c_n - ((2.0 * c_n) / ((4.0 * n) + 1.0));
 
             // Get the maximum value between the new step interval
             // and the minimum step interval
