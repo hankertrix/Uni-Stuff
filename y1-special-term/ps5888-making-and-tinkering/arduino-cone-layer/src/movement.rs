@@ -42,14 +42,14 @@ const X_AXIS_MAX: i32 = 300;
 /// the motor drivers.
 /// The current practical maximum speed of the motor driver
 /// is 470 steps per second.
-const JOYSTICK_CONTROL_MAX_SPEED: i32 = 500;
+const JOYSTICK_CONTROL_MAX_SPEED: f32 = 500.0;
 
 /// The acceleration of the motors
 /// in steps per second squared.
 const ACCELERATION: f32 = 50.0;
 
 /// The maximum speed for laying cones in steps per second
-const MAXIMUM_SPEED_FOR_LAYING_CONES: i32 = 500;
+const MAXIMUM_SPEED_FOR_LAYING_CONES: f32 = 500.0;
 
 /// The number of seconds to continue moving for
 /// when controlling the movement motors with the joystick
@@ -62,18 +62,18 @@ const WHEEL_DIAMETER_IN_CM: f32 = 6.8;
 const STEP_ANGLE_IN_DEGREES: f32 = 1.8;
 
 /// The number of step per revolution
-const NUMBER_OF_STEPS_PER_REVOLUTION: i32 =
-    (360.0 / STEP_ANGLE_IN_DEGREES) as i32;
+const NUMBER_OF_STEPS_PER_REVOLUTION: f32 = 360.0 / STEP_ANGLE_IN_DEGREES;
 
 /// The distance travelled in one step
 const STEP_DISTANCE_IN_CM: f32 = (WHEEL_DIAMETER_IN_CM / 2.0)
     * (STEP_ANGLE_IN_DEGREES * (core::f32::consts::PI / 180.0));
 
-/// The buffer time in seconds when laying cones
-const BUFFER_TIME_IN_SECONDS: i32 = 5;
+/// The buffer percentage for the motors
+const BUFFER_PERCENTAGE: f32 = 0.10;
 
 /// The number of buffer steps for the dispenser motor
-const DISPENSER_MOTOR_BUFFER_STEPS: i32 = 10;
+const DISPENSER_MOTOR_BUFFER_STEPS: i32 =
+    (BUFFER_PERCENTAGE * NUMBER_OF_STEPS_PER_REVOLUTION as f32) as i32;
 
 /// The default dispenser speed to drop a cone
 /// in steps per second
@@ -370,7 +370,7 @@ impl MovementHandler {
                 0,
                 Y_AXIS_MAX,
                 0,
-                JOYSTICK_CONTROL_MAX_SPEED,
+                JOYSTICK_CONTROL_MAX_SPEED as i32,
             );
         }
         //
@@ -384,7 +384,7 @@ impl MovementHandler {
                 y_coordinate as i32,
                 -Y_AXIS_MAX,
                 0,
-                -JOYSTICK_CONTROL_MAX_SPEED,
+                -JOYSTICK_CONTROL_MAX_SPEED as i32,
                 0,
             );
         }
@@ -403,7 +403,7 @@ impl MovementHandler {
                 x_coordinate as i32,
                 -X_AXIS_MAX,
                 0,
-                -JOYSTICK_CONTROL_MAX_SPEED,
+                -JOYSTICK_CONTROL_MAX_SPEED as i32,
                 0,
             );
         }
@@ -420,7 +420,7 @@ impl MovementHandler {
                 0,
                 X_AXIS_MAX,
                 0,
-                JOYSTICK_CONTROL_MAX_SPEED,
+                JOYSTICK_CONTROL_MAX_SPEED as i32,
             );
         }
 
@@ -543,10 +543,21 @@ impl MovementHandler {
         let minimum_number_of_steps_to_lay_cones =
             minimum_distance_to_travel_in_cm / STEP_DISTANCE_IN_CM;
 
+        // Get the amount of time it takes to reach
+        // the maximum speed for laying cones
+        let time_taken_to_reach_maximum_speed_in_seconds =
+            MAXIMUM_SPEED_FOR_LAYING_CONES / ACCELERATION;
+
+        // Get the buffer time,
+        // which is twice the time taken to reach the maximum speed
+        // plus the buffer percentage of that time taken
+        let buffer_time_in_seconds =
+            2.0 * time_taken_to_reach_maximum_speed_in_seconds;
+
         // Get the number of steps to move to lay the cones,
         // including the buffer time
         let number_of_steps_to_move = minimum_number_of_steps_to_lay_cones
-            + (BUFFER_TIME_IN_SECONDS * MAXIMUM_SPEED_FOR_LAYING_CONES) as f32;
+            + (buffer_time_in_seconds * MAXIMUM_SPEED_FOR_LAYING_CONES) as f32;
 
         // Get the time taken to travel the cone spacing in seconds
         let time_taken_to_travel_cone_spacing_in_seconds = cone_spacing_in_cm
@@ -599,7 +610,10 @@ impl MovementHandler {
         };
 
         // Call the function to lay the cones
-        self.lay_cones(dispenser_motor_speed, NUMBER_OF_STEPS_PER_REVOLUTION);
+        self.lay_cones(
+            dispenser_motor_speed,
+            NUMBER_OF_STEPS_PER_REVOLUTION as i32,
+        );
 
         // While the dispenser motor is running
         // and the program isn't stopped,
