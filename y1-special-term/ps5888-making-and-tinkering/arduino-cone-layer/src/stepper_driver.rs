@@ -867,7 +867,7 @@ impl StepperDriver {
         // set the speed to be negative of the current speed
         // to move in the anti-clockwise direction.
         if self.direction() == Direction::AntiClockwise {
-            self.set_speed(self.speed());
+            self.set_speed(-self.speed());
         }
 
         // Return the step interval in microseconds
