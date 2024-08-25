@@ -46,7 +46,7 @@ const JOYSTICK_CONTROL_MAX_SPEED: i32 = 500;
 
 /// The acceleration of the motors
 /// in steps per second squared.
-const ACCELERATION: f32 = 30.0;
+const ACCELERATION: f32 = 50.0;
 
 /// The maximum speed for laying cones in steps per second
 const MAXIMUM_SPEED_FOR_LAYING_CONES: i32 = 500;
@@ -620,6 +620,10 @@ impl MovementHandler {
         // Initialise the variable to store whether any motor is still running
         let mut any_motor_is_still_running = true;
 
+        // Initialise the variable to store whether
+        // all the movement motors have reached their maximum speed
+        let mut all_movement_motors_have_reached_maximum_speed = true;
+
         // Iterate over all of the movement motors
         for motor in self.iter_movement_motors() {
             //
@@ -628,15 +632,27 @@ impl MovementHandler {
             if motor.distance_to_go() != 0 {
                 //
 
-                // Set the whether or not the motor is still running
+                // Set the any_motor_is_still_running variable to true
                 any_motor_is_still_running = true
+            }
+
+            // If the motor has not reached its maximum speed
+            if motor.speed() != motor.maximum_speed() {
+                //
+
+                // Set the all_movement_motors_have_reached_maximum_speed
+                // variable to false
+                all_movement_motors_have_reached_maximum_speed = false;
             }
         }
 
         // Run the dispenser motor at a constant speed
+        // only if the movement motors have reached maximum speed
         // and set the any_motor_is_still_running variable
         // to true if it is still running
-        if self.dispenser_motor.run_at_constant_speed() {
+        if self.dispenser_motor.run_at_constant_speed()
+            && all_movement_motors_have_reached_maximum_speed
+        {
             any_motor_is_still_running = true;
         };
 
