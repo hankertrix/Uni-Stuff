@@ -8,6 +8,8 @@ Centimetres
 centimetres
 Travelled
 travelled
+Joypad
+joypad
 Pololu
 splitn
 heapless

@@ -10,13 +10,28 @@ use heapless::Vec;
 use crate::serial::program_stopped;
 use crate::stepper_driver::StepperDriver;
 
+/// The radius of the joypad
+/// used for the joystick.
+///
+/// This value needs to be updated
+/// when the joypad radius on the
+/// phone application is changed.
+const JOYPAD_RADIUS: i32 = 150;
+
+/// The nub radius of the joystick.
+///
+/// This value needs to be updated
+/// when the nub radius calculation on the
+/// phone application is changed.
+const NUB_RADIUS: i32 = JOYPAD_RADIUS / 3;
+
 /// The threshold to consider the joystick
 /// to be moving the cone layer forward
-const Y_AXIS_FORWARD_THRESHOLD: i32 = 0;
+const Y_AXIS_FORWARD_THRESHOLD: i32 = JOYPAD_RADIUS;
 
 /// The threshold to consider the joystick
 /// to be moving the cone layer backwards
-const Y_AXIS_BACKWARD_THRESHOLD: i32 = 0;
+const Y_AXIS_BACKWARD_THRESHOLD: i32 = JOYPAD_RADIUS;
 
 /// The maximum value for the Y axis.
 /// The negative of this value is the minimum
@@ -25,11 +40,11 @@ const Y_AXIS_MAX: i32 = 300;
 
 /// The threshold to consider the joystick
 /// to be moving the cone layer to the left
-const X_AXIS_LEFT_THRESHOLD: i32 = 0;
+const X_AXIS_LEFT_THRESHOLD: i32 = JOYPAD_RADIUS;
 
 /// The threshold to consider the joystick
 /// to be moving the cone layer to the right
-const X_AXIS_RIGHT_THRESHOLD: i32 = 0;
+const X_AXIS_RIGHT_THRESHOLD: i32 = JOYPAD_RADIUS;
 
 /// The maximum value for the X axis.
 /// The negative of this value is the minimum
@@ -361,12 +376,12 @@ impl MovementHandler {
         let mut motor_speed = 0;
 
         // If the y coordinate is more than the forward threshold
-        if y_coordinate > Y_AXIS_FORWARD_THRESHOLD as f32 {
+        if y_coordinate > Y_AXIS_FORWARD_THRESHOLD {
             //
 
             // Get the motor speed to move forward
             motor_speed = map_range(
-                y_coordinate as i32,
+                y_coordinate,
                 0,
                 Y_AXIS_MAX,
                 0,
@@ -376,12 +391,12 @@ impl MovementHandler {
         //
 
         // Otherwise, if the y coordinate is less than the backward threshold
-        else if y_coordinate < Y_AXIS_BACKWARD_THRESHOLD as f32 {
+        else if y_coordinate < Y_AXIS_BACKWARD_THRESHOLD {
             //
 
             // Get the motor speed to move backward
             motor_speed = map_range(
-                y_coordinate as i32,
+                y_coordinate,
                 -Y_AXIS_MAX,
                 0,
                 -JOYSTICK_CONTROL_MAX_SPEED as i32,
@@ -394,13 +409,13 @@ impl MovementHandler {
         let mut motor_speed_difference = 0;
 
         // If the x coordinate is less than the left threshold
-        if x_coordinate < X_AXIS_LEFT_THRESHOLD as f32 {
+        if x_coordinate < X_AXIS_LEFT_THRESHOLD {
             //
 
             // Get the motor speed difference between the left and right motors.
             // The motor speed difference should be negative for a left turn.
             motor_speed_difference = map_range(
-                x_coordinate as i32,
+                x_coordinate,
                 -X_AXIS_MAX,
                 0,
                 -JOYSTICK_CONTROL_MAX_SPEED as i32,
@@ -410,13 +425,13 @@ impl MovementHandler {
         //
 
         // Otherwise, if the x coordinate is more than the right threshold
-        else if x_coordinate > X_AXIS_RIGHT_THRESHOLD as f32 {
+        else if x_coordinate > X_AXIS_RIGHT_THRESHOLD {
             //
 
             // Get the motor speed difference between the left and right motors.
             // The motor speed difference should be positive for a right turn.
             motor_speed_difference = map_range(
-                x_coordinate as i32,
+                x_coordinate,
                 0,
                 X_AXIS_MAX,
                 0,
