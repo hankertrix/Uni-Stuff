@@ -59,7 +59,8 @@ Alternatively, you can contact me on Telegram using my Telegram handle [@hankert
 
 ## Licence
 All files in this repository are licensed under a
-[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Licence][cc-by-nc-sa]
+[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Licence][cc-by-nc-sa],
+which can be found in the top level `LICENCE.txt` file,
 unless another licence is found inside the folder.
 An example is the licence file found in the MA1008 mini project folder.
 
