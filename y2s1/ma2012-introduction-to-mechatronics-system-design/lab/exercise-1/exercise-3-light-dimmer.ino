@@ -54,6 +54,12 @@ void setup() {
     pinMode(LED_PIN_1, OUTPUT);
     pinMode(LED_PIN_2, OUTPUT);
     pinMode(LED_PIN_3, OUTPUT);
+
+    // Initialise serial connection
+    Serial.begin(9600);
+
+    // Print that the Arduino is ready
+    Serial.println("Arduino initialised.");
 }
 
 // The function to get the voltage level

@@ -29,6 +29,14 @@ Write a program to perform the following tasks:
 // The boolean to determine whether to use the analog distance sensor
 #define USE_ANALOG_DISTANCE_SENSOR false
 
+// Initialise the variables needed
+bool buzzer_on = false;
+float beep_duration_in_milliseconds = 0;
+float beep_delay_in_milliseconds = 0;
+int beep_frequency_in_hz = 0;
+unsigned int beep_counter = 0;
+unsigned long previous_beep_time = 0;
+
 // The setup function to set up the program
 void setup() {
 
@@ -39,6 +47,12 @@ void setup() {
     // Set the pin mode of all the output pins
     pinMode(SLOTTED_OPTO_SWITCH_PIN, OUTPUT);
     pinMode(PIEZO_BUZZER_PIN, OUTPUT);
+
+    // Initialise the serial connection
+    Serial.begin(9600);
+
+    // Print that the Arduino is ready
+    Serial.println("Arduino initialised.");
 }
 
 // Function to get the distance in cm from the sensor
@@ -98,41 +112,77 @@ float get_distance_in_cm(bool use_analog_distance_sensor) {
     return distance_in_cm;
 }
 
-// Function to sound the buzzer at a specified frequency in Hz
-void sound_buzzer(int frequency_in_hz) {
+// Function to start sounding the buzzer at a specified frequency in Hz
+void start_sounding_buzzer(int frequency_in_hz) {
+
+    // Turn on the buzzer
+    buzzer_on = true;
+
+    // Set the beep frequency in Hz
+    beep_frequency_in_hz = frequency_in_hz;
+
+    // Set the beep count to 0
+    beep_counter = 0;
+
+    // Set the previous beep time to 0
+    previous_beep_time = 0;
 
     // Get the total duration of the tone in milliseconds
     float total_duration_in_milliseconds = 1000.0 / frequency_in_hz;
 
-    // Get the delay between each beep in milliseconds
-    float delay_in_milliseconds = 0.30 * total_duration_in_milliseconds;
+    // Set the delay between each beep in milliseconds
+    beep_delay_in_milliseconds = 0.30 * total_duration_in_milliseconds;
 
-    // Get the duration of the beep in milliseconds
-    float beep_duration_in_milliseconds = 0.70 * total_duration_in_milliseconds;
+    // Set the duration of the beep in milliseconds
+    beep_duration_in_milliseconds = 0.70 * total_duration_in_milliseconds;
+}
 
-    // Iterate over the frequency in Hz
-    for (int i = 0; i < frequency_in_hz; ++i) {
+// Function to sound the buzzer if necessary
+void sound_buzzer_if_necessary() {
 
-        // Sound the buzzer for the duration of the beep
-        tone(PIEZO_BUZZER_PIN, BEEP_TONE, beep_duration_in_milliseconds);
+    // If the buzzer isn't on, exit the function
+    if (!buzzer_on) return;
 
-        // Stop the note from playing
-        noTone(PIEZO_BUZZER_PIN);
+    // If the beep count is past the beep frequency in Hz
+    if (beep_counter > beep_frequency_in_hz) {
 
-        // Wait for the delay between each beep
-        delay(delay_in_milliseconds);
-    }
+        // Turn off the buzzer
+        buzzer_on = false;
+
+        // Reset the beep counter
+        beep_counter = 0;
+
+        // Exit the function
+        return;
+    };
+
+    // If the current time minus the previous beep time
+    // is less than the beep delay, exit the function
+    if (millis() - previous_beep_time < beep_delay_in_milliseconds) return;
+
+    // Otherwise, play the beep for the beep duration
+    tone(PIEZO_BUZZER_PIN, BEEP_TONE, beep_duration_in_milliseconds);
+
+    // Stop the note from playing
+    noTone(PIEZO_BUZZER_PIN);
+
+    // Set the previous beep time to the current time
+    previous_beep_time = millis();
+
+    // Increment the beep counter
+    beep_counter++;
 }
 
 // The main loop function
 void loop() {
 
+    // Call the function to sound the buzzer if necessary
+    sound_buzzer_if_necessary();
+
     // If the slotted opto switch is not blocked,
     // which means the slotted opto switch is set to low,
     // exit the function
-    if (digitalRead(SLOTTED_OPTO_SWITCH_PIN) == LOW) {
-        return;
-    }
+    if (digitalRead(SLOTTED_OPTO_SWITCH_PIN) == LOW) return;
 
     // Otherwise, the slotted opto switch is blocked,
     // which means the slotted opto switch is set to low,
@@ -142,17 +192,17 @@ void loop() {
     // If the distance is more than 40 cm,
     // sound the buzzer at 1 Hz
     if (distance_in_cm > 40) {
-        sound_buzzer(1);
+        start_sounding_buzzer(1);
     }
 
     // If the distance is between 20 cm and 40 cm,
     // sound the buzzer at 2 Hz
     else if (distance_in_cm > 20 && distance_in_cm <= 40) {
-        sound_buzzer(2);
+        start_sounding_buzzer(2);
     }
 
     // Otherwise, sound the buzzer continuously
     else {
-        sound_buzzer(20);
+        start_sounding_buzzer(20);
     }
 }
