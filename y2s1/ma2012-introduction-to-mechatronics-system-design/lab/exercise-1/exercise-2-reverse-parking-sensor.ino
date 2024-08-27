@@ -137,7 +137,9 @@ void start_sounding_buzzer(int frequency_in_hz) {
     beep_duration_in_milliseconds = 0.70 * total_duration_in_milliseconds;
 }
 
-// Function to sound the buzzer if necessary
+// Function to sound the buzzer if necessary.
+// This function should be called every loop,
+// preferably in the main loop function.
 void sound_buzzer_if_necessary() {
 
     // If the buzzer isn't on, exit the function
