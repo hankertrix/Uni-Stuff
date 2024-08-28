@@ -275,6 +275,7 @@ Where:
 \[x = \frac{v - v_f}{v_{fg}} = \frac{u - u_f}{u_{fg}} = \frac{h - h_f}{h_{fg}}\]
 
 Where:
+- $x$ is the quality
 - $v$ is the specific volume of the mixture
 - $v_f$ is the specific volume of the liquid
 - $v_g$ is the specific volume of the gas
