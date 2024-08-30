@@ -13,6 +13,7 @@ joypad
 Pololu
 splitn
 heapless
+arrayvec
 Baudrate
 baudrate
 uwrite
