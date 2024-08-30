@@ -30,13 +30,8 @@ Write a program to perform the following tasks:
 // which is an E5
 #define ALARM_TONE 659
 
-// Initialise the delay between each beep
-#define BEEP_DELAY_IN_MILLISECONDS 100
-
-// Initialise the variables needed
-bool alarm_on = false;
-unsigned int alarm_counter = 0;
-unsigned long alarm_previous_time = 0;
+// The duration of the note to play
+#define ALARM_DURATION 500
 
 // The setup function to set up all the pins
 void setup() {
@@ -58,17 +53,24 @@ void setup() {
     Serial.println("Arduino initialised.");
 }
 
-// Function to start sounding the piezo buzzer
-void start_alarm() {
+// Function to sound the piezo buzzer 3 times
+void alarm() {
 
-    // Set the alarm on to true
-    alarm_on = true;
+    // Iterate 3 times
+    for (int i = 0; i < 3; ++i) {
 
-    // Set the alarm counter to 0
-    alarm_counter = 0;
+        // Play the note for the alarm duration
+        tone(PIEZO_BUZZER_PIN, ALARM_TONE, ALARM_DURATION);
 
-    // Set the previous alarm time to 0
-    alarm_previous_time = 0;
+        // Wait for the alarm duration
+        delay(ALARM_DURATION);
+
+        // Stop the note from playing
+        noTone(PIEZO_BUZZER_PIN);
+
+        // Wait for 200 milliseconds
+        delay(200);
+    }
 }
 
 // The function to cut the material using the solenoid
@@ -85,9 +87,8 @@ void cut() {
             // Deactivate the solenoid
             digitalWrite(SOLENOID_PIN, LOW);
 
-            // Call the function to start
-            // sounding the piezo buzzer
-            start_alarm();
+            // Call the function to sound the piezo buzzer
+            alarm();
 
             // Exit the function
             return;
@@ -98,58 +99,19 @@ void cut() {
         // so actuate the solenoid
         digitalWrite(SOLENOID_PIN, HIGH);
 
-        // Wait for 2 microseconds
-        // for the solenoid to respond
-        delayMicroseconds(2);
+        // Wait for 100 milliseconds for the solenoid to actuate
+        delay(100);
 
         // Deactivate the solenoid
         digitalWrite(SOLENOID_PIN, LOW);
+
+        // Wait for 100 milliseconds for the solenoid to de-actuate
+        delay(100);
     }
-}
-
-// The function to sound the piezo buzzer.
-// This function must be called every loop,
-// preferably in the main loop function.
-void sound_alarm_if_necessary() {
-
-    // If the alarm isn't on, exit the function
-    if (!alarm_on) return;
-
-    // If the alarm counter is past 3
-    if (alarm_counter > 3) {
-
-        // Turn off the alarm
-        alarm_on = false;
-
-        // Reset the alarm counter
-        alarm_counter = 0;
-
-        // Exit the function
-        return;
-    }
-
-    // If the current time minus the previous alarm time
-    // is less than the beep delay, exit the function
-    if (millis() - alarm_previous_time < BEEP_DELAY_IN_MILLISECONDS) return;
-
-    // Otherwise, play the alarm note for 500 milliseconds
-    tone(PIEZO_BUZZER_PIN, ALARM_TONE, 500);
-
-    // Stop the note from playing
-    noTone(PIEZO_BUZZER_PIN);
-
-    // Set the previous alarm time to the current time
-    alarm_previous_time = millis();
-
-    // Increment the alarm counter
-    alarm_counter++;
 }
 
 // The main loop function
 void loop() {
-
-    // Call the function to sound the alarm if necessary
-    sound_alarm_if_necessary();
 
     // When the toggle switch is set to low, which is off
     if (digitalRead(TOGGLE_SWITCH_PIN) == LOW) {

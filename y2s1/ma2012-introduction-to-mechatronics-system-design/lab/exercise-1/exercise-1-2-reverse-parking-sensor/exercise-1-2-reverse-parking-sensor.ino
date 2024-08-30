@@ -13,29 +13,24 @@ Write a program to perform the following tasks:
 */
 
 // Assuming circuit 1B is used
-// with the buzzer connected to pin 10
+// with the buzzer connected to pin 12
 
 // Define the pin numbers
 #define SLOTTED_OPTO_SWITCH_PIN 5
 #define ULTRASONIC_SENSOR_ECHO_PIN 8
 #define ULTRASONIC_SENSOR_TRIGGER_PIN 9
 #define ANALOG_DISTANCE_SENSOR_PIN A5
-#define PIEZO_BUZZER_PIN 10
+#define PIEZO_BUZZER_PIN 12
 
 // The frequency of the tone to play,
 // which is an E5
 #define BEEP_TONE 659
 
 // The boolean to determine whether to use the analog distance sensor
-#define USE_ANALOG_DISTANCE_SENSOR false
+#define USE_ANALOG_DISTANCE_SENSOR true
 
-// Initialise the variables needed
-bool buzzer_on = false;
-float beep_duration_in_milliseconds = 0;
-float beep_delay_in_milliseconds = 0;
-int beep_frequency_in_hz = 0;
-unsigned int beep_counter = 0;
-unsigned long previous_beep_time = 0;
+// Initialise the voltage resolution
+const float VOLTAGE_RESOLUTION = (5 - 0) / (pow(2, 10) - 1);
 
 // The setup function to set up the program
 void setup() {
@@ -61,8 +56,11 @@ float get_distance_in_cm(bool use_analog_distance_sensor) {
     // If the analog distance sensor is used
     if (use_analog_distance_sensor) {
 
-        // Get the voltage value from the analog distance sensor
-        int voltage_value = analogRead(ANALOG_DISTANCE_SENSOR_PIN);
+        // Get the analog value from the analog distance sensor
+        int analog_value = analogRead(ANALOG_DISTANCE_SENSOR_PIN);
+
+        // Convert the analog value into a voltage value
+        float voltage_value = analog_value * VOLTAGE_RESOLUTION;
 
         // Assume that the distance is more than 10 cm
         // and use the regression equation to calculate the distance
@@ -112,79 +110,44 @@ float get_distance_in_cm(bool use_analog_distance_sensor) {
     return distance_in_cm;
 }
 
-// Function to start sounding the buzzer at a specified frequency in Hz
-void start_sounding_buzzer(int frequency_in_hz) {
-
-    // Turn on the buzzer
-    buzzer_on = true;
-
-    // Set the beep frequency in Hz
-    beep_frequency_in_hz = frequency_in_hz;
-
-    // Set the beep count to 0
-    beep_counter = 0;
-
-    // Set the previous beep time to 0
-    previous_beep_time = 0;
+// Function to sound the buzzer at a specified frequency in Hz
+void sound_buzzer(int frequency_in_hz) {
 
     // Get the total duration of the tone in milliseconds
     float total_duration_in_milliseconds = 1000.0 / frequency_in_hz;
 
-    // Set the delay between each beep in milliseconds
-    beep_delay_in_milliseconds = 0.30 * total_duration_in_milliseconds;
+    // Get the delay between each beep in milliseconds
+    float delay_in_milliseconds = 0.30 * total_duration_in_milliseconds;
 
-    // Set the duration of the beep in milliseconds
-    beep_duration_in_milliseconds = 0.70 * total_duration_in_milliseconds;
-}
+    // Get the duration of the beep in milliseconds
+    float beep_duration_in_milliseconds = 0.70 * total_duration_in_milliseconds;
 
-// Function to sound the buzzer if necessary.
-// This function should be called every loop,
-// preferably in the main loop function.
-void sound_buzzer_if_necessary() {
+    // Iterate over the frequency in Hz
+    for (int i = 0; i < frequency_in_hz; ++i) {
 
-    // If the buzzer isn't on, exit the function
-    if (!buzzer_on) return;
+        // Sound the buzzer for the duration of the beep
+        tone(PIEZO_BUZZER_PIN, BEEP_TONE, beep_duration_in_milliseconds);
 
-    // If the beep count is past the beep frequency in Hz
-    if (beep_counter > beep_frequency_in_hz) {
+        // Wait for the duration of the beep
+        delay(beep_duration_in_milliseconds);
 
-        // Turn off the buzzer
-        buzzer_on = false;
+        // Stop the note from playing
+        noTone(PIEZO_BUZZER_PIN);
 
-        // Reset the beep counter
-        beep_counter = 0;
-
-        // Exit the function
-        return;
-    };
-
-    // If the current time minus the previous beep time
-    // is less than the beep delay, exit the function
-    if (millis() - previous_beep_time < beep_delay_in_milliseconds) return;
-
-    // Otherwise, play the beep for the beep duration
-    tone(PIEZO_BUZZER_PIN, BEEP_TONE, beep_duration_in_milliseconds);
-
-    // Stop the note from playing
-    noTone(PIEZO_BUZZER_PIN);
-
-    // Set the previous beep time to the current time
-    previous_beep_time = millis();
-
-    // Increment the beep counter
-    beep_counter++;
+        // Wait for the delay between each beep
+        delay(delay_in_milliseconds);
+    }
 }
 
 // The main loop function
 void loop() {
 
-    // Call the function to sound the buzzer if necessary
-    sound_buzzer_if_necessary();
-
     // If the slotted opto switch is not blocked,
     // which means the slotted opto switch is set to low,
     // exit the function
-    if (digitalRead(SLOTTED_OPTO_SWITCH_PIN) == LOW) return;
+    if (digitalRead(SLOTTED_OPTO_SWITCH_PIN) == LOW) {
+        return;
+    }
 
     // Otherwise, the slotted opto switch is blocked,
     // which means the slotted opto switch is set to low,
@@ -194,17 +157,17 @@ void loop() {
     // If the distance is more than 40 cm,
     // sound the buzzer at 1 Hz
     if (distance_in_cm > 40) {
-        start_sounding_buzzer(1);
+        sound_buzzer(1);
     }
 
     // If the distance is between 20 cm and 40 cm,
     // sound the buzzer at 2 Hz
     else if (distance_in_cm > 20 && distance_in_cm <= 40) {
-        start_sounding_buzzer(2);
+        sound_buzzer(2);
     }
 
     // Otherwise, sound the buzzer continuously
     else {
-        start_sounding_buzzer(20);
+        sound_buzzer(8);
     }
 }

@@ -16,12 +16,14 @@ Write a program to perform the following tasks:
 */
 
 // Assuming that circuit 1B is used
-// and the LEDs are connected to pins 2, 3, and 4
+// and the LEDs are connected to pins 3, 10, and 11
+// and wired normally to the Arduino,
+// not reversed wired.
 
 // Define the pins
-#define LED_PIN_1 2
-#define LED_PIN_2 3
-#define LED_PIN_3 4
+#define LED_PIN_1 3
+#define LED_PIN_2 10
+#define LED_PIN_3 11
 #define POTENTIOMETER_PIN A0
 
 // The mode enum
@@ -42,7 +44,7 @@ enum VoltageLevel {
 const float VOLTAGE_RESOLUTION = (5 - 0) / (pow(2, 10) - 1);
 
 // Initialise the mode
-const enum Mode MODE = CONTINUOUS;
+const enum Mode MODE = DISCRETE;
 
 // The function to set up the Arduino
 void setup() {
@@ -62,8 +64,11 @@ void setup() {
     Serial.println("Arduino initialised.");
 }
 
-// The function to get the voltage level
-enum VoltageLevel get_voltage_level(float potentiometer_voltage) {
+// The function to get the voltage level from the potentiometer value
+enum VoltageLevel get_voltage_level(float potentiometer_value) {
+
+    // Multiply the potentiometer value by the voltage resolution
+    float potentiometer_voltage = potentiometer_value * VOLTAGE_RESOLUTION;
 
     // If the potentiometer voltage is less than 1.25 V
     if (potentiometer_voltage < 1.25) {
@@ -90,15 +95,14 @@ enum VoltageLevel get_voltage_level(float potentiometer_voltage) {
 // The main loop function
 void loop() {
 
-    // Read the potentiometer voltage
-    float potentiometer_voltage = analogRead(POTENTIOMETER_PIN);
+    // Read the potentiometer value
+    float potentiometer_value = analogRead(POTENTIOMETER_PIN);
 
     // If the mode is continuous
     if (MODE == CONTINUOUS) {
 
-        // Get the LED brightness
-        // which is from 0 to 255
-        int led_brightness = potentiometer_voltage / VOLTAGE_RESOLUTION * 255;
+        // Map the potentiometer value to the LED brightness
+        int led_brightness = map(potentiometer_value, 0, 1023, 0, 255);
 
         // Set the LED brightness on the LED pins
         analogWrite(LED_PIN_1, led_brightness);
@@ -111,7 +115,7 @@ void loop() {
 
     // Otherwise, if the mode is discrete.
     // Get the voltage level.
-    enum VoltageLevel voltage_level = get_voltage_level(potentiometer_voltage);
+    enum VoltageLevel voltage_level = get_voltage_level(potentiometer_value);
 
     // Switch on the voltage level
     switch (voltage_level) {
