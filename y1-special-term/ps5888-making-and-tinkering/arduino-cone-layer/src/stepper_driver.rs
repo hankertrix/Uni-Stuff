@@ -739,7 +739,7 @@ impl StepperDriver {
                 // or if the direction is wrong (anti-clockwise),
                 // start decelerating by setting the step number to the
                 // negative of the number of steps to stop.
-                if (steps_to_stop_moving >= distance_to_go)
+                if steps_to_stop_moving >= distance_to_go
                     || self.direction() == Direction::AntiClockwise
                 {
                     self.set_step_number(-steps_to_stop_moving);
@@ -748,7 +748,7 @@ impl StepperDriver {
 
             // Otherwise, if the step number is less than 0,
             // that means we are currently decelerating.
-            if self.step_number() < 0 {
+            else if self.step_number() < 0 {
                 //
 
                 // If the steps to stop moving is less than the distance to go,
@@ -756,7 +756,7 @@ impl StepperDriver {
                 // set the step number to the absolute value of the current
                 // step number. Basically, just make the step number
                 // positive to start accelerating again.
-                if (steps_to_stop_moving < distance_to_go)
+                if steps_to_stop_moving < distance_to_go
                     && self.direction() == Direction::Clockwise
                 {
                     self.set_step_number(-self.step_number());
@@ -782,7 +782,7 @@ impl StepperDriver {
                 // or if the direction is wrong (clockwise),
                 // start decelerating by setting the step number to the
                 // negative of the number of steps to stop.
-                if (steps_to_stop_moving >= -distance_to_go)
+                if steps_to_stop_moving >= -distance_to_go
                     || self.direction() == Direction::Clockwise
                 {
                     self.set_step_number(-steps_to_stop_moving);
@@ -791,7 +791,7 @@ impl StepperDriver {
 
             // Otherwise, if the step number is less than 0,
             // that means we are currently decelerating.
-            if self.step_number() < 0 {
+            else if self.step_number() < 0 {
                 //
 
                 // If the steps to stop moving is less than the distance to go,
@@ -799,7 +799,7 @@ impl StepperDriver {
                 // set the step number to the absolute value of the current
                 // step number. Basically, just make the step number
                 // positive to start accelerating again.
-                if (steps_to_stop_moving < distance_to_go)
+                if steps_to_stop_moving < distance_to_go
                     && self.direction() == Direction::AntiClockwise
                 {
                     self.set_step_number(-self.step_number());
