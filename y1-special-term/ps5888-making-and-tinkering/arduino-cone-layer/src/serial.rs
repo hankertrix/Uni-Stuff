@@ -13,7 +13,6 @@ use core::{
     cell::{Cell, RefCell},
     ops::DerefMut,
 };
-use heapless::Vec;
 
 use arduino_hal::{
     hal::{
@@ -376,24 +375,35 @@ fn parse_input(input: &str) -> Option<Command> {
     //
 
     // Split the string at the whitespace character
-    let splitted_string = input
-        .trim()
-        .splitn(2, char::is_whitespace)
-        .collect::<Vec<_, 2>>();
+    let splitted_string = input.trim().split_once(char::is_whitespace);
 
-    // Get the command and arguments from the splitted string
-    let [command_str, argument_str] = splitted_string[..] else {
-        return None;
+    // Get the command and arguments from the splitted string.
+    // If the splitted string is None, then the input is the command
+    // and the argument is an empty string.
+    let (command_str, argument_str) = match splitted_string {
+        Some(strings) => strings,
+        None => (input, ""),
     };
 
-    // Parse the arguments into floats.
-    //
-    // This is fine for now since both of the commands
-    // take two floats as arguments.
-    let parsed_args = argument_str
-        .split_whitespace()
-        .map(|arg| arg.parse::<f32>().unwrap_or_default())
-        .collect::<Vec<_, 2>>();
+    // Initialise an array of arguments
+    let mut parsed_args: [f32; 2] = [0.0; 2];
+
+    // Iterate over the argument string split at the whitespace character
+    for (index, str_arg) in argument_str.split_whitespace().enumerate() {
+        //
+
+        // If the index is greater than or equal to the length of the array,
+        // break out of the loop.
+        if index >= parsed_args.len() {
+            break;
+        }
+
+        // Otherwise, try to parse the argument into a float.
+        let parsed_str_arg = str_arg.parse::<f32>().unwrap_or_default();
+
+        // Set the argument at the index of the parsed argument array
+        parsed_args[index] = parsed_str_arg;
+    }
 
     // Initialise the first and second arguments
     let mut first_arg: f32 = 0.0;
@@ -401,12 +411,16 @@ fn parse_input(input: &str) -> Option<Command> {
 
     // Try to get the two arguments
     if let [first_argument, second_argument] = parsed_args[..] {
+        //
+
         // Set the first and second arguments
         first_arg = first_argument;
         second_arg = second_argument;
     }
     // Otherwise, try to get the first argument
     else if let [first_argument] = parsed_args[..] {
+        //
+
         // Set the first argument
         first_arg = first_argument;
     }
