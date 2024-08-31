@@ -52,26 +52,26 @@ fn main() -> ! {
     let mut stepper_driver_z = new_stepper_driver!(Z, pins);
 
     // Test for the time taken for the stepper drivers to reach maximum speed
-    let acceleration = 50.0;
-    let max_speed = 500.0;
-    let steps_to_move = 1_000_000;
-    stepper_driver_e0.set_acceleration(acceleration);
-    stepper_driver_e1.set_acceleration(acceleration);
-    stepper_driver_x.set_acceleration(acceleration);
-    stepper_driver_y.set_acceleration(acceleration);
-    stepper_driver_z.set_acceleration(acceleration);
-    stepper_driver_e0.set_maximum_speed(max_speed);
-    stepper_driver_e1.set_maximum_speed(max_speed);
-    stepper_driver_x.set_maximum_speed(max_speed);
-    stepper_driver_y.set_maximum_speed(max_speed);
-    stepper_driver_z.set_maximum_speed(max_speed);
-    stepper_driver_e0.move_by_steps(steps_to_move);
-    stepper_driver_e1.move_by_steps(steps_to_move);
-    stepper_driver_x.move_by_steps(steps_to_move);
-    stepper_driver_y.move_by_steps(steps_to_move);
-    stepper_driver_z.move_by_steps(steps_to_move);
+    // let acceleration = 50.0;
+    // let max_speed = 500.0;
+    // let steps_to_move = 1_000_000;
+    // stepper_driver_e0.set_acceleration(acceleration);
+    // stepper_driver_e1.set_acceleration(acceleration);
+    // stepper_driver_x.set_acceleration(acceleration);
+    // stepper_driver_y.set_acceleration(acceleration);
+    // stepper_driver_z.set_acceleration(acceleration);
+    // stepper_driver_e0.set_maximum_speed(max_speed);
+    // stepper_driver_e1.set_maximum_speed(max_speed);
+    // stepper_driver_x.set_maximum_speed(max_speed);
+    // stepper_driver_y.set_maximum_speed(max_speed);
+    // stepper_driver_z.set_maximum_speed(max_speed);
+    // stepper_driver_e0.move_by_steps(steps_to_move);
+    // stepper_driver_e1.move_by_steps(steps_to_move);
+    // stepper_driver_x.move_by_steps(steps_to_move);
+    // stepper_driver_y.move_by_steps(steps_to_move);
+    // stepper_driver_z.move_by_steps(steps_to_move);
 
-    /* // Initialise the vector holding the left side motors
+    // Initialise the vector holding the left side motors
     let mut left_side_motors: Vec<StepperDriver, 2> = heapless::Vec::new();
 
     // Add the stepper drivers on the left side to the vector
@@ -92,16 +92,10 @@ fn main() -> ! {
         stepper_driver_z,
         true,
         false,
-    ); */
+    );
 
     // Print that the Arduino is initialised
     console_serial_handler.write_string("Arduino initialised!\n");
-
-    // Initialise the start time
-    let start_time = timer::micros();
-
-    // Initialise the boolean to store whether the time has been printed
-    let mut printed = false;
 
     // Safety: We are not in a critical section,
     // so enabling interrupts is fine.
@@ -114,36 +108,36 @@ fn main() -> ! {
 
         // Test for the time taken for the stepper drivers
         // to reach maximum speed
-        stepper_driver_e0.run();
-        stepper_driver_e1.run();
-        stepper_driver_x.run();
-        stepper_driver_y.run();
-        stepper_driver_z.run();
+        // stepper_driver_e0.run();
+        // stepper_driver_e1.run();
+        // stepper_driver_x.run();
+        // stepper_driver_y.run();
+        // stepper_driver_z.run();
 
         // Check if all of the stepper drivers have reached maximum speed
-        if stepper_driver_e0.speed() == max_speed
-            && stepper_driver_e1.speed() == max_speed
-            && stepper_driver_x.speed() == max_speed
-            && stepper_driver_y.speed() == max_speed
-            && stepper_driver_z.speed() == max_speed
-            && !printed
-        {
-            // Get the time taken to reach maximum speed
-            let time_taken_to_reach_maximum_speed =
-                timer::micros() - start_time;
+        // if stepper_driver_e0.speed() == max_speed
+        //     && stepper_driver_e1.speed() == max_speed
+        //     && stepper_driver_x.speed() == max_speed
+        //     && stepper_driver_y.speed() == max_speed
+        //     && stepper_driver_z.speed() == max_speed
+        //     && !printed
+        // {
+        //     // Get the time taken to reach maximum speed
+        //     let time_taken_to_reach_maximum_speed =
+        //         timer::micros() - start_time;
+        //
+        //     // Print the time taken to reach maximum speed
+        //     console_serial_handler
+        //         .write_string("Time taken to reach max speed: ");
+        //     console_serial_handler
+        //         .write_number(time_taken_to_reach_maximum_speed as i32);
+        //     console_serial_handler.write_string(" microseconds\n");
+        //
+        //     // Set the boolean to true to signify that the time has been printed
+        //     printed = true;
+        // }
 
-            // Print the time taken to reach maximum speed
-            console_serial_handler
-                .write_string("Time taken to reach max speed: ");
-            console_serial_handler
-                .write_number(time_taken_to_reach_maximum_speed as i32);
-            console_serial_handler.write_string(" microseconds\n");
-
-            // Set the boolean to true to signify that the time has been printed
-            printed = true;
-        }
-
-        /* // Parse the input from the serial connection
+        // Parse the input from the serial connection
         let input = bluetooth_serial_handler.handle_input();
 
         // Match the input
@@ -157,10 +151,10 @@ fn main() -> ! {
             Some(Command::DropCone(arguments)) => {
                 movement_handler.drop_cone(arguments)
             }
-            None => {},
+            None => (),
         }
 
         // Call the function to run all of the motors
-        movement_handler.run_all_motors(); */
+        movement_handler.run_all_motors();
     }
 }
