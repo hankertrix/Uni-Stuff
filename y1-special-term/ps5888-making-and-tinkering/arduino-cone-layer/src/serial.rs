@@ -13,6 +13,8 @@ use core::{
     cell::{Cell, RefCell},
     ops::DerefMut,
 };
+use heapless::Vec;
+use num::Float;
 
 use arduino_hal::{
     hal::{
@@ -370,60 +372,139 @@ impl UsartReaderInterface {
     }
 }
 
+/// The function to parse a string into a float.
+/// The function returns zero if the input is not a valid float.
+/// The function WILL PANIC if the float has 10 digits or more.
+fn parse_float(input: &str) -> f32 {
+    //
+
+    // Initialise the parsed integer variable.
+    // This integer is used to so that the floating
+    // point number is accurately parsed.
+    let mut parsed_integer: i32 = 0;
+
+    // Initialise the variable to store
+    // whether the minus sign is encountered
+    let mut minus_sign_encountered = false;
+
+    // Initialise the position of the decimal point
+    let mut decimal_point_position_from_start_of_string: Option<usize> = None;
+
+    // Initialise the variable to store the position of the last digit
+    let mut last_digit_position_from_start_of_string: Option<usize> = None;
+
+    // Iterate over the characters in the string
+    for (index, character) in input.chars().enumerate() {
+        //
+
+        // If it's the first character
+        if index == 0 {
+            //
+
+            // Match the character
+            match character {
+                '-' => {
+                    //
+
+                    // Set the minus sign encountered flag
+                    minus_sign_encountered = true;
+
+                    // Continue the loop
+                    continue;
+                }
+                '+' => continue,
+                _ => (),
+            }
+        }
+
+        // Otherwise, match the character
+        match character {
+            '.' => {
+                //
+
+                // Set the decimal point position
+                decimal_point_position_from_start_of_string = Some(index);
+            }
+            char if char.is_ascii_digit() => {
+                //
+
+                // Multiply the parsed integer by 10,
+                // then add the digit to the parsed integer
+                parsed_integer = parsed_integer * 10
+                    + character.to_digit(10).unwrap_or_default() as i32;
+            }
+            _ => {
+                //
+
+                // Set the last digit position
+                last_digit_position_from_start_of_string = Some(index);
+
+                // Break the loop
+                break;
+            }
+        }
+    }
+
+    // If the last digit position is not set,
+    // then set it to the length of the string minus 1
+    if last_digit_position_from_start_of_string.is_none() {
+        last_digit_position_from_start_of_string = Some(input.len() - 1);
+    }
+
+    // If the minus sign is encountered,
+    // multiply the parsed integer by -1
+    if minus_sign_encountered {
+        parsed_integer *= -1;
+    }
+
+    // Convert the parsed integer to a float
+    let mut parsed_input = parsed_integer as f32;
+
+    // If the decimal point position is set
+    if let Some(decimal_point_position) =
+        decimal_point_position_from_start_of_string
+    {
+        //
+
+        // Subtract the decimal point position
+        // from the last digit position
+        let decimal_places = last_digit_position_from_start_of_string
+            .unwrap_or_default()
+            - decimal_point_position;
+
+        // Divide the parsed integer by 10 to the power
+        // of the number of decimal places
+        parsed_input /= 10.0f32.powi(decimal_places as i32);
+    }
+
+    // Return the parsed input
+    return parsed_input;
+}
+
 /// The function to parse the input
 fn parse_input(input: &str) -> Option<Command> {
     //
 
     // Split the string at the whitespace character
-    let splitted_string = input.trim().split_once(char::is_whitespace);
+    let mut splitted_string =
+        input.trim().split_whitespace().collect::<Vec<_, 3>>();
 
-    // Get the command and arguments from the splitted string.
-    // If the splitted string is None, then the input is the command
-    // and the argument is an empty string.
-    let (command_str, argument_str) = match splitted_string {
-        Some(strings) => strings,
-        None => (input, ""),
+    // Add empty strings until the vector has 3 elements
+    while splitted_string.len() < 3 {
+        splitted_string.push("").unwrap_or_default();
+    }
+
+    // Get the command and
+    // the first and second arguments from the splitted string.
+    // If they don't exist, then return None.
+    let [command_str, first_arg_str, second_arg_str] = splitted_string[..]
+    else {
+        return None;
     };
 
-    // Initialise an array of arguments
-    let mut parsed_args: [f32; 2] = [0.0; 2];
-
-    // Iterate over the argument string split at the whitespace character
-    for (index, str_arg) in argument_str.split_whitespace().enumerate() {
-        //
-
-        // If the index is greater than or equal to the length of the array,
-        // break out of the loop.
-        if index >= parsed_args.len() {
-            break;
-        }
-
-        // Otherwise, try to parse the argument into a float.
-        let parsed_str_arg = str_arg.parse::<f32>().unwrap_or_default();
-
-        // Set the argument at the index of the parsed argument array
-        parsed_args[index] = parsed_str_arg;
-    }
-
     // Initialise the first and second arguments
-    let mut first_arg: f32 = 0.0;
-    let mut second_arg: f32 = 0.0;
-
-    // Try to get the two arguments
-    if let [first_argument, second_argument] = parsed_args[..] {
-        //
-
-        // Set the first and second arguments
-        first_arg = first_argument;
-        second_arg = second_argument;
-    }
-    // Otherwise, try to get the first argument
-    else if let [first_argument] = parsed_args[..] {
-        //
-
-        // Set the first argument
-        first_arg = first_argument;
-    }
+    let first_arg: f32 = parse_float(first_arg_str);
+    let second_arg: f32 = parse_float(second_arg_str);
 
     // Match the command
     match command_str {
