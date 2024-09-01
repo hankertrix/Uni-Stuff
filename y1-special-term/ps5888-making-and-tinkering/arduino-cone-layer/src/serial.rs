@@ -373,15 +373,16 @@ impl UsartReaderInterface {
 }
 
 /// The function to parse a string into a float.
-/// The function returns zero if the input is not a valid float.
-/// The function WILL PANIC if the float has 10 digits or more.
-fn parse_float(input: &str) -> f32 {
+/// This function returns None if the string isn't a valid float,
+/// or if the float has more than 10 digits and has overflowed
+/// the f32 type.
+fn parse_float(input: &str) -> Option<f32> {
     //
 
     // Initialise the parsed integer variable.
     // This integer is used to so that the floating
     // point number is accurately parsed.
-    let mut parsed_integer: i32 = 0;
+    let mut parsed_integer: Option<i32> = None;
 
     // Initialise the variable to store
     // whether the minus sign is encountered
@@ -417,21 +418,59 @@ fn parse_float(input: &str) -> f32 {
             }
         }
 
-        // Otherwise, match the character
+        // Match the character
         match character {
             '.' => {
                 //
 
-                // Set the decimal point position
-                decimal_point_position_from_start_of_string = Some(index);
+                // Set the decimal point position if it's not set,
+                // and return None if it is
+                decimal_point_position_from_start_of_string =
+                    match decimal_point_position_from_start_of_string {
+                        Some(_) => return None,
+                        None => Some(index),
+                    };
             }
             char if char.is_ascii_digit() => {
                 //
 
-                // Multiply the parsed integer by 10,
-                // then add the digit to the parsed integer
-                parsed_integer = parsed_integer * 10
-                    + character.to_digit(10).unwrap_or_default() as i32;
+                // If the parsed integer is set
+                if let Some(integer) = parsed_integer {
+                    //
+
+                    // Try to multiply the parsed integer by 10
+                    let multiplication_result = integer.checked_mul(10);
+
+                    // If the multiplication result is None, return None
+                    if multiplication_result.is_none() {
+                        return None;
+                    }
+
+                    // Try to add the digit from the string
+                    // to the multiplication result
+                    let addition_result =
+                        multiplication_result.unwrap_or_default().checked_add(
+                            character.to_digit(10).unwrap_or_default() as i32,
+                        );
+
+                    // If the addition result is None, return None
+                    if addition_result.is_none() {
+                        return None;
+                    }
+
+                    // Set the parsed integer to the addition result
+                    parsed_integer = Some(addition_result.unwrap_or_default());
+                }
+                //
+
+                // Otherwise, if the parsed integer is not set
+                else {
+                    //
+
+                    // Set the parsed integer to the digit from the string
+                    parsed_integer =
+                        Some(character.to_digit(10).unwrap_or_default() as i32);
+                }
             }
             _ => {
                 //
@@ -445,14 +484,23 @@ fn parse_float(input: &str) -> f32 {
         }
     }
 
-    // If the last digit position is not set,
+    // If the parsed integer is not set,
+    // then return None
+    if parsed_integer.is_none() {
+        return None;
+    }
+
+    // Otherwise, if the last digit position is not set,
     // then set it to the length of the string minus 1
     if last_digit_position_from_start_of_string.is_none() {
         last_digit_position_from_start_of_string = Some(input.len() - 1);
     }
 
+    // Unwrap the parsed integer
+    let mut parsed_integer = parsed_integer.unwrap_or_default();
+
     // If the minus sign is encountered,
-    // multiply the parsed integer by -1
+    // then multiply the parsed integer by -1
     if minus_sign_encountered {
         parsed_integer *= -1;
     }
@@ -478,7 +526,7 @@ fn parse_float(input: &str) -> f32 {
     }
 
     // Return the parsed input
-    return parsed_input;
+    return Some(parsed_input);
 }
 
 /// The function to parse the input
@@ -502,9 +550,19 @@ fn parse_input(input: &str) -> Option<Command> {
         return None;
     };
 
-    // Initialise the first and second arguments
-    let first_arg: f32 = parse_float(first_arg_str);
-    let second_arg: f32 = parse_float(second_arg_str);
+    // Parse the first and second arguments into floats
+    let first_arg: Option<f32> = parse_float(first_arg_str);
+    let second_arg: Option<f32> = parse_float(second_arg_str);
+
+    // If the first argument or the second argument is None,
+    // then return None
+    if first_arg.is_none() || second_arg.is_none() {
+        return None;
+    }
+
+    // Unwrap the first and second arguments
+    let first_arg: f32 = first_arg.unwrap_or_default();
+    let second_arg: f32 = second_arg.unwrap_or_default();
 
     // Match the command
     match command_str {
