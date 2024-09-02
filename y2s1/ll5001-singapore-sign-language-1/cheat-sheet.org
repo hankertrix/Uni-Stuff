@@ -74,6 +74,7 @@ Same motion as the billion hand sign, but with a "T" hand sign instead of a "B" 
 * Agent gesture
 The agent gesture is to show a box with both hands and move the box down.
 This gesture used to turn change an action, into a person doing the action. For example, teach + agent gesture = teacher.
+
 [[./images/teacher.gif]]
 
 * "Wh" facial expression
