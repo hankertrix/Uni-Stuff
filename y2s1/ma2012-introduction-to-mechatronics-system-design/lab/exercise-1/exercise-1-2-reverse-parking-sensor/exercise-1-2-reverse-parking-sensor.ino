@@ -27,7 +27,7 @@ Write a program to perform the following tasks:
 #define BEEP_TONE 659
 
 // The boolean to determine whether to use the analog distance sensor
-#define USE_ANALOG_DISTANCE_SENSOR true
+#define USE_ANALOG_DISTANCE_SENSOR false
 
 // Initialise the voltage resolution
 const float VOLTAGE_RESOLUTION = (5 - 0) / (pow(2, 10) - 1);
@@ -38,9 +38,10 @@ void setup() {
     // Set the pin modes of all the input pins
     pinMode(ULTRASONIC_SENSOR_ECHO_PIN, INPUT);
     pinMode(ANALOG_DISTANCE_SENSOR_PIN, INPUT);
+    pinMode(SLOTTED_OPTO_SWITCH_PIN, INPUT);
 
     // Set the pin mode of all the output pins
-    pinMode(SLOTTED_OPTO_SWITCH_PIN, OUTPUT);
+    pinMode(ULTRASONIC_SENSOR_TRIGGER_PIN, OUTPUT);
     pinMode(PIEZO_BUZZER_PIN, OUTPUT);
 
     // Initialise the serial connection
@@ -95,16 +96,16 @@ float get_distance_in_cm(bool use_analog_distance_sensor) {
     // burst to return
     int time_taken_in_microseconds = pulseIn(ULTRASONIC_SENSOR_ECHO_PIN, HIGH);
 
-    // Convert the time taken into seconds
-    float time_taken_in_seconds = float(time_taken_in_microseconds) / 1000000;
-
     // Calculate the distance from the time taken
     // using the speed of sound in air, which is 343 m/s
     // or 34300 cm/s.
+    // The speed of sound of 34300 cm/s needs to be divided
+    // by 1,000,000 to convert it to cm/us or cm per microsecond,
+    // which is 0.0343 cm/us.
     // The distance needs to be divided by 2 because
     // the time taken is the time for the sound wave to travel
     // to the object and back to the sensor.
-    float distance_in_cm = time_taken_in_seconds * 343 * 1000 / 2;
+    float distance_in_cm = time_taken_in_microseconds * 0.0343 / 2;
 
     // Return the distance in cm from the ultrasonic sensor
     return distance_in_cm;
