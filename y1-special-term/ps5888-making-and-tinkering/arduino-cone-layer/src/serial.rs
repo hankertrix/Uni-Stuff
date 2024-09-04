@@ -373,9 +373,17 @@ impl UsartReaderInterface {
 }
 
 /// The function to parse a string into a float.
+///
 /// This function returns None if the string isn't a valid float,
 /// or if the float has more than 10 digits and has overflowed
 /// the f32 type.
+///
+/// This function is here instead of using Rust's built-in parse function
+/// because the built-in parse function bloats the data section of
+/// the binary by about 10kB, which is even more than the
+/// allowed memory in the data section of the binary of the Arduino Mega 2560,
+/// which is 8kB, so this parse_float function is used instead to get
+/// the program to compile and link.
 fn parse_float(input: &str) -> Option<f32> {
     //
 
