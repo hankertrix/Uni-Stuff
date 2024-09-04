@@ -745,6 +745,7 @@ impl StepperDriver {
                     self.set_step_number(-steps_to_stop_moving);
                 }
             }
+            //
 
             // Otherwise, if the step number is less than 0,
             // that means we are currently decelerating.
@@ -788,6 +789,7 @@ impl StepperDriver {
                     self.set_step_number(-steps_to_stop_moving);
                 }
             }
+            //
 
             // Otherwise, if the step number is less than 0,
             // that means we are currently decelerating.
@@ -1111,15 +1113,67 @@ impl StepperDriver {
         return self.speed() != 0.0 || self.distance_to_go() != 0;
     }
 
+    /// The function to stop the motor
+    pub fn stop(&mut self) {
+        //
+
+        // Get the speed of the motor
+        let speed = self.speed();
+
+        // If the current speed is zero, that means the motor has stopped,
+        // so exit the function
+        if speed == 0.0 {
+            return;
+        }
+
+        // Otherwise, the motor needs to stop,
+        // so calculate the number of steps to stop moving
+        // using equation 16 from the PDF file.
+        // We add 1 to account for integer rounding.
+        let steps_to_stop_moving =
+            ((speed * speed) / (2.0 * self.acceleration())) as i32 + 1;
+
+        // If the speed is positive
+        if speed > 0.0 {
+            //
+
+            // Move the number of steps to stop moving
+            self.move_by_steps(steps_to_stop_moving);
+        }
+        //
+
+        // Otherwise, the speed is negative
+        else {
+            //
+
+            // Move by the negative of the number of steps to stop moving
+            self.move_by_steps(steps_to_stop_moving);
+        }
+    }
+
     /// The function to run the motor until the target position is reached.
     /// This function BLOCKS, so this should not be called in a loop.
     pub fn run_until_target_position_is_reached(&mut self) {
         //
 
-        // Run the motor until the target position is reached,
-        // unless the program has been stopped,
-        // then stop running the motor.
-        while self.run() && !program_stopped() {}
+        // If the program is stopped,
+        // exit the function
+        if program_stopped() {
+            return;
+        }
+
+        // Run the motor until the target position is reached
+        while self.run() {
+            //
+
+            // If the program is stopped, stop the motor
+            if program_stopped() {
+                self.stop();
+
+                // Exit the function
+                return;
+            }
+        }
     }
 
     /// The function to run at a constant speed to the target position.
@@ -1184,44 +1238,6 @@ impl StepperDriver {
         // So return the inverse of that.
         return !(self.speed() == 0.0
             && self.target_position() == self.current_position());
-    }
-
-    /// The function to stop the motor
-    pub fn stop(&mut self) {
-        //
-
-        // Get the speed of the motor
-        let speed = self.speed();
-
-        // If the current speed is zero, that means the motor has stopped,
-        // so exit the function
-        if speed == 0.0 {
-            return;
-        }
-
-        // Otherwise, the motor needs to stop,
-        // so calculate the number of steps to stop moving
-        // using equation 16 from the PDF file.
-        // We add 1 to account for integer rounding.
-        let steps_to_stop_moving =
-            ((speed * speed) / (2.0 * self.acceleration())) as i32 + 1;
-
-        // If the speed is positive
-        if speed > 0.0 {
-            //
-
-            // Move the number of steps to stop moving
-            self.move_by_steps(steps_to_stop_moving);
-        }
-        //
-
-        // Otherwise, the speed is negative
-        else {
-            //
-
-            // Move by the negative of the number of steps to stop moving
-            self.move_by_steps(steps_to_stop_moving);
-        }
     }
 }
 
