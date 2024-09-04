@@ -152,10 +152,11 @@ However, take-up rate remains low despite numerous public campaigns and advocacy
 - How can we make use of technology, virtual company, online platforms and mobile apps to enhance people's acceptance of and willingness to take up ACP?
 
 * Risk factors for dementia
-*2020*:
+
+** 2020
 [[./images/risk-factors-of-dementia-2020.png]]
 
-*2024*:
+** 2024
 [[./images/risk-factors-of-dementia-2024.png]]
 
 ** Relationship between depression and dementia incidence
