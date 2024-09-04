@@ -3,6 +3,9 @@ Hello! This is the repository where I am storing all of my university related th
 so you can find my lecture notes and tutorial answers here.
 Hopefully this resource will help you in your university journey!
 
+My first year and first semester was in August 2023,
+so my first academic year is AY2023/2024.
+
 <br>
 
 ## How the repository is organised
