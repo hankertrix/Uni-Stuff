@@ -34,7 +34,7 @@ From 1995 to 2023, an estimated 42.5 billion USD has been spent on research and 
 This is emphasised when comparing Alzheimer's disease to other diseases such as heart disease, stroke, and especially HIV.
 [[./images/percentage-changes-in-selected-causes-of-death.png]]
 
-* Changes
+* Changes from 1900s to present times
 
 ** Mortality
 | Context                      | 1900                                    | 2020                                             |
@@ -106,7 +106,7 @@ When decisions arise concerning the treatment of dying patients, these options p
 
 ** Patient self-determination
 - In the United States, the *Patient Self-Determination Act (PSDA, 1990)* encourages everyone to decide now about the types and extent of medical care they want to accept of refuse if they become unable to make those decisions due to illness.
-- Advice medical directive aspires to:
+- Advance medical directive aspires to:
   - Protect patients' autonomy and respect their wishes and preferences in care
   - Help patients plan for the end of life through making informed care decisions before becoming incapacitated
   - Designate a dual power of attorney to help patient make care decisions when he or she becomes incapacitated
