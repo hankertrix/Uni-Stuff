@@ -692,4 +692,9 @@ impl MovementHandler {
         // Return if any of the motors are still running
         return any_motor_is_still_running;
     }
+
+    /// The function to stop all of the motors
+    pub fn stop_all_motors(&mut self) {
+        self.all_motors_do(|driver| driver.stop());
+    }
 }
