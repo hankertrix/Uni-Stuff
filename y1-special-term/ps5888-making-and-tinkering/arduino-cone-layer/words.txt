@@ -17,6 +17,7 @@ arrayvec
 Baudrate
 baudrate
 uwrite
+uwriteln
 ufmt
 atmega
 Prescaler

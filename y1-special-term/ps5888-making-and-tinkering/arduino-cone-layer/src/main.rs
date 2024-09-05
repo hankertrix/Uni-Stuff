@@ -8,6 +8,7 @@
 #![feature(abi_avr_interrupt)]
 
 // Modules
+mod console;
 mod constants;
 mod movement;
 mod serial;
@@ -16,13 +17,16 @@ mod timer;
 mod utils;
 
 // Use declarations
+use console::println;
 use heapless::Vec;
 use movement::{Command, MovementHandler};
 use panic_halt as _;
-use serial::new_serial_handler;
+use serial::{
+    handle_input, new_serial_handler, SerialBufferType, UsartWriterInterface,
+};
 use stepper_driver::{new_stepper_driver, StepperDriver};
 
-/// Function to execute
+/// Function to execute on the Arduino
 #[arduino_hal::entry]
 fn main() -> ! {
     //
@@ -34,8 +38,10 @@ fn main() -> ! {
     let pins = arduino_hal::pins!(peripherals);
 
     // Initialise the console serial handler
-    let mut console_serial_handler =
-        new_serial_handler!(USART0, peripherals, pins);
+    let console_serial_handler = new_serial_handler!(USART0, peripherals, pins);
+
+    // Put the console serial handler in the global variable
+    console::put_console_serial_handler(console_serial_handler);
 
     // Initialise the bluetooth serial handler
     let mut bluetooth_serial_handler =
@@ -95,7 +101,7 @@ fn main() -> ! {
     );
 
     // Print that the Arduino is initialised
-    console_serial_handler.write_string("Arduino initialised!\n");
+    println!("Arduino initialised!");
 
     // Safety: We are not in a critical section,
     // so enabling interrupts is fine.
@@ -138,20 +144,27 @@ fn main() -> ! {
         // }
 
         // Parse the input from the serial connection
-        let input = bluetooth_serial_handler.handle_input();
+        let input = handle_input(SerialBufferType::Console);
 
         // Match the input
         match input {
             Some(Command::HandleJoystick(arguments)) => {
+                println!("Handling Joystick");
                 movement_handler.handle_joystick(arguments)
             }
             Some(Command::LayConesInAStraightLine(arguments)) => {
+                println!("Laying cones in a straight line");
                 movement_handler.lay_cones_in_a_straight_line(arguments)
             }
             Some(Command::DropCone(arguments)) => {
+                println!("Dropping cone");
                 movement_handler.drop_cone(arguments)
             }
-            None => (),
+            Some(Command::Stop) => {
+                println!("Stopping");
+                movement_handler.stop_all_motors()
+            }
+            None => {}
         }
 
         // Call the function to run all of the motors

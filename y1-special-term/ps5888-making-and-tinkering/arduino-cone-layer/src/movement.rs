@@ -16,40 +16,40 @@ use crate::stepper_driver::StepperDriver;
 /// This value needs to be updated
 /// when the joypad radius on the
 /// phone application is changed.
-const JOYPAD_RADIUS: i32 = 150;
+const JOYPAD_RADIUS: i16 = 150;
 
 /// The nub radius of the joystick.
 ///
 /// This value needs to be updated
 /// when the nub radius calculation on the
 /// phone application is changed.
-const NUB_RADIUS: i32 = JOYPAD_RADIUS / 3;
+const NUB_RADIUS: i16 = JOYPAD_RADIUS / 3;
 
 /// The threshold to consider the joystick
 /// to be moving the cone layer forward
-const Y_AXIS_FORWARD_THRESHOLD: i32 = JOYPAD_RADIUS;
+const Y_AXIS_FORWARD_THRESHOLD: i16 = JOYPAD_RADIUS;
 
 /// The threshold to consider the joystick
 /// to be moving the cone layer backwards
-const Y_AXIS_BACKWARD_THRESHOLD: i32 = JOYPAD_RADIUS;
+const Y_AXIS_BACKWARD_THRESHOLD: i16 = JOYPAD_RADIUS;
 
 /// The maximum value for the Y axis.
 /// The negative of this value is the minimum
 /// value of the Y axis.
-const Y_AXIS_MAX: i32 = 300;
+const Y_AXIS_MAX: i16 = 300;
 
 /// The threshold to consider the joystick
 /// to be moving the cone layer to the left
-const X_AXIS_LEFT_THRESHOLD: i32 = JOYPAD_RADIUS;
+const X_AXIS_LEFT_THRESHOLD: i16 = JOYPAD_RADIUS;
 
 /// The threshold to consider the joystick
 /// to be moving the cone layer to the right
-const X_AXIS_RIGHT_THRESHOLD: i32 = JOYPAD_RADIUS;
+const X_AXIS_RIGHT_THRESHOLD: i16 = JOYPAD_RADIUS;
 
 /// The maximum value for the X axis.
 /// The negative of this value is the minimum
 /// value of the X axis.
-const X_AXIS_MAX: i32 = 300;
+const X_AXIS_MAX: i16 = 300;
 
 /// The maximum speed of the motor when the joystick is used
 /// in steps per second.
@@ -57,7 +57,7 @@ const X_AXIS_MAX: i32 = 300;
 /// the motor drivers.
 /// The current practical maximum speed of the motor driver
 /// is 470 steps per second.
-const JOYSTICK_CONTROL_MAX_SPEED: f32 = 500.0;
+const JOYSTICK_CONTROL_MAX_SPEED: i16 = 500;
 
 /// The acceleration of the motors
 /// in steps per second squared.
@@ -87,8 +87,8 @@ const STEP_DISTANCE_IN_CM: f32 = (WHEEL_DIAMETER_IN_CM / 2.0)
 const BUFFER_PERCENTAGE: f32 = 0.10;
 
 /// The number of buffer steps for the dispenser motor
-const DISPENSER_MOTOR_BUFFER_STEPS: i32 =
-    (BUFFER_PERCENTAGE * NUMBER_OF_STEPS_PER_REVOLUTION as f32) as i32;
+const DISPENSER_MOTOR_BUFFER_STEPS: i16 =
+    (BUFFER_PERCENTAGE * NUMBER_OF_STEPS_PER_REVOLUTION as f32) as i16;
 
 /// The default dispenser speed to drop a cone
 /// in steps per second
@@ -96,19 +96,20 @@ const DISPENSER_MOTOR_DEFAULT_SPEED: f32 = 100.0;
 
 /// The struct to contain the arguments for the handle_joystick function
 pub struct HandleJoystickArgs {
-    pub x_coordinate: f32,
-    pub y_coordinate: f32,
+    pub x_coordinate: i16,
+    pub y_coordinate: i16,
 }
 
-/// The struct to contain the arguments for the lay_cones function
+/// The struct to contain the arguments
+/// for the lay_cones_in_a_straight_line function
 pub struct LayConesInAStraightLineArgs {
-    pub cone_spacing_in_cm: f32,
-    pub number_of_cones_to_lay: f32,
+    pub cone_spacing_in_cm: i16,
+    pub number_of_cones_to_lay: i16,
 }
 
 /// The struct to contain the arguments for the drop_cones function
 pub struct DropConeArgs {
-    pub dispenser_motor_speed: f32,
+    pub dispenser_motor_speed: i16,
 }
 
 /// The enum for the commands that the arduino cone layer can handle
@@ -116,6 +117,7 @@ pub enum Command {
     HandleJoystick(HandleJoystickArgs),
     LayConesInAStraightLine(LayConesInAStraightLineArgs),
     DropCone(DropConeArgs),
+    Stop,
 }
 
 /// The struct of the movement handler
@@ -127,12 +129,12 @@ pub struct MovementHandler {
 
 /// The function to map a value from one range to another
 fn map_range(
-    value: i32,
-    old_range_min: i32,
-    old_range_max: i32,
-    new_range_min: i32,
-    new_range_max: i32,
-) -> i32 {
+    value: i16,
+    old_range_min: i16,
+    old_range_max: i16,
+    new_range_min: i16,
+    new_range_max: i16,
+) -> i16 {
     //
 
     // If the given value is equal to the end of the old range,
@@ -150,13 +152,13 @@ fn map_range(
     };
 
     // Calculate the value in the new range
-    let new_value = ((value - old_range_max)
-        * (new_range_max - new_range_min + range_correction)
-        / (old_range_max - old_range_min))
-        + new_range_min;
+    let new_value = ((value - old_range_min) as i32
+        * (new_range_max - new_range_min + range_correction) as i32
+        / (old_range_max - old_range_min) as i32)
+        + new_range_min as i32;
 
     // Return the value in the new range
-    return new_value;
+    return new_value as i16;
 }
 
 /// The implementation of the movement handler
@@ -376,8 +378,8 @@ impl MovementHandler {
         let mut motor_speed = 0;
 
         // Convert the x and y coordinates to an integer
-        let x_coordinate = x_coordinate as i32;
-        let y_coordinate = y_coordinate as i32;
+        let x_coordinate = x_coordinate;
+        let y_coordinate = y_coordinate;
 
         // If the y coordinate is more than the forward threshold
         if y_coordinate > Y_AXIS_FORWARD_THRESHOLD {
@@ -386,10 +388,10 @@ impl MovementHandler {
             // Get the motor speed to move forward
             motor_speed = map_range(
                 y_coordinate,
-                0,
+                Y_AXIS_FORWARD_THRESHOLD,
                 Y_AXIS_MAX,
                 0,
-                JOYSTICK_CONTROL_MAX_SPEED as i32,
+                JOYSTICK_CONTROL_MAX_SPEED,
             );
         }
         //
@@ -401,9 +403,9 @@ impl MovementHandler {
             // Get the motor speed to move backward
             motor_speed = map_range(
                 y_coordinate,
-                -Y_AXIS_MAX,
                 0,
-                -JOYSTICK_CONTROL_MAX_SPEED as i32,
+                Y_AXIS_BACKWARD_THRESHOLD,
+                -JOYSTICK_CONTROL_MAX_SPEED,
                 0,
             );
         }
@@ -420,9 +422,9 @@ impl MovementHandler {
             // The motor speed difference should be negative for a left turn.
             motor_speed_difference = map_range(
                 x_coordinate,
-                -X_AXIS_MAX,
                 0,
-                -JOYSTICK_CONTROL_MAX_SPEED as i32,
+                X_AXIS_LEFT_THRESHOLD,
+                -JOYSTICK_CONTROL_MAX_SPEED,
                 0,
             );
         }
@@ -436,10 +438,10 @@ impl MovementHandler {
             // The motor speed difference should be positive for a right turn.
             motor_speed_difference = map_range(
                 x_coordinate,
-                0,
+                X_AXIS_RIGHT_THRESHOLD,
                 X_AXIS_MAX,
                 0,
-                JOYSTICK_CONTROL_MAX_SPEED as i32,
+                JOYSTICK_CONTROL_MAX_SPEED,
             );
         }
 
@@ -556,11 +558,11 @@ impl MovementHandler {
 
         // Get the minimum distance to travel to lay the cones in centimetres
         let minimum_distance_to_travel_in_cm =
-            cone_spacing_in_cm * (number_of_cones_to_lay - 1.0);
+            cone_spacing_in_cm * (number_of_cones_to_lay - 1);
 
         // Get the minimum number of steps to lay the cones
         let minimum_number_of_steps_to_lay_cones =
-            minimum_distance_to_travel_in_cm / STEP_DISTANCE_IN_CM;
+            minimum_distance_to_travel_in_cm as f32 / STEP_DISTANCE_IN_CM;
 
         // Get the amount of time it takes to reach
         // the maximum speed for laying cones
@@ -580,6 +582,7 @@ impl MovementHandler {
 
         // Get the time taken to travel the cone spacing in seconds
         let time_taken_to_travel_cone_spacing_in_seconds = cone_spacing_in_cm
+            as f32
             / (MAXIMUM_SPEED_FOR_LAYING_CONES as f32 * STEP_DISTANCE_IN_CM);
 
         // Get the speed to run the dispenser motor at in steps per second
@@ -589,7 +592,7 @@ impl MovementHandler {
         // Get the number of steps to run the dispenser motor for
         let number_of_steps_to_run_dispenser_motor = dispenser_motor_speed
             * NUMBER_OF_STEPS_PER_REVOLUTION as f32
-            * number_of_cones_to_lay
+            * number_of_cones_to_lay as f32
             + DISPENSER_MOTOR_BUFFER_STEPS as f32;
 
         // Set the maximum speed of the movement motors
@@ -622,10 +625,10 @@ impl MovementHandler {
 
         // Set the dispenser motor speed to the default
         // if the speed given is 0.0
-        let dispenser_motor_speed = if dispenser_motor_speed == 0.0 {
+        let dispenser_motor_speed = if dispenser_motor_speed == 0 {
             DISPENSER_MOTOR_DEFAULT_SPEED
         } else {
-            dispenser_motor_speed
+            dispenser_motor_speed as f32
         };
 
         // Call the function to lay the cones
@@ -637,7 +640,9 @@ impl MovementHandler {
         // While the dispenser motor is running
         // and the program isn't stopped,
         // lay the cone
-        while self.dispenser_motor.run() && !program_stopped() {}
+        while self.dispenser_motor.run_at_constant_speed() && !program_stopped()
+        {
+        }
 
         // Disable the dispenser motor
         self.dispenser_motor.disable();

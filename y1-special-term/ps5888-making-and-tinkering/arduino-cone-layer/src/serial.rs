@@ -14,7 +14,6 @@ use core::{
     ops::DerefMut,
 };
 use heapless::Vec;
-use num::Float;
 
 use arduino_hal::{
     hal::{
@@ -372,173 +371,8 @@ impl UsartReaderInterface {
     }
 }
 
-/// The function to parse a string into a float.
-///
-/// This function returns None if the string isn't a valid float,
-/// or if the float has more than 10 digits and has overflowed
-/// the f32 type.
-///
-/// This function is here instead of using Rust's built-in parse function
-/// because the built-in parse function bloats the data section of
-/// the binary by about 10kB, which is even more than the
-/// allowed memory in the data section of the binary of the Arduino Mega 2560,
-/// which is 8kB, so this parse_float function is used instead to get
-/// the program to compile and link.
-fn parse_float(input: &str) -> Option<f32> {
-    //
-
-    // Initialise the parsed integer variable.
-    // This integer is used to so that the floating
-    // point number is accurately parsed.
-    let mut parsed_integer: Option<i32> = None;
-
-    // Initialise the variable to store
-    // whether the minus sign is encountered
-    let mut minus_sign_encountered = false;
-
-    // Initialise the position of the decimal point
-    let mut decimal_point_position_from_start_of_string: Option<usize> = None;
-
-    // Initialise the variable to store the position of the last digit
-    let mut last_digit_position_from_start_of_string: Option<usize> = None;
-
-    // Iterate over the characters in the string
-    for (index, character) in input.chars().enumerate() {
-        //
-
-        // If it's the first character
-        if index == 0 {
-            //
-
-            // Match the character
-            match character {
-                '-' => {
-                    //
-
-                    // Set the minus sign encountered flag
-                    minus_sign_encountered = true;
-
-                    // Continue the loop
-                    continue;
-                }
-                '+' => continue,
-                _ => (),
-            }
-        }
-
-        // Match the character
-        match character {
-            '.' => {
-                //
-
-                // Set the decimal point position if it's not set,
-                // and return None if it is
-                decimal_point_position_from_start_of_string =
-                    match decimal_point_position_from_start_of_string {
-                        Some(_) => return None,
-                        None => Some(index),
-                    };
-            }
-            char if char.is_ascii_digit() => {
-                //
-
-                // If the parsed integer is set
-                if let Some(integer) = parsed_integer {
-                    //
-
-                    // Try to multiply the parsed integer by 10
-                    let multiplication_result = integer.checked_mul(10);
-
-                    // If the multiplication result is None, return None
-                    if multiplication_result.is_none() {
-                        return None;
-                    }
-
-                    // Try to add the digit from the string
-                    // to the multiplication result
-                    let addition_result =
-                        multiplication_result.unwrap_or_default().checked_add(
-                            character.to_digit(10).unwrap_or_default() as i32,
-                        );
-
-                    // If the addition result is None, return None
-                    if addition_result.is_none() {
-                        return None;
-                    }
-
-                    // Set the parsed integer to the addition result
-                    parsed_integer = Some(addition_result.unwrap_or_default());
-                }
-                //
-
-                // Otherwise, if the parsed integer is not set
-                else {
-                    //
-
-                    // Set the parsed integer to the digit from the string
-                    parsed_integer =
-                        Some(character.to_digit(10).unwrap_or_default() as i32);
-                }
-            }
-            _ => {
-                //
-
-                // Set the last digit position
-                last_digit_position_from_start_of_string = Some(index);
-
-                // Break the loop
-                break;
-            }
-        }
-    }
-
-    // If the parsed integer is not set,
-    // then return None
-    if parsed_integer.is_none() {
-        return None;
-    }
-
-    // Otherwise, if the last digit position is not set,
-    // then set it to the length of the string minus 1
-    if last_digit_position_from_start_of_string.is_none() {
-        last_digit_position_from_start_of_string = Some(input.len() - 1);
-    }
-
-    // Unwrap the parsed integer
-    let mut parsed_integer = parsed_integer.unwrap_or_default();
-
-    // If the minus sign is encountered,
-    // then multiply the parsed integer by -1
-    if minus_sign_encountered {
-        parsed_integer *= -1;
-    }
-
-    // Convert the parsed integer to a float
-    let mut parsed_input = parsed_integer as f32;
-
-    // If the decimal point position is set
-    if let Some(decimal_point_position) =
-        decimal_point_position_from_start_of_string
-    {
-        //
-
-        // Subtract the decimal point position
-        // from the last digit position
-        let decimal_places = last_digit_position_from_start_of_string
-            .unwrap_or_default()
-            - decimal_point_position;
-
-        // Divide the parsed integer by 10 to the power
-        // of the number of decimal places
-        parsed_input /= 10.0f32.powi(decimal_places as i32);
-    }
-
-    // Return the parsed input
-    return Some(parsed_input);
-}
-
 /// The function to parse the input
-fn parse_input(input: &str) -> Option<Command> {
+pub fn parse_input(input: &str) -> Option<Command> {
     //
 
     // Split the string at the whitespace character
@@ -559,18 +393,8 @@ fn parse_input(input: &str) -> Option<Command> {
     };
 
     // Parse the first and second arguments into floats
-    let first_arg: Option<f32> = parse_float(first_arg_str);
-    let second_arg: Option<f32> = parse_float(second_arg_str);
-
-    // If the first argument or the second argument is None,
-    // then return None
-    if first_arg.is_none() || second_arg.is_none() {
-        return None;
-    }
-
-    // Unwrap the first and second arguments
-    let first_arg: f32 = first_arg.unwrap_or_default();
-    let second_arg: f32 = second_arg.unwrap_or_default();
+    let first_arg = first_arg_str.parse::<i16>().unwrap_or_default();
+    let second_arg = second_arg_str.parse::<i16>().unwrap_or_default();
 
     // Match the command
     match command_str {
@@ -589,8 +413,68 @@ fn parse_input(input: &str) -> Option<Command> {
         "drop_cone" => Some(Command::DropCone(DropConeArgs {
             dispenser_motor_speed: first_arg,
         })),
+        "stop" => Some(Command::Stop),
         _ => None,
     }
+}
+
+/// The function to handle input from the serial connection
+pub fn handle_input(serial_buffer_type: SerialBufferType) -> Option<Command> {
+    //
+
+    // Initialise the variable to store the parsed input
+    let mut parsed_input: Option<Command> = None;
+
+    // Execute the code to handle the input in an
+    // interrupt-free context.
+    avr_device::interrupt::free(|critical_section_token| {
+        //
+
+        // Borrow the global serial buffer object
+        if let Some(ref mut serial_buffer) =
+            get_serial_buffer(serial_buffer_type)
+                .borrow(critical_section_token)
+                .borrow_mut()
+                .deref_mut()
+        {
+            // If the serial buffer is complete
+            if serial_buffer.is_complete {
+                //
+
+                // Get the string from the buffer
+                let buffer = serial_buffer.buffer.as_str();
+
+                // If the string in the buffer is the stop command,
+                // stop the arduino from executing further commands
+                // by setting the PROGRAM_STOPPED variable to true.
+                if buffer == STOP_COMMAND {
+                    stop_program();
+                }
+                //
+
+                // Otherwise
+                else {
+                    //
+
+                    // Start the program to get ready
+                    // to handle the incoming command
+                    start_program();
+                }
+
+                // Parse the input and set the variable
+                parsed_input = parse_input(buffer);
+
+                // Clear the buffer
+                serial_buffer.buffer.clear();
+
+                // Set the serial buffer to incomplete
+                serial_buffer.is_complete = false;
+            }
+        }
+    });
+
+    // Return the parsed input
+    return parsed_input;
 }
 
 /// The implementation of the serial handler class
@@ -599,61 +483,7 @@ impl SerialHandler {
 
     /// The function to handle input from the serial connection
     pub fn handle_input(&mut self) -> Option<Command> {
-        //
-
-        // Initialise the variable to store the parsed input
-        let mut parsed_input = None;
-
-        // Execute the code to handle the input in an
-        // interrupt-free context.
-        avr_device::interrupt::free(|critical_section_token| {
-            //
-
-            // Borrow the global serial buffer object
-            if let Some(ref mut serial_buffer) =
-                get_serial_buffer(self.serial_buffer_type)
-                    .borrow(critical_section_token)
-                    .borrow_mut()
-                    .deref_mut()
-            {
-                // If the serial buffer is complete
-                if serial_buffer.is_complete {
-                    //
-
-                    // Get the string from the buffer
-                    let buffer = serial_buffer.buffer.as_str();
-
-                    // If the string in the buffer is the stop command,
-                    // stop the arduino from executing further commands
-                    // by setting the PROGRAM_STOPPED variable to true.
-                    if buffer == STOP_COMMAND {
-                        stop_program();
-                    }
-                    //
-
-                    // Otherwise
-                    else {
-                        //
-
-                        // Start the program to get ready
-                        // to handle the incoming command
-                        start_program();
-                    }
-
-                    // Parse the input and set the variable
-                    parsed_input = parse_input(buffer);
-
-                    // Clear the buffer
-                    serial_buffer.buffer.clear();
-
-                    // Set the serial buffer to incomplete
-                    serial_buffer.is_complete = false;
-                }
-            }
-        });
-
-        // Return the parsed input
-        return parsed_input;
+        return handle_input(self.serial_buffer_type);
     }
 
     /// The function to write a string to the serial connection
@@ -757,3 +587,4 @@ mod serial_isr {
 }
 
 pub(crate) use new_serial_handler;
+pub(crate) use usart_dispatch;
