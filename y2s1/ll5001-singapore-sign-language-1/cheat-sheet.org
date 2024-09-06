@@ -199,14 +199,20 @@ Either finger spell a "TC", or pretend to grab a tissue from a tissue box, then 
 ** Do
 [[./images/do.gif]]
 
-** Do not
+** Do not (Don't)
 [[./images/do-not.gif]]
+
+** Want
+[[./images/want.gif]]
 
 ** More
 Make two "O" hand signs with both hands and bring them together.
 
 ** Of
 Make two "F" hand signs with both hands, then close the circular part of the hand sign around the other hand's hand sign, interlocking the two hands at the circular part of the hand sign. One hand should have its last three fingers pointing forward, and the other hand should have the last three fingers pointing upwards.
+
+** Just
+[[./images/just.gif]]
 
 ** Time
 [[./images/time.gif]]
@@ -236,6 +242,9 @@ Similar to "afternoon", but lower the hand such that it is pointed straight in f
 
 ** Tree
 [[./images/tree.gif]]
+
+** To
+[[./images/to.gif]]
 
 ** Today
 
@@ -361,7 +370,7 @@ Same motion as "talk", but with the "C" hand sign instead of the index finger.
 ** See
 Make the "V" hand sign, but with the back of the palm facing outwards, and put it beside your eyes. Then move your hand outwards.
 
-** Must
+** Must / Need / Have to / Require / Necessary / Compulsory
 [[./images/must.gif]]
 
 ** Understand
@@ -396,6 +405,9 @@ Make the "V" hand sign, but with the back of the palm facing outwards, and put i
 
 ** Sell
 [[./images/sell.gif]]
+
+** Ready
+Make two "R" hand signs using both hands with the palm facing outwards, then move both hands to one side.
 
 ** Love
 [[./images/love.gif]]
