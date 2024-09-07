@@ -1,4 +1,5 @@
 // The module for the console serial handler
+// Reference: https://github.com/Rahix/avr-hal/blob/main/examples/arduino-uno/src/bin/uno-println.rs
 
 use crate::serial::SerialHandler;
 use core::cell::RefCell;
