@@ -500,9 +500,6 @@ Make two "R" hand signs using both hands with the palm facing outwards, then mov
 ** Translate
 Make the "love" hand gesture, but instead of a closed fist use the "T" hand sign. Your hands should also be in front of your chest, not on your chest. Then rotate your wrists around each other and then expand the "T" hand sign into an index finger pointing to the left and right of you.
 
-** Kill
-[[./images/kill.gif]]
-
 ** Win
 Pretend to hold the flag in one hand, then use the other hand to grab it.
 
@@ -655,6 +652,20 @@ Start with an open palm facing outwards on both hands and use your middle finger
 ** Heavy
 Pretend to hold a box from underneath the box, then show your hands and body being weighed down by the heavy box.
 
+** Kill
+[[./images/kill.gif]]
+
+** Die
+
+*** Variation 1
+[[./images/die-variation-a.gif]]
+
+*** Variation 2
+[[./images/die-variation-b.gif]]
+
+*** Variation 3
+[[./images/die-variation-c.gif]]
+
 ** Live
 [[./images/live.gif]]
 
@@ -676,8 +687,42 @@ Point your thumb towards the centre of your body and bring it upwards, starting 
 ** Lead (as in leader)
 Use one hand to grab the other hand, which has an open palm facing your body, and then pull it along.
 
+** Breathe
+[[./images/breathe.gif]]
+
+** Eat
+[[./images/eat.gif]]
+
+** Food / Eat
+[[./images/food.gif]]
+
+** Drink
+
+*** Variation 1
+[[./images/drink-variation-a.gif]]
+
+*** Variation 2
+[[./images/drink-variation-b.gif]]
+
+*** Variation 3
+[[./images/drink-variation-c.gif]]
+
+** Water
+[[./images/water.gif]]
+
+** Thirsty
+
+*** Variation 1
+[[./images/thirsty-variation-a.gif]]
+
+*** Variation 2
+[[./images/thirsty-variation-b.gif]]
+
 ** Hungry
 [[./images/hungry.gif]]
+
+** Horny
+Same motion as "hungry", but do the motion over your chest and do it continuously instead of just twice.
 
 ** Scared
 [[./images/scared.gif]]
