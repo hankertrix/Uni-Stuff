@@ -163,6 +163,9 @@ Where is usually used at the end of a sentence, so "Where do you live?" becomes 
 ** How
 Bring up a wave from your chest using your palm. At the end of the motion, your fingers should be pointing outwards with your palms facing up.
 
+** How much?
+[[./images/how-much.gif]]
+
 ** This
 [[./images/this.gif]]
 
@@ -235,6 +238,9 @@ Form the "C" hand sign, then bring your hand to the side while closing the "C" h
 
 ** Feel
 [[./images/feel.gif]]
+
+** Angry
+[[./images/angry.gif]]
 
 ** More
 Make two "O" hand signs with both hands and bring them together.
