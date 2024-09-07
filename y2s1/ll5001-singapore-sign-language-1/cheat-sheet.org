@@ -196,6 +196,14 @@ Touch your chin with the tip of your open palm facing towards your body and brin
 ** Take care
 Either finger spell a "TC", or pretend to grab a tissue from a tissue box, then do the "V" hand sign with both hands, stack them one on top of the other and then draw a horizontal circle.
 
+** Can
+[[./images/can-image.gif]]
+
+[[./images/can.gif]]
+
+** Cannot
+[[./images/cannot.gif]]
+
 ** Do
 [[./images/do.gif]]
 
@@ -207,6 +215,17 @@ Either finger spell a "TC", or pretend to grab a tissue from a tissue box, then 
 
 ** More
 Make two "O" hand signs with both hands and bring them together.
+
+** Many
+
+*** Variation 1
+[[./images/many-variation-a.gif]]
+
+*** Variation 2
+[[./images/many-variation-b.gif]]
+
+** Few
+[[./images/few.gif]]
 
 ** Of
 Make two "F" hand signs with both hands, then close the circular part of the hand sign around the other hand's hand sign, interlocking the two hands at the circular part of the hand sign. One hand should have its last three fingers pointing forward, and the other hand should have the last three fingers pointing upwards.
@@ -338,6 +357,9 @@ Jump one palm over the other like jumping a fence. Both palms should be open wit
 ** Again
 [[./images/again.gif]]
 
+** Still
+[[./images/still.gif]]
+
 ** Ask
 
 *** Variation 1
@@ -357,6 +379,14 @@ Same motion as "talk", but with 4 fingers instead of just the index finger.
 
 ** Communication
 Same motion as "talk", but with the "C" hand sign instead of the index finger.
+
+** Text / Message
+
+*** Variation 1
+[[./images/text-variation-a.gif]]
+
+*** Variation 2
+[[./images/text-variation-b.gif]]
 
 ** Help
 [[./images/help.gif]]
@@ -382,11 +412,20 @@ Make the "V" hand sign, but with the back of the palm facing outwards, and put i
 ** Remember
 [[./images/remember.gif]]
 
+** Think
+[[./images/think.gif]]
+
 ** Know
 [[./images/know.gif]]
 
 ** Learn
 [[./images/learn.gif]]
+
+** Practice
+[[./images/practice.gif]]
+
+** Training
+Same as "practice", but with the "T" hand sign instead of the fist.
 
 ** Read
 [[./images/read.gif]]
@@ -515,6 +554,9 @@ Same motion as "red", but form a "P" first and use the middle finger to draw the
 
 ** Sister
 [[./images/sister.gif]]
+
+** Baby
+[[./images/baby.gif]]
 
 ** Tall
 [[./images/tall.gif]]
