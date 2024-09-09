@@ -17,6 +17,9 @@ The hand sign for T is slightly different in Singapore Sign language, with the t
 
 * Numbers
 
+** Number
+[[./images/number.gif]]
+
 ** 1 to 10
 [[./images/sign-language-numbers-1-10.png]]
 
@@ -241,6 +244,9 @@ Form the "C" hand sign, then bring your hand to the side while closing the "C" h
 
 ** Angry
 [[./images/angry.gif]]
+
+** Better
+Brush your palm against the bottom of your chin.
 
 ** More
 Make two "O" hand signs with both hands and bring them together.
