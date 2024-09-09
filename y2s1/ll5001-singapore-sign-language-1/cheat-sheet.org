@@ -194,6 +194,10 @@ The example below shows 2^4, or 2 to the power of 4.
 ** Decimal point
 
 *** Variation 1
+Just point your index finger on one hand straight in front to show a dot.
+
+*** Variation 2
+[[./images/full-stop-symbol.gif]]
 
 * Vocabulary
 
@@ -331,7 +335,10 @@ Either finger spell a "TC", or pretend to grab a tissue from a tissue box, then 
 Just finger spell "if".
 
 ** And
-Form the "C" hand sign but turn it such that the "C" shape is facing upwards, i.e. the open palm is facing inwards. Then bring your hand to the side while closing the "C" hand sign such that your fingers and thumb are touching each other.
+[[./images/and.gif]]
+
+** Or
+Just finger spell "or".
 
 ** Not
 [[./images/not.gif]]
@@ -376,6 +383,11 @@ Form the "C" hand sign but turn it such that the "C" shape is facing upwards, i.
 
 ** Want
 [[./images/want.gif]]
+
+** Have
+[[./images/have-diagram.gif]]
+
+[[./images/have.gif]]
 
 ** Give
 [[./images/give.gif]]
@@ -474,6 +486,12 @@ Same motion as the hand sign for "thousand", but instead of the open palm facing
 ** Beside
 [[./images/beside.gif]]
 
+** Left (direction)
+[[./images/left-direction.gif]]
+
+** Right (direction)
+[[./images/right-direction.gif]]
+
 ** Between
 [[./images/between.gif]]
 
@@ -570,7 +588,7 @@ Similar to "world", but with a closed fist instead of the "W" hand sign.
 [[./images/future.gif]]
 
 ** First
-Use your index finger to flick your thumb on the other hand, flicking inwards towards your body.
+[[./images/first.gif]]
 
 ** Last
 
@@ -597,7 +615,12 @@ This variation is used to refer to a numerical value, like the last bus, the las
 [[./images/after.gif]]
 
 ** Early
-[[./images/early.gif]]
+
+*** Variation 1
+[[./images/early-variation-a.gif]]
+
+*** Variation 2
+[[./images/early-variation-b.gif]]
 
 ** Late
 [[./images/late.gif]]
@@ -725,6 +748,15 @@ Break as in to take a break.
 
 ** Go / Went
 [[./images/go.gif]]
+
+** Gone / Missing / Absent / Passed Away / Dead / Extinct
+[[./images/gone.gif]]
+
+** Stop
+[[./images/stop.gif]]
+
+** Full stop (symbol) / Period (symbol)
+[[./images/full-stop-symbol.gif]]
 
 ** Buy
 [[./images/buy.gif]]
@@ -1218,6 +1250,9 @@ Hold one index finger up, pointing upwards, and use the index finger on the othe
 
 ** Together
 Make two "T" hand signs with both hands and put them together, then draw a horizontal circle with both hands together.
+
+** Dominant
+Make two "D" hand signs with both hands with the index finger pointing forward, then move them back and forth.
 
 * Places
 
