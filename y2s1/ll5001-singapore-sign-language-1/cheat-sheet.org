@@ -855,6 +855,9 @@ Interlock your fingers with each other, thumb pointed upwards and the palm facin
 *** Variation 2
 [[./images/test-variation-b.gif]]
 
+** Sky
+[[./images/sky.gif]]
+
 ** Bus
 [[./images/bus.gif]]
 
