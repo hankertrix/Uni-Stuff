@@ -230,6 +230,9 @@ Form the "C" hand sign, then bring your hand to the side while closing the "C" h
 ** Wrong
 [[./images/wrong.gif]]
 
+** Favourite
+[[./images/favourite.gif]]
+
 ** Like
 [[./images/like.gif]]
 
@@ -244,6 +247,12 @@ Form the "C" hand sign, then bring your hand to the side while closing the "C" h
 
 ** Want
 [[./images/want.gif]]
+
+** Give
+[[./images/give.gif]]
+
+** Bring
+[[./images/bring.gif]]
 
 ** Feel
 [[./images/feel.gif]]
@@ -512,6 +521,9 @@ Same as "practice", but with the "T" hand sign instead of the fist.
 ** Buy
 [[./images/buy.gif]]
 
+** Pay
+Make an open palm with one hand and face it upwards. Form a "P" hand sign with the other hand and flick the middle finger outwards.
+
 ** Sell
 [[./images/sell.gif]]
 
@@ -573,6 +585,9 @@ The above gesture, but without the agent gesture at the end.
 
 ** Law
 Make an L with one hand then tap the L on the fingers of the other palm, followed by tapping the back of the other palm.
+
+** Course
+Same motion as "law", but use the "C" hand sign instead.
 
 ** Bank
 [[./images/bank.gif]]
@@ -654,6 +669,14 @@ Same motion as "red", but form a "P" first and use the middle finger to draw the
 
 ** Fat
 [[./images/fat.gif]]
+
+** Big
+
+*** Variation 1
+[[./images/big-variation-a.gif]]
+
+*** Variation 2
+[[./images/big-variation-b.gif]]
 
 ** Young
 Push your chest upwards and outwards with your hands (palm facing towards you) and make a happy face.
