@@ -5,6 +5,25 @@
 
 Reference: [[https://blogs.ntu.edu.sg/sgslsignbank/signs/][SGSL Sign Bank]]
 
+* Definitions
+
+** Agent gesture
+The agent gesture is to show a box with both hands and move the box down.
+This gesture used to turn change an action, into a person doing the action. For example, teach + agent gesture = teacher.
+
+[[./images/teacher.gif]]
+
+** "Wh" facial expression
+This expression is usually used when asking a question, and can be shown as "furrowing" the eyebrows a bit, with the head tilted slightly backwards, and the body leaning towards the respondent.
+
+** Signing area
+The signing area refers to the area from the top of your head to the bottom of your waist.
+
+** Tense markers
+- Time in sign language is not indicated through tenses, and the verbs in sign language do not change in form when tenses change.
+- For example the sign for "eat" and "ate" are the same.
+- Time is therefore indicated through the use of adverbs of time.
+
 * Alphabet
 
 ** American sign language
@@ -74,14 +93,107 @@ Similar to the number "21", just show the first number followed by the second nu
 ** 1,000,000,000,000 (trillion)
 Same motion as the billion hand sign, but with a "T" hand sign instead of a "B" hand sign.
 
-* Agent gesture
-The agent gesture is to show a box with both hands and move the box down.
-This gesture used to turn change an action, into a person doing the action. For example, teach + agent gesture = teacher.
+* Days of the week
 
-[[./images/teacher.gif]]
+** Monday
+[[./images/monday.gif]]
 
-* "Wh" facial expression
-This expression is usually used when asking a question, and can be shown as "furrowing" the eyebrows a bit, with the head tilted slightly backwards, and the body leaning towards the respondent.
+** Tuesday
+[[./images/tuesday.gif]]
+
+** Wednesday
+[[./images/wednesday.gif]]
+
+** Thursday
+[[./images/thursday.gif]]
+
+** Friday
+[[./images/friday.gif]]
+
+** Saturday
+[[./images/saturday.gif]]
+
+** Sunday
+[[./images/sunday.gif]]
+
+* Months of the year
+
+** January
+[[./images/january.gif]]
+
+Jump a "J" hand sign over the open palm facing inwards with fingers pointing upwards.
+
+** February
+[[./images/february.gif]]
+
+** March
+[[./images/march.gif]]
+
+** April
+[[./images/april.gif]]
+
+** May
+[[./images/may-month.gif]]
+
+Jump an "M" hand sign over the open palm facing inwards with fingers pointing upwards, then transition to a "Y" hand sign.
+
+** June
+[[./images/june.gif]]
+
+Jump a "J" hand sign over the open palm facing inwards with fingers pointing upwards, then transition to an "E" hand sign.
+
+** July
+[[./images/july.gif]]
+
+Jump a "J" hand sign over the open palm facing inwards with fingers pointing upwards, then transition to an "Y" hand sign.
+
+** August
+[[./images/august.gif]]
+
+Jump an "A" hand sign over the open palm facing inwards with fingers pointing upwards, then transition to an "G" hand sign.
+
+** September
+[[./images/september.gif]]
+
+** October
+[[./images/october.gif]]
+
+** November
+[[./images/november.gif]]
+
+Jump an "N" hand sign over the open palm facing inwards with fingers pointing upwards.
+
+** December
+[[./images/december.gif]]
+
+* Mathematical symbols
+
+** Add (plus)
+[[./images/add-math.gif]]
+
+** Subtract (minus)
+[[./images/subtract-math.gif]]
+
+** Multiply (times)
+[[./images/multiply-math.gif]]
+
+** Divide
+[[./images/divide-math.gif]]
+
+** Equal
+[[./images/equal-math.gif]]
+
+** Percent (percentage)
+[[./images/percent-math.gif]]
+
+** To the power of
+The example below shows 2^4, or 2 to the power of 4.
+
+[[./images/to-the-power-of-math.gif]]
+
+** Decimal point
+
+*** Variation 1
 
 * Vocabulary
 
@@ -144,10 +256,13 @@ Wave goodbye.
 [[./images/who.gif]]
 
 ** What
+
+*** Variation 1
 [[./images/what-variation-a.gif]]
 
 This variation is usually used at the start of a sentence, like the formal "What is your name?".
 
+*** Variation 2
 [[./images/what-variation-b.gif]]
 
 This variation is usually used at the end of a sentence, like the casual "Your name what?".
@@ -175,8 +290,16 @@ Bring up a wave from your chest using your palm. At the end of the motion, your 
 ** That
 [[./images/that.gif]]
 
-** Aeroplane / Aerospace / Fly
+** Plane / Aeroplane / Aerospace
 Fly the "that" hand sign over your head.
+
+** Fly
+
+*** Variation 1
+Same motion as "plane", but move your hand back down to your chest height, drawing a semicircle over your head with your hand.
+
+*** Variation 2
+Flap your hands like you're flapping your wings.
 
 ** Good
 [[./images/good.gif]]
@@ -208,15 +331,21 @@ Either finger spell a "TC", or pretend to grab a tissue from a tissue box, then 
 Just finger spell "if".
 
 ** And
-Form the "C" hand sign, then bring your hand to the side while closing the "C" hand sign such that your fingers and thumb are touching each other.
+Form the "C" hand sign but turn it such that the "C" shape is facing upwards, i.e. the open palm is facing inwards. Then bring your hand to the side while closing the "C" hand sign such that your fingers and thumb are touching each other.
+
+** Not
+[[./images/not.gif]]
 
 ** Can
-[[./images/can-image.gif]]
+[[./images/can-diagram.gif]]
 
 [[./images/can.gif]]
 
-** Cannot
+** Cannot (Can't)
 [[./images/cannot.gif]]
+
+** Will
+[[./images/will.gif]]
 
 ** Do
 [[./images/do.gif]]
@@ -263,34 +392,20 @@ Form the "C" hand sign, then bring your hand to the side while closing the "C" h
 ** Stress
 Put both hands beside your head, palm facing your face, and open and close your fingers.
 
-** Better
-Brush your palm against the bottom of your chin.
-
 ** More
 Make two "O" hand signs with both hands and bring them together.
 
 ** All
 [[./images/all.gif]]
 
-** Many
-
-*** Variation 1
-[[./images/many-variation-a.gif]]
-
-*** Variation 2
-[[./images/many-variation-b.gif]]
-
 ** Few
 [[./images/few.gif]]
 
-** Of
-Make two "F" hand signs with both hands, then close the circular part of the hand sign around the other hand's hand sign, interlocking the two hands at the circular part of the hand sign. One hand should have its last three fingers pointing forward, and the other hand should have the last three fingers pointing upwards.
+** Only
+[[./images/only.gif]]
 
-** At
-Same motion as the hand sign for "thousand", but instead of the open palm facing the other hand, point the open palm forward and the fingers on the other hand should contact the back of the palm instead.
-
-** Just
-[[./images/just.gif]]
+** Both
+[[./images/both.gif]]
 
 ** Time
 [[./images/time.gif]]
@@ -320,6 +435,101 @@ Similar to "afternoon", but lower the hand such that it is pointed straight in f
 
 ** Tree
 [[./images/tree.gif]]
+
+** Under
+Put one hand horizontally in front of you with the palm facing down. Then, make the thumbs up hand sign and move it under the palm of the other hand.
+
+** On
+[[./images/on.gif]]
+
+Just put one hand on top of the other hand.
+
+** Off
+[[./images/off.gif]]
+
+When one hand is already on top of the other hand, remove the hand on top.
+
+** In
+[[./images/in-diagram.gif]]
+
+[[./images/in.gif]]
+
+** Out
+[[./images/out-diagram.gif]]
+
+[[./images/out.gif]]
+
+** Of
+Make two "F" hand signs with both hands, then close the circular part of the hand sign around the other hand's hand sign, interlocking the two hands at the circular part of the hand sign. One hand should have its last three fingers pointing forward, and the other hand should have the last three fingers pointing upwards.
+
+** At
+Same motion as the hand sign for "thousand", but instead of the open palm facing the other hand, point the open palm forward and the fingers on the other hand should contact the back of the palm instead.
+
+** Just
+[[./images/just.gif]]
+
+** About
+[[./images/about.gif]]
+
+** Beside
+[[./images/beside.gif]]
+
+** Between
+[[./images/between.gif]]
+
+** Through
+[[./images/through.gif]]
+
+** For
+[[./images/for.gif]]
+
+** With
+[[./images/with.gif]]
+
+** Without
+[[./images/without.gif]]
+
+** From
+[[./images/from.gif]]
+
+** Always
+[[./images/always.gif]]
+
+** Far
+[[./images/far.gif]]
+
+** Near
+[[./images/near.gif]]
+
+** Much
+[[./images/much.gif]]
+
+** Many
+
+*** Variation 1
+[[./images/many-variation-a.gif]]
+
+*** Variation 2
+[[./images/many-variation-b.gif]]
+
+** Never
+[[./images/never-diagram.gif]]
+
+[[./images/never.gif]]
+
+The motion of the gesture looks a bit like a question mark. Make sure to shake your head when doing this gesture.
+
+** Then
+[[./images/then.gif]]
+
+** Very
+[[./images/very.gif]]
+
+** Up
+Make the "U" hand sign and move it upwards.
+
+** Down
+Hold up a hand with the palm facing the body and move it downwards.
 
 ** To
 [[./images/to.gif]]
@@ -353,27 +563,6 @@ Similar to "afternoon", but lower the hand such that it is pointed straight in f
 ** Year
 Similar to "world", but with a closed fist instead of the "W" hand sign.
 
-** Monday
-[[./images/monday.gif]]
-
-** Tuesday
-[[./images/tuesday.gif]]
-
-** Wednesday
-[[./images/wednesday.gif]]
-
-** Thursday
-[[./images/thursday.gif]]
-
-** Friday
-[[./images/friday.gif]]
-
-** Saturday
-[[./images/saturday.gif]]
-
-** Sunday
-[[./images/sunday.gif]]
-
 ** Past
 [[./images/past.gif]]
 
@@ -398,11 +587,14 @@ This variation is used to refer to a numerical value, like the last bus, the las
 ** Later
 [[./images/later.gif]]
 
-** After
-[[./images/after.gif]]
+** Not yet
+[[./images/not-yet.gif]]
 
 ** Before
-Similar to "after", but instead of putting one palm behind the other and moving outwards, put that palm before the other and move it inwards towards your chest.
+[[./images/before.gif]]
+
+** After
+[[./images/after.gif]]
 
 ** Early
 [[./images/early.gif]]
@@ -450,11 +642,14 @@ Similar to variation 2, but use only the index finger. The index finger becomes 
 ** Talk
 [[./images/talk.gif]]
 
+** Communication
+Same motion as "talk", but with the "C" hand sign instead of the index finger.
+
 ** Conversation
 Same motion as "talk", but with 4 fingers instead of just the index finger.
 
-** Communication
-Same motion as "talk", but with the "C" hand sign instead of the index finger.
+** Traffic
+Similar motion to "talk", but with all five fingers outstretched instead of just the index finger, and your hands should be in front of your chest, instead of below your mouth.
 
 ** Text / Message
 
@@ -471,6 +666,9 @@ Same motion as "talk", but with the "C" hand sign instead of the index finger.
 [[./images/meet.gif]]
 
 ** Name
+[[./images/name.gif]]
+
+** Sit
 [[./images/name.gif]]
 
 ** See
@@ -515,7 +713,17 @@ Same as "practice", but with the "T" hand sign instead of the fist.
 ** Work
 [[./images/work.gif]]
 
-** Go
+** Break (verb)
+Break as in to break something.
+
+[[./images/break.gif]]
+
+** Break (noun) / Intermission
+Break as in to take a break.
+
+[[./images/intermission.gif]]
+
+** Go / Went
 [[./images/go.gif]]
 
 ** Buy
@@ -523,6 +731,12 @@ Same as "practice", but with the "T" hand sign instead of the fist.
 
 ** Pay
 Make an open palm with one hand and face it upwards. Form a "P" hand sign with the other hand and flick the middle finger outwards.
+
+** Cost
+[[./images/cost.gif]]
+
+** Dollar
+[[./images/dollar.gif]]
 
 ** Sell
 [[./images/sell.gif]]
@@ -536,11 +750,17 @@ Make two "R" hand signs using both hands with the palm facing outwards, then mov
 ** Love
 [[./images/love.gif]]
 
+** Interpret
+[[./images/interpret.gif]]
+
 ** Translate
 Make the "love" hand gesture, but instead of a closed fist use the "T" hand sign. Your hands should also be in front of your chest, not on your chest. Then rotate your wrists around each other and then expand the "T" hand sign into an index finger pointing to the left and right of you.
 
 ** Win
 Pretend to hold the flag in one hand, then use the other hand to grab it.
+
+** Miss
+Similar motion to "win", but instead of the hand pretending to hold a flag, point an index finger upwards. The other hand tries to grab the index finger but misses.
 
 ** Lose
 Hold an open palm facing up, and touch a "V" hand sign to that open palm.
@@ -554,8 +774,11 @@ Same motion as "make", but form the "M" hand sign instead of a fist.
 ** Lie
 Move your hand underneath your chin with the back of the hand facing your chin.
 
+** Better
+Brush your palm against the bottom of your chin.
+
 ** Program
-Jump a "P" hand sign over the open palm facing inwards with fingers pointing upwards.
+Similar motion to "December", but jump a "P" hand sign instead of a "D" hand sign.
 
 ** Project
 Similar to "program", but instead of continuing with the "P" when the hand is at the back of the palm, do the "J" hand sign instead.
@@ -580,14 +803,31 @@ Make two "F" hand signs with both hands and close them to your chest, then open 
 [[./images/study.gif]]
 
 ** Teach
-[[./images/teacher.gif]]
-The above gesture, but without the agent gesture at the end.
+[[./images/teach.gif]]
 
 ** Law
 Make an L with one hand then tap the L on the fingers of the other palm, followed by tapping the back of the other palm.
 
 ** Course
 Same motion as "law", but use the "C" hand sign instead.
+
+** Assistant
+[[./images/assistant.gif]]
+
+** Boss
+Make the "B" hand sign and hit the near side of your chest with the back of the thumb twice.
+
+** President
+[[./images/president.gif]]
+
+** Doctor
+[[./images/doctor.gif]]
+
+** Secretary
+[[./images/secretary.gif]]
+
+** Accountant
+[[./images/accountant.gif]]
 
 ** Bank
 [[./images/bank.gif]]
@@ -828,6 +1068,9 @@ Similar to the agent gesture, but use two pinkies instead and do it twice.
 ** School
 [[./images/school.gif]]
 
+** Toilet
+Shake the "T" hand sign.
+
 ** Lecture
 Put your open palm facing upwards beside your head and push it outwards twice.
 
@@ -855,9 +1098,6 @@ Touch all fingers to your throat, with the palm facing downwards.
 ** Stupid
 Put the "V" hand sign on your forehead with the palm side facing outwards.
 
-** Drum
-Just act like you're playing a snare drum.
-
 ** Science
 Make two thumbs down and act like you are pouring things into a beaker.
 
@@ -882,6 +1122,12 @@ Same motion as "social", but with the "C" hand sign instead of the "S" hand sign
 ** Mechanical
 Interlock your fingers with each other, thumb pointed upwards and the palm facing towards your body.
 
+** Machine
+Same hand shape as "mechanical", but shake your hands up and down.
+
+** Fax
+[[./images/fax.gif]]
+
 ** Test
 
 *** Variation 1
@@ -896,11 +1142,93 @@ Interlock your fingers with each other, thumb pointed upwards and the palm facin
 ** Rain
 [[./images/rain.gif]]
 
-** Bus
-[[./images/bus.gif]]
-
 ** Play
 [[./images/play.gif]]
 
 ** Game
 [[./images/game.gif]]
+
+** Leaf
+[[./images/leaf.gif]]
+
+** Bus
+[[./images/bus.gif]]
+
+** Drum
+Just act like you're playing a snare drum.
+
+** House
+[[./images/house.gif]]
+
+** Home
+[[./images/home.gif]]
+
+** Floor
+[[./images/floor.gif]]
+
+** Bowl
+[[./images/bowl.gif]]
+
+** Ball
+[[./images/ball.gif]]
+
+** Knob
+[[./images/knob.gif]]
+
+** Clown
+[[./images/clown.gif]]
+
+** Flower
+[[./images/flower.gif]]
+
+** Rose
+Same motion as "flower", but with the "R" hand sign instead of the flattened "O" hand shape.
+
+** Bird
+[[./images/bird.gif]]
+
+** Duck (noun)
+Same motion as "bird", but open and close the all the fingers instead of just the thumb and the index finger.
+
+** Swan
+Place one arm horizontally, with the palm facing downwards. Make the flattened "O" hand shape with the other hand and place the elbow on the back of the other palm, mimicking how a swan looks like.
+
+** Dinosaur
+[[./images/dinosaur.gif]]
+
+There should also be an arm held horizontally under the arm doing the dinosaur hand sign, such that the dinosaur is moving along the arm.
+
+** Point
+Hold one index finger up, pointing upwards, and use the index finger on the other hand to point at it.
+
+** Aim
+[[./images/aim.gif]]
+
+** Table
+[[./images/table.gif]]
+
+** Coffee
+[[./images/coffee.gif]]
+
+** Tea
+[[./images/tea.gif]]
+
+** Stand
+[[./images/stand.gif]]
+
+** Together
+Make two "T" hand signs with both hands and put them together, then draw a horizontal circle with both hands together.
+
+* Places
+
+** Eunos
+[[./images/eunos.gif]]
+
+** New York
+[[./images/new-york.gif]]
+
+** Tokyo
+[[./images/tokyo.gif]]
+
+** Kuala Lumpur
+Just finger spell "KL".
