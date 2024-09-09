@@ -230,6 +230,12 @@ Form the "C" hand sign, then bring your hand to the side while closing the "C" h
 ** Wrong
 [[./images/wrong.gif]]
 
+** Like
+[[./images/like.gif]]
+
+** Dislike
+[[./images/dislike.gif]]
+
 ** Thing
 [[./images/thing.gif]]
 
@@ -244,6 +250,9 @@ Form the "C" hand sign, then bring your hand to the side while closing the "C" h
 
 ** Angry
 [[./images/angry.gif]]
+
+** Stress
+Put both hands beside your head, palm facing your face, and open and close your fingers.
 
 ** Better
 Brush your palm against the bottom of your chin.
@@ -857,6 +866,9 @@ Interlock your fingers with each other, thumb pointed upwards and the palm facin
 
 ** Sky
 [[./images/sky.gif]]
+
+** Rain
+[[./images/rain.gif]]
 
 ** Bus
 [[./images/bus.gif]]
