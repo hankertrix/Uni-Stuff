@@ -271,13 +271,16 @@ This variation is usually used at the start of a sentence, like the formal "What
 
 This variation is usually used at the end of a sentence, like the casual "Your name what?".
 
+** When
+[[./images/when.gif]]
+
 ** Where
 [[./images/where.gif]]
 
 Where is usually used at the end of a sentence, so "Where do you live?" becomes "You live where?".
 
-** When
-[[./images/when.gif]]
+** Why
+[[./images/why.gif]]
 
 ** Which
 [[./images/which.gif]]
@@ -333,6 +336,9 @@ Either finger spell a "TC", or pretend to grab a tissue from a tissue box, then 
 [[./images/if.gif]]
 
 Just finger spell "if".
+
+** Because
+[[./images/because.gif]]
 
 ** And
 [[./images/and.gif]]
@@ -486,12 +492,6 @@ Same motion as the hand sign for "thousand", but instead of the open palm facing
 ** Beside
 [[./images/beside.gif]]
 
-** Left (direction)
-[[./images/left-direction.gif]]
-
-** Right (direction)
-[[./images/right-direction.gif]]
-
 ** Between
 [[./images/between.gif]]
 
@@ -512,12 +512,6 @@ Same motion as the hand sign for "thousand", but instead of the open palm facing
 
 ** Always
 [[./images/always.gif]]
-
-** Far
-[[./images/far.gif]]
-
-** Near
-[[./images/near.gif]]
 
 ** Much
 [[./images/much.gif]]
@@ -543,10 +537,28 @@ The motion of the gesture looks a bit like a question mark. Make sure to shake y
 ** Very
 [[./images/very.gif]]
 
-** Up
+** Near
+[[./images/near.gif]]
+
+** Far
+[[./images/far.gif]]
+
+** Slow
+[[./images/slow.gif]]
+
+** Fast
+[[./images/fast.gif]]
+
+** Left (direction)
+[[./images/left-direction.gif]]
+
+** Right (direction)
+[[./images/right-direction.gif]]
+
+** Up (direction)
 Make the "U" hand sign and move it upwards.
 
-** Down
+** Down (direction)
 Hold up a hand with the palm facing the body and move it downwards.
 
 ** To
@@ -809,8 +821,11 @@ Move your hand underneath your chin with the back of the hand facing your chin.
 ** Better
 Brush your palm against the bottom of your chin.
 
+** Calendar
+[[./images/calendar.gif]]
+
 ** Program
-Similar motion to "December", but jump a "P" hand sign instead of a "D" hand sign.
+Similar motion to "calendar", but jump a "P" hand sign instead of a "C" hand sign.
 
 ** Project
 Similar to "program", but instead of continuing with the "P" when the hand is at the back of the palm, do the "J" hand sign instead.
