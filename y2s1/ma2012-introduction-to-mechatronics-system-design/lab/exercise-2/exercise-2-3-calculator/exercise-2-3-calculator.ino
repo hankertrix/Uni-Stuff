@@ -586,17 +586,17 @@ String parse_infix_expression_to_reverse_polish_notation(char* string) {
             peeked_operator
         );
 
-        Serial.print("Current char: ");
-        Serial.println(current_char);
-
-        Serial.print("Peeked operator: ");
-        Serial.println(peeked_operator);
-
-        Serial.print("Operator precedence of current character: ");
-        Serial.println(current_char_operator_precedence);
-
-        Serial.print("Operator precedence of peeked operator: ");
-        Serial.println(peeked_operator_operator_precedence);
+        // Serial.print("Current char: ");
+        // Serial.println(current_char);
+        //
+        // Serial.print("Peeked operator: ");
+        // Serial.println(peeked_operator);
+        //
+        // Serial.print("Operator precedence of current character: ");
+        // Serial.println(current_char_operator_precedence);
+        //
+        // Serial.print("Operator precedence of peeked operator: ");
+        // Serial.println(peeked_operator_operator_precedence);
 
         // While the operator stack is not empty,
         // and the operator precedence of the
@@ -674,8 +674,8 @@ String parse_infix_expression_to_reverse_polish_notation(char* string) {
         output_string += element;
     }
 
-    Serial.print("Output string: ");
-    Serial.println(output_string);
+    // Serial.print("Output string: ");
+    // Serial.println(output_string);
 
     // Return the output string
     return output_string;
@@ -946,10 +946,6 @@ void setup() {
 
     // Print the welcome message
     LCD.print(" Arduino ready! ");
-
-    Serial.println(parse_infix_expression_to_reverse_polish_notation(
-        "123 A 99 D 3"
-    ));
 }
 
 // The loop function to run the program
