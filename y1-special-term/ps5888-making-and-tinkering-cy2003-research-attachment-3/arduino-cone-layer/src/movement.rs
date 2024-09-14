@@ -7,8 +7,10 @@ use core::iter::Chain;
 use core::iter::Once;
 use heapless::Vec;
 
-use crate::serial::program_stopped;
-use crate::stepper_driver::StepperDriver;
+use crate::{
+    console::println, serial::program_stopped, serial::UsartWriterInterface,
+    stepper_driver::StepperDriver,
+};
 
 /// The radius of the joypad
 /// used for the joystick.
@@ -61,7 +63,7 @@ const JOYSTICK_CONTROL_MAX_SPEED: i16 = 500;
 
 /// The acceleration of the motors
 /// in steps per second squared.
-const ACCELERATION: f32 = 50.0;
+const ACCELERATION: f32 = 1000.0;
 
 /// The maximum speed for laying cones in steps per second
 const MAXIMUM_SPEED_FOR_LAYING_CONES: f32 = 500.0;
@@ -353,6 +355,80 @@ impl MovementHandler {
         self.disable_right_side_motors();
     }
 
+    /// The function to check if the left side motors are enabled
+    pub fn left_side_motors_are_enabled(&self) -> bool {
+        //
+
+        // Initialise the variable to store whether
+        // the left side motors are enabled
+        let mut left_side_motors_enabled = false;
+
+        // Iterate over all of the left side motors
+        for motor in self.left_side_motors.iter() {
+            //
+
+            // If the motor is enabled,
+            // set the left side motors enabled variable to true
+            if motor.is_enabled() {
+                left_side_motors_enabled = true;
+            }
+        }
+
+        // Return the left side motors enabled variable
+        return left_side_motors_enabled;
+    }
+
+    /// The function to check if the right side motors are enabled
+    pub fn right_side_motors_are_enabled(&self) -> bool {
+        //
+
+        // Initialise the variable to store whether
+        // the right side motors are enabled
+        let mut right_side_motors_enabled = false;
+
+        // Iterate over all of the right side motors
+        for motor in self.right_side_motors.iter() {
+            //
+
+            // If the motor is enabled,
+            // set the right side motors enabled variable to true
+            if motor.is_enabled() {
+                right_side_motors_enabled = true;
+            }
+        }
+
+        // Return the right side motors enabled variable
+        return right_side_motors_enabled;
+    }
+
+    /// The function to check if the movement motors are enabled
+    pub fn movement_motors_are_enabled(&self) -> bool {
+        //
+
+        // Get whether the left side motors are enabled
+        let left_side_motors_enabled = self.left_side_motors_are_enabled();
+
+        // Get whether the right side motors are enabled
+        let right_side_motors_enabled = self.right_side_motors_are_enabled();
+
+        // Return if any of the motors are enabled
+        return left_side_motors_enabled || right_side_motors_enabled;
+    }
+
+    /// The function to check if all of the motors are enabled
+    pub fn all_motors_are_enabled(&self) -> bool {
+        //
+
+        // Get whether the movement motors are enabled
+        let movement_motors_enabled = self.movement_motors_are_enabled();
+
+        // Get whether the dispenser motor is enabled
+        let dispenser_motor_enabled = self.dispenser_motor.is_enabled();
+
+        // Return if any of the motors are enabled
+        return movement_motors_enabled || dispenser_motor_enabled;
+    }
+
     /// The function to handle the joystick.
     ///
     /// This function takes two arguments,
@@ -360,8 +436,8 @@ impl MovementHandler {
     /// as f32 floats.
     ///
     /// This function does not block execution, hence
-    /// the run_movement_motors function must be called
-    /// to actually run the movement motors.
+    /// the run_movement_motors_at_constant_speed
+    /// function must be called to actually run the movement motors.
     ///
     /// The enable_movement_motors must be called to enable
     /// the motors before calling this function.
@@ -475,6 +551,11 @@ impl MovementHandler {
             motor_speed + motor_speed_difference
         };
 
+        // Enable the movement motors if they are disabled
+        if !self.movement_motors_are_enabled() {
+            self.enable_movement_motors();
+        }
+
         // If both the left and right side motor speeds are 0,
         // then stop the movement motors and exit the function.
         if left_side_motor_speed == 0 && right_side_motor_speed == 0 {
@@ -514,8 +595,10 @@ impl MovementHandler {
     ) {
         //
 
-        // Enable the dispenser motor
-        self.dispenser_motor.enable();
+        // Enable the dispenser motor if it is disabled
+        if !self.dispenser_motor.is_enabled() {
+            self.dispenser_motor.enable();
+        }
 
         // Set the maximum speed of the dispenser motor
         // to the given dispenser motor speed
@@ -546,8 +629,10 @@ impl MovementHandler {
     ) {
         //
 
-        // Enable all motors
-        self.enable_all_motors();
+        // Enable all motors if they are disabled
+        if !self.all_motors_are_enabled() {
+            self.enable_all_motors();
+        }
 
         // Get the spacing between the cones in centimetres
         // and the number of cones to lay
@@ -648,6 +733,33 @@ impl MovementHandler {
         self.dispenser_motor.disable();
     }
 
+    /// The function to run the movement motors at constant speed
+    pub fn run_movement_motors_at_constant_speed(&mut self) -> bool {
+        //
+
+        // Initialise the variable to store whether any motor is still running
+        let mut any_motor_is_still_running = false;
+
+        // Iterate over all of the movement motors
+        for motor in self.iter_movement_motors() {
+            //
+
+            // Run the motor at constant speed
+            motor.run_at_constant_speed();
+
+            // If the motor still has a distance to go
+            if motor.distance_to_go() != 0 {
+                //
+
+                // Set the any_motor_is_still_running variable to true
+                any_motor_is_still_running = true;
+            }
+        }
+
+        // Return if any of the motors are still running
+        return any_motor_is_still_running;
+    }
+
     /// The function to run all of the motors.
     ///
     /// This function needs to be called as often as
@@ -656,15 +768,18 @@ impl MovementHandler {
         //
 
         // Initialise the variable to store whether any motor is still running
-        let mut any_motor_is_still_running = true;
+        let mut any_motor_is_still_running = false;
 
         // Initialise the variable to store whether
         // all the movement motors have reached their maximum speed
-        let mut all_movement_motors_have_reached_maximum_speed = true;
+        let mut all_movement_motors_have_reached_maximum_speed = false;
 
         // Iterate over all of the movement motors
         for motor in self.iter_movement_motors() {
             //
+
+            // Run the motor
+            motor.run();
 
             // If the motor still has a distance to go
             if motor.distance_to_go() != 0 {

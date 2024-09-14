@@ -96,7 +96,7 @@ fn main() -> ! {
         left_side_motors,
         right_side_motors,
         stepper_driver_z,
-        true,
+        false,
         false,
     );
 
@@ -139,12 +139,13 @@ fn main() -> ! {
         //         .write_number(time_taken_to_reach_maximum_speed as i32);
         //     console_serial_handler.write_string(" microseconds\n");
         //
-        //     // Set the boolean to true to signify that the time has been printed
+        //     // Set the boolean to true to signify that
+        //     // the time has been printed
         //     printed = true;
         // }
 
         // Parse the input from the serial connection
-        let input = handle_input(SerialBufferType::Console);
+        let input = bluetooth_serial_handler.handle_input();
 
         // Match the input
         match input {
@@ -167,7 +168,13 @@ fn main() -> ! {
             None => {}
         }
 
-        // Call the function to run all of the motors
-        movement_handler.run_all_motors();
+        // Call the function to run all of the motors,
+        // and store if any motor is still running
+        let any_motor_is_still_running = movement_handler.run_all_motors();
+
+        // If no motor is still running, disable the motors
+        if !any_motor_is_still_running {
+            movement_handler.disable_all_motors();
+        }
     }
 }

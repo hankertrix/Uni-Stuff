@@ -5,8 +5,11 @@
 // https://github.com/derchr/EQPlatform-Guiding/blob/master/firmware/src/main.rs
 // https://github.com/Rahix/avr-hal/issues/248
 
-use crate::movement::{
-    Command, DropConeArgs, HandleJoystickArgs, LayConesInAStraightLineArgs,
+use crate::{
+    console::println,
+    movement::{
+        Command, DropConeArgs, HandleJoystickArgs, LayConesInAStraightLineArgs,
+    },
 };
 use avr_device::interrupt::Mutex;
 use core::{
@@ -534,9 +537,10 @@ mod serial_isr {
                 // Get the byte
                 let byte = serial_buffer.serial_receiver.read().unwrap();
 
-                // If the byte is the newline character,
+                // If the byte is the newline character
+                // or the backslash character,
                 // set the serial buffer to complete
-                if byte == b'\n' {
+                if byte == b'\n' || byte == b'\\' {
                     serial_buffer.is_complete = true;
                 }
                 //

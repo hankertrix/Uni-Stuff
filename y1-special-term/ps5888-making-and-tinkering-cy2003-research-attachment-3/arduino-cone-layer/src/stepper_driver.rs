@@ -165,10 +165,10 @@ impl Default for StepperDriverState {
             //
 
             // Public variables
-            enabled: true,
+            enabled: false,
             speed: 0.0,
             maximum_speed: 0.0,
-            acceleration: 0.0,
+            acceleration: 1.0,
             current_position: 0,
             target_position: 0,
             minimum_pulse_width_in_us: 1,
@@ -330,7 +330,7 @@ impl StepperDriver {
     pub fn disable(&mut self) {
         stepper_driver_dispatch!(self, |driver| {
             driver.enable_pin.set_high();
-            driver.state.enabled = true;
+            driver.state.enabled = false;
         })
     }
 
