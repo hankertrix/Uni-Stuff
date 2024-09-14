@@ -337,7 +337,7 @@ int get_operator_precedence(volatile char character) {
 }
 
 // The function to print an empty line using the LCD
-void print_empty_line() {
+void lcd_print_empty_line() {
 
     // Initialise an empty line
     char empty_line[KEYPAD_BUFFER_SIZE + 1];
@@ -349,8 +349,8 @@ void print_empty_line() {
     LCD.print(empty_line);
 }
 
-// The function to print in calculator mode
-void print_in_calculator_mode(char* buffer, size_t buffer_length) {
+// The function to print in calculator mode using the LCD
+void lcd_print_in_calculator_mode(char* buffer, size_t buffer_length) {
 
     // Initialise a character array
     // with the same size as the buffer
@@ -823,13 +823,13 @@ void handle_keypad_input() {
             LCD.setCursor(0, 0);
 
             // Print an empty line
-            print_empty_line();
+            lcd_print_empty_line();
 
             // Set the cursor to be on the first column and the second row
             LCD.setCursor(0, 1);
 
             // Print an empty line
-            print_empty_line();
+            lcd_print_empty_line();
 
             // Exit the function
             return;
@@ -846,7 +846,7 @@ void handle_keypad_input() {
         LCD.setCursor(0, 1);
 
         // Print an empty line
-        print_empty_line();
+        lcd_print_empty_line();
 
         // Exit the function
         return;
@@ -854,13 +854,13 @@ void handle_keypad_input() {
 
     // Otherwise, the keypad input buffer is not cleared,
     // so print the string in the keypad input buffer
-    print_in_calculator_mode(KEYPAD_INPUT_BUFFER.buffer, buffer_length);
+    lcd_print_in_calculator_mode(KEYPAD_INPUT_BUFFER.buffer, buffer_length);
 
     // Set the cursor to be on the first column and the second row
     LCD.setCursor(0, 1);
 
     // Print an empty line
-    print_empty_line();
+    lcd_print_empty_line();
 
     // If the buffer is not complete, exit the function
     if (!KEYPAD_INPUT_BUFFER.is_complete) return;
@@ -946,6 +946,10 @@ void setup() {
 
     // Print the welcome message
     LCD.print(" Arduino ready! ");
+
+    Serial.println(parse_infix_expression_to_reverse_polish_notation(
+        "123 A 99 D 3"
+    ));
 }
 
 // The loop function to run the program
