@@ -441,8 +441,8 @@ String parse_infix_expression_to_reverse_polish_notation(char* string) {
         // Get the current character
         char current_char = string[i];
 
-        // If the current character is "E" or "F", continue the loop
-        if (strchr("EF", current_char) != NULL) continue;
+        // If the current character is "E", "F", or a space, continue the loop
+        if (strchr("EF ", current_char) != NULL) continue;
 
         // Otherwise, if the character is not a mathematical operator
         if (strchr("ABCD", current_char) == NULL) {
