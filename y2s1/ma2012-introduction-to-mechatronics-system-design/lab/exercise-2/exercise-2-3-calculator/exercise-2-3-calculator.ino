@@ -627,7 +627,7 @@ char match_character_to_math_symbol(char character) {
 // work properly with the parse_infix_expression_to_reverse_polish_notation
 // function.
 // Printing out any string except for the character
-// variable passed to the function within the function
+// variable passed to the function
 // using Serial.print() or Serial.println() will
 // somehow get the function to work properly within
 // the parse_infix_expression_to_reverse_polish_notation
