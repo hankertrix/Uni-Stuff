@@ -15,7 +15,6 @@
 
 // Include the libraries
 #include <LiquidCrystal.h>
-#include <SimpleStack.h>
 
 // Define the pins
 #define DATA_AVAILABLE_PIN A5
@@ -87,6 +86,306 @@ static LiquidCrystal LCD(
     LCD_DATA_PIN_6,
     LCD_DATA_PIN_7
 );
+
+// The class for an integer stack
+class IntegerStack {
+
+    // Private variables
+    private:
+        int stack_array[KEYPAD_BUFFER_SIZE + 1];
+        int top_ptr;
+
+    // Public functions
+    public:
+
+        // The function to initialise the stack
+        void initialise() {
+
+            // Set the pointer to the top of the stack
+            // to -1 to indicate that the stack is empty
+            top_ptr = -1;
+        }
+
+        // The function to check if the stack is empty
+        // by returning if the pointer to the top of the
+        // stack is -1
+        bool is_empty() {
+            return top_ptr == -1;
+        }
+
+        // The function to check if the stack is full
+        bool is_full() {
+            return top_ptr == sizeof(stack_array);
+        }
+
+        // The function to get the size of the stack,
+        // which is the number of elements in the stack,
+        // which is just the pointer to the top of the stack
+        // plus 1
+        size_t get_size() {
+            return top_ptr + 1;
+        }
+
+        // The function to push an integer onto the stack.
+        // This function returns true if item was pushed
+        // to the stack successfully and false otherwise.
+        bool push(int value) {
+
+            // If the stack is full, return false
+            if (is_full()) return false;
+
+            // Otherwise, increment the top pointer
+            top_ptr++;
+
+            // Push the value onto the stack
+            stack_array[top_ptr] = value;
+        }
+
+        // The function to pop an integer from the stack.
+        // This function returns null if the stack is empty.
+        int pop() {
+
+            // If the stack is empty, return null
+            if (is_empty()) return NULL;
+
+            // Otherwise, get the item at the top of the stack
+            int item = stack_array[top_ptr];
+
+            // Decrement the top pointer
+            top_ptr--;
+
+            // Return the item
+            return item;
+        }
+
+        // The function to peek at the top item on the stack.
+        // This function returns null if the stack is empty.
+        int peek() {
+
+            // If the stack is empty, return null
+            if (is_empty()) return NULL;
+
+            // Otherwise, return the item at the top of the stack
+            return stack_array[top_ptr];
+        }
+
+        // The function to get an item at a given index on the stack.
+        // This function returns null if the index is out of bounds.
+        int get(int index) {
+
+            // If the index is more than the pointer to the top
+            // of the stack, return null
+            if (index > top_ptr) return NULL;
+
+            // If the index is negative, return null
+            if (index < 0) return NULL;
+
+            // Otherwise, return the item at the given index
+            return stack_array[index];
+        }
+};
+
+// The class for a character stack
+class CharacterStack {
+
+    // Private variables
+    private:
+        char stack_array[KEYPAD_BUFFER_SIZE + 1];
+        int top_ptr;
+
+    // Public functions
+    public:
+
+        // The function to initialise the stack
+        void initialise() {
+
+            // Set the pointer to the top of the stack
+            // to -1 to indicate that the stack is empty
+            top_ptr = -1;
+        }
+
+        // The function to check if the stack is empty
+        // by returning if the pointer to the top of the
+        // stack is -1
+        bool is_empty() {
+            return top_ptr == -1;
+        }
+
+        // The function to check if the stack is full
+        bool is_full() {
+            return top_ptr == sizeof(stack_array);
+        }
+
+        // The function to get the size of the stack,
+        // which is the number of elements in the stack,
+        // which is just the pointer to the top of the stack
+        // plus 1
+        size_t get_size() {
+            return top_ptr + 1;
+        }
+
+        // The function to push an integer onto the stack.
+        // This function returns true if item was pushed
+        // to the stack successfully and false otherwise.
+        char push(char value) {
+
+            // If the stack is full, return false
+            if (is_full()) return false;
+
+            // Otherwise, increment the top pointer
+            top_ptr++;
+
+            // Push the value onto the stack
+            stack_array[top_ptr] = value;
+
+            // Return true
+            return true;
+        }
+
+        // The function to pop an integer from the stack.
+        // This function returns null if the stack is empty.
+        char pop() {
+
+            // If the stack is empty, return null
+            if (is_empty()) return NULL;
+
+            // Otherwise, get the item at the top of the stack
+            int item = stack_array[top_ptr];
+
+            // Decrement the top pointer
+            top_ptr--;
+
+            // Return the item
+            return item;
+        }
+
+        // The function to peek at the top item on the stack.
+        // This function returns null if the stack is empty.
+        char peek() {
+
+            // If the stack is empty, return null
+            if (is_empty()) return NULL;
+
+            // Otherwise, return the item at the top of the stack
+            return stack_array[top_ptr];
+        }
+
+        // The function to get an item at a given index on the stack.
+        // This function returns null if the index is out of bounds.
+        char get(int index) {
+
+            // If the index is more than the pointer to the top
+            // of the stack, return null
+            if (index > top_ptr) return NULL;
+
+            // If the index is negative, return null
+            if (index < 0) return NULL;
+
+            // Otherwise, return the item at the given index
+            return stack_array[index];
+        }
+};
+
+// The class for a string stack
+class StringStack {
+
+    // Private variables
+    private:
+        String stack_array[KEYPAD_BUFFER_SIZE + 1];
+        int top_ptr;
+
+    // Public functions
+    public:
+
+        // The function to initialise the stack
+        void initialise() {
+
+            // Set the pointer to the top of the stack
+            // to -1 to indicate that the stack is empty
+            top_ptr = -1;
+        }
+
+        // The function to check if the stack is empty
+        // by returning if the pointer to the top of the
+        // stack is -1
+        bool is_empty() {
+            return top_ptr == -1;
+        }
+
+        // The function to check if the stack is full
+        bool is_full() {
+            return top_ptr == sizeof(stack_array);
+        }
+
+        // The function to get the size of the stack,
+        // which is the number of elements in the stack,
+        // which is just the pointer to the top of the stack
+        // plus 1
+        size_t get_size() {
+            return top_ptr + 1;
+        }
+
+        // The function to push an integer onto the stack.
+        // This function returns true if item was pushed
+        // to the stack successfully and false otherwise.
+        bool push(String value) {
+
+            // If the stack is full, return false
+            if (is_full()) return false;
+
+            // Otherwise, increment the top pointer
+            top_ptr++;
+
+            // Push the value onto the stack
+            stack_array[top_ptr] = value;
+
+            // Return true
+            return true;
+        }
+
+        // The function to pop an integer from the stack.
+        // This function returns null if the stack is empty.
+        String pop() {
+
+            // If the stack is empty, return an empty string
+            if (is_empty()) return String("");
+
+            // Otherwise, get the item at the top of the stack
+            String item = stack_array[top_ptr];
+
+            // Decrement the top pointer
+            top_ptr--;
+
+            // Return the item
+            return item;
+        }
+
+        // The function to peek at the top item on the stack.
+        // This function returns null if the stack is empty.
+        String peek() {
+
+            // If the stack is empty, return an empty string
+            if (is_empty()) return String("");
+
+            // Otherwise, return the item at the top of the stack
+            return stack_array[top_ptr];
+        }
+
+        // The function to get an item at a given index on the stack.
+        // This function returns null if the index is out of bounds.
+        String get(int index) {
+
+            // If the index is more than the pointer to the top
+            // of the stack, return an empty string
+            if (index > top_ptr) return String("");
+
+            // If the index is negative, return an empty string
+            if (index < 0) return String("");
+
+            // Otherwise, return the item at the given index
+            return stack_array[index];
+        }
+};
 
 // Function to convert a string containing just one character
 // to a single character
@@ -321,6 +620,11 @@ char match_character_to_math_symbol(char character) {
 // The character passed to the function has to
 // be marked as volatile to prevent the compiler
 // from optimising the function.
+// This function can also be changed to use
+// if else statements instead of a switch statement
+// to fix the bug, as somehow if else statements
+// work properly but the switch statement doesn't
+// work unless the volatile keyword is used.
 int get_operator_precedence(volatile char character) {
     switch (character) {
         case 'A':
@@ -420,11 +724,17 @@ String parse_infix_expression_to_reverse_polish_notation(char* string) {
     // Get the length of the string
     size_t length = strlen(string);
 
-    // Initialise a character stack to store the operators
-    SimpleStack<char> operator_stack(length + 1);
+    // Create a character stack to store the operators
+    CharacterStack operator_stack;
 
-    // Initialise the output stack to store the output
-    SimpleStack<String> output_stack(length + 1);
+    // Initialise the operator stack
+    operator_stack.initialise();
+
+    // Create the output stack to store the output
+    StringStack output_stack;
+
+    // Initialise the output stack
+    output_stack.initialise();
 
     // Initialise the number character array to store the number
     char number_char_array[length + 1];
@@ -485,12 +795,8 @@ String parse_infix_expression_to_reverse_polish_notation(char* string) {
         // Reset the number index to 0
         number_char_array_index = 0;
 
-        // Initialise the variable to store the
-        // operator at the top of the operator stack
-        char peeked_operator;
-
         // Get the operator at the top of the operator stack
-        operator_stack.peek(&peeked_operator);
+        char peeked_operator = operator_stack.peek();
 
         // If the number string is empty,
         // which means there are two operators back to back
@@ -541,12 +847,9 @@ String parse_infix_expression_to_reverse_polish_notation(char* string) {
             // and the peeked operator is a plus (+)
             if (current_char_symbol == '-' && peeked_operator_symbol == '+') {
 
-                // Initialise the variable to store the popped operator
-                char popped_operator;
-
                 // Pop the top operator off the operator stack,
                 // which is the peaked operator, a plus (+)
-                operator_stack.pop(&popped_operator);
+                operator_stack.pop();
 
                 // Push the current operator to the operator stack,
                 // which is a minus (-)
@@ -560,12 +863,9 @@ String parse_infix_expression_to_reverse_polish_notation(char* string) {
             // and the peeked operator are both minuses (-)
             if (current_char_symbol == '-' && peeked_operator_symbol == '-') {
 
-                // Initialise the variable to store the popped operator
-                char popped_operator;
-
                 // Pop the top operator off the operator stack
                 // which is the peaked operator, a minus (-)
-                operator_stack.pop(&popped_operator);
+                operator_stack.pop();
 
                 // Push a character 'A' to the operator stack
                 // for plus (+)
@@ -586,17 +886,17 @@ String parse_infix_expression_to_reverse_polish_notation(char* string) {
             peeked_operator
         );
 
-        // Serial.print("Current char: ");
-        // Serial.println(current_char);
-        //
-        // Serial.print("Peeked operator: ");
-        // Serial.println(peeked_operator);
-        //
-        // Serial.print("Operator precedence of current character: ");
-        // Serial.println(current_char_operator_precedence);
-        //
-        // Serial.print("Operator precedence of peeked operator: ");
-        // Serial.println(peeked_operator_operator_precedence);
+        Serial.print("Current char: ");
+        Serial.println(current_char);
+
+        Serial.print("Peeked operator: ");
+        Serial.println(peeked_operator);
+
+        Serial.print("Operator precedence of current character: ");
+        Serial.println(current_char_operator_precedence);
+
+        Serial.print("Operator precedence of peeked operator: ");
+        Serial.println(peeked_operator_operator_precedence);
 
         // While the operator stack is not empty,
         // and the operator precedence of the
@@ -604,16 +904,13 @@ String parse_infix_expression_to_reverse_polish_notation(char* string) {
         // to the operator precedence of the operator
         // on the operator stack
         while (
-            !operator_stack.isEmpty() &&
+            !operator_stack.is_empty() &&
             current_char_operator_precedence <=
             peeked_operator_operator_precedence
         ) {
 
-            // Initialise the variable to store the popped operator
-            char popped_operator;
-
             // Pop the operator onto the output stack
-            operator_stack.pop(&popped_operator);
+            char popped_operator = operator_stack.pop();
 
             // Push the popped operator to the output stack
             output_stack.push(String(popped_operator));
@@ -640,13 +937,10 @@ String parse_infix_expression_to_reverse_polish_notation(char* string) {
 
     // While there are still operators in the operator stack,
     // push the operators to the output stack
-    while (!operator_stack.isEmpty()) {
-
-        // Initialise the variable to store the popped operator
-        char popped_operator;
+    while (!operator_stack.is_empty()) {
 
         // Get the popped operator
-        operator_stack.pop(&popped_operator);
+        char popped_operator = operator_stack.pop();
 
         // Push the popped operator to the output stack
         output_stack.push(String(popped_operator));
@@ -656,16 +950,13 @@ String parse_infix_expression_to_reverse_polish_notation(char* string) {
     String output_string = String("");
 
     // Get the size of the output stack
-    size_t output_stack_size = output_stack.getSize();
+    size_t output_stack_size = output_stack.get_size();
 
     // Iterate over the output stack
     for (int i = 0; i < output_stack_size; ++i) {
 
-        // Initialise the element on the stack
-        String element;
-
         // Get the element at the index
-        output_stack.get(i, &element);
+        String element = output_stack.get(i);
 
         // Add a space to the output string
         output_string += " ";
@@ -674,8 +965,8 @@ String parse_infix_expression_to_reverse_polish_notation(char* string) {
         output_string += element;
     }
 
-    // Serial.print("Output string: ");
-    // Serial.println(output_string);
+    Serial.print("Output string: ");
+    Serial.println(output_string);
 
     // Return the output string
     return output_string;
@@ -687,8 +978,11 @@ int evaluate_reverse_polish_notation_expression(String expression) {
     // Get the length of the string
     size_t length = expression.length();
 
-    // Initialise an integer stack to store the numbers
-    SimpleStack<int> number_stack(length + 1);
+    // Create an integer stack to store the numbers
+    IntegerStack number_stack;
+
+    // Initialise the number stack
+    number_stack.initialise();
 
     // Initialise the character array of the expression
     char expression_char_array[length + 1];
@@ -748,13 +1042,9 @@ int evaluate_reverse_polish_notation_expression(String expression) {
 
         // Otherwise, the mathematical operator exists
 
-        // Initialise the variables to store the two numbers
-        int first_number;
-        int second_number;
-
         // Pop the first two numbers off the number stack
-        number_stack.pop(&first_number);
-        number_stack.pop(&second_number);
+        int first_number = number_stack.pop();
+        int second_number = number_stack.pop();
 
         // Get the result of the mathematical operation
         int result = math_op(second_number, first_number);
@@ -767,17 +1057,14 @@ int evaluate_reverse_polish_notation_expression(String expression) {
     }
 
     // Get the size of the number stack
-    size_t number_stack_size = number_stack.getSize();
+    size_t number_stack_size = number_stack.get_size();
 
     // If the number stack size is not 1,
     // return NULL as there is a syntax error
     if (number_stack_size != 1) return NULL;
 
-    // Initialise the result variable
-    int result;
-
     // Get the result by popping off the number stack
-    number_stack.pop(&result);
+    int result = number_stack.pop();
 
     // Return the result
     return result;
