@@ -29,6 +29,7 @@
 // The following code is for the main Arduino
 // that isn't connected to circuit 2B, i.e. MCU1.
 
+// Include the libraries
 #include <SoftwareSerial.h>
 
 // Define the pins
@@ -56,7 +57,7 @@ void setup() {
     // Set up the output pins
     pinMode(TX_PIN, OUTPUT);
 
-    // Initialise the serial connection
+    // Initialise the serial connections
     Serial.begin(9600);
     arduino_serial.begin(9600);
 }
@@ -64,16 +65,11 @@ void setup() {
 // The main loop function
 void loop() {
 
-    delay(1000);
-
     // Read the value from the potentiometer
     int potentiometer_value = analogRead(POTENTIOMETER_PIN);
 
     // Convert the potentiometer value to a voltage
     float voltage = potentiometer_value * VOLTAGE_RESOLUTION;
-
-    Serial.print("Voltage: ");
-    Serial.println(voltage);
 
     // Write the voltage to the serial connection
     arduino_serial.println(voltage);
@@ -83,8 +79,6 @@ void loop() {
 
         // Read the character
         char character = arduino_serial.read();
-
-        Serial.println((int) character);
 
         // If the character is valid,
         // push the character to the buffer

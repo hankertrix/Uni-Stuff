@@ -60,7 +60,7 @@ void setup() {
     // Set up the output pins
     pinMode(TX_PIN, OUTPUT);
 
-    // Initialise the serial connection
+    // Initialise the serial connections
     Serial.begin(9600);
     arduino_serial.begin(9600);
 }
@@ -74,9 +74,6 @@ void loop() {
     // Convert the potential divider value to a voltage
     float potential_divider_voltage =
         potential_divider_value * VOLTAGE_RESOLUTION;
-
-    Serial.print("Potential divider voltage: ");
-    Serial.println(potential_divider_voltage);
 
     // While the arduino serial has data available
     while (arduino_serial.available()) {
@@ -110,9 +107,6 @@ void loop() {
     // Otherwise, convert the character buffer to a float
     float given_voltage = atof(voltage_string);
 
-    Serial.print("Given voltage: ");
-    Serial.println(given_voltage);
-
     // Clear the character buffer
     character_buffer = "";
 
@@ -121,10 +115,6 @@ void loop() {
         given_voltage >= potential_divider_voltage - 0.1 &&
         given_voltage <= potential_divider_voltage + 0.1
     ) {
-
-        Serial.println("Sending BINGO");
-
-        arduino_serial.write("B");
 
         // Send the word BINGO to the other Arduino
         arduino_serial.write("BINGO\n");
