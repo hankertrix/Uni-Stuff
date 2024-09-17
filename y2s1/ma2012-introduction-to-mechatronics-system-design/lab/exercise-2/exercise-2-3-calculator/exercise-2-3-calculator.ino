@@ -624,7 +624,17 @@ char match_character_to_math_symbol(char character) {
 // if else statements instead of a switch statement
 // to fix the bug, as somehow if else statements
 // work properly but the switch statement doesn't
-// work unless the volatile keyword is used.
+// work properly with the parse_infix_expression_to_reverse_polish_notation
+// function.
+// Printing out any string except for the character
+// variable passed to the function within the function
+// using Serial.print() or Serial.println() will
+// somehow get the function to work properly within
+// the parse_infix_expression_to_reverse_polish_notation
+// function.
+// This function works as expected, without the volatile keyword
+// and without any changes when it is used outside of the
+// parse_infix_expression_to_reverse_polish_notation function.
 int get_operator_precedence(volatile char character) {
     switch (character) {
         case 'A':
