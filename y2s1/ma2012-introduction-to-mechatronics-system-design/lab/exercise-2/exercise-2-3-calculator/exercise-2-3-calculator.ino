@@ -139,14 +139,19 @@ class IntegerStack {
 
             // Push the value onto the stack
             stack_array[top_ptr] = value;
+
+            // Return true
+            return true;
         }
 
         // The function to pop an integer from the stack.
-        // This function returns null if the stack is empty.
+        // This function returns the minimum value of the integer type
+        // if the stack is empty.
         int pop() {
 
-            // If the stack is empty, return null
-            if (is_empty()) return NULL;
+            // If the stack is empty,
+            // return the minimum value of the integer type
+            if (is_empty()) return INT16_MIN;
 
             // Otherwise, get the item at the top of the stack
             int item = stack_array[top_ptr];
@@ -159,26 +164,30 @@ class IntegerStack {
         }
 
         // The function to peek at the top item on the stack.
-        // This function returns null if the stack is empty.
+        // This function return the minimum value of the integer type
+        // if the stack is empty.
         int peek() {
 
-            // If the stack is empty, return null
-            if (is_empty()) return NULL;
+            // If the stack is empty,
+            // return the minimum value of the integer type
+            if (is_empty()) return INT16_MIN;
 
             // Otherwise, return the item at the top of the stack
             return stack_array[top_ptr];
         }
 
         // The function to get an item at a given index on the stack.
-        // This function returns null if the index is out of bounds.
+        // This function returns the minimum value of the integer type
+        // if the index is out of bounds.
         int get(int index) {
 
             // If the index is more than the pointer to the top
-            // of the stack, return null
-            if (index > top_ptr) return NULL;
+            // of the stack, return the minimum value of the integer type
+            if (index > top_ptr) return INT16_MIN;
 
-            // If the index is negative, return null
-            if (index < 0) return NULL;
+            // If the index is negative,
+            // return the minimum value of the integer type
+            if (index < 0) return INT16_MIN;
 
             // Otherwise, return the item at the given index
             return stack_array[index];
@@ -243,11 +252,11 @@ class CharacterStack {
         }
 
         // The function to pop an integer from the stack.
-        // This function returns null if the stack is empty.
+        // This function returns a null byte if the stack is empty.
         char pop() {
 
-            // If the stack is empty, return null
-            if (is_empty()) return NULL;
+            // If the stack is empty, return a null byte
+            if (is_empty()) return '\0';
 
             // Otherwise, get the item at the top of the stack
             int item = stack_array[top_ptr];
@@ -263,8 +272,8 @@ class CharacterStack {
         // This function returns null if the stack is empty.
         char peek() {
 
-            // If the stack is empty, return null
-            if (is_empty()) return NULL;
+            // If the stack is empty, return a null byte
+            if (is_empty()) return '\0';
 
             // Otherwise, return the item at the top of the stack
             return stack_array[top_ptr];
@@ -275,11 +284,11 @@ class CharacterStack {
         char get(int index) {
 
             // If the index is more than the pointer to the top
-            // of the stack, return null
-            if (index > top_ptr) return NULL;
+            // of the stack, return a null byte
+            if (index > top_ptr) return '\0';
 
-            // If the index is negative, return null
-            if (index < 0) return NULL;
+            // If the index is negative, return a null byte
+            if (index < 0) return '\0';
 
             // Otherwise, return the item at the given index
             return stack_array[index];
@@ -395,9 +404,9 @@ char convert_string_to_char(char* string) {
     size_t length = strlen(string);
 
     // If the length is not 1,
-    // then return NULL
+    // then return a null byte
     if (length != 1) {
-        return NULL;
+        return '\0';
     }
 
     // Otherwise, return the character
@@ -432,7 +441,7 @@ void clear_keypad_input_buffer() {
 void push_char_to_buffer(char character, char* buffer, size_t buffer_size) {
 
     // Iterate over the buffer
-    for (int i = 0; i < buffer_size - 2; ++i) {
+    for (int i = 0; i < (int) buffer_size - 2; ++i) {
 
         // Set the next character to the current character
         buffer[i] = buffer[i + 1];
@@ -617,25 +626,7 @@ char match_character_to_math_symbol(char character) {
 }
 
 // The function to get the operator precedence.
-// The character passed to the function has to
-// be marked as volatile to prevent the compiler
-// from optimising the function.
-// This function can also be changed to use
-// if else statements instead of a switch statement
-// to fix the bug, as somehow if else statements
-// work properly but the switch statement doesn't
-// work properly with the parse_infix_expression_to_reverse_polish_notation
-// function.
-// Printing out any string except for the character
-// variable passed to the function
-// using Serial.print() or Serial.println() will
-// somehow get the function to work properly within
-// the parse_infix_expression_to_reverse_polish_notation
-// function.
-// This function works as expected, without the volatile keyword
-// and without any changes when it is used outside of the
-// parse_infix_expression_to_reverse_polish_notation function.
-int get_operator_precedence(volatile char character) {
+int get_operator_precedence(char character) {
     switch (character) {
         case 'A':
             return 1;
@@ -671,7 +662,7 @@ void lcd_print_in_calculator_mode(char* buffer, size_t buffer_length) {
     char string_to_print[buffer_length + 1];
 
     // Iterate over the buffer
-    for (int i = 0; i < buffer_length; ++i) {
+    for (int i = 0; i < (int) buffer_length; ++i) {
 
         // Get the current character
         char current_char = buffer[i];
@@ -703,36 +694,12 @@ void lcd_print_in_calculator_mode(char* buffer, size_t buffer_length) {
     LCD.print(string_to_print);
 }
 
-// The function to slice a character array.
-// The slice does not include the end.
-char* slice_char_array(char* array, size_t start, size_t end) {
-
-    // Initialise the size of the sliced array
-    size_t sliced_array_size = end - start + 1;
-
-    // Initialise the sliced array
-    char sliced_array[sliced_array_size];
-
-    // Iterate over the array from the start to the end
-    for (int i = start; i < end; ++i) {
-
-        // Add the current character to the sliced array
-        sliced_array[i] = array[i];
-    }
-
-    // Set the last character to the null terminator
-    sliced_array[sliced_array_size - 1] = '\0';
-
-    // Return the sliced array
-    return sliced_array;
-}
-
 // The function to parse an infix expression to
 // a reverse polish notation expression (RPN)
 String parse_infix_expression_to_reverse_polish_notation(char* string) {
 
     // Get the length of the string
-    size_t length = strlen(string);
+    int length = strlen(string);
 
     // Create a character stack to store the operators
     CharacterStack operator_stack;
@@ -756,7 +723,7 @@ String parse_infix_expression_to_reverse_polish_notation(char* string) {
     int number_char_array_index = 0;
 
     // Iterate over the string
-    for (int i; i < length; ++i) {
+    for (int i = 0; i < length; ++i) {
 
         // Get the current character
         char current_char = string[i];
@@ -896,18 +863,6 @@ String parse_infix_expression_to_reverse_polish_notation(char* string) {
             peeked_operator
         );
 
-        Serial.print("Current char: ");
-        Serial.println(current_char);
-
-        Serial.print("Peeked operator: ");
-        Serial.println(peeked_operator);
-
-        Serial.print("Operator precedence of current character: ");
-        Serial.println(current_char_operator_precedence);
-
-        Serial.print("Operator precedence of peeked operator: ");
-        Serial.println(peeked_operator_operator_precedence);
-
         // While the operator stack is not empty,
         // and the operator precedence of the
         // current operator is less than or equal
@@ -960,7 +915,7 @@ String parse_infix_expression_to_reverse_polish_notation(char* string) {
     String output_string = String("");
 
     // Get the size of the output stack
-    size_t output_stack_size = output_stack.get_size();
+    int output_stack_size = output_stack.get_size();
 
     // Iterate over the output stack
     for (int i = 0; i < output_stack_size; ++i) {
@@ -974,9 +929,6 @@ String parse_infix_expression_to_reverse_polish_notation(char* string) {
         // Append the element to the output string
         output_string += element;
     }
-
-    Serial.print("Output string: ");
-    Serial.println(output_string);
 
     // Return the output string
     return output_string;
@@ -1026,8 +978,8 @@ int evaluate_reverse_polish_notation_expression(String expression) {
         // so try to convert the token into a character
         char character = convert_string_to_char(token);
 
-        // If the character is NULL
-        if (character == NULL) {
+        // If the character is the null byte
+        if (character == '\0') {
 
             // Get the next token
             token = strtok(NULL, " ");
@@ -1070,8 +1022,8 @@ int evaluate_reverse_polish_notation_expression(String expression) {
     size_t number_stack_size = number_stack.get_size();
 
     // If the number stack size is not 1,
-    // return NULL as there is a syntax error
-    if (number_stack_size != 1) return NULL;
+    // return the minimum value of the integer type as there is a syntax error
+    if (number_stack_size != 1) return INT16_MIN;
 
     // Get the result by popping off the number stack
     int result = number_stack.pop();
@@ -1174,8 +1126,8 @@ void handle_keypad_input() {
         reverse_polish_notation_result
     );
 
-    // If the result is not NULL
-    if (result != NULL) {
+    // If the result is not the minimum value of the integer type
+    if (result != INT16_MIN) {
 
         // Initialise the string to store the result
         char result_string[buffer_length + 1];
