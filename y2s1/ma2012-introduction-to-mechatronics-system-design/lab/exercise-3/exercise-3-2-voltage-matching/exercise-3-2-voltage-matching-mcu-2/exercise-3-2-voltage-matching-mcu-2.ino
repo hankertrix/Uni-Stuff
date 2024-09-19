@@ -36,12 +36,19 @@
 #define POTENTIAL_DIVIDER_OUTPUT_PIN A0
 #define TX_PIN 9
 #define RX_PIN 8
+#define LED_PIN 13
 
 // Define the voltage resolution
 #define VOLTAGE_RESOLUTION (5 - 0) / (pow(2, 10) - 1)
 
-// Define the character buffer size
-#define CHARACTER_BUFFER_SIZE 30
+// Initialise the duration between blinks in milliseconds
+const int blink_duration_ms = 200;
+
+// Initialise the previous blink time in milliseconds
+static unsigned long previous_blink_time = 0;
+
+// Initialise the LED state
+static int led_state = HIGH;
 
 // Initialise the character buffer to store the incoming bytes
 static String character_buffer = "";
@@ -58,11 +65,37 @@ void setup() {
     pinMode(RX_PIN, INPUT);
 
     // Set up the output pins
+    pinMode(LED_PIN, OUTPUT);
     pinMode(TX_PIN, OUTPUT);
 
     // Initialise the serial connections
     Serial.begin(9600);
     arduino_serial.begin(9600);
+}
+
+// The function to blink the on-board LED
+void blink_led() {
+
+    // Get the current number of milliseconds
+    unsigned long current_millis = millis();
+
+    // If the current number of milliseconds minus
+    // the previous blink time is greater than or equal to
+    // the duration between blinks, blink the on-board LED
+    if (current_millis - previous_blink_time >= blink_duration_ms) {
+
+        // If the LED state is HIGH, set the LED state to LOW
+        if (led_state == HIGH) led_state = LOW;
+
+        // Otherwise, set the LED state to HIGH
+        else led_state = HIGH;
+
+        // Write the LED state to the on-board LED
+        digitalWrite(LED_PIN, led_state);
+
+        // Set the previous blink time to the current number of milliseconds
+        previous_blink_time = millis();
+    }
 }
 
 // The main loop function
@@ -110,11 +143,14 @@ void loop() {
     // Clear the character buffer
     character_buffer = "";
 
-    // If the voltage value is 2.5V +- 0.1V
+    // If the voltage value is the potential divider voltage +- 0.1V
     if (
         given_voltage >= potential_divider_voltage - 0.1 &&
         given_voltage <= potential_divider_voltage + 0.1
     ) {
+
+        // Blink the on-board LED
+        blink_led();
 
         // Send the word BINGO to the other Arduino
         arduino_serial.write("BINGO\n");
