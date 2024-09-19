@@ -76,26 +76,29 @@ void setup() {
 // The function to blink the on-board LED
 void blink_led() {
 
-    // Get the current number of milliseconds
-    unsigned long current_millis = millis();
+    // Get the current time
+    unsigned long current_time = millis();
 
     // If the current number of milliseconds minus
-    // the previous blink time is greater than or equal to
-    // the duration between blinks, blink the on-board LED
-    if (current_millis - previous_blink_time >= blink_duration_ms) {
-
-        // If the LED state is HIGH, set the LED state to LOW
-        if (led_state == HIGH) led_state = LOW;
-
-        // Otherwise, set the LED state to HIGH
-        else led_state = HIGH;
-
-        // Write the LED state to the on-board LED
-        digitalWrite(LED_PIN, led_state);
-
-        // Set the previous blink time to the current number of milliseconds
-        previous_blink_time = millis();
+    // the previous blink time is less than
+    // the duration between blinks, exit the function
+    if (current_time - previous_blink_time < blink_duration_ms) {
+        return;
     }
+
+    // Otherwise, blink the on-board LED
+
+    // If the LED state is HIGH, set the LED state to LOW
+    if (led_state == HIGH) led_state = LOW;
+
+    // Otherwise, set the LED state to HIGH
+    else led_state = HIGH;
+
+    // Write the LED state to the on-board LED
+    digitalWrite(LED_PIN, led_state);
+
+    // Set the previous blink time to the current number of milliseconds
+    previous_blink_time = millis();
 }
 
 // The main loop function
@@ -108,7 +111,7 @@ void loop() {
     float potential_divider_voltage =
         potential_divider_value * VOLTAGE_RESOLUTION;
 
-    // While the arduino serial has data available
+    // While the Arduino serial has data available
     while (arduino_serial.available()) {
 
         // Read the character
