@@ -31,6 +31,9 @@ Intensity is shown by varying the intensity or speed with which a sign is made o
 3. Smart becomes brilliant when the sign is exaggerated.
 4. Pretty becomes beautiful when the sign is exaggerated.
 
+** Initialised sign
+An initialised sign is a sign that uses a letter of the English alphabet in its gesture, usually the first letter of the word.
+
 * Alphabet
 
 ** American sign language
@@ -252,6 +255,9 @@ Move the "Y" hand sign front and back.
 
 The "yes" gesture must include the head nod together with the hand gesture.
 
+** Yeah
+Make the "Y" hand sign with both hands with palm facing down, then shake them side to side.
+
 ** No
 [[./images/no.gif]]
 
@@ -265,6 +271,9 @@ Just finger spell the word "hi".
 
 ** Goodbye
 Wave goodbye.
+
+** While
+Do the "W" hand sign with both hands, and with palms facing each other. Place them at the side of your body, with one hand in front of the other, and then move them outwards.
 
 ** Who
 [[./images/who.gif]]
@@ -361,9 +370,6 @@ Show the thumbs up sign.
 ** Nice / Clean (depends on context)
 [[./images/nice.gif]]
 
-** Fine
-[[./images/fine.gif]]
-
 ** Happy
 [[./images/happy.gif]]
 
@@ -385,6 +391,20 @@ Pretend to grab a stick.
 ** Take
 Pretend to grab a tissue from a tissue box with all fingers.
 
+** Get
+[[./images/get.gif]]
+
+** Pick
+[[./images/pick.gif]]
+
+** Choose
+
+*** Variation 1
+[[./images/choose-variation-a.gif]]
+
+*** Variation 2
+[[./images/choose-variation-b.gif]]
+
 ** Put
 Pretend to hold on to something flat like a file and put it into a box.
 
@@ -398,6 +418,9 @@ Just finger spell "TC".
 
 *** Variation 2
 Do the gesture for "take", then followed by "care".
+
+** So
+[[./images/so.gif]]
 
 ** Because
 [[./images/because.gif]]
@@ -432,10 +455,6 @@ Shake your head when doing this gesture.
 ** Will
 [[./images/will.gif]]
 
-** Should
-
-** Might
-
 ** Do
 [[./images/do.gif]]
 
@@ -452,7 +471,12 @@ Shake your head when doing this gesture.
 [[./images/favourite.gif]]
 
 ** Like
-[[./images/like.gif]]
+
+*** Variation 1
+[[./images/like-variation-a.gif]]
+
+*** Variation 2
+[[./images/like-variation-b.gif]]
 
 ** Dislike
 [[./images/dislike.gif]]
@@ -494,6 +518,9 @@ Just do the gesture for "every" then followed by "thing".
 ** Angry
 [[./images/angry.gif]]
 
+** Tired
+[[./images/tired.gif]]
+
 ** Stress
 Put both hands beside your head, palm facing your face, and open and close your fingers.
 
@@ -502,6 +529,9 @@ Make two "O" hand signs with both hands and bring them together.
 
 ** Less
 [[./images/less.gif]]
+
+** Least
+Do the gesture for "less", then make two hands into the thumbs up sign, and slide one hand against the other, moving directly upwards.
 
 ** All
 [[./images/all.gif]]
@@ -564,6 +594,9 @@ Put one hand horizontally in front of you with the palm facing down. Then, make 
 
 Just put one hand on top of the other hand.
 
+** Flat (noun)
+Do the gesture for "on", then bring your hand upwards while changing from an open palm to the "F" hand sign.
+
 ** Off
 [[./images/off.gif]]
 
@@ -596,17 +629,25 @@ Make two "F" hand signs with both hands, then close the circular part of the han
 ** At
 Same motion as the hand sign for "thousand", but instead of the open palm facing the other hand, point the open palm forward and the fingers on the other hand should contact the back of the palm instead.
 
-** Same
-[[./images/same.gif]]
+** Same / Similar / Alike / Like
 
-** Different
+*** Variation 1
+[[./images/same-variation-a.gif]]
+
+*** Variation 2
+[[./images/same-variation-b.gif]]
+
+** Different / But
 [[./images/different.gif]]
 
 ** Just
 [[./images/just.gif]]
 
 ** Example
-Similar to "just", but instead of facing the palm outwards, face the palm to the side and place an "E" hand sign with the palm facing outwards.
+[[./images/example.gif]]
+
+** Evaluate
+[[./images/evaluate.gif]]
 
 ** About
 [[./images/about.gif]]
@@ -627,6 +668,7 @@ Similar to "just", but instead of facing the palm outwards, face the palm to the
 [[./images/from.gif]]
 
 ** Away
+[[./images/away.gif]]
 
 ** Always
 [[./images/always.gif]]
@@ -642,6 +684,9 @@ Similar to "just", but instead of facing the palm outwards, face the palm to the
 *** Variation 2
 [[./images/many-variation-b.gif]]
 
+** Ever
+Similar motion to "Monday", but instead of the "M" hand sign, do the "E" hand sign.
+
 ** Never
 [[./images/never-diagram.gif]]
 
@@ -649,8 +694,17 @@ Similar to "just", but instead of facing the palm outwards, face the palm to the
 
 The motion of the gesture looks a bit like a question mark. Make sure to shake your head when doing this gesture.
 
+** Weather
+Same motion as "never", but use the "W" hand sign instead of the open palm.
+
+** Season
+Same motion as "never", but use the "S" hand sign instead of the open palm.
+
 ** Very
 [[./images/very.gif]]
+
+** Really
+[[./images/really.gif]]
 
 ** Near
 [[./images/near.gif]]
@@ -663,6 +717,9 @@ The motion of the gesture looks a bit like a question mark. Make sure to shake y
 
 ** Fast
 [[./images/fast.gif]]
+
+** Turn
+Hold up an index finger pointing upwards. To turn left, move a flat palm with the palm facing the index finger and turn left after the palm passes the finger. To turn right, move a flat palm with the back of the palm facing the index finger and turn right after the palm passes the finger.
 
 ** Left (direction)
 [[./images/left-direction.gif]]
@@ -708,6 +765,12 @@ Hold up a hand with the palm facing the body and move it downwards. Alternativel
 ** Year
 Similar to "world", but with a closed fist instead of the "W" hand sign.
 
+** Types
+Similar to "world", but with a "T" hand sign instead of the "W" hand sign.
+
+** Kind
+Similar to "world", but with a "K" hand sign instead of the "W" hand sign.
+
 ** Past
 [[./images/past.gif]]
 
@@ -746,6 +809,9 @@ This variation is used to refer to a numerical value, like the last bus, the las
 ** After
 [[./images/after.gif]]
 
+** Send
+Similar motion to "after", but for the hand on the outside, the fingers should be pointing downwards instead of to the side.
+
 ** Early
 
 *** Variation 1
@@ -764,9 +830,10 @@ This variation is used to refer to a numerical value, like the last bus, the las
 [[./images/start.gif]]
 
 ** End
+Hold one hand with the palm facing inwards. With the other hand, form the "E" hand sign and move it on top of the hand and then downwards, like tracing half of a rectangle around the other hand.
 
 ** Next
-Jump one palm over the other like jumping a fence. Both palms should be open with the palm facing towards the body.
+[[./images/next.gif]]
 
 ** Again
 [[./images/again.gif]]
@@ -799,11 +866,20 @@ Similar to variation 2, but use only the index finger. The index finger becomes 
 ** Gossip
 [[./images/gossip.gif]]
 
+** Convince
+[[./images/convince.gif]]
+
+** Offend
+Hold one arm at a 45-degree angle, with the elbow being lower than the hand. The palm of this hand should be facing down. The other hand forms the "O" hand sign and slides it down the outside of the arm.
+
 ** Talk
 [[./images/talk.gif]]
 
 ** Communication
 Same motion as "talk", but with the "C" hand sign instead of the index finger.
+
+** Interview
+Same motion as "talk", but with the "I" hand sign instead of the index finger.
 
 ** Conversation
 Same motion as "talk", but with 4 fingers instead of just the index finger.
@@ -812,9 +888,7 @@ Same motion as "talk", but with 4 fingers instead of just the index finger.
 Similar motion to "talk", but with all five fingers outstretched instead of just the index finger, and your hands should be in front of your chest, instead of below your mouth.
 
 ** Malay
-Similar motion to "traffic", but have your hands beside your cheeks.
-
-** Send
+Similar motion to "traffic", but have your hands beside the top of your head and your fingers close together instead of expanded out.
 
 ** Text / Message
 
@@ -827,10 +901,10 @@ Similar motion to "traffic", but have your hands beside your cheeks.
 ** Hope
 
 *** Variation 1
-Make two "R" signs with both palms facing towards each other and move them outwards twice.
+[[./images/hope-variation-a.gif]]
 
 *** Variation 2
-Make two open palms that face each other, then bring the fingers downwards such that the fingers are pointing at each other.
+[[./images/hope-variation-b.gif]]
 
 ** Report
 Similar motion to "hope", but do it once, and position your hands below your mouth.
@@ -861,11 +935,20 @@ Make the "V" hand sign, but with the back of the palm facing outwards, and put i
 ** Recap
 Same motion as "see", but move the "V" hand sign back after you move it outwards.
 
+** Look
+Same motion as "see", but with the "L" hand sign and the palm facing outwards.
+
+** Find
+[[./images/find.gif]]
+
 ** Must / Need / Have to / Require / Necessary / Compulsory
 [[./images/must.gif]]
 
 ** Shall / Should
 Same motion as "must", but do it lightly and do it twice.
+
+** Might / Maybe / May
+[[./images/might.gif]]
 
 ** Understand
 [[./images/understand.gif]]
@@ -876,13 +959,23 @@ Same motion as "must", but do it lightly and do it twice.
 ** Remember
 [[./images/remember.gif]]
 
+** Smart
+[[./images/smart.gif]]
+
+** Brilliant
+Same motion as "smart", but do it once more and move it away from your head when you do it again.
+
 ** Think
 [[./images/think.gif]]
+
+** Wonder
+Make a "W" hand sign and rotate a circle around your temple.
 
 ** Know
 [[./images/know.gif]]
 
 ** Don't know
+[[./images/]]
 
 ** Learn
 [[./images/learn.gif]]
@@ -892,6 +985,9 @@ Same motion as "must", but do it lightly and do it twice.
 
 ** Training
 Same as "practice", but with the "T" hand sign instead of the fist.
+
+** Easy
+[[./images/easy.gif]]
 
 ** Read
 [[./images/read.gif]]
@@ -904,6 +1000,12 @@ Same as "practice", but with the "T" hand sign instead of the fist.
 
 ** Work
 [[./images/work.gif]]
+
+** Business
+[[./images/business.gif]]
+
+** Advertise
+[[./images/advertise.gif]]
 
 ** Break (verb)
 Break as in to break something.
@@ -933,6 +1035,9 @@ Break as in to take a break.
 ** Buy
 [[./images/buy.gif]]
 
+** Shop
+Same motion as "buy", but with "S" hand shape on the hand that is moving out of the palm on the other hand.
+
 ** Pay
 Make an open palm with one hand and face it upwards. Form a "P" hand sign with the other hand and flick the middle finger outwards.
 
@@ -960,6 +1065,9 @@ Make two "R" hand signs using both hands with the palm facing outwards, then mov
 ** Change
 [[./images/change.gif]]
 
+** Revision
+Same motion as "change", but use the "R" hand sign for both hands instead of the "X" hand sign.
+
 ** Translate
 Same motion as "change", but use the "T" hand sign for both hands instead of the "X" hand sign. Then, the two "T" hand signs transition to index fingers pointing to the side.
 
@@ -972,17 +1080,41 @@ Similar motion to "win", but instead of the hand pretending to hold a flag, poin
 ** Lose
 Hold an open palm facing up, and touch a "V" hand sign to that open palm.
 
+** Strong
+Trace out a large bicep using your open palm, starting the thumb touching the top of the bicep and ending with the pinky finger touching the bottom of the bicep.
+
+** Power
+Same motion as "strong", but use the "P" hand sign. The palm should always be facing inwards instead of changing from outwards to inwards.
+
+** Intense
+Same motion as "strong", but use the "I" hand sign. The palm should always be facing inwards instead of changing from outwards to inwards.
+
+** Summarise
+[[./images/summarise.gif]]
+
 ** Make
 [[./images/make.gif]]
 
 ** Manufacture
 Same motion as "make", but form the "M" hand sign instead of a fist.
 
-** Lie
-Move your hand underneath your chin with the back of the hand facing your chin.
+** Build / Building
+[[./images/build.gif]]
 
-** Better / Best
-Brush your palm over your mouth.
+** Block
+[[./images/block.gif]]
+
+** Park
+[[./images/park.gif]]
+
+** Lie / Fib
+[[./images/lie.gif]]
+
+** Better
+[[./images/better.gif]]
+
+** Best
+[[./images/best.gif]]
 
 ** Calendar
 [[./images/calendar.gif]]
@@ -998,7 +1130,7 @@ Similar to "program", but instead of continuing with the "P" when the hand is at
 
 ** Language
 [[./images/language.gif]]
-Make two "L" hand signs with the index finger pointing forward on both palms, with the thumbs touching each other, then wiggle them while moving outwards.
+Make two "L" hand signs with the index finger pointing forward and palm facing downwards, with the thumbs touching each other, then wiggle them while moving outwards.
 
 ** Dress
 Start with both open palms facing towards your body and move them all the way down your body.
@@ -1087,6 +1219,9 @@ Same motion as "red", but form a "P" first and use the middle finger to draw the
 ** Brown
 [[./images/brown.gif]]
 
+** Transgender
+[[./images/transgender.gif]]
+
 ** Boy
 [[./images/boy.gif]]
 
@@ -1108,6 +1243,9 @@ Same motion as "friend", but forming the "B" hand sign with both hands instead.
 ** Mate
 Same motion as "friend", but using the "M" hand sign with the fingers open instead.
 
+** Neighbour
+Same motion as "friend", but using the "N" hand sign with the fingers open instead.
+
 ** Community
 Same motion as "friend", but with a fully open palm.
 
@@ -1119,6 +1257,18 @@ A combination of the gesture for "boy" and "friend".
 
 ** Girlfriend
 A combination of the gesture for "girl" and "friend".
+
+** Fine
+[[./images/fine.gif]]
+
+** Man
+Do the gesture for "boy", then do the "fine" gesture at the same height.
+
+** Woman
+Do the gesture for "girl", then do the "fine" gesture at the same height.
+
+** Divorce
+[[./images/divorce.gif]]
 
 ** Marry / Marriage / Married
 [[./images/marry.gif]]
@@ -1132,17 +1282,32 @@ A combination of the gesture for "girl" and "marry".
 ** Father
 [[./images/father.gif]]
 
-** Grandfather
-[[./images/grandfather.gif]]
-
 ** Mother
 [[./images/mother.gif]]
+
+** Parents
+Do the gesture for "father", then the gesture for "mother".
+
+** Grandfather
+[[./images/grandfather.gif]]
 
 ** Grandmother
 [[./images/grandmother.gif]]
 
-** Transgender
-[[./images/transgender.gif]]
+** Uncle
+[[./images/uncle.gif]]
+
+** Aunt
+[[./images/aunt.gif]]
+
+** Cousin
+[[./images/cousin.gif]]
+
+** Niece
+[[./images/niece.gif]]
+
+** Nephew
+[[./images/nephew.gif]]
 
 ** Baby
 [[./images/baby.gif]]
@@ -1155,6 +1320,9 @@ A combination of the gesture for "girl" and "marry".
 
 ** Short (measurement)
 [[./images/short-measurement.gif]]
+
+** Long
+[[./images/long.gif]]
 
 ** Thin
 [[./images/thin.gif]]
@@ -1170,6 +1338,12 @@ A combination of the gesture for "girl" and "marry".
 *** Variation 2
 [[./images/big-variation-b.gif]]
 
+** Little
+Make the "L" hand sign with both hands with palm facing each other, and the index finger pointing forward, then move them towards the centre until the fingers touch.
+
+** Bit
+Hold a palm facing upwards and flick the pinky using your thumb
+
 ** Young
 Push your chest upwards and outwards with your hands (palm facing towards you) and make a happy face.
 
@@ -1181,6 +1355,12 @@ Make a "P" hand sign and circle your head.
 
 ** Handsome
 Same motion as "P", but use the "H" hand sign instead.
+
+** Cute
+[[./images/cute.gif]]
+
+** Sweet
+[[./images/sweet.gif]]
 
 ** Beautiful
 [[./images/beautiful.gif]]
@@ -1238,6 +1418,17 @@ Use one hand to grab the other hand, which has an open palm facing your body, an
 ** Head
 [[./images/head.gif]]
 
+** Heart
+
+*** Variation 1
+[[./images/heart.gif]]
+
+*** Variation 2
+Draw a heart shape with both index fingers at your heart.
+
+*** Variation 3
+Show a heart shape with both hands at your heart.
+
 ** Breathe
 [[./images/breathe.gif]]
 
@@ -1246,6 +1437,12 @@ Use one hand to grab the other hand, which has an open palm facing your body, an
 
 ** Food / Eat
 [[./images/food.gif]]
+
+** Cheese
+[[./images/cheese.gif]]
+
+** Chocolate
+[[./images/chocolate.gif]]
 
 ** Drink
 
@@ -1356,9 +1553,6 @@ Same motion as "science", but with the "B" hand sign instead of the thumbs down 
 ** Engineering
 Make two "Y" hand signs with both hands and connect them thumb to thumb, with the pinky pointed forward. Then, rotate one hand up and down while the other hand remains still.
 
-** Business
-Hold a fist horizontally with one hand, with the palm facing down, then bounce the "B" hand sign left and right on the top side of the fist.
-
 ** Social
 Rotate the "S" hand sign 360 degrees around an index finger pointing upwards. The other hand's palm should always be facing the index finger.
 
@@ -1373,6 +1567,12 @@ Interlock your fingers with each other, thumb pointed upwards and the palm facin
 
 ** Machine
 Same hand shape as "mechanical", but shake your hands up and down.
+
+** Initialise
+Hold up a fist with the palm facing inwards, then make the "I" hand sign with the other hand and screw the pinky side of the fist.
+
+** Technology
+[[./images/technology.gif]]
 
 ** Collapse / Break down
 [[./images/collapse.gif]]
@@ -1391,8 +1591,47 @@ Same hand shape as "mechanical", but shake your hands up and down.
 ** Sky
 [[./images/sky.gif]]
 
+** Ground
+Hold one arm horizontally with palm facing downwards. Make a "G" hand sign with the other hand and move it in a horizontal circle starting from the palm of the other hand, moving outwards and then coming back.
+
+** Field
+Same motion as "ground", but with the "F" hand sign instead.
+
+** Flat (adjective)
+Use your whole palm with it facing down to show a flat surface.
+
+** Sun
+[[./images/sun.gif]]
+
+** Moon
+Use your thumb and index finger to form the C shape and put it around an eye.
+
 ** Rain
 [[./images/rain.gif]]
+
+** Grow
+[[./images/grow.gif]]
+
+** Spring (season)
+[[./images/spring-season.gif]]
+
+** Summer
+[[./images/summer.gif]]
+
+** Autumn
+[[./images/autumn.gif]]
+
+** Winter
+[[./images/winter.gif]]
+
+** Cold
+[[./images/cold.gif]]
+
+** Warm
+[[./images/warm.gif]]
+
+** Hot
+[[./images/hot.gif]]
 
 ** Play
 [[./images/play.gif]]
@@ -1416,8 +1655,10 @@ Same motion as "bus", but use the "V" hand sign instead of the "B" hand sign.
 Same motion as "bus", but use the "T" hand sign instead of the "B" hand sign.
 
 ** Bicycle / Bike / Cycle
+Pretend to pedal a bicycle with your hands.
 
 ** Motorcycle
+Pretend to hold on to the handlebar of the motorcycle and rotate both hands upwards like revving the motorcycle.
 
 ** Train (noun)
 [[./images/train-noun.gif]]
@@ -1451,6 +1692,9 @@ Place one hand horizontally, with fingers facing forward and the palm facing dow
 ** Transfer
 Make the "U" hand sign, but spread your fingers and curl them into a hook. Then move your hand from one point to another point.
 
+** Move
+[[./images/move.gif]]
+
 ** Ride
 [[./images/ride.gif]]
 
@@ -1473,8 +1717,17 @@ Move your hands like you are running.
 *** Variation 2
 Make two "L" hand signs and touch the thumbs together. Then curl and uncurl the index finger of both hands while moving the hands forward.
 
+** Fall (verb)
+[[./images/fall-verb.gif]]
+
 ** Way
 [[./images/way.gif]]
+
+** Road
+Same motion as "way", but instead of the open hands, use a "R" hand sign.
+
+** Path
+Same motion as "way", but instead of the open hands, use a "P" hand sign.
 
 ** Drum
 Just act like you're playing a snare drum.
@@ -1484,6 +1737,12 @@ Just act like you're playing a snare drum.
 
 ** Home
 [[./images/home.gif]]
+
+** Hotel
+Pretend you are sleeping on one hand. The other hand draws circles using the "H" hand sign behind the back of the hand you're sleeping on.
+
+** Camp
+[[./images/camp.gif]]
 
 ** Floor
 [[./images/floor.gif]]
@@ -1505,6 +1764,9 @@ Just act like you're playing a snare drum.
 
 ** Rose
 Same motion as "flower", but with the "R" hand sign instead of the flattened "O" hand shape.
+
+** Tulips
+Same motion as "flower", but with the "T" hand sign instead of the flattened "O" hand shape.
 
 ** Bird
 [[./images/bird.gif]]
@@ -1574,7 +1836,7 @@ Same motion as "tell", but do the motion towards the side and outwards from your
 [[./images/awake-variation-b.gif]]
 
 ** Disaster / Crisis
-Pretend to hold a box from the top and bottom, then turn that box 180 degrees.
+[[./images/disaster.gif]]
 
 ** Happen
 [[./images/happy.gif]]
@@ -1629,7 +1891,43 @@ Make a "C" hand sign and put the thumb to your temple.
 ** Hokkien
 Do the "8" hand sign with the palm facing down, then put the index finger on your nose.
 
+** Senior
+[[./images/senior.gif]]
+
+** Bully
+Same motion as "senior", but use a thumbs up on the hand below instead of the open hand.
+
+** Junior
+Hold up an open palm facing upwards, and touch the index of the other hand onto the index finger of the open palm.
+
+** Merlion
+Pretend to pull your hair back, then use both hands to show waves in front of you, with the palm faced downwards.
+
 * Places
+
+** Place
+[[./images/place.gif]]
+
+** Country
+[[./images/country.gif]]
+
+** Museum
+[[./images/museum.gif]]
+
+** Station
+Same motion as "museum", but with the "S" hand sign instead of the "M" hand sign.
+
+** Town
+[[./images/town.gif]]
+
+** Church
+[[./images/church.gif]]
+
+** Temple
+Same motion as "church", but with the "T" hand sign instead of the "C" hand sign.
+
+** Mosque
+Same motion as "church", but with the "M" hand sign instead of the "C" hand sign.
 
 ** Singapore
 
@@ -1651,14 +1949,75 @@ Same motion to "Pasir Ris", but start with the "C" hand sign then transition to 
 ** Jurong
 Just show a "J" hand sign.
 
+** Jurong Point
+
+*** Variation 1
+Just finger spell "JP".
+
+*** Variation 2
+Show the "J" hand sign then show the "point" hand sign.
+
+** Jurong Bird Park
+Do the gesture for "Jurong", then the gesture for "bird", then the gesture for "park".
+
+** Zoo
+Just finger spell "Zoo"
+
+** Safari
+Hold an arm horizontally with the palm facing downwards. The other hand does the "F" hand sign and moves above and below the arm that is being held horizontally. The hand should be moving on the outside of the arm, not on the inside nearer to the body.
+
+** Night Safari
+Do the gesture for "night", then do the gesture for "safari".
+
+** Marina Bay Sands
+Finger on top of the 3 towers.
+
+** Marina Square
+Draw a square with both hands, starting with the "M" hand sign, then transitioning to the "S" hand sign when halfway through.
+
+** Esplanade
+Make two claws with your hands and cover your eyes with them.
+
+** Raffles
+Do the gesture for "table", but have one elbow slightly higher than the other and bend your back backwards a bit.
+
+** Raffles Place
+[[./images/raffles-place.gif]]
+
+** 313
+Just show the number 313.
+
+** Orchard
+[[./images/orchard.gif]]
+
+** Orchard Road
+Do the hand sign for "Orchard", then do the hand sign for "road".
+
+** India
+[[./images/india.gif]]
+
+** Little India
+Do the gesture for "little", then do the gesture for "India".
+
+** China
+[[./images/china.gif]]
+
+** Chinatown
+Do the gesture for "China", then do the gesture for "town".
+
+** Gardens by the Bay
+
+*** Variation 1
+Same motion as "change", but use an open palm with the fingers curled to simulate a flower instead of the "X" hand sign.
+
+*** Variation 2
+Hold one arm horizontal with the palm facing up. The other arm has the elbow on the open palm of the other hand, and has an open palm facing up with fingers curled. Move that palm around.
+
+** Suntec
+Do the "that" hand sign, but move your thumb behind the other two fingers, then put it on top of an open palm facing upwards on the other hand. It looks like the fountain of wealth.
+
 ** Chinese Garden
 [[./images/chinese-garden-place.gif]]
-
-** New York
-[[./images/new-york.gif]]
-
-** Tokyo
-[[./images/tokyo.gif]]
 
 ** Malaysia
 [[./images/malaysia.gif]]
@@ -1666,8 +2025,17 @@ Just show a "J" hand sign.
 ** Kuala Lumpur
 Just finger spell "KL".
 
-** Marina Bay Sands
-Finger on top of the 2 towers.
+** New York
+[[./images/new-york.gif]]
 
-** Esplanade
-Make two claws with your hands and cover your eyes with them.
+** Japan
+[[./images/japan.gif]]
+
+** Tokyo
+[[./images/tokyo.gif]]
+
+** Norway
+[[./images/norway.gif]]
+
+** Finland
+[[./images/finland.gif]]
