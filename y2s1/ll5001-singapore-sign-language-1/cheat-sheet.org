@@ -771,6 +771,9 @@ Similar to "world", but with a "T" hand sign instead of the "W" hand sign.
 ** Kind
 Similar to "world", but with a "K" hand sign instead of the "W" hand sign.
 
+** Back
+[[./images/back.gif]]
+
 ** Past
 [[./images/past.gif]]
 
