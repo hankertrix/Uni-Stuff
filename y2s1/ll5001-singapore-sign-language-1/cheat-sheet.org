@@ -1080,6 +1080,9 @@ Similar motion to "win", but instead of the hand pretending to hold a flag, poin
 ** Lose
 Hold an open palm facing up, and touch a "V" hand sign to that open palm.
 
+** Brave
+[[./images/brave.gif]]
+
 ** Strong
 Trace out a large bicep using your open palm, starting the thumb touching the top of the bicep and ending with the pinky finger touching the bottom of the bicep.
 
