@@ -3,6 +3,7 @@
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
 #+LATEX_HEADER: \usepackage{upquote}
+#+LATEX_HEADER: \setlength{\parindent}{0em}
 
 * Overview
 Logographer is a [[https://www.python.org/][Python]] program for drawing logos. It requires at least *Python version 3.11* to run.
@@ -10,7 +11,7 @@ Logographer is a [[https://www.python.org/][Python]] program for drawing logos. 
 * Installation
 Logographer requires Python to be installed, so please install Python before trying to run the program. This only applies to Windows, and macOS and Linux both have Python come preinstalled, so there's no need to install Python on these operating systems. However, you may need to update your system's version of Python or install a newer Python version for the program to run successfully. This program requires at least *Python version 3.11*.
 
-@@latex: ~\\~ \noindent@@ *Minimum Python version: 3.11*
+@@latex: ~\\~ @@ *Minimum Python version: 3.11*
 
 ** Installing Python on Windows
 
@@ -34,12 +35,12 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
 #+end_src
 
-@@latex: \noindent@@ Test that Scoop is working properly by using the command below:
+Test that Scoop is working properly by using the command below:
 #+begin_src powershell
 scoop
 #+end_src
 
-@@latex: \noindent@@ Now to install Python, copy and paste the command below, press enter, and you should be done installing Python.
+Now to install Python, copy and paste the command below, press enter, and you should be done installing Python.
 #+begin_src powershell
 scoop install main/python
 #+end_src
@@ -56,12 +57,12 @@ iex ((New-Object System.Net.WebClient).DownloadString(
 ))
 #+end_src
 
-@@latex: \noindent@@ Test that Chocolatey is working properly by using the command below:
+Test that Chocolatey is working properly by using the command below:
 #+begin_src powershell
 choco
 #+end_src
 
-@@latex: \noindent@@ Now to install Python, copy and paste the command below, press enter, and you should be done installing Python.
+Now to install Python, copy and paste the command below, press enter, and you should be done installing Python.
 #+begin_src powershell
 choco install python
 #+end_src
@@ -80,12 +81,12 @@ To use the Homebrew package manager, you will need to download and install Homeb
 "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 #+end_src
 
-@@latex: \noindent@@ Test that Homebrew is working properly by using the command below:
+Test that Homebrew is working properly by using the command below:
 #+begin_src shell
 brew help
 #+end_src
 
-@@latex: \noindent@@ Now to update your Python version, copy and paste the command below, press enter, and you should be done updating Python.
+Now to update your Python version, copy and paste the command below, press enter, and you should be done updating Python.
 #+begin_src
 brew install python3
 #+end_src
@@ -129,7 +130,7 @@ On macOS and Linux, the ~tk~ library isn't installed by default, so it needs to 
 *** macOS
 If you installed Python *manually* using the *installer*, then there is *no need* to install the ~tk~ library.
 
-@@latex: ~\\~ \noindent@@ Otherwise, if you used Homebrew to install Python, then use the command below to install the ~tk~ library.
+@@latex: ~\\~ @@ Otherwise, if you used Homebrew to install Python, then use the command below to install the ~tk~ library.
 #+begin_src
 brew install python-tk
 #+end_src
@@ -190,7 +191,7 @@ Go to the folder that contains the program, which is most likely where you have 
 python main.py
 #+end_src
 
-@@latex: \noindent@@ Alternatively, you can run the program by opening the ~main.py~ file using Python. On most systems, this should be just double-clicking on the file after you have Python installed. Otherwise, you might have to right-click on the file in your file explorer and use the "Open with" option to select Python to run the ~main.py~ file.
+Alternatively, you can run the program by opening the ~main.py~ file using Python. On most systems, this should be just double-clicking on the file after you have Python installed. Otherwise, you might have to right-click on the file in your file explorer and use the "Open with" option to select Python to run the ~main.py~ file.
 
 
 * How to use the program
@@ -293,7 +294,7 @@ This should be self-explanatory, this is the colour to fill the shape with. This
 @@latex: \newpage@@
 
 *** Start fill (~start_fill~)
-This should also be self-explanatory, it tells the program to start filling the shape being drawn with the fill colour (~fill_colour~) given. This option is also *optional* and will default to ~False~ if it's not given. It is a boolean that can be either ~True~ or ~False~, but you'll usually want to set it to ~True~. This should be given together with the fill colour, otherwise the option doesn't do anything, and the fill colour option will also not do anything, since the program doesn't fill anything with colour. Below are some examples:
+This should also be self-explanatory, it tells the program to start filling the shape being drawn with the fill colour (~fill_colour~) given. This option is also *optional* and will default to ~false~ if it's not given. It is a boolean that can be either ~true~ or ~false~, but you'll usually want to set it to ~true~. This should be given together with the fill colour, otherwise the option doesn't do anything, and the fill colour option will also not do anything, since the program doesn't fill anything with colour. Below are some examples:
 
 #+begin_src toml
 { vertices = [
@@ -317,7 +318,7 @@ This should also be self-explanatory, it tells the program to start filling the 
 #+end_src
 
 *** End fill (~end_fill~)
-This is another self-explanatory option. This tells the program to stop filling the shape with the fill colour. For this to take effect, the program must already be filling a shape with colour, otherwise there is nothing to stop. This option is also *optional* and defaults to ~False~ if it's not given. It is a boolean that can either be ~True~ or ~False~, but you'll usually want to set it to ~True~. This can be given on its own without the fill colour, since it just tells the program to stop filling the shape with colour. Below is an example:
+This is another self-explanatory option. This tells the program to stop filling the shape with the fill colour. For this to take effect, the program must already be filling a shape with colour, otherwise there is nothing to stop. This option is also *optional* and defaults to ~false~ if it's not given. It is a boolean that can either be ~true~ or ~false~, but you'll usually want to set it to ~true~. This can be given on its own without the fill colour, since it just tells the program to stop filling the shape with colour. Below is an example:
 
 #+begin_src toml
 { vertices = [
