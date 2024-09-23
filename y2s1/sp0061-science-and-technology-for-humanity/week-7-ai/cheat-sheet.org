@@ -213,7 +213,7 @@ Cryptocurrency prediction.
 - This error is then used to update the weights such that with time, the error is minimised.
 - The set of neural network weights that minimises these errors will be stored in the memory ready for deployment.
 
-*** Deployment phase.
+*** Deployment phase
 [[./images/audio-enhancement-deployment-phase.png]]
 - A system will pre-process and extract features from a noisy speech similar to what was done during training.
 - The features extracted will be fed to the trained model with the preloaded set of weights to obtain the processed and clean speech.
