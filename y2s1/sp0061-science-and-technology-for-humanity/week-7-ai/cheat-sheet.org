@@ -134,14 +134,14 @@ Cryptocurrency prediction.
 
 * Training a perceptron for classification
 [[./images/training-a-perceptron-for-classification.png]]
-- Consider six insects (three from each type) that were spotted on a 2-D map with location x_{i,1} and x_{i,2}.
+- Consider six insects (three from each type) that were spotted on a 2-D map with location x_{i, 1} and x_{i, 2}.
 - Here the variable "i" denotes the index of the insects, so "i" equals to 0 to 5 (total of 6 insects).
 - The second subscript denotes the first and second axes on the Cartesian coordinate system.
 - The table on the left summarises the insect locations and the types of insect.
 - For example, the first insect of index "i" equals to 0 is located at location (1, 1).
 - This insect is of insect type A.
 - The graph on the right illustrates the locations where the insects are located.
-- An unknown insect has appeared at location x_{i,1} = 1, x_{i,2} = -1. Are we able to determine the type of insect it belongs to?
+- An unknown insect has appeared at location x_{i, 1} = 1, x_{i, 2} = -1. Are we able to determine the type of insect it belongs to?
 - To solve the problem above, we would like the machine to determine a boundary that separates the above data points.
 - Once this is done, if the unknown insect lies below the boundary, it can be classified as Insect B. Conversely, if the unknown insect lies above the boundary, the insect is classified as Insect A.
 - To determine the boundary that separates the data points, we employ the perceptron.
@@ -149,29 +149,29 @@ Cryptocurrency prediction.
 [[./images/perceptron-training-example.png]]
 - The algorithm that is used to train a perceptron is given in the list of equations shown in the table in the bottom left corner of the image above.
 - These equations are simply illustrated in this figure depicting a perceptron.
-- To start training this perceptron, we begin by initialising the weights w_0, w_1 and w_2.
+- To start training this perceptron, we begin by initialising the weights w_{0}, w_{1} and w_{2}.
 - This initialisation can be done using random values, and as training goes along, these values will converge towards a set of desired values.
 - We then fit the coordinate locations of each insect as inputs to the network.
-- Hence, for the first insect, we shall fit coordinates x_{i,1} = 1 and x_{i,2} = 1 as the inputs.
-- These inputs are multiplied with the randomly initialised weights and summed by giving a value denoted by z_i.
+- Hence, for the first insect, we shall fit coordinates x_{i, 1} = 1 and x_{i, 2} = 1 as the inputs.
+- These inputs are multiplied with the randomly initialised weights and summed by giving a value denoted by z_{i}.
 - Since there are only two insect types, A and B, we will use the following decision rule.
 - If our output value is larger than 0, it will be assigned a predicted label of 1, denoting insect type A.
 - If the output value is less than 0, it will be assigned a predicted label of -1, denoting insect type B.
-- As with any machine learning algorithms, the weights w_0, w_1, and w_2 are trained using ground truth values.
+- As with any machine learning algorithms, the weights w_{0}, w_{1}, and w_{2} are trained using ground truth values.
 - Since the first insect is of type A, the first true value is assigned a value 1, in this rightmost column.
-- The error is then computed between the predicted output, y^{^}_i and the true insect type y_i.
+- The error is then computed between the predicted output, y^{^}_{i} and the true insect type y_{i}.
 - The weights of the perceptron are then updated using the last two weight-update equations in the formula box.
 - The Greek variable "eta" is known as the step size and is often an arbitrary chosen small value.
 
 [[./images/perceptron-training-example-with-numerical-values-point-a.png]]
-- Using numerical values to illustrate the above process, we first initialise the three weights using random values given by w_0 as 0, w_1 as 1, and w_2 as 0.5.
+- Using numerical values to illustrate the above process, we first initialise the three weights using random values given by w_{0} as 0, w_{1} as 1, and w_{2} as 0.5.
 - These weights will define our separation boundary.
 - Since the decision whether the insect is type A or B is made based on whether the output is larger than or less than 0.
-- The output value z_i equals to 0.
+- The output value z_{i} equals to 0.
 - We'll define the boundary given that the output is determined by the sum of the products between the input and the weights.
 
 [[./images/perceptron-training-example-with-numerical-values-graph-point-a.png]]
-- We know that the equation is is in the form of y = mx + c, as hence we can plot this line shown above.
+- We know that the equation is in the form of y = mx + c, as hence we can plot this line shown above.
 - We are now ready to train the perceptron using the first insect location, shown by the cross, circled in red with an input coordinate of (1, 1).
 - With the weights being (0, 1, 0.5), the output corresponds to 1.5.
 - Since 1.5 is greater than 0, the perceptron generates a classifier output of 1.
@@ -182,8 +182,8 @@ Cryptocurrency prediction.
 [[./images/perceptron-training-example-with-numerical-graph-point-b.png]]
 [[./images/perceptron-training-example-with-numerical-values-point-b.png]]
 - We now move to the next data point at coordinate location (2, -2), shown by dotted circle in red.
-- With the weights being (0, 1, 0.5), the output is now given by z_1, being a value of 1.
-- Since this output is larger than 0, the classification output is given by y^{hat}_1 being a value of 1.
+- With the weights being (0, 1, 0.5), the output is now given by z_{1}, being a value of 1.
+- Since this output is larger than 0, the classification output is given by y^{^}_{1} being a value of 1.
 - This implies that the neural network believes that the insect is of type A, which is untrue, as the insect is actually of type B, which as been assigned a value of -1.
 - The error for this data point is given by (-1, 1), giving -2, shown at the top of the figure.
 
@@ -293,7 +293,7 @@ Clustering refers to grouping similar types of data together.
 
 *** Text output
 - Chatbot, where the response is generated for user's input.
-- Translation is used in Google Translate. When a sentence is given in a langauge, it is able to generate the equivalent word in another language based on a pretrained word embedding vector model.
+- Translation is used in Google Translate. When a sentence is given in a language, it is able to generate the equivalent word in another language based on a pretrained word embedding vector model.
 - Summarisation is when a long document is condensed to a summary by generating synonyms to make the paragraph concise and is useful in news reporting.
 - Question answering is to generate answers for questions.
 
