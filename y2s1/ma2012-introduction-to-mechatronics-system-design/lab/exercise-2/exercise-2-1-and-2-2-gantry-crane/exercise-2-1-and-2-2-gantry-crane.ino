@@ -208,6 +208,9 @@ void move_dc_motor(int speed) {
 
             // Set the DC motor speed to 200
             speed = 200;
+
+            // Set that the DC motor is not on its first step
+            dc_motor_is_first_step = false;
         }
 
         // Write the speed to the motor driver pin A1
@@ -226,6 +229,9 @@ void move_dc_motor(int speed) {
 
         // Set the DC motor speed to -200
         speed = -200;
+
+        // Set that the DC motor is not on its first step
+        dc_motor_is_first_step = false;
     }
 
     // Write the speed to the motor driver pin A2
