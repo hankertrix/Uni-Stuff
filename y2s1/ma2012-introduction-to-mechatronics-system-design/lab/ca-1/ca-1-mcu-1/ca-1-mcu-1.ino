@@ -54,6 +54,7 @@
 
 // Include the libraries
 #include <SoftwareSerial.h>
+#include <Wire.h>
 
 // Define the pin numbers
 #define TOGGLE_SWITCH_PIN 13
@@ -101,6 +102,24 @@ enum DcMotorDirection {
     COUNTER_CLOCKWISE
 };
 
+// The enum for the measurement range.
+// G stands for the acceleration due to gravity.
+enum MeasurementRange {
+    TWO_G,
+    FOUR_G,
+    EIGHT_G,
+    SIXTEEN_G
+};
+
+// Initialise the measurement range to use
+const MeasurementRange MEASUREMENT_RANGE = EIGHT_G;
+
+// Initialise the accelerometer address
+const uint8_t ACCELEROMETER_ADDRESS = 0x1D;
+
+// Initialise the least significant bit of x
+const uint8_t LEAST_SIGNIFICANT_BIT_OF_X_ADDRESS = 0x32;
+
 // The serial connection between the Arduinos
 static SoftwareSerial ARDUINO_SERIAL(RX_PIN, TX_PIN);
 
@@ -130,6 +149,22 @@ float beep_duration_in_ms = 100.0;
 // Initialise the delay between each beep
 float beep_delay_in_ms = 100.0;
 
+// The function to write data using the I2C protocol to the accelerometer
+void i2c_write_data(uint8_t register_address, uint8_t data_in_binary) {
+
+    // Begin the I2C transmission
+    Wire.beginTransmission(ACCELEROMETER_ADDRESS);
+
+    // Write to the register address
+    Wire.write(register_address);
+
+    // Write the data in binary to the register
+    Wire.write(data_in_binary);
+
+    // End the I2C transmission
+    Wire.endTransmission();
+}
+
 // The setup function to setup the Arduino
 void setup() {
 
@@ -157,6 +192,17 @@ void setup() {
 
     // Print that the Arduino is ready
     Serial.println("Arduino initialised!");
+
+    // Initialise the I2C communication
+    Wire.begin();
+
+    // Start the measurement.
+    // The POWER_CTL register is 0x2D,
+    // and the measure bit is D3.
+    i2c_write_data(0x2D, 0b00001000);
+
+    // Change the measurement range to set one
+    i2c_write_data(0x31, get_measurement_range_setting(MEASUREMENT_RANGE));
 }
 
 // Function to print to the LCD screen
@@ -218,9 +264,20 @@ bool can_switch_gear(GearPosition target_gear_position) {
 // The function to handle the neutral gear position
 void handle_neutral_gear() {
 
+    // Stop the buzzer
+    noTone(PIEZO_BUZZER_PIN);
+
     // If the gear cannot be switched,
     // exit the function
-    if (!can_switch_gear(NEUTRAL)) return;
+    if (!can_switch_gear(NEUTRAL)) {
+
+        // Call the function to handle
+        // the current gear position
+        handle_gear_position(gear_position);
+
+        // Exit the function
+        return;
+    };
 
     // Set the gear position to neutral
     gear_position = NEUTRAL;
@@ -282,6 +339,9 @@ void start_car() {
     // Set the time when the welcome message
     // was displayed in milliseconds
     welcome_message_displayed_time_in_ms = millis();
+
+    // Set the gear position to neutral
+    gear_position = NEUTRAL;
 
     // Call the function to handle the neutral gear position
     handle_neutral_gear();
@@ -361,12 +421,167 @@ void move_dc_motor(int speed) {
     digitalWrite(DC_MOTOR_A2_PIN, LOW);
 }
 
+// The function to get the measurement range setting.
+// This is from page 17 of the data sheet, at the bottom,
+// at table 18, under register 0x31.
+uint8_t get_measurement_range_setting(MeasurementRange measurement_range) {
+    switch (measurement_range) {
+        case TWO_G:
+            return 0b00000000;
+        case FOUR_G:
+            return 0b00000001;
+        case EIGHT_G:
+            return 0b00000010;
+        case SIXTEEN_G:
+            return 0b00000011;
+        default:
+            return 0;
+    }
+}
+
+// The function to get the scale factor.
+// This is from page 3 of the data sheet, under scale factor.
+// The scale factor is listed in milli-Gs, so the values
+// in the data sheet are divided by 1000 to make it G.
+float get_scale_factor(MeasurementRange measurement_range) {
+    switch (measurement_range) {
+        case TWO_G:
+            return 0.0039;
+        case FOUR_G:
+            return 0.0078;
+        case EIGHT_G:
+            return 0.0156;
+        case SIXTEEN_G:
+            return 0.0312;
+        default:
+            return 0.0;
+    }
+}
+
+// The function to get the tilt angle
+float get_tilt_angle_in_degrees(
+    float x_acceleration,
+    float y_acceleration,
+    float z_acceleration
+) {
+
+    // Get the dot product of the acceleration data
+    // with the unit vector of the z axis,
+    // which is the normal to the x-y plane.
+    //
+    // The unit vector of the z axis is (0, 0, 1),
+    // so the dot product is essentially just
+    // the z acceleration.
+    float dot_product = z_acceleration;
+
+    // Get the magnitude of the acceleration data
+    float magnitude_of_acceleration = sqrt(
+        x_acceleration * x_acceleration
+        + y_acceleration * y_acceleration
+        + z_acceleration * z_acceleration
+    );
+
+    // Get the cosine of the tilt angle,
+    // which is the angle between the acceleration vector
+    // and the unit vector of the z axis.
+    //
+    // This is done by dividing the dot product
+    // by the magnitude of the acceleration data
+    // multiplied by the magnitude of the
+    // unit vector of the z axis, which is 1,
+    // so the denominator is just the magnitude of the
+    // acceleration data.
+    float cosine_of_tilt_angle =
+        dot_product / magnitude_of_acceleration;
+
+    // Get the tilt angle in radians
+    // and the unit vector of the z axis in radians
+    float tilt_angle_in_radians =
+        acos(cosine_of_tilt_angle);
+
+    // Convert the tilt angle into degrees
+    float tilt_angle_in_degrees =
+        tilt_angle_in_radians * 180 / PI;
+
+    // Return the tilt angle in degrees
+    return tilt_angle_in_degrees;
+}
+
+// Function to get the tilt angle from the accelerometer
+float get_tilt_angle_from_accelerometer() {
+
+    // Begin the transmission to the accelerometer
+    Wire.beginTransmission(ACCELEROMETER_ADDRESS);
+
+    // Send the address of the least significant bit of x.
+    // The address is auto-increased after each read.
+    Wire.write(LEAST_SIGNIFICANT_BIT_OF_X_ADDRESS);
+
+    // End the transmission to the accelerometer,
+    // but keep the connection open,
+    // which is the false argument passed to endTransmission
+    Wire.endTransmission(false);
+
+    // Request 6 bits of data from the accelerometer,
+    // and stop the message after the transmission,
+    // which is the true argument passed to endTransmission
+    Wire.requestFrom(ACCELEROMETER_ADDRESS, uint8_t(6), uint8_t(true));
+
+    // Read the data from the accelerometer.
+    //
+    // The least significant bit of x is read first,
+    // so the second read is for the most significant bit,
+    // which will need to be bitwise shifted
+    // left by 8 bits to make the second bit the most
+    // significant bit of the 16-bit integer.
+    //
+    // The bitwise OR operation just combines the two
+    // bytes together to make a single 16-bit integer.
+    int x = Wire.read() | Wire.read() << 8;
+    int y = Wire.read() | Wire.read() << 8;
+    int z = Wire.read() | Wire.read() << 8;
+
+    // Get the scale factor
+    float scale_factor = get_scale_factor(MEASUREMENT_RANGE);
+
+    // Get the acceleration data for the x, y, and z axis
+    float x_acceleration = x * scale_factor;
+    float y_acceleration = y * scale_factor;
+    float z_acceleration = z * scale_factor;
+
+    // Get the tilt angle in degrees
+    float tilt_angle_in_degrees = get_tilt_angle_in_degrees(
+        x_acceleration, y_acceleration, z_acceleration
+    );
+
+    // If the x value is negative
+    if (x < 0) {
+
+        // Multiply the tilt angle by -1
+        tilt_angle_in_degrees *= -1;
+    }
+
+    // Return the tilt angle in degrees
+    return tilt_angle_in_degrees;
+}
+
 // The function to handle the forward gear position
 void handle_forward_gear() {
 
+    // Stop the buzzer
+    noTone(PIEZO_BUZZER_PIN);
+
     // If the gear cannot be switched,
     // then exit the function
-    if (!can_switch_gear(FORWARD)) return;
+    if (!can_switch_gear(FORWARD)) {
+
+        // Call the function to handle
+        // the current gear position
+        handle_gear_position(gear_position);
+
+        // Exit the function
+        return;
+    }
 
     // Set the gear position to forward
     gear_position = FORWARD;
@@ -382,9 +597,28 @@ void handle_forward_gear() {
     // Read the potentiometer value
     int potentiometer_value = analogRead(POTENTIOMETER_PIN);
 
+    // Get the tilt angle from the accelerometer
+    float tilt_angle_from_accelerometer = get_tilt_angle_from_accelerometer();
+
+    // Initialise the start of the speed range
+    int speed_range_start = 0;
+
+    // Initialise the end of the speed range
+    // 230 is 90% of 255
+    int speed_range_end = 230;
+
+    // If the tilt angle is more than 15 degrees
+    if (tilt_angle_from_accelerometer > 15.0) {
+
+        // Set the end of the speed range to 115
+        speed_range_end = 115;
+    }
+
     // Map the potentiometer value to the range 0 - 230
     // as 90% of 255 is 230
-    int motor_speed = map(potentiometer_value, 0, 1023, 0, 230);
+    int motor_speed = map(
+        potentiometer_value, 0, 1023, speed_range_start, speed_range_end
+    );
 
     // Move the DC motor by the given speed
     move_dc_motor(motor_speed);
@@ -464,12 +698,26 @@ void sound_buzzer_at_frequency(int frequency_in_hz) {
     previous_beep_time_in_ms = millis();
 }
 
+// Function to sound the buzzer continuously
+void sound_buzzer_continuously() {
+
+    // Play the note
+    tone(PIEZO_BUZZER_PIN, BEEP_TONE);
+}
+
 // The function to handle the reverse gear position
 void handle_reverse_gear() {
 
-    // If the gear cannot be switched,
-    // then exit the function
-    if (!can_switch_gear(REVERSE)) return;
+    // If the gear cannot be switched
+    if (!can_switch_gear(REVERSE)) {
+
+        // Call the function to handle
+        // the current gear position
+        handle_gear_position(gear_position);
+
+        // Exit the function
+        return;
+    }
 
     // Set the gear position to reverse
     gear_position = REVERSE;
@@ -485,9 +733,29 @@ void handle_reverse_gear() {
     // Read the potentiometer value
     int potentiometer_value = analogRead(POTENTIOMETER_PIN);
 
-    // Map the potentiometer value to the range 0 - 153
-    // as 60% of 255 is 153
-    int motor_speed = map(potentiometer_value, 0, 1023, 0, 153);
+    // Get the tilt angle from the accelerometer
+    float tilt_angle_from_accelerometer = get_tilt_angle_from_accelerometer();
+
+    // Initialise the start of the speed range
+    int speed_range_start = 0;
+
+    // Initialise the end of the speed range
+    // 153 is 60% of 255
+    int speed_range_end = 153;
+
+    // If the tilt angle is less than -15 degrees
+    if (tilt_angle_from_accelerometer < -15.0) {
+
+        // Set the end of the speed range to 0
+        // to stop moving
+        speed_range_end = 0;
+    }
+
+    // Map the potentiometer value to the range 0 to
+    // the end of the speed range
+    int motor_speed = map(
+        potentiometer_value, 0, 1023, speed_range_start, speed_range_end
+    );
 
     // Move the DC motor by the given speed,
     // but in the negative direction
@@ -499,6 +767,9 @@ void handle_reverse_gear() {
     // If the distance of the object from the car is more than 50 cm
     if (distance_of_object_from_car > 50.0) {
 
+        // Stop the buzzer
+        noTone(PIEZO_BUZZER_PIN);
+
         // Sound the buzzer at a frequency of 1 Hz
         sound_buzzer_at_frequency(1);
 
@@ -509,6 +780,9 @@ void handle_reverse_gear() {
     // Otherwise, if the distance of the object from the car is more than 20 cm
     if (distance_of_object_from_car > 20.0) {
 
+        // Stop the buzzer
+        noTone(PIEZO_BUZZER_PIN);
+
         // Sound the buzzer at a frequency of 2 Hz
         sound_buzzer_at_frequency(2);
 
@@ -517,8 +791,25 @@ void handle_reverse_gear() {
     }
 
     // Otherwise, the object is within 20 cm of the car
-    // so sound the buzzer at a frequency of 5 Hz
-    sound_buzzer_at_frequency(5);
+    // so sound the buzzer continuously
+    sound_buzzer_continuously();
+}
+
+// The function to call the right function
+// to handle the gear position
+void handle_gear_position(GearPosition gear_position) {
+
+    // Call the function to handle the gear position
+    switch (gear_position) {
+        case NEUTRAL:
+            return handle_neutral_gear();
+        case FORWARD:
+            return handle_forward_gear();
+        case REVERSE:
+            return handle_reverse_gear();
+        default:
+            return;
+    }
 }
 
 // The main loop function
@@ -532,6 +823,12 @@ void loop() {
 
         // Deactivate the parking brake
         digitalWrite(SOLENOID_PIN, LOW);
+
+        // Deactivate the motor
+        move_dc_motor(0);
+
+        // Stop the buzzer
+        noTone(PIEZO_BUZZER_PIN);
 
         // Set the gear position to no gear
         gear_position = NO_GEAR;
