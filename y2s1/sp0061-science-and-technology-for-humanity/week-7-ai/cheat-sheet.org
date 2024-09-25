@@ -13,7 +13,7 @@ The ability to perceive, analyse and react to the surrounding situation.
 - The goal is to have a system that can *think and act* rationally.
 
 ** Supervised learning
-The datasets fed to the machine learning model are labelled by humans.
+The datasets fed to the machine learning model are *labelled* by humans.
 
 ** Unsupervised learning
 The datasets fed to the machine learning model are *not labelled* by humans.
