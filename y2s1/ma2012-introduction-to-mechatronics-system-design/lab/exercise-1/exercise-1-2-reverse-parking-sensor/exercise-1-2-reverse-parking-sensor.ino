@@ -114,6 +114,9 @@ float get_distance_in_cm(bool use_analog_distance_sensor) {
 // Function to sound the buzzer at a specified frequency in Hz
 void sound_buzzer(int frequency_in_hz) {
 
+    // Stop the buzzer
+    noTone(PIEZO_BUZZER_PIN);
+
     // Get the total duration of the tone in milliseconds
     float total_duration_in_milliseconds = 1000.0 / frequency_in_hz;
 
@@ -138,6 +141,13 @@ void sound_buzzer(int frequency_in_hz) {
         // Wait for the delay between each beep
         delay(delay_in_milliseconds);
     }
+}
+
+// Function to sound the buzzer continuously
+void sound_buzzer_continuously() {
+
+    // Sound the buzzer continuously
+    tone(PIEZO_BUZZER_PIN, BEEP_TONE);
 }
 
 // The main loop function
@@ -169,6 +179,6 @@ void loop() {
 
     // Otherwise, sound the buzzer continuously
     else {
-        sound_buzzer(8);
+        sound_buzzer_continuously();
     }
 }
