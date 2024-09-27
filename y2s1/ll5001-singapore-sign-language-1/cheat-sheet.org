@@ -1659,6 +1659,14 @@ Use your thumb and index finger to form the C shape and put it around an eye.
 ** Winter
 [[./images/winter.gif]]
 
+** Fall (verb)
+
+*** Variation 1
+[[./images/fall-verb.gif]]
+
+*** Variation 2
+Put your arm in the same position as the gesture for "autumn". The other hand does the "V" hand sign and places both fingers on the elbow, with the palm facing the elbow. Then, it rotates upwards such that the palm faces upwards at the end of the gesture.
+
 ** Cold
 [[./images/cold.gif]]
 
@@ -1757,9 +1765,6 @@ Move your hands like you are running.
 
 *** Variation 2
 Make two "L" hand signs and touch the thumbs together. Then curl and uncurl the index finger of both hands while moving the hands forward.
-
-** Fall (verb)
-[[./images/fall-verb.gif]]
 
 ** Way
 [[./images/way.gif]]
