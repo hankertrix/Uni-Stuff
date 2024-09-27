@@ -575,6 +575,9 @@ Make the thumbs up sign, but face the thumb to the side, with the palm facing do
 ** Now
 Start with both palms open, with the back of the palm facing front and bring both of them down.
 
+** Recent / Recently
+[[./images/recent.gif]]
+
 ** Morning
 [[./images/morning.gif]]
 
@@ -594,9 +597,6 @@ Similar to "afternoon", but lower the hand such that it is pointed straight in f
 
 ** Midnight
 [[./images/midnight.gif]]
-
-** Tree
-[[./images/tree.gif]]
 
 ** Under
 Put one hand horizontally in front of you with the palm facing down. Then, make the thumbs up hand sign and move it under the palm of the other hand.
@@ -1127,6 +1127,9 @@ Same motion as "make", but form the "M" hand sign instead of a fist.
 
 ** Block
 [[./images/block.gif]]
+
+** Tree
+[[./images/tree.gif]]
 
 ** Park
 [[./images/park.gif]]
@@ -1715,6 +1718,12 @@ Place one hand horizontally, with fingers facing forward and the palm facing dow
 
 ** Roller-skate
 [[./images/roller-skate.gif]]
+
+** Rollerblade
+[[./images/roller-blade.gif]]
+
+** Figure-skate
+[[./images/figure-skate.gif]]
 
 ** Transfer
 Make the "U" hand sign, but spread your fingers and curl them into a hook. Then move your hand from one point to another point.
