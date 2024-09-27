@@ -546,7 +546,12 @@ Make two "O" hand signs with both hands and bring them together.
 Do the gesture for "less", then make two hands into the thumbs up sign, and slide one hand against the other, moving directly upwards.
 
 ** All
-[[./images/all.gif]]
+
+*** Variation 1
+[[./images/all-variation-a.gif]]
+
+*** Variation 2
+[[./images/all-variation-b.gif]]
 
 ** Some
 [[./images/some.gif]]
