@@ -1049,6 +1049,9 @@ Break as in to take a break.
 ** Gone / Missing / Absent / Passed Away / Dead / Extinct
 [[./images/gone.gif]]
 
+** Disappear
+[[./images/disappear.gif]]
+
 ** Leave / Left
 [[./images/leave.gif]]
 
