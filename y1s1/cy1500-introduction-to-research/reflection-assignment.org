@@ -3,7 +3,7 @@
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
 #+CITE_EXPORT: csl ieee.csl
-#+bibliography: references.bib
+#+BIBLIOGRAPHY: references.bib
 
 * What is science?
 Science is defined as a rigorous, systematic endeavour that builds and organises knowledge in the form of testable explanations and predictions about the world [cite:@wilson1999natural; @heilbron2003oxford]. This definition suggests that science is a kind of method, perhaps called the "scientific method".
