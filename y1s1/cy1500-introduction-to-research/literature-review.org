@@ -3,7 +3,7 @@
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
 #+CITE_EXPORT: csl ieee.csl
-#+bibliography: references.bib
+#+BIBLIOGRAPHY: references.bib
 #+LATEX_HEADER: \usepackage[labelfont=bf]{caption}
 
 \newpage
