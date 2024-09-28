@@ -3,7 +3,7 @@
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
 #+CITE_EXPORT: csl american-geophysical-union.csl
-#+bibliography: references.bib
+#+BIBLIOGRAPHY: references.bib
 #+LATEX_HEADER: \usepackage{setspace}
 #+LATEX_HEADER: \usepackage[gen]{eurosym}
 #+LATEX_HEADER: \usepackage[labelfont=bf]{caption}
