@@ -45,7 +45,7 @@ The Arduino used for this project is the
 
 1. Use your package manager to install `avr-gcc` (`gcc-avr`) and `avrdude`.
 
-   For Arch Linux:
+   For Arch-based distributions:
 
    ```sh
    sudo pacman -S avr-gcc avrdude
