@@ -122,7 +122,8 @@ npx eas build
 
 4. Open the `ios` folder in Xcode by
    looking for the `.xcworkspace` file
-   extension inside the folder.
+   extension inside the folder and
+   double-clicking it.
 
 5. You might be prompted to verify
    your signing and capabilities settings,
