@@ -23,7 +23,10 @@ use arduino_hal::{
 };
 use num::Float;
 
-use crate::{serial::program_stopped, timer::micros, utils::enum_dispatch};
+use crate::{
+    console::println, serial::program_stopped, serial::UsartWriterInterface,
+    timer::micros, utils::enum_dispatch,
+};
 
 /// The enum containing the step resolution.
 /// The number each variant corresponds to
@@ -177,8 +180,8 @@ impl Default for StepperDriverState {
             direction: Direction::Clockwise,
             step_interval_in_us: 0,
             step_number: 0,
-            initial_step_interval_in_us: 0.0,
-            current_step_interval_in_us: 0.0,
+            initial_step_interval_in_us: 1.0,
+            current_step_interval_in_us: 1.0,
             minimum_step_interval_in_us: 1.0,
             previous_step_time_in_us: 0,
             step_resolution: StepResolution::FullStep,
@@ -1166,8 +1169,11 @@ impl StepperDriver {
         while self.run() {
             //
 
-            // If the program is stopped, stop the motor
+            // If the program is stopped
             if program_stopped() {
+                //
+
+                // Stop the motor
                 self.stop();
 
                 // Exit the function

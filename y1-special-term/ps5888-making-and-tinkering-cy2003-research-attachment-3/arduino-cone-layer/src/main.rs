@@ -65,12 +65,12 @@ fn main() -> ! {
     // stepper_driver_e1.set_acceleration(acceleration);
     // stepper_driver_x.set_acceleration(acceleration);
     // stepper_driver_y.set_acceleration(acceleration);
-    // stepper_driver_z.set_acceleration(acceleration);
+    // stepper_driver_z.set_acceleration(1000.0);
     // stepper_driver_e0.set_maximum_speed(max_speed);
     // stepper_driver_e1.set_maximum_speed(max_speed);
     // stepper_driver_x.set_maximum_speed(max_speed);
     // stepper_driver_y.set_maximum_speed(max_speed);
-    // stepper_driver_z.set_maximum_speed(max_speed);
+    // stepper_driver_z.set_maximum_speed(10.0);
     // stepper_driver_e0.move_by_steps(steps_to_move);
     // stepper_driver_e1.move_by_steps(steps_to_move);
     // stepper_driver_x.move_by_steps(steps_to_move);

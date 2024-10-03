@@ -109,7 +109,7 @@ pub struct LayConesInAStraightLineArgs {
     pub number_of_cones_to_lay: i16,
 }
 
-/// The struct to contain the arguments for the drop_cones function
+/// The struct to contain the arguments for the drop_cone function
 pub struct DropConeArgs {
     pub dispenser_motor_speed: i16,
 }
@@ -185,7 +185,7 @@ impl MovementHandler {
         };
 
         // Set the acceleration to the joystick control acceleration
-        movement_handler.movement_motors_do(|driver| {
+        movement_handler.all_motors_do(|driver| {
             driver.set_acceleration(ACCELERATION);
         });
 
@@ -605,13 +605,13 @@ impl MovementHandler {
         self.dispenser_motor
             .set_maximum_speed(dispenser_motor_speed);
 
+        // Move the dispenser motor by the number of steps to lay the cone
+        self.dispenser_motor.move_by_steps(number_of_steps_to_move);
+
         // Set the constant speed of the dispenser motor
         // to the given dispenser motor speed
         self.dispenser_motor
             .set_constant_speed(dispenser_motor_speed);
-
-        // Move the dispenser motor by the number of steps to lay the cone
-        self.dispenser_motor.move_by_steps(number_of_steps_to_move);
     }
 
     /// The function to lay cones in a straight line.
@@ -723,10 +723,13 @@ impl MovementHandler {
         );
 
         // While the dispenser motor is running
-        // and the program isn't stopped,
-        // lay the cone
-        while self.dispenser_motor.run_at_constant_speed() && !program_stopped()
-        {
+        // and the program isn't stopped
+        while self.dispenser_motor.distance_to_go() != 0 && !program_stopped() {
+            //
+
+            // Lay the cone
+            self.dispenser_motor
+                .run_at_constant_speed_to_target_position();
         }
 
         // Disable the dispenser motor
