@@ -1,6 +1,6 @@
 # Arduino Cone Layer
 
-The code for the cone layer written in the Rust Programming Language.
+The code for the cone layer written in the Rust programming language.
 The Arduino used for this project is the
 [Arduino Mega 2560 Rev 3](https://store.arduino.cc/products/arduino-mega-2560-rev3).
 
@@ -84,16 +84,16 @@ Alternatively, if you have [`git`](https://git-scm.com/) installed,
 navigate into the directory you want to clone the repository to and
 run either of the commands below:
 
-To clone the repository from the GitHub repository:
+To clone the repository from GitHub:
 ```sh
 git clone --depth 1 https://github.com/hankertrix/Uni-Stuff arduino-cone-layer
 cd arduino-cone-layer
 FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-filter y1-special-term/ps5888-making-and-tinkering/arduino-cone-layer/ HEAD
 ```
 
-To clone the repository from the Codeberg repository:
+To clone the repository from Codeberg:
 ```sh
-git clone --depth 1 https://codeberg.org/hankertrix/Uni-Stuff arduino-cone-layer
+git clone --depth 1 https://codeberg.org/Hanker/Uni-Stuff arduino-cone-layer
 cd arduino-cone-layer
 FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-filter y1-special-term/ps5888-making-and-tinkering/arduino-cone-layer/ HEAD
 ```
