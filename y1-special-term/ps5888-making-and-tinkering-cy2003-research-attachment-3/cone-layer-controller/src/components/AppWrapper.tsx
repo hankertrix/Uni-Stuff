@@ -1,14 +1,20 @@
-import { useCallback, useState } from "react";
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet } from "react-native";
-import { Dashboard } from "./src/components/Dashboard";
-import { ThemeContextProvider } from "./src/utils/theme-context";
-import useBluetoothLowEnergy from "./src/utils/bluetooth";
+// The module containing the component that wraps
+// the entire app
 
-export default function App() {
+import { useMemo, useState } from "react";
+import { View, SafeAreaView, StyleSheet } from "react-native";
+import { StatusBar } from "expo-status-bar";
+import { Device } from "react-native-ble-plx";
+import { useTheme } from "../utils/theme-context";
+import Dashboard from "./Dashboard";
+import useBluetoothLowEnergy from "../utils/bluetooth";
+
+// The component that wraps the entire app
+const AppWrapper = () => {
   //
 
   // Start of bluetooth related code
+
   const {
     connectedDevice,
     allDevices,
@@ -52,9 +58,38 @@ export default function App() {
   //
   // End of placeholders
 
+  // Get the theme
+  const { theme, getThemeStyles } = useTheme();
+
+  // Get the themed styles
+  const themedStyles = getThemeStyles();
+
+  // Create the styles
+  const styles = useMemo(
+    () =>
+      StyleSheet.create({
+        appWrapper: {
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          alignSelf: "stretch",
+          backgroundColor: themedStyles.backgroundColour,
+        },
+        wrapper: {
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          alignSelf: "stretch",
+          backgroundColor: themedStyles.backgroundColour,
+        },
+      }),
+    [themedStyles],
+  );
+
+  // Return the component
   return (
-    <SafeAreaView style={styles.container}>
-      <ThemeContextProvider>
+    <View style={styles.appWrapper}>
+      <SafeAreaView style={styles.wrapper}>
         <Dashboard
           connectedDevice={connectedDevice}
           allDevices={allDevices}
@@ -63,16 +98,11 @@ export default function App() {
           connectToDevice={connectToDevice}
           disconnectFromDevice={disconnectFromDevice}
         />
-        <StatusBar style="auto" />
-      </ThemeContextProvider>
-    </SafeAreaView>
+      </SafeAreaView>
+      <StatusBar style={theme === "dark" ? "light" : "dark"} />
+    </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+// Export the component
+export default AppWrapper;

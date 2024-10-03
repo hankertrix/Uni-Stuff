@@ -1,4 +1,4 @@
-# Phone Controller App for the Arduino Cone Layer
+# Cone Layer Controller
 
 The code for the phone application to
 control the Arduino Cone Layer using Bluetooth,
@@ -7,9 +7,9 @@ written in the TypeScript programming language.
 ## Getting the source files
 
 You can download the source files as a `.zip` file from this
-[link](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fhankertrix%2FUni-Stuff%2Ftree%2Fmain%2Fy1-special-term%2Fps5888-making-and-tinkering-cy2003-research-attachment-3%2Fphone-controller-app).
+[link](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fhankertrix%2FUni-Stuff%2Ftree%2Fmain%2Fy1-special-term%2Fps5888-making-and-tinkering-cy2003-research-attachment-3%2Fcone-layer-controller).
 You should rename the file to something shorter and more readable,
-like `phone-controller-app` for example.
+like `cone-layer-controller` for example.
 
 Otherwise, you can use one of the commands
 below to clone the repository if you have `git` installed.
@@ -17,17 +17,17 @@ below to clone the repository if you have `git` installed.
 To clone from the GitHub repository:
 
 ```sh
-git clone --depth 1 https://github.com/hankertrix/Uni-Stuff phone-controller-app
-cd phone-controller-app
-FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-filter y1-special-term/ps5888-making-and-tinkering/phone-controller-app/ HEAD
+git clone --depth 1 https://github.com/hankertrix/Uni-Stuff cone-layer-controller
+cd cone-layer-controller
+FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-filter y1-special-term/ps5888-making-and-tinkering/cone-layer-controller/ HEAD
 ```
 
 To clone from the Codeberg repository:
 
 ```sh
-git clone --depth 1 https://codeberg.org/Hanker/Uni-Stuff phone-controller-app
-cd phone-controller-app
-FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-filter y1-special-term/ps5888-making-and-tinkering/phone-controller-app/ HEAD
+git clone --depth 1 https://codeberg.org/Hanker/Uni-Stuff cone-layer-controller
+cd cone-layer-controller
+FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-filter y1-special-term/ps5888-making-and-tinkering/cone-layer-controller/ HEAD
 ```
 
 ## Installing `npm`
@@ -113,7 +113,7 @@ npx eas build
 
    Or just run `pod install` directly
    when you are inside the project folder,
-   which should be `phone-controller-app`:
+   which should be `cone-layer-controller`:
 
    ```sh
    cd ios

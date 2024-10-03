@@ -76,7 +76,7 @@ function createStyles(themedStyles: ThemedStyles) {
 
 // The dashboard component that will be the main screen
 // for controlling the Arduino
-export const Dashboard = ({
+const Dashboard = ({
   connectedDevice,
   allDevices,
   scanForDevices,
@@ -323,3 +323,6 @@ const baseStyles = StyleSheet.create({
     position: "absolute",
   },
 });
+
+// Export the component by default
+export default Dashboard;
