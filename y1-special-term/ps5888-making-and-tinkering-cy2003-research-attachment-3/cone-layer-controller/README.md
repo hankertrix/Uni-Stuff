@@ -48,7 +48,7 @@ brew install node
 ```
 
 If you don't have Homebrew installed,
-install it by running this command in your terminal
+install it by running this command in your terminal:
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
