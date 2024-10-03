@@ -42,6 +42,11 @@
           "bluetoothAlwaysPermission": "Allow $(PRODUCT_NAME) to connect to bluetooth devices"
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "c9f850cb-2c4b-4c1a-ae39-1e19fa647f69"
+      }
+    }
   }
 }
