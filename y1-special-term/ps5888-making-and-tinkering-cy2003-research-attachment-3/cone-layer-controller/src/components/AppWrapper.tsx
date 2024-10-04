@@ -2,7 +2,7 @@
 // the entire app
 
 import { useMemo, useState } from "react";
-import { View, SafeAreaView, StyleSheet } from "react-native";
+import { View, SafeAreaView, StyleSheet, Platform } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Device } from "react-native-ble-plx";
 import { useTheme } from "../utils/theme-context";
@@ -64,6 +64,9 @@ const AppWrapper = () => {
   // Get the themed styles
   const themedStyles = getThemeStyles();
 
+  // Get if the platform is Android
+  const isAndroid = Platform.OS === "android";
+
   // Create the styles
   const styles = useMemo(
     () =>
@@ -81,6 +84,7 @@ const AppWrapper = () => {
           alignItems: "center",
           alignSelf: "stretch",
           backgroundColor: themedStyles.backgroundColour,
+          marginTop: isAndroid ? 30 : 0,
         },
       }),
     [themedStyles],

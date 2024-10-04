@@ -213,10 +213,17 @@ const Dashboard = ({
     <View style={styles.wrapper}>
       <View style={styles.dashboard}>
         <View style={styles.topRow}>
-          <ThemeTogglerButton radius={ROUND_BUTTON_RADIUS} />
+          <ThemeTogglerButton
+            radius={ROUND_BUTTON_RADIUS}
+            visible={!deviceConnectionModalVisible && !layConesModalVisible}
+          />
           <LayConesButton
             radius={ROUND_BUTTON_RADIUS}
-            visible={deviceIsConnected}
+            visible={
+              deviceIsConnected &&
+              !deviceConnectionModalVisible &&
+              !layConesModalVisible
+            }
             disable={arduinoBusy}
             openLayConesModal={openLayConesModal}
           />

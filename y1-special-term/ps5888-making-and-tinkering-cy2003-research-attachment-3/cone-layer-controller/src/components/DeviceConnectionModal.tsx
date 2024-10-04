@@ -198,7 +198,6 @@ const baseStyles = StyleSheet.create({
     textAlign: "center",
   },
   deviceList: {
-    flex: 1,
     justifyContent: "center",
   },
   listItemButton: {

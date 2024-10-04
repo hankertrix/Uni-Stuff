@@ -39,7 +39,7 @@ const StopButton = ({
 
     // Otherwise, set the joystick to be enabled
     setArduinoAsNotBusy();
-  }, [setArduinoAsNotBusy]);
+  }, [sendStringToDevice, setArduinoAsNotBusy]);
 
   // The function to create the styles
   const createStyles = useCallback(

@@ -30,6 +30,12 @@
           <string>com.hankertrix.cone-layer-controller</string>
         </array>
       </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>exp+cone-layer-controller</string>
+        </array>
+      </dict>
     </array>
     <key>CFBundleVersion</key>
     <string>1</string>

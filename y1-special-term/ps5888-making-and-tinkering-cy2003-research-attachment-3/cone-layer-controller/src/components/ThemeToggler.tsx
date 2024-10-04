@@ -7,10 +7,11 @@ import { useTheme } from "../utils/theme-context";
 
 type ThemeTogglerProps = {
   radius: number;
+  visible: boolean;
 };
 
 // The button to toggle the theme
-const ThemeTogglerButton = ({ radius }: ThemeTogglerProps) => {
+const ThemeTogglerButton = ({ radius, visible }: ThemeTogglerProps) => {
   //
 
   // Get the function to toggle the theme
@@ -20,24 +21,29 @@ const ThemeTogglerButton = ({ radius }: ThemeTogglerProps) => {
   const providedThemedStyles = getThemeStyles();
 
   // Create the variable styles
-  const styles = useMemo(() => StyleSheet.create({
-    wrapper: {
-      justifyContent: "center",
-      alignItems: "center",
-    },
-    button: {
-      borderRadius: radius,
-      width: radius * 2,
-      height: radius * 2,
-      backgroundColor: theme === "dark" ? "#404040" : "#ffffff",
-      borderWidth: theme === "dark" ? 0 : 2,
-      justifyContent: "center",
-    },
-    icon: {
-      padding: theme === "dark" ? 7 : 0,
-      transform: [{ translateX: theme === "dark" ? -7 : 0 }],
-    },
-  }), [radius, theme, providedThemedStyles]);
+  const styles = useMemo(
+    () =>
+      StyleSheet.create({
+        wrapper: {
+          justifyContent: "center",
+          alignItems: "center",
+        },
+        button: {
+          borderRadius: radius,
+          width: radius * 2,
+          height: radius * 2,
+          backgroundColor: theme === "dark" ? "#404040" : "#ffffff",
+          borderWidth: theme === "dark" ? 0 : 2,
+          justifyContent: "center",
+          opacity: visible ? 1 : 0,
+        },
+        icon: {
+          padding: theme === "dark" ? 7 : 0,
+          transform: [{ translateX: theme === "dark" ? -7 : 0 }],
+        },
+      }),
+    [radius, visible, theme, providedThemedStyles],
+  );
 
   // The moon SVG icon
   const moonIcon = useMemo(

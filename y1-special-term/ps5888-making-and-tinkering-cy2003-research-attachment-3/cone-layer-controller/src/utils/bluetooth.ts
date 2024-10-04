@@ -7,17 +7,20 @@ import {
   BleManager,
   Characteristic,
   Device,
+  LogLevel,
 } from "react-native-ble-plx";
 
 import * as ExpoDevice from "expo-device";
 
-// TODO: Add the UUIDs and characteristic for the cone layer console service
 // The UUID for the cone layer console service
-const CONE_LAYER_CONSOLE_UUID = "0000FFE0-0000-1000-8000-00805F9B34FB";
+const CONE_LAYER_UUID = "0000FFE0-0000-1000-8000-00805F9B34FB";
 
 // The characteristic for the cone layer console service
-const CONE_LAYER_CONSOLE_CHARACTERISTIC =
+const CONE_LAYER_CHARACTERISTIC =
   "0000FFE1-0000-1000-8000-00805F9B34FB";
+
+// The device name for the cone layer
+const CONE_LAYER_DEVICE_NAME = "BT05";
 
 // The type of the scan for devices function
 export type ScanForDevices = () => Promise<boolean>;
@@ -55,6 +58,9 @@ function useBluetoothLowEnergy(): BluetoothLowEnergyApi {
   // Initialise the bluetooth low energy manager
   const bleManager = useMemo(() => new BleManager(), []);
 
+  // Set the log level to verbose
+  bleManager.setLogLevel(LogLevel.Verbose);
+
   // Initialise the state for the bluetooth devices
   const [allDevices, setAllDevices] = useState<Device[]>([]);
 
@@ -75,7 +81,7 @@ function useBluetoothLowEnergy(): BluetoothLowEnergyApi {
       {
         title: "Bluetooth Scan Permission",
         message: "The app needs to scan for bluetooth devices",
-        buttonPositive: "OK",
+        buttonPositive: "Ok",
       },
     );
 
@@ -85,7 +91,7 @@ function useBluetoothLowEnergy(): BluetoothLowEnergyApi {
       {
         title: "Bluetooth Connect Permission",
         message: "The app needs to connect to bluetooth devices",
-        buttonPositive: "OK",
+        buttonPositive: "Ok",
       },
     );
 
@@ -96,7 +102,7 @@ function useBluetoothLowEnergy(): BluetoothLowEnergyApi {
         title: "Bluetooth Fine Location Permission",
         message:
           "The app needs fine location to work with bluetooth low energy",
-        buttonPositive: "OK",
+        buttonPositive: "Ok",
       },
     );
 
@@ -172,9 +178,8 @@ function useBluetoothLowEnergy(): BluetoothLowEnergyApi {
       // If there is an error, log the error and exit the function
       if (error) return console.error(error);
 
-      // Otherwise, a device was found
-      // and the device is the cone layer
-      if (device && device.name?.includes("BT-05")) {
+      // Otherwise, if the device exists and is the cone layer
+      if (device && device.name?.includes(CONE_LAYER_DEVICE_NAME)) {
         //
 
         // Set the device array to add the new device
@@ -202,11 +207,17 @@ function useBluetoothLowEnergy(): BluetoothLowEnergyApi {
     // Request for permissions
     const permissionsRequestSuccess = await requestPermissions();
 
+    console.log(
+      `Permissions ${permissionsRequestSuccess ? "granted" : "denied"}`,
+    );
+
     // If the permissions request was not successful, return false
     if (!permissionsRequestSuccess) return false;
 
     // Otherwise, scan for peripherals
     scanForPeripherals();
+
+    console.log("Started scanning for bluetooth devices");
 
     // Return true
     return true;
@@ -280,8 +291,8 @@ function useBluetoothLowEnergy(): BluetoothLowEnergyApi {
     // Monitor the console characteristic for the data
     // from the cone layer
     device.monitorCharacteristicForService(
-      CONE_LAYER_CONSOLE_UUID,
-      CONE_LAYER_CONSOLE_CHARACTERISTIC,
+      CONE_LAYER_UUID,
+      CONE_LAYER_CHARACTERISTIC,
       onConeLayerConsoleDataUpdate,
     );
   }
@@ -302,16 +313,19 @@ function useBluetoothLowEnergy(): BluetoothLowEnergyApi {
     // Add the new line character to the string
     str += "\n";
 
-    // Convert the string to base64
-    const base64Str = btoa(str);
+    // Convert the string to hexadecimal
+    const hexString = Buffer.from(str).toString("hex");
+
+    // Convert the hexadecimal string to base64
+    const base64String = Buffer.from(hexString, "hex").toString("base64");
 
     // Try to write the string to the device
     try {
       await bleManager.writeCharacteristicWithResponseForDevice(
         device.id ?? "",
-        CONE_LAYER_CONSOLE_UUID,
-        CONE_LAYER_CONSOLE_CHARACTERISTIC,
-        base64Str,
+        CONE_LAYER_UUID,
+        CONE_LAYER_CHARACTERISTIC,
+        base64String,
       );
 
       // Return if the write was successful

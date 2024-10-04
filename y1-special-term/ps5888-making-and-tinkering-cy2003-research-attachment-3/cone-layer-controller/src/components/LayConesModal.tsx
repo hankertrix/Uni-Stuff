@@ -18,7 +18,7 @@ import { SendStringToDevice } from "../utils/bluetooth";
 import { themeStyles, useTheme } from "../utils/theme-context";
 
 // The command to lay cones
-const LAY_CONES_COMMAND = "lay_cones";
+const LAY_CONES_COMMAND = "lay_cones_in_a_straight_line";
 
 // The font size for text
 const FONT_SIZE = 20;

@@ -76,7 +76,6 @@ const DropConeButton = ({
           borderRadius: radius,
           width: radius * 2,
           height: radius * 2,
-          padding: 1,
           opacity: visible ? 1 : 0,
         },
         text: {
