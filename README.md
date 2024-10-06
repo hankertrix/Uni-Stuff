@@ -1,4 +1,5 @@
 # Uni Stuff
+
 Hello! This is the repository where I am storing all of my university related things,
 so you can find my lecture notes and tutorial answers here.
 Hopefully this resource will help you in your university journey!
@@ -6,9 +7,8 @@ Hopefully this resource will help you in your university journey!
 My first year and first semester was in August 2023,
 so my first academic year is AY2023/2024.
 
-<br>
-
 ## How the repository is organised
+
 This repository is first split into folders for each year and semester,
 with year 1 semester 1 being in the `y1s1` folder and so on.
 Inside those folders are more folders for each of the modules that I am taking for the semester,
@@ -16,9 +16,8 @@ with the course code as well as the course name in the name of the folder.
 Inside those folders you will find the topics for those modules.
 Finally, inside those folders, you will find my notes and tutorials.
 
-<br>
-
 ## What is the difference between a `cheat-sheet` and `notes`?
+
 A cheat sheet is basically just a compilation of all the things I find important inside the lecture slides for a topic.
 So things like definitions and important formulas will be included in the cheat sheet,
 as well as a few explanations and examples that I find important for my understanding of something.
@@ -31,11 +30,10 @@ After the notes for maths module 1B is uploaded,
 I will no longer be doing notes as it takes far too much time.
 Instead, I will be doing cheat sheets for all topics after maths module 1B.
 
-<br>
-
 ## There are 3 different files with the same name, which file should I be viewing?
 
-TLDR: You should be viewing the **PDF** file. If there is no PDF file in the folder, then view the **org** file.
+TLDR: You should be viewing the **PDF** file.
+If there is no PDF file in the folder, then view the **org** file.
 
 There are usually three files with three different file extensions,
 one with the `.org` file extension, another with the `.tex` file extension,
@@ -49,18 +47,28 @@ which is the final result that you want to view.
 
 <hr>
 
-If there is only one file, it should be an `.org` file, so just click on it to view it. The platform should display the file in an easily readable format.
+If there is only one file, it should be an `.org` file, so just click on it to view it.
+The platform should display the file in an easily readable format.
 
-<br>
+## Special modules
+
+There are some special modules I take that have a different
+course code, but have pretty much the same content as the
+usual module that everyone else takes. Here is a table
+mapping out those modules.
+
+| Special module                           | Normal module                            |
+| ---------------------------------------- | ---------------------------------------- |
+| SP0061 Science & Technology for Humanity | CC0007 Science & Technology for Humanity |
 
 ## Errors
+
 If you find any errors inside my notes or tutorials,
 feel free to open an issue or submit a pull request to fix the error.
 Alternatively, you can contact me on Telegram using my Telegram handle [@hankertrix](https://t.me/hankertrix).
 
-<br>
-
 ## Licence
+
 All files in this repository are licensed under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Licence][cc-by-nc-sa],
 which can be found in the top level `LICENCE.txt` file,
@@ -71,4 +79,3 @@ An example is the licence file found in the MA1008 mini project folder.
 
 [cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
 [cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
-
