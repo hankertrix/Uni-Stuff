@@ -8,6 +8,8 @@ Reference: [[https://blogs.ntu.edu.sg/sgslsignbank/signs/][SGSL Sign Bank]]
 * Definitions
 
 ** Agent gesture
+[[./images/person.gif]]
+
 The agent gesture is to show a box with both hands and move the box down.
 This gesture used to turn change an action, into a person doing the action. For example, teach + agent gesture = teacher.
 
@@ -33,6 +35,12 @@ Intensity is shown by varying the intensity or speed with which a sign is made o
 
 ** Initialised sign
 An initialised sign is a sign that uses a letter of the English alphabet in its gesture, usually the first letter of the word.
+
+** Letter drag
+You can drag out letters at the end of a finger spell if the ending letters are the same. The motion is like pulling the letter out to the side.
+
+** Plural words
+Just repeat the sign once more to show that it is plural.
 
 * Alphabet
 
@@ -319,22 +327,22 @@ Bring up a wave from your chest using your palm. At the end of the motion, your 
 ** How much?
 [[./images/how-much.gif]]
 
-** This
+** This / That
 [[./images/this.gif]]
 
-** That
-[[./images/that.gif]]
+** I love you / ILY
+[[./images/i-love-you.gif]]
 
 ** Teochew
 
 *** Variation 1
-Make the "that" hand sign and put your index finger at your temple. Open and close the middle and ring finger quickly.
+Make the "I love you" hand sign and put your index finger at your temple. Open and close the middle and ring finger quickly.
 
 *** Variation 2
 Start with both palm facing upwards, and with one hand in front of the other, facing to the side. Then make a circle by pulling the palms upwards and then back down again, while transitioning the open palm to the "8" hand sign with the palm facing downwards at the end of the gesture.
 
 ** Plane / Aeroplane / Aerospace / Airplane
-Fly the "that" hand sign over your head.
+Fly the "I love you" hand sign over your head.
 
 ** Airport
 Use the "plane" hand sign, and show it either flying off from your hand if you're departing from an airport, or landing on your hand if you're arriving at an airport.
@@ -350,12 +358,17 @@ Flap your hands like you're flapping your wings.
 ** If
 
 *** Variation 1
+[[./images/if-variation-a.gif]]
+
 Make the "I" hand sign and touch the pinky beside your eye twice. Your palm should be facing backwards.
 
 *** Variation 2
-[[./images/if.gif]]
+[[./images/if-variation-b.gif]]
 
 Just finger spell "if".
+
+** Suppose
+Same as the first variation of "if", but put your pinky beside your temple instead of beside your eye.
 
 ** Bad
 
@@ -492,6 +505,9 @@ Shake your head when doing this gesture.
 
 ** Dislike
 [[./images/dislike.gif]]
+
+** Enjoy
+[[./images/enjoy.gif]]
 
 ** Thing
 [[./images/thing.gif]]
@@ -654,8 +670,11 @@ Same motion as the hand sign for "thousand", but instead of the open palm facing
 *** Variation 2
 [[./images/same-variation-b.gif]]
 
-** Different / But
-[[./images/different.gif]]
+** But
+[[./images/but.gif]]
+
+** Different
+Same motion as "but", but do it twice.
 
 ** Just
 [[./images/just.gif]]
@@ -669,7 +688,21 @@ Same motion as the hand sign for "thousand", but instead of the open palm facing
 ** About
 [[./images/about.gif]]
 
+** Is
+Put the thumb of the "I" hand sign on your chin.
+
+** Are
+Put the tips of the fingers of the "R" hand sign on your chin.
+
+** Be
+Put the tips of the fingers of the "B" hand sign on your chin.
+
 ** By
+
+*** Variation 1
+Place one hand vertically with all fingers pointing upwards, and with your palm facing the side. The other hand should be horizontal with the palm facing downwards and all fingers pointing to the side. Move this hand past the other hand, on the outside of your body.
+
+*** Variation 2
 Make a "B" hand sign and place it below your mouth, then move it outwards to form a "Y".
 
 ** Beside
@@ -705,7 +738,7 @@ Make a "B" hand sign and place it below your mouth, then move it outwards to for
 [[./images/many-variation-b.gif]]
 
 ** Ever
-Similar motion to "Monday", but instead of the "M" hand sign, do the "E" hand sign.
+Same motion to "Monday", but instead of the "M" hand sign, do the "E" hand sign.
 
 ** Never
 [[./images/never-diagram.gif]]
@@ -910,6 +943,9 @@ Same motion as "talk", but with the "I" hand sign instead of the index finger.
 ** Conversation
 Same motion as "talk", but with 4 fingers instead of just the index finger.
 
+** Race (as in running race)
+Same motion as "talk", but use the "R" hand sign instead and put your hands in front of your chest instead of in front of your mouth.
+
 ** Traffic
 Similar motion to "talk", but with all five fingers outstretched instead of just the index finger, and your hands should be in front of your chest, instead of below your mouth.
 
@@ -979,6 +1015,9 @@ Same motion as "must", but do it lightly and do it twice.
 ** Understand
 [[./images/understand.gif]]
 
+** Misunderstand
+[[./images/misunderstand.gif]]
+
 ** Forget
 [[./images/forget.gif]]
 
@@ -1001,7 +1040,10 @@ Make a "W" hand sign and rotate a circle around your temple.
 [[./images/know.gif]]
 
 ** Don't know
-[[./images/]]
+Have your hand with all fingers pointing upwards and the palm facing the side. Bend your middle finger and put it on your temple. Then rotate your hand from front to back.
+
+** Guess
+[[./images/guess.gif]]
 
 ** Learn
 [[./images/learn.gif]]
@@ -1029,6 +1071,9 @@ Same as "practice", but with the "T" hand sign instead of the fist.
 
 ** Business
 [[./images/business.gif]]
+
+** Employment
+Same motion as "business", but use the "E" hand sign.
 
 ** Advertise
 [[./images/advertise.gif]]
@@ -1090,6 +1135,9 @@ Make two "R" hand signs using both hands with the palm facing outwards, then mov
 
 ** Interpret
 [[./images/interpret.gif]]
+
+** Linguistics
+Same motion as "interpret", but pull your hands apart.
 
 ** Change
 [[./images/change.gif]]
@@ -1182,6 +1230,15 @@ Make two "F" hand signs with both hands and close them to your chest, then open 
 ** Teach
 [[./images/teach.gif]]
 
+** Person
+[[./images/person.gif]]
+
+** Individual
+Same motion as "person", but use the "i" hand sign instead of an open palm.
+
+** People
+[[./images/people.gif]]
+
 ** Law
 Make an "L" with one hand then tap the "L" hand sign on the fingers of the other palm, followed by tapping the back of the other palm.
 
@@ -1260,14 +1317,21 @@ Same motion as "red", but form a "P" first and use the middle finger to draw the
 ** Boy
 [[./images/boy.gif]]
 
-** Brother
-[[./images/brother.gif]]
+Male nouns are all done above the temple.
 
 ** Girl
 [[./images/girl.gif]]
 
+Female nouns are all done below the nose.
+
+** Brother
+[[./images/brother.gif]]
+
 ** Sister
 [[./images/sister.gif]]
+
+** Siblings
+Do the gesture for "brother" then do the gesture for "sister".
 
 ** Friend
 [[./images/friend.gif]]
@@ -1335,8 +1399,11 @@ Do the gesture for "father", then the gesture for "mother".
 ** Aunt
 [[./images/aunt.gif]]
 
-** Cousin
+** Cousin (male)
 [[./images/cousin.gif]]
+
+** Cousin (female)
+Same motion as "cousin (male)", but do it beside your cheeks instead of your temple.
 
 ** Niece
 [[./images/niece.gif]]
@@ -1346,6 +1413,12 @@ Do the gesture for "father", then the gesture for "mother".
 
 ** Baby
 [[./images/baby.gif]]
+
+** Son
+Do the gesture for "boy", then do the gesture for "baby", but don't rock the baby.
+
+** Daughter
+Do the gesture for "girl", then do the gesture for "baby", but don't rock the baby.
 
 ** Tall
 [[./images/tall.gif]]
@@ -1372,6 +1445,9 @@ Do the gesture for "father", then the gesture for "mother".
 
 *** Variation 2
 [[./images/big-variation-b.gif]]
+
+** Small
+[[./images/small.gif]]
 
 ** Little
 Make the "L" hand sign with both hands with palm facing each other, and the index finger pointing forward, then move them towards the centre until the fingers touch.
@@ -1492,6 +1568,9 @@ Show a heart shape with both hands at your heart.
 
 ** Water
 [[./images/water.gif]]
+
+** Milk
+[[./images/milk.gif]]
 
 ** Thirsty
 
@@ -1626,6 +1705,9 @@ Hold up a fist with the palm facing inwards, then make the "I" hand sign with th
 *** Variation 2
 [[./images/test-variation-b.gif]]
 
+** Exam
+Place an arm vertically and have all the fingers point upwards. The palm should be facing to the side. The other hand does the "X" hand sign and repeatedly bends and straightens the index finger while moving down the arm.
+
 ** Sky
 [[./images/sky.gif]]
 
@@ -1641,8 +1723,11 @@ Use your whole palm with it facing down to show a flat surface.
 ** Sun
 [[./images/sun.gif]]
 
+** Concept
+Same motion as "sun", but start with the thumb of the "C" hand sign at your temple instead of the "C" surrounding your eyes.
+
 ** Moon
-Use your thumb and index finger to form the C shape and put it around an eye.
+Use your thumb and index finger to form the "C" hand sign and put it around an eye.
 
 ** Rain
 [[./images/rain.gif]]
@@ -1661,6 +1746,9 @@ Use your thumb and index finger to form the C shape and put it around an eye.
 
 ** Winter
 [[./images/winter.gif]]
+
+** Refrigerate
+Same as winter, but use the "R" hand sign for both hands instead.
 
 ** Fall (verb)
 
@@ -1805,6 +1893,9 @@ Pretend you are sleeping on one hand. The other hand draws circles using the "H"
 ** Knob
 [[./images/knob.gif]]
 
+** Pig
+[[./images/pig.gif]]
+
 ** Clown
 [[./images/clown.gif]]
 
@@ -1817,11 +1908,33 @@ Same motion as "flower", but with the "R" hand sign instead of the flattened "O"
 ** Tulips
 Same motion as "flower", but with the "T" hand sign instead of the flattened "O" hand shape.
 
+** Animal
+[[./images/animal.gif]]
+
 ** Bird
 [[./images/bird.gif]]
 
 ** Duck (noun)
 Same motion as "bird", but open and close the all the fingers instead of just the thumb and the index finger.
+
+** Rooster
+
+*** Variation 1
+[[./images/rooster-variation-a.gif]]
+
+*** Variation 2
+Do the hand gesture for "bird" once, and keep the index and thumb touching each other. Then open the index finger and thumb and move the hand outwards and to the side. Open your mouth while doing it as well. It is to simulate a rooster call in the morning.
+
+** Hen
+
+*** Variation 1
+[[./images/hen-variation-a.gif]]
+
+*** Variation 2
+Pretend like you are flapping your wings like a chicken.
+
+** Chick / Chicken
+[[./images/chick.gif]]
 
 ** Swan
 Place one arm horizontally, with the palm facing downwards. Make the flattened "O" hand shape with the other hand and place the elbow on the back of the other palm, mimicking how a swan looks like.
@@ -1831,7 +1944,142 @@ Place one arm horizontally, with the palm facing downwards. Make the flattened "
 
 There should also be an arm held horizontally under the arm doing the dinosaur hand sign, such that the dinosaur is moving along the arm.
 
-** Point
+** Bear
+[[./images/bear.gif]]
+
+** Cat
+[[./images/cat.gif]]
+
+** Cockroach
+
+*** Variation 1
+Point upwards using your index finger with both hands, with your palm facing outwards. Then, put both hands on your head to simulate the feelers of a cockroach.
+
+*** Variation 2
+Have one arm horizontally and make a claw shape with the hand with the palm facing downwards. Place the "C" shape on the back of the palm using the other hand. Wiggle the fingers on the clawed hand and move it to the side to simulate an insect walking.
+
+** Ant
+Same motion as the second variation of "cockroach", but use the "A" hand sign instead of the "C" hand sign.
+
+** Beetle
+Same motion as the second variation of "cockroach", but use the "B" hand sign instead of the "C" hand sign.
+
+** Insect
+Same motion as the second variation of "cockroach", but use the "I" hand sign instead of the "C" hand sign.
+
+** Mouse (animal)
+
+*** Variation 1
+[[./images/mouse-animal-variation-a.gif]]
+
+*** Variation 2
+Same motion as the second variation of "cockroach", but remove the other hand entirely and close the walking palm more tightly to better mimic the movement of a mouse.
+
+** Mouse (computer)
+[[./images/mouse-computer.gif]]
+
+** Cow
+[[./images/cow.gif]]
+
+** Deer
+[[./images/deer.gif]]
+
+** Dog
+[[./images/dog.gif]]
+
+** Safari
+Hold an arm horizontally with the palm facing downwards. The other hand does the "F" hand sign and moves above and below the arm that is being held horizontally. The hand should be moving on the outside of the arm, not on the inside nearer to the body.
+
+** Dolphin
+Same motion as "safari", but use the "D" hand sign instead of the "F" hand sign.
+
+** Whale
+Same motion as "safari", but use the "W" hand sign instead of the "F" hand sign.
+
+** Dragon
+Make a flattened "C" hand sign with one hand then move it up and down while moving forward, starting from your chin.
+
+** Eagle
+[[./images/eagle.gif]]
+
+** Fox
+[[./images/fox.gif]]
+
+** Giraffe
+
+*** Variation 1
+Do the "I love you" hand sign but close the thumb and face your palm outwards. Then put that arm's elbow on the back of another palm, with the palm facing towards and the arm held horizontally with the fingers pointing to the side.
+
+*** Variation 2
+[[./images/giraffe.gif]]
+
+** Goat
+[[./images/goat.gif]]
+
+** Hippopotamus / Hippo
+[[./images/hippopotamus.gif]]
+
+** Horse
+
+*** Variation 1
+[[./images/horse-variation-a.gif]]
+
+*** Variation 2
+Pretend that you are holding the leash on a horse and riding it.
+
+** Lion
+[[./images/lion.gif]]
+
+** Merlion
+Do the gesture for "lion", then use both hands to show waves in front of you, with the palm faced downwards.
+
+** Lizard
+Hold an arm vertically with the fingers pointing upwards and the palm facing the side. Make the "L" hand sign with the other hand and move the hand up the arm, wiggling back and forth as it moves up.
+
+** Monkey
+[[./images/monkey.gif]]
+
+** Gorilla
+[[./images/gorilla.gif]]
+
+** Owl
+[[./images/owl.gif]]
+
+** Binoculars
+[[./images/binoculars.gif]]
+
+** Rabbit
+[[./images/rabbit.gif]]
+
+** Sheep
+[[./images/sheep.gif]]
+
+** Snake
+
+*** Variation 1
+[[./images/snake-variation-a.gif]]
+
+*** Variation 2
+[[./images/snake-variation-b.gif]]
+
+** Squirrel
+[[./images/squirrel.gif]]
+
+** Tiger
+
+*** Variation 1
+[[./images/tiger-variation-a.gif]]
+
+*** Variation 2
+Point upwards with an index finger on one hand with the palm facing outwards. The other hand does a "W" hand sign and place it in front of the index finger pointing upwards, with the palm facing inwards. Then, make a claw shape with both hands and place them in front of you like a tiger prowling.
+
+** Wolf
+[[./images/wolf.gif]]
+
+** Zebra
+[[./images/zebra.gif]]
+
+** Point / Specify
 Hold one index finger up, pointing upwards, and use the index finger on the other hand to point at it.
 
 ** Aim
@@ -1925,6 +2173,9 @@ Just finger spell "TV".
 ** Elephant
 [[./images/elephant.gif]]
 
+** Race (as in a person's heritage)
+Put one arm horizontally with the palm facing down, then rub the wrist with the fingers of the other hand.
+
 ** English
 [[./images/english.gif]]
 
@@ -1940,17 +2191,52 @@ Make a "C" hand sign and put the thumb to your temple.
 ** Hokkien
 Do the "8" hand sign with the palm facing down, then put the index finger on your nose.
 
+** Eurasian
+[[./images/eurasian.gif]]
+
+** Asian
+Same motion as "Eurasian", but using the "A" hand sign instead of the "E" hand sign.
+
+** ASEAN
+Place both hands with palm facing outwards at head level. Then, move both hands together while moving downwards. Then, move both hands outwards while continuing to move down after they are extremely close to each other.
+
 ** Senior
 [[./images/senior.gif]]
 
 ** Bully
 Same motion as "senior", but use a thumbs up on the hand below instead of the open hand.
 
+** Fight
+[[./images/fight.gif]]
+
 ** Junior
 Hold up an open palm facing upwards, and touch the index of the other hand onto the index finger of the open palm.
 
-** Merlion
-Pretend to pull your hair back, then use both hands to show waves in front of you, with the palm faced downwards.
+** Video
+[[./images/video.gif]]
+
+** Fire / Flame
+[[./images/fire-flame.gif]]
+
+** Story
+[[./images/story.gif]]
+
+** Focus
+[[./images/focus.gif]]
+
+** Full
+[[./images/full.gif]]
+
+** Badminton
+[[./images/badminton.gif]]
+
+** Word
+[[./images/word.gif]]
+
+** Vocabulary
+[[./images/vocabulary.gif]]
+
+** Cockroach
 
 * Places
 
@@ -1968,6 +2254,12 @@ Same motion as "museum", but with the "S" hand sign instead of the "M" hand sign
 
 ** Town
 [[./images/town.gif]]
+
+** Village
+Same motion as "town", but one hand does the "V" hand sign instead.
+
+** City
+Same motion as "town", but one hand does the "C" hand sign instead.
 
 ** Church
 [[./images/church.gif]]
@@ -2010,10 +2302,7 @@ Show the "J" hand sign then show the "point" hand sign.
 Do the gesture for "Jurong", then the gesture for "bird", then the gesture for "park".
 
 ** Zoo
-Just finger spell "Zoo"
-
-** Safari
-Hold an arm horizontally with the palm facing downwards. The other hand does the "F" hand sign and moves above and below the arm that is being held horizontally. The hand should be moving on the outside of the arm, not on the inside nearer to the body.
+Just finger spell "Zoo".
 
 ** Night Safari
 Do the gesture for "night", then do the gesture for "safari".
@@ -2042,7 +2331,7 @@ Just show the number 313.
 ** Orchard Road
 Do the hand sign for "Orchard", then do the hand sign for "road".
 
-** India
+** India / Indian
 [[./images/india.gif]]
 
 ** Little India
@@ -2063,7 +2352,7 @@ Same motion as "change", but use an open palm with the fingers curled to simulat
 Hold one arm horizontal with the palm facing up. The other arm has the elbow on the open palm of the other hand, and has an open palm facing up with fingers curled. Move that palm around.
 
 ** Suntec
-Do the "that" hand sign, but move your thumb behind the other two fingers, then put it on top of an open palm facing upwards on the other hand. It looks like the fountain of wealth.
+Do the "I love you" hand sign, but move your thumb behind the other two fingers, then put it on top of an open palm facing upwards on the other hand. It looks like the fountain of wealth.
 
 ** Chinese Garden
 [[./images/chinese-garden-place.gif]]
@@ -2074,17 +2363,20 @@ Do the "that" hand sign, but move your thumb behind the other two fingers, then 
 ** Kuala Lumpur
 Just finger spell "KL".
 
-** New York
-[[./images/new-york.gif]]
-
 ** Japan
 [[./images/japan.gif]]
 
 ** Tokyo
 [[./images/tokyo.gif]]
 
+** Europe / European
+[[./images/europe.gif]]
+
 ** Norway
 [[./images/norway.gif]]
 
 ** Finland
 [[./images/finland.gif]]
+
+** New York
+[[./images/new-york.gif]]
