@@ -187,10 +187,20 @@ Jump an "N" hand sign over the open palm facing inwards with fingers pointing up
 * Mathematical symbols
 
 ** Add (plus)
+
+*** Variation 1
 [[./images/add-math.gif]]
 
+*** Variation 2
+Make the "C" hand sign with one hand, but rotate it such that the palm is facing towards your body. Bring the other palm, which is also facing towards your body, into the hand that is doing the "C" hand sign.
+
 ** Subtract (minus)
-[[./images/subtract-math.gif]]
+
+*** Variation 1
+[[./images/subtract-math-variation-a.gif]]
+
+*** Variation 2
+Literally just show the minus symbol, which is just a line, with the index finger.
 
 ** Multiply (times)
 [[./images/multiply-math.gif]]
@@ -536,6 +546,9 @@ Just do the gesture for "every" then followed by "thing".
 
 ** Give
 [[./images/give.gif]]
+
+** Treat
+Make the "T" hand sign with both hands and make sure the thumb is pointing forward. Then move both hands forward.
 
 ** Bring
 [[./images/bring.gif]]
@@ -928,9 +941,6 @@ Similar to variation 2, but use only the index finger. The index finger becomes 
 ** Offend
 Hold one arm at a 45-degree angle, with the elbow being lower than the hand. The palm of this hand should be facing down. The other hand forms the "O" hand sign and slides it down the outside of the arm.
 
-** Call
-Do the "C" hand sign and move it outwards from your chest.
-
 ** Talk
 [[./images/talk.gif]]
 
@@ -947,10 +957,13 @@ Same motion as "talk", but with 4 fingers instead of just the index finger.
 Same motion as "talk", but use the "R" hand sign instead and put your hands in front of your chest instead of in front of your mouth.
 
 ** Traffic
-Similar motion to "talk", but with all five fingers outstretched instead of just the index finger, and your hands should be in front of your chest, instead of below your mouth.
+Similar motion to "talk", but with all five fingers apart instead of just the index finger, and your hands should be in front of your chest, instead of below your mouth.
 
 ** Malay
-Similar motion to "traffic", but have your hands beside the top of your head and your fingers close together instead of expanded out.
+Similar motion to "traffic", but have your hands beside the top of your head and your fingers together instead of apart.
+
+** Call
+Do the "C" hand sign and move it outwards from your chest.
 
 ** Text / Message
 
@@ -967,15 +980,6 @@ Similar motion to "traffic", but have your hands beside the top of your head and
 
 *** Variation 2
 [[./images/hope-variation-b.gif]]
-
-** Report
-Similar motion to the first variation of "hope", but do it once, and position your hands below your mouth.
-
-** Reply
-Similar motion to "report", but bring your hands downwards and transition the palm to face downwards as you're moving them outwards.
-
-** Answer
-[[./images/answer.gif]]
 
 ** Help
 [[./images/help.gif]]
@@ -1072,7 +1076,7 @@ Same as "practice", but with the "T" hand sign instead of the fist.
 ** Business
 [[./images/business.gif]]
 
-** Employment
+** Employ
 Same motion as "business", but use the "E" hand sign.
 
 ** Advertise
@@ -1236,6 +1240,9 @@ Make two "F" hand signs with both hands and close them to your chest, then open 
 ** Individual
 Same motion as "person", but use the "i" hand sign instead of an open palm.
 
+** Client
+[[./images/client.gif]]
+
 ** People
 [[./images/people.gif]]
 
@@ -1332,6 +1339,9 @@ Female nouns are all done below the nose.
 
 ** Siblings
 Do the gesture for "brother" then do the gesture for "sister".
+
+** Close
+Place a palm facing towards your body with fingers pointing to the side. Make the "C" hand sign with the other hand and use it to push the palm inwards, or further towards your body.
 
 ** Friend
 [[./images/friend.gif]]
@@ -1667,8 +1677,17 @@ Same motion as "science", but with the "C" hand sign instead of the thumbs down 
 ** Biological
 Same motion as "science", but with the "B" hand sign instead of the thumbs down gesture.
 
+** Mechanical
+Interlock your fingers with each other, thumb pointed upwards and the palm facing towards your body.
+
+** Machine
+Same hand shape as "mechanical", but shake your hands up and down.
+
 ** Engineering
 Make two "Y" hand signs with both hands and connect them thumb to thumb, with the pinky pointed forward. Then, rotate one hand up and down while the other hand remains still.
+
+** Psychology / Psychological
+[[./images/psychology.gif]]
 
 ** Social
 Rotate the "S" hand sign 360 degrees around an index finger pointing upwards. The other hand's palm should always be facing the index finger.
@@ -1679,14 +1698,8 @@ Same motion as "social", but with the "C" hand sign instead of the "S" hand sign
 ** Local
 Same motion as "social", but with the "L" hand sign instead of the "S" hand sign.
 
-** Mechanical
-Interlock your fingers with each other, thumb pointed upwards and the palm facing towards your body.
-
-** Machine
-Same hand shape as "mechanical", but shake your hands up and down.
-
-** Initialise
-Hold up a fist with the palm facing inwards, then make the "I" hand sign with the other hand and screw the pinky side of the fist.
+** Initial / Initialise
+Make the "I" hand sign with one hand and the palm should be facing forward. The other hand uses the index finger to screw the base of the thumb.
 
 ** Technology
 [[./images/technology.gif]]
@@ -1810,6 +1823,9 @@ Just finger spell "MRT".
 
 ** Grab (brand)
 [[./images/grab-brand.gif]]
+
+** Suntec
+Do the "Grab (brand)" hand sign, but don't shake it, then put it on top of an open palm facing upwards on the other hand. It looks like the fountain of wealth.
 
 ** Boat
 [[./images/boat.gif]]
@@ -2119,10 +2135,19 @@ Same motion as "enter", but do it twice.
 [[./images/tell.gif]]
 
 ** Announce
-Same motion as "tell", but do the motion towards the side and outwards from your mouth.
+[[./images/announce.gif]]
 
 ** Inform / Information
 [[./images/inform.gif]]
+
+** Report
+Similar motion to the first variation of "hope", but do it once, and position your hands beside your mouth.
+
+** Answer
+[[./images/answer.gif]]
+
+** Reply
+Similar motion to "answer", but use the "R" hand sign instead of the index finger.
 
 ** Awake / Wake
 
@@ -2227,6 +2252,9 @@ Hold up an open palm facing upwards, and touch the index of the other hand onto 
 ** Full
 [[./images/full.gif]]
 
+** Smooth
+[[./images/smooth.gif]]
+
 ** Badminton
 [[./images/badminton.gif]]
 
@@ -2235,8 +2263,6 @@ Hold up an open palm facing upwards, and touch the index of the other hand onto 
 
 ** Vocabulary
 [[./images/vocabulary.gif]]
-
-** Cockroach
 
 * Places
 
@@ -2351,8 +2377,8 @@ Same motion as "change", but use an open palm with the fingers curled to simulat
 *** Variation 2
 Hold one arm horizontal with the palm facing up. The other arm has the elbow on the open palm of the other hand, and has an open palm facing up with fingers curled. Move that palm around.
 
-** Suntec
-Do the "I love you" hand sign, but move your thumb behind the other two fingers, then put it on top of an open palm facing upwards on the other hand. It looks like the fountain of wealth.
+** Sembawang
+Make the "F" hand sign with the palm facing down and the fingers apart. Then move it to the side while rotating it such that the palm faces towards the body. It looks like the Chinese character for 3, which is "三" as Sembawang is "三巴旺" in Chinese.
 
 ** Chinese Garden
 [[./images/chinese-garden-place.gif]]
