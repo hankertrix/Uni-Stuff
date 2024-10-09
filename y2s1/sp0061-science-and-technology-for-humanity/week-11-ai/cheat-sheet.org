@@ -1,0 +1,362 @@
+#+TITLE: SP0061 Science & Tech for Humanity Week 11 Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** Computer vision
+Computer vision is a form of AI where you take a picture and recognise the elements of that picture.
+
+** Data provenance
+Data provenance basically tells you where the data comes from and who wants the data.
+
+* Introduction
+
+** Brian Kim (Grab)
+Grab is currently building a new business called GrabDefence, which is a product that they have built, and they offer their software to other companies based on the AI capability and machine-learning models they have built to identify abnormal transactions or fraudulent attempts so that they can protect the digital ecosystem they have been building.
+
+** Ashley Fernandez (Huawei)
+Huawei Cloud primes data and AI technologies to be able to help organisations, big and small, to be able to drive their digital transformation.
+
+** Diogo Qunitas (ViSenze)
+- ViSenze is a pure AI company
+- They develop recommendation systems, computer vision models, and search engines that their clients, retail clients and publishers, use on their websites.
+
+** Karthik Murugan (Amazon Web Services [AWS])
+- The analytic services for Amazon Web Services work across multiple businesses, customers, and also non-profit organisations, helping them solve the challenges with data analytics and AI.
+- In his role, he works with his products and services teams who develop solutions to ensure that customer needs are fulfilled, and the customer problems are solved.
+
+* Uses of AI
+
+** Ashley Fernandez (Huawei)
+- Embedding AI can result in incremental returns.
+- At his previous work in the largest Telco in Malaysia, he needed to do hyper personalised recommendation systems for their consumers.
+- They had a 10 million subscriber base, and they wanted to be able to ensure that every customer will see the right deal for a product the moment they enter the application.
+- They built complex recommendation systems based on neural networks to give their customers such experiences, and it took them a while to be able to measure the effectiveness of the system.
+- There were existing metrics on how they defined what was actually working and what was not, so they require a different mindset of how they would embed these technologies and how they would determine success.
+- In the end, the system worked out for them.
+- It took about 1 to 3 months to build up the recommendation system as they had huge amounts of data.
+- A lot of the repositories that exist today serves as a teaching tool to understand the fundamentals of recommendation systems today.
+- The part that takes a long time to evaluate is the time of success, as they need to put the system into production and to empower your apps.
+- It is difficult to know what the right guardrails are to ensure that the recommendation system is actually doing the right thing.
+- That part took them 8 months to be able to bring it to production.
+
+** Brian Kim (Grab)
+- Grab calls themselves an AI-everywhere company.
+- The entire process from recommending or trying to identify customer's frequently visited locations at that point of time, matching a driver, identifying the closest driver, calculating the time it takes for the journey, identifying the right route for the driver to go, are all powered by AI and prediction models.
+- The AI models could be simple, or very difficult, but all of them are fundamentally driven by different AI capabilities.
+- There is a lot of work put into ensuring that rides are safe.
+- For example, they try to identify when there is an abnormal route that the driver is taken to see if there's any potential safety issues.
+- They also try to identify whether there are any abnormal transactions or potential things that they view as fraudulent attempts, and block those to keep the platform safe.
+- The entire process from booking a ride, paying and then taking the ride is entirely driven by AI.
+- Depending on how AI is actually used in real life, it is in everything that you are using today.
+
+** Karthik Murugan (Amazon Web Services [AWS])
+- Working across multiple industries and sectors from healthcare to manufacturing, non-profits, education, and also in the federal government area, they see the prevalence of AI in almost every sector for the benefit of the outcome for the end-consumers.
+- In the healthcare space, it is possible to know what a patient's outcome looks like.
+- In the manufacturing space, consumer goods are built with good qualities.
+- In the federal space, the outcome of citizens, to ensure that the citizen experience is beneficial.
+- In non-profits, they want to ensure that the right investments goes towards the right costs.
+- In the education space, from learning, training, and ensuring that the educational institute itself can perform to ensure the right student outcome in their student experience.
+- There are a number of fields that are seeing an increase of AI use.
+
+** Diogo Qunitas (ViSenze)
+- There is a complete transformation of how retail works which is all drive with AI.
+- Computer vision technology is also being applied.
+- Computer vision is a form of AI that does image recognition.
+- ViSenze mainly does computer vision.
+- They are seeing computer vision being applied right from the design process for retailers.
+- When they are designing a new product, using computer vision, it is easy to find other products and find inspirational images from social media.
+- It will help the designer make the right design decisions.
+- The above is just a particular example right at the beginning of the process which then goes all the way to how people are inducting or putting products online in terms of what data is being created around the product.
+- Recommendations and personalisation is a complete enabler for retail and digital retail.
+- Without proper recommendations and personalisation, the online e-commerce experience as we know it today wouldn't exist.
+- If it wasn't for AI, we wouldn't have Amazon, we wouldn't have Shein, and all the big players today.
+- ViSenze works with some of the largest companies here in Singapore, like Zalora for example, and Armani in Europe.
+- Large corporations are the ones driving the retail transformation using computer vision technology.
+- ViSenze also do work with small brands, but they find that even large corporations need to find partners, technology partners, that bring specific expertise and specific capabilities that would be very difficult for them to build in-house.
+- Computer vision is a very specific type of AI and companies have decided not to develop their own capabilities.
+
+* How is machine learning done in the industries?
+
+** Ashley Fernandez (Huawei)
+- The technologies used to build AI has changed rapidly over the last 5 to 7 years.
+- In 2016 and 2017, it required about 30 to 40 lines of code just to configure a neural network.
+- Now, with different frameworks, you can write it with about 5 lines of code, like in PyTorch, which is pretty quick.
+- There are also low-code and no-code kind of platforms that don't even need to be able to write code to be able to configure these kinds of capabilities.
+- So the speed at which we are able to build these machine learning models is becoming a bit more democratised, so that everyone in the space is able to use them.
+- With width and depth capabilities coming in, not knowing exactly how these technologies work under the hood is now a big problem.
+- For example, right now, if you were to configure a neural network back in the day, you would need to know every single parameter that you're using and know how to decompose the neural network to know exactly what is going on under the hood.
+- As such, we have now come to this point where understanding how it works is important.
+- Explainable AI term starts to emerge, so that we can really reason out exactly what these models are doing, how it works, and there are no forms of risk that is associated with it.
+- When the AI model is deployed to production, the AI model is working on a very automated mode, so the guardrails to be able to measure what it is actually doing becomes very important.
+- It is becoming much easier to build AI models compared to in the past.
+- Thus, there is a lot of emphasis on the way to do guardrails, explainable AI, understanding bias, and what data goes into the AI to be able to verify that the AI model is actually doing the right thing for the right purpose.
+
+** Diogo Qunitas (ViSenze)
+- The model problem has been solved.
+- We know how to select the right models.
+- Nowadays, we don't even need to select the model, as there are ways to automatically select a model and tune the parameters.
+- The biggest problem now is finding the right data, which is the data that needs to be given to the model.
+- By selecting the right data, you can create those guardrails, make sure that the AI model is not biased and is learning the things you want it to learn.
+- A lot of the focus is more on the understanding the data that needs to go in and the consequences of the reference data set you're using.
+
+** Ashley Fernandez (Huawei)
+- Domain centric machine learning and data science is actually very important.
+- Data science is for everybody.
+- We've different domains that come from social science, engineering, the retail business, e-commerce business.
+- There's some form of AI that's emerging, but for a data scientist or anyone that's trying to apply AI, it is very important to be able to understand the domain because then they would be the best person to be able to understand the data, which makes it easier to transition to being able to adapt AI within the organisation or company.
+- The fundamental thing would be the data, and they would understand exactly what is actually happening in the business.
+
+** Karthik Murugan (Amazon Web Services [AWS])
+- AI has come a long way since the early days, and it is still early days for AI.
+- The domain specific AI is an interesting area.
+- In healthcare specifically, there are certain terminologies which are healthcare specific and the adoption of AI needs to be customised so that the model learning and the outcomes can be achieved quickly through the customisations for healthcare, whether it's developmental genomics or to look at the patient's diseases conditions and the different view in the medical space.
+- The domain specific AI model definitely helps in getting an outcome faster.
+- AI is going mainstream in the sense that people are taking data to develop models with it.
+- Grab is a great example where we see AI starting and adapting in a real-time fashion.
+- The dynamics of data are changing, so the AI is required to adapt as your data is changing, to ensure that the AI can scale up quickly.
+- Another example is Formula One racing, as the volume of data that comes in is at a very rapid pace, and they make decisions on the spot and then inform the drivers to say how they should steer the car, like if they should accelerate, how fast their engine temperature is rising, making predictions about certain events, and how they can strategise to meet the goal.
+- AI helps to bring all these to life.
+
+** Brian Kim (Grab)
+- As AI becomes more prevalent and generic, there's also a need to have an understanding of hyper-local data and how you understand that data.
+- That is one area that Grab has been able to do a lot when they expand to places that don't have a lot of data available, like in the Southeast Asian countries outside of Singapore.
+- Indonesia, Thailand and the rapidly developing Southeast Asian countries just don't have the type of data that is traditionally available in US or Europe.
+- For example, language recognition.
+- Chatbots in particular, vary greatly in quality between different languages.
+- The level of sophistication you can get from an English chatbot is very different from what you can get from a Thai or Bahasa Melayu chatbot, and that is not even going to detail about how people use spoken language which is very different from written language.
+- Obtaining the hyper-local data has a lot of value in that you can provide a much better experience, like a much better consumer experience and a better service to each consumer in each region.
+- There is a lot of value in obtaining vast amounts of data, like global data and unbiased data, but there's also the need to collect hyper-local data.
+- These two types of data are not mutually exclusive and can complement each other, as hyper-local data allows us to build a hyper-local machine learning engine, which is also as important as having that unbiased model.
+
+* Ensuring data governance
+
+** Karthik Murugan (Amazon Web Services [AWS])
+- Data security and data awareness is a very important aspect when it comes to how the data is being used.
+- Amazon takes data security very seriously.
+- Training an AI using the data to build systems and solutions requires you to have a variety of different feature engineering perspectives so that you can have the right balance of unbiased information.
+- There is no need for any personally identifiable information (PII) that can be processed or built-in as the data that goes into your machine learning pipelines, data science models, and your whole machine learning operation (ML Ops), which are starting to see increasing adoption, is that it can anonymise the data.
+- AI can be applied to do that anonymisation.
+- There are millions upon millions of records that need to be processed, and previously it was humans doing that work.
+- Amazon is using AI techniques within AI pipelines to see how they can anonymise the data, and how they can do the labelling faster.
+- Amazon has the solutions and services to quicken the process.
+- Machine learning is to make jobs and life easier, to help develop products faster, to help achieve an outcome faster, and in a better mechanism where people don't have to spend days and months to do the same thing.
+- In places where any manual effort that is time-consuming, machine learning can really help in reducing the amount of manual effort.
+- In data security, the AI can be trained to make human decisions by training the machine learning model using human reasoning, so a human is not needed to make those decisions.
+- Data sensitivity is important, and thus we can build patterns to anonymise and avoid the data security aspect entirely.
+
+** Brian Kim (Grab)
+- Grab has a lot of data, so keeping that data secure and compliant with regulations and not misusing it in any kind of way is very important and one of the most critical things.
+- Grab has a separate team that looks into data compliance and security.
+- Grab has a data governance organisation that looks over the regulations and rules and how they provide the guidelines.
+- The effort that Grab puts in is continuous, and they are always improving and setting the right guidelines to make sure there are no misuses of data, especially of personal data.
+- Personally identifiable information is separated as well.
+- These are the things that Grab is actively investing in and putting ongoing effort so that they are making sure the integrity of their customers and that they are able to honour the trust that the customers give them based on that.
+
+** Diogo Qunitas (ViSenze)
+- Everyone is following this pattern of data compliance policies, anonymising data and making sure that not everyone can access records.
+- Data provenance is something ViSenze focuses a lot on.
+- Data provenance refers to where data comes from and who wants it.
+- Data provenance is going to be increasing important as we are essentially starting to create intellectual property (IP) that is basically just data, and it's driven by data.
+- Understanding the data provenance is quite important as well as anonymising data.
+- Making sure that the data is secure and making sure that the right people have the right access is crucial for data security.
+
+* Job opportunities for non-STEM people
+
+** Diogo Qunitas (ViSenze)
+- One of ViSenze main products is a recommendation engine that recommends outfits.
+- They have fashion designers in their team because they need to pair those fashion designers with their data scientists, since data scientists don't necessarily have a very good fashion sense.
+- That's a very specific example of how domain knowledge is very important because the domain knowledge is what makes you understand what the data is and what the output you expect.
+- If you don't have that knowledge, you are not going to be as effective.
+- The key for good model development and good outcomes is pairing people that have expertise in the domain.
+- For example, in healthcare, you need doctors that really understand what they want with data scientists to develop the model.
+- It is not that the data scientists and the AI engineers cannot solve the problem by themselves, but the domain expert will really help speed up the process and help the AI achieve the outcomes you want.
+- As such, there are absolutely a lot of opportunities for non-STEM people in AI.
+
+** Brian Kim (Grab)
+- He was part of a consulting firm before he joined Grab.
+- An analytic translator is a person who can bridge the gap between data science, hardcore machine knowledge and business knowledge.
+- AI and machine learning is a tool to be applied to solve a real business problem.
+- The application part is where you could build a great predictive model, but at the end of it you have to apply that to solve a business problem, and that application part is where a lot of this business knowledge and non-STEM people can play a significant role in.
+- He came is an economics major, but now he is part of a team and leading the business building of how he can package AI capabilities and technologies into a product that he can apply to other companies.
+- AI is part of a broader business that has all these design aspects, business, marketing, or even applications.
+- There's no shortage of opportunities for non-STEM people.
+
+** Ashley Fernandez (Huawei)
+- Huawei had a very good use case of AI that was built on the credit scoring model.
+- It was one of a kind, and they are doing for a telecom company.
+- One of their computer science graduates was able to build this model.
+- Every data scientist would have their own metrics of how they would say if the model is actually working.
+- You use backdated data, and you use that to evaluate the AI model.
+- Having a good credit scoring model would open up this telecom company's business for buy-now pay-later schemes.
+- Huawei had to go through the next barrier which is to be able to convince the company that the AI model is the right one for them.
+- When they met the finance team of the other company, there were 2 different thought processes of how these things would work, as there was already some legacy system that's already doing the credit scoring model that's familiar to the existing teams.
+- The data scientists from Huawei had to sit with the finance team of the other company to understand everything they are doing and how they decide what model goes out to production.
+- Huawei realised that the other company didn't like to use the root-mean-square error to evaluate the performance of the model, and they had to use the Gini index.
+- The Gini index is a standard definition that you use in the finance sector.
+- You have to understand how cash flow works, so there's a lot of domain knowledge that you had to acquire to incorporate this modelling.
+- It changed the whole organisation structure, as Huawei wanted to create a hub and spoke model where they embed data science into the various divisions so that the primary goal is to be able to understand the domain from within.
+- That is probably how every company is evolving.
+- He is a fan of how Grab operates as they are a fully data driven organisation.
+- There will always be companies that would start from data.
+- They would build AI as that is the core.
+- When they are missing elements of data to do predictions, they'll create a feature to be able to generate the data.
+- There is one camp that is actively doing the above, and another camp that is started their business without much AI or digital integrations, and they are now trying to move up the digital stack.
+- They need to figure out different ways because they have existing systems that is giving data, but it's not exactly empowering them on the application.
+- That group of teams would require a different way of how they innovate, and it's not as simply as a plug and play like what Grab would typically do.
+- That would require a different kind of operating model.
+- These companies are the companies that Huawei and Amazon are trying to help with their AI stack.
+
+** Karthik Murugan (Amazon Web Services [AWS])
+- AI is a bit like a revolution at the moment.
+- AI is almost as big as the technology that is going to be enabling and driving our day-to-day lives, which all of us are seeing now
+- For students coming for non-STEM disciplines, it's looking at how we start every technology problem working back from what the actual problem is and who can articulate those problems and understand these problems better for the people who are working in the domain.
+- All of these domain experts are important to identifying the problem you want to solve and then applying the data science and machine learning to the problem.
+- Technology is an enabler for those fields of interests to get outcomes.
+- There are multiple facets of data science.
+- For example, data engineers work on looking at the data, bringing in data scientists who look at actually building the models, operations people who deploy these models, and domain experts who consume the models and provide feedback.
+- The whole machine learning is an evolving journey and the feedback loop is an incredibly important part of it.
+- The domain expertise and the understanding, whether you're coming from economics or healthcare or social science, all of these are going to be an incredibly important input that is going to be driving that the adoption and outcome of AI.
+
+** Diogo Qunitas (ViSenze)
+- The domain experts can help in the articulation of the problem they are trying to solve.
+- AI is just the tool to solve the problem, and there are other tools to solve the problem.
+- The true revolution with AI that is happening is that domain experts used to understand the problem and then come up with a solution.
+- AI is enabling domain experts to articulate the problem and then get solutions using AI and from technology, which are better.
+- It is a revolution in terms of the value of what an economist or a social scientist can bring.
+- They can articulate, understand and specify what the problem is and let the data guide them to a solution.
+
+** Brian Kim (Grab)
+- There is no such thing as AI-related field as everything can be AI driven, so everything is AI-related.
+- There seems to be no non-AI related fields, so everything is AI-related.
+- However, there is a baseline level of knowledge that you need to know about AI and machine learning, like how it works, to actually be able to contribute and make sure that you are adding value.
+
+** Jung Younbo (Wee Kim Wee Professor [Moderator])
+- Everything is now related to AI to a certain level.
+- The opportunities are there, and it's all about that interdisciplinary collaboration between people from different backgrounds to come together to understand the domain specific knowledge.
+
+* Defining explainable AI
+
+** Ashley Fernandez (Huawei)
+- Traditional machine learning elements, like those that came out of the box with some level of applications like linear regression models, can be termed machine learning.
+- There is some level of machine learning, that isn't so sophisticated, and he calls them two-dimensional machine learning models.
+- Afterwards came neural networks, and he calls them three-dimensional machine learning models.
+- You use vectors to train these models, then when you get a bit more technical with it, you use tensors.
+- So all these tensors are three-dimensional.
+- There are a lot of write-ups about how it is going to be the AI winter again in the AI space and that we are not getting the next generation or evolution of AI.
+- Because of the way the frameworks that we use have been designed, it is on a three-dimensional space.
+- A lot of our data has gone past the three-dimensions, so we end up doing a higher level of abstraction.
+- This level of abstraction requires graph technologies.
+- For language, it is one of the most difficult problems in AI that we haven't really solved.
+- There is always a better version of what the benchmarks for AI are.
+- GPT-3 by OpenAI is one framework that is trying to solve this problem by using new ways of doing machine learning.
+- It is still a topic of active research.
+- When people say that it is still currently the AI winter, that means we don't see a lot of incremental progress in the quality of AI.
+- There is still room to go around, and there are a lot of opportunities for research universities to be able to contribute.
+- Just 2 days ago, there was a framework called PyTorch that Facebook enrolled under the Linux foundation.
+- That's where Facebook is saying that they want to take their framework that they have built and put it into the open-source community to be able to get research practitioners to innovate faster, as now you'll have a whole pool of people that are innovating.
+- That is one way of expressing that Facebook is trying to solve a very complicated problem to get a higher level of abstraction.
+
+** Diogo Qunitas (ViSenze)
+- There is going to be a lot of research and a lot of model development research around the combination of machine learning and expert systems, like the combination of hyper-local models with general abstract models.
+- There is a lot to be done on how we orchestrate different models and integrate everything together.
+- The fundamental problem from an industry and applicability perspective is mainly to understand model drifts and model performance, as well as the observability of the model.
+- Models are trained to operate under certain parameters, or a certain reality.
+- Taking a data set and training an AI model, you have an expectation of what is an input to that model.
+- As the world changes and the nature of data changes, the correlation of the data changes.
+- We need to verify that our models are still valid.
+- There is still a lot to work on in terms of observability and understanding model drift from the industry perspective.
+
+** Karthik Murugan (Amazon Web Services [AWS])
+- It is still very early days for AI and there is still a long way to go.
+- AI has come to the light in the mainstream, and young minds and young generations are the future people who are going to be dictating and predicting how the industry is going to shape up.
+- Because the nature of the work, the problem that we are solving currently is beyond one organisation's capability to solve.
+- The problem has to be solved as a community.
+- There is a lot of sharing of learning and experience that comes from the grassroot level, from the community, that drives the adoption of AI.
+- There are a number of technologies, open-source technologies, that have come and pass and have kind of integrated into various products and solutions.
+- The next big thing is going to be adapting AI technology and integrating AI into solutions for problems.
+- This is where the collaboration between the field of people from outside the technology can contribute significantly to drive that outcome.
+- A simple AI application that recognise images is applied almost everywhere, from self-driving cars, to the pictures you take on your mobile phone to see if it is to your liking.
+- In retail, you can figure out where to buy a particular product by just taking a picture of it.
+- In healthcare, people use it in X-rays to predict the diseases.
+- The important aspect of the application of AI is the kind of packaging the AI and building the solutions to ensure the quick adoption and quick relevance to the problem.
+
+** Brian Kim (Grab)
+- McKinsey published the state of AI in 2021, and the report said that 53% of the companies have adopted AI solutions for at least somewhere in their company, which means that 47% of the companies have no AI solution deployed whatsoever.
+- It is quite surprising.
+- The application part is where AI will drive all the value, as increasing the adoption or application by 1% will have much more value compared to improving the model's performance by 1%, in terms of improving revenue and lowering costs.
+- The application part of AI is where AI is much more critical, so we need to make it easier to use, more adaptable, more real time to drive the value of AI.
+- All the technology advancements in AI will be more relevant for very high-end use cases.
+- But in terms of just driving the majority of the business value, the application part of AI cannot be understated.
+
+** Diogo Qunitas (ViSenze)
+- True innovation comes when you can create new business models off of new technology.
+- For all technology, it comes from what different ways to do things and what kind of new businesses can exist because of this technology.
+- Grab is a perfect example of how it wouldn't exist as a business if we didn't have all the technology that we have today.
+- Most businesses use some form of technology, like Microsoft Word, which goes to show how prevalent AI is.
+- AI exists on your iPhone and exists on Microsoft Word.
+- When you get a spell check in Microsoft Word, that is AI working.
+- There is no such thing as a no AI world, as AI is everywhere.
+
+** Jung Younbo (Wee Kim Wee Professor [Moderator])
+- It is not so critical for companies to go for the state-of-the-art latest AI technologies, but to see what kind of business processes that they have and can utilise even very simple kinds of AI forms to have a more efficient and effective business flow.
+- Companies and industries collaborate together to develop the current AI technology further.
+
+* Final remarks to students
+
+** Karthik Murugan (Amazon Web Services [AWS])
+- I would really encourage students to look at AI as not a separate piece of technology and don't shy away.
+- It can be overwhelming, as there are so many models and codes that it is beyond your comprehension, and you don't know where to start.
+- There are a lot of tools and technologies available for beginners to look at in experimentation.
+- I would really encourage students to experiment, try out new things, try to relate it back to how the problem can be solved from the AI aspect of it.
+- There is a lot of content available out in the market and also within your education institute.
+- Learn and talk to peers, interact and collaborate.
+- We're certainly getting there and trying to tie it back to your field of expertise is an opportunity and a learning experience that you can take away from the AI aspect.
+- There are multiple facets of an AI journey, and there is a role that an individual can play from end-to-end.
+- They don't have to be a computer scientist, and don't need to be someone who knows the technology and the IT part of it.
+- I definitely encourage all of you to do that.
+
+** Diogo Qunitas (ViSenze)
+- Be curious, not about the technology, but about your own fields and passions, and go deeper into the problems of your fields.
+- Be curious on why things are the way they are, and what problems are out there.
+- Start with understanding your area, do not worry about the technology.
+- Computer technology and AI in general used to require you to understand chip design to program something.
+- Nowadays, you can program a web application by dragging and dropping things, so anyone can build a website today.
+- AI is going through the same process, where before you needed to understand abstract linear algebra to really understand deep learning models.
+- Nowadays, it's 5 lines of code, so don't worry about the technology.
+- Worry instead about what problems there are in the world that needs to be solved.
+- AI is not a problem to be solved.
+- Healthcare costs, crime, those are problems to be solved and AI will be a tool used to solve those problems.
+
+** Ashley Fernandez (Huawei)
+- Linear algebra has been simplified into simple functions for almost everybody to consume.
+- But you still need to know your linear algebra.
+- Everyone should know linear algebra.
+- I used to teach linear algebra and I believe in this principle of T-shape learning.
+- AI is now another horizontal pillar that you just need to learn, it becomes another embedded tool in your day-to-day, and then you have all your verticals, which is your domain centric vertical.
+- That is T-shape learning.
+- AI has this very fundamental property of learning, unlearning and relearning.
+- That's the same message that you carry on in your careers because you are always going to learn, unlearn, relearn, and it requires different skills, different frameworks, different technologies, to be able to adapt the business.
+- Every day, what we're solving is another critical problem that we are in.
+- You can use this T-shape tool to be able to solve this problem.
+
+** Brian Kim (Grab)
+- AI is not a scary thing, it is actually a pretty fun thing if you look at it.
+- One of my friends, one of his hobbies is baseball.
+- He was a big fan of baseball, so one of the things that he did as a hobby was to create an optimisation tool for the baseball league schedule.
+- What he first scheduled was travelled times, travelled distance, frequency of the game or how many games during the weekday or the weekend, and what are the games that are in the nighttime like 6PM ones, or 2PM.
+- He built and optimisation formula for the Korean baseball league, looking at all the travel schedules, and he gave it to the Korean baseball organisation.
+- Like hey, this is my passion project, have a look, it can be used for many interesting and fun things like your fantasy league if you want to predict your favourite.
+- I have another friend who built this model for predicting the World Cup finalists and stuff like that.
+- There are a lot of fun things to do, and people do that.
+- It is quite interesting.
+- Try to approach AI in a lighter way, and you'll be able to get a lot more out of it.
+
+** Jung Younbo (Wee Kim Wee Professor [Moderator])
+- AI is a tool, not a problem.
+- The real issue is to identify the problem and see how you can utilise AI to solve the real life problem.
+- The opportunities are there, you just need to seize them.
+- But you also need to have some basic fundamental knowledge and understanding, as well as a willingness to learn these kinds of technical terms if you are interested in working in this field.
+- There isn't any such field that is not affected by AI and AI will be more prevalent in the coming years.
