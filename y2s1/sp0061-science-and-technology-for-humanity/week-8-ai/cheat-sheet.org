@@ -160,7 +160,7 @@ Predictive maintenance carries out maintenance optimally, based on data.
 *** Defect detection
 - In a production line, image recognition technology has proliferated in quality control and defect detection.
 - Large-scale manufacturing plants require massive checks on their products. Without the use of AI to do this, a large equivalent human workforce would be necessary.
-- An example of this is a raft of defect detection applications by Foldsolutions, that inspect cookies,, bakery products, meat, seafood, dairy products, and agro products.
+- An example of this is a raft of defect detection applications by Foldsolutions, that inspect cookies, bakery products, meat, seafood, dairy products, and agro products.
 
 *** Image generation
 - AI can also be used to generate realistic photos of non-existent humans.
