@@ -2,8 +2,7 @@
 
 import { useCallback } from "react";
 import { Pressable, StyleSheet, Text } from "react-native";
-import { Device } from "react-native-ble-plx";
-import { SendStringToDevice } from "../utils/bluetooth";
+import { BluetoothDevice, SendStringToDevice } from "../utils/bluetooth";
 
 // The stop command
 const STOP_COMMAND = "stop";
@@ -13,7 +12,7 @@ interface StopButtonProps {
   radius: number;
   visible: boolean;
   setArduinoAsNotBusy: () => void;
-  connectedDevice: Device | null;
+  connectedDevice: BluetoothDevice | null;
   sendStringToDevice: SendStringToDevice;
 }
 

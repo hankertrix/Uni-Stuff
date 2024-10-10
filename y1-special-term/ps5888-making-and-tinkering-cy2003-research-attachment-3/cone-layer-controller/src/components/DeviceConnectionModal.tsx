@@ -12,14 +12,17 @@ import {
   SafeAreaView,
   View,
 } from "react-native";
-import { Device } from "react-native-ble-plx";
 import { FlatList } from "react-native-gesture-handler";
 import { ThemedStyles, useTheme } from "../utils/theme-context";
-import { ConnectToDevice } from "../utils/bluetooth";
+import {
+  AllDevices,
+  BluetoothDevice,
+  ConnectToDevice,
+} from "../utils/bluetooth";
 
 // The props for the device list item
 interface DeviceListItemProps {
-  item: ListRenderItemInfo<Device>;
+  item: ListRenderItemInfo<BluetoothDevice>;
   connectToDevice: ConnectToDevice;
   closeModal: () => void;
   themedStyles: ThemedStyles;
@@ -32,7 +35,7 @@ interface DeviceListItemProps {
 
 // The props for the device connection modal
 interface DeviceConnectionModalProps {
-  devices: Device[];
+  devices: AllDevices;
   visible: boolean;
   connectToDevice: ConnectToDevice;
   closeModal: () => void;
@@ -136,7 +139,7 @@ const DeviceConnectionModal = ({
 
   // The function to render the device list item
   const renderDeviceListItem = useCallback(
-    (item: ListRenderItemInfo<Device>) => {
+    (item: ListRenderItemInfo<BluetoothDevice>) => {
       return (
         <DeviceListItem
           item={item}

@@ -12,9 +12,8 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import { Device } from "react-native-ble-plx";
 import Svg, { Path } from "react-native-svg";
-import { SendStringToDevice } from "../utils/bluetooth";
+import { BluetoothDevice, SendStringToDevice } from "../utils/bluetooth";
 import { themeStyles, useTheme } from "../utils/theme-context";
 
 // The command to lay cones
@@ -29,7 +28,7 @@ interface LayConesModalProps {
   closeButtonRadius: number;
   setArduinoAsBusy: () => void;
   closeModal: () => void;
-  connectedDevice: Device | null;
+  connectedDevice: BluetoothDevice | null;
   sendStringToDevice: SendStringToDevice;
 }
 

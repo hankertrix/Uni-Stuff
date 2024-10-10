@@ -4,10 +4,14 @@
 import { useMemo, useState } from "react";
 import { View, SafeAreaView, StyleSheet, Platform } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { Device } from "react-native-ble-plx";
 import { useTheme } from "../utils/theme-context";
 import Dashboard from "./Dashboard";
-import useBluetoothLowEnergy from "../utils/bluetooth";
+import useBluetoothLowEnergy, {
+    AllDevices,
+  BluetoothDevice,
+  ConnectToDevice,
+  SendStringToDevice,
+} from "../utils/bluetooth";
 
 // The component that wraps the entire app
 const AppWrapper = () => {
@@ -15,46 +19,48 @@ const AppWrapper = () => {
 
   // Start of bluetooth related code
 
-  const {
-    connectedDevice,
-    allDevices,
-    scanForDevices,
-    sendStringToDevice,
-    connectToDevice,
-    disconnectFromDevice,
-  } = useBluetoothLowEnergy();
+  // const {
+  //   connectedDevice,
+  //   allDevices,
+  //   scanForDevices,
+  //   sendStringToDevice,
+  //   connectToDevice,
+  //   disconnectFromDevice,
+  // } = useBluetoothLowEnergy();
 
   // End of bluetooth related code
 
   // Placeholders for bluetooth related code
   //
-  // // Placeholder variables
-  // const [connectedDevice, setConnectedDevice] = useState<Device | null>(null);
-  // const [allDevices, setAllDevices] = useState<Device[]>([
-  //   {
-  //     id: "1",
-  //     name: "test 1",
-  //   } as Device,
-  //   {
-  //     id: "2",
-  //     name: "test 2",
-  //   } as Device,
-  // ]);
-  //
-  // // Placeholder functions to mock the bluetooth functions
-  // async function scanForDevices() {
-  //   return true;
-  // }
-  // async function sendStringToDevice(device: Device | null, str: string) {
-  //   return true;
-  // }
-  // async function connectToDevice(device: Device) {
-  //   setConnectedDevice(device);
-  //   return true;
-  // }
-  // async function disconnectFromDevice() {
-  //   setConnectedDevice(null);
-  // }
+  // Placeholder variables
+  const [connectedDevice, setConnectedDevice] =
+    useState<BluetoothDevice | null>(null);
+  const [allDevices, setAllDevices] = useState<AllDevices>([
+    {
+      id: "1",
+      name: "test 1",
+    } as BluetoothDevice,
+    {
+      id: "2",
+      name: "test 2",
+    } as BluetoothDevice,
+  ]);
+
+  // Placeholder functions to mock the bluetooth functions
+  async function scanForDevices() {
+    return true;
+  }
+  const sendStringToDevice: SendStringToDevice = async (_, string) => {
+    console.log(string);
+    return true;
+  };
+  const connectToDevice: ConnectToDevice = async (device) => {
+    setConnectedDevice(device);
+    return true;
+  };
+  async function disconnectFromDevice() {
+    setConnectedDevice(null);
+  }
   //
   // End of placeholders
 

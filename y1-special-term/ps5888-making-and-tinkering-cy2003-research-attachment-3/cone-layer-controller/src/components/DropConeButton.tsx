@@ -3,8 +3,7 @@
 import { Pressable, StyleSheet, Text } from "react-native";
 import { useCallback } from "react";
 import { themeStyles } from "../utils/theme-context";
-import { Device } from "react-native-ble-plx";
-import { SendStringToDevice } from "../utils/bluetooth";
+import { BluetoothDevice, SendStringToDevice } from "../utils/bluetooth";
 
 // The drop cone command
 const DROP_CONE_COMMAND = "drop_cone";
@@ -16,7 +15,7 @@ interface DropConeButtonProps {
   disable: boolean;
   motorSpeed: number;
   setArduinoAsBusy: () => void;
-  connectedDevice: Device | null;
+  connectedDevice: BluetoothDevice | null;
   sendStringToDevice: SendStringToDevice;
 }
 

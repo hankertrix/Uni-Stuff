@@ -8,9 +8,6 @@ import {
   GestureTouchEvent,
 } from "react-native-gesture-handler";
 
-// The handle joystick command
-const HANDLE_JOYSTICK_COMMAND = "handle_joystick";
-
 // The type of the joystick event handler
 export type JoystickEventHandler = (
   event: JoystickEvent,
@@ -41,6 +38,7 @@ interface JoystickProps extends ViewProps {
   nubColour?: string;
   radius?: number;
   disable?: boolean;
+  delayInMs?: number;
 }
 
 // The function to convert from radians to degrees
@@ -136,6 +134,11 @@ function findCoordinate(
   return newCoordinate;
 }
 
+// The sleep function to pause the execution of the program
+function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 // The joystick component
 const Joystick = ({
   onStart,
@@ -145,6 +148,7 @@ const Joystick = ({
   nubColour = "#ff0000",
   radius = 150,
   disable = false,
+  delayInMs = 1000,
   style,
   ...props
 }: JoystickProps) => {
@@ -156,6 +160,9 @@ const Joystick = ({
 
   // Initialise the nub radius of the joystick
   const nubRadius = radius / 3;
+
+  // Initialise the previous move time
+  const [previousMoveTime, setPreviousMoveTime] = useState(Date.now());
 
   // Initialise the x and y coordinates of the joystick
   // to the centre of the joypad.
@@ -246,8 +253,12 @@ const Joystick = ({
       setY(coordinates.y);
 
       // If the onMove function is not defined,
+      // or the joystick is disabled,
+      // or if the current time minus the
+      // previous move time is less than the delay in ms,
       // exit the function
-      if (!onMove || disable) return;
+      if (!onMove || disable || Date.now() - previousMoveTime < delayInMs)
+        return;
 
       // Otherwise, call the onMove function
       // with the current position
@@ -268,8 +279,11 @@ const Joystick = ({
         },
         type: "move",
       });
+
+      // Set the previous move time to the current time
+      setPreviousMoveTime(Date.now());
     },
-    [joypadRadius, nubRadius, disable],
+    [joypadRadius, nubRadius, disable, delayInMs, previousMoveTime],
   );
 
   // The function to handle the touch start event
@@ -277,6 +291,7 @@ const Joystick = ({
     //
 
     // If the onStart function is not defined,
+    // or the joystick is disabled,
     // exit the function
     if (!onStart || disable) return;
 
@@ -306,7 +321,7 @@ const Joystick = ({
     setY(joypadRadius - nubRadius);
 
     // If the onStop function is not defined,
-    // or if the disable prop is true,
+    // or the joystick is disabled,
     // exit the function
     if (!onStop || disable) return;
 

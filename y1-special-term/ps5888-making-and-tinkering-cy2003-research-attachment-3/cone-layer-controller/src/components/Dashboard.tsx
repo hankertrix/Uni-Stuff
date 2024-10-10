@@ -3,7 +3,6 @@
 import { useCallback, useMemo, useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { Device } from "react-native-ble-plx";
 import { ThemedStyles, useTheme } from "../utils/theme-context";
 import Joystick, { JoystickEventHandler } from "./Joystick";
 import ThemeTogglerButton from "./ThemeToggler";
@@ -14,6 +13,8 @@ import DeviceConnectionModal from "./DeviceConnectionModal";
 import LayConesButton from "./LayConesButton";
 import LayConesModal from "./LayConesModal";
 import {
+  AllDevices,
+  BluetoothDevice,
   ConnectToDevice,
   DisconnectFromDevice,
   ScanForDevices,
@@ -29,6 +30,10 @@ const CONNECTION_BUTTON_MIN_WIDTH = 150;
 // The joystick radius
 const JOYSTICK_RADIUS = 150;
 
+// The delay between two joystick movements
+// (in milliseconds)
+const JOYSTICK_MOVEMENT_DELAY_IN_MS = 1000;
+
 // The motor speed
 const MOTOR_SPEED = 50;
 
@@ -37,8 +42,8 @@ const HANDLE_JOYSTICK_COMMAND = "handle_joystick";
 
 // The interface for the dashboard
 interface DashboardProps {
-  connectedDevice: Device | null;
-  allDevices: Device[];
+  connectedDevice: BluetoothDevice | null;
+  allDevices: AllDevices;
   scanForDevices: ScanForDevices;
   sendStringToDevice: SendStringToDevice;
   connectToDevice: ConnectToDevice;
@@ -235,6 +240,7 @@ const Dashboard = ({
               nubColour={styles.joystickNubColour.color}
               radius={JOYSTICK_RADIUS}
               disable={arduinoBusy}
+              delayInMs={JOYSTICK_MOVEMENT_DELAY_IN_MS}
               onMove={handleJoystickMoveEvent}
             />
           </GestureHandlerRootView>

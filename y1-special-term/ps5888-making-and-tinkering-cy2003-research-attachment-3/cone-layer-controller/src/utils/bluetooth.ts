@@ -1,14 +1,15 @@
 // The module for all the bluetooth related functions
 
-import { useMemo, useState } from "react";
-import { PermissionsAndroid, Platform } from "react-native";
+import { useEffect, useState } from "react";
 import {
-  BleError,
-  BleManager,
-  Characteristic,
-  Device,
-  LogLevel,
-} from "react-native-ble-plx";
+  PermissionsAndroid,
+  Platform,
+  NativeModules,
+  NativeEventEmitter,
+  EmitterSubscription,
+} from "react-native";
+import { Buffer } from "buffer";
+import BleManager, { Peripheral } from "react-native-ble-manager";
 
 import * as ExpoDevice from "expo-device";
 
@@ -16,26 +17,37 @@ import * as ExpoDevice from "expo-device";
 const CONE_LAYER_UUID = "0000FFE0-0000-1000-8000-00805F9B34FB";
 
 // The characteristic for the cone layer console service
-const CONE_LAYER_CHARACTERISTIC =
-  "0000FFE1-0000-1000-8000-00805F9B34FB";
+const CONE_LAYER_CHARACTERISTIC = "0000FFE1-0000-1000-8000-00805F9B34FB";
 
 // The device name for the cone layer
 const CONE_LAYER_DEVICE_NAME = "BT05";
+
+// Seconds to scan for
+const SECONDS_TO_SCAN = 300;
+
+// Whether to allow duplicates
+const ALLOW_DUPLICATES = false;
 
 // The type of the scan for devices function
 export type ScanForDevices = () => Promise<boolean>;
 
 // The type of the connect to device function
-export type ConnectToDevice = (device: Device) => Promise<boolean>;
+export type ConnectToDevice = (device: Peripheral) => Promise<boolean>;
 
 // The type of the send string to device function
 export type SendStringToDevice = (
-  device: Device | null,
+  device: Peripheral | null,
   str: string,
 ) => Promise<boolean>;
 
 // The type of the disconnect from device function
 export type DisconnectFromDevice = () => Promise<void>;
+
+// The type of all devices
+export type AllDevices = Peripheral[];
+
+// The type of the bluetooth device
+export type BluetoothDevice = Peripheral;
 
 // The interface for the bluetooth device
 interface BluetoothLowEnergyApi {
@@ -43,29 +55,37 @@ interface BluetoothLowEnergyApi {
   scanForPeripherals(): void;
   scanForDevices: ScanForDevices;
   connectToDevice: ConnectToDevice;
-  startStreamingData(device: Device | null): void;
   sendStringToDevice: SendStringToDevice;
   disconnectFromDevice: DisconnectFromDevice;
-  allDevices: Device[];
-  connectedDevice: Device | null;
-  coneLayerConsoleData: string;
+  allDevices: AllDevices;
+  connectedDevice: BluetoothDevice | null;
 }
+
+// The ble manager module
+const bleManagerModule = NativeModules.BleManager;
+
+// The ble manager emitter
+const bleManagerEmitter = new NativeEventEmitter(bleManagerModule);
 
 // The function to use bluetooth low energy
 function useBluetoothLowEnergy(): BluetoothLowEnergyApi {
   //
 
   // Initialise the bluetooth low energy manager
-  const bleManager = useMemo(() => new BleManager(), []);
+  useEffect(() => {
+    BleManager.start({ showAlert: true }).then(() => {});
+  }, []);
 
-  // Set the log level to verbose
-  bleManager.setLogLevel(LogLevel.Verbose);
+  // Add an additional reference to the bluetooth low energy manager
+  const bleManager = BleManager;
 
   // Initialise the state for the bluetooth devices
-  const [allDevices, setAllDevices] = useState<Device[]>([]);
+  const [allDevices, setAllDevices] = useState<Peripheral[]>([]);
 
   // Initialise the state for the connected device
-  const [connectedDevice, setConnectedDevice] = useState<Device | null>(null);
+  const [connectedDevice, setConnectedDevice] = useState<Peripheral | null>(
+    null,
+  );
 
   // Initialise the state for the console data from the cone layer
   const [coneLayerConsoleData, setConeLayerConsoleData] = useState<string>("");
@@ -163,33 +183,34 @@ function useBluetoothLowEnergy(): BluetoothLowEnergyApi {
   }
 
   // The function to check whether a device is a duplicate
-  function isDuplicateDevice(devices: Device[], deviceToCheck: Device) {
+  function isDuplicateDevice(devices: Peripheral[], deviceToCheck: Peripheral) {
     return devices.findIndex((device) => deviceToCheck.id === device.id) > -1;
   }
 
   // The function to scan for peripherals
-  function scanForPeripherals() {
+  async function scanForPeripherals() {
     //
 
-    // Start scanning for devices
-    bleManager.startDeviceScan(null, null, (error, device) => {
+    // Initialise the listeners array
+    let listeners: EmitterSubscription[] = [];
+
+    // The function to call when the ble manager discovers a device
+    function onDiscoverPeripheral(peripheral: Peripheral) {
       //
 
-      // If there is an error, log the error and exit the function
-      if (error) return console.error(error);
-
-      // Otherwise, if the device exists and is the cone layer
-      if (device && device.name?.includes(CONE_LAYER_DEVICE_NAME)) {
+      // If the peripheral has an ID and name
+      // and includes the cone layer device name
+      if (peripheral && peripheral.name?.includes(CONE_LAYER_DEVICE_NAME)) {
         //
 
-        // Set the device array to add the new device
+        // Add to the device array
         setAllDevices((existingDevices) => {
           //
 
           // If the device is not a duplicate
           // then add it to the array
-          if (!isDuplicateDevice(existingDevices, device)) {
-            return [...existingDevices, device];
+          if (!isDuplicateDevice(existingDevices, peripheral)) {
+            return [...existingDevices, peripheral];
           }
 
           // Otherwise, the device is a duplicate,
@@ -197,34 +218,63 @@ function useBluetoothLowEnergy(): BluetoothLowEnergyApi {
           else return existingDevices;
         });
       }
-    });
+    }
+
+    // The function to call when the ble manager stops scanning
+    function onStopScan() {
+      //
+
+      // Iterate over all the listeners
+      for (const listener of listeners) {
+        //
+
+        // Remove the listener
+        listener.remove();
+      }
+    }
+
+    // Try block to catch any errors
+    try {
+      //
+
+      // Add the listeners to the listeners array
+      listeners = [
+        bleManagerEmitter.addListener(
+          "BleManagerDiscoverPeripheral",
+          onDiscoverPeripheral,
+        ),
+        bleManagerEmitter.addListener("BleManagerStopScan", onStopScan),
+      ];
+
+      // Scan for peripherals
+      await bleManager.scan([], SECONDS_TO_SCAN, ALLOW_DUPLICATES);
+    } catch (error) {
+      //
+
+      // Log the error
+      console.error("Error in scanning for peripherals: ", error);
+    }
   }
 
   // The function to scan for devices
-  async function scanForDevices(): Promise<boolean> {
+  const scanForDevices: ScanForDevices = async () => {
     //
 
     // Request for permissions
     const permissionsRequestSuccess = await requestPermissions();
 
-    console.log(
-      `Permissions ${permissionsRequestSuccess ? "granted" : "denied"}`,
-    );
-
     // If the permissions request was not successful, return false
     if (!permissionsRequestSuccess) return false;
 
     // Otherwise, scan for peripherals
-    scanForPeripherals();
-
-    console.log("Started scanning for bluetooth devices");
+    await scanForPeripherals();
 
     // Return true
     return true;
-  }
+  };
 
   // The function to connect to a device
-  async function connectToDevice(device: Device): Promise<boolean> {
+  const connectToDevice: ConnectToDevice = async (device) => {
     //
 
     // Try block to catch any errors
@@ -232,18 +282,23 @@ function useBluetoothLowEnergy(): BluetoothLowEnergyApi {
       //
 
       // Connect to the device using the bluetooth manager
-      const deviceConnection = await bleManager.connectToDevice(device.id);
+      await bleManager.connect(device.id);
 
       // Set the connected device to the device
-      setConnectedDevice(deviceConnection);
+      setConnectedDevice(device);
 
-      // Discover all the services and characteristics for the device.
-      // This line of code is required, otherwise nothing can be
-      // sent to the device.
-      await deviceConnection.discoverAllServicesAndCharacteristics();
+      // Retrieve the services
+      // so that data can be sent to the device
+      await bleManager.retrieveServices(device.id);
 
-      // Stop the device scan
-      bleManager.stopDeviceScan();
+      // Get whether the ble manager is still scanning
+      const isScanning = await bleManager.isScanning();
+
+      // If the ble manager is still scanning,
+      // stop the device scan
+      if (isScanning) {
+        await bleManager.stopScan();
+      }
 
       // Return that the connection was successful
       return true;
@@ -256,50 +311,11 @@ function useBluetoothLowEnergy(): BluetoothLowEnergyApi {
       // Return that the connection was unsuccessful
       return false;
     }
-  }
-
-  // The function to get handle the console data stream from the cone layer
-  function onConeLayerConsoleDataUpdate(
-    error: BleError | null,
-    characteristic: Characteristic | null,
-  ) {
-    //
-
-    // If there is an error, log the error and exit the function
-    if (error) return console.error(error);
-    //
-    // Otherwise, if there is no value in the characteristic,
-    // log that there's no data received and exit the function
-    else if (!characteristic?.value) return console.log("No data received");
-
-    // Otherwise, get the data from the characteristic
-    const consoleData = characteristic.value.toString();
-
-    // Append the data to the cone layer console data
-    setConeLayerConsoleData(
-      (existingConsoleData) => existingConsoleData + consoleData,
-    );
-  }
-
-  // The function to start streaming data from the device
-  function startStreamingData(device: Device | null) {
-    //
-
-    // If the device doesn't exist, exit the function
-    if (!device) return;
-
-    // Monitor the console characteristic for the data
-    // from the cone layer
-    device.monitorCharacteristicForService(
-      CONE_LAYER_UUID,
-      CONE_LAYER_CHARACTERISTIC,
-      onConeLayerConsoleDataUpdate,
-    );
-  }
+  };
 
   // The function to send a string to the device
   async function sendStringToDevice(
-    device: Device | null,
+    device: Peripheral | null,
     str: string,
   ): Promise<boolean> {
     //
@@ -313,19 +329,19 @@ function useBluetoothLowEnergy(): BluetoothLowEnergyApi {
     // Add the new line character to the string
     str += "\n";
 
-    // Convert the string to hexadecimal
-    const hexString = Buffer.from(str).toString("hex");
+    // Convert the string to a byte string
+    const byteString = Buffer.from(str, "utf8");
 
-    // Convert the hexadecimal string to base64
-    const base64String = Buffer.from(hexString, "hex").toString("base64");
+    // Get the byte array from the string
+    const byteArray = Array.from(byteString);
 
     // Try to write the string to the device
     try {
-      await bleManager.writeCharacteristicWithResponseForDevice(
+      await bleManager.writeWithoutResponse(
         device.id ?? "",
         CONE_LAYER_UUID,
         CONE_LAYER_CHARACTERISTIC,
-        base64String,
+        byteArray,
       );
 
       // Return if the write was successful
@@ -350,7 +366,7 @@ function useBluetoothLowEnergy(): BluetoothLowEnergyApi {
     if (!connectedDevice) return;
 
     // Otherwise, get the bluetooth manager to cancel the device connection
-    bleManager.cancelDeviceConnection(connectedDevice.id);
+    bleManager.disconnect(connectedDevice.id);
 
     // Set the connected device to null
     setConnectedDevice(null);
@@ -366,7 +382,6 @@ function useBluetoothLowEnergy(): BluetoothLowEnergyApi {
     scanForPeripherals,
     scanForDevices,
     connectToDevice,
-    startStreamingData,
     sendStringToDevice,
     disconnectFromDevice,
     allDevices,
