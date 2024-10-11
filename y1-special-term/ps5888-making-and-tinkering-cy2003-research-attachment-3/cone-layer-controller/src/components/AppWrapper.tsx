@@ -7,7 +7,7 @@ import { StatusBar } from "expo-status-bar";
 import { useTheme } from "../utils/theme-context";
 import Dashboard from "./Dashboard";
 import useBluetoothLowEnergy, {
-    AllDevices,
+  AllDevices,
   BluetoothDevice,
   ConnectToDevice,
   SendStringToDevice,
@@ -19,48 +19,48 @@ const AppWrapper = () => {
 
   // Start of bluetooth related code
 
-  // const {
-  //   connectedDevice,
-  //   allDevices,
-  //   scanForDevices,
-  //   sendStringToDevice,
-  //   connectToDevice,
-  //   disconnectFromDevice,
-  // } = useBluetoothLowEnergy();
+  const {
+    connectedDevice,
+    allDevices,
+    scanForDevices,
+    sendStringToDevice,
+    connectToDevice,
+    disconnectFromDevice,
+  } = useBluetoothLowEnergy();
 
   // End of bluetooth related code
 
   // Placeholders for bluetooth related code
   //
   // Placeholder variables
-  const [connectedDevice, setConnectedDevice] =
-    useState<BluetoothDevice | null>(null);
-  const [allDevices, setAllDevices] = useState<AllDevices>([
-    {
-      id: "1",
-      name: "test 1",
-    } as BluetoothDevice,
-    {
-      id: "2",
-      name: "test 2",
-    } as BluetoothDevice,
-  ]);
-
-  // Placeholder functions to mock the bluetooth functions
-  async function scanForDevices() {
-    return true;
-  }
-  const sendStringToDevice: SendStringToDevice = async (_, string) => {
-    console.log(string);
-    return true;
-  };
-  const connectToDevice: ConnectToDevice = async (device) => {
-    setConnectedDevice(device);
-    return true;
-  };
-  async function disconnectFromDevice() {
-    setConnectedDevice(null);
-  }
+  // const [connectedDevice, setConnectedDevice] =
+  //   useState<BluetoothDevice | null>(null);
+  // const [allDevices, setAllDevices] = useState<AllDevices>([
+  //   {
+  //     id: "1",
+  //     name: "test 1",
+  //   } as BluetoothDevice,
+  //   {
+  //     id: "2",
+  //     name: "test 2",
+  //   } as BluetoothDevice,
+  // ]);
+  //
+  // // Placeholder functions to mock the bluetooth functions
+  // async function scanForDevices() {
+  //   return true;
+  // }
+  // const sendStringToDevice: SendStringToDevice = async (_, string) => {
+  //   console.log(string);
+  //   return true;
+  // };
+  // const connectToDevice: ConnectToDevice = async (device) => {
+  //   setConnectedDevice(device);
+  //   return true;
+  // };
+  // async function disconnectFromDevice() {
+  //   setConnectedDevice(null);
+  // }
   //
   // End of placeholders
 

@@ -32,7 +32,7 @@ const JOYSTICK_RADIUS = 150;
 
 // The delay between two joystick movements
 // (in milliseconds)
-const JOYSTICK_MOVEMENT_DELAY_IN_MS = 1000;
+const JOYSTICK_MOVEMENT_DELAY_IN_MS = 0;
 
 // The motor speed
 const MOTOR_SPEED = 50;
