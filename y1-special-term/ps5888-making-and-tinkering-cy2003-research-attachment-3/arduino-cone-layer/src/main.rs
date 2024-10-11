@@ -19,10 +19,11 @@ mod utils;
 // Use declarations
 use console::println;
 use heapless::Vec;
-use movement::{Command, MovementHandler};
+use movement::MovementHandler;
 use panic_halt as _;
 use serial::{
-    handle_input, new_serial_handler, SerialBufferType, UsartWriterInterface,
+    dispatch_commands, handle_input, new_serial_handler, SerialBufferType,
+    UsartWriterInterface,
 };
 use stepper_driver::{new_stepper_driver, StepperDriver};
 
@@ -100,6 +101,10 @@ fn main() -> ! {
         false,
     );
 
+    // Initialise whether to run the movement motors
+    // at constant speed
+    let mut run_movement_motors_at_constant_speed = false;
+
     // Print that the Arduino is initialised
     println!("Arduino initialised!");
 
@@ -144,33 +149,34 @@ fn main() -> ! {
         //     printed = true;
         // }
 
-        // Parse the input from the serial connection
-        let input = bluetooth_serial_handler.handle_input();
+        // Parse the input from the bluetooth serial connection
+        let bluetooth_input = bluetooth_serial_handler.handle_input();
 
-        // Match the input
-        match input {
-            Some(Command::HandleJoystick(arguments)) => {
-                println!("Handling Joystick");
-                movement_handler.handle_joystick(arguments)
-            }
-            Some(Command::LayConesInAStraightLine(arguments)) => {
-                println!("Laying cones in a straight line");
-                movement_handler.lay_cones_in_a_straight_line(arguments)
-            }
-            Some(Command::DropCone(arguments)) => {
-                println!("Dropping cone");
-                movement_handler.drop_cone(arguments)
-            }
-            Some(Command::Stop) => {
-                println!("Stopping");
-                movement_handler.stop_all_motors()
-            }
-            None => {}
-        }
+        // Parse the input from the console serial connection
+        let console_input = handle_input(SerialBufferType::Console);
+
+        // Dispatch the commands for the bluetooth input
+        dispatch_commands(
+            bluetooth_input,
+            &mut movement_handler,
+            &mut run_movement_motors_at_constant_speed,
+        );
+
+        // Dispatch the commands for the console input
+        dispatch_commands(
+            console_input,
+            &mut movement_handler,
+            &mut run_movement_motors_at_constant_speed,
+        );
+
+        println!("Commands dispatched");
 
         // Call the function to run all of the motors,
         // and store if any motor is still running
-        let any_motor_is_still_running = movement_handler.run_all_motors();
+        let any_motor_is_still_running = movement_handler
+            .run_all_motors(run_movement_motors_at_constant_speed);
+
+        println!("Motors run");
 
         // If no motor is still running, disable the motors
         if !any_motor_is_still_running {

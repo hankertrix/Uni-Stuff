@@ -9,6 +9,7 @@ use crate::{
     console::println,
     movement::{
         Command, DropConeArgs, HandleJoystickArgs, LayConesInAStraightLineArgs,
+        MovementHandler,
     },
 };
 use avr_device::interrupt::Mutex;
@@ -33,7 +34,7 @@ use crate::utils::enum_dispatch;
 /// The stop command.
 /// The new line character is because the buffer is considered
 /// complete when the new line character is read.
-const STOP_COMMAND: &str = "stop\n";
+const STOP_COMMAND: &str = "stop";
 
 /// The variable to store whether the program has been stopped
 static PROGRAM_STOPPED: Mutex<Cell<bool>> = Mutex::new(Cell::new(false));
@@ -447,22 +448,9 @@ pub fn handle_input(serial_buffer_type: SerialBufferType) -> Option<Command> {
                 // Get the string from the buffer
                 let buffer = serial_buffer.buffer.as_str();
 
-                // If the string in the buffer is the stop command,
-                // stop the arduino from executing further commands
-                // by setting the PROGRAM_STOPPED variable to true.
-                if buffer == STOP_COMMAND {
-                    stop_program();
-                }
-                //
-
-                // Otherwise
-                else {
-                    //
-
-                    // Start the program to get ready
-                    // to handle the incoming command
-                    start_program();
-                }
+                // Start the program to get ready
+                // to handle the incoming command
+                start_program();
 
                 // Parse the input and set the variable
                 parsed_input = parse_input(buffer);
@@ -478,6 +466,81 @@ pub fn handle_input(serial_buffer_type: SerialBufferType) -> Option<Command> {
 
     // Return the parsed input
     return parsed_input;
+}
+
+// The function to dispatch the commands
+pub fn dispatch_commands(
+    input: Option<Command>,
+    movement_handler: &mut MovementHandler,
+    run_movement_motors_at_constant_speed: &mut bool,
+) {
+    //
+
+    println!("Dispatching commands");
+
+    // Match on the input given
+    match input {
+        Some(Command::HandleJoystick(arguments)) => {
+            //
+
+            // Print that the Arduino is handling the joystick
+            println!("Handling Joystick");
+
+            // Print the arguments passed
+            println!(
+                "X: {}, Y: {}",
+                arguments.x_coordinate, arguments.y_coordinate
+            );
+
+            // Set the run movement motors at
+            // constant speed variable to true
+            *run_movement_motors_at_constant_speed = true;
+
+            // Handle the joystick
+            movement_handler.handle_joystick(arguments);
+        }
+        Some(Command::LayConesInAStraightLine(arguments)) => {
+            //
+
+            // Print that the Arduino is laying cones in a straight line
+            println!("Laying cones in a straight line");
+
+            // Set the run movement motors at constant speed variable
+            // to false as we want acceleration
+            *run_movement_motors_at_constant_speed = false;
+
+            // Lay cones in a straight line
+            movement_handler.lay_cones_in_a_straight_line(arguments);
+        }
+        Some(Command::DropCone(arguments)) => {
+            //
+
+            // Print that the Arduino is dropping a cone
+            println!("Dropping cone");
+
+            // Set the run movement motors at constant speed variable
+            // to false just in case we need to stop
+            *run_movement_motors_at_constant_speed = false;
+
+            // Drop the cone
+            movement_handler.drop_cone(arguments);
+        }
+        Some(Command::Stop) => {
+            //
+
+            // Print that the Arduino is stopping
+            println!("Stopping");
+
+            // Set the run movement motors at constant speed variable
+            // to false as we need to stop
+            // and hence we need deceleration
+            *run_movement_motors_at_constant_speed = false;
+
+            // Stop all the motors
+            movement_handler.stop_all_motors();
+        }
+        None => {}
+    }
 }
 
 /// The implementation of the serial handler class
@@ -517,7 +580,9 @@ impl SerialHandler {
 mod serial_isr {
     use core::ops::DerefMut;
 
-    use super::{get_serial_buffer, SerialBufferType};
+    use super::{
+        get_serial_buffer, stop_program, SerialBufferType, STOP_COMMAND,
+    };
 
     // The interrupt service routine to write to the serial buffer
     fn interrupt_service_routine(serial_buffer_type: SerialBufferType) {
@@ -538,10 +603,18 @@ mod serial_isr {
                 let byte = serial_buffer.serial_receiver.read().unwrap();
 
                 // If the byte is the newline character
-                // or the backslash character,
-                // set the serial buffer to complete
+                // or the backslash character
                 if byte == b'\n' || byte == b'\\' {
+                    //
+
+                    // Set the serial buffer to complete
                     serial_buffer.is_complete = true;
+
+                    // If the serial buffer is the stop command,
+                    // stop the program.
+                    if serial_buffer.buffer == STOP_COMMAND {
+                        stop_program();
+                    }
                 }
                 //
 

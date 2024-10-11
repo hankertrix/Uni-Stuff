@@ -171,7 +171,7 @@ impl Default for StepperDriverState {
             enabled: false,
             speed: 0.0,
             maximum_speed: 0.0,
-            acceleration: 1.0,
+            acceleration: 0.0,
             current_position: 0,
             target_position: 0,
             minimum_pulse_width_in_us: 1,
@@ -180,9 +180,9 @@ impl Default for StepperDriverState {
             direction: Direction::Clockwise,
             step_interval_in_us: 0,
             step_number: 0,
-            initial_step_interval_in_us: 1.0,
-            current_step_interval_in_us: 1.0,
-            minimum_step_interval_in_us: 1.0,
+            initial_step_interval_in_us: 0.0,
+            current_step_interval_in_us: 0.0,
+            minimum_step_interval_in_us: 0.0,
             previous_step_time_in_us: 0,
             step_resolution: StepResolution::FullStep,
         }
@@ -367,6 +367,28 @@ impl StepperDriver {
     fn decrement_current_position(&mut self, decrement: u32) {
         stepper_driver_dispatch!(self, |driver| {
             driver.state.current_position -= decrement as i32
+        })
+    }
+
+    /// The function to reset the current position to a position given
+    pub fn reset_current_position(&mut self, new_position: i32) {
+        stepper_driver_dispatch!(self, |driver| {
+            //
+
+            // Set the target position to the new position
+            driver.state.target_position = new_position;
+
+            // Set the current position to the new position
+            driver.state.current_position = new_position;
+
+            // Set the step number to 0
+            driver.state.step_number = 0;
+
+            // Set the step interval to 0
+            driver.state.step_interval_in_us = 0;
+
+            // Set the speed to 0
+            driver.state.speed = 0.0;
         })
     }
 
@@ -696,6 +718,12 @@ impl StepperDriver {
         // Get the speed and the acceleration
         let (speed, acceleration) = (self.speed(), self.acceleration());
 
+        // If the acceleration is 0,
+        // return the step interval and exit the function
+        if acceleration == 0.0 {
+            return self.step_interval_in_us();
+        }
+
         // Calculate the number of steps needed to stop moving.
         // Uses equation 16 from the PDF file.
         let steps_to_stop_moving =
@@ -859,10 +887,21 @@ impl StepperDriver {
         // Increment the step number
         self.increment_step_number(1);
 
-        // Set the step interval to the current step interval
+        // Otherwise, set the step interval to the current step interval
         self.set_step_interval_in_us(self.current_step_interval_in_us() as u32);
 
-        // Set the new speed to the reciprocal of
+        // If the step interval is 0,
+        if self.step_interval_in_us() == 0 {
+            //
+
+            // Set the speed to 0
+            self.set_speed(0.0);
+
+            // Return the step interval in microseconds
+            return self.step_interval_in_us();
+        }
+
+        // Otherwise, set the new speed to the reciprocal of
         // the current step interval which is in microseconds per step,
         // to get the speed in steps per microsecond,
         // then multiply it by 1,000,000 to get the speed in steps/s
@@ -914,8 +953,15 @@ impl StepperDriver {
             //
             // It is the reciprocal of the new maximum speed
             // multiplied by 1,000,000 to convert it to microseconds.
+            //
+            // If the new maximum speed is 0,
+            // set the minimum step interval to 0
             driver.state.minimum_step_interval_in_us =
-                1_000_000.0 / new_maximum_speed;
+                if new_maximum_speed == 0.0 {
+                    0.0
+                } else {
+                    1_000_000.0 / new_maximum_speed
+                };
         });
 
         // If the step number is zero or negative,
@@ -932,10 +978,18 @@ impl StepperDriver {
         // Get the current motor speed
         let current_motor_speed = self.speed();
 
+        // Get the acceleration
+        let acceleration = self.acceleration();
+
+        // If the acceleration is 0, exit the function
+        if acceleration == 0.0 {
+            return;
+        }
+
         // Recompute the step number by using equation 16
         // from the PDF file.
         let new_step_number = ((current_motor_speed * current_motor_speed)
-            / (2.0 * self.acceleration())) as i32;
+            / (2.0 * acceleration)) as i32;
 
         // Set the step number to the new step number
         self.set_step_number(new_step_number);
@@ -1010,7 +1064,11 @@ impl StepperDriver {
     /// from the initial motor position,
     /// and a negative absolute position is anticlockwise
     /// from the initial motor position.
-    pub fn move_to_absolute_position(&mut self, new_absolute_position: i32) {
+    pub fn move_to_absolute_position(
+        &mut self,
+        new_absolute_position: i32,
+        constant_speed: bool,
+    ) {
         //
 
         // If the target position is the same as the given position,
@@ -1022,7 +1080,13 @@ impl StepperDriver {
         // Otherwise, set the target position to the new absolute position
         self.set_target_position(new_absolute_position);
 
-        // Recalculate the speed to reach the new target position
+        // If the constant speed flag is true,
+        // exit the function.
+        if constant_speed {
+            return;
+        }
+
+        // Otherwise, recalculate the speed to reach the new target position
         self.calculate_new_speed();
     }
 
@@ -1030,7 +1094,11 @@ impl StepperDriver {
     /// A positive number of steps means move the motor clockwise
     /// by the given number of steps, and a negative number of steps
     /// means to move the motor anticlockwise by the given number of steps.
-    pub fn move_by_steps(&mut self, number_of_steps: i32) {
+    pub fn move_by_steps(
+        &mut self,
+        number_of_steps: i32,
+        constant_speed: bool,
+    ) {
         //
 
         // Call the function to move to the absolute position
@@ -1038,6 +1106,7 @@ impl StepperDriver {
         // plus the given number of steps
         self.move_to_absolute_position(
             self.current_position() + number_of_steps,
+            constant_speed,
         );
     }
 
@@ -1063,11 +1132,24 @@ impl StepperDriver {
         // Otherwise, get the current time in microseconds
         let current_time_in_us = micros();
 
-        // If the current time minus the last step time is less than
-        // the step interval, return false
-        if current_time_in_us - self.previous_step_time_in_us()
-            < self.step_interval_in_us()
+        // Get the previous step time
+        let previous_step_time_in_us = self.previous_step_time_in_us();
+
+        // Get the difference between the current time
+        // and the previous step time
+        let time_difference_in_us = match current_time_in_us
+            .checked_sub(previous_step_time_in_us)
         {
+            Some(value) => value,
+            None => {
+                println!("Integer overflow: current time - previous step time");
+                return false;
+            }
+        };
+
+        // If the time difference in microseconds is smaller than
+        // the step interval, return false
+        if time_difference_in_us < self.step_interval_in_us() {
             return false;
         }
 
@@ -1141,7 +1223,7 @@ impl StepperDriver {
             //
 
             // Move the number of steps to stop moving
-            self.move_by_steps(steps_to_stop_moving);
+            self.move_by_steps(steps_to_stop_moving, false);
         }
         //
 
@@ -1150,7 +1232,7 @@ impl StepperDriver {
             //
 
             // Move by the negative of the number of steps to stop moving
-            self.move_by_steps(steps_to_stop_moving);
+            self.move_by_steps(steps_to_stop_moving, false);
         }
     }
 
@@ -1229,7 +1311,7 @@ impl StepperDriver {
         //
 
         // Move to the new absolute position
-        self.move_to_absolute_position(new_absolute_position);
+        self.move_to_absolute_position(new_absolute_position, false);
 
         // Call the function to run until the target position is reached
         self.run_until_target_position_is_reached();
