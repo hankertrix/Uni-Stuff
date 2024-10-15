@@ -250,6 +250,9 @@ Point to the other person.
 ** Yours
 Same motion as "your", but do it twice.
 
+** Let's
+Make the "L" hand sign with both hands, palm facing each other and index finger pointing in front. Put your hands beside your waist and move them in front.
+
 ** We
 
 *** Variation 1
@@ -405,6 +408,14 @@ Show the thumbs up sign.
 ** Happy
 [[./images/happy.gif]]
 
+** Smile
+
+*** Variation 1
+[[./images/smile-variation-a.gif]]
+
+*** Variation 2
+[[./images/smile-variation-b.gif]]
+
 ** Excuse me
 Same motion as "nice / clean", but do it twice.
 
@@ -416,6 +427,18 @@ Same motion as "please", but with the "S" hand sign, or a closed fist.
 
 ** Thank you
 Touch your chin with the tip of your open palm facing towards your body and bring it outwards.
+
+** Hold
+
+*** Variation 1
+[[./images/hold-variation-a.gif]]
+
+This variation is for bigger objects, or a person.
+
+*** Variation 2
+[[./images/hold-variation-b.gif]]
+
+This variation is for poles or rod-like objects.
 
 ** Grab
 Pretend to grab a stick.
@@ -505,6 +528,9 @@ Shake your head when doing this gesture.
 ** Favourite
 [[./images/favourite.gif]]
 
+** Luck / Lucky
+[[./images/luck.gif]]
+
 ** Like
 
 *** Variation 1
@@ -539,6 +565,14 @@ Just do the gesture for "every" then followed by "thing".
 ** Want
 [[./images/want.gif]]
 
+** Don't want
+
+*** Variation 1
+Do the gesture for "don't" followed by "want".
+
+*** Variation 2
+Make the "L" hand sign with one hand and move it up and down in front of your mouth.
+
 ** Have / Has
 [[./images/have-diagram.gif]]
 
@@ -565,6 +599,12 @@ Make the "T" hand sign with both hands and make sure the thumb is pointing forwa
 ** Stress
 Put both hands beside your head, palm facing your face, and open and close your fingers.
 
+** Increase
+[[./images/increase.gif]]
+
+** Decrease
+[[./images/decrease.gif]]
+
 ** More / Most
 Make two "O" hand signs with both hands and bring them together.
 
@@ -587,6 +627,12 @@ Do the gesture for "less", then make two hands into the thumbs up sign, and slid
 
 ** Someone
 A combination of the gestures for "some" and "one".
+
+** Somebody
+Same gesture as "someone".
+
+** Nobody
+[[./images/nobody.gif]]
 
 ** Few
 [[./images/few.gif]]
@@ -631,6 +677,8 @@ Similar to "afternoon", but lower the hand such that it is pointed straight in f
 
 ** Midnight
 [[./images/midnight.gif]]
+
+** Over (as in going over something)
 
 ** Under
 Put one hand horizontally in front of you with the palm facing down. Then, make the thumbs up hand sign and move it under the palm of the other hand.
@@ -682,6 +730,9 @@ Same motion as the hand sign for "thousand", but instead of the open palm facing
 
 *** Variation 2
 [[./images/same-variation-b.gif]]
+
+** Also
+[[./images/also.gif]]
 
 ** But
 [[./images/but.gif]]
@@ -749,6 +800,21 @@ Make a "B" hand sign and place it below your mouth, then move it outwards to for
 
 *** Variation 2
 [[./images/many-variation-b.gif]]
+
+** Any
+Make the "A" hand sign with one hand with the palm facing up. Then rotate your hand until the palm faces down, and change from the "A" hand sign to the "Y" hand sign while rotating.
+
+** Anything
+Do the gesture for "any", then do the gesture for "thing".
+
+** Anytime
+Do the gesture for "any", then do the gesture for "time".
+
+** Anywhere
+Do the gesture for "any", then do the gesture for "where".
+
+** Anyone
+Do the gesture for "any", then do the gesture for "one".
 
 ** Ever
 Same motion to "Monday", but instead of the "M" hand sign, do the "E" hand sign.
@@ -901,6 +967,9 @@ Similar motion to "after", but for the hand on the outside, the fingers should b
 ** End
 Hold one hand with the palm facing inwards. With the other hand, form the "E" hand sign and move it on top of the hand and then downwards, like tracing half of a rectangle around the other hand.
 
+** Finish / Over / Done / Already
+[[./images/finish.gif]]
+
 ** Next
 [[./images/next.gif]]
 
@@ -962,8 +1031,16 @@ Similar motion to "talk", but with all five fingers apart instead of just the in
 ** Malay
 Similar motion to "traffic", but have your hands beside the top of your head and your fingers together instead of apart.
 
+** Scream / Yell
+
+*** Variation 1
+[[./images/scream-variation-a.gif]]
+
+*** Variation 2
+[[./images/scream-variation-b.gif]]
+
 ** Call
-Do the "C" hand sign and move it outwards from your chest.
+Do the "C" hand sign and move it outwards from your mouth.
 
 ** Text / Message
 
@@ -995,6 +1072,9 @@ Move your thumb towards the person you want to help, towards yourself if you wan
 ** Sit
 [[./images/name.gif]]
 
+** Show
+[[./images/show.gif]]
+
 ** See
 Make the "V" hand sign, but with the back of the palm facing outwards, and put it beside your eyes. Then move your hand outwards.
 
@@ -1002,10 +1082,23 @@ Make the "V" hand sign, but with the back of the palm facing outwards, and put i
 Same motion as "see", but move the "V" hand sign back after you move it outwards.
 
 ** Look
+
+*** Variation 1
+[[./images/look-variation-a.gif]]
+
+*** Variation 2
 Same motion as "see", but with the "L" hand sign and the palm facing outwards.
 
 ** Find
 [[./images/find.gif]]
+
+** Promise / Swear / Pledge
+
+*** Variation 1
+[[./images/promise-variation-a.gif]]
+
+*** Variation 2
+[[./images/promise-variation-b.gif]]
 
 ** Must / Need / Have to / Require / Necessary / Compulsory
 [[./images/must.gif]]
@@ -1016,17 +1109,26 @@ Same motion as "must", but do it lightly and do it twice.
 ** Might / Maybe / May
 [[./images/might.gif]]
 
+** Realise
+[[./images/realise.gif]]
+
 ** Understand
 [[./images/understand.gif]]
 
 ** Misunderstand
 [[./images/misunderstand.gif]]
 
+** Mean (verb)
+[[./images/mean-verb.gif]]
+
 ** Forget
 [[./images/forget.gif]]
 
 ** Remember
 [[./images/remember.gif]]
+
+** Dream
+[[./images/dream.gif]]
 
 ** Smart
 [[./images/smart.gif]]
@@ -1125,6 +1227,9 @@ Make an open palm with one hand and face it upwards. Form a "P" hand sign with t
 ** Dollar
 [[./images/dollar.gif]]
 
+** Worth / Important / Value
+[[./images/worth.gif]]
+
 ** Sell
 [[./images/sell.gif]]
 
@@ -1158,8 +1263,16 @@ Pretend to hold the flag in one hand, then use the other hand to grab it.
 ** Miss
 Similar motion to "win", but instead of the hand pretending to hold a flag, point an index finger upwards. The other hand tries to grab the index finger but misses.
 
-** Lose
-Hold an open palm facing up, and touch a "V" hand sign to that open palm.
+** Lose (as in loser)
+Hold an open palm facing up, and touch the fingers on the "V" hand sign to that open palm.
+
+** Lose (as in lose something) / Lost
+
+*** Variation 1
+[[./images/lost-variation-a.gif]]
+
+*** Variation 2
+[[./images/lost-variation-b.gif]]
 
 ** Brave
 [[./images/brave.gif]]
@@ -1193,6 +1306,12 @@ Same motion as "make", but form the "M" hand sign instead of a fist.
 
 ** Park
 [[./images/park.gif]]
+
+** Hill
+[[./images/hill.gif]]
+
+** Mountain
+[[./images/mountain.gif]]
 
 ** Lie / Fib
 [[./images/lie.gif]]
@@ -1536,6 +1655,9 @@ Point your thumb towards the centre of your body and bring it upwards, starting 
 ** Lead (as in leader)
 Use one hand to grab the other hand, which has an open palm facing your body, and then pull it along.
 
+** Follow
+[[./images/follow.gif]]
+
 ** Head
 [[./images/head.gif]]
 
@@ -1554,16 +1676,230 @@ Show a heart shape with both hands at your heart.
 [[./images/breathe.gif]]
 
 ** Eat
-[[./images/eat.gif]]
+
+*** Variation 1
+[[./images/eat-variation-a.gif]]
+
+*** Variation 2
+[[./images/eat-variation-b.gif]]
+
+*** Variation 3
+Pretend to use your index and middle fingers as a chopstick to eat.
+
+*** Variation 4
+Pretend to use your hands to eat.
 
 ** Food / Eat
 [[./images/food.gif]]
+
+** Breakfast
+[[./images/breakfast.gif]]
+
+** Lunch
+[[./images/lunch.gif]]
+
+** Dinner
+[[./images/dinner.gif]]
+
+** Supper
+[[./images/supper.gif]]
+
+** Full
+
+*** Variation 1
+[[./images/full-variation-a.gif]]
+
+The hand moves towards your body, not away from your body.
+
+*** Variation 2
+[[./images/full-variation-b.gif]]
+
+** Enough
+Similar motion to the first variation of "full", but the hand moves away from your body instead of towards your body.
+
+** Hungry
+[[./images/hungry.gif]]
+
+** Passion
+Same motion as "hungry", but do the motion over your chest.
+
+** Horny
+Same motion as "passion", but do it continuously and with more intensity.
+
+** Cake
+[[./images/cake.gif]]
+
+** Pie
+[[./images/pie.gif]]
+
+** Fruit
+[[./images/fruit.gif]]
+
+** Apple
+
+*** Variation 1
+[[./images/apple-variation-a.gif]]
+
+*** Variation 2
+[[./images/apple-variation-b.gif]]
+
+** Banana
+[[./images/banana.gif]]
+
+** Cherry
+[[./images/cherry.gif]]
+
+** Coconut
+[[./images/coconut.gif]]
+
+** Durian
+[[./images/durian.gif]]
+
+** Grapes
+
+*** Variation 1
+[[./images/grapes-variation-a.gif]]
+
+*** Variation 2
+[[./images/grapes-variation-b.gif]]
+
+** Mango
+
+*** Variation 1
+[[./images/mango-variation-a.gif]]
+
+*** Variation 2
+[[./images/mango-variation-b.gif]]
+
+** Mangosteen
+[[./images/mangosteen.gif]]
+
+** Lime
+[[./images/lime.gif]]
+
+** Lemon / Lemonade
+
+*** Variation 1
+[[./images/lemon-variation-a.gif]]
+
+*** Variation 2
+[[./images/lemon-variation-b.gif]]
+
+** Papaya
+[[./images/papaya.gif]]
+
+** Pineapple
+
+*** Variation 1
+[[./images/pineapple-variation-a.gif]]
+
+*** Variation 2
+[[./images/pineapple-variation-b.gif]]
+
+** Berry
+[[./images/berry.gif]]
+
+** Blackberry (fruit)
+Do the gesture for "black", then do the gesture for "berry".
+
+** Blueberry
+Do the gesture for "blue", then do the gesture for "berry".
+
+** Raspberry
+Do the hand sign for "R", then do the gesture for "berry".
+
+** Strawberry
+
+*** Variation 1
+[[./images/strawberry-variation-a.gif]]
+
+*** Variation 2
+Do the hand sign for "S", then do the gesture for "berry".
+
+*** Variation 3
+Make the "F" hand sign with one hand and place the thumb at the side of your lips. Then move it outwards and upwards.
+
+** Tomato
+[[./images/tomato.gif]]
+
+** Watermelon
+[[./images/watermelon.gif]]
+
+** Peach
+[[./images/peach.gif]]
+
+** Pear
+[[./images/pear.gif]]
+
+** Rambutan
+[[./images/rambutan.gif]]
+
+** Melon / Pumpkin
+[[./images/melon.gif]]
+
+** Vegetable
+[[./images/vegetable.gif]]
+
+** Meat
+[[./images/meat.gif]]
+
+** Salt
+[[./images/salt.gif]]
 
 ** Cheese
 [[./images/cheese.gif]]
 
 ** Chocolate
 [[./images/chocolate.gif]]
+
+** Oyster
+Cup both hands together then open where the thumb is. Your palms should be facing upwards when you open them.
+
+** Egg / Omelette
+[[./images/egg.gif]]
+
+** Oyster omelette
+Do the gesture for "oyster", then do the gesture for "egg".
+
+** Dim Sum
+[[./images/dim-sum.gif]]
+
+** Carrot cake
+Have both palms facing towards the body, with the fingers pointed down. Put one palm in front of the other, and do a chopping motion with the palm furthest away from your body.
+
+** Chee Cheong Fun
+Show a long, rectangular rod that becomes thinner with both hands, using the index finger and thumb. Then make a scissors with one hand and cut up the rod you just showed.
+
+** Noodles
+[[./images/noodles.gif]]
+
+** Kway teow
+
+*** Variation 1
+Same motion as "noodles", but use the "K" hand sign on the left hand, and the "T" hand sign on the right hand.
+
+*** Variation 2
+Do the gesture for "black", then pretend to use 2 spatulas to toss food in a wok.
+
+** You tiao (read description)
+[[./images/you-tiao.gif]]
+
+Same motion as the gesture shown above, but your index and middle finger are apart instead of together.
+
+** Roti prata
+Pretend to flip a roti prata. To flip a roti prata, hold on to one end of the roti prata with both hands using the thumb of the "A" hand sign. Both hands should be close together. Rotate both hands such that both thumbs draw a horizontal circle.
+
+** Rojak
+Pretend to throw things into a bowl, then stir the bowl by holding a spoon with your fist and drawing a horizontal circle
+
+** Ice kachang
+Mime the shape of an ice kachang. Have one palm facing up, then use the other hand to show a cone shape.
+
+** Teh Tarik
+Mime pulling tea. Make two fists, one with the palm facing down and one with the palm facing the side. Place the thumb of the fist with the palm facing down in the middle of the other fist, and move that fist upwards and to the side. Swap the two fists and repeat the motion.
+
+** Delicious
+[[./images/delicious.gif]]
 
 ** Drink
 
@@ -1576,12 +1912,6 @@ Show a heart shape with both hands at your heart.
 *** Variation 3
 [[./images/drink-variation-c.gif]]
 
-** Water
-[[./images/water.gif]]
-
-** Milk
-[[./images/milk.gif]]
-
 ** Thirsty
 
 *** Variation 1
@@ -1590,11 +1920,38 @@ Show a heart shape with both hands at your heart.
 *** Variation 2
 [[./images/thirsty-variation-b.gif]]
 
-** Hungry
-[[./images/hungry.gif]]
+** Water
+[[./images/water.gif]]
 
-** Horny
-Same motion as "hungry", but do the motion over your chest and do it continuously instead of just twice.
+** Ice
+[[./images/ice.gif]]
+
+** Milk
+[[./images/milk.gif]]
+
+** Juice
+Hold one hand horizontally with an fist, with the palm facing towards the body. The other hand makes the "Y" hand sign, and moves the thumb down the back of the palm. The pinky on this hand should be pointing forward.
+
+** Orange juice
+Do the gesture for "orange", then do the gesture for "juice".
+
+** Coffee
+[[./images/coffee.gif]]
+
+** Tea
+[[./images/tea.gif]]
+
+** Sour
+[[./images/sour.gif]]
+
+** Spoon
+[[./images/spoon-noun.gif]]
+
+** Fork
+[[./images/fork.gif]]
+
+** Knife
+[[./images/knife.gif]]
 
 ** Scared
 [[./images/scared.gif]]
@@ -1621,7 +1978,15 @@ Same motion as "secondary", but with an open palm instead of the "S" hand sign.
 Same motion as "secondary", but with the "U" hand sign instead of the "S" hand sign.
 
 ** Paper
-Hold one open palm facing upwards. This palm will be called the holding palm. Slide the back of the other open palm against the back of the holding palm and lift up slightly, with the fingers pointed in the same direction as the holding palm. Then do the same motion but slide against the front of the holding palm.
+[[./images/paper.gif]]
+
+** Tissue paper
+
+*** Variation 1
+Hold an open palm facing upwards and pretend to take a tissue from the middle of the palm with the other hand.
+
+*** Variation 2
+Same motion as "paper", but use the "T" hand sign instead of the open palm for the hand on top.
 
 ** Identity
 Make the "I" hand sign and push the thumb side of the hand into the other open palm that is facing outwards.
@@ -2104,12 +2469,6 @@ Hold one index finger up, pointing upwards, and use the index finger on the othe
 ** Table
 [[./images/table.gif]]
 
-** Coffee
-[[./images/coffee.gif]]
-
-** Tea
-[[./images/tea.gif]]
-
 ** Stand
 [[./images/stand.gif]]
 
@@ -2149,7 +2508,7 @@ Similar motion to the first variation of "hope", but do it once, and position yo
 ** Reply
 Similar motion to "answer", but use the "R" hand sign instead of the index finger.
 
-** Awake / Wake
+** Awake / Wake up / Woke up
 
 *** Variation 1
 [[./images/awake-variation-a.gif]]
@@ -2191,6 +2550,20 @@ Pretend to open a newspaper.
 
 ** Television
 Just finger spell "TV".
+
+** Celebrate / Celebration / Anniversary
+[[./images/celebration.gif]]
+
+** Party
+
+*** Initialised version
+[[./images/party-initialised-version.gif]]
+
+*** Non-initialised version
+[[./images/party-non-initialised-version.gif]]
+
+** Alcohol
+[[./images/alcohol.gif]]
 
 ** Drunk
 [[./images/drunk.gif]]
@@ -2234,6 +2607,14 @@ Same motion as "senior", but use a thumbs up on the hand below instead of the op
 ** Fight
 [[./images/fight.gif]]
 
+** War
+
+*** Variation 1
+[[./images/war-variation-a.gif]]
+
+*** Variation 2
+[[./images/war-variation-b.gif]]
+
 ** Junior
 Hold up an open palm facing upwards, and touch the index of the other hand onto the index finger of the open palm.
 
@@ -2248,9 +2629,6 @@ Hold up an open palm facing upwards, and touch the index of the other hand onto 
 
 ** Focus
 [[./images/focus.gif]]
-
-** Full
-[[./images/full.gif]]
 
 ** Smooth
 [[./images/smooth.gif]]
@@ -2406,3 +2784,6 @@ Just finger spell "KL".
 
 ** New York
 [[./images/new-york.gif]]
+
+** Earth
+[[./images/earth.gif]]
