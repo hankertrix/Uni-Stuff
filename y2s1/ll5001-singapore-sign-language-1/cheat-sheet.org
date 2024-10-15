@@ -280,6 +280,9 @@ Form a cup with one hand and touch the side of the pinky on the shoulder on the 
 ** Oh
 Move the "Y" hand sign front and back.
 
+** Ooh / Oooo
+Make the "O" hand sign with both hands and shake them side to side.
+
 ** Yes
 [[./images/yes.gif]]
 
@@ -436,9 +439,7 @@ Touch your chin with the tip of your open palm facing towards your body and brin
 This variation is for bigger objects, or a person.
 
 *** Variation 2
-[[./images/hold-variation-b.gif]]
-
-This variation is for poles or rod-like objects.
+Have one hand with the index finger pointing upwards, with the palm facing the side. Then, hold the index finger with all the fingers on the other hand. This variation is for poles or rod-like objects.
 
 ** Grab
 Pretend to grab a stick.
@@ -479,6 +480,9 @@ Shake the "T" hand sign back and forth.
 
 ** So
 [[./images/so.gif]]
+
+** Also
+With the palm always facing down, do the "A" hand sign, then do the "L" hand sign. Then, do the gesture for "so".
 
 ** Because
 [[./images/because.gif]]
@@ -608,11 +612,31 @@ Put both hands beside your head, palm facing your face, and open and close your 
 ** More / Most
 Make two "O" hand signs with both hands and bring them together.
 
+** Too
+Same motion as "more", but do the "1" hand sign for one of the hands, and touch the tip of the index finger to the side of the "O" hand sign on the other hand.
+
 ** Less
 [[./images/less.gif]]
 
 ** Least
 Do the gesture for "less", then make two hands into the thumbs up sign, and slide one hand against the other, moving directly upwards.
+
+** Head
+[[./images/head.gif]]
+
+** Body
+[[./images/body.gif]]
+
+** Heart
+
+*** Variation 1
+[[./images/heart.gif]]
+
+*** Variation 2
+Draw a heart shape with both index fingers at your heart.
+
+*** Variation 3
+Show a heart shape with both hands at your heart.
 
 ** All
 
@@ -626,13 +650,16 @@ Do the gesture for "less", then make two hands into the thumbs up sign, and slid
 [[./images/some.gif]]
 
 ** Someone
-A combination of the gestures for "some" and "one".
+Do the gesture for "some", then do the gesture for "one".
 
 ** Somebody
-Same gesture as "someone".
+Do the gesture for "some", then do the gesture for "body".
+
+** No one
+Do the gesture for "no", then do the gesture for "one".
 
 ** Nobody
-[[./images/nobody.gif]]
+Do the gesture for "no", then do the gesture for "body"
 
 ** Few
 [[./images/few.gif]]
@@ -678,7 +705,8 @@ Similar to "afternoon", but lower the hand such that it is pointed straight in f
 ** Midnight
 [[./images/midnight.gif]]
 
-** Over (as in going over something)
+** Over (as in over something)
+Have two palms facing down, with one palm on top of another, but not touching the other palm. Move the palm that is on top in a circle over the other palm.
 
 ** Under
 Put one hand horizontally in front of you with the palm facing down. Then, make the thumbs up hand sign and move it under the palm of the other hand.
@@ -730,9 +758,6 @@ Same motion as the hand sign for "thousand", but instead of the open palm facing
 
 *** Variation 2
 [[./images/same-variation-b.gif]]
-
-** Also
-[[./images/also.gif]]
 
 ** But
 [[./images/but.gif]]
@@ -967,8 +992,11 @@ Similar motion to "after", but for the hand on the outside, the fingers should b
 ** End
 Hold one hand with the palm facing inwards. With the other hand, form the "E" hand sign and move it on top of the hand and then downwards, like tracing half of a rectangle around the other hand.
 
-** Finish / Over / Done / Already
-[[./images/finish.gif]]
+** Finish / Over / Done
+Have two palms facing upwards with the fingers pointing forward. Then, rotate your hand such that the palms face downwards.
+
+** Already
+Same motion as "finish", but use the "A" hand sign when the palms are facing upwards, transition to an open palm when the palms are facing downwards.
 
 ** Next
 [[./images/next.gif]]
@@ -1112,6 +1140,9 @@ Same motion as "must", but do it lightly and do it twice.
 ** Realise
 [[./images/realise.gif]]
 
+** Reason
+[[./images/reason.gif]]
+
 ** Understand
 [[./images/understand.gif]]
 
@@ -1177,6 +1208,9 @@ Same as "practice", but with the "T" hand sign instead of the fist.
 
 ** Business
 [[./images/business.gif]]
+
+** Use
+Same motion as "business", but use the "U" hand sign. The "U" hand sign can either have the palm facing outwards or inwards.
 
 ** Employ
 Same motion as "business", but use the "E" hand sign.
@@ -1637,14 +1671,11 @@ Pretend to hold a box from underneath the box, then show your hands and body bei
 ** Live
 [[./images/live.gif]]
 
-** Survive
-Same motion as "live", but use the "S" hand sign instead of the "L" hand sign.
-
 ** Address
 Same motion as "live", but with the thumbs up gesture instead of the "L" hand sign.
 
-** Use
-Make the "U" hand sign, then touch the fist twice, moving one direction first before switching to the other direction. The "U" hand sign can either have the palm facing outwards or inwards.
+** Survive
+Similar motion as "live", but use the "S" hand sign instead of the "L" hand sign, and the fists should touch the stomach area before touching the chest area instead of a straight upwards motion.
 
 ** Deaf
 [[./images/deaf.gif]]
@@ -1657,20 +1688,6 @@ Use one hand to grab the other hand, which has an open palm facing your body, an
 
 ** Follow
 [[./images/follow.gif]]
-
-** Head
-[[./images/head.gif]]
-
-** Heart
-
-*** Variation 1
-[[./images/heart.gif]]
-
-*** Variation 2
-Draw a heart shape with both index fingers at your heart.
-
-*** Variation 3
-Show a heart shape with both hands at your heart.
 
 ** Breathe
 [[./images/breathe.gif]]
@@ -2445,6 +2462,9 @@ Hold an arm vertically with the fingers pointing upwards and the palm facing the
 
 ** Squirrel
 [[./images/squirrel.gif]]
+
+** Even (as an emphasis)
+Do the gesture for "squirrel", but leave your hands further apart. Then, straighten the index and middle fingers on both hands and touch the tips together.
 
 ** Tiger
 
