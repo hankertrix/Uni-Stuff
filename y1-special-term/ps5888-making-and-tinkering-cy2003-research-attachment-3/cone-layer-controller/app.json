@@ -32,7 +32,7 @@
     },
     "plugins": [
       [
-        "@matthewwarnes/react-native-ble-manager-plugin",
+        "react-native-ble-plx",
         {
           "isBackgroundEnabled": true,
           "modes": [
