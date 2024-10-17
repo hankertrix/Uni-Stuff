@@ -138,3 +138,11 @@ npx eas build
 7. After archiving is done, you should get a pop-up
    where you can choose to export the application or
    distribute it to the App Store.
+
+# Licence
+This project is licenced under the GNU GPL v3.
+You can view the `LICENCE.txt` file for the full
+licence text.
+
+# Privacy
+This application doesn't collect any user data.
