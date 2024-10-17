@@ -557,17 +557,6 @@ impl StepperDriver {
         })
     }
 
-    /// The function to set the initial step interval in microseconds
-    fn set_initial_step_interval_in_us(
-        &mut self,
-        new_initial_step_interval_in_us: f32,
-    ) {
-        stepper_driver_dispatch!(self, |driver| {
-            driver.state.initial_step_interval_in_us =
-                new_initial_step_interval_in_us
-        })
-    }
-
     /// The function to get the current step interval in microseconds
     fn current_step_interval_in_us(&self) -> f32 {
         stepper_driver_dispatch!(self, |driver| {
@@ -593,17 +582,6 @@ impl StepperDriver {
         })
     }
 
-    /// The function to set the minimum step in microseconds
-    fn set_minimum_step_interval_in_us(
-        &mut self,
-        new_minimum_step_interval_in_us: f32,
-    ) {
-        stepper_driver_dispatch!(self, |driver| {
-            driver.state.minimum_step_interval_in_us =
-                new_minimum_step_interval_in_us
-        })
-    }
-
     /// The function to get the time of the previous motor step
     fn previous_step_time_in_us(&self) -> u32 {
         stepper_driver_dispatch!(self, |driver| {
@@ -615,13 +593,6 @@ impl StepperDriver {
     fn set_previous_step_time_in_us(&mut self, new_time: u32) {
         stepper_driver_dispatch!(self, |driver| {
             driver.state.previous_step_time_in_us = new_time
-        })
-    }
-
-    /// The function to get the step resolution
-    fn step_resolution(&self) -> StepResolution {
-        stepper_driver_dispatch!(self, |driver| {
-            driver.state.step_resolution
         })
     }
 
@@ -1199,7 +1170,7 @@ impl StepperDriver {
     }
 
     /// The function to stop the motor
-    pub fn stop(&mut self) {
+    pub fn stop(&mut self, constant_speed: bool) {
         //
 
         // Get the speed of the motor
@@ -1208,6 +1179,17 @@ impl StepperDriver {
         // If the current speed is zero, that means the motor has stopped,
         // so exit the function
         if speed == 0.0 {
+            return;
+        }
+
+        // If the constant speed flag is true
+        if constant_speed {
+            //
+
+            // Set the constant speed to 0
+            self.set_constant_speed(0.0);
+
+            // Exit the function
             return;
         }
 
@@ -1256,7 +1238,7 @@ impl StepperDriver {
                 //
 
                 // Stop the motor
-                self.stop();
+                self.stop(false);
 
                 // Exit the function
                 return;

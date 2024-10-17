@@ -529,13 +529,9 @@ pub fn dispatch_commands(
             // Print that the Arduino is stopping
             println!("Stopping");
 
-            // Set the run movement motors at constant speed variable
-            // to false as we need to stop
-            // and hence we need deceleration
-            *run_movement_motors_at_constant_speed = false;
-
             // Stop all the motors
-            movement_handler.stop_all_motors();
+            movement_handler
+                .stop_all_motors(*run_movement_motors_at_constant_speed);
         }
         None => {}
     }

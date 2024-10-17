@@ -54,12 +54,18 @@ const X_AXIS_MAX: i16 = 300;
 /// is 470 steps per second.
 const JOYSTICK_CONTROL_MAX_SPEED: i16 = 500;
 
+// The maximum motor speed difference between the motors
+const MAXIMUM_MOTOR_SPEED_DIFFERENCE: i16 = 100;
+
 /// The acceleration of the motors
 /// in steps per second squared.
 const ACCELERATION: f32 = 1000.0;
 
 /// The maximum speed for laying cones in steps per second
 const MAXIMUM_SPEED_FOR_LAYING_CONES: f32 = 500.0;
+
+/// The default speed for dropping a cone in steps per second
+const DEFAULT_SPEED_FOR_DROPPING_CONE: i16 = 50;
 
 /// The number of milliseconds to continue moving for
 /// when controlling the movement motors with the joystick
@@ -434,14 +440,14 @@ impl MovementHandler {
     ///
     /// The enable_movement_motors must be called to enable
     /// the motors before calling this function.
-    pub fn handle_joystick(&mut self, arguments: HandleJoystickArgs) {
-        //
-
-        // Get the x coordinate and y coordinate from the given arguments
-        let HandleJoystickArgs {
+    pub fn handle_joystick(
+        &mut self,
+        HandleJoystickArgs {
             x_coordinate,
             y_coordinate,
-        } = arguments;
+        }: HandleJoystickArgs,
+    ) {
+        //
 
         // Initialise the motor speed to 0
         let mut motor_speed = 0;
@@ -493,7 +499,7 @@ impl MovementHandler {
                 x_coordinate,
                 0,
                 X_AXIS_LEFT_THRESHOLD,
-                -JOYSTICK_CONTROL_MAX_SPEED,
+                -MAXIMUM_MOTOR_SPEED_DIFFERENCE,
                 0,
             );
         }
@@ -510,7 +516,7 @@ impl MovementHandler {
                 X_AXIS_RIGHT_THRESHOLD,
                 X_AXIS_MAX,
                 0,
-                JOYSTICK_CONTROL_MAX_SPEED,
+                MAXIMUM_MOTOR_SPEED_DIFFERENCE,
             );
         }
 
@@ -552,7 +558,7 @@ impl MovementHandler {
         // If both the left and right side motor speeds are 0,
         // then stop the movement motors and exit the function.
         if left_side_motor_speed == 0 && right_side_motor_speed == 0 {
-            return self.movement_motors_do(|driver| driver.stop());
+            return self.movement_motors_do(|driver| driver.stop(false));
         }
 
         // Get the number of milli steps to move for the left side motor
@@ -635,7 +641,10 @@ impl MovementHandler {
     /// to actually run the movement and dispenser motors.
     pub fn lay_cones_in_a_straight_line(
         &mut self,
-        arguments: LayConesInAStraightLineArgs,
+        LayConesInAStraightLineArgs {
+            cone_spacing_in_cm,
+            number_of_cones_to_lay,
+        }: LayConesInAStraightLineArgs,
     ) {
         //
 
@@ -643,13 +652,6 @@ impl MovementHandler {
         if !self.all_motors_are_enabled() {
             self.enable_all_motors();
         }
-
-        // Get the spacing between the cones in centimetres
-        // and the number of cones to lay
-        let LayConesInAStraightLineArgs {
-            cone_spacing_in_cm,
-            number_of_cones_to_lay,
-        } = arguments;
 
         // Get the minimum distance to travel to lay the cones in centimetres
         let minimum_distance_to_travel_in_cm =
@@ -709,14 +711,13 @@ impl MovementHandler {
     ///
     /// This function BLOCKS execution,
     /// so do not call this in a loop.
-    pub fn drop_cone(&mut self, arguments: DropConeArgs) {
-        //
-
-        // If the dispenser motor speed isn't given,
-        // set it to the default value
-        let DropConeArgs {
+    pub fn drop_cone(
+        &mut self,
+        DropConeArgs {
             dispenser_motor_speed,
-        } = arguments;
+        }: DropConeArgs,
+    ) {
+        //
 
         // Set the dispenser motor speed to the default
         // if the speed given is 0.0
@@ -746,8 +747,8 @@ impl MovementHandler {
         self.dispenser_motor.disable();
     }
 
-    /// The function to run the movement motors at constant speed
-    pub fn run_movement_motors_at_constant_speed(&mut self) -> bool {
+    /// The function to run the movement motors
+    pub fn run_movement_motors(&mut self, run_at_constant_speed: bool) -> bool {
         //
 
         // Initialise the variable to store whether any motor is still running
@@ -757,8 +758,17 @@ impl MovementHandler {
         for motor in self.iter_movement_motors() {
             //
 
-            // Run the motor at constant speed
-            motor.run_at_constant_speed();
+            // If running the motors at constant speed is wanted,
+            // run the motors at constant speed
+            if run_at_constant_speed {
+                motor.run_at_constant_speed();
+            }
+            //
+
+            // Otherwise, run the motor normally
+            else {
+                motor.run();
+            }
 
             // If the motor still has a distance to go
             if motor.distance_to_go() != 0 {
@@ -771,6 +781,73 @@ impl MovementHandler {
 
         // Return if any of the motors are still running
         return any_motor_is_still_running;
+    }
+
+    /// The function to lay cones in a straight line,
+    /// but the cone layer stops to drop the cone
+    /// instead of moving and dropping the cone
+    /// at the same time.
+    ///
+    /// This function takes two arguments,
+    /// the spacing between the cones in centimetres
+    /// and the number of cones to lay.
+    ///
+    /// This function BLOCKS execution until the cones
+    /// have been laid, so do not call this function
+    /// in a loop.
+    pub fn lay_cones_in_a_straight_line_blocking(
+        &mut self,
+        LayConesInAStraightLineArgs {
+            cone_spacing_in_cm,
+            number_of_cones_to_lay,
+        }: LayConesInAStraightLineArgs,
+    ) {
+        //
+
+        // Get the number of steps to move
+        // to drop one cone
+        let number_of_steps_before_dropping_cone =
+            (cone_spacing_in_cm as f32 / STEP_DISTANCE_IN_CM) as i32;
+
+        // Iterate over the number of cones to lay
+        for _ in 0..number_of_cones_to_lay {
+            //
+
+            // If the program has been stopped, exit the function
+            if program_stopped() {
+                return;
+            }
+
+            // Drop the cone at the current position
+            self.drop_cone(DropConeArgs {
+                dispenser_motor_speed: DEFAULT_SPEED_FOR_DROPPING_CONE,
+            });
+
+            // Move the motors by the number of steps
+            // before dropping a cone
+            self.movement_motors_do(|driver| {
+                driver
+                    .move_by_steps(number_of_steps_before_dropping_cone, false)
+            });
+
+            // Block the execution of all other code
+            // and run the movement motors if
+            // the program is not stopped
+            while self.run_movement_motors(false) {
+                //
+
+                // If the program is stopped
+                if program_stopped() {
+                    //
+
+                    // Stop all the movement motors
+                    self.movement_motors_do(|driver| driver.stop(false));
+
+                    // Exit the function
+                    return;
+                }
+            }
+        }
     }
 
     /// The function to run all of the motors.
@@ -839,7 +916,13 @@ impl MovementHandler {
     }
 
     /// The function to stop all of the motors
-    pub fn stop_all_motors(&mut self) {
-        self.all_motors_do(|driver| driver.stop());
+    pub fn stop_all_motors(
+        &mut self,
+        movement_motors_are_constant_speed: bool,
+    ) {
+        self.movement_motors_do(|driver| {
+            driver.stop(movement_motors_are_constant_speed)
+        });
+        self.dispenser_motor.stop(true);
     }
 }

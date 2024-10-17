@@ -192,23 +192,6 @@ impl Timer {
         // since the program started running
         return milliseconds * 1000 + microseconds_from_timer_counter_value;
     }
-
-    /// The function to destroy the timer and return the timer interface
-    fn destroy(self) -> TC0 {
-        //
-
-        // Set the prescaler to nothing (set to no clock source)
-        // on the TCCR0B register
-        self.timer_interface.tccr0b.write(|w| w.cs0().no_clock());
-
-        // Disable the overflow interrupt on the TIMSK0 register
-        self.timer_interface
-            .timsk0
-            .write(|w| w.ocie0a().clear_bit());
-
-        // Return the timer interface
-        return self.timer_interface;
-    }
 }
 
 /// Function to return the number of milliseconds that have passed
