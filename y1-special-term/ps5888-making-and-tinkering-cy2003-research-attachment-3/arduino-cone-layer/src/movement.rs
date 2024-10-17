@@ -20,13 +20,6 @@ use crate::{
 /// phone application is changed.
 const JOYPAD_RADIUS: i16 = 150;
 
-/// The nub radius of the joystick.
-///
-/// This value needs to be updated
-/// when the nub radius calculation on the
-/// phone application is changed.
-const NUB_RADIUS: i16 = JOYPAD_RADIUS / 3;
-
 /// The threshold to consider the joystick
 /// to be moving the cone layer forward
 const Y_AXIS_FORWARD_THRESHOLD: i16 = JOYPAD_RADIUS;
@@ -70,7 +63,7 @@ const MAXIMUM_SPEED_FOR_LAYING_CONES: f32 = 500.0;
 
 /// The number of milliseconds to continue moving for
 /// when controlling the movement motors with the joystick
-const MILLISECONDS_TO_CONTINUE_MOVING_FOR: i32 = 500;
+const MILLISECONDS_TO_CONTINUE_MOVING_FOR: i32 = 250;
 
 /// The wheel diameter in centimetres
 const WHEEL_DIAMETER_IN_CM: f32 = 6.8;
@@ -147,80 +140,17 @@ fn map_range(
 
     // Otherwise, set the value to add when finding the new range
     // so that the new range maps properly to the old range
-    let range_correction: i32 = if new_range_min >= new_range_max {
+    let range_correction = if new_range_min >= new_range_max {
         1
     } else {
         -1
     };
 
-    // Get the difference between the value and the old range
-    let value_diff = match (value as i32).checked_sub(old_range_min.into()) {
-        Some(value) => value,
-        None => {
-            println!("Integer overflow: value - old range");
-            return 0;
-        }
-    };
-
-    // Get the difference between the new range max and the new range min
-    let new_range =
-        match (new_range_max as i32).checked_sub(new_range_min.into()) {
-            Some(value) => value,
-            None => {
-                println!("Integer overflow: new range max - new range min");
-                return 0;
-            }
-        };
-
-    // Add the range correction to the value difference
-    let new_range_with_correction =
-        match new_range.checked_add(range_correction) {
-            Some(value) => value,
-            None => {
-                println!("Integer overflow: new range + range correction");
-                return 0;
-            }
-        };
-
-    // Get the difference between the old range max and the old range min
-    let old_range =
-        match (old_range_max as i32).checked_sub(old_range_min.into()) {
-            Some(value) => value,
-            None => {
-                println!("Integer overflow: old range max - old range min");
-                return 0;
-            }
-        };
-
-    // Get the value difference multiplied by the new range with correction
-    let value_diff_times_new_range =
-        match value_diff.checked_mul(new_range_with_correction) {
-            Some(value) => value,
-            None => {
-                println!(
-                    "Integer overflow: value diff * new range with correction"
-                );
-                return 0;
-            }
-        };
-
-    // Get the mapped value
-    let mapped_value = match value_diff_times_new_range.checked_div(old_range) {
-        Some(value) => value,
-        None => {
-            println!("Integer overflow: value diff * new range / old range");
-            return 0;
-        }
-    };
-
-    // Get the new value
-    let new_value = match mapped_value.checked_add(new_range_min.into()) {
-        Some(value) => value,
-        None => {
-            println!("Integer overflow: mapped value + new range min");
-            return 0;
-        }
-    };
+    // Calculate the value in the new range
+    let new_value = ((value - old_range_min) as i32
+        * (new_range_max - new_range_min + range_correction) as i32
+        / (old_range_max - old_range_min) as i32)
+        + new_range_min as i32;
 
     // Return the value in the new range
     return new_value as i16;
@@ -597,27 +527,9 @@ impl MovementHandler {
         // forward and subtract the motor speed difference
         // when it is moving backward.
         let left_side_motor_speed = if motor_speed >= 0 {
-            match motor_speed.checked_add(motor_speed_difference) {
-                Some(value) => value,
-                None => {
-                    println!(
-                        "Integer overflow: {} + motor speed difference",
-                        "left side motor speed"
-                    );
-                    return;
-                }
-            }
+            motor_speed + motor_speed_difference
         } else {
-            match motor_speed.checked_sub(motor_speed_difference) {
-                Some(value) => value,
-                None => {
-                    println!(
-                        "Integer overflow: {} - motor speed difference",
-                        "left side motor speed"
-                    );
-                    return;
-                }
-            }
+            motor_speed - motor_speed_difference
         };
 
         // Get the right side motor speed.
@@ -627,27 +539,9 @@ impl MovementHandler {
         // forward and add the motor speed difference
         // when it is moving backward.
         let right_side_motor_speed = if motor_speed >= 0 {
-            match motor_speed.checked_sub(motor_speed_difference) {
-                Some(value) => value,
-                None => {
-                    println!(
-                        "Integer overflow: {} - motor speed difference",
-                        "right side motor speed"
-                    );
-                    return;
-                }
-            }
+            motor_speed - motor_speed_difference
         } else {
-            match motor_speed.checked_add(motor_speed_difference) {
-                Some(value) => value,
-                None => {
-                    println!(
-                        "Integer overflow: {} + motor speed difference",
-                        "right side motor speed"
-                    );
-                    return;
-                }
-            }
+            motor_speed + motor_speed_difference
         };
 
         // Enable the movement motors if they are disabled
@@ -661,100 +555,40 @@ impl MovementHandler {
             return self.movement_motors_do(|driver| driver.stop());
         }
 
-        // Get the number of milli-steps to move the left side motors
-        let left_side_motor_milli_steps = match (left_side_motor_speed as i32)
-            .checked_mul(MILLISECONDS_TO_CONTINUE_MOVING_FOR)
-        {
-            Some(value) => value,
-            None => {
-                println!(
-                    "Integer overflow: {} * {}",
-                    "left side motor speed",
-                    "milliseconds to continue moving for"
-                );
-                return;
-            }
-        };
+        // Get the number of milli steps to move for the left side motor
+        let left_side_milli_steps_to_move =
+            left_side_motor_speed as i32 * MILLISECONDS_TO_CONTINUE_MOVING_FOR;
 
-        // Get the number of steps to move the left side motors
-        let left_side_motor_steps = match left_side_motor_milli_steps
-            .checked_div(MILLISECONDS_TO_CONTINUE_MOVING_FOR)
-        {
-            Some(value) => value,
-            None => {
-                println!(
-                    "Integer overflow: {} / 1000",
-                    "left side milli steps",
-                );
-                return;
-            }
-        };
+        // Get the number of steps to move for the left side motor
+        let left_side_steps_to_move =
+            (left_side_milli_steps_to_move as f32 / 1000.0) as i32;
 
-        // Get the number of milli-steps to move the right side motors
-        let right_side_motor_milli_steps = match (right_side_motor_speed as i32)
-            .checked_mul(MILLISECONDS_TO_CONTINUE_MOVING_FOR)
-        {
-            Some(value) => value,
-            None => {
-                println!(
-                    "Integer overflow: {} * {}",
-                    "left side motor speed",
-                    "milliseconds to continue moving for"
-                );
-                return;
-            }
-        };
+        // Get the number of milli steps to move for the right side motor
+        let right_side_milli_steps_to_move =
+            right_side_motor_speed as i32 * MILLISECONDS_TO_CONTINUE_MOVING_FOR;
 
-        // Get the number of steps to move the left side motors
-        let right_side_motor_steps = match right_side_motor_milli_steps
-            .checked_div(MILLISECONDS_TO_CONTINUE_MOVING_FOR)
-        {
-            Some(value) => value,
-            None => {
-                println!(
-                    "Integer overflow: {} / 1000",
-                    "left side milli steps",
-                );
-                return;
-            }
-        };
+        // Get the number of steps to move for the right side motor
+        let right_side_steps_to_move =
+            (right_side_milli_steps_to_move as f32 / 1000.0) as i32;
 
-        // Otherwise, use the left side motors do function
+        // Otherwise, set the maximum speed on the left side motors
+        // to the motor speed calculated for the left side motors
+        // and move the motor by the motor speed number of steps.
         self.left_side_motors_do(|driver| {
-            //
-
-            // Set the maximum speed on the left side motors
-            // to the motor speed calculated for the left side motors
-            driver.set_maximum_speed(left_side_motor_speed as f32);
-
-            // Set the constant speed to the left side motor speed
-            driver.set_constant_speed(left_side_motor_speed as f32);
-
-            // Reset the motor's position to 0
             driver.reset_current_position(0);
-
-            // Move the motor by the motor speed number of steps
-            // multiplied by the number of seconds to continue moving for
-            driver.move_by_steps(left_side_motor_steps, true);
+            driver.set_maximum_speed(left_side_motor_speed as f32);
+            driver.set_constant_speed(left_side_motor_speed as f32);
+            driver.move_by_steps(left_side_steps_to_move, true);
         });
 
-        // Use the right side motors do function
+        // Set the maximum speed on the right side motors to the motor speed
+        // calculated for the right side motors and move the motor by
+        // the motor speed number of steps.
         self.right_side_motors_do(|driver| {
-            //
-
-            // Set the maximum speed on the right side motors
-            // to the motor speed calculated for the right side motors
-            driver.set_maximum_speed(right_side_motor_speed as f32);
-
-            // Set the constant speed to the left side motor speed
-            driver.set_constant_speed(right_side_motor_speed as f32);
-
-            // Reset the motor's position to 0
             driver.reset_current_position(0);
-
-            // Move the right side motors by the motor speed number of steps
-            // multiplied by the number of seconds to continue moving for
-            driver.move_by_steps(right_side_motor_steps, true);
+            driver.set_maximum_speed(right_side_motor_speed as f32);
+            driver.set_constant_speed(right_side_motor_speed as f32);
+            driver.move_by_steps(right_side_steps_to_move, true);
         });
     }
 
@@ -956,13 +790,9 @@ impl MovementHandler {
         // all the movement motors have reached their maximum speed
         let mut all_movement_motors_have_reached_maximum_speed = false;
 
-        let mut count: u8 = 0;
-
         // Iterate over all of the movement motors
         for motor in self.iter_movement_motors() {
             //
-
-            count += 1;
 
             // If running the movement motors at constant speed
             // is wanted, run the motor at constant speed
@@ -973,7 +803,6 @@ impl MovementHandler {
 
             // Otherwise, run the motor
             else {
-                println!("Running movement motor no. {}", count);
                 motor.run();
             }
 

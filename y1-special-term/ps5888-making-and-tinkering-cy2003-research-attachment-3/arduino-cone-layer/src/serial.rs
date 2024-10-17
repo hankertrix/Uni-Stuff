@@ -131,7 +131,7 @@ pub enum UsartReaderInterface {
 /// The structure of the serial buffer object
 pub struct SerialBuffer {
     pub serial_receiver: UsartReaderInterface,
-    pub buffer: heapless::String<512>,
+    pub buffer: heapless::String<256>,
     pub is_complete: bool,
 }
 
@@ -380,19 +380,25 @@ pub fn parse_input(input: &str) -> Option<Command> {
     //
 
     // Split the string at the whitespace character
-    let mut splitted_string =
-        input.trim().split_whitespace().collect::<Vec<_, 3>>();
+    let splitted_string = input.trim().split_whitespace();
+
+    // Initialise the vector to store the arguments
+    let mut arguments: Vec<&str, 3> = Vec::new();
+
+    // Push the arguments to the vector
+    for argument in splitted_string {
+        arguments.push(argument).unwrap_or_default();
+    }
 
     // Add empty strings until the vector has 3 elements
-    while splitted_string.len() < 3 {
-        splitted_string.push("").unwrap_or_default();
+    while arguments.len() < 3 {
+        arguments.push("").unwrap_or_default();
     }
 
     // Get the command and
     // the first and second arguments from the splitted string.
     // If they don't exist, then return None.
-    let [command_str, first_arg_str, second_arg_str] = splitted_string[..]
-    else {
+    let [command_str, first_arg_str, second_arg_str] = arguments[..] else {
         return None;
     };
 
@@ -476,8 +482,6 @@ pub fn dispatch_commands(
 ) {
     //
 
-    println!("Dispatching commands");
-
     // Match on the input given
     match input {
         Some(Command::HandleJoystick(arguments)) => {
@@ -485,12 +489,6 @@ pub fn dispatch_commands(
 
             // Print that the Arduino is handling the joystick
             println!("Handling Joystick");
-
-            // Print the arguments passed
-            println!(
-                "X: {}, Y: {}",
-                arguments.x_coordinate, arguments.y_coordinate
-            );
 
             // Set the run movement motors at
             // constant speed variable to true

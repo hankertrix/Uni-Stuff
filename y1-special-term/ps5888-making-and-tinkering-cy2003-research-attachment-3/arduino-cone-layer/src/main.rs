@@ -21,10 +21,7 @@ use console::println;
 use heapless::Vec;
 use movement::MovementHandler;
 use panic_halt as _;
-use serial::{
-    dispatch_commands, handle_input, new_serial_handler, SerialBufferType,
-    UsartWriterInterface,
-};
+use serial::{dispatch_commands, new_serial_handler, UsartWriterInterface};
 use stepper_driver::{new_stepper_driver, StepperDriver};
 
 /// Function to execute on the Arduino
@@ -52,31 +49,11 @@ fn main() -> ! {
     timer::init_and_start(peripherals.TC0);
 
     // Initialise a new stepper driver
-    let mut stepper_driver_e0 = new_stepper_driver!(E0, pins);
-    let mut stepper_driver_e1 = new_stepper_driver!(E1, pins);
-    let mut stepper_driver_x = new_stepper_driver!(X, pins);
-    let mut stepper_driver_y = new_stepper_driver!(Y, pins);
-    let mut stepper_driver_z = new_stepper_driver!(Z, pins);
-
-    // Test for the time taken for the stepper drivers to reach maximum speed
-    // let acceleration = 50.0;
-    // let max_speed = 500.0;
-    // let steps_to_move = 1_000_000;
-    // stepper_driver_e0.set_acceleration(acceleration);
-    // stepper_driver_e1.set_acceleration(acceleration);
-    // stepper_driver_x.set_acceleration(acceleration);
-    // stepper_driver_y.set_acceleration(acceleration);
-    // stepper_driver_z.set_acceleration(1000.0);
-    // stepper_driver_e0.set_maximum_speed(max_speed);
-    // stepper_driver_e1.set_maximum_speed(max_speed);
-    // stepper_driver_x.set_maximum_speed(max_speed);
-    // stepper_driver_y.set_maximum_speed(max_speed);
-    // stepper_driver_z.set_maximum_speed(10.0);
-    // stepper_driver_e0.move_by_steps(steps_to_move);
-    // stepper_driver_e1.move_by_steps(steps_to_move);
-    // stepper_driver_x.move_by_steps(steps_to_move);
-    // stepper_driver_y.move_by_steps(steps_to_move);
-    // stepper_driver_z.move_by_steps(steps_to_move);
+    let stepper_driver_e0 = new_stepper_driver!(E0, pins);
+    let stepper_driver_e1 = new_stepper_driver!(E1, pins);
+    let stepper_driver_x = new_stepper_driver!(X, pins);
+    let stepper_driver_y = new_stepper_driver!(Y, pins);
+    let stepper_driver_z = new_stepper_driver!(Z, pins);
 
     // Initialise the vector holding the left side motors
     let mut left_side_motors: Vec<StepperDriver, 2> = heapless::Vec::new();
@@ -117,43 +94,8 @@ fn main() -> ! {
     loop {
         //
 
-        // Test for the time taken for the stepper drivers
-        // to reach maximum speed
-        // stepper_driver_e0.run();
-        // stepper_driver_e1.run();
-        // stepper_driver_x.run();
-        // stepper_driver_y.run();
-        // stepper_driver_z.run();
-
-        // Check if all of the stepper drivers have reached maximum speed
-        // if stepper_driver_e0.speed() == max_speed
-        //     && stepper_driver_e1.speed() == max_speed
-        //     && stepper_driver_x.speed() == max_speed
-        //     && stepper_driver_y.speed() == max_speed
-        //     && stepper_driver_z.speed() == max_speed
-        //     && !printed
-        // {
-        //     // Get the time taken to reach maximum speed
-        //     let time_taken_to_reach_maximum_speed =
-        //         timer::micros() - start_time;
-        //
-        //     // Print the time taken to reach maximum speed
-        //     console_serial_handler
-        //         .write_string("Time taken to reach max speed: ");
-        //     console_serial_handler
-        //         .write_number(time_taken_to_reach_maximum_speed as i32);
-        //     console_serial_handler.write_string(" microseconds\n");
-        //
-        //     // Set the boolean to true to signify that
-        //     // the time has been printed
-        //     printed = true;
-        // }
-
         // Parse the input from the bluetooth serial connection
         let bluetooth_input = bluetooth_serial_handler.handle_input();
-
-        // Parse the input from the console serial connection
-        let console_input = handle_input(SerialBufferType::Console);
 
         // Dispatch the commands for the bluetooth input
         dispatch_commands(
@@ -162,21 +104,10 @@ fn main() -> ! {
             &mut run_movement_motors_at_constant_speed,
         );
 
-        // Dispatch the commands for the console input
-        dispatch_commands(
-            console_input,
-            &mut movement_handler,
-            &mut run_movement_motors_at_constant_speed,
-        );
-
-        println!("Commands dispatched");
-
         // Call the function to run all of the motors,
         // and store if any motor is still running
         let any_motor_is_still_running = movement_handler
             .run_all_motors(run_movement_motors_at_constant_speed);
-
-        println!("Motors run");
 
         // If no motor is still running, disable the motors
         if !any_motor_is_still_running {
