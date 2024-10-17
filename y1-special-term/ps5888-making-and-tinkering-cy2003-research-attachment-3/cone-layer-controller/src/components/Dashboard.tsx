@@ -35,7 +35,7 @@ const JOYSTICK_RADIUS = 150;
 const JOYSTICK_MOVEMENT_DELAY_IN_MS = 250;
 
 // The motor speed
-const MOTOR_SPEED = 50;
+const DROP_CONE_MOTOR_SPEED = 50;
 
 // The handle joystick command
 const HANDLE_JOYSTICK_COMMAND = "handle_joystick";
@@ -272,7 +272,7 @@ const Dashboard = ({
             radius={ROUND_BUTTON_RADIUS}
             visible={deviceIsConnected}
             disable={arduinoBusy}
-            motorSpeed={MOTOR_SPEED}
+            motorSpeed={DROP_CONE_MOTOR_SPEED}
             setArduinoAsBusy={setArduinoAsBusy}
             connectedDevice={connectedDevice}
             sendStringToDevice={sendStringToDevice}
