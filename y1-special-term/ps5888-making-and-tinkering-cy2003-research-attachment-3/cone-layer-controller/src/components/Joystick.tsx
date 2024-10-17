@@ -134,11 +134,6 @@ function findCoordinate(
   return newCoordinate;
 }
 
-// The sleep function to pause the execution of the program
-function sleep(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
 // The joystick component
 const Joystick = ({
   onStart,

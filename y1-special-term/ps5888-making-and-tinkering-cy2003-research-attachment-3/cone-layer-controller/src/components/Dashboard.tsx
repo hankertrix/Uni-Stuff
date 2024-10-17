@@ -8,7 +8,7 @@ import Joystick, { JoystickEventHandler } from "./Joystick";
 import ThemeTogglerButton from "./ThemeToggler";
 import DropConeButton from "./DropConeButton";
 import HandleConnectionButton from "./HandleConnectionButton";
-import StopButton from "./StopButton";
+import StopButton, { STOP_COMMAND } from "./StopButton";
 import DeviceConnectionModal from "./DeviceConnectionModal";
 import LayConesButton from "./LayConesButton";
 import LayConesModal from "./LayConesModal";
@@ -32,13 +32,16 @@ const JOYSTICK_RADIUS = 150;
 
 // The delay between two joystick movements
 // (in milliseconds)
-const JOYSTICK_MOVEMENT_DELAY_IN_MS = 0;
+const JOYSTICK_MOVEMENT_DELAY_IN_MS = 250;
 
 // The motor speed
 const MOTOR_SPEED = 50;
 
 // The handle joystick command
 const HANDLE_JOYSTICK_COMMAND = "handle_joystick";
+
+// The number of times to repeat the stop command
+const STOP_COMMAND_REPEAT_COUNT = 3;
 
 // The interface for the dashboard
 interface DashboardProps {
@@ -201,6 +204,20 @@ const Dashboard = ({
     [connectedDevice, sendStringToDevice],
   );
 
+  // Create the function to handle the joystick stop event
+  const handleJoystickStopEvent: JoystickEventHandler = useCallback(() => {
+    //
+
+    // Create the command to stop the Arduino
+    const command = STOP_COMMAND;
+
+    // Send the command to the device the number of times
+    // specified by the STOP_COMMAND_REPEAT_COUNT constant
+    for (let i = 0; i < STOP_COMMAND_REPEAT_COUNT; ++i) {
+      sendStringToDevice(connectedDevice, command);
+    }
+  }, [connectedDevice, sendStringToDevice]);
+
   // Initialise the theme
   const { getThemeStyles } = useTheme();
 
@@ -242,6 +259,7 @@ const Dashboard = ({
               disable={arduinoBusy}
               delayInMs={JOYSTICK_MOVEMENT_DELAY_IN_MS}
               onMove={handleJoystickMoveEvent}
+              onStop={handleJoystickStopEvent}
             />
           </GestureHandlerRootView>
         ) : (

@@ -5,7 +5,7 @@ import { Pressable, StyleSheet, Text } from "react-native";
 import { BluetoothDevice, SendStringToDevice } from "../utils/bluetooth";
 
 // The stop command
-const STOP_COMMAND = "stop";
+export const STOP_COMMAND = "stop";
 
 // The interface for the stop button
 interface StopButtonProps {
