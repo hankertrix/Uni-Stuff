@@ -1529,6 +1529,9 @@ Do the gesture for "boy", then do the "fine" gesture at the same height.
 ** Woman
 Do the gesture for "girl", then do the "fine" gesture at the same height.
 
+** Lady
+[[./images/lady.gif]]
+
 ** Divorce
 [[./images/divorce.gif]]
 
