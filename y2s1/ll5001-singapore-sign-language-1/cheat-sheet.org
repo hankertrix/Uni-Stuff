@@ -241,6 +241,9 @@ Same as "I".
 ** Mine
 Same motion as "my", but do it twice.
 
+** Self
+[[./images/self.gif]]
+
 ** You
 Point to the other person.
 
@@ -301,6 +304,9 @@ Do a salute and then pull your hand out with a smiling face.
 
 ** Hi
 Just finger spell the word "hi".
+
+** Introduce
+[[./images/introduce.gif]]
 
 ** Goodbye
 Wave goodbye.
@@ -407,9 +413,6 @@ Show the thumbs up sign.
 
 ** Nice / Clean (depends on context)
 [[./images/nice.gif]]
-
-** Happy
-[[./images/happy.gif]]
 
 ** Smile
 
@@ -526,8 +529,14 @@ Shake your head when doing this gesture.
 ** Correct / Right
 [[./images/correct.gif]]
 
+** Correction
+Same motion as "correct", but do it twice.
+
 ** Wrong
 [[./images/wrong.gif]]
+
+** Mistake
+[[./images/mistake.gif]]
 
 ** Favourite
 [[./images/favourite.gif]]
@@ -594,14 +603,68 @@ Make the "T" hand sign with both hands and make sure the thumb is pointing forwa
 ** Feel
 [[./images/feel.gif]]
 
+** Sad
+[[./images/sad.gif]]
+
+** Disappointed
+[[./images/disappointed.gif]]
+
+** Frustrated
+[[./images/frustrated.gif]]
+
+** Happy
+[[./images/happy.gif]]
+
+** Funny
+[[./images/funny.gif]]
+
+** Fun
+Same motion as "funny", but do it once instead of twice.
+
+** Trust
+[[./images/trust.gif]]
+
+** Confident
+[[./images/confident.gif]]
+
+** Proud
+[[./images/proud.gif]]
+
+** Snobbish
+[[./images/snobbish.gif]]
+
 ** Angry
 [[./images/angry.gif]]
 
 ** Tired
 [[./images/tired.gif]]
 
+** Bored
+[[./images/bored.gif]]
+
+** Pain
+[[./images/pain.gif]]
+
+** Guilty
+[[./images/guilty.gif]]
+
+** Embarrassed
+[[./images/embarrassed.gif]]
+
+** Shy
+[[./images/shy.gif]]
+
+** Bashful
+Same motion as "shy", but do it with both hands instead of just one.
+
 ** Stress
 Put both hands beside your head, palm facing your face, and open and close your fingers.
+
+** Quiet
+[[./images/quiet.gif]]
+
+** Calm
+Same motion as "quiet", but use the "C" hand sign instead of the open palm.
 
 ** Increase
 [[./images/increase.gif]]
@@ -869,6 +932,12 @@ Same motion as "never", but use the "S" hand sign instead of the open palm.
 ** Far
 [[./images/far.gif]]
 
+** Wait
+[[./images/wait.gif]]
+
+** Patient
+[[./images/patient.gif]]
+
 ** Slow
 [[./images/slow.gif]]
 
@@ -1010,13 +1079,16 @@ Same motion as "finish", but use the "A" hand sign when the palms are facing upw
 ** Ask
 
 *** Variation 1
-Make a prayer hand position with your fingers pointed straight forward from your body, then bring your fingers up to your chest.
+[[./images/ask-variation-a.gif]]
 
 *** Variation 2
-[[./images/ask.gif]]
+[[./images/ask-variation-b.gif]]
 
 *** Variation 3
 Similar to variation 2, but use only the index finger. The index finger becomes increasingly bent as it reaches its furthest point.
+
+** Pray
+Exact same motion as the first variation of "ask".
 
 ** Say / Hearing person
 [[./images/say.gif]]
@@ -1149,6 +1221,9 @@ Same motion as "must", but do it lightly and do it twice.
 ** Misunderstand
 [[./images/misunderstand.gif]]
 
+** Confused
+[[./images/confused.gif]]
+
 ** Mean (verb)
 [[./images/mean-verb.gif]]
 
@@ -1194,6 +1269,18 @@ Same as "practice", but with the "T" hand sign instead of the fist.
 ** Easy
 [[./images/easy.gif]]
 
+** Hard
+[[./images/hard.gif]]
+
+** Tough
+[[./images/tough.gif]]
+
+** Difficult
+[[./images/difficult.gif]]
+
+** Problem / Difficulty
+[[./images/problem.gif]]
+
 ** Read
 [[./images/read.gif]]
 
@@ -1215,6 +1302,15 @@ Same motion as "business", but use the "U" hand sign. The "U" hand sign can eith
 ** Employ
 Same motion as "business", but use the "E" hand sign.
 
+** Retire
+[[./images/retire.gif]]
+
+** Holiday
+Similar motion to "retire", but don't cross the middle finger over the index finger, and do the motion twice.
+
+** Leisure
+[[./images/leisure.gif]]
+
 ** Advertise
 [[./images/advertise.gif]]
 
@@ -1233,6 +1329,9 @@ Break as in to take a break.
 
 ** Gone / Missing / Absent / Passed Away / Dead / Extinct
 [[./images/gone.gif]]
+
+** Come
+[[./images/come.gif]]
 
 ** Disappear
 [[./images/disappear.gif]]
@@ -1355,6 +1454,9 @@ Same motion as "make", but form the "M" hand sign instead of a fist.
 
 ** Best
 [[./images/best.gif]]
+
+** Improve
+[[./images/improve.gif]]
 
 ** Calendar
 [[./images/calendar.gif]]
@@ -1510,9 +1612,6 @@ Same motion as "friend", but using the "N" hand sign with the fingers open inste
 
 ** Community
 Same motion as "friend", but with a fully open palm.
-
-** Problem
-Same motion as "friend", but using the "U" hand sign with the fingers curled, and the contact point is the flat part created by the two fingers instead of the finger pads.
 
 ** Boyfriend
 A combination of the gesture for "boy" and "friend".
@@ -1682,9 +1781,6 @@ Similar motion as "live", but use the "S" hand sign instead of the "L" hand sign
 
 ** Deaf
 [[./images/deaf.gif]]
-
-** Proud
-Point your thumb towards the centre of your body and bring it upwards, starting from your stomach and ending at your chest, while bending your back backwards.
 
 ** Lead (as in leader)
 Use one hand to grab the other hand, which has an open palm facing your body, and then pull it along.
@@ -2239,6 +2335,12 @@ Make the "U" hand sign, but spread your fingers and curl them into a hook. Then 
 ** Ride
 [[./images/ride.gif]]
 
+** Travel
+[[./images/travel.gif]]
+
+** Visit
+[[./images/visit.gif]]
+
 ** Professor
 Similar hand sign to "ride", but show the "P" hand sign going over the other hand instead of moving both hands together.
 
@@ -2604,7 +2706,7 @@ Put one arm horizontally with the palm facing down, then rub the wrist with the 
 Make a "C" hand sign and put the thumb to your temple.
 
 ** Japanese
-[[./images/japanese.gif]]
+[[./images/japan.gif]]
 
 ** German
 [[./images/german.gif]]
@@ -2665,6 +2767,12 @@ Hold up an open palm facing upwards, and touch the index of the other hand onto 
 ** Vocabulary
 [[./images/vocabulary.gif]]
 
+** Ghost
+[[./images/ghost.gif]]
+
+** God
+[[./images/god.gif]]
+
 * Places
 
 ** Place
@@ -2696,6 +2804,12 @@ Same motion as "church", but with the "T" hand sign instead of the "C" hand sign
 
 ** Mosque
 Same motion as "church", but with the "M" hand sign instead of the "C" hand sign.
+
+** Island
+[[./images/island.gif]]
+
+** Capital (as in capital city)
+[[./images/capital.gif]]
 
 ** Singapore
 
@@ -2790,14 +2904,95 @@ Make the "F" hand sign with the palm facing down and the fingers apart. Then mov
 ** Kuala Lumpur
 Just finger spell "KL".
 
+** Johor Bahru
+Just finger spell "JB".
+
+** Indonesia
+[[./images/indonesia.gif]]
+
+** Thailand
+[[./images/thailand.gif]]
+
+** Philippines
+[[./images/philippines.gif]]
+
+** Vietnam
+
+*** North Vietnamese variation
+[[./images/vietnam-north-variation.gif]]
+
+*** South Vietnamese variation
+[[./images/vietnam-south-variation.gif]]
+
+*** Singapore Sign Language variation
+[[./images/vietnam-sgsl-variation.gif]]
+
+Doing the sign in the opposite direction, i.e. moving your hands upwards instead of downwards, is fine as well.
+
+** Brunei
+Have two open palms facing outwards, and make sure the thumb is outstretched from the rest of the fingers. Tilt both palms 45 degrees to the side and move them together such that both thumbs and the flesh below the thumbs are touching each other.
+
+** Cambodia
+[[./images/cambodia.gif]]
+
+** Myanmar
+Make the hand sign for "pray" and move both hands together from side to side, together. The hand sign is very similar to the Indian dance move.
+
+** Laos
+Pretend to turn a knob attached to the back of your head.
+
+** Hong Kong
+[[./images/hong-kong.gif]]
+
+** Taiwan
+[[./images/taiwan.gif]]
+
 ** Japan
 [[./images/japan.gif]]
 
 ** Tokyo
 [[./images/tokyo.gif]]
 
+** Hokkaido
+[[./images/hokkaido.gif]]
+
+** Korea
+[[./images/korea.gif]]
+
+** Australia
+[[./images/australia.gif]]
+
 ** Europe / European
 [[./images/europe.gif]]
+
+** United Kingdom
+Just finger spell "UK".
+
+** France
+[[./images/france.gif]]
+
+** Paris
+[[./images/paris.gif]]
+
+** Italy
+
+*** Italian sign variation
+[[./images/italy-italian-sign.gif]]
+
+*** American sign language variation
+[[./images/italy-asl-sign.gif]]
+
+** Germany
+[[./images/german.gif]]
+
+** Austria
+[[./images/austria.gif]]
+
+** Switzerland
+[[./images/switzerland.gif]]
+
+** Denmark
+[[./images/denmark.gif]]
 
 ** Norway
 [[./images/norway.gif]]
@@ -2805,8 +3000,29 @@ Just finger spell "KL".
 ** Finland
 [[./images/finland.gif]]
 
+** Netherlands / Holland
+[[./images/netherlands-holland.gif]]
+
+** Amsterdam
+[[./images/amsterdam.gif]]
+
+** USA
+Just finger spell "USA".
+
+** America
+[[./images/america.gif]]
+
+** North America
+Do the gesture for "up", then do the gesture for "America".
+
+** South America
+Do the gesture for "down", then do the gesture for "America".
+
 ** New York
 [[./images/new-york.gif]]
+
+** Canada
+[[./images/canada.gif]]
 
 ** Earth
 [[./images/earth.gif]]
