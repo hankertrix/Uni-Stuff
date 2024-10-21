@@ -2641,6 +2641,9 @@ Similar motion to "answer", but use the "R" hand sign instead of the index finge
 *** Variation 2
 [[./images/awake-variation-b.gif]]
 
+** Sleep
+[[./images/sleep.gif]]
+
 ** Disaster / Crisis
 [[./images/disaster.gif]]
 
