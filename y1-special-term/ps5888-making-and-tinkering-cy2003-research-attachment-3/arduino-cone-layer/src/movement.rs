@@ -452,10 +452,6 @@ impl MovementHandler {
         // Initialise the motor speed to 0
         let mut motor_speed = 0;
 
-        // Convert the x and y coordinates to an integer
-        let x_coordinate = x_coordinate;
-        let y_coordinate = y_coordinate;
-
         // If the y coordinate is more than the forward threshold
         if y_coordinate > Y_AXIS_FORWARD_THRESHOLD {
             //
