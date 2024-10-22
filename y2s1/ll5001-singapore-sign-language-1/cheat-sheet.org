@@ -621,6 +621,9 @@ Make the "T" hand sign with both hands and make sure the thumb is pointing forwa
 ** Fun
 Same motion as "funny", but do it once instead of twice.
 
+** Curious
+[[./images/curious.gif]]
+
 ** Trust
 [[./images/trust.gif]]
 
