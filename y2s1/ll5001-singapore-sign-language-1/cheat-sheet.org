@@ -687,6 +687,9 @@ Same motion as "more", but do the "1" hand sign for one of the hands, and touch 
 ** Least
 Do the gesture for "less", then make two hands into the thumbs up sign, and slide one hand against the other, moving directly upwards.
 
+** Limited
+[[./images/limited.gif]]
+
 ** Head
 [[./images/head.gif]]
 
@@ -926,8 +929,13 @@ Same motion as "never", but use the "S" hand sign instead of the open palm.
 ** Very
 [[./images/very.gif]]
 
-** Really
+** Really / Real / True
 [[./images/really.gif]]
+
+** Quite
+[[./images/quite.gif]]
+
+The only difference between this and "really" is the facial expression.
 
 ** Near
 [[./images/near.gif]]
@@ -978,6 +986,14 @@ Hold up a hand with the palm facing the body and move it downwards. Alternativel
 
 ** Yesterday
 [[./images/yesterday.gif]]
+
+** Daily
+
+*** Variation 1
+[[./images/daily-variation-a.gif]]
+
+*** Variation 2
+[[./images/daily-variation-b.gif]]
 
 ** Day
 [[./images/day.gif]]
@@ -1148,6 +1164,9 @@ Similar motion to "traffic", but have your hands beside the top of your head and
 ** Call
 Do the "C" hand sign and move it outwards from your mouth.
 
+** Contact
+[[./images/contact.gif]]
+
 ** Text / Message
 
 *** Variation 1
@@ -1155,6 +1174,20 @@ Do the "C" hand sign and move it outwards from your mouth.
 
 *** Variation 2
 [[./images/text-variation-b.gif]]
+
+** Phone / Telephone
+[[./images/telephone.gif]]
+
+** Cell phone
+
+*** Variation 1
+[[./images/cell-phone-variation-a.gif]]
+
+*** Variation 2
+[[./images/cell-phone-variation-b.gif]]
+
+** Smartphone
+[[./images/smartphone.gif]]
 
 ** Hope
 
@@ -1171,6 +1204,9 @@ Move your thumb towards the person you want to help, towards yourself if you wan
 
 ** Meet
 [[./images/meet.gif]]
+
+** Meeting
+[[./images/meeting.gif]]
 
 ** Name
 [[./images/name.gif]]
@@ -1194,6 +1230,9 @@ Same motion as "see", but move the "V" hand sign back after you move it outwards
 
 *** Variation 2
 Same motion as "see", but with the "L" hand sign and the palm facing outwards.
+
+** Visual
+[[./images/visual.gif]]
 
 ** Find
 [[./images/find.gif]]
@@ -1286,6 +1325,9 @@ Same as "practice", but with the "T" hand sign instead of the fist.
 
 ** Problem / Difficulty
 [[./images/problem.gif]]
+
+** Challenge
+[[./images/challenge.gif]]
 
 ** Read
 [[./images/read.gif]]
@@ -1439,6 +1481,9 @@ Same motion as "make", but form the "M" hand sign instead of a fist.
 
 ** Block
 [[./images/block.gif]]
+
+** Barrier
+[[./images/barrier.gif]]
 
 ** Tree
 [[./images/tree.gif]]
@@ -2176,14 +2221,17 @@ Make two "Y" hand signs with both hands and connect them thumb to thumb, with th
 ** Psychology / Psychological
 [[./images/psychology.gif]]
 
-** Social
-Rotate the "S" hand sign 360 degrees around an index finger pointing upwards. The other hand's palm should always be facing the index finger.
+** Environment
+[[./images/environment.gif]]
 
 ** Culture
-Same motion as "social", but with the "C" hand sign instead of the "S" hand sign.
+[[./images/culture.gif]]
+
+** Social
+Same motion as "culture", but use the "S" hand sign instead of the "C" hand sign.
 
 ** Local
-Same motion as "social", but with the "L" hand sign instead of the "S" hand sign.
+Same motion as "culture", but with the "L" hand sign instead of the "C" hand sign.
 
 ** Initial / Initialise
 Make the "I" hand sign with one hand and the palm should be facing forward. The other hand uses the index finger to screw the base of the thumb.
@@ -2338,6 +2386,9 @@ Make the "U" hand sign, but spread your fingers and curl them into a hook. Then 
 ** Move
 [[./images/move.gif]]
 
+** Gesture
+Make the "X" hand sign with both hands, and move your hand up and down beside the top of your head. Your hands should be alternating as well.
+
 ** Ride
 [[./images/ride.gif]]
 
@@ -2349,6 +2400,9 @@ Make the "U" hand sign, but spread your fingers and curl them into a hook. Then 
 
 ** Professor
 Similar hand sign to "ride", but show the "P" hand sign going over the other hand instead of moving both hands together.
+
+** Activity
+[[./images/activity.gif]]
 
 ** Walk
 
@@ -2627,8 +2681,11 @@ Same motion as "enter", but do it twice.
 ** Announce
 [[./images/announce.gif]]
 
-** Inform / Information
+** Inform
 [[./images/inform.gif]]
+
+** Information / Knowledge
+[[./images/information.gif]]
 
 ** Report
 Similar motion to the first variation of "hope", but do it once, and position your hands beside your mouth.
@@ -2755,6 +2812,9 @@ Hold up an open palm facing upwards, and touch the index of the other hand onto 
 ** Video
 [[./images/video.gif]]
 
+** Closed caption
+[[./images/closed-caption.gif]]
+
 ** Fire / Flame
 [[./images/fire-flame.gif]]
 
@@ -2781,6 +2841,9 @@ Hold up an open palm facing upwards, and touch the index of the other hand onto 
 
 ** God
 [[./images/god.gif]]
+
+** General
+[[./images/general.gif]]
 
 * Places
 
