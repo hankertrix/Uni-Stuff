@@ -435,7 +435,7 @@ impl MovementHandler {
     /// as f32 floats.
     ///
     /// This function does not block execution, hence
-    /// the run_movement_motors_at_constant_speed
+    /// the run_movement_motors
     /// function must be called to actually run the movement motors.
     ///
     /// The enable_movement_motors must be called to enable
@@ -692,7 +692,7 @@ impl MovementHandler {
         // to the maximum speed for laying cones and
         // move the movement motors by the number of steps to lay the cones
         self.movement_motors_do(|driver| {
-            driver.set_maximum_speed(MAXIMUM_SPEED_FOR_LAYING_CONES as f32);
+            driver.set_maximum_speed(MAXIMUM_SPEED_FOR_LAYING_CONES);
             driver.move_by_steps(number_of_steps_to_move as i32, false);
         });
 
@@ -819,9 +819,18 @@ impl MovementHandler {
                 dispenser_motor_speed: DEFAULT_SPEED_FOR_DROPPING_CONE,
             });
 
-            // Move the motors by the number of steps
-            // before dropping a cone
+            // Use the movement motors do function
             self.movement_motors_do(|driver| {
+                //
+
+                // Enable the movement motors
+                driver.enable();
+
+                // Set the maximum speed for the movement motors
+                driver.set_maximum_speed(MAXIMUM_SPEED_FOR_LAYING_CONES);
+
+                // Move the motors by the number of steps
+                // before dropping a cone
                 driver
                     .move_by_steps(number_of_steps_before_dropping_cone, false)
             });
@@ -844,6 +853,9 @@ impl MovementHandler {
                 }
             }
         }
+
+        // Disable the movement motors
+        self.movement_motors_do(|driver| driver.disable());
     }
 
     /// The function to run all of the motors.

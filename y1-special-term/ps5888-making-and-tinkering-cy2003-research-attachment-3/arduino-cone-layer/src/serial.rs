@@ -508,7 +508,7 @@ pub fn dispatch_commands(
             *run_movement_motors_at_constant_speed = false;
 
             // Lay cones in a straight line
-            movement_handler.lay_cones_in_a_straight_line(arguments);
+            movement_handler.lay_cones_in_a_straight_line_blocking(arguments);
         }
         Some(Command::DropCone(arguments)) => {
             //

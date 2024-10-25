@@ -1182,6 +1182,9 @@ impl StepperDriver {
             return;
         }
 
+        // Reset the current position
+        self.reset_current_position(0);
+
         // If the constant speed flag is true
         if constant_speed {
             //

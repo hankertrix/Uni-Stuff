@@ -21,7 +21,10 @@ use console::println;
 use heapless::Vec;
 use movement::MovementHandler;
 use panic_halt as _;
-use serial::{dispatch_commands, new_serial_handler, UsartWriterInterface};
+use serial::{
+    dispatch_commands, handle_input, new_serial_handler, SerialBufferType,
+    UsartWriterInterface,
+};
 use stepper_driver::{new_stepper_driver, StepperDriver};
 
 /// Function to execute on the Arduino
