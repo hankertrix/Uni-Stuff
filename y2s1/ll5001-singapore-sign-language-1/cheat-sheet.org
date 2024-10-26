@@ -2203,7 +2203,7 @@ Similar to the agent gesture, but use two pinkies instead and do it twice.
 ** School
 [[./images/school.gif]]
 
-** Toilet
+** Toilet / Bathroom
 Shake the "T" hand sign.
 
 ** Lecture
