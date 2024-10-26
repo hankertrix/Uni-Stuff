@@ -274,6 +274,21 @@ Same motion as the first variation of "we", but form the "F" hand sign instead.
 ** Our
 [[./images/our.gif]]
 
+** They / Them
+[[./images/they.gif]]
+
+*** Referring to 2 other people
+[[./images/they-two-people.gif]]
+
+*** Referring to 3 other people
+[[./images/they-three-people.gif]]
+
+*** Referring to 4 other people
+[[./images/they-four-people.gif]]
+
+** Their
+[[./images/their.gif]]
+
 ** He
 [[./images/he.gif]]
 
@@ -822,6 +837,12 @@ When one hand is already on top of the other hand, remove the hand on top.
 
 [[./images/in.gif]]
 
+** Include
+[[./images/include.gif]]
+
+** Inclusive
+[[./images/inclusive.gif]]
+
 ** Out
 [[./images/out-diagram.gif]]
 
@@ -996,6 +1017,12 @@ Make the "U" hand sign and move it upwards. Alternatively, you can just point up
 
 ** Down (direction)
 Hold up a hand with the palm facing the body and move it downwards. Alternatively, you can just point downwards and move your hand downwards.
+
+** Top
+[[./images/top.gif]]
+
+** Bottom
+[[./images/bottom.gif]]
 
 ** To
 [[./images/to.gif]]
@@ -2672,6 +2699,9 @@ Do the gesture for "squirrel", but leave your hands further apart. Then, straigh
 
 ** Emphasise
 [[./images/emphasise.gif]]
+
+** Exaggerate
+[[./images/exaggerate.gif]]
 
 ** Tiger
 
