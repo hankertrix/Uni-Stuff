@@ -633,6 +633,12 @@ Same motion as "funny", but do it once instead of twice.
 ** Curious
 [[./images/curious.gif]]
 
+** Interest
+[[./images/interest.gif]]
+
+** Interesting
+[[./images/interesting.gif]]
+
 ** Honest
 [[./images/honest.gif]]
 
@@ -972,6 +978,9 @@ The only difference between this and "really" is the facial expression.
 
 ** Fast
 [[./images/fast.gif]]
+
+** Immediate / Immediately / Quickly
+[[./images/immediate.gif]]
 
 ** Turn
 Hold up an index finger pointing upwards. To turn left, move a flat palm with the palm facing the index finger and turn left after the palm passes the finger. To turn right, move a flat palm with the back of the palm facing the index finger and turn right after the palm passes the finger.
