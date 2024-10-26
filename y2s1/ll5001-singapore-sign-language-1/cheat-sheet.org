@@ -259,7 +259,7 @@ Make the "L" hand sign with both hands, palm facing each other and index finger 
 ** We
 
 *** Variation 1
-Point using the index finger from the shoulder on the far side to the other.
+[[./images/we.gif]]
 
 This variation is used to refer to a group of people.
 
@@ -269,10 +269,10 @@ Make the "P" hand sign, but rotate it such that the palm is facing upwards, then
 This variation is used to refer to two people, like you and your friend.
 
 ** Faculty
-Same motion as "we", but form the "F" hand sign instead.
+Same motion as the first variation of "we", but form the "F" hand sign instead.
 
 ** Our
-Form a cup with one hand and touch the back of the thumb on the shoulder on the near side. Then, trace a semicircle before touching the side of the pinky on the other shoulder.
+[[./images/our.gif]]
 
 ** He
 [[./images/he.gif]]
@@ -456,6 +456,15 @@ Pretend to grab a tissue from a tissue box with all fingers.
 ** Pick
 [[./images/pick.gif]]
 
+** Find
+[[./images/find.gif]]
+
+** Search
+[[./images/search.gif]]
+
+** Search engine
+[[./images/search-engine.gif]]
+
 ** Choose
 
 *** Variation 1
@@ -624,6 +633,9 @@ Same motion as "funny", but do it once instead of twice.
 ** Curious
 [[./images/curious.gif]]
 
+** Honest
+[[./images/honest.gif]]
+
 ** Trust
 [[./images/trust.gif]]
 
@@ -675,8 +687,11 @@ Same motion as "quiet", but use the "C" hand sign instead of the open palm.
 ** Decrease
 [[./images/decrease.gif]]
 
-** More / Most
+** More
 Make two "O" hand signs with both hands and bring them together.
+
+** Most
+[[./images/most.gif]]
 
 ** Too
 Same motion as "more", but do the "1" hand sign for one of the hands, and touch the tip of the index finger to the side of the "O" hand sign on the other hand.
@@ -685,13 +700,16 @@ Same motion as "more", but do the "1" hand sign for one of the hands, and touch 
 [[./images/less.gif]]
 
 ** Least
-Do the gesture for "less", then make two hands into the thumbs up sign, and slide one hand against the other, moving directly upwards.
+Do the gesture for "less", then do the gesture for "most". Least is essentially "less most".
 
 ** Limited
 [[./images/limited.gif]]
 
 ** Head
 [[./images/head.gif]]
+
+** Face
+[[./images/face.gif]]
 
 ** Body
 [[./images/body.gif]]
@@ -1234,9 +1252,6 @@ Same motion as "see", but with the "L" hand sign and the palm facing outwards.
 ** Visual
 [[./images/visual.gif]]
 
-** Find
-[[./images/find.gif]]
-
 ** Promise / Swear / Pledge
 
 *** Variation 1
@@ -1308,7 +1323,7 @@ Have your hand with all fingers pointing upwards and the palm facing the side. B
 ** Practice
 [[./images/practice.gif]]
 
-** Training
+** Train (verb) / Training
 Same as "practice", but with the "T" hand sign instead of the fist.
 
 ** Easy
@@ -1482,7 +1497,7 @@ Same motion as "make", but form the "M" hand sign instead of a fist.
 ** Block
 [[./images/block.gif]]
 
-** Barrier
+** Barrier / Obstacle
 [[./images/barrier.gif]]
 
 ** Tree
@@ -1572,6 +1587,18 @@ Make the "B" hand sign and hit the near side of your chest with the back of the 
 
 ** Doctor
 [[./images/doctor.gif]]
+
+** Nurse
+Same motion as "doctor", but use the "N" hand sign instead of the "D" hand sign.
+
+** Medicine / Medical
+[[./images/medicine.gif]]
+
+** Expert
+[[./images/expert.gif]]
+
+** Pro / Professional
+[[./images/professional.gif]]
 
 ** Secretary
 [[./images/secretary.gif]]
@@ -2221,7 +2248,7 @@ Make two "Y" hand signs with both hands and connect them thumb to thumb, with th
 ** Psychology / Psychological
 [[./images/psychology.gif]]
 
-** Environment
+** Environment / Surroundings / Scenery
 [[./images/environment.gif]]
 
 ** Culture
@@ -2356,12 +2383,6 @@ Just finger spell "MRT".
 ** Taxi
 [[./images/taxi.gif]]
 
-** Grab (brand)
-[[./images/grab-brand.gif]]
-
-** Suntec
-Do the "Grab (brand)" hand sign, but don't shake it, then put it on top of an open palm facing upwards on the other hand. It looks like the fountain of wealth.
-
 ** Boat
 [[./images/boat.gif]]
 
@@ -2397,6 +2418,9 @@ Make the "X" hand sign with both hands, and move your hand up and down beside th
 
 ** Visit
 [[./images/visit.gif]]
+
+** Passport
+[[./images/passport.gif]]
 
 ** Professor
 Similar hand sign to "ride", but show the "P" hand sign going over the other hand instead of moving both hands together.
@@ -2789,6 +2813,9 @@ Same motion as "Eurasian", but using the "A" hand sign instead of the "E" hand s
 ** ASEAN
 Place both hands with palm facing outwards at head level. Then, move both hands together while moving downwards. Then, move both hands outwards while continuing to move down after they are extremely close to each other.
 
+** Junior
+Hold up an open palm facing upwards, and touch the index of the other hand onto the index finger of the open palm.
+
 ** Senior
 [[./images/senior.gif]]
 
@@ -2805,9 +2832,6 @@ Same motion as "senior", but use a thumbs up on the hand below instead of the op
 
 *** Variation 2
 [[./images/war-variation-b.gif]]
-
-** Junior
-Hold up an open palm facing upwards, and touch the index of the other hand onto the index finger of the open palm.
 
 ** Video
 [[./images/video.gif]]
@@ -2844,6 +2868,41 @@ Hold up an open palm facing upwards, and touch the index of the other hand onto 
 
 ** General
 [[./images/general.gif]]
+
+** Depend / Rely on
+[[./images/depend.gif]]
+
+** Features / Characteristics
+[[./images/features.gif]]
+
+* Brands
+
+** McDonald's
+[[./images/mcdonalds.gif]]
+
+** YouTube
+
+*** Variation 1
+[[./images/youtube-variation-a.gif]]
+
+*** Variation 2
+[[./images/youtube-variation-b.gif]]
+
+** Instagram
+[[./images/instagram.gif]]
+
+** Facebook
+
+*** Variation 1
+[[./images/facebook-variation-a.gif]]
+
+*** Variation 2
+[[./images/facebook-variation-b.gif]]
+
+** Grab (brand)
+[[./images/grab-brand.gif]]
+
+It is the "G" version of "taxi".
 
 * Places
 
@@ -2934,6 +2993,9 @@ Do the gesture for "table", but have one elbow slightly higher than the other an
 
 ** Raffles Place
 [[./images/raffles-place.gif]]
+
+** Suntec
+Do the "Grab (brand)" hand sign, but don't shake it, then put it on top of an open palm facing upwards on the other hand. It looks like the fountain of wealth.
 
 ** 313
 Just show the number 313.
