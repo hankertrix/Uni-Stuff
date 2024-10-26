@@ -2215,11 +2215,17 @@ Form the "C" hand sign with your palm and touch the far side of your chin before
 ** Computer
 [[./images/computer.gif]]
 
+** Sound
+[[./images/sound.gif]]
+
 ** Audio
 Rub your fist around your ear.
 
 ** Song
 [[./images/song.gif]]
+
+** Noise
+[[./images/noise.gif]]
 
 ** Hard-of-hearing
 [[./images/hard-of-hearing.gif]]
@@ -2664,6 +2670,9 @@ Hold an arm vertically with the fingers pointing upwards and the palm facing the
 ** Even (as an emphasis)
 Do the gesture for "squirrel", but leave your hands further apart. Then, straighten the index and middle fingers on both hands and touch the tips together.
 
+** Emphasise
+[[./images/emphasise.gif]]
+
 ** Tiger
 
 *** Variation 1
@@ -2874,6 +2883,20 @@ Same motion as "senior", but use a thumbs up on the hand below instead of the op
 
 ** God
 [[./images/god.gif]]
+
+** Heaven
+[[./images/heaven.gif]]
+
+** Hell
+
+*** Variation 1
+[[./images/hell-variation-a.gif]]
+
+*** Variation 2
+[[./images/hell-variation-b.gif]]
+
+*** Variation 3
+[[./images/hell-variation-c.gif]]
 
 ** General
 [[./images/general.gif]]
