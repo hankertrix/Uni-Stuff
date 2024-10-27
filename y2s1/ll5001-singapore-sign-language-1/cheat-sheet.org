@@ -536,6 +536,9 @@ With the palm always facing down, do the "A" hand sign, then do the "L" hand sig
 
 This is the mathematical symbol for "therefore".
 
+** Additional / Extra / Bonus
+[[./images/additional.gif]]
+
 ** So what / So? / Well...
 [[./images/so-what.gif]]
 
@@ -765,6 +768,14 @@ Do the gesture for "less", then do the gesture for "most". Least is essentially 
 ** Body
 [[./images/body.gif]]
 
+** Hand
+
+*** Variation 1
+[[./images/hand-variation-a.gif]]
+
+*** Variation 2
+[[./images/hand-variation-b.gif]]
+
 ** Heart
 
 *** Variation 1
@@ -814,8 +825,8 @@ Same motion as "only", but use the "F" hand sign instead.
 ** Both
 [[./images/both.gif]]
 
-** Another
-Make the thumbs up sign, but face the thumb to the side, with the palm facing down. Then rotate your hand to turn the thumb to face the other side, with the palm facing upwards.
+** Another / Other
+[[./images/another.gif]]
 
 ** Time
 [[./images/time.gif]]
@@ -1224,6 +1235,12 @@ Exact same motion as the first variation of "ask".
 ** Gossip
 [[./images/gossip.gif]]
 
+** Mention
+[[./images/mention.gif]]
+
+** Refer / Reference / Relay
+[[./images/refer.gif]]
+
 ** Convince
 [[./images/convince.gif]]
 
@@ -1300,7 +1317,7 @@ Do the "C" hand sign and move it outwards from your mouth.
 
 Move your thumb towards the person you want to help, towards yourself if you want other people to help you.
 
-** Meet
+** Meet / Encounter
 [[./images/meet.gif]]
 
 ** Meeting
@@ -1696,6 +1713,9 @@ Same motion as "doctor", but use the "N" hand sign instead of the "D" hand sign.
 
 ** Medicine / Medical
 [[./images/medicine.gif]]
+
+** Emergency
+[[./images/emergency.gif]]
 
 ** Expert
 [[./images/expert.gif]]
@@ -2308,6 +2328,23 @@ Form the "C" hand sign with your palm and touch the far side of your chin before
 
 ** Computer
 [[./images/computer.gif]]
+
+** Internet / Online / Network
+[[./images/internet.gif]]
+
+** Download
+
+*** Variation 1
+[[./images/download-variation-a.gif]]
+
+*** Variation 2
+[[./images/download-variation-b.gif]]
+
+** Upload
+[[./images/upload.gif]]
+
+** Stream (as in stream data)
+[[./images/stream-data.gif]]
 
 ** Sound
 [[./images/sound.gif]]
