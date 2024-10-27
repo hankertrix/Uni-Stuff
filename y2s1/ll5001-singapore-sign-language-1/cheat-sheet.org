@@ -326,6 +326,9 @@ Just finger spell the word "hi".
 ** Goodbye
 Wave goodbye.
 
+** During
+[[./images/during.gif]]
+
 ** While
 Do the "W" hand sign with both hands, and with palms facing each other. Place them at the side of your body, with one hand in front of the other, and then move them outwards.
 
@@ -426,6 +429,20 @@ Similar motion to the first variation of the "if" hand sign, but put the hand in
 *** Variation 2
 Show the thumbs up sign.
 
+** Perfect
+
+*** Variation 1
+[[./images/perfect-variation-a.gif]]
+
+*** Variation 2
+[[./images/perfect-variation-b.gif]]
+
+*** Variation 3
+[[./images/perfect-variation-c.gif]]
+
+*** Variation 4
+[[./images/perfect-variation-d.gif]]
+
 ** Nice / Clean (depends on context)
 [[./images/nice.gif]]
 
@@ -514,6 +531,16 @@ With the palm always facing down, do the "A" hand sign, then do the "L" hand sig
 ** Because
 [[./images/because.gif]]
 
+** Therefore / Hence / Thus
+[[./images/therefore.gif]]
+
+This is the mathematical symbol for "therefore".
+
+** So what / So? / Well...
+[[./images/so-what.gif]]
+
+Change your facial expression based on what you mean with this gesture.
+
 ** And
 [[./images/and.gif]]
 
@@ -550,7 +577,7 @@ Shake your head when doing this gesture.
 ** Do not (Don't)
 [[./images/do-not.gif]]
 
-** Correct / Right
+** Correct / Right / Accurate
 [[./images/correct.gif]]
 
 ** Correction
@@ -582,7 +609,7 @@ Same motion as "correct", but do it twice.
 ** Enjoy
 [[./images/enjoy.gif]]
 
-** Thing
+** Thing / Device
 [[./images/thing.gif]]
 
 ** Nothing
@@ -721,7 +748,7 @@ Same motion as "more", but do the "1" hand sign for one of the hands, and touch 
 [[./images/less.gif]]
 
 ** Least
-Do the gesture for "less", then do the gesture for "most". Least is essentially "less most".
+Do the gesture for "less", then do the gesture for "most". Least is essentially "less-most".
 
 ** Limited
 [[./images/limited.gif]]
@@ -731,6 +758,9 @@ Do the gesture for "less", then do the gesture for "most". Least is essentially 
 
 ** Face
 [[./images/face.gif]]
+
+** Lip
+[[./images/lip.gif]]
 
 ** Body
 [[./images/body.gif]]
@@ -745,6 +775,9 @@ Draw a heart shape with both index fingers at your heart.
 
 *** Variation 3
 Show a heart shape with both hands at your heart.
+
+** Blood / Bloody
+[[./images/blood.gif]]
 
 ** All
 
@@ -792,6 +825,11 @@ Start with both palms open, with the back of the palm facing front and bring bot
 
 ** Recent / Recently
 [[./images/recent.gif]]
+
+** Usually
+[[./images/usually.gif]]
+
+This gesture is the gesture for "most", followed by the gesture for "time".
 
 ** Morning
 [[./images/morning.gif]]
@@ -1149,6 +1187,9 @@ Same motion as "finish", but use the "A" hand sign when the palms are facing upw
 ** Again
 [[./images/again.gif]]
 
+** Often
+[[./images/often.gif]]
+
 ** Still
 [[./images/still.gif]]
 
@@ -1176,6 +1217,9 @@ Exact same motion as the first variation of "ask".
 
 *** Variation 2
 [[./images/speak-variation-b.gif]]
+
+** Voice
+[[./images/voice.gif]]
 
 ** Gossip
 [[./images/gossip.gif]]
@@ -1285,8 +1329,14 @@ Same motion as "see", but move the "V" hand sign back after you move it outwards
 *** Variation 2
 Same motion as "see", but with the "L" hand sign and the palm facing outwards.
 
+** Notice / Recognise / Detect
+[[./images/notice.gif]]
+
 ** Visual
 [[./images/visual.gif]]
+
+** Clear / Obvious
+[[./images/clear.gif]]
 
 ** Promise / Swear / Pledge
 
@@ -1489,11 +1539,25 @@ Same motion as "change", but use the "R" hand sign for both hands instead of the
 ** Translate
 Same motion as "change", but use the "T" hand sign for both hands instead of the "X" hand sign. Then, the two "T" hand signs transition to index fingers pointing to the side.
 
+** Distort / Mangle
+[[./images/distort.gif]]
+
 ** Win
 Pretend to hold the flag in one hand, then use the other hand to grab it.
 
 ** Miss
 Similar motion to "win", but instead of the hand pretending to hold a flag, point an index finger upwards. The other hand tries to grab the index finger but misses.
+
+** Succeed / Success
+
+*** Variation 1
+[[./images/success-variation-a.gif]]
+
+*** Variation 2
+[[./images/success-variation-b.gif]]
+
+** Fail
+[[./images/fail.gif]]
 
 ** Lose (as in loser)
 Hold an open palm facing up, and touch the fingers on the "V" hand sign to that open palm.
@@ -1620,6 +1684,9 @@ Make the "B" hand sign and hit the near side of your chest with the back of the 
 
 ** President
 [[./images/president.gif]]
+
+** Government
+[[./images/government.gif]]
 
 ** Doctor
 [[./images/doctor.gif]]
@@ -2233,8 +2300,8 @@ Similar to the agent gesture, but use two pinkies instead and do it twice.
 ** Toilet / Bathroom
 Shake the "T" hand sign.
 
-** Lecture
-Put your open palm facing upwards beside your head and push it outwards twice.
+** Lecture / Present
+[[./images/lecture.gif]]
 
 ** Canteen
 Form the "C" hand sign with your palm and touch the far side of your chin before touching the other side of your chin.
@@ -2253,6 +2320,9 @@ Rub your fist around your ear.
 
 ** Noise
 [[./images/noise.gif]]
+
+** Microphone / Mic
+[[./images/microphone.gif]]
 
 ** Hard-of-hearing
 [[./images/hard-of-hearing.gif]]
@@ -2292,6 +2362,17 @@ Make two "Y" hand signs with both hands and connect them thumb to thumb, with th
 
 ** Environment / Surroundings / Scenery
 [[./images/environment.gif]]
+
+** Background
+
+*** Variation 1
+[[./images/background-variation-a.gif]]
+
+*** Variation 2
+[[./images/background-variation-b.gif]]
+
+*** Variation 3
+[[./images/background-variation-c.gif]]
 
 ** Culture
 [[./images/culture.gif]]
@@ -2700,6 +2781,17 @@ Do the gesture for "squirrel", but leave your hands further apart. Then, straigh
 ** Emphasise
 [[./images/emphasise.gif]]
 
+** Especially
+
+*** Variation 1
+[[./images/especially-variation-a.gif]]
+
+*** Variation 2
+[[./images/especially-variation-b.gif]]
+
+*** Variation 3
+Exactly the same gesture as "emphasise".
+
 ** Exaggerate
 [[./images/exaggerate.gif]]
 
@@ -2717,8 +2809,8 @@ Point upwards with an index finger on one hand with the palm facing outwards. Th
 ** Zebra
 [[./images/zebra.gif]]
 
-** Point / Specify
-Hold one index finger up, pointing upwards, and use the index finger on the other hand to point at it.
+** Point / Specify / Particularly / In particular
+[[./images/point.gif]]
 
 ** Aim
 [[./images/aim.gif]]
@@ -2937,6 +3029,38 @@ Same motion as "senior", but use a thumbs up on the hand below instead of the op
 ** Features / Characteristics
 [[./images/features.gif]]
 
+** Museum
+[[./images/museum.gif]]
+
+** Station
+Same motion as "museum", but with the "S" hand sign instead of the "M" hand sign.
+
+** Transcript
+Same motion as "museum", but with the "T" hand sign instead of the "M" hand sign.
+
+** Form
+
+*** Variation 1
+[[./images/form-variation-a.gif]]
+
+This variation refers to the form of an object, or an abstract concept, like "art form".
+
+*** Variation 2
+Same motion as "museum", but with the "F" hand sign instead of the "M" hand sign.
+
+This variation refers to a document with blanks to fill up.
+
+** Loop
+
+*** Vertical variation
+[[./images/loop-vertical-variation.gif]]
+
+*** Horizontal variation
+[[./images/loop-horizontal-variation.gif]]
+
+** Parade
+[[./images/parade.gif]]
+
 * Brands
 
 ** McDonald's
@@ -2974,12 +3098,6 @@ It is the "G" version of "taxi".
 ** Country
 [[./images/country.gif]]
 
-** Museum
-[[./images/museum.gif]]
-
-** Station
-Same motion as "museum", but with the "S" hand sign instead of the "M" hand sign.
-
 ** Town
 [[./images/town.gif]]
 
@@ -2997,6 +3115,9 @@ Same motion as "church", but with the "T" hand sign instead of the "C" hand sign
 
 ** Mosque
 Same motion as "church", but with the "M" hand sign instead of the "C" hand sign.
+
+** Hospital
+[[./images/hospital.gif]]
 
 ** Island
 [[./images/island.gif]]
