@@ -832,7 +832,7 @@ Same motion as "only", but use the "F" hand sign instead.
 [[./images/time.gif]]
 
 ** Now
-Start with both palms open, with the back of the palm facing front and bring both of them down.
+[[./images/now.gif]]
 
 ** Recent / Recently
 [[./images/recent.gif]]
