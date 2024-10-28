@@ -42,6 +42,9 @@ You can drag out letters at the end of a finger spell if the ending letters are 
 ** Plural words
 Just repeat the sign once more to show that it is plural.
 
+** Nouns from verbs
+Usually, the noun form of a word is just the verb form done twice.
+
 * Alphabet
 
 ** American sign language
@@ -1564,6 +1567,15 @@ Same motion as "change", but use the "R" hand sign for both hands instead of the
 ** Translate
 Same motion as "change", but use the "T" hand sign for both hands instead of the "X" hand sign. Then, the two "T" hand signs transition to index fingers pointing to the side.
 
+** Influence (verb) / Counsel (verb) / Advise
+[[./images/influence.gif]]
+
+** Influence (noun) / Counsel (noun) / Advice
+Same motion as "influence (verb)", but do it twice.
+
+** Effective / Efficient
+Same motion as "influence (verb)", but hold the "E" hand sign all the way instead of opening up a flattened "O" hand sign.
+
 ** Distort / Mangle
 [[./images/distort.gif]]
 
@@ -1622,6 +1634,9 @@ Same motion as "make", but form the "M" hand sign instead of a fist.
 ** Block
 [[./images/block.gif]]
 
+** Flat (as in HDB flat)
+Make two "F" hand signs with both hands, both palms facing down. Place one hand on the back of the other hand and move that hand upwards.
+
 ** Barrier / Obstacle
 [[./images/barrier.gif]]
 
@@ -1663,6 +1678,7 @@ Similar to "program", but instead of continuing with the "P" when the hand is at
 
 ** Language
 [[./images/language.gif]]
+
 Make two "L" hand signs with the index finger pointing forward and palm facing downwards, with the thumbs touching each other, then wiggle them while moving outwards.
 
 ** Dress
@@ -2102,6 +2118,12 @@ Same motion as "passion", but do it continuously and with more intensity.
 ** Lime
 [[./images/lime.gif]]
 
+** Juice
+Same motion as the gesture for "lime", but with the "Y" hand sign instead of the "L" hand sign.
+
+** Orange juice
+Do the gesture for "orange", then do the gesture for "juice".
+
 ** Lemon / Lemonade
 
 *** Variation 1
@@ -2253,12 +2275,6 @@ Mime pulling tea. Make two fists, one with the palm facing down and one with the
 
 ** Milk
 [[./images/milk.gif]]
-
-** Juice
-Hold one hand horizontally with an fist, with the palm facing towards the body. The other hand makes the "Y" hand sign, and moves the thumb down the back of the palm. The pinky on this hand should be pointing forward.
-
-** Orange juice
-Do the gesture for "orange", then do the gesture for "juice".
 
 ** Coffee
 [[./images/coffee.gif]]
