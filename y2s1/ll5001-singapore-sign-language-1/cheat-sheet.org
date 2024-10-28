@@ -1468,8 +1468,13 @@ Same as "practice", but with the "T" hand sign instead of the fist.
 ** Use
 Same motion as "business", but use the "U" hand sign. The "U" hand sign can either have the palm facing outwards or inwards.
 
-** Employ
+** Employ / Enterprise
 Same motion as "business", but use the "E" hand sign.
+
+** Hire
+[[./images/hire.gif]]
+
+Do this hand gesture with both the index and middle finger curled instead of the version shown in the video, which is just the index finger being curled.
 
 ** Retire
 [[./images/retire.gif]]
@@ -2400,9 +2405,6 @@ Make two "Y" hand signs with both hands and connect them thumb to thumb, with th
 ** Psychology / Psychological
 [[./images/psychology.gif]]
 
-** Environment / Surroundings / Scenery
-[[./images/environment.gif]]
-
 ** Background
 
 *** Variation 1
@@ -2422,6 +2424,12 @@ Same motion as "culture", but use the "S" hand sign instead of the "C" hand sign
 
 ** Local
 Same motion as "culture", but with the "L" hand sign instead of the "C" hand sign.
+
+** Environment
+Same motion as "culture", but use the "E" hand sign instead of the "C" hand sign.
+
+** Surroundings
+Hold one index finger pointing upwards on one hand and the palm facing the front. The rest of the fingers should be closed. The other hand has all fingers pointing down and stretched out. Rotate the wrist on this hand such that the hand goes around the index finger.
 
 ** Initial / Initialise
 Make the "I" hand sign with one hand and the palm should be facing forward. The other hand uses the index finger to screw the base of the thumb.
@@ -2900,6 +2908,9 @@ Similar motion to the first variation of "hope", but do it once, and position yo
 ** Reply
 Similar motion to "answer", but use the "R" hand sign instead of the index finger.
 
+** Awareness
+Make the "A" hand sign with both hands and put them beside your temple. Then change the hand sign to the "W" hand sign, with the palm facing the front and the fingers pointing upwards.
+
 ** Awake / Wake up / Woke up
 
 *** Variation 1
@@ -3101,6 +3112,26 @@ This variation refers to a document with blanks to fill up.
 ** Parade
 [[./images/parade.gif]]
 
+* Singlish
+
+** Alamak
+[[./images/alamak.gif]]
+
+** Bo Jio
+[[./images/bo-jio.gif]]
+
+** Jia You
+[[./images/jia-you.gif]]
+
+** Kay Poh
+[[./images/kay-poh.gif]]
+
+** Paiseh
+[[./images/paiseh.gif]]
+
+** Wah Lau
+[[./images/wah-lau.gif]]
+
 * Brands
 
 ** McDonald's
@@ -3208,6 +3239,12 @@ Finger on top of the 3 towers.
 ** Marina Square
 Draw a square with both hands, starting with the "M" hand sign, then transitioning to the "S" hand sign when halfway through.
 
+** Marina South Pier
+[[./images/marina-south-pier.gif]]
+
+** City Hall
+[[./images/city-hall.gif]]
+
 ** Esplanade
 Make two claws with your hands and cover your eyes with them.
 
@@ -3216,6 +3253,9 @@ Do the gesture for "table", but have one elbow slightly higher than the other an
 
 ** Raffles Place
 [[./images/raffles-place.gif]]
+
+** Dhoby Ghaut
+Just finger spell "DG".
 
 ** Suntec
 Do the "Grab (brand)" hand sign, but don't shake it, then put it on top of an open palm facing upwards on the other hand. It looks like the fountain of wealth.
