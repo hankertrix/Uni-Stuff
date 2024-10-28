@@ -1049,7 +1049,10 @@ The only difference between this and "really" is the facial expression.
 ** Fast
 [[./images/fast.gif]]
 
-** Immediate / Immediately / Quickly
+** Quick / Quickly
+[[./images/quick.gif]]
+
+** Immediate / Immediately
 [[./images/immediate.gif]]
 
 ** Turn
