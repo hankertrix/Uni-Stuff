@@ -1,0 +1,80 @@
+// The library for the fall detector
+
+#ifndef FALL_DETECTOR_H
+#define FALL_DETECTOR_H
+
+#include "Accelerometer.h"
+#include "RadarScanner.h"
+#include "Arduino.h"
+
+// The default value for the previous fall time
+static const unsigned long FALL_DETECTOR_DEFAULT_PREVIOUS_FALL_TIME = 0;
+
+// The number of radar scanners
+static const unsigned int FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS = 2;
+
+// The structure to store the parameters
+// to the fall detector
+struct FallDetectorParameters {
+  Accelerometer &accelerometer;
+  RadarScanner radar_scanners[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS];
+
+  // Interrupt pin
+  unsigned int interrupt_pin;
+
+  // Radar scanner parameters
+  unsigned int minimum_number_of_blocked_segments;
+  unsigned int maximum_number_of_breaks;
+
+  // Accelerometer parameters
+  unsigned int minimum_acceleration_difference_for_force_spike_in_gs;
+  unsigned int recency_of_accelerometer_data_in_ms;
+
+  // Timing related parameters
+  unsigned int minimum_time_to_be_considered_a_fall_without_fall_spike;
+  unsigned int minimum_time_to_be_considered_a_fall_with_fall_spike;
+};
+
+class FallDetector {
+
+private:
+  //
+
+  // Stored parameters
+  Accelerometer &_accelerometer;
+  RadarScanner _radar_scanners[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS];
+
+  // Interrupt pins
+  const unsigned int _interrupt_pin;
+
+  // Radar scanner parameters
+  const unsigned int _minimum_number_of_blocked_segments;
+  const unsigned int _maximum_number_of_breaks;
+
+  // Accelerometer parameters
+  const unsigned int _minimum_acceleration_difference_for_force_spike_in_gs;
+  const unsigned int _recency_of_accelerometer_data_in_ms;
+
+  // Timing related parameters
+  const unsigned int _minimum_time_to_be_considered_a_fall_without_fall_spike;
+  const unsigned int _minimum_time_to_be_considered_a_fall_with_fall_spike;
+
+  // State variables
+  unsigned long _previous_fall_time;
+
+  // Functions
+  bool _radar_scanners_detected_fall();
+  bool _accelerometer_has_force_spike();
+  bool _check_for_fall();
+
+public:
+  //
+
+  // Constructor
+  FallDetector(FallDetectorParameters parameters);
+
+  // Methods
+  void run();
+};
+
+#endif
