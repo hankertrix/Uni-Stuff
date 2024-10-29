@@ -1471,8 +1471,14 @@ Same as "practice", but with the "T" hand sign instead of the fist.
 ** Use
 Same motion as "business", but use the "U" hand sign. The "U" hand sign can either have the palm facing outwards or inwards.
 
+** Function
+Same motion as "business", but use the "F" hand sign. The thumb and index finger of the "F" hand sign should be the ones touching the back of the other palm.
+
 ** Employ / Enterprise
 Same motion as "business", but use the "E" hand sign.
+
+** Job
+Same motion as "business", but use the "J" hand sign. The side of the pinky should be touching the back of the other palm.
 
 ** Hire
 [[./images/hire.gif]]
