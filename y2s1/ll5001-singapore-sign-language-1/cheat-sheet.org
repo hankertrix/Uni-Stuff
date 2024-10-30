@@ -424,6 +424,9 @@ Same as the first variation of "if", but put your pinky beside your temple inste
 *** Variation 3
 Similar motion to the first variation of the "if" hand sign, but put the hand in front of your body instead of beside your eye.
 
+** Evil
+[[./images/evil.gif]]
+
 ** Good
 
 *** Variation 1
@@ -490,6 +493,12 @@ Pretend to grab a tissue from a tissue box with all fingers.
 
 ** Pick
 [[./images/pick.gif]]
+
+** Catch
+[[./images/catch.gif]]
+
+** Throw
+[[./images/throw.gif]]
 
 ** Find
 [[./images/find.gif]]
@@ -1027,7 +1036,12 @@ Same motion as "never", but use the "S" hand sign instead of the open palm.
 [[./images/very.gif]]
 
 ** Really / Real / True
-[[./images/really.gif]]
+
+*** Variation 1
+[[./images/really-variation-a.gif]]
+
+*** Variation 2
+[[./images/really-variation-b.gif]]
 
 ** Quite
 [[./images/quite.gif]]
@@ -3135,6 +3149,12 @@ This variation refers to a document with blanks to fill up.
 [[./images/parade.gif]]
 
 * Singlish
+
+** Shiok / So shiok / Shiok ah
+[[./images/shiok.gif]]
+
+** You don't bluff
+[[./images/you-dont-bluff.gif]]
 
 ** Alamak
 [[./images/alamak.gif]]
