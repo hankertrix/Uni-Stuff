@@ -68,7 +68,8 @@ void Accelerometer::_write_data(unsigned int register_address,
 
 // The function to get the measurement range setting in binary
 // to write to the accelerometer
-uint8_t _get_measurement_range_setting(MeasurementRange measurement_range) {
+uint8_t Accelerometer::_get_measurement_range_setting(
+    MeasurementRange measurement_range) {
   switch (measurement_range) {
 
   case TWO_G:
