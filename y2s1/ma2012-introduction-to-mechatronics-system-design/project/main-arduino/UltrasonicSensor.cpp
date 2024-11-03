@@ -15,7 +15,7 @@ UltrasonicSensor::UltrasonicSensor(unsigned int trigger_pin,
 }
 
 // Function to get the distance in cm from the ultrasonic sensor
-float UltrasonicSensor::get_distance_in_cm() {
+unsigned int UltrasonicSensor::get_distance_in_cm() {
 
   // Reset the state of the ultrasonic sensor
   digitalWrite(this->_trigger_pin, LOW);

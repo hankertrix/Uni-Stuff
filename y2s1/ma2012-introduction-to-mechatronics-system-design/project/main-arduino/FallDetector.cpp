@@ -57,7 +57,7 @@ bool FallDetector::_radar_scanners_detected_fall() {
     RadarScanner &radar_scanner = this->_radar_scanners[radar_scanner_index];
 
     // Get the length of the boolean array
-    unsigned int boolean_array_length = radar_scanner.get_angle_range() + 1;
+    unsigned int boolean_array_length = RADAR_SCANNER_ANGLE_RANGE + 1;
 
     // Create the boolean array to store the result
     bool boolean_array[boolean_array_length];

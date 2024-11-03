@@ -15,7 +15,7 @@ static const uint8_t ACCELEROMETER_ADDRESS = 0x1D;
 static const uint8_t LEAST_SIGNIFICANT_BIT_OF_X_ADDRESS = 0x32;
 static const uint8_t POWER_CTL_REGISTER = 0x2D;
 static const uint8_t SET_MEASURE_BIT = 0b00001000;
-static const int ACCELEROMETER_DATA_ARRAY_SIZE = 15;
+static const unsigned int ACCELEROMETER_DATA_ARRAY_SIZE = 15;
 
 // The communication protocol for the accelerometer
 enum CommunicationProtocol {

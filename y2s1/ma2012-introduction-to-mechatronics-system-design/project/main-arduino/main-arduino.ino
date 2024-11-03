@@ -32,8 +32,6 @@ static const unsigned int DC_MOTOR_TOGGLE_SWITCH_PIN = 7;
 static const unsigned int FALL_DETECTOR_INTERRUPT_PIN = 2;
 
 // Constants
-static const unsigned int RADAR_SCANNER_START_ANGLE = 45;
-static const unsigned int RADAR_SCANNER_END_ANGLE = 135;
 static const unsigned int SERVO_MOTOR_DELAY_IN_MS = 15;
 static const MeasurementRange ACCELEROMETER_MEASUREMENT_RANGE = EIGHT_G;
 static const unsigned int THRESHOLD_DISTANCE_IN_CM_TO_CONSIDER_DOOR_OPEN = 2;
@@ -86,31 +84,25 @@ static UltrasonicSensor
     DOOR_SENSOR_ULTRASONIC_SENSOR(ULTRASONIC_SENSOR_3_TRIGGER_PIN,
                                   ULTRASONIC_SENSOR_3_ECHO_PIN);
 
-// Create the first radar scanner
-static RadarScanner RADAR_SCANNER_1(RadarScannerParameters{
-    .servo_motor_pin = SERVO_MOTOR_1_PIN,
-    .ultrasonic_sensor = ULTRASONIC_SENSOR_1,
-    .start_angle = RADAR_SCANNER_START_ANGLE,
-    .end_angle = RADAR_SCANNER_END_ANGLE,
-    .servo_motor_delay_in_ms = SERVO_MOTOR_DELAY_IN_MS,
-});
-
-// Create the second radar scanner
-static RadarScanner RADAR_SCANNER_2(RadarScannerParameters{
-    .servo_motor_pin = SERVO_MOTOR_2_PIN,
-    .ultrasonic_sensor = ULTRASONIC_SENSOR_2,
-    .start_angle = RADAR_SCANNER_START_ANGLE,
-    .end_angle = RADAR_SCANNER_END_ANGLE,
-    .servo_motor_delay_in_ms = SERVO_MOTOR_DELAY_IN_MS,
-});
-
 // Create the accelerometer
 static Accelerometer ACCELEROMETER(ACCELEROMETER_MEASUREMENT_RANGE);
 
 // Create the fall detector
 static FallDetector FALL_DETECTOR(FallDetectorParameters{
     .accelerometer = ACCELEROMETER,
-    .radar_scanners = {RADAR_SCANNER_1, RADAR_SCANNER_2},
+    .radar_scanners =
+        {
+            RadarScanner(RadarScannerParameters{
+                .servo_motor_pin = SERVO_MOTOR_1_PIN,
+                .ultrasonic_sensor = ULTRASONIC_SENSOR_1,
+                .servo_motor_delay_in_ms = SERVO_MOTOR_DELAY_IN_MS,
+            }),
+            RadarScanner(RadarScannerParameters{
+                .servo_motor_pin = SERVO_MOTOR_2_PIN,
+                .ultrasonic_sensor = ULTRASONIC_SENSOR_2,
+                .servo_motor_delay_in_ms = SERVO_MOTOR_DELAY_IN_MS,
+            }),
+        },
     .interrupt_pin = FALL_DETECTOR_INTERRUPT_PIN,
     .minimum_number_of_blocked_segments = MINIMUM_NUMBER_OF_BLOCKED_SEGMENTS,
     .maximum_number_of_breaks = MAXIMUM_NUMBER_OF_BREAKS,

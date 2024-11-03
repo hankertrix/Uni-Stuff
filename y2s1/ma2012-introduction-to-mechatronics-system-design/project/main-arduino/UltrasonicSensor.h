@@ -23,7 +23,7 @@ public:
   UltrasonicSensor(unsigned int trigger_pin, unsigned int echo_pin);
 
   // Functions
-  float get_distance_in_cm();
+  unsigned int get_distance_in_cm();
 };
 
 #endif

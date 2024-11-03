@@ -3,7 +3,6 @@
 #ifndef FALL_DETECTOR_H
 #define FALL_DETECTOR_H
 
-#include "Arduino.h"
 #include "Accelerometer.h"
 #include "RadarScanner.h"
 

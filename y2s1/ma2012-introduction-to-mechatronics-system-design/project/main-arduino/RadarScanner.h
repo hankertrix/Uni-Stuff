@@ -15,17 +15,18 @@
 struct RadarScannerParameters {
   unsigned int servo_motor_pin;
   UltrasonicSensor &ultrasonic_sensor;
-  unsigned int start_angle;
-  unsigned int end_angle;
   unsigned int servo_motor_delay_in_ms;
 };
 
-// The size of the distance array
-static const unsigned int RADAR_SCANNER_DISTANCE_ARRAY_SIZE = 180 + 1;
+// The start angle of the radar scanner
+static const unsigned int RADAR_SCANNER_START_ANGLE = 45;
 
-// The float tolerance for the calculations
-// involving the distances
-static const float FLOAT_TOLERANCE = 0.01;
+// The end angle of the radar scanner
+static const unsigned int RADAR_SCANNER_END_ANGLE = 135;
+
+// The size of the distance array
+static const unsigned int RADAR_SCANNER_ANGLE_RANGE =
+    RADAR_SCANNER_END_ANGLE - RADAR_SCANNER_START_ANGLE;
 
 class RadarScanner {
 
@@ -35,16 +36,11 @@ private:
   // Saved parameters
   const unsigned int _servo_motor_pin;
   UltrasonicSensor &_ultrasonic_sensor;
-  const unsigned int _start_angle;
-  const unsigned int _end_angle;
   const unsigned int _servo_motor_delay_in_ms;
 
-  // Calculated parameters
-  const unsigned int _angle_range;
-
   // State variables
-  float _initial_distances_in_cm[RADAR_SCANNER_DISTANCE_ARRAY_SIZE];
-  float _current_distances_in_cm[RADAR_SCANNER_DISTANCE_ARRAY_SIZE];
+  unsigned int _initial_distances_in_cm[RADAR_SCANNER_ANGLE_RANGE + 1];
+  unsigned int _current_distances_in_cm[RADAR_SCANNER_ANGLE_RANGE + 1];
   unsigned long _previous_sweep_time;
   unsigned int _current_angle;
   int _change_in_sweep_angle;

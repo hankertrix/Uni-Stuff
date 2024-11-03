@@ -37,21 +37,19 @@
 RadarScanner::RadarScanner(RadarScannerParameters parameters)
     : _servo_motor_pin(parameters.servo_motor_pin),
       _ultrasonic_sensor(parameters.ultrasonic_sensor),
-      _start_angle(parameters.start_angle), _end_angle(parameters.end_angle),
-      _servo_motor_delay_in_ms(parameters.servo_motor_delay_in_ms),
-      _angle_range(parameters.end_angle - parameters.start_angle) {
+      _servo_motor_delay_in_ms(parameters.servo_motor_delay_in_ms) {
 
   // Initialise the distances to 0
-  for (unsigned int i = 0; i < RADAR_SCANNER_DISTANCE_ARRAY_SIZE; ++i) {
-    this->_initial_distances_in_cm[i] = 0.0;
-    this->_current_distances_in_cm[i] = 0.0;
+  for (unsigned int i = 0; i < RADAR_SCANNER_ANGLE_RANGE + 1; ++i) {
+    this->_initial_distances_in_cm[i] = 0;
+    this->_current_distances_in_cm[i] = 0;
   }
 
   // Initialise the previous sweep time to 0
   this->_previous_sweep_time = 0;
 
   // Set the current angle to the start angle
-  this->_current_angle = this->_start_angle;
+  this->_current_angle = RADAR_SCANNER_START_ANGLE;
 
   // Set the change in sweep angle to 1
   this->_change_in_sweep_angle = 1;
@@ -69,21 +67,18 @@ RadarScanner::RadarScanner(RadarScannerParameters parameters)
   this->_servo.attach(this->_servo_motor_pin);
 
   // Move the servo motor to the start angle
-  this->_servo.write(this->_start_angle);
+  this->_servo.write(RADAR_SCANNER_START_ANGLE);
 
   // Wait for the servo motor to move to the start angle
-  delay(this->_angle_range * this->_servo_motor_delay_in_ms);
+  delay(RADAR_SCANNER_ANGLE_RANGE * this->_servo_motor_delay_in_ms);
 }
-
-// The function to get the angle range
-unsigned int RadarScanner::get_angle_range() { return this->_angle_range; }
 
 // The function to get the current angle
 unsigned int RadarScanner::get_current_angle() { return this->_current_angle; }
 
 // The function to get the data size of the array
 unsigned int RadarScanner::get_data_array_size() {
-  return RADAR_SCANNER_DISTANCE_ARRAY_SIZE;
+  return RADAR_SCANNER_ANGLE_RANGE + 1;
 }
 
 /* The function to sweep the radar scanner.
@@ -102,18 +97,14 @@ bool RadarScanner::sweep(bool save_initial_distances) {
     return false;
   }
 
-  // Get the start and end angles
-  unsigned int start_angle = this->_start_angle;
-  unsigned int end_angle = this->_end_angle;
-
   // Constrain the current angle to between the start angle
   // and the end angle.
   //
   // We technically shouldn't need to do this, since the angle
   // can't go past the start and end angle, but this is just
   // in case.
-  unsigned int current_angle =
-      constrain(this->_current_angle, start_angle, end_angle);
+  unsigned int current_angle = constrain(
+      this->_current_angle, RADAR_SCANNER_START_ANGLE, RADAR_SCANNER_END_ANGLE);
 
   // Initialise the variable to store
   // whether a full sweep has been completed
@@ -123,7 +114,7 @@ bool RadarScanner::sweep(bool save_initial_distances) {
   int change_in_sweep_angle = this->_change_in_sweep_angle;
 
   // If the current angle is the same as the start angle
-  if (current_angle == start_angle) {
+  if (current_angle == RADAR_SCANNER_START_ANGLE) {
 
     // Set the change in sweep angle to 1
     change_in_sweep_angle = 1;
@@ -133,7 +124,7 @@ bool RadarScanner::sweep(bool save_initial_distances) {
   }
 
   // Otherwise, if the current angle is the same as the end angle
-  else if (current_angle == end_angle) {
+  else if (current_angle == RADAR_SCANNER_END_ANGLE) {
 
     // Set the change in sweep angle to -1
     change_in_sweep_angle = -1;
@@ -154,20 +145,23 @@ bool RadarScanner::sweep(bool save_initial_distances) {
   // before changing the angle as we know that the
   // servo motor is definitely in the position
   // for the current angle.
-  float distance_in_cm = this->_ultrasonic_sensor.get_distance_in_cm();
+  unsigned int distance_in_cm = this->_ultrasonic_sensor.get_distance_in_cm();
+
+  // Get the index of the list
+  unsigned int index = current_angle - RADAR_SCANNER_START_ANGLE;
 
   // If the save initial distances variable is true
   if (save_initial_distances) {
 
     // Save the distance in cm to the initial distances array
-    this->_initial_distances_in_cm[current_angle] = distance_in_cm;
+    this->_initial_distances_in_cm[index] = distance_in_cm;
   }
 
   // Otherwise
   else {
 
     // Set the distance in cm to the current distances array
-    this->_current_distances_in_cm[current_angle] = distance_in_cm;
+    this->_current_distances_in_cm[index] = distance_in_cm;
   }
 
   // Change the current angle by the change in sweep angle
@@ -212,23 +206,20 @@ bool RadarScanner::sweep() { return this->sweep(false); }
  */
 void RadarScanner::compare_distance_arrays(bool boolean_array[]) {
 
-  // Iterate from the start angle to the end angle
-  for (unsigned int angle = this->_start_angle; angle <= this->_end_angle;
-       ++angle) {
+  // Iterate over the entire array
+  for (unsigned int index = 0;
+       index < RADAR_SCANNER_ANGLE_RANGE + 1; ++index) {
 
     // Get the initial distance for the angle
-    float initial_distance_in_cm = this->_initial_distances_in_cm[angle];
+    float initial_distance_in_cm = this->_initial_distances_in_cm[index];
 
     // Get the current distance for the angle
-    float current_distance_in_cm = this->_current_distances_in_cm[angle];
-
-    // Get the index for the boolean array
-    unsigned int index = angle - this->_start_angle;
+    float current_distance_in_cm = this->_current_distances_in_cm[index];
 
     // If the distance in the initial distance array
     // minus the distance in the current distance array
     // is less than or equal to the float tolerance
-    if (initial_distance_in_cm - current_distance_in_cm <= FLOAT_TOLERANCE) {
+    if (initial_distance_in_cm - current_distance_in_cm == 0) {
 
       // Set the item in the boolean array to false,
       // as this means that the current distance

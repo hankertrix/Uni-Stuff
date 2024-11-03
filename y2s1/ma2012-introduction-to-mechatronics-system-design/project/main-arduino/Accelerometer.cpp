@@ -91,7 +91,7 @@ void Accelerometer::_initialise_data_arrays() {
   // Iterate over the data arrays
   for (unsigned int i = 0; i < ACCELEROMETER_DATA_ARRAY_SIZE; ++i) {
     this->_acceleration_data[i] = 0.0;
-    this->_measurement_times[i] = 0;
+    this->_measurement_times[i] = 0.0;
   }
 }
 
