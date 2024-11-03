@@ -13,11 +13,6 @@ import useBluetoothLowEnergy, {
   SendStringToDevice,
 } from "../utils/bluetooth";
 
-// The type for the props of the component
-export type AppWrapperProps = {
-  mockBluetooth?: boolean;
-};
-
 // The function to mock the bluetooth functions
 function mockUseBluetoothLowEnergy() {
   //
@@ -69,7 +64,7 @@ function mockUseBluetoothLowEnergy() {
 }
 
 // The component that wraps the entire app
-const AppWrapper = ({ mockBluetooth = false }: AppWrapperProps) => {
+const AppWrapper = () => {
   //
 
   // If bluetooth mocking is wanted,
@@ -87,7 +82,7 @@ const AppWrapper = ({ mockBluetooth = false }: AppWrapperProps) => {
     sendStringToDevice,
     connectToDevice,
     disconnectFromDevice,
-  } = mockBluetooth ? mockUseBluetoothLowEnergy() : useBluetoothLowEnergy();
+  } = useBluetoothLowEnergy();
 
   // Get the theme
   const { theme, getThemeStyles } = useTheme();
