@@ -3,9 +3,9 @@
 #ifndef FALL_DETECTOR_H
 #define FALL_DETECTOR_H
 
+#include "Arduino.h"
 #include "Accelerometer.h"
 #include "RadarScanner.h"
-#include "Arduino.h"
 
 // The default value for the previous fall time
 static const unsigned long FALL_DETECTOR_DEFAULT_PREVIOUS_FALL_TIME = 0;
@@ -31,8 +31,8 @@ struct FallDetectorParameters {
   unsigned int recency_of_accelerometer_data_in_ms;
 
   // Timing related parameters
-  unsigned int minimum_time_to_be_considered_a_fall_without_fall_spike;
-  unsigned int minimum_time_to_be_considered_a_fall_with_fall_spike;
+  unsigned long minimum_time_to_be_considered_a_fall_without_force_spike_in_ms;
+  unsigned long minimum_time_to_be_considered_a_fall_with_force_spike_in_ms;
 };
 
 class FallDetector {
@@ -56,8 +56,10 @@ private:
   const unsigned int _recency_of_accelerometer_data_in_ms;
 
   // Timing related parameters
-  const unsigned int _minimum_time_to_be_considered_a_fall_without_fall_spike;
-  const unsigned int _minimum_time_to_be_considered_a_fall_with_fall_spike;
+  const unsigned int
+      _minimum_time_to_be_considered_a_fall_without_force_spike_in_ms;
+  const unsigned int
+      _minimum_time_to_be_considered_a_fall_with_force_spike_in_ms;
 
   // State variables
   unsigned long _previous_fall_time;
@@ -74,6 +76,7 @@ public:
   FallDetector(FallDetectorParameters parameters);
 
   // Methods
+  void save_initial_distances();
   void run();
 };
 

@@ -5,6 +5,7 @@
 
 #include "Arduino.h"
 #include "Servo.h"
+#include "UltrasonicSensor.h"
 
 #ifndef RADAR_SCANNER_H
 #define RADAR_SCANNER_H
@@ -13,8 +14,7 @@
 // the constructor of the RadarScanner class
 struct RadarScannerParameters {
   unsigned int servo_motor_pin;
-  unsigned int ultrasonic_trigger_pin;
-  unsigned int ultrasonic_echo_pin;
+  UltrasonicSensor &ultrasonic_sensor;
   unsigned int start_angle;
   unsigned int end_angle;
   unsigned int servo_motor_delay_in_ms;
@@ -34,8 +34,7 @@ private:
 
   // Saved parameters
   const unsigned int _servo_motor_pin;
-  const unsigned int _ultrasonic_trigger_pin;
-  const unsigned int _ultrasonic_echo_pin;
+  UltrasonicSensor &_ultrasonic_sensor;
   const unsigned int _start_angle;
   const unsigned int _end_angle;
   const unsigned int _servo_motor_delay_in_ms;
@@ -51,9 +50,6 @@ private:
   int _change_in_sweep_angle;
   Servo _servo;
 
-  // Methods
-  float _get_distance_in_cm();
-
 public:
   //
 
@@ -65,6 +61,7 @@ public:
   unsigned int get_current_angle();
   unsigned int get_data_array_size();
   void save_initial_distances();
+  bool sweep(bool save_initial_distances);
   bool sweep();
   void compare_distance_arrays(bool boolean_array[]);
 };

@@ -36,8 +36,7 @@
  */
 RadarScanner::RadarScanner(RadarScannerParameters parameters)
     : _servo_motor_pin(parameters.servo_motor_pin),
-      _ultrasonic_trigger_pin(parameters.ultrasonic_trigger_pin),
-      _ultrasonic_echo_pin(parameters.ultrasonic_echo_pin),
+      _ultrasonic_sensor(parameters.ultrasonic_sensor),
       _start_angle(parameters.start_angle), _end_angle(parameters.end_angle),
       _servo_motor_delay_in_ms(parameters.servo_motor_delay_in_ms),
       _angle_range(parameters.end_angle - parameters.start_angle) {
@@ -59,10 +58,6 @@ RadarScanner::RadarScanner(RadarScannerParameters parameters)
 
   // Initialise the output pins
   pinMode(this->_servo_motor_pin, OUTPUT);
-  pinMode(this->_ultrasonic_trigger_pin, OUTPUT);
-
-  // Initialise the input pins
-  pinMode(this->_ultrasonic_echo_pin, INPUT);
 
   // Create the servo object
   Servo servo;
@@ -72,6 +67,12 @@ RadarScanner::RadarScanner(RadarScannerParameters parameters)
 
   // Attach the servo object to the servo motor pin
   this->_servo.attach(this->_servo_motor_pin);
+
+  // Move the servo motor to the start angle
+  this->_servo.write(this->_start_angle);
+
+  // Wait for the servo motor to move to the start angle
+  delay(this->_angle_range * this->_servo_motor_delay_in_ms);
 }
 
 // The function to get the angle range
@@ -85,76 +86,6 @@ unsigned int RadarScanner::get_data_array_size() {
   return RADAR_SCANNER_DISTANCE_ARRAY_SIZE;
 }
 
-// The function to get the distance in cm from the ultrasonic sensor
-float RadarScanner::_get_distance_in_cm() {
-
-  // Reset the state of the ultrasonic sensor
-  digitalWrite(this->_ultrasonic_trigger_pin, LOW);
-
-  // Delay for 2 microseconds for the ultrasonic sensor to respond
-  delayMicroseconds(2);
-
-  // Set the trigger pin to HIGH
-  digitalWrite(this->_ultrasonic_trigger_pin, HIGH);
-
-  // Delay for 10 microseconds so that
-  // the ultrasonic sensor will send an ultrasonic burst
-  delayMicroseconds(10);
-
-  // Set the trigger pin to LOW to reset it's state
-  digitalWrite(this->_ultrasonic_trigger_pin, LOW);
-
-  // Read the echo pin to get the time taken
-  // for the ultrasonic sensor burst to return
-  unsigned int time_taken_in_us = pulseIn(this->_ultrasonic_echo_pin, HIGH);
-
-  // Calculate the distance from the time taken
-  // using the speed of sound in air, which is 343 m/s
-  // or 34300 cm/s.
-  // The speed of sound of 34300 cm/s needs to be divided
-  // by 1,000,000 to convert it to cm/us or cm per microsecond,
-  // which is 0.0343 cm/us.
-  // The distance needs to be divided by 2 because
-  // the time taken is the time for the sound wave to travel
-  // to the object and back to the sensor.
-  float distance_in_cm = time_taken_in_us * 0.0343 / 2;
-
-  // Return the distance in cm from the ultrasonic sensor
-  return distance_in_cm;
-}
-
-/* The function to save the initial distances.
- *
- * This function should be called in the setup
- * function of the program to save the initial
- * distances.
- */
-void RadarScanner::save_initial_distances() {
-
-  // Iterate from the start angle to end angle
-  for (unsigned int angle = this->_start_angle; angle <= this->_end_angle;
-       ++angle) {
-
-    // Turn the servo motor to the current angle
-    this->_servo.write(angle);
-
-    // Wait for the servo motor delay
-    delay(this->_servo_motor_delay_in_ms);
-
-    // Get the distance from the ultrasonic sensor
-    float distance_in_cm = this->_get_distance_in_cm();
-
-    // Save the distance in cm to the initial distances array
-    this->_initial_distances_in_cm[angle] = distance_in_cm;
-  }
-
-  // Rotate the servo motor back to the start angle
-  this->_servo.write(this->_start_angle);
-
-  // Wait for the servo motor to move to the start angle
-  delay(this->_angle_range * this->_servo_motor_delay_in_ms);
-}
-
 /* The function to sweep the radar scanner.
  *
  * This function is non-blocking, and thus needs
@@ -163,7 +94,7 @@ void RadarScanner::save_initial_distances() {
  * This function returns whether a full sweep
  * has been completed.
  */
-bool RadarScanner::sweep() {
+bool RadarScanner::sweep(bool save_initial_distances) {
 
   // If the current time minus the previous sweep time
   // is less than the servo motor delay, then exit the function
@@ -223,10 +154,21 @@ bool RadarScanner::sweep() {
   // before changing the angle as we know that the
   // servo motor is definitely in the position
   // for the current angle.
-  float distance_in_cm = this->_get_distance_in_cm();
+  float distance_in_cm = this->_ultrasonic_sensor.get_distance_in_cm();
 
-  // Set the distance for the current angle
-  this->_current_distances_in_cm[current_angle] = distance_in_cm;
+  // If the save initial distances variable is true
+  if (save_initial_distances) {
+
+    // Save the distance in cm to the initial distances array
+    this->_initial_distances_in_cm[current_angle] = distance_in_cm;
+  }
+
+  // Otherwise
+  else {
+
+    // Set the distance in cm to the current distances array
+    this->_current_distances_in_cm[current_angle] = distance_in_cm;
+  }
 
   // Change the current angle by the change in sweep angle
   current_angle = current_angle + change_in_sweep_angle;
@@ -244,6 +186,10 @@ bool RadarScanner::sweep() {
   // Return the full sweep completed variable
   return full_sweep_completed;
 }
+
+// The function to sweep the radar scanner
+// without any arguments
+bool RadarScanner::sweep() { return this->sweep(false); }
 
 /* The function to compare the current distance
  * array to the initial distance array.

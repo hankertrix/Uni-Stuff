@@ -61,6 +61,10 @@ void DcMotorDriver::_set_target_position(int absolute_target_position) {
   this->_target_position = this->_constrain_position(absolute_target_position);
 }
 
+// The function to get the interrupt pin for the DC motor.
+// We are interrupting on pin A, so return the DC motor pin A.
+unsigned int DcMotorDriver::get_interrupt_pin() { return this->_dc_motor_pin_a; }
+
 // The function to set the speed of the DC motor.
 // The speed of the DC motor is an integer between -255 and 255.
 void DcMotorDriver::set_speed(unsigned int speed) { this->_speed = speed; }
@@ -84,6 +88,9 @@ void DcMotorDriver::write_position_to_eeprom() {
 // The interrupt handler is attached to the DC motor pin A.
 void DcMotorDriver::interrupt_handler() {
 
+  // Disable interrupts
+  noInterrupts();
+
   // If the DC motor pin B is HIGH,
   // which means that pin B is leading pin A,
   // or pin A is lagging pin B,
@@ -101,6 +108,9 @@ void DcMotorDriver::interrupt_handler() {
   else if (digitalRead(this->_dc_motor_pin_b) == LOW) {
     this->_position--;
   }
+
+  // Enable interrupts
+  interrupts();
 }
 
 // The function to stop the DC motor

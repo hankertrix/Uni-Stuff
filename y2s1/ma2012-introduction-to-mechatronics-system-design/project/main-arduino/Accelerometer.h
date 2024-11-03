@@ -60,8 +60,7 @@ private:
   unsigned long _measurement_times[ACCELEROMETER_DATA_ARRAY_SIZE];
 
   // Functions
-  unsigned int
-  _get_measurement_range_setting(MeasurementRange measurement_range);
+  uint8_t _get_measurement_range_setting(MeasurementRange measurement_range);
   void _spi_write_data(uint8_t register_address, uint8_t data_in_binary);
   void _i2c_write_data(uint8_t register_address, uint8_t data_in_binary);
   void _write_data(unsigned int register_address, unsigned int data_in_binary);

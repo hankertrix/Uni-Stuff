@@ -26,10 +26,12 @@ FallDetector::FallDetector(FallDetectorParameters parameters)
           parameters.minimum_acceleration_difference_for_force_spike_in_gs),
       _recency_of_accelerometer_data_in_ms(
           parameters.recency_of_accelerometer_data_in_ms),
-      _minimum_time_to_be_considered_a_fall_without_fall_spike(
-          parameters.minimum_time_to_be_considered_a_fall_without_fall_spike),
-      _minimum_time_to_be_considered_a_fall_with_fall_spike(
-          parameters.minimum_time_to_be_considered_a_fall_with_fall_spike),
+      _minimum_time_to_be_considered_a_fall_without_force_spike_in_ms(
+          parameters
+              .minimum_time_to_be_considered_a_fall_without_force_spike_in_ms),
+      _minimum_time_to_be_considered_a_fall_with_force_spike_in_ms(
+          parameters
+              .minimum_time_to_be_considered_a_fall_with_force_spike_in_ms),
       _previous_fall_time(FALL_DETECTOR_DEFAULT_PREVIOUS_FALL_TIME) {
 
   // Initialise the interrupt pin to output
@@ -305,7 +307,7 @@ bool FallDetector::_check_for_fall() {
   // set the fall detected variable to true
   if (accelerometer_has_force_spike &&
       millis() - this->_previous_fall_time >
-          this->_minimum_time_to_be_considered_a_fall_with_fall_spike) {
+          this->_minimum_time_to_be_considered_a_fall_with_force_spike_in_ms) {
     fall_detected = true;
   }
 
@@ -313,13 +315,58 @@ bool FallDetector::_check_for_fall() {
   // is more than the minimum time to be considered a fall
   // without a force spike,
   // set the fall detected variable to true
-  else if (millis() - this->_previous_fall_time >
-           this->_minimum_time_to_be_considered_a_fall_without_fall_spike) {
+  else if (
+      millis() - this->_previous_fall_time >
+      this->_minimum_time_to_be_considered_a_fall_without_force_spike_in_ms) {
     fall_detected = true;
   }
 
   // Return the fall detected variable
   return fall_detected;
+}
+
+// The function to save the initial distances for the radar scanners
+void FallDetector::save_initial_distances() {
+
+  // Initialise the variable to store if the
+  // radar scanner has completed a full sweep
+  bool radar_scanners_has_completed_a_full_sweep = false;
+
+  // While the radar scanner has not completed a full sweep
+  while (!radar_scanners_has_completed_a_full_sweep) {
+
+    // Initialise the number of radar scanners that have completed a full sweep
+    unsigned int number_of_radar_scanners_that_have_completed_a_full_sweep = 0;
+
+    // Iterate over the number of radar scanners
+    for (unsigned int radar_scanner_index = 0;
+         radar_scanner_index < FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS;
+         ++radar_scanner_index) {
+
+      // Get the radar scanner
+      RadarScanner &radar_scanner = this->_radar_scanners[radar_scanner_index];
+
+      // Sweep the radar scanner
+      bool completed_full_sweep = radar_scanner.sweep(true);
+
+      // If the radar scanner has completed a full sweep
+      if (completed_full_sweep) {
+
+        // Increment the number of radar scanners that
+        // have completed a full sweep
+        ++number_of_radar_scanners_that_have_completed_a_full_sweep;
+      }
+    }
+
+    // If the number of radar scanners that have completed a full sweep
+    // is greater or equal to the number of radar scanners
+    if (number_of_radar_scanners_that_have_completed_a_full_sweep >=
+        FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS) {
+
+      // Set the radar scanners have completed a full sweep variable to true
+      radar_scanners_has_completed_a_full_sweep = true;
+    }
+  }
 }
 
 // The function to run the fall detector.

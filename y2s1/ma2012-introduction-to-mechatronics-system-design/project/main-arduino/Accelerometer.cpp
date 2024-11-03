@@ -68,8 +68,7 @@ void Accelerometer::_write_data(unsigned int register_address,
 
 // The function to get the measurement range setting in binary
 // to write to the accelerometer
-unsigned int
-_get_measurement_range_setting(MeasurementRange measurement_range) {
+uint8_t _get_measurement_range_setting(MeasurementRange measurement_range) {
   switch (measurement_range) {
 
   case TWO_G:
@@ -314,7 +313,7 @@ void Accelerometer::_store_acceleration_data(
 float Accelerometer::get_acceleration_magnitude() {
 
   // Create the pointers for the x, y and z components of the accelerometer data
-  int x, y, z;
+  int x = 0, y = 0, z = 0;
 
   // Read the x, y, and z acceleration data
   this->_read_x_y_z_raw_acceleration_data(x, y, z);

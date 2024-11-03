@@ -71,6 +71,7 @@ public:
   DcMotorDriver(DcMotorDriverParameters parameters);
 
   // Methods
+  unsigned int get_interrupt_pin();
   void set_speed(unsigned int speed);
   void write_position_to_eeprom();
   void interrupt_handler();
