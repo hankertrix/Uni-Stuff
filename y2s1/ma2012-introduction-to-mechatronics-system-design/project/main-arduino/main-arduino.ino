@@ -1,7 +1,9 @@
 // The code for the main Arduino board
 
+// Include the libraries
 #include "DcMotorDriver.h"
 #include "FallDetector.h"
+#include "PiezoBuzzer.h"
 
 // Initialise the pins
 
@@ -115,6 +117,9 @@ static FallDetector FALL_DETECTOR(FallDetectorParameters{
         MINIMUM_TIME_TO_BE_CONSIDERED_A_FALL_WITH_FORCE_SPIKE_IN_MS,
 });
 
+// Create the piezo buzzer
+static PiezoBuzzer PIEZO_BUZZER(PIEZO_BUZZER_PIN);
+
 // The enum for the mode of the Arduino
 enum ArduinoMode {
   OFF,
@@ -155,17 +160,21 @@ void dc_motor_driver_interrupt_handler() {
 void setup() {
 
   // Attach the interrupt handler for the fall detector
-  attachInterrupt(FALL_DETECTOR_INTERRUPT_PIN, fall_detector_interrupt_handler,
-                  RISING);
+  attachInterrupt(digitalPinToInterrupt(FALL_DETECTOR_INTERRUPT_PIN),
+                  fall_detector_interrupt_handler, RISING);
 
   // Attach the interrupt handler for the DC motor driver
-  attachInterrupt(DC_MOTOR_DRIVER.get_interrupt_pin(),
+  attachInterrupt(digitalPinToInterrupt(DC_MOTOR_DRIVER.get_interrupt_pin()),
                   dc_motor_driver_interrupt_handler, RISING);
 }
 
 // The function to handle the alarm mode
 // of the Arduino
-void handle_alarm_mode() {}
+void handle_alarm_mode() {
+
+  // Sound the piezo buzzer
+  PIEZO_BUZZER.sound_buzzer_at_frequency(3);
+}
 
 // The function to get whether the door is open
 bool door_is_open() {
@@ -201,6 +210,9 @@ void loop() {
   if (current_arduino_mode == ALARM) {
     return handle_alarm_mode();
   }
+
+  // Stop the piezo buzzer
+  PIEZO_BUZZER.stop_buzzer();
 
   // If the door is open
   if (door_open) {
