@@ -6,7 +6,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <ThemeContextProvider>
-        <AppWrapper />
+        <AppWrapper mockBluetooth={true} />
       </ThemeContextProvider>
     </View>
   );

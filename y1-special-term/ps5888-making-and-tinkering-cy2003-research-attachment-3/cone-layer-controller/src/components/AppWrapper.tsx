@@ -13,12 +13,73 @@ import useBluetoothLowEnergy, {
   SendStringToDevice,
 } from "../utils/bluetooth";
 
-// The component that wraps the entire app
-const AppWrapper = () => {
+// The type for the props of the component
+export type AppWrapperProps = {
+  mockBluetooth?: boolean;
+};
+
+// The function to mock the bluetooth functions
+function mockUseBluetoothLowEnergy() {
   //
 
-  // Start of bluetooth related code
+  // Create the connected device state
+  const [connectedDevice, setConnectedDevice] =
+    useState<BluetoothDevice | null>(null);
 
+  // Create the list of all devices
+  const [allDevices, _] = useState<AllDevices>([
+    {
+      id: "1",
+      name: "BT05",
+    } as BluetoothDevice,
+  ]);
+
+  // Mock the scan for devices function
+  async function scanForDevices() {
+    return true;
+  }
+
+  // Mock the send string to device function
+  const sendStringToDevice: SendStringToDevice = async (_, string) => {
+    console.log(string);
+    return true;
+  };
+
+  // Mock the connect to device function
+  const connectToDevice: ConnectToDevice = async (device) => {
+    setConnectedDevice(device);
+    return true;
+  };
+
+  // Mock the disconnect from device function
+  async function disconnectFromDevice() {
+    setConnectedDevice(null);
+  }
+
+  // Return the bluetooth state
+  // and functions
+  return {
+    connectedDevice,
+    allDevices,
+    scanForDevices,
+    sendStringToDevice,
+    connectToDevice,
+    disconnectFromDevice,
+  };
+}
+
+// The component that wraps the entire app
+const AppWrapper = ({ mockBluetooth = false }: AppWrapperProps) => {
+  //
+
+  // If bluetooth mocking is wanted,
+  // which means the app is being run
+  // on Expo Go, and not being run
+  // natively on a device,
+  // then call the function to mock
+  // the bluetooth functions and state,
+  // otherwise, use the real bluetooth
+  // functions and state
   const {
     connectedDevice,
     allDevices,
@@ -26,43 +87,7 @@ const AppWrapper = () => {
     sendStringToDevice,
     connectToDevice,
     disconnectFromDevice,
-  } = useBluetoothLowEnergy();
-
-  // End of bluetooth related code
-
-  // Placeholders for bluetooth related code
-  //
-  // Placeholder variables
-  // const [connectedDevice, setConnectedDevice] =
-  //   useState<BluetoothDevice | null>(null);
-  // const [allDevices, setAllDevices] = useState<AllDevices>([
-  //   {
-  //     id: "1",
-  //     name: "test 1",
-  //   } as BluetoothDevice,
-  //   {
-  //     id: "2",
-  //     name: "test 2",
-  //   } as BluetoothDevice,
-  // ]);
-  //
-  // // Placeholder functions to mock the bluetooth functions
-  // async function scanForDevices() {
-  //   return true;
-  // }
-  // const sendStringToDevice: SendStringToDevice = async (_, string) => {
-  //   console.log(string);
-  //   return true;
-  // };
-  // const connectToDevice: ConnectToDevice = async (device) => {
-  //   setConnectedDevice(device);
-  //   return true;
-  // };
-  // async function disconnectFromDevice() {
-  //   setConnectedDevice(null);
-  // }
-  //
-  // End of placeholders
+  } = mockBluetooth ? mockUseBluetoothLowEnergy() : useBluetoothLowEnergy();
 
   // Get the theme
   const { theme, getThemeStyles } = useTheme();
