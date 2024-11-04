@@ -2068,6 +2068,9 @@ Pretend to use your hands to eat.
 ** Supper
 [[./images/supper.gif]]
 
+** Meal
+Same motion as "supper", but with the "M" hand sign.
+
 ** Full
 
 *** Variation 1
