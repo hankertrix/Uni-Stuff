@@ -2326,6 +2326,9 @@ Same motion as "class", but form the "G" hand sign with both hands instead.
 ** Family
 Same motion as "class", but form the "F" hand sign with both hands instead.
 
+** Association
+Same motion as "class", but form the "A" hand sign with both hands instead.
+
 ** Primary
 Hold one arm horizontally with the palm facing *down*, then make the "P" hand sign with the other hand and rotate it in a circle below the other palm.
 
