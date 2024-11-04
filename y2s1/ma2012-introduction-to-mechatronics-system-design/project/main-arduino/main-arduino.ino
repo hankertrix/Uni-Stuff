@@ -139,6 +139,9 @@ void fall_detector_interrupt_handler() {
   // Set the mode to alarm
   ARDUINO_MODE = ALARM;
 
+  // Set the interrupt pin back to low
+  digitalWrite(FALL_DETECTOR_INTERRUPT_PIN, LOW);
+
   // Enable interrupts
   interrupts();
 }
