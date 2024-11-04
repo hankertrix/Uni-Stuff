@@ -37,7 +37,7 @@ static const unsigned int FALL_DETECTOR_INTERRUPT_PIN = 2;
 static const MeasurementRange ACCELEROMETER_MEASUREMENT_RANGE = EIGHT_G;
 static const unsigned int THRESHOLD_DISTANCE_IN_CM_TO_CONSIDER_DOOR_OPEN = 2;
 
-// Fall detector parameters.
+// Fall detector parameters
 
 // Radar scanner parameters
 static const unsigned int MINIMUM_NUMBER_OF_BLOCKED_SEGMENTS =
