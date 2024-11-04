@@ -2520,6 +2520,14 @@ Use your thumb and index finger to form the "C" hand sign and put it around an e
 ** Rain
 [[./images/rain.gif]]
 
+** Snow
+
+*** Variation 1
+[[./images/snow-variation-a.gif]]
+
+*** Variation 2
+[[./images/snow-variation-b.gif]]
+
 ** Grow
 [[./images/grow.gif]]
 
