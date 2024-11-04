@@ -531,9 +531,6 @@ Just finger spell "TC".
 *** Variation 2
 Do the gesture for "take", then followed by "care".
 
-** The
-Shake the "T" hand sign back and forth.
-
 ** So
 [[./images/so.gif]]
 
@@ -716,6 +713,9 @@ Same motion as "funny", but do it once instead of twice.
 
 ** Tired
 [[./images/tired.gif]]
+
+** Blur
+Make an open palm with all fingers outstretched, and your palm facing your face. Move your palm side to side in front of your face.
 
 ** Bored
 [[./images/bored.gif]]
@@ -1206,6 +1206,9 @@ Similar motion to "after", but for the hand on the outside, the fingers should b
 ** End
 Hold one hand with the palm facing inwards. With the other hand, form the "E" hand sign and move it on top of the hand and then downwards, like tracing half of a rectangle around the other hand.
 
+** Conclusion
+Same motion as "end", but use the "C" hand sign instead of the "E" hand sign.
+
 ** Finish / Over / Done
 Have two palms facing upwards with the fingers pointing forward. Then, rotate your hand such that the palms face downwards.
 
@@ -1283,10 +1286,10 @@ Same motion as "talk", but with 4 fingers instead of just the index finger.
 Same motion as "talk", but use the "R" hand sign instead and put your hands in front of your chest instead of in front of your mouth.
 
 ** Traffic
-Similar motion to "talk", but with all five fingers apart instead of just the index finger, and your hands should be in front of your chest, instead of below your mouth.
+[[./images/traffic.gif]]
 
 ** Malay
-Similar motion to "traffic", but have your hands beside the top of your head and your fingers together instead of apart.
+Similar motion to "traffic", but have your hands beside your neck instead of in front of your chest. Your hands should also be angled, following the shape of your face.
 
 ** Scream / Yell
 
@@ -1353,7 +1356,7 @@ Move your thumb towards the person you want to help, towards yourself if you wan
 [[./images/show.gif]]
 
 ** See
-Make the "V" hand sign, but with the back of the palm facing outwards, and put it beside your eyes. Then move your hand outwards.
+[[./images/see.gif]]
 
 ** Recap
 Same motion as "see", but move the "V" hand sign back after you move it outwards.
@@ -1806,6 +1809,9 @@ Same motion as "yellow", but with a "B" hand sign.
 ** Green
 Same motion as "yellow", but with a "G" hand sign.
 
+** The
+Same motion as "yellow", but with a "T" hand sign.
+
 ** Orange
 [[./images/orange.gif]]
 
@@ -2029,6 +2035,9 @@ Similar motion as "live", but use the "S" hand sign instead of the "L" hand sign
 
 ** Deaf
 [[./images/deaf.gif]]
+
+** Control
+[[./images/control.gif]]
 
 ** Lead (as in leader)
 Use one hand to grab the other hand, which has an open palm facing your body, and then pull it along.
@@ -2335,6 +2344,15 @@ Same motion as "class", but form the "F" hand sign with both hands instead.
 ** Association
 Same motion as "class", but form the "A" hand sign with both hands instead.
 
+** Team
+Same motion as "class", but form the "T" hand sign with both hands instead.
+
+** Ministry
+Same motion as "class", but form the "M" hand sign with both hands instead.
+
+** Crew
+Same motion as "class", but halfway through the motion, change the sign on both hands from the "C" hand sign to the "W" hand sign.
+
 ** Primary
 Hold one arm horizontally with the palm facing *down*, then make the "P" hand sign with the other hand and rotate it in a circle below the other palm.
 
@@ -2358,8 +2376,8 @@ Hold an open palm facing upwards and pretend to take a tissue from the middle of
 *** Variation 2
 Same motion as "paper", but use the "T" hand sign instead of the open palm for the hand on top.
 
-** Identity
-Make the "I" hand sign and push the thumb side of the hand into the other open palm that is facing outwards.
+** Identify
+[[./images/identify.gif]]
 
 ** Individual
 Similar to the agent gesture, but use two pinkies instead and do it twice.
@@ -2371,13 +2389,13 @@ Similar to the agent gesture, but use two pinkies instead and do it twice.
 [[./images/school.gif]]
 
 ** Toilet / Bathroom
-Shake the "T" hand sign.
+Shake the "T" hand sign from side to side.
 
 ** Lecture / Present
 [[./images/lecture.gif]]
 
-** Canteen
-Form the "C" hand sign with your palm and touch the far side of your chin before touching the other side of your chin.
+** Canteen / Cafeteria
+[[./images/canteen.gif]]
 
 ** Computer
 [[./images/computer.gif]]
@@ -2599,7 +2617,7 @@ Pretend to hold on to the handlebar of the motorcycle and rotate both hands upwa
 ** MRT
 
 *** Variation 1
-Hold an arm horizontally with the palm facing down and fingers pointed to the side. Then move an "M" hand sign back and forth below the hand with the palm facing down.
+Hold an arm horizontally with the palm facing down and fingers pointed to the side. Then move an "M" hand sign from side to side below the hand with the palm facing down.
 
 *** Variation 2
 Just finger spell "MRT".
@@ -2676,6 +2694,12 @@ Same motion as "way", but instead of the open hands, use a "R" hand sign.
 
 ** Path
 Same motion as "way", but instead of the open hands, use a "P" hand sign.
+
+** Stream (as in water stream)
+[[./images/stream-water.gif]]
+
+** River
+Same motion as "stream", but use the "R" hand sign instead of the open palm.
 
 ** Drum
 Just act like you're playing a snare drum.
@@ -2845,7 +2869,7 @@ Pretend that you are holding the leash on a horse and riding it.
 Do the gesture for "lion", then use both hands to show waves in front of you, with the palm faced downwards.
 
 ** Lizard
-Hold an arm vertically with the fingers pointing upwards and the palm facing the side. Make the "L" hand sign with the other hand and move the hand up the arm, wiggling back and forth as it moves up.
+Hold an arm vertically with the fingers pointing upwards and the palm facing the side. Make the "L" hand sign with the other hand and move the hand up the arm, wiggling side to side as it moves up.
 
 ** Monkey
 [[./images/monkey.gif]]
@@ -2932,7 +2956,7 @@ Point upwards with an index finger on one hand with the palm facing outwards. Th
 Make two "T" hand signs with both hands and put them together, then draw a horizontal circle with both hands together.
 
 ** Dominant
-Make two "D" hand signs with both hands with the index finger pointing forward, then move them back and forth.
+Make two "D" hand signs with both hands with the index finger pointing forward, then move them back and forth, alternating your hands.
 
 ** Enter
 [[./images/enter.gif]]
@@ -3037,7 +3061,7 @@ Put one arm horizontally with the palm facing down, then rub the wrist with the 
 [[./images/english.gif]]
 
 ** Chinese
-Make a "C" hand sign and put the thumb to your temple.
+Make a "C" hand sign and put the thumb to your temple, near your eyes.
 
 ** Japanese
 [[./images/japan.gif]]
@@ -3161,6 +3185,9 @@ This variation refers to a document with blanks to fill up.
 
 *** Horizontal variation
 [[./images/loop-horizontal-variation.gif]]
+
+** National
+[[./images/national.gif]]
 
 ** Parade
 [[./images/parade.gif]]
@@ -3374,16 +3401,19 @@ Just finger spell "JB".
 
 ** Vietnam
 
-*** North Vietnamese variation
+*** North Vietnamese Variation
 [[./images/vietnam-north-variation.gif]]
 
-*** South Vietnamese variation
+*** South Vietnamese Variation
 [[./images/vietnam-south-variation.gif]]
 
-*** Singapore Sign Language variation
-[[./images/vietnam-sgsl-variation.gif]]
+*** Singapore Sign Language Variation 1
+[[./images/vietnam-sgsl-variation-a.gif]]
 
 Doing the sign in the opposite direction, i.e. moving your hands upwards instead of downwards, is fine as well.
+
+*** Singapore Sign Language Variation 2
+Do the gesture for "see", but move your hand down to the shoulder on the far side and place your hand there, roughly where your heart is. While moving your hand down, transition from the "V" hand sign to the "N" hand sign. Your palm should be facing your body when you have placed your hand on the shoulder on the far side.
 
 ** Brunei
 
@@ -3393,11 +3423,14 @@ Doing the sign in the opposite direction, i.e. moving your hands upwards instead
 *** Variation 2
 Have two open palms facing outwards with the fingers pointing upwards, and make sure the thumb is outstretched from the rest of the fingers. Tilt both palms such that the fingers are pointing 45 degrees to the side, then move them together such that both thumbs and the flesh below the thumbs are touching each other.
 
+*** Variation 3
+Make two "B" hand signs with both hands. One hand should be rotated such that the palm is facing the body. The other hand should have the palm facing downwards. The hand with the palm facing downwards, which we will call the moving hand, should now angle it such that the fingers are pointed 45 degrees upwards and the middle finger should be at the base of the pinky of the other hand. The moving hand moves diagonally downwards, maintaining that 45-degree angle and rotating the hand clockwise and anti-clockwise repeatedly as it moves diagonally downwards.
+
 ** Cambodia
 [[./images/cambodia.gif]]
 
 ** Myanmar
-Make the hand sign for "pray" and move both hands together from side to side, together. The hand sign is very similar to the Indian dance move.
+Make the hand sign for "pray" and move both hands side to side, together.
 
 ** Laos
 Pretend to turn a knob attached to the back of your head.
