@@ -43,6 +43,7 @@ static const unsigned int THRESHOLD_DISTANCE_IN_CM_TO_CONSIDER_DOOR_OPEN = 2;
 static const unsigned int MINIMUM_NUMBER_OF_BLOCKED_SEGMENTS =
     0.5 * (RADAR_SCANNER_END_ANGLE - RADAR_SCANNER_START_ANGLE);
 static const unsigned int MAXIMUM_NUMBER_OF_BREAKS = 5;
+static const unsigned int MAXIMUM_NUMBER_OF_BLOCKED_SEGMENTS_FOR_EMPTY_ROOM = 5;
 
 // Accelerometer parameters
 static const unsigned int
@@ -67,7 +68,11 @@ enum ArduinoMode {
 };
 
 // The mode of the Arduino
-ArduinoMode ARDUINO_MODE = OFF;
+static ArduinoMode ARDUINO_MODE = OFF;
+
+// The variable to store whether the
+// fall detector is running
+static bool FALL_DETECTOR_RUNNING = false;
 
 // Create the DC motor driver
 static DcMotorDriver DC_MOTOR_DRIVER(DcMotorDriverParameters{
@@ -91,9 +96,8 @@ static UltrasonicSensor ULTRASONIC_SENSOR_2(ULTRASONIC_SENSOR_2_TRIGGER_PIN,
                                             ULTRASONIC_SENSOR_2_ECHO_PIN);
 
 // Create the third ultrasonic sensor for the door sensor
-static UltrasonicSensor
-    DOOR_SENSOR_ULTRASONIC_SENSOR(ULTRASONIC_SENSOR_3_TRIGGER_PIN,
-                                  ULTRASONIC_SENSOR_3_ECHO_PIN);
+static UltrasonicSensor DOOR_ULTRASONIC_SENSOR(ULTRASONIC_SENSOR_3_TRIGGER_PIN,
+                                               ULTRASONIC_SENSOR_3_ECHO_PIN);
 
 // Create the accelerometer
 static Accelerometer ACCELEROMETER(ACCELEROMETER_MEASUREMENT_RANGE);
@@ -117,6 +121,8 @@ static FallDetector FALL_DETECTOR(FallDetectorParameters{
     .interrupt_pin = FALL_DETECTOR_INTERRUPT_PIN,
     .minimum_number_of_blocked_segments = MINIMUM_NUMBER_OF_BLOCKED_SEGMENTS,
     .maximum_number_of_breaks = MAXIMUM_NUMBER_OF_BREAKS,
+    .maximum_number_of_blocked_segments_for_empty_room =
+        MAXIMUM_NUMBER_OF_BLOCKED_SEGMENTS_FOR_EMPTY_ROOM,
     .minimum_acceleration_difference_for_force_spike_in_gs =
         MINIMUM_ACCELERATION_DIFFERENCE_FOR_FORCE_SPIKE_IN_GS,
     .recency_of_accelerometer_data_in_ms = RECENCY_OF_ACCELEROMETER_DATA_IN_MS,
@@ -197,7 +203,7 @@ void handle_alarm_mode() {
 bool door_is_open() {
 
   // Get the distance from the ultrasonic sensor for the door
-  float door_distance = DOOR_SENSOR_ULTRASONIC_SENSOR.get_distance_in_cm();
+  float door_distance = DOOR_ULTRASONIC_SENSOR.get_distance_in_cm();
 
   // Return if the distance is more than the threshold
   // for the door being open
@@ -231,22 +237,24 @@ void loop() {
   // Stop the piezo buzzer
   PIEZO_BUZZER.stop_buzzer();
 
-  // If the door is open
-  if (door_open) {
+  // If the door is open,
+  // and the fall detector is not running,
+  // and the current Arduino mode is off
+  if (door_open && !FALL_DETECTOR_RUNNING && current_arduino_mode == OFF) {
 
-    // If the current Arduino mode is off
-    if (current_arduino_mode == OFF) {
-
-      // Save the initial distances
-      save_initial_distances();
-    }
+    // Save the initial distances
+    save_initial_distances();
 
     // Set the Arduino mode to on
     ARDUINO_MODE = ON;
   }
 
-  // Otherwise, set the Arduino mode to off
-  else {
+  // If the door is closed,
+  // and the fall detector is not running,
+  // and the current Arduino mode is on
+  if (!door_open && !FALL_DETECTOR_RUNNING && current_arduino_mode == ON) {
+
+    // Set the Arduino mode to off
     ARDUINO_MODE = OFF;
   }
 
@@ -256,7 +264,7 @@ void loop() {
   }
 
   // Otherwise, call the run function on the fall detector
-  FALL_DETECTOR.run();
+  FALL_DETECTOR_RUNNING = FALL_DETECTOR.run();
 
   // Get the state of the DC motor toggle switch
   unsigned int dc_motor_toggle_switch_state =

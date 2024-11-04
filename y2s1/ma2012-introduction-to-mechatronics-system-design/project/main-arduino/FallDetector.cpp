@@ -22,6 +22,8 @@ FallDetector::FallDetector(FallDetectorParameters parameters)
       _minimum_number_of_blocked_segments(
           parameters.minimum_number_of_blocked_segments),
       _maximum_number_of_breaks(parameters.maximum_number_of_breaks),
+      _maximum_number_of_blocked_segments_for_empty_room(
+          parameters.maximum_number_of_blocked_segments_for_empty_room),
       _minimum_acceleration_difference_for_force_spike_in_gs(
           parameters.minimum_acceleration_difference_for_force_spike_in_gs),
       _recency_of_accelerometer_data_in_ms(
@@ -52,12 +54,13 @@ void FallDetector::initialise() {
   delay(RADAR_SCANNER_ANGLE_RANGE * RADAR_SCANNER_SERVO_MOTOR_DELAY_IN_MS);
 }
 
-// The function to check if the radar scanners detected a fall
-bool FallDetector::_radar_scanners_detected_fall() {
-
-  // Initialise the array to store the result
-  // of whether the radar scanners detected a fall
-  bool results_array[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS];
+// The function to get the number of blocked segments
+// and the number of breaks from the radar scanners
+void FallDetector::_get_radar_scanner_fall_data(
+    unsigned int number_of_blocked_segments_array
+        [FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS],
+    unsigned int
+        number_of_breaks_array[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS]) {
 
   // Iterate over the number of radar scanners
   for (unsigned int radar_scanner_index = 0;
@@ -77,12 +80,11 @@ bool FallDetector::_radar_scanners_detected_fall() {
     // of the compare distance arrays function
     radar_scanner.compare_distance_arrays(boolean_array);
 
-    // Otherwise, initialise the variable to
-    // count the number of segments that are blocked
-    unsigned int number_of_blocked_segments = 0;
+    // Initialise the given number of blocked segments array
+    number_of_blocked_segments_array[radar_scanner_index] = 0;
 
-    // Initialise the variable to count the number of breaks
-    unsigned int number_of_breaks = 0;
+    // Initialise the given number of breaks array
+    number_of_breaks_array[radar_scanner_index] = 0;
 
     // Initialise the start segment of the current break
     unsigned int start_segment_of_current_break = 0;
@@ -101,7 +103,7 @@ bool FallDetector::_radar_scanners_detected_fall() {
       if (is_blocked) {
 
         // Increment the number of blocked segments
-        ++number_of_blocked_segments;
+        ++number_of_blocked_segments_array[radar_scanner_index];
 
         // If the end segment of the current break is
         // less than the start segment, because the
@@ -142,7 +144,7 @@ bool FallDetector::_radar_scanners_detected_fall() {
       start_segment_of_current_break = segment_number;
 
       // Increment the number of breaks
-      ++number_of_breaks;
+      ++number_of_breaks_array[radar_scanner_index];
     }
 
     // If the end segment of the current break after the loop
@@ -153,9 +155,34 @@ bool FallDetector::_radar_scanners_detected_fall() {
     // so we subtract one from the number of breaks if it is not
     // already 0 or less.
     if (end_segment_of_current_break < start_segment_of_current_break &&
-        number_of_breaks > 0) {
-      --number_of_breaks;
+        number_of_breaks_array[radar_scanner_index] > 0) {
+      --number_of_breaks_array[radar_scanner_index];
     }
+  }
+}
+
+// The function to check if the radar scanners detected a fall
+bool FallDetector::_radar_scanners_detected_fall(
+    unsigned int number_of_blocked_segments_array
+        [FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS],
+    unsigned int
+        number_of_breaks_array[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS]) {
+
+  // Initialise the array to store the result
+  // of whether the radar scanners detected a fall
+  bool results_array[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS];
+
+  // Iterate over the number of radar scanners
+  for (unsigned int radar_scanner_index = 0;
+       radar_scanner_index < FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS;
+       ++radar_scanner_index) {
+
+    // Get the number of of blocked segments
+    unsigned int number_of_blocked_segments =
+        number_of_blocked_segments_array[radar_scanner_index];
+
+    // Get the number of breaks
+    unsigned int number_of_breaks = number_of_breaks_array[radar_scanner_index];
 
     // If the number of blocked segments is more than the
     // maximum number of blocked segments, and the number
@@ -193,17 +220,15 @@ bool FallDetector::_radar_scanners_detected_fall() {
 
   // Calculate the percentage of radar scanners detecting a fall
   int percentage_of_radar_scanners_detected_a_fall =
-      int(float(number_of_radar_scanners_that_detected_a_fall) /
-          float(FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS) * 100);
+      number_of_radar_scanners_that_detected_a_fall * 100 /
+      FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS;
 
   // Initialise if a fall was detected
   bool fall_detected = false;
 
   // If the percentage of radar scanners that detected
-  // a fall is greater or equal to 49 percent.
-  //
-  // The 49 percent is to account for integer rounding.
-  if (percentage_of_radar_scanners_detected_a_fall >= 49) {
+  // a fall is greater or equal to 50 percent
+  if (percentage_of_radar_scanners_detected_a_fall >= 50) {
 
     // Set that a fall was detected
     fall_detected = true;
@@ -280,14 +305,19 @@ bool FallDetector::_accelerometer_has_force_spike() {
 }
 
 // The function to check for a fall
-bool FallDetector::_check_for_fall() {
+bool FallDetector::_check_for_fall(
+    unsigned int number_of_blocked_segments_array
+        [FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS],
+    unsigned int
+        number_of_breaks_array[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS]) {
 
   // Initialise the variable to decide
   // whether there is a fall
   bool fall_detected = false;
 
   // Get whether the radar scanners detected a fall
-  bool radar_scanners_detected_fall = this->_radar_scanners_detected_fall();
+  bool radar_scanners_detected_fall = this->_radar_scanners_detected_fall(
+      number_of_blocked_segments_array, number_of_breaks_array);
 
   // Get whether the accelerometer has a force spike
   bool accelerometer_has_force_spike = this->_accelerometer_has_force_spike();
@@ -334,6 +364,81 @@ bool FallDetector::_check_for_fall() {
 
   // Return the fall detected variable
   return fall_detected;
+}
+
+// The function to check if the room is empty
+bool FallDetector::_room_is_empty(
+    unsigned int number_of_blocked_segments_array
+        [FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS]) {
+
+  // Initialise the boolean array to store whether
+  // the radar scanners detect the room as empty
+  bool boolean_array[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS];
+
+  // Iterate over the radar scanners
+  for (unsigned int radar_scanner_index = 0;
+       radar_scanner_index < FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS;
+       ++radar_scanner_index) {
+
+    // Get the number of of blocked segments
+    unsigned int number_of_blocked_segments =
+        number_of_blocked_segments_array[radar_scanner_index];
+
+    // If the number of blocked segments is greater than the maximum
+    // number of blocked segments to consider the room as empty
+    if (number_of_blocked_segments >
+        this->_maximum_number_of_blocked_segments_for_empty_room) {
+
+      // Set the boolean array to false
+      boolean_array[radar_scanner_index] = false;
+    }
+
+    // Otherwise
+    else {
+
+      // Set the boolean array to true
+      boolean_array[radar_scanner_index] = true;
+    }
+  }
+
+  // Initialise the number of radar scanners deem a room as empty
+  unsigned int number_of_radar_scanners_that_deem_room_as_empty = 0;
+
+  // Iterate over the results array
+  for (unsigned int i = 0; i < FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS; ++i) {
+
+    // Get the result
+    bool result = boolean_array[i];
+
+    // If the result is true,
+    // which the room is considered as empty
+    if (result) {
+
+      // Increase the number of radar scanners that
+      // deem the room as empty
+      ++number_of_radar_scanners_that_deem_room_as_empty;
+    }
+  }
+
+  // Calculate the percentage of radar scanners
+  // that deem the room as empty
+  int percentage_of_radar_scanners_deem_room_as_empty =
+      number_of_radar_scanners_that_deem_room_as_empty * 100 /
+      FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS;
+
+  // Initialise if the room is considered as empty
+  bool room_is_empty = false;
+
+  // If the percentage of radar scanners that deem
+  // a room as empty is greater or equal to 50 percent
+  if (percentage_of_radar_scanners_deem_room_as_empty >= 50) {
+
+    // Set that the room is considered as empty
+    room_is_empty = true;
+  }
+
+  // Return the room is empty variable
+  return room_is_empty;
 }
 
 // The function to save the initial distances for the radar scanners
@@ -385,7 +490,10 @@ void FallDetector::save_initial_distances() {
 // This function runs the sweep method of
 // the radar scanner, so it should be
 // called every loop.
-void FallDetector::run() {
+//
+// This function returns whether the
+// fall detector should continue to run.
+bool FallDetector::run() {
 
   // Initialise the variable to decide
   // whether to check the data for a fall.
@@ -409,13 +517,34 @@ void FallDetector::run() {
   this->_accelerometer.measure_and_store_data();
 
   // If the fall detector shouldn't check for a fall,
-  // then exit the function
+  // then return that the fall detector should continue to run,
+  // since it has not checked that the room is empty
   if (!should_check_fall) {
-    return;
+    return true;
   }
 
+  // Initialise the array to store the number of blocked segments
+  unsigned int
+      number_of_blocked_segments_array[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS];
+
+  // Initialise the array to store the number of breaks
+  unsigned int number_of_breaks_array[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS];
+
+  // Get the number of blocked segments and the number of breaks
+  // from the radar scanners
+  this->_get_radar_scanner_fall_data(number_of_blocked_segments_array,
+                                     number_of_breaks_array);
+
   // Get whether there is a fall
-  bool fall_detected = this->_check_for_fall();
+  bool fall_detected = this->_check_for_fall(number_of_blocked_segments_array,
+                                             number_of_breaks_array);
+
+  // Get if the the fall detector should continue to run,
+  // which is just the inverse of whether the room is empty.
+  //
+  // No point running the fall detector if the room is empty.
+  bool fall_detector_should_continue_to_run =
+      !this->_room_is_empty(number_of_blocked_segments_array);
 
   // If there is no fall detected
   if (!fall_detected) {
@@ -424,11 +553,14 @@ void FallDetector::run() {
     // to indicate that there is no fall
     digitalWrite(this->_interrupt_pin, LOW);
 
-    // Exit the function
-    return;
+    // Return if the fall detector should continue to run
+    return fall_detector_should_continue_to_run;
   }
 
   // Otherwise, set the interrupt pin to high
   // to indicate that a fall has been detected
   digitalWrite(this->_interrupt_pin, HIGH);
+
+  // Return if the fall detector should continue to run
+  return fall_detector_should_continue_to_run;
 }

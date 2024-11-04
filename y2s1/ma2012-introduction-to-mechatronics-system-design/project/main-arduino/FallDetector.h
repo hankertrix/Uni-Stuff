@@ -26,6 +26,7 @@ struct FallDetectorParameters {
   // Radar scanner parameters
   unsigned int minimum_number_of_blocked_segments;
   unsigned int maximum_number_of_breaks;
+  unsigned int maximum_number_of_blocked_segments_for_empty_room;
 
   // Accelerometer parameters
   unsigned int minimum_acceleration_difference_for_force_spike_in_gs;
@@ -51,6 +52,7 @@ private:
   // Radar scanner parameters
   const unsigned int _minimum_number_of_blocked_segments;
   const unsigned int _maximum_number_of_breaks;
+  const unsigned int _maximum_number_of_blocked_segments_for_empty_room;
 
   // Accelerometer parameters
   const unsigned int _minimum_acceleration_difference_for_force_spike_in_gs;
@@ -66,9 +68,24 @@ private:
   unsigned long _previous_fall_time;
 
   // Functions
-  bool _radar_scanners_detected_fall();
+  void _get_radar_scanner_fall_data(
+      unsigned int number_of_blocked_segments_array
+          [FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS],
+      unsigned int
+          number_of_breaks_array[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS]);
+  bool _radar_scanners_detected_fall(
+      unsigned int number_of_blocked_segments_array
+          [FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS],
+      unsigned int
+          number_of_breaks_array[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS]);
   bool _accelerometer_has_force_spike();
-  bool _check_for_fall();
+  bool _check_for_fall(
+      unsigned int number_of_blocked_segments_array
+          [FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS],
+      unsigned int
+          number_of_breaks_array[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS]);
+  bool _room_is_empty(unsigned int number_of_blocked_segments_array
+                          [FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS]);
 
 public:
   //
@@ -79,7 +96,7 @@ public:
   // Methods
   void initialise();
   void save_initial_distances();
-  void run();
+  bool run();
 };
 
 #endif
