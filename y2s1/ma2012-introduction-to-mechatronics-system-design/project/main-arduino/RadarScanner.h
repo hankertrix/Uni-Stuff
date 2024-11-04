@@ -15,7 +15,6 @@
 struct RadarScannerParameters {
   unsigned int servo_motor_pin;
   UltrasonicSensor &ultrasonic_sensor;
-  unsigned int servo_motor_delay_in_ms;
 };
 
 // The start angle of the radar scanner
@@ -28,6 +27,9 @@ static const unsigned int RADAR_SCANNER_END_ANGLE = 135;
 static const unsigned int RADAR_SCANNER_ANGLE_RANGE =
     RADAR_SCANNER_END_ANGLE - RADAR_SCANNER_START_ANGLE;
 
+// The servo motor delay in milliseconds
+static const unsigned int RADAR_SCANNER_SERVO_MOTOR_DELAY_IN_MS = 15;
+
 class RadarScanner {
 
 private:
@@ -36,7 +38,6 @@ private:
   // Saved parameters
   const unsigned int _servo_motor_pin;
   UltrasonicSensor &_ultrasonic_sensor;
-  const unsigned int _servo_motor_delay_in_ms;
 
   // State variables
   unsigned int _initial_distances_in_cm[RADAR_SCANNER_ANGLE_RANGE + 1];
@@ -53,9 +54,9 @@ public:
   RadarScanner(RadarScannerParameters parameters);
 
   // Methods
-  unsigned int get_angle_range();
   unsigned int get_current_angle();
   unsigned int get_data_array_size();
+  unsigned int get_servo_motor_delay_in_ms();
   void save_initial_distances();
   bool sweep(bool save_initial_distances);
   bool sweep();

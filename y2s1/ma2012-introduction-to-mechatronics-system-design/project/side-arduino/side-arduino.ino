@@ -31,7 +31,14 @@ static DcMotorDriver DC_MOTOR_DRIVER(DcMotorDriverParameters{
 });
 
 // The setup function for the Arduino
-void setup() {}
+void setup() {
+
+  // Initialise the serial connection
+  Serial.begin(9600);
+
+  // Print that the Arduino has initialised
+  Serial.println("Arduino initialised");
+}
 
 // The loop function to run the Arduino
 void loop() {

@@ -14,6 +14,7 @@
 static const uint8_t ACCELEROMETER_ADDRESS = 0x1D;
 static const uint8_t LEAST_SIGNIFICANT_BIT_OF_X_ADDRESS = 0x32;
 static const uint8_t POWER_CTL_REGISTER = 0x2D;
+static const uint8_t MEASUREMENT_RANGE_REGISTER = 0x31;
 static const uint8_t SET_MEASURE_BIT = 0b00001000;
 static const unsigned int ACCELEROMETER_DATA_ARRAY_SIZE = 15;
 
@@ -83,6 +84,7 @@ public:
   Accelerometer(MeasurementRange measurement_range);
 
   // Methods
+  void initialise();
   unsigned int get_data_array_size();
   float get_acceleration_magnitude();
   void measure_and_store_data();

@@ -118,21 +118,6 @@ Accelerometer::Accelerometer(MeasurementRange measurement_range,
 
   // Set the slave select pin to high to disable SPI
   pinMode(this->_slave_select_pin, HIGH);
-
-  // Start SPI communication
-  SPI.begin();
-
-  // Set the SPI settings
-  SPI.beginTransaction(this->_spi_settings);
-
-  // Start the measurement.
-  // The POWER_CTL register is written to 0x2D
-  // and the measure bit is D3.
-  this->_write_data(POWER_CTL_REGISTER, SET_MEASURE_BIT);
-
-  // Change the measurement range to the set one
-  this->_write_data(
-      0x31, this->_get_measurement_range_setting(this->_measurement_range));
 }
 
 /* The constructor for the I2C protocol.
@@ -149,12 +134,39 @@ Accelerometer::Accelerometer(MeasurementRange measurement_range)
 
   // Initialise the data arrays
   this->_initialise_data_arrays();
+}
 
-  // Initialise the I2C transmission
-  Wire.begin();
+// The function to initialise the accelerometer.
+// This function must be called before using the accelerometer.
+void Accelerometer::initialise() {
 
-  // Begin the I2C transmission to the accelerometer
-  Wire.beginTransmission(this->_accelerometer_address);
+  // Switch on the accelerometer communication protocol
+  switch (this->_communication_protocol) {
+
+  // SPI protocol
+  case SPI_PROTOCOL:
+
+    // Initialise the SPI communication
+    SPI.begin();
+
+    // Set the SPI settings
+    SPI.beginTransaction(this->_spi_settings);
+
+    // Break out of the switch statement
+    break;
+
+  // I2C protocol
+  case I2C_PROTOCOL:
+
+    // Initialise the I2C communication
+    Wire.begin();
+
+    // Begin I2C transmission to the accelerometer
+    Wire.beginTransmission(this->_accelerometer_address);
+
+    // Break out of the switch statement
+    break;
+  }
 
   // Start the measurement.
   // The POWER_CTL register is written to 0x2D
@@ -163,7 +175,8 @@ Accelerometer::Accelerometer(MeasurementRange measurement_range)
 
   // Change the measurement range to the set one
   this->_write_data(
-      0x31, this->_get_measurement_range_setting(this->_measurement_range));
+      MEASUREMENT_RANGE_REGISTER,
+      this->_get_measurement_range_setting(this->_measurement_range));
 }
 
 // Function to get the size of the data array of the accelerometer

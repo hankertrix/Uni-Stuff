@@ -36,8 +36,7 @@
  */
 RadarScanner::RadarScanner(RadarScannerParameters parameters)
     : _servo_motor_pin(parameters.servo_motor_pin),
-      _ultrasonic_sensor(parameters.ultrasonic_sensor),
-      _servo_motor_delay_in_ms(parameters.servo_motor_delay_in_ms) {
+      _ultrasonic_sensor(parameters.ultrasonic_sensor) {
 
   // Initialise the distances to 0
   for (unsigned int i = 0; i < RADAR_SCANNER_ANGLE_RANGE + 1; ++i) {
@@ -68,9 +67,6 @@ RadarScanner::RadarScanner(RadarScannerParameters parameters)
 
   // Move the servo motor to the start angle
   this->_servo.write(RADAR_SCANNER_START_ANGLE);
-
-  // Wait for the servo motor to move to the start angle
-  delay(RADAR_SCANNER_ANGLE_RANGE * this->_servo_motor_delay_in_ms);
 }
 
 // The function to get the current angle
@@ -93,7 +89,8 @@ bool RadarScanner::sweep(bool save_initial_distances) {
 
   // If the current time minus the previous sweep time
   // is less than the servo motor delay, then exit the function
-  if (millis() - this->_previous_sweep_time < this->_servo_motor_delay_in_ms) {
+  if (millis() - this->_previous_sweep_time <
+      RADAR_SCANNER_SERVO_MOTOR_DELAY_IN_MS) {
     return false;
   }
 
@@ -207,8 +204,7 @@ bool RadarScanner::sweep() { return this->sweep(false); }
 void RadarScanner::compare_distance_arrays(bool boolean_array[]) {
 
   // Iterate over the entire array
-  for (unsigned int index = 0;
-       index < RADAR_SCANNER_ANGLE_RANGE + 1; ++index) {
+  for (unsigned int index = 0; index < RADAR_SCANNER_ANGLE_RANGE + 1; ++index) {
 
     // Get the initial distance for the angle
     float initial_distance_in_cm = this->_initial_distances_in_cm[index];

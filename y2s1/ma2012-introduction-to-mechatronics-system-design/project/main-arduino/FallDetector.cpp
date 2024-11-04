@@ -41,6 +41,17 @@ FallDetector::FallDetector(FallDetectorParameters parameters)
   digitalWrite(this->_interrupt_pin, LOW);
 }
 
+// The function to initialise the fall detector.
+// This function must be called before using the fall detector.
+void FallDetector::initialise() {
+
+  // Initialise the accelerometer
+  this->_accelerometer.initialise();
+
+  // Delay for the time to move the servo motors
+  delay(RADAR_SCANNER_ANGLE_RANGE * RADAR_SCANNER_SERVO_MOTOR_DELAY_IN_MS);
+}
+
 // The function to check if the radar scanners detected a fall
 bool FallDetector::_radar_scanners_detected_fall() {
 

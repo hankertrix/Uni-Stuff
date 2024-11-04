@@ -16,7 +16,9 @@ static const unsigned int FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS = 2;
 // to the fall detector
 struct FallDetectorParameters {
   Accelerometer &accelerometer;
-  RadarScanner radar_scanners[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS];
+  RadarScanner (&radar_scanners)[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS];
+  // RadarScannerParameters (
+  //     &radar_scanner_parameters)[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS];
 
   // Interrupt pin
   unsigned int interrupt_pin;
@@ -41,7 +43,7 @@ private:
 
   // Stored parameters
   Accelerometer &_accelerometer;
-  RadarScanner _radar_scanners[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS];
+  RadarScanner (&_radar_scanners)[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS];
 
   // Interrupt pins
   const unsigned int _interrupt_pin;
@@ -75,6 +77,7 @@ public:
   FallDetector(FallDetectorParameters parameters);
 
   // Methods
+  void initialise();
   void save_initial_distances();
   void run();
 };

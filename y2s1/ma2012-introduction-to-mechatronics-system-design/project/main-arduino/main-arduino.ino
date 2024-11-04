@@ -34,7 +34,6 @@ static const unsigned int DC_MOTOR_TOGGLE_SWITCH_PIN = 7;
 static const unsigned int FALL_DETECTOR_INTERRUPT_PIN = 2;
 
 // Constants
-static const unsigned int SERVO_MOTOR_DELAY_IN_MS = 15;
 static const MeasurementRange ACCELEROMETER_MEASUREMENT_RANGE = EIGHT_G;
 static const unsigned int THRESHOLD_DISTANCE_IN_CM_TO_CONSIDER_DOOR_OPEN = 2;
 
@@ -59,6 +58,16 @@ static const unsigned long
 static const unsigned long
     MINIMUM_TIME_TO_BE_CONSIDERED_A_FALL_WITH_FORCE_SPIKE_IN_MS =
         1ul * 60ul * 1000ul;
+
+// The enum for the mode of the Arduino
+enum ArduinoMode {
+  OFF,
+  ON,
+  ALARM,
+};
+
+// The mode of the Arduino
+ArduinoMode ARDUINO_MODE = OFF;
 
 // Create the DC motor driver
 static DcMotorDriver DC_MOTOR_DRIVER(DcMotorDriverParameters{
@@ -89,22 +98,22 @@ static UltrasonicSensor
 // Create the accelerometer
 static Accelerometer ACCELEROMETER(ACCELEROMETER_MEASUREMENT_RANGE);
 
+// Create the array of radar scanners
+static RadarScanner RADAR_SCANNERS[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS] = {
+    RadarScanner(RadarScannerParameters{
+        .servo_motor_pin = SERVO_MOTOR_1_PIN,
+        .ultrasonic_sensor = ULTRASONIC_SENSOR_1,
+    }),
+    RadarScanner(RadarScannerParameters{
+        .servo_motor_pin = SERVO_MOTOR_2_PIN,
+        .ultrasonic_sensor = ULTRASONIC_SENSOR_2,
+    }),
+};
+
 // Create the fall detector
 static FallDetector FALL_DETECTOR(FallDetectorParameters{
     .accelerometer = ACCELEROMETER,
-    .radar_scanners =
-        {
-            RadarScanner(RadarScannerParameters{
-                .servo_motor_pin = SERVO_MOTOR_1_PIN,
-                .ultrasonic_sensor = ULTRASONIC_SENSOR_1,
-                .servo_motor_delay_in_ms = SERVO_MOTOR_DELAY_IN_MS,
-            }),
-            RadarScanner(RadarScannerParameters{
-                .servo_motor_pin = SERVO_MOTOR_2_PIN,
-                .ultrasonic_sensor = ULTRASONIC_SENSOR_2,
-                .servo_motor_delay_in_ms = SERVO_MOTOR_DELAY_IN_MS,
-            }),
-        },
+    .radar_scanners = RADAR_SCANNERS,
     .interrupt_pin = FALL_DETECTOR_INTERRUPT_PIN,
     .minimum_number_of_blocked_segments = MINIMUM_NUMBER_OF_BLOCKED_SEGMENTS,
     .maximum_number_of_breaks = MAXIMUM_NUMBER_OF_BREAKS,
@@ -119,16 +128,6 @@ static FallDetector FALL_DETECTOR(FallDetectorParameters{
 
 // Create the piezo buzzer
 static PiezoBuzzer PIEZO_BUZZER(PIEZO_BUZZER_PIN);
-
-// The enum for the mode of the Arduino
-enum ArduinoMode {
-  OFF,
-  ON,
-  ALARM,
-};
-
-// The mode of the Arduino
-ArduinoMode ARDUINO_MODE = OFF;
 
 // The interrupt handler for the fall detector
 void fall_detector_interrupt_handler() {
@@ -162,6 +161,15 @@ void dc_motor_driver_interrupt_handler() {
 // The setup function to setup the Arduino
 void setup() {
 
+  // Initialise the serial connection
+  Serial.begin(9600);
+
+  // Initialise the fall detector
+  FALL_DETECTOR.initialise();
+
+  // Print that the fall detector has been initialised
+  Serial.println(F("Fall detector initialised"));
+
   // Attach the interrupt handler for the fall detector
   attachInterrupt(digitalPinToInterrupt(FALL_DETECTOR_INTERRUPT_PIN),
                   fall_detector_interrupt_handler, RISING);
@@ -169,6 +177,12 @@ void setup() {
   // Attach the interrupt handler for the DC motor driver
   attachInterrupt(digitalPinToInterrupt(DC_MOTOR_DRIVER.get_interrupt_pin()),
                   dc_motor_driver_interrupt_handler, RISING);
+
+  // Print that the interrupts have been attached
+  Serial.println(F("Interrupts attached"));
+
+  // Print that the Arduino is initialised
+  Serial.println(F("Arduino initialised"));
 }
 
 // The function to handle the alarm mode
@@ -190,8 +204,8 @@ bool door_is_open() {
   return door_distance > THRESHOLD_DISTANCE_IN_CM_TO_CONSIDER_DOOR_OPEN;
 }
 
-// The function to initialise the Arduino
-void initialise_arduino() {
+// The function to save the initial distances
+void save_initial_distances() {
 
   // Call the function to save the initial distances
   // for the fall detector
@@ -223,8 +237,8 @@ void loop() {
     // If the current Arduino mode is off
     if (current_arduino_mode == OFF) {
 
-      // Initialise the Arduino
-      initialise_arduino();
+      // Save the initial distances
+      save_initial_distances();
     }
 
     // Set the Arduino mode to on
