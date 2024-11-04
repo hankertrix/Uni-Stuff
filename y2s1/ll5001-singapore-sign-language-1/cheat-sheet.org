@@ -2962,7 +2962,7 @@ Make the "A" hand sign with both hands and put them beside your temple with both
 [[./images/disaster.gif]]
 
 ** Happen
-[[./images/happy.gif]]
+[[./images/happen.gif]]
 
 ** Event
 Same motion as "happen", but use the "E" hand sign instead of the index finger.
