@@ -24,17 +24,34 @@ static DcMotorDriver DC_MOTOR_DRIVER(DcMotorDriverParameters{
     .dc_motor_pin_a = DC_MOTOR_PIN_A,
     .dc_motor_pin_b = DC_MOTOR_PIN_B,
     .eeprom_address = 0,
-    .minimum_position = -200,
-    .maximum_position = 200,
-    .allowable_error_in_position = 10,
+    .minimum_position = 0,
+    .maximum_position = 94,
+    .allowable_error_in_position = 5,
     .initial_speed = 75,
 });
+
+// The function to handle the DC motor encoder interrupt
+void handle_dc_motor_encoder_interrupt() {
+
+  // Disable interrupts
+  noInterrupts();
+
+  // Call the DC motor driver interrupt handler
+  DC_MOTOR_DRIVER.interrupt_handler();
+
+  // Enable interrupts
+  interrupts();
+}
 
 // The setup function for the Arduino
 void setup() {
 
   // Initialise the serial connection
   Serial.begin(9600);
+
+  // Attach the DC motor encoder interrupt
+  attachInterrupt(digitalPinToInterrupt(DC_MOTOR_DRIVER.get_interrupt_pin()),
+                  handle_dc_motor_encoder_interrupt, RISING);
 
   // Print that the Arduino has initialised
   Serial.println("Arduino initialised");

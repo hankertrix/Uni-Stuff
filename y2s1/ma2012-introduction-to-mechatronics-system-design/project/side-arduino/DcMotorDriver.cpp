@@ -13,7 +13,7 @@ DcMotorDriver::DcMotorDriver(DcMotorDriverParameters parameters)
       _minimum_position(parameters.minimum_position),
       _maximum_position(parameters.maximum_position),
       _allowable_error_in_position(parameters.allowable_error_in_position),
-      _dc_motor_is_on_its_first_step(false), _position(0), _target_position(0),
+      _dc_motor_is_on_its_first_step(true), _position(0), _target_position(0),
       _speed(parameters.initial_speed), _last_time_written_to_eeprom(0) {
 
   // Initialise the position
@@ -63,7 +63,9 @@ void DcMotorDriver::_set_target_position(int absolute_target_position) {
 
 // The function to get the interrupt pin for the DC motor.
 // We are interrupting on pin A, so return the DC motor pin A.
-unsigned int DcMotorDriver::get_interrupt_pin() { return this->_dc_motor_pin_a; }
+unsigned int DcMotorDriver::get_interrupt_pin() {
+  return this->_dc_motor_pin_a;
+}
 
 // The function to set the speed of the DC motor.
 // The speed of the DC motor is an integer between -255 and 255.
@@ -156,7 +158,7 @@ void DcMotorDriver::run() {
 
     // Set the absolute speed of the DC motor to 200
     // to overcome the friction of the DC motor
-    motor_speed = 200;
+    motor_speed = 255;
 
     // Set that the DC motor is not on its first step
     this->_dc_motor_is_on_its_first_step = false;
@@ -229,4 +231,14 @@ void DcMotorDriver::move_to_minimum_position() {
 // Function to move the motor to the maximum position
 void DcMotorDriver::move_to_maximum_position() {
   this->move_to_absolute_position(this->_maximum_position);
+}
+
+// Function to reset the position
+void DcMotorDriver::reset_position() {
+
+  // Set the position to be 0
+  this->_position = 0;
+
+  // Write the position to the EEPROM
+  this->write_position_to_eeprom();
 }

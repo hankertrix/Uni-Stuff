@@ -81,6 +81,7 @@ public:
   void move_by_steps(int number_of_steps);
   void move_to_minimum_position();
   void move_to_maximum_position();
+  void reset_position();
 };
 
 #endif
