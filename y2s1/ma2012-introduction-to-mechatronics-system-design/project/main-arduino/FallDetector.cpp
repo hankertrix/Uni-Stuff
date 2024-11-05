@@ -49,9 +49,6 @@ void FallDetector::initialise() {
 
   // Initialise the accelerometer
   this->_accelerometer.initialise();
-
-  // Delay for the time to move the servo motors
-  delay(RADAR_SCANNER_ANGLE_RANGE * RADAR_SCANNER_SERVO_MOTOR_DELAY_IN_MS);
 }
 
 // The function to get the number of blocked segments
@@ -441,47 +438,20 @@ bool FallDetector::_room_is_empty(
   return room_is_empty;
 }
 
-// The function to save the initial distances for the radar scanners
-void FallDetector::save_initial_distances() {
+// The function to save the distances for the radar scanners.
+void FallDetector::_save_distances(unsigned int angle,
+                                   bool is_initial_distances) {
 
-  // Initialise the variable to store if the
-  // radar scanner has completed a full sweep
-  bool radar_scanners_has_completed_a_full_sweep = false;
+  // Iterate over the radar scanners
+  for (unsigned int radar_scanner_index = 0;
+       radar_scanner_index < FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS;
+       ++radar_scanner_index) {
 
-  // While the radar scanner has not completed a full sweep
-  while (!radar_scanners_has_completed_a_full_sweep) {
+    // Get the radar scanner
+    RadarScanner &radar_scanner = this->_radar_scanners[radar_scanner_index];
 
-    // Initialise the number of radar scanners that have completed a full sweep
-    unsigned int number_of_radar_scanners_that_have_completed_a_full_sweep = 0;
-
-    // Iterate over the number of radar scanners
-    for (unsigned int radar_scanner_index = 0;
-         radar_scanner_index < FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS;
-         ++radar_scanner_index) {
-
-      // Get the radar scanner
-      RadarScanner &radar_scanner = this->_radar_scanners[radar_scanner_index];
-
-      // Sweep the radar scanner
-      bool completed_full_sweep = radar_scanner.sweep(true);
-
-      // If the radar scanner has completed a full sweep
-      if (completed_full_sweep) {
-
-        // Increment the number of radar scanners that
-        // have completed a full sweep
-        ++number_of_radar_scanners_that_have_completed_a_full_sweep;
-      }
-    }
-
-    // If the number of radar scanners that have completed a full sweep
-    // is greater or equal to the number of radar scanners
-    if (number_of_radar_scanners_that_have_completed_a_full_sweep >=
-        FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS) {
-
-      // Set the radar scanners have completed a full sweep variable to true
-      radar_scanners_has_completed_a_full_sweep = true;
-    }
+    // Set the distances in the radar scanners
+    radar_scanner.save_to_distances_array(angle, is_initial_distances);
   }
 }
 
@@ -493,33 +463,19 @@ void FallDetector::save_initial_distances() {
 //
 // This function returns whether the
 // fall detector should continue to run.
-bool FallDetector::run() {
+bool FallDetector::run(unsigned int angle, bool is_initial_distances,
+                       bool full_sweep_completed) {
 
-  // Initialise the variable to decide
-  // whether to check the data for a fall.
-  bool should_check_fall = false;
-
-  // Call the sweep function on the all of the radar scanners
-  for (unsigned int i = 0; i < FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS; ++i) {
-
-    // Get if the radar scanner has completed a full sweep
-    bool full_sweep_completed = this->_radar_scanners[i].sweep();
-
-    // If the full sweep is completed
-    if (full_sweep_completed) {
-
-      // Set the should check fall variable to true
-      should_check_fall = true;
-    }
-  }
+  // Save the distances for the radar scanners
+  this->_save_distances(angle, is_initial_distances);
 
   // Call the measure and store data function on the accelerometer
   this->_accelerometer.measure_and_store_data();
 
-  // If the fall detector shouldn't check for a fall,
+  // If a full sweep has not completed,
   // then return that the fall detector should continue to run,
   // since it has not checked that the room is empty
-  if (!should_check_fall) {
+  if (!full_sweep_completed) {
     return true;
   }
 

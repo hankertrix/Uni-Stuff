@@ -4,6 +4,7 @@
 #include "DcMotorDriver.h"
 #include "FallDetector.h"
 #include "PiezoBuzzer.h"
+#include "Servo.h"
 
 // Initialise the pins
 
@@ -25,8 +26,8 @@ static const unsigned int SERVO_MOTOR_2_PIN = A1;
 
 // Ultrasonic sensor 3 (not connected to servo motor).
 // This ultrasonic sensor is used to detect the door.
-static const unsigned int ULTRASONIC_SENSOR_3_TRIGGER_PIN = 9;
-static const unsigned int ULTRASONIC_SENSOR_3_ECHO_PIN = 10;
+static const unsigned int DOOR_ULTRASONIC_SENSOR_TRIGGER_PIN = 9;
+static const unsigned int DOOR_ULTRASONIC_SENSOR_ECHO_PIN = 10;
 
 // Other pins
 static const unsigned int PIEZO_BUZZER_PIN = A3;
@@ -51,14 +52,12 @@ static const unsigned int
 static const unsigned int RECENCY_OF_ACCELEROMETER_DATA_IN_MS = 10000;
 
 // Timing related parameters
-
-// 5 minutes to be considered a fall without force spike
 static const unsigned long
     MINIMUM_TIME_TO_BE_CONSIDERED_A_FALL_WITHOUT_FORCE_SPIKE_IN_MS =
-        5ul * 60ul * 1000ul;
+        30ul * 1000ul;
 static const unsigned long
     MINIMUM_TIME_TO_BE_CONSIDERED_A_FALL_WITH_FORCE_SPIKE_IN_MS =
-        1ul * 60ul * 1000ul;
+        15ul * 1000ul;
 
 // The enum for the mode of the Arduino
 enum ArduinoMode {
@@ -81,10 +80,11 @@ static DcMotorDriver DC_MOTOR_DRIVER(DcMotorDriverParameters{
     .dc_motor_pin_a = DC_MOTOR_PIN_A,
     .dc_motor_pin_b = DC_MOTOR_PIN_B,
     .eeprom_address = 0,
-    .minimum_position = -200,
-    .maximum_position = 200,
-    .allowable_error_in_position = 10,
-    .initial_speed = 75,
+    .minimum_position = 0,
+    .maximum_position = 20,
+    // .maximum_position = 16,
+    .allowable_error_in_position = 5,
+    .initial_speed = 100,
 });
 
 // Create the first ultrasonic sensor
@@ -96,20 +96,28 @@ static UltrasonicSensor ULTRASONIC_SENSOR_2(ULTRASONIC_SENSOR_2_TRIGGER_PIN,
                                             ULTRASONIC_SENSOR_2_ECHO_PIN);
 
 // Create the third ultrasonic sensor for the door sensor
-static UltrasonicSensor DOOR_ULTRASONIC_SENSOR(ULTRASONIC_SENSOR_3_TRIGGER_PIN,
-                                               ULTRASONIC_SENSOR_3_ECHO_PIN);
+static UltrasonicSensor
+    DOOR_ULTRASONIC_SENSOR(DOOR_ULTRASONIC_SENSOR_TRIGGER_PIN,
+                           DOOR_ULTRASONIC_SENSOR_ECHO_PIN);
 
 // Create the accelerometer
 static Accelerometer ACCELEROMETER(ACCELEROMETER_MEASUREMENT_RANGE);
 
+// Create the servo motors
+static Servo SERVO_MOTOR_1;
+static Servo SERVO_MOTOR_2;
+
+// The variables for the sweeping of the servo motor
+static unsigned int CURRENT_ANGLE = 0;
+static int CHANGE_IN_SWEEP_ANGLE = 1;
+static unsigned long PREVIOUS_SWEEP_TIME = 0;
+
 // Create the array of radar scanners
 static RadarScanner RADAR_SCANNERS[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS] = {
     RadarScanner(RadarScannerParameters{
-        .servo_motor_pin = SERVO_MOTOR_1_PIN,
         .ultrasonic_sensor = ULTRASONIC_SENSOR_1,
     }),
     RadarScanner(RadarScannerParameters{
-        .servo_motor_pin = SERVO_MOTOR_2_PIN,
         .ultrasonic_sensor = ULTRASONIC_SENSOR_2,
     }),
 };
@@ -170,6 +178,17 @@ void setup() {
   // Initialise the serial connection
   Serial.begin(9600);
 
+  // Initialise the servo motors
+  SERVO_MOTOR_1.attach(SERVO_MOTOR_1_PIN);
+  SERVO_MOTOR_2.attach(SERVO_MOTOR_2_PIN);
+
+  // Write the start of the angle range
+  SERVO_MOTOR_1.write(RADAR_SCANNER_START_ANGLE);
+  SERVO_MOTOR_2.write(RADAR_SCANNER_START_ANGLE);
+
+  // Print that the servo motors have been initialised
+  Serial.println(F("Servo motors initialised"));
+
   // Initialise the fall detector
   FALL_DETECTOR.initialise();
 
@@ -210,13 +229,99 @@ bool door_is_open() {
   return door_distance > THRESHOLD_DISTANCE_IN_CM_TO_CONSIDER_DOOR_OPEN;
 }
 
+// The function to sweep the servo motors
+bool sweep(bool save_to_initial_distance_array) {
+
+  // Initialise whether a full sweep has been completed
+  bool full_sweep_completed = false;
+
+  // If the time since the previous sweep is less than the delay
+  // in ms, exit the function and return the full sweep completed
+  // variable
+  if (millis() - PREVIOUS_SWEEP_TIME < RADAR_SCANNER_SERVO_MOTOR_DELAY_IN_MS) {
+    return full_sweep_completed;
+  }
+
+  // Constrain the current angle to between the start angle
+  // and the end angle.
+  //
+  // We technically shouldn't need to do this, since the angle
+  // can't go past the start and end angle, but this is just
+  // in case.
+  unsigned int current_angle = constrain(
+      CURRENT_ANGLE, RADAR_SCANNER_START_ANGLE, RADAR_SCANNER_END_ANGLE);
+
+  // Get the change in sweep angle
+  int change_in_sweep_angle = CHANGE_IN_SWEEP_ANGLE;
+
+  // If the current angle is the same as the start angle
+  if (current_angle == RADAR_SCANNER_START_ANGLE) {
+
+    // Set the change in sweep angle to 1
+    change_in_sweep_angle = 1;
+
+    // Set the full sweep completed variable to true
+    full_sweep_completed = true;
+  }
+
+  // Otherwise, if the current angle is the same as the end angle
+  else if (current_angle == RADAR_SCANNER_END_ANGLE) {
+
+    // Set the change in sweep angle to -1
+    change_in_sweep_angle = -1;
+
+    // Set the full sweep completed variable to true
+    full_sweep_completed = true;
+  }
+
+  // We need to save the distance for the current angle first,
+  // as the motor has moved to the current angle.
+  //
+  // But once you change the angle, the motor is no longer
+  // in the position for the new angle to get the new
+  // distance, since you need to wait for the motor
+  // to move to the new angle.
+  //
+  // Hence we get the distance for the current angle
+  // before changing the angle as we know that the
+  // servo motor is definitely in the position
+  // for the current angle.
+  //
+  // So we save the distance for the current angle.
+  FALL_DETECTOR.run(current_angle, save_to_initial_distance_array,
+                    full_sweep_completed);
+
+  // Change the current angle by the change in sweep angle
+  current_angle = current_angle + change_in_sweep_angle;
+
+  // Move the servo motors to the new current angle
+  SERVO_MOTOR_1.write(current_angle);
+  SERVO_MOTOR_2.write(current_angle);
+
+  // Set the current angle and the change in sweep angle
+  CURRENT_ANGLE = current_angle;
+  CHANGE_IN_SWEEP_ANGLE = change_in_sweep_angle;
+
+  // Set the previous sweep time to the current time
+  PREVIOUS_SWEEP_TIME = millis();
+
+  // Return the full sweep completed variable
+  return full_sweep_completed;
+}
+
 // The function to save the initial distances
 void save_initial_distances() {
 
-  // Call the function to save the initial distances
-  // for the fall detector
-  FALL_DETECTOR.save_initial_distances();
+  // While the angle is not at the end angle
+  while (CURRENT_ANGLE != RADAR_SCANNER_END_ANGLE) {
+
+    // Sweep the servo motors
+    sweep(true);
+  }
 }
+
+// The function to sweep the servo motors without arguments
+bool sweep() { return sweep(false); }
 
 // The main loop function of the Arduino
 void loop() {
@@ -245,6 +350,9 @@ void loop() {
     // Save the initial distances
     save_initial_distances();
 
+    // Print that the distances have been initialised
+    Serial.println(F("Distances initialised"));
+
     // Set the Arduino mode to on
     ARDUINO_MODE = ON;
   }
@@ -263,8 +371,8 @@ void loop() {
     return;
   }
 
-  // Otherwise, call the run function on the fall detector
-  FALL_DETECTOR_RUNNING = FALL_DETECTOR.run();
+  // Otherwise, sweep the servo motors
+  sweep();
 
   // Get the state of the DC motor toggle switch
   unsigned int dc_motor_toggle_switch_state =

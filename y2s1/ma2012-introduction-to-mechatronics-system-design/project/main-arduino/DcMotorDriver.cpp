@@ -158,7 +158,7 @@ void DcMotorDriver::run() {
 
     // Set the absolute speed of the DC motor to 200
     // to overcome the friction of the DC motor
-    motor_speed = 255;
+    motor_speed = 200;
 
     // Set that the DC motor is not on its first step
     this->_dc_motor_is_on_its_first_step = false;
@@ -204,9 +204,6 @@ void DcMotorDriver::move_to_absolute_position(int absolute_position) {
 
   // Set the target position to be the given absolute position
   this->_set_target_position(absolute_position);
-
-  // Run the DC motor driver
-  this->run();
 }
 
 // The function to move the DC motor by a relative number of steps,

@@ -17,8 +17,6 @@ static const unsigned int FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS = 2;
 struct FallDetectorParameters {
   Accelerometer &accelerometer;
   RadarScanner (&radar_scanners)[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS];
-  // RadarScannerParameters (
-  //     &radar_scanner_parameters)[FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS];
 
   // Interrupt pin
   unsigned int interrupt_pin;
@@ -68,6 +66,7 @@ private:
   unsigned long _previous_fall_time;
 
   // Functions
+  void _save_distances(unsigned int angle, bool is_initial_distances);
   void _get_radar_scanner_fall_data(
       unsigned int number_of_blocked_segments_array
           [FALL_DETECTOR_NUMBER_OF_RADAR_SCANNERS],
@@ -95,8 +94,8 @@ public:
 
   // Methods
   void initialise();
-  void save_initial_distances();
-  bool run();
+  bool run(unsigned int angle, bool is_initial_distances,
+           bool full_sweep_completed);
 };
 
 #endif
