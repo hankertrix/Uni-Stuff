@@ -24,8 +24,8 @@ static DcMotorDriver DC_MOTOR_DRIVER(DcMotorDriverParameters{
     .dc_motor_pin_a = DC_MOTOR_PIN_A,
     .dc_motor_pin_b = DC_MOTOR_PIN_B,
     .eeprom_address = 0,
-    .minimum_position = 0,
-    .maximum_position = 94,
+    .minimum_position = -94,
+    .maximum_position = 0,
     .allowable_error_in_position = 5,
     .initial_speed = 75,
 });

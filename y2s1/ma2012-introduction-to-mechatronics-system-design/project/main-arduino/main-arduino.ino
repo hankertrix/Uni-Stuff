@@ -80,9 +80,8 @@ static DcMotorDriver DC_MOTOR_DRIVER(DcMotorDriverParameters{
     .dc_motor_pin_a = DC_MOTOR_PIN_A,
     .dc_motor_pin_b = DC_MOTOR_PIN_B,
     .eeprom_address = 0,
-    .minimum_position = 0,
-    .maximum_position = 20,
-    // .maximum_position = 16,
+    .minimum_position = -20,
+    .maximum_position = 0,
     .allowable_error_in_position = 5,
     .initial_speed = 100,
 });

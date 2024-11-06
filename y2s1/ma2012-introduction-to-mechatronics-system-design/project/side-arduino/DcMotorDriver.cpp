@@ -122,9 +122,6 @@ void DcMotorDriver::stop() {
   digitalWrite(this->_dc_motor_driver_pin_a1, LOW);
   digitalWrite(this->_dc_motor_driver_pin_a2, LOW);
 
-  // Set the speed of the DC motor to 0
-  this->set_speed(0);
-
   // Set that the DC motor is on its first step
   this->_dc_motor_is_on_its_first_step = true;
 }
@@ -158,7 +155,7 @@ void DcMotorDriver::run() {
 
     // Set the absolute speed of the DC motor to 200
     // to overcome the friction of the DC motor
-    motor_speed = 200;
+    motor_speed = 255;
 
     // Set that the DC motor is not on its first step
     this->_dc_motor_is_on_its_first_step = false;
