@@ -42,7 +42,7 @@ static const unsigned int THRESHOLD_DISTANCE_IN_CM_TO_CONSIDER_DOOR_OPEN = 2;
 
 // Radar scanner parameters
 static const unsigned int MINIMUM_NUMBER_OF_BLOCKED_SEGMENTS =
-    0.5 * (RADAR_SCANNER_END_ANGLE - RADAR_SCANNER_START_ANGLE);
+    0.6 * (RADAR_SCANNER_END_ANGLE - RADAR_SCANNER_START_ANGLE);
 static const unsigned int MAXIMUM_NUMBER_OF_BREAKS = 5;
 static const unsigned int MAXIMUM_NUMBER_OF_BLOCKED_SEGMENTS_FOR_EMPTY_ROOM = 5;
 
@@ -54,10 +54,10 @@ static const unsigned int RECENCY_OF_ACCELEROMETER_DATA_IN_MS = 10000;
 // Timing related parameters
 static const unsigned long
     MINIMUM_TIME_TO_BE_CONSIDERED_A_FALL_WITHOUT_FORCE_SPIKE_IN_MS =
-        30ul * 1000ul;
+        60ul * 1000ul;
 static const unsigned long
     MINIMUM_TIME_TO_BE_CONSIDERED_A_FALL_WITH_FORCE_SPIKE_IN_MS =
-        15ul * 1000ul;
+        30ul * 1000ul;
 
 // The enum for the mode of the Arduino
 enum ArduinoMode {
@@ -83,7 +83,7 @@ static DcMotorDriver DC_MOTOR_DRIVER(DcMotorDriverParameters{
     .minimum_position = -20,
     .maximum_position = 0,
     .allowable_error_in_position = 5,
-    .initial_speed = 100,
+    .initial_speed = 75,
 });
 
 // Create the first ultrasonic sensor
@@ -201,6 +201,9 @@ void setup() {
   // Attach the interrupt handler for the DC motor driver
   attachInterrupt(digitalPinToInterrupt(DC_MOTOR_DRIVER.get_interrupt_pin()),
                   dc_motor_driver_interrupt_handler, RISING);
+
+  // Reset the position of the DC motor driver
+  DC_MOTOR_DRIVER.reset_position();
 
   // Print that the interrupts have been attached
   Serial.println(F("Interrupts attached"));
@@ -326,7 +329,7 @@ bool sweep() { return sweep(false); }
 void loop() {
 
   // Get whether the door is open
-  bool door_open = door_is_open();
+  bool door_open = true;
 
   // Get the current Arduino mode
   ArduinoMode current_arduino_mode = ARDUINO_MODE;
@@ -392,5 +395,5 @@ void loop() {
   }
 
   // Run the DC motor driver
-  DC_MOTOR_DRIVER.run();
+  // DC_MOTOR_DRIVER.run();
 }

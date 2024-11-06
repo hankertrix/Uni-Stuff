@@ -178,6 +178,9 @@ bool FallDetector::_radar_scanners_detected_fall(
     unsigned int number_of_blocked_segments =
         number_of_blocked_segments_array[radar_scanner_index];
 
+    Serial.print("Number of blocked segments: ");
+    Serial.println(number_of_blocked_segments);
+
     // Get the number of breaks
     unsigned int number_of_breaks = number_of_breaks_array[radar_scanner_index];
 

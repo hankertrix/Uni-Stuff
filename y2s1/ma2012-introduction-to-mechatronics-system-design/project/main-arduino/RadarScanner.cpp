@@ -104,24 +104,25 @@ void RadarScanner::compare_distance_arrays(bool boolean_array[]) {
     // Get the current distance for the angle
     unsigned int current_distance_in_cm = this->_current_distances_in_cm[index];
 
-    // If the distance in the initial distance array
-    // minus the distance in the current distance array
+    // If the distance in the current distance array
+    // is less than or equal to the distance in the initial distance array
     // is more than 0.
-    if (initial_distance_in_cm - current_distance_in_cm > 0) {
+    if (current_distance_in_cm < initial_distance_in_cm) {
 
-      // Set the item in the boolean array to false,
+      // Set the item in the boolean array to true,
       // as this means that the current distance
-      // is the same as the initial distance,
-      // or more than the initial distance somehow
-      boolean_array[index] = false;
+      // is the less than the initial distance,
+      // so it is blocked
+      boolean_array[index] = true;
 
       // Continue the loop
       continue;
     }
 
-    // Otherwise, the distance is less than
-    // the initial distance, so set the item
-    // in the boolean array to true
-    boolean_array[index] = true;
+    // Otherwise, the distance is more than
+    // or equal to the initial distance,
+    // so set the item
+    // in the boolean array to false
+    boolean_array[index] = false;
   }
 }

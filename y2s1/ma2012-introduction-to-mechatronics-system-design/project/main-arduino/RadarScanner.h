@@ -27,7 +27,7 @@ static const unsigned int RADAR_SCANNER_ANGLE_RANGE =
     RADAR_SCANNER_END_ANGLE - RADAR_SCANNER_START_ANGLE;
 
 // The servo motor delay in milliseconds
-static const unsigned int RADAR_SCANNER_SERVO_MOTOR_DELAY_IN_MS = 15;
+static const unsigned int RADAR_SCANNER_SERVO_MOTOR_DELAY_IN_MS = 30;
 
 class RadarScanner {
 
