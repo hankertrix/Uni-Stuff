@@ -140,7 +140,7 @@ npx eas build
    distribute it to the App Store.
 
 # Licence
-This project is licenced under the GNU GPL v3.
+This project is licenced under the GNU AGPL v3.
 You can view the `LICENCE.txt` file for the full
 licence text.
 

@@ -491,4 +491,4 @@ Just a few examples of what the program can do!
 - Uses TOML as the logo file format, which is easy to read and learn.
 
 * Licence
-This program is licensed under the GNU GPL V3 licence. You can view the ~LICENCE.txt~ file that is distributed with the program for the licence text.
+This program is licensed under the GNU AGPL V3 licence. You can view the ~LICENCE.txt~ file that is distributed with the program for the licence text.

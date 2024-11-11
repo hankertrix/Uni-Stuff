@@ -117,5 +117,5 @@ where you can interact with the USART0 console of the Arduino board.
 
 ## Licence
 
-This project is licenced under the [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html).
+This project is licenced under the [GNU AGPL v3](https://www.gnu.org/licenses/agpl-3.0.en.html).
 You can view the full licence text in the `LICENCE.txt` file.
