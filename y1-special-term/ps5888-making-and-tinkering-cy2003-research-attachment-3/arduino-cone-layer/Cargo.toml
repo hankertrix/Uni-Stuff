@@ -3,7 +3,7 @@ name = "arduino-cone-layer"
 version = "0.1.0"
 authors = ["hankertrix <91734413+hankertrix@users.noreply.github.com>"]
 edition = "2021"
-license = "GPL-3.0-or-later"
+license = "AGPL-3.0-or-later"
 
 [[bin]]
 name = "arduino-cone-layer"
