@@ -69,11 +69,14 @@ Alternatively, you can contact me on Telegram using my Telegram handle [@hankert
 
 ## Licence
 
-All files in this repository are licensed under a
+All files in this repository are licenced under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Licence][cc-by-nc-sa],
-which can be found in the top level `LICENCE.txt` file,
-unless another licence is found inside the folder.
-An example is the licence file found in the MA1008 mini project folder.
+which can be found in the top level `LICENCE.txt` file.
+All code in this repository is licenced under the
+[GNU AGPL v3](https://www.gnu.org/licenses/agpl-3.0.en.html).
+The licences found inside the folders for the
+software projects should agree with this licence.
+The full licence text can be found in the `LICENCE_CODE.txt` file.
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
 
