@@ -47,7 +47,7 @@ which is the final result that you want to view.
 
 <hr>
 
-If there is only one file, it should be an `.org` file, so just click on it to view it.
+If there is only one file, it should be a `.org` file, so just click on it to view it.
 The platform should display the file in an easily readable format.
 
 ## Special modules
@@ -61,11 +61,24 @@ mapping out those modules.
 | ---------------------------------------- | ---------------------------------------- |
 | SP0061 Science & Technology for Humanity | CC0007 Science & Technology for Humanity |
 
+## Moved modules
+
+There are some modules that I moved to a different repository
+as the cheat sheet I made for those modules have outgrown their
+use as a simple cheat sheet, and have become more of a proper resource
+that should be maintained separately from this repository, which is
+really just a dump of my university notes and tutorials.
+
+| Module                                 | Repository link                                                                          |
+| -------------------------------------- | ---------------------------------------------------------------------------------------- |
+| LL5001 Singapore Sign Language Level 1 | [Singapore Sign Language (SgSL) Sign Bank](https://github.com/hankertrix/SgSL-Sign-Bank) |
+
 ## Errors
 
 If you find any errors inside my notes or tutorials,
 feel free to open an issue or submit a pull request to fix the error.
-Alternatively, you can contact me on Telegram using my Telegram handle [@hankertrix](https://t.me/hankertrix).
+Alternatively, you can contact me on Telegram using my Telegram handle
+[@hankertrix](https://t.me/hankertrix).
 
 ## Licence
 
