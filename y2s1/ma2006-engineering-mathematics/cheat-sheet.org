@@ -1269,8 +1269,8 @@ b_n &= \frac{1}{L} \int_{-L}^{L} f(x) \sin \left( \frac{n \pi x}{L} \right) \, d
 &= \frac{2}{L} \int_0^L f(x) \sin \left( \frac{n \pi x}{L} \right) \, dx \quad \because f(x) \text{ and } \sin \left( \frac{n \pi x}{L} \right) \text{ are both odd}
 \end{align*}
 
-*** Representing a continuous function
-Suppose $g(x)$ is a continuous function over \(0 < x < l, l \in \mathbb{R}\). We can extend $g(x)$ to become an *odd* periodic function of period \(2l\):
+*** Extending a continuous function
+Suppose $g(x)$ is a continuous function over \(0 < x < l, l \in \mathbb{R}\). We can extend $g(x)$ to become an *odd* periodic function of period \(2l\) by letting \(g(x) = - g(-x)\):
 
 \[g(x) = \sum_{n = 1}^{\infty} b_n \sin \left( \frac{n \pi x}{l} \right), \quad 0 < x < l\]
 
@@ -1292,8 +1292,8 @@ a_n &= \frac{1}{L} \int_{-L}^{L} f(x) \cos \left( \frac{n \pi x}{L} \right) \, d
 &= \frac{2}{L} \int_0^L f(x) \cos \left( \frac{n \pi x}{L} \right) \, dx \quad \because f(x) \text{ and } \cos \left( \frac{n \pi x}{L} \right) \text{ are both even}
 \end{align*}
 
-*** Representing a continuous function
-Suppose $g(x)$ is a continuous function over \(0 < x < l, l \in \mathbb{R}\). We can extend $g(x)$ to become an *even* periodic function of period \(2l\):
+*** Extending a continuous function
+Suppose $g(x)$ is a continuous function over \(0 < x < l, l \in \mathbb{R}\). We can extend $g(x)$ to become an *even* periodic function of period \(2l\) by letting \(g(x) = g(-x)\):
 
 \[g(x) = a_0 + \sum_{n = 1}^{\infty} a_n \cos \left( \frac{n \pi x}{l} \right), \quad 0 < x < l\]
 
@@ -1303,6 +1303,9 @@ Where:
 \[n = 1, 2, 3, \ldots\]
 
 @@latex: \newpage@@
+
+** Periodic extensions of continuous functions
+[[./images/function-extensions.png]]
 
 ** Complex Fourier series
 Let $f(x)$ be a periodic function with period $2L, L \in \mathbb{R}^{+}$. The complex Fourier series of $f(x)$ is given by:

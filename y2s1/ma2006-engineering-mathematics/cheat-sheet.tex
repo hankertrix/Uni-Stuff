@@ -1,4 +1,4 @@
-% Created 2024-11-21 Thu 07:32
+% Created 2024-11-27 Wed 23:49
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -34,18 +34,18 @@
 \setcounter{tocdepth}{2}
 \tableofcontents \clearpage
 \section{Definitions}
-\label{sec:org4e9dd57}
+\label{sec:org5299d68}
 
 \subsection{Order}
-\label{sec:orga11318e}
+\label{sec:orgc435643}
 The order of the matrix is the number of rows and columns the matrix has. Usually, this is represented as \(m \times n\) for a matrix with \(m\) rows and \(n\) columns.
 
 \subsection{Matrix}
-\label{sec:orgd74e0cc}
+\label{sec:org25fd1f0}
 An \(m \times n\) matrix is an array of \(mn\) numbers enclosed within a pair of brackets and arranged in \(m\) rows and \(n\) columns.
 
 \subsubsection{Examples}
-\label{sec:orgbc0be89}
+\label{sec:orgb682a32}
 \begin{displaymath}
 \begin{bmatrix}
 2 & 1 \\
@@ -70,7 +70,7 @@ An \(m \times n\) matrix is an array of \(mn\) numbers enclosed within a pair of
 
 
 \subsubsection{Notation}
-\label{sec:org1be0712}
+\label{sec:orgda74762}
 Let \(A\) be an \(m \times n\) matrix. The element in the \(i\)-th row and \(j\)-th column of \(A\) is denoted by \(a_{ij}\).
 
 \begin{displaymath}
@@ -83,15 +83,15 @@ a_{m1} & a_{m2} & \cdots & a_{mn}
 \end{displaymath}
 
 \subsection{Square matrix}
-\label{sec:orgdc075a6}
+\label{sec:orgd44b1fd}
 A square matrix is a matrix where the number of rows is equal to the number of columns, i.e. \(m = n\). A square matrix is usually denoted as a \(n \times n\) matrix.
 
 \subsection{Equal matrices}
-\label{sec:org5a57cac}
+\label{sec:org1e5dc18}
 For two \(m \times n\) matrices \(A\) and \(B\), they are said to be equal if \(a_{ij} = b_{ij}\).
 
 \subsection{Adding matrices}
-\label{sec:org0207064}
+\label{sec:org08ac771}
 If \(A + B = C\), then \(C = (c_{ij})\) is \(m \times n\) and \(c_{ij} = a_{ij} + b_{ij}\).
 
 \begin{displaymath}
@@ -108,7 +108,7 @@ If \(A + B = C\), then \(C = (c_{ij})\) is \(m \times n\) and \(c_{ij} = a_{ij} 
 \end{displaymath}
 
 \subsection{Multiplication of a number to a matrix}
-\label{sec:orgb415731}
+\label{sec:org313a4cb}
 If \(A = (a_{ij})\) and \(k\) is a number, then \(cA = (ca_{ij})\) and \(cA\) has the same order as \(A\).
 
 \begin{displaymath}
@@ -139,7 +139,7 @@ We write \((-1)A\) as \(-A\). So \(B - A = B + (- A)\).
  \newpage
 
 \subsection{Product of matrices}
-\label{sec:org4881fcc}
+\label{sec:org4bbd97c}
 Let \(A = (a_{ij})\) and \(B = (b_{ij})\) be \(m \times n\) and \(p \times q\) matrices respectively.
 
 If \(n = p\), we can form the product matrix \(AB\).
@@ -165,7 +165,7 @@ Essentially, we multiply the first row of the first matrix with the first column
 The resulting product matrix of an \(m \times n\) and an \(n \times p\) matrix will be an \(m \times p\) matrix. Note that the number of \textbf{columns} on the \textbf{first matrix must be the same} as the number of \textbf{rows} of the \textbf{second matrix}.
 
 \subsubsection{Example}
-\label{sec:orge61a144}
+\label{sec:org660603e}
 \begin{displaymath}
 P = \begin{bmatrix}
 1 & 2 \\
@@ -194,11 +194,11 @@ PQ = \begin{bmatrix}
 \end{displaymath}
 
 \subsection{Identity matrix (\(I\))}
-\label{sec:org6938726}
+\label{sec:org4abac16}
 An identity matrix is a \(n \times n\) matrix \((c_{ij})\) such that \(c_{11} = c_{22} = c_{33} = \ldots = c_{nn} = 1\) and \(c_{ij} = 0\). Basically, an identity matrix is a square matrix where the diagonal is all 1, and all the other elements are 0.
 
 \subsubsection{Examples}
-\label{sec:org07d8e91}
+\label{sec:orga2f1796}
 \begin{displaymath}
 \begin{bmatrix}
 1 & 0 \\
@@ -216,11 +216,11 @@ An identity matrix is a \(n \times n\) matrix \((c_{ij})\) such that \(c_{11} = 
 \end{displaymath}
 
 \subsubsection{Special property of the identity matrix}
-\label{sec:orgda587f9}
+\label{sec:org0dfb09b}
 The identity matrix multiplied by any matrix will return the matrix back. For any matrix \(A\), \(IA = AI = A\).
 
 \subsection{Transpose matrix (\(A^T\))}
-\label{sec:org2ef71b1}
+\label{sec:orgc9c1272}
 Given \(A\) is an \(m \times n\) matrix, the transpose of \(A\) is the \(n \times m\) matrix obtained as follows:
 
 The \(i\)-th column of the transpose of \(A\) is the \(i\)-th row of \(A\).
@@ -229,7 +229,7 @@ The \(i\)-th column of the transpose of \(A\) is the \(i\)-th row of \(A\).
 The transpose of \(A\) is denoted by \(A^T\).
 
 \subsubsection{Examples}
-\label{sec:org78a7c8d}
+\label{sec:org9835437}
 \begin{displaymath}
 A = \begin{bmatrix}
 1 \\
@@ -262,16 +262,16 @@ B = \begin{bmatrix}
 \end{displaymath}
 
 \subsubsection{Transpose of a product matrix}
-\label{sec:org84ba0c3}
+\label{sec:org6ab18b3}
 The transpose of a product matrix \(AB\) is given by \(B^T A^T\), i.e.
 \[(AB)^T = B^T A^T\]
 
 \subsection{Symmetric matrices}
-\label{sec:org74655a1}
+\label{sec:orga295955}
 A symmetric matrix is a \textbf{square matrix} where \(A^T = A\).
 
 \subsubsection{Example}
-\label{sec:orgdf0f3ec}
+\label{sec:org1c856af}
 \begin{displaymath}
 A = \begin{bmatrix}
 1 & 3 & 5 \\
@@ -285,7 +285,7 @@ A = \begin{bmatrix}
 \end{displaymath}
 
 \subsection{Upper triangular matrix}
-\label{sec:orge148cd8}
+\label{sec:orgac5ee0d}
 An upper triangular matrix is a \textbf{square} matrix where \(a_{ij} = 0\) for \(i > j\). Basically, an upper triangular matrix has all elements \textbf{below} the diagonal as 0.
 
 The transpose of a \textbf{lower} triangular matrix is an upper triangular matrix.
@@ -299,7 +299,7 @@ The transpose of a \textbf{lower} triangular matrix is an upper triangular matri
 \end{displaymath}
 
 \subsection{Lower triangular matrix}
-\label{sec:orgf4ae1b7}
+\label{sec:org4f8e106}
 A lower triangular matrix is a \textbf{square} matrix where \(a_{ij} = 0\) for \(i < j\). Basically, an upper triangular matrix has all elements \textbf{above} the diagonal as 0.
 
 The transpose of an \textbf{upper} triangular matrix is a lower triangular matrix.
@@ -315,7 +315,7 @@ The transpose of an \textbf{upper} triangular matrix is a lower triangular matri
  \newpage
 
 \subsection{Diagonal matrix}
-\label{sec:orgd94fe17}
+\label{sec:orga917661}
 A diagonal matrix is a \textbf{square} matrix where \(a_{ij} = 0\) for \(i \neq j\). Basically, a diagonal matrix has all elements that are not in the diagonal of the matrix as 0.
 
 The transpose of a diagonal matrix is itself, and hence all diagonal matrices are symmetric, i.e. \(D^{T} = D\)
@@ -329,7 +329,7 @@ The transpose of a diagonal matrix is itself, and hence all diagonal matrices ar
 \end{displaymath}
 
 \subsection{Matrix form of linear equations}
-\label{sec:orgaa48eb5}
+\label{sec:orga3a708b}
 Given a system of \(N\) linear equations:
 \[a_{11}x_1 + a_{12}x_2 + a_{13}x_3 + \ldots + a_{1N}x_{N} = b_1\]
 \[a_{21}x_1 + a_{22}x_2 + a_{23}x_3 + \ldots + a_{2N}x_{N} = b_2\]
@@ -368,7 +368,7 @@ b_N
 \end{displaymath}
 
 \subsubsection{Example}
-\label{sec:org2200d1c}
+\label{sec:org6f3d572}
 \begin{align*}
 2x + 3y &= 10 \\
 -x + y &= 0
@@ -398,24 +398,24 @@ y
 \end{displaymath}
 
 \subsection{Inconsistent system of linear equations}
-\label{sec:org03c4bc7}
+\label{sec:org1b07fdd}
 An inconsistent system of linear equations is a system that has no solution.
 
 \subsubsection{Example}
-\label{sec:orgc6445c9}
+\label{sec:org6a23675}
 \begin{align*}
 x + y &= 10 \\
 x + y &= 5
 \end{align*}
 
 \subsection{Consistent system of linear equations}
-\label{sec:orgcbb6562}
+\label{sec:org878997b}
 A consistent system of linear equations is a system that has only one solution, i.e. a \textbf{unique} solution, or infinitely many solutions.
 
  \newpage
 
 \subsection{Homogeneous system of linear equations}
-\label{sec:org95c987d}
+\label{sec:org64c35b8}
 A homogeneous system of linear equations is a system of equations that \textbf{all} equate to 0.
 \[a_{11}x_1 + a_{12}x_2 + a_{13}x_3 + \ldots + a_{1N}x_{N} = 0\]
 \[a_{21}x_1 + a_{22}x_2 + a_{23}x_3 + \ldots + a_{2N}x_{N} = 0\]
@@ -437,7 +437,7 @@ A homogeneous system of linear equations is \textbf{always} consistent, as the t
 Such a system has either only the trivial solution, or has infinitely many solutions (one of which is the trivial solution).
 
 \subsection{Vector (\(\boldsymbol{x}\))}
-\label{sec:orge5f65fd}
+\label{sec:org03c3a95}
 An \(N\)-th dimensional vector is a well-ordered set of \(N\) real numbers written in the form:
 \begin{displaymath}
 \begin{bmatrix}
@@ -469,7 +469,7 @@ and
 are two different 4-th dimensional vectors.
 
 \subsubsection{Set of vectors}
-\label{sec:org64ceada}
+\label{sec:orgdbb18f7}
 The set of \textbf{all} \(N\)-th dimensional vectors forms a vector space denoted by \(\mathbb{R}^N\). For example, \(\mathbb{R}^3\) is the set of all 3-dimensional vectors and
 \begin{math}
 \begin{bsmallmatrix}
@@ -488,7 +488,7 @@ is a member of \(\mathbb{R}^3\), i.e.
 \end{displaymath}
 
 \subsection{Linear combinations of vectors}
-\label{sec:org726aaa0}
+\label{sec:org7121180}
 Let \(\boldsymbol{u}\) and \(\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsymbol{v}_{k-1}, \boldsymbol{v}_k\) be vectors in \(\mathbb{R}^n\).
 \\[0pt]
 
@@ -496,7 +496,7 @@ Let \(\boldsymbol{u}\) and \(\boldsymbol{v}_1, \boldsymbol{v}_2, \ldots, \boldsy
 \[\boldsymbol{u} = a_1 \boldsymbol{v}_1 + a_2  \boldsymbol{v}_2 + \ldots + a_{k-1} \boldsymbol{v}_{k-1} + a_k \boldsymbol{v}_k\]
 
 \subsubsection{Example}
-\label{sec:orgc44f38d}
+\label{sec:org3a52cfc}
 Express (5, -3, -4) as a linear combination of (1, 1, 0), (3, 0, 1) and (0, 1, 3).
 \\[0pt]
 
@@ -529,7 +529,7 @@ Solving using Gauss elimination:
 \[\therefore \quad z = -2, \quad y = 2, \quad x = -1\]
 
 \subsection{Linearly independent vectors}
-\label{sec:orgbde4e96}
+\label{sec:org09f90ef}
 Let \(\boldsymbol{w}_1, \boldsymbol{w}_2, \ldots, \boldsymbol{w}_{p-1}, \boldsymbol{w}_p\) be vectors in \(\mathbb{R}^n\).
 \\[0pt]
 
@@ -539,27 +539,27 @@ We say that \(\boldsymbol{w}_1, \boldsymbol{w}_2, \ldots, \boldsymbol{w}_{p-1}, 
 If \(c_1 = c_2 = \ldots = c_{p-1} = c_p = 0\) is the only solution of the system then the vectors are linearly independent.
 
 \subsection{Inverse matrices (\(A^{-1}\))}
-\label{sec:orgc432e64}
+\label{sec:orgd551f43}
 A square \(n \times n\) matrix \(B\) is said to be an inverse of a square \(n \times n\) matrix \(A\) if:
 \[AB = BA = I\]
 
 \(B\) can also be denoted as \(A^{-1}\).
 
 \subsection{Invertible matrices}
-\label{sec:orgd360c31}
+\label{sec:org859c2bd}
 If a matrix \(A\) has an inverse, then we say \(A\) is invertible. The inverse of \(A\) is denoted by \(A^{-1}\). An invertible matrix has only one unique inverse.
 
 \subsubsection{Finding the inverse matrix}
-\label{sec:orgd755328}
+\label{sec:org065c8a9}
 Write the matrix \(A\) and the identity matrix \(I\) side by side and reduce the matrix \(A\) to the identity matrix \(I\) by using Gauss-Jordan elimination, making sure that all row operations are also applied to the matrix beside \(A\). When \(A\) has been reduced to the identity matrix \(I\), the resulting matrix to the side of \(A\) is the inverse matrix of \(A\), or \(A^{-1}\).
 
 \subsubsection{Inverse of a product matrix}
-\label{sec:orgd59dc8c}
+\label{sec:org2adb221}
 The inverse of a product matrix \(AB\) is given by \(B^{-1} A^{-1}\), i.e.
 \[(AB)^{-1} = B^{-1} A^{-1}\]
 
 \subsubsection{Inverse of a \(2 \times 2\) matrix}
-\label{sec:orgefe7ebf}
+\label{sec:org3876812}
 Let:
 \begin{displaymath}
 A = \begin{bmatrix}
@@ -579,11 +579,11 @@ d & -b \\
  \newpage
 
 \subsection{Singular matrices}
-\label{sec:orga10a0d3}
+\label{sec:org1399555}
 Singular matrices are matrices that are not invertible.
 
 \subsection{Minor}
-\label{sec:orgc290dbf}
+\label{sec:org6f3a1a5}
 The minor \(M_{ij}\) of the entry \(a_{ij}\) is the determinant of the matrix that remains after the \(i\)-th row and \(j\)-th column are removed from \(A\).
 \\[0pt]
 
@@ -699,7 +699,7 @@ M_{33} \text{ of }
  \newpage
 
 \subsection{Cofactor}
-\label{sec:org21e6872}
+\label{sec:orge4d83d8}
 The cofactor \(C_{ij}\) of the entry \(a_{ij}\) is defined as:
 \[C_{ij} = (-1)^{i + j} M_{ij}\]
 
@@ -716,7 +716,7 @@ of the entry in the matrix:
 \end{displaymath}
 
 \subsection{Cofactor expansion}
-\label{sec:org1aeef1f}
+\label{sec:org640c07c}
 The cofactor expansion along a row or column of \(A\) is obtained by multiplying each entry of the row or column with its cofactor, and adding those products together, i.e.
 \\[0pt]
 
@@ -729,7 +729,7 @@ Along the \(j\)-th column:
  \newpage
 
 \subsubsection{Example}
-\label{sec:org6300a9f}
+\label{sec:org050213d}
 Let
 
 \begin{displaymath}
@@ -749,27 +749,27 @@ h & i & j
 \end{center}
 
 \subsubsection{Theorem}
-\label{sec:orgc2776a1}
+\label{sec:orgfd63a65}
 Let \(A\) be an \(n \times n\) matrix. The cofactor expansion along any of its rows or any of its columns will yield the same number.
 
 \subsection{Determinant of a matrix (\(\det A\))}
-\label{sec:orgead4d14}
+\label{sec:orgd8327c3}
 The \textbf{determinant} \(\det A\) or \(|A|\) of a \textbf{square} matrix \(A\) is a real number.
 
 \subsubsection{Determinant of a \(2 \times 2\) matrix}
-\label{sec:orgffcda1d}
+\label{sec:org9d0b8b0}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./images/determinant-of-a-2-by-2-matrix.png}
 \end{center}
 
 \subsubsection{Determinant of a \(3 \times 3\) matrix}
-\label{sec:org47f9c3b}
+\label{sec:org1230a70}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./images/determinant-of-a-3-by-3-matrix.png}
 \end{center}
 
 \subsubsection{Definition}
-\label{sec:org7dbd6b6}
+\label{sec:orgc612725}
 Let \(A\) be an \(n \times n\) matrix.
 \begin{itemize}
 \item If \(n = 1\), i.e. \(A = [a]\), we define \(\det A = a\)
@@ -777,15 +777,15 @@ Let \(A\) be an \(n \times n\) matrix.
 \end{itemize}
 
 \subsubsection{Triangular matrices and diagonal matrices}
-\label{sec:org3814e4e}
+\label{sec:org212f30a}
 The determinant of a triangular matrix or a diagonal matrix is the product of all the diagonal elements in the matrix.
 
 \subsubsection{Relationship to invertibility}
-\label{sec:org3d78af3}
+\label{sec:orgb3ecfbd}
 Let \(A\) be an \(n \times n\) matrix. \(A\) is invertible \textbf{if and only if} \(\det A \ne 0\). Hence, \(A\) is singular \textbf{if and only if} \(\det A = 0\).
 
 \subsubsection{Relationship to homogeneous systems}
-\label{sec:org782285a}
+\label{sec:orgd7124ae}
 Let \(A \boldsymbol{x} = \boldsymbol{0}\) be a homogeneous system.
 
 \begin{itemize}
@@ -794,29 +794,29 @@ Let \(A \boldsymbol{x} = \boldsymbol{0}\) be a homogeneous system.
 \end{itemize}
 
 \subsubsection{Rules for the manipulation of determinants}
-\label{sec:org7363e53}
+\label{sec:org3fcafaf}
 \[\det (AB) = \det A \cdot \det B\]
 \[\det A = \det A^T\]
 \[\det A^{-1} = \frac{1}{\det A}\]
 \[\det (kA) = k \det A\]
 
 \subsection{Eigenvalues of a matrix (\(\lambda\))}
-\label{sec:orgbdc0b6a}
+\label{sec:org2bacd94}
 Given an \(n \times n\) matrix \(A\), the eigenvalue is the \(\lambda\) term when finding an \(n \times 1\) vector \(\boldsymbol{x}\) such that \(A \boldsymbol{x} = \lambda \boldsymbol{x}\), where \(\lambda\) is a real or complex number.
 
 \subsection{Eigenvector of a matrix (\(\boldsymbol{x}\))}
-\label{sec:org2a6522e}
+\label{sec:org337fca7}
 Given an \(n \times n\) matrix \(A\), the eigenvector is the \(n \times 1\) vector \(\boldsymbol{x}\) such that \(A \boldsymbol{x} = \lambda \boldsymbol{x}\), where \(\lambda\) is a real or complex number.
 
 \subsection{Characteristic equation of a matrix}
-\label{sec:org67ee866}
+\label{sec:orgeb879d3}
 Given an \(n \times n\) matrix \(A\), the equation below is the characteristic equation of matrix \(A\):
 \[\det (A - \lambda I) = 0\]
 
 This equation is used to find the eigenvalues (\(\lambda\)) of \(A\). The characteristic equation is a polynomial equation of order \(n\) and the matrix \(A\) can have up to \(n\) distinct eigenvalues.
 
 \subsection{Diagonalisable matrix}
-\label{sec:org9a4a296}
+\label{sec:org460c3ee}
 An \(n \times n\) matrix \(A\) is said to be \textbf{diagonalisable} if there exists an invertible matrix \(P\) such that \(D\) is a diagonal matrix:
 \[D = P^{-1} A P\]
 \[A = PDP^{-1}\]
@@ -844,17 +844,17 @@ P = \begin{bmatrix}
 A matrix is diagonalisable \textbf{if and only if} \(A\) has \(n\) linearly independent eigenvectors.
 
 \subsubsection{For symmetric matrices}
-\label{sec:org3389700}
+\label{sec:org2ebed4d}
 If \(A\) is a symmetric matrix, i.e. \(A = A^T\), then:
 \[P^{-1} = P^T\]
 \[A = PDP^T\]
 
 \subsection{Vector}
-\label{sec:org4447668}
+\label{sec:orgacf6c3a}
 A vector is a quantity that has magnitude and direction.
 
 \subsubsection{Notation}
-\label{sec:org5f977bb}
+\label{sec:orge1ccc18}
 Let \(\boldsymbol{u}\) be a vector given by the directed line \(\overrightarrow{PQ}\).
 \begin{center}
 \includegraphics[width=.9\linewidth]{./images/vector-notation-line-pq.png}
@@ -863,7 +863,7 @@ Let \(\boldsymbol{u}\) be a vector given by the directed line \(\overrightarrow{
 \[\boldsymbol{u} = \overrightarrow{PQ} = (q_1 - p_1) \boldsymbol{i} + (q_2 - p_2) \boldsymbol{j} + (q_3 - p_3) \boldsymbol{k}\]
 
 \subsection{Vector addition}
-\label{sec:org972650a}
+\label{sec:orgd62292b}
 If
 \[\boldsymbol{u} = a \boldsymbol{i} + b \boldsymbol{j} + c \boldsymbol{k} = (a, b, c)\]
 \[\boldsymbol{v} = p \boldsymbol{i} + q \boldsymbol{j} + r \boldsymbol{k} = (p, q, r)\]
@@ -876,12 +876,12 @@ Then:
 \end{center}
 
 \subsection{Magnitude of a vector (\(| \boldsymbol{x} |\))}
-\label{sec:orgfb7ed64}
+\label{sec:orgbe70de5}
 If \(\boldsymbol{x} = (x_1, x_2, x_3)\), then:
 \[| \boldsymbol{x} | = \sqrt{x_1^2 + x_2^2 + x_3^2}\]
 
 \subsection{Norm of a vector (\(|| \boldsymbol{x} ||\))}
-\label{sec:org5c6045b}
+\label{sec:org49f28dd}
 The norm of a vector gives its magnitude.
 \begin{displaymath}
 \text{If } \boldsymbol{x} = \begin{bmatrix}
@@ -896,7 +896,7 @@ Then:
 \[|| \boldsymbol{x} || = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}\]
 
 \subsection{Multiplication of a vector with a scalar}
-\label{sec:orgcab071b}
+\label{sec:org8361a89}
 Let \(\boldsymbol{u}\) be a vector \((a, b, c)\) and \(k \in \mathbb{R}\), then:
 \[k \boldsymbol{u} = k (a, b, c) = (ka, kb, kc)\]
 \[|k \boldsymbol{u}| = |k| |\boldsymbol{u}|\]
@@ -906,7 +906,7 @@ If \(k\) is positive, then \(k \boldsymbol{u}\) points in the \textbf{same} dire
 If \(k\) is negative, then \(k \boldsymbol{u}\) points in the \textbf{opposite} direction as \(\boldsymbol{u}\).
 
 \subsection{Unit vector}
-\label{sec:orgc0fe17f}
+\label{sec:orgc8cfd56}
 Let \(\boldsymbol{u}\) be a vector \((a, b, c)\), then the \textbf{unit} vector \(\boldsymbol{v}\) is given by:
 \begin{align*}
 \boldsymbol{v} &= \frac{1}{|\boldsymbol{u}|} \boldsymbol{u} \\
@@ -917,7 +917,7 @@ Let \(\boldsymbol{u}\) be a vector \((a, b, c)\), then the \textbf{unit} vector 
 We say that \(\boldsymbol{v}\) is obtained by normalising \(\boldsymbol{u}\).
 
 \subsection{Dot product}
-\label{sec:orgc0a6617}
+\label{sec:orgd904f8b}
 Let \(\boldsymbol{u} = (a, b, c)\) and \(\boldsymbol{v} = (p, q, r)\) be two vectors. We define the dot product \(\boldsymbol{u} \cdot \boldsymbol{v} = ap + bq + cr\).
 
 \[(a, b, c) \cdot (p, q, r) = ap + bq + cr\]
@@ -939,7 +939,7 @@ If \(\boldsymbol{u} \cdot \boldsymbol{v}\) is zero then \(\boldsymbol{u}\) and \
  \newpage
 
 \subsection{Cross product}
-\label{sec:org12fc31b}
+\label{sec:orga3e7d3f}
 Let \(\boldsymbol{u} = (a, b, c)\) and \(\boldsymbol{v} = (p, q, r)\) be two vectors. The cross product of a vector is the determinant of the matrix when laying the vectors out as shown below:
 
 \begin{align*}
@@ -967,7 +967,7 @@ The resulting vector \(\boldsymbol{u} \times \boldsymbol{v}\) from the cross pro
 \end{center}
 
 \subsection{Plane}
-\label{sec:org55c67d0}
+\label{sec:org9c6a1db}
 The equation of a plane is given in the forms below:
 \[ax + by + cz = k, k \in \mathbb{R}\]
 \[\vec{n} \cdot \vec{r} = 0\]
@@ -979,7 +979,7 @@ Where:
 \end{itemize}
 
 \subsubsection{Parametrising the plane}
-\label{sec:org67c37e4}
+\label{sec:org8f2b4cc}
 \[x = \alpha_1 s + \beta_1 u + \gamma_1\]
 \[y = \alpha_2 s + \beta_2 u + \gamma_2\]
 \[z = \alpha_3 s + \beta_3 u + \gamma_3\]
@@ -991,7 +991,7 @@ Where:
 \end{itemize}
 
 \subsection{Surfaces}
-\label{sec:org3d9040f}
+\label{sec:org331bce5}
 Points \((x, y, z)\) on a surface in 3D space may be described by a single equation in \(x, y\) and \(z\), which is:
 \[F(x, y, z) = k, k \in \mathbb{R}\]
 
@@ -1003,7 +1003,7 @@ In parametric form, the \(x, y\) and \(z\) coordinates on a surface are describe
 The functions above are the solutions of \(F(x, y, z) = k\). For a plane, \(f, g\) and \(h\) are linear functions of \(s\) and \(u\).
 
 \subsubsection{Examples}
-\label{sec:org94f23e0}
+\label{sec:orgdfb3a54}
 Plane (flat) surface:
 \[2x + y + z = 1\]
 
@@ -1011,7 +1011,7 @@ Spherical surface:
 \[(x - 1)^2 + (y - 2)^2 (z - 3)^2 = 16\]
 
 \subsubsection{Parametrising the surface}
-\label{sec:org3ac4fc0}
+\label{sec:orgf36d433}
 Let the surface \(S\) be given by \((x - 1)^2 + (y - 2)^2 + (z - 3)^2 = 16\). Let \(z - 3 = \rho\).
 
 \[(x - 1)^2 + (y - 2)^2 + (z - 3)^2 = 16\]
@@ -1045,7 +1045,7 @@ z = 3 + \rho
 \end{displaymath}
 
 \subsection{Curves in 3D}
-\label{sec:orga2c2f87}
+\label{sec:orgac6b9f6}
 A curve may be formed by the intersection of two surfaces.
 As a surface is described by an equation in \(x, y\) and \(z\), finding all the points on a curve is like solving 2 equations in 3 unknowns \(x, y\) and \(z\).
 One of the unknowns can be set to be a free parameter to solve for the other two unknowns (in terms of the free parameter).
@@ -1066,7 +1066,7 @@ Where:
 \end{itemize}
 
 \subsection{Derivative of a vector function}
-\label{sec:orga7e3833}
+\label{sec:orgc90ba8c}
 Let \(f\) be a scalar function \(f(x)\) and \(\boldsymbol{F}\) be a vector function \(\boldsymbol{F}(u)\). The derivative of a scalar function is:
 \[f'(x) = \frac{df}{dx} = \lim_{h \rightarrow 0} \frac{f(x + h) - f(x)}{h}\]
 
@@ -1083,29 +1083,29 @@ For \(\boldsymbol{F}(u) = (p(u), q(u), r(u))\):
 \[\frac{d \boldsymbol{F}}{du} = \left(\frac{dp}{du}, \frac{dq}{du}, \frac{dr}{du} \right)\]
 
 \subsubsection{Example}
-\label{sec:orgdedb34a}
+\label{sec:org3958f92}
 \[\boldsymbol{F}(u) = (\sin 2u, u^3 + 2u^2, 2u)\]
 \[\frac{d \boldsymbol{F}}{du} = (2 \cos 2u, 3u^2 + 4u, 2)\]
 \[\frac{d^2 \boldsymbol{F}}{du^2} = (-4 \sin 2u, 6u + 4, 0)\]
 
 \subsubsection{Product rule}
-\label{sec:org736d7bf}
+\label{sec:org9c67a8a}
 Let \(g\) be a scalar function of one variable \(x\) and \(\boldsymbol{G}\) is a vector function of \(x\).
 \[\frac{d}{dx} g(x) \boldsymbol{G}(x) = g(x) \frac{d \boldsymbol{G}}{dx} + \frac{dg}{dx} \boldsymbol{G}\]
 
 \subsubsection{Chain rule}
-\label{sec:org3e8afe8}
+\label{sec:org191578a}
 Let \(F\) be a vector function given by \(F(u) = f(x(u), y(u), z(u))\):
 \[\frac{dF}{du} = \frac{\partial f}{\partial x} \cdot \frac{dx}{du} + \frac{\partial f}{\partial y} \cdot \frac{dy}{du} + \frac{\partial f}{\partial z} \cdot \frac{dz}{du}\]
 
 \subsection{Motion of a particle}
-\label{sec:orgd5be0ea}
+\label{sec:orgcf77f8e}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./images/motion-of-a-particle.png}
 \end{center}
 
 \subsubsection{Position of the particle}
-\label{sec:orgc233190}
+\label{sec:org1ae82b9}
 The position of a particle is changing with respect to time (\(t\)):
 \begin{align*}
 x &= xt \\
@@ -1114,7 +1114,7 @@ z &= zt
 \end{align*}
 
 \subsubsection{Position or displacement of the particle}
-\label{sec:org45f6965}
+\label{sec:org970f418}
 The position or displacement of the particle is with respect to the origin (\(O\)):
 \begin{align*}
 \boldsymbol{r} (t) &= (x(t) - 0) \boldsymbol{i} + (y(t) - 0) \boldsymbol{j} - (z(t) - 0) \boldsymbol{k} \\
@@ -1123,24 +1123,24 @@ The position or displacement of the particle is with respect to the origin (\(O\
 \end{align*}
 
 \subsubsection{Velocity of the particle}
-\label{sec:org279e2cd}
+\label{sec:orgfbc8e7b}
 Velocity is the rate of change of displacement with respect to time (\(t\)):
 \[\frac{d \boldsymbol{r}}{dt} = \frac{dx}{dt} \boldsymbol{i} + \frac{dy}{dt} \boldsymbol{j} + \frac{dz}{dt} \boldsymbol{k}\]
 
 \subsubsection{Speed of the particle}
-\label{sec:org6e4941b}
+\label{sec:orgae5fde3}
 Speed is the magnitude of the velocity:
 \[\left| \frac{d \boldsymbol{r}}{dt} \right| = \sqrt{\left(\frac{dx}{dt} \right)^2 + \left(\frac{dy}{dt} \right)^2 + \left(\frac{dz}{dt} \right)^2}\]
 
 \subsubsection{Acceleration of the particle}
-\label{sec:orgbf28220}
+\label{sec:orgd183267}
 Acceleration is the rate of change of velocity with respect to time.
 \[\frac{d^2 \boldsymbol{r}}{dt^2} = \frac{d^2 x}{dt^2} \boldsymbol{i} + \frac{d^2 y}{dt^2} \boldsymbol{j} + \frac{d^2 z}{dt^2} \boldsymbol{k}\]
 
  \newpage
 
 \subsection{Newton's second law}
-\label{sec:org7c74f32}
+\label{sec:org3c22052}
 Let \(\boldsymbol{F} = (F_x, F_y, F_z)\):
 \begin{align*}
 \boldsymbol{F} &= m \frac{d^2 \boldsymbol{r}}{dt^2} \\
@@ -1163,7 +1163,7 @@ Where:
 \end{itemize}
 
 \subsection{Vector differential operator (\(\nabla\))}
-\label{sec:org6df5695}
+\label{sec:orge2d94fe}
 The vector differential operator is defined as:
 \begin{align*}
 \nabla &= \frac{\partial}{\partial x} \boldsymbol{i} + \frac{\partial}{\partial y} \boldsymbol{j} + \frac{\partial}{\partial z} \boldsymbol{k} \\
@@ -1171,25 +1171,25 @@ The vector differential operator is defined as:
 \end{align*}
 
 \subsection{Gradient operator (grad)}
-\label{sec:org544e7e5}
+\label{sec:orga2b3c9e}
 The gradient operator is essentially the same as the \(\nabla\) operator.
 \[\text{grad } f = \nabla f = \left(\frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} \right)\]
 
 \subsection{Normal vectors}
-\label{sec:org2ca4da2}
+\label{sec:org82fece5}
 
 \subsubsection{Curves}
-\label{sec:org38ae90d}
+\label{sec:org6f1ed1b}
 A curve in 2D space is given in the form \(F(x, y) = c, c \in \mathbb{R}\). \textbf{A} normal vector to the curve is given by:
 \[\nabla F = \left(\frac{\partial F}{\partial x}, \frac{\partial F}{\partial y} \right)\]
 
 \subsubsection{Surfaces}
-\label{sec:org3624c3c}
+\label{sec:orgf2a49fa}
 A surface in 3D space is given in the form \(F(x, y, z) = c, c \in \mathbb{R}\). \textbf{A} normal vector to the curve is given by:
 \[\left. \nabla F \right|_{(x, y, z) = (x_0, y_0, z_0)}\]
 
 \subsection{Divergence operator (div)}
-\label{sec:orgc16f6fc}
+\label{sec:orgdc1ace2}
 Let \(\boldsymbol{F}\) be a vector function:
 \begin{align*}
 \text{div } \boldsymbol{F} &= \nabla \cdot \boldsymbol{F} \\
@@ -1197,7 +1197,7 @@ Let \(\boldsymbol{F}\) be a vector function:
 \end{align*}
 
 \subsection{Curl operator (curl)}
-\label{sec:org1470333}
+\label{sec:org2ce398f}
 Let \(\boldsymbol{F}\) be a vector function:
 \begin{align*}
 \text{curl } \boldsymbol{F} &= \nabla \times \boldsymbol{F} \\
@@ -1205,19 +1205,19 @@ Let \(\boldsymbol{F}\) be a vector function:
 \end{align*}
 
 \subsection{Laplacian operator (\(\nabla^2\))}
-\label{sec:orgb1a1c8e}
+\label{sec:org44ee998}
 \begin{align*}
 \nabla^2 = \nabla \cdot \nabla = \left(\frac{\partial^2}{\partial x^2}, \frac{\partial^2}{\partial y^2}, \frac{\partial^2}{\partial z^2}\right)
 \end{align*}
 
 \subsection{Leibniz theorem}
-\label{sec:org19d7da7}
-\label{org93051a9}
+\label{sec:org7d2e3d5}
+\label{orgc41eb53}
 If we can find a function \(F(x)\) such that \(\frac{dF}{dx} = f(x)\), then:
 \[\int_a^b f (x) \, dx = F(b) - F(a)\]
 
 \subsection{Line element (\(ds\))}
-\label{sec:org91f658b}
+\label{sec:orge8d32d1}
 For a line \(\boldsymbol{r}\) that can be parametrised with \(t\):
 \[ds = \left| \left| \frac{d \boldsymbol{r}}{dt} \right| \right|\]
 
@@ -1230,7 +1230,7 @@ ds &= \left| \left| \frac{d}{dt} (x, y, z) \right| \right| \\
 \end{align*}
 
 \subsection{Length of a curve (arc length)}
-\label{sec:orge9482e5}
+\label{sec:orgf36fa35}
 For a smooth curve \(C\):
 \[\int_C \, ds\]
 
@@ -1240,7 +1240,7 @@ Where:
 \end{itemize}
 
 \subsection{Line integral of a scalar function (area under a curve)}
-\label{sec:org963a21d}
+\label{sec:org94700ab}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./images/line-integral-of-a-scalar-function.png}
 \end{center}
@@ -1250,7 +1250,7 @@ For a smooth curve \(C\) and a scalar function \(f\):
  \newpage
 
 \subsection{Line integral of a vector function (work done)}
-\label{sec:org5c5399c}
+\label{sec:orgffa09c4}
 The line integral of a vector function can be thought of as the work done by the vector function.
 For a smooth curve \(C\) parametrised by \(\boldsymbol{x} = \boldsymbol{r} (t), t \in [a, b]\) and a vector function \(\boldsymbol{F}\):
 \begin{align*}
@@ -1268,12 +1268,12 @@ Where:
 \end{itemize}
 
 \subsection{Infinitesimal surface area element (\(dS\))}
-\label{sec:orgf16be00}
+\label{sec:org8742a32}
 If the equation for a surface \(S\) can be written as \(z = f(x, y)\), then the relationship between the infinitesimal \textbf{surface area} element \(dS\) and the infinitesimal \textbf{area} element \(dA\) is:
 \[dS = \sqrt{1 + \left(\frac{\partial f}{\partial x} \right)^2 + \left(\frac{\partial f}{\partial y} \right)^2} \, dA\]
 
 \subsection{Surface area of a surface}
-\label{sec:org0d70398}
+\label{sec:orgaf80b46}
 For a smooth surface \(S\):
 \[\iint_S \, dS\]
 
@@ -1283,7 +1283,7 @@ Where:
 \end{itemize}
 
 \subsection{Surface integral of a scalar function}
-\label{sec:orgf97a4f7}
+\label{sec:org587aedd}
 For a smooth surface \(S\) and a scalar function \(f(\boldsymbol{x})\), where \(\boldsymbol{x} = (x, y) = (r \cos \theta, r \sin \theta)\):
 \begin{align*}
 \iint_S f(\boldsymbol{x}) \, dS &= \iint_R f(x, y) dy dx \\
@@ -1296,7 +1296,7 @@ Where:
 \end{itemize}
 
 \subsection{Surface integral of a vector function (flux)}
-\label{sec:org3670269}
+\label{sec:org1638eef}
 The surface integral of a vector function can be thought of as the flux through the surface.
 For a smooth surface \(S\) and a vector function \(\boldsymbol{F}\):
 \[\iint_S \boldsymbol{F} \cdot \hat{n} \, dS\]
@@ -1308,7 +1308,7 @@ Where:
 \end{itemize}
 
 \subsection{Volume integral}
-\label{sec:org9804fd7}
+\label{sec:orgbe1152b}
 For a volume \(T\):
 \[\iiint_T dV\]
 
@@ -1320,7 +1320,7 @@ Where:
  \newpage
 
 \subsection{Green's theorem}
-\label{sec:org9c904cd}
+\label{sec:org03a9068}
 \[\oint_C f(x, y) \, dx + g (x, y) \, dy = \iint_R \left(\frac{\partial g}{\partial x} - \frac{\partial f}{\partial y} \right) \, dx dy\]
 
 Where:
@@ -1330,7 +1330,7 @@ Where:
 \end{itemize}
 
 \subsection{Stoke's theorem}
-\label{sec:orgb95e558}
+\label{sec:org6da9ce2}
 Stoke's theorem essentially states that the line integral of a vector function, or the work done by the vector function, is equal to surface integral of the curl of the vector function. It is the multidimensional version of Green's theorem.
 For a smooth curve \(C\) and a vector function \(\boldsymbol{F}\):
 \[\oint_C \boldsymbol{F} \cdot d \boldsymbol{r} = \iint_S (\text{curl } \boldsymbol{F}) \cdot \hat{n} \, dS = \iint_S (\nabla \times \boldsymbol{F}) \cdot \hat{n} \, dS\]
@@ -1342,7 +1342,7 @@ Where:
 \end{itemize}
 
 \subsection{Gauss' divergence theorem}
-\label{sec:org35b1bac}
+\label{sec:org222b555}
 Gauss' divergence theorem essentially states that the surface integral of a vector function, or the flux through a surface, is equal to the volume integral of the divergence of the vector function.
 For a smooth surface \(S\) and a vector function \(\boldsymbol{F}\):
 \[\iint_S F \cdot \hat{n} \, dS = \iiint_T \text{div } \boldsymbol{F} \, dV = \iiint_T \nabla \cdot \boldsymbol{F} \, dV\]
@@ -1355,33 +1355,33 @@ Where:
 \end{itemize}
 
 \subsection{Conservative vector fields}
-\label{sec:org71c7012}
+\label{sec:org765cc2c}
 
 \subsubsection{Two-dimensional vector fields}
-\label{sec:org34fbad7}
+\label{sec:orgdf899b0}
 A vector field \(\boldsymbol{F} (x, y) = f(x, y) \boldsymbol{i} + g(x, y) \boldsymbol{j}\) is considered \textbf{conservative} if:
 \[\frac{\partial g}{\partial x} = \frac{\partial f}{\partial y}\]
 
 \subsubsection{Vector fields with 3 or more dimensions}
-\label{sec:org371030f}
+\label{sec:orgc4d1606}
 A vector field \(\boldsymbol{F}\) is considered \textbf{conservative} if:
 \[\text{curl } \boldsymbol{F} = \nabla \times F = \boldsymbol{0}\]
 
 \subsection{Potential function}
-\label{sec:org090c6c0}
+\label{sec:orgffdbb0a}
 \begin{itemize}
 \item If the vector field \(\boldsymbol{F} (x, y) = f(x, y) \boldsymbol{i} + g(x, y) \boldsymbol{j}\) is conservative, we can find a function \(\phi (x, y)\) such that \(\frac{\partial \phi}{\partial x} = f(x, y)\) and \(\frac{\partial \phi}{\partial y} = g(x, y)\).
 \item This function \(\phi (x, y)\) is called the \textbf{potential function} of \(\boldsymbol{F} (x, y)\).
-\item With this potential function, we can easily get the integral of the vector field using the \hyperref[org93051a9]{Leibniz theorem}.
+\item With this potential function, we can easily get the integral of the vector field using the \hyperref[orgc41eb53]{Leibniz theorem}.
 \end{itemize}
 
 \subsection{Periodic functions}
-\label{sec:org6f13c0a}
+\label{sec:orge15955f}
 Let \(f(x)\) be a well-defined function for \(- \infty < x < \infty\). \(f(x)\) is said to be periodic with period \(p\), where \(p\) is a non-zero constant, if \(f(x)\) satisfies the property:
 \[f(x + p) = f(x), x \in \mathbb{R}\]
 
 \subsubsection{Sum and product of periodic functions}
-\label{sec:org945980f}
+\label{sec:orgc6d4087}
 Let \(f(x)\) and \(g(x)\) be periodic with period \(p\). Then:
 \begin{itemize}
 \item \(f(x) + g(x)\) is periodic with period \(p\)
@@ -1389,12 +1389,12 @@ Let \(f(x)\) and \(g(x)\) be periodic with period \(p\). Then:
 \end{itemize}
 
 \subsubsection{Integral of a periodic function}
-\label{sec:org3975913}
+\label{sec:org03714b2}
 If \(f(x)\) is periodic with period \(p\), then:
 \[\int_{x = c}^{x = c + p} f(x) \, dx \text{ has the same value no matter what } c \text{ is.}\]
 
 \subsubsection{Examples}
-\label{sec:org5b84eaa}
+\label{sec:org433db83}
 \[f(x) = \sin (x), - \infty < x < \infty\]
 \[g(x) = \cos (x), - \infty < x < \infty\]
 
@@ -1402,7 +1402,7 @@ Both of the functions above are periodic with periods of \(2 \pi\), because:
 \[\sin(x + 2 \pi) = \sin (x), \quad \cos (x + 2 \pi) = \cos (x)\]
 
 \subsection{Fourier series of a periodic function}
-\label{sec:orgfb2194c}
+\label{sec:orgb830aea}
 The Fourier series of a periodic function \(f(x)\) with period \(2L, L \in \mathbb{R}^+\), is given by the series:
 \[a_0 + \sum_{n = 1}^{\infty} \left\{a_n \cos \left( \frac{n \pi x}{L} \right) + b_n \sin \left( \frac{n \pi x}{L} \right) \right\}\]
 
@@ -1413,7 +1413,7 @@ Where:
 \[n = 1, 2, 3, \ldots\]
 
 \subsection{Condition for a periodic function to be equal to its Fourier series}
-\label{sec:orgb2a596a}
+\label{sec:org297ae12}
 Let a periodic function be \(f(x)\). For \(f(x)\) to be equal to its Fourier series:
 \[a_0 + \sum_{n = 1}^{\infty} \left\{a_n \cos \left( \frac{n \pi s}{L} \right) + b_n \sin \left( \frac{n \pi s}{L} \right) \right\} = \frac{1}{2} \left( \lim_{x \rightarrow s^{-}} f(x) + \lim_{x \rightarrow s^{+}} f(x) \right)\]
 
@@ -1421,48 +1421,48 @@ If \(f(x)\) is continuous at \(x = s\), then the Fourier series of \(f(x)\) at \
 \[a_0 + \sum_{n = 1}^{\infty} \left\{a_n \cos \left( \frac{n \pi x}{L} \right) + b_n \sin \left( \frac{n \pi x}{L} \right) \right\} = f(x) \text{ where } f(x) \text{ is continuous}\]
 
 \subsection{Odd functions}
-\label{sec:org316f86f}
+\label{sec:org04c6972}
 A function \(f(x)\) is said to be \textbf{odd} over the interval \(- a < x < a, a \in \mathbb{R}^{+}\) if \(f(-x) = - f(x)\) for \(-a < x < a\).  \\
 
 If \(f(x)\) is \textbf{odd} over \(-a < x < a\), then:
 \[\int_{-a}^{a} f(x) \, dx = 0\]
 
 \subsubsection{Example}
-\label{sec:org9ff1c29}
+\label{sec:org1ceee30}
 \[S(x) = \sin \left( \frac{n \pi x}{L} \right) \text{ is odd over } -L < x < L\]
 
 \subsection{Even functions}
-\label{sec:org735ce21}
+\label{sec:orgda8d5a0}
 A function \(f(x)\) is said to be \textbf{even} over the interval \(- a < x < a, a \in \mathbb{R}^{+}\) if \(f(-x) = f(x)\) for \(-a < x < a\).  \\
 
 If \(f(x)\) is \textbf{even} over \(-a < x < a\), then:
 \[\int_{-a}^{a} f(x) \, dx = 2 \int_0^{2a} f(x) \, dx\]
 
 \subsubsection{Example}
-\label{sec:org24b9127}
+\label{sec:orgc725f77}
 \[C(x) = \cos \left( \frac{n \pi x}{L} \right) \text{ is even over } -L < x < L\]
 
  \newpage
 
 \subsection{Sum and product of even and odd functions}
-\label{sec:org36dfb71}
+\label{sec:orgf8c70d5}
 
 \subsubsection{\(f(x)\) and \(g(x)\) are both odd over \(- a < x < a\)}
-\label{sec:org66be770}
+\label{sec:orgdf23d06}
 \begin{itemize}
 \item \(f(x) + g(x)\) is also \textbf{odd} over \(- a < x < a\)
 \item \(f(x) g(x)\) is \textbf{even} over \(- a < x < a\)
 \end{itemize}
 
 \subsubsection{\(f(x)\) and \(g(x)\) are both even over \(- a < x < a\)}
-\label{sec:org7a75adc}
+\label{sec:org3f9c0fe}
 \begin{itemize}
 \item \(f(x) + g(x)\) is also \textbf{even} over \(- a < x < a\)
 \item \(f(x) g(x)\) is also \textbf{even} over \(- a < x < a\)
 \end{itemize}
 
 \subsubsection{\(f(x)\) is odd while \(g(x)\) is even over \(- a < x < a\)}
-\label{sec:org09b7ba6}
+\label{sec:orgce172d1}
 \begin{itemize}
 \item \(f(x) + g(x)\) is neither odd nor even over \(- a < x < a\)
 \item \(f(x) g(x)\) is \textbf{odd} over \(- a < x < a\)
@@ -1471,7 +1471,7 @@ If \(f(x)\) is \textbf{even} over \(-a < x < a\), then:
  \newpage
 
 \subsection{Fourier series of an odd periodic function}
-\label{sec:orgdb698f8}
+\label{sec:orgf735b9b}
 The Fourier series of an \textbf{odd} periodic function \(f(x)\) is called the Fourier sine series, and is given by:
 \[\sum_{n = 1}^{\infty} b_n \sin \left( \frac{n \pi x}{L} \right)\]
 
@@ -1481,9 +1481,9 @@ b_n &= \frac{1}{L} \int_{-L}^{L} f(x) \sin \left( \frac{n \pi x}{L} \right) \, d
 &= \frac{2}{L} \int_0^L f(x) \sin \left( \frac{n \pi x}{L} \right) \, dx \quad \because f(x) \text{ and } \sin \left( \frac{n \pi x}{L} \right) \text{ are both odd}
 \end{align*}
 
-\subsubsection{Representing a continuous function}
-\label{sec:org8f79d12}
-Suppose \(g(x)\) is a continuous function over \(0 < x < l, l \in \mathbb{R}\). We can extend \(g(x)\) to become an \textbf{odd} periodic function of period \(2l\):
+\subsubsection{Extending a continuous function}
+\label{sec:org5175f9c}
+Suppose \(g(x)\) is a continuous function over \(0 < x < l, l \in \mathbb{R}\). We can extend \(g(x)\) to become an \textbf{odd} periodic function of period \(2l\) by letting \(g(x) = - g(-x)\):
 
 \[g(x) = \sum_{n = 1}^{\infty} b_n \sin \left( \frac{n \pi x}{l} \right), \quad 0 < x < l\]
 
@@ -1494,7 +1494,7 @@ Where:
  \newpage
 
 \subsection{Fourier series of an even periodic function}
-\label{sec:org19f5514}
+\label{sec:org483497e}
 The Fourier series of an \textbf{even} periodic function \(f(x)\) is called the Fourier cosine series, and is given by:
 \[a_0 + \sum_{n = 1}^{\infty} a_n \cos \left( \frac{n \pi x}{L} \right)\]
 
@@ -1506,9 +1506,9 @@ a_n &= \frac{1}{L} \int_{-L}^{L} f(x) \cos \left( \frac{n \pi x}{L} \right) \, d
 &= \frac{2}{L} \int_0^L f(x) \cos \left( \frac{n \pi x}{L} \right) \, dx \quad \because f(x) \text{ and } \cos \left( \frac{n \pi x}{L} \right) \text{ are both even}
 \end{align*}
 
-\subsubsection{Representing a continuous function}
-\label{sec:orga52f45e}
-Suppose \(g(x)\) is a continuous function over \(0 < x < l, l \in \mathbb{R}\). We can extend \(g(x)\) to become an \textbf{even} periodic function of period \(2l\):
+\subsubsection{Extending a continuous function}
+\label{sec:org091fc8b}
+Suppose \(g(x)\) is a continuous function over \(0 < x < l, l \in \mathbb{R}\). We can extend \(g(x)\) to become an \textbf{even} periodic function of period \(2l\) by letting \(g(x) = g(-x)\):
 
 \[g(x) = a_0 + \sum_{n = 1}^{\infty} a_n \cos \left( \frac{n \pi x}{l} \right), \quad 0 < x < l\]
 
@@ -1519,8 +1519,14 @@ Where:
 
  \newpage
 
+\subsection{Periodic extensions of continuous functions}
+\label{sec:orgff1db93}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/function-extensions.png}
+\end{center}
+
 \subsection{Complex Fourier series}
-\label{sec:orgf0ff57f}
+\label{sec:org102cd7f}
 Let \(f(x)\) be a periodic function with period \(2L, L \in \mathbb{R}^{+}\). The complex Fourier series of \(f(x)\) is given by:
 \[c_0 + \sum_{n = - \infty}^{\infty} c_n e^{\frac{i n \pi x}{L}}, \quad i = \sqrt{-1}\]
 
@@ -1529,7 +1535,7 @@ Where:
 \[c_n = \frac{1}{2L} \int_{\alpha}^{\alpha + 2L} f(x) e^{- \frac{i n \pi x}{L}} \, dx \text{ for } n = 0, \pm 1, \pm 2, \pm 3, \ldots \]
 
 \subsection{Laplace transform of a function (\(\mathcal{L}\))}
-\label{sec:orgef293a1}
+\label{sec:org600fed5}
 Let \(f(t)\) be a well-defined function for \(t \ge 0\). The Laplace transform is given by:
 \[\mathcal{L} \{ f(t) \} = \int_{t = 0}^{t \rightarrow \infty} f(t) e^{-st} \, dt\]
 
@@ -1539,13 +1545,13 @@ Where:
 \end{itemize}
 
 \subsection{Inverse Laplace transform (\(\mathcal{L}^{-1}\))}
-\label{sec:org6b88eb1}
+\label{sec:orgf7c39aa}
 The inverse Laplace transform is given by:
 \[\mathcal{L}^{-1} \{ F(s) \} = f(t)\]
 
 \subsection{Heaviside unit step function (\(u(t - a)\))}
-\label{sec:orgfa6c689}
-\label{orge4ee940}
+\label{sec:orgfc51df2}
+\label{org347bf95}
 \begin{displaymath}
 u(t - a) = \begin{cases}
 0 & \text{for } t \le a \\
@@ -1554,7 +1560,7 @@ u(t - a) = \begin{cases}
 \end{displaymath}
 
 \subsubsection{Difference of two Heaviside unit step functions}
-\label{sec:org4cb4a8a}
+\label{sec:orge7ffa0b}
 \begin{displaymath}
 u(t - \alpha) - u(t - \beta) = \left. \begin{cases}
 1 & \text{for } \alpha < t < \beta \\
@@ -1565,10 +1571,10 @@ u(t - \alpha) - u(t - \beta) = \left. \begin{cases}
  \newpage
 
 \section{Other coordinate systems}
-\label{sec:org5e83c28}
+\label{sec:org4cd9689}
 
 \subsection{Polar coordinates}
-\label{sec:org231869f}
+\label{sec:org598e41e}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./images/polar-coordinates.png}
 \end{center}
@@ -1577,7 +1583,7 @@ u(t - \alpha) - u(t - \beta) = \left. \begin{cases}
 \[\text{Infinitesimal area element, } dA = dx dy = r dr d \varphi\]
 
 \subsection{Cylindrical coordinates}
-\label{sec:org007422c}
+\label{sec:org9f0c36a}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./images/cylindrical-coordinates.png}
 \end{center}
@@ -1587,7 +1593,7 @@ u(t - \alpha) - u(t - \beta) = \left. \begin{cases}
 \[\text{Infinitesimal volume element, } dV = dx dy dz = r dr d \varphi dz\]
 
 \subsection{Spherical coordinates}
-\label{sec:org175e960}
+\label{sec:org0ab190d}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./images/spherical-coordinates.png}
 \end{center}
@@ -1599,7 +1605,7 @@ u(t - \alpha) - u(t - \beta) = \left. \begin{cases}
  \newpage
 
 \section{Figuring out the integration limits for multiple integrals in Cartesian coordinates}
-\label{sec:org520f2d8}
+\label{sec:org4637198}
 \begin{enumerate}
 \item Choose a variable to integrate with respect to first. For a function \(f(x, y)\), it can be either \(x\) or \(y\).
 \item Keep the other variable constant. If we choose \(x\), we keep \(y\) constant, and if we choose \(y\), we keep \(x\) constant.
@@ -1607,11 +1613,11 @@ u(t - \alpha) - u(t - \beta) = \left. \begin{cases}
 \end{enumerate}
 
 \subsection{Example of the 3rd step}
-\label{sec:orgcc1d602}
+\label{sec:org7bf772f}
 The example below is \(\iint_R (3x^2 + y) \, dA\), where \(R\) is the region bounded by the curve \(y = x^2\), the line \(x = 2\) and the positive \(x\)-axis.
 
 \subsubsection{Keeping \(y\) constant}
-\label{sec:org040295d}
+\label{sec:org1721306}
 \begin{center}
 \includegraphics[height=20em]{./images/double-integral-hold-y-constant.png}
 \end{center}
@@ -1621,7 +1627,7 @@ The example below is \(\iint_R (3x^2 + y) \, dA\), where \(R\) is the region bou
 \end{itemize}
 
 \subsubsection{Keeping \(x\) constant}
-\label{sec:org38acf07}
+\label{sec:org60cdd8d}
 \begin{center}
 \includegraphics[height=20em]{./images/double-integral-hold-x-constant.png}
 \end{center}
@@ -1631,7 +1637,7 @@ The example below is \(\iint_R (3x^2 + y) \, dA\), where \(R\) is the region bou
 \end{itemize}
 
 \section{Figuring out the integration limits for multiple integrals in polar coordinates}
-\label{sec:org86ccd26}
+\label{sec:org85aa587}
 \begin{enumerate}
 \item Choose a variable to integrate with respect to first. For a function \(f(r, \theta)\), it can be either \(r\) or \(\theta\).
 \item Keep the other variable constant. If we choose \(r\), we keep \(\theta\) constant, and if we choose \(\theta\), we keep \(r\) constant.
@@ -1639,14 +1645,14 @@ The example below is \(\iint_R (3x^2 + y) \, dA\), where \(R\) is the region bou
 \end{enumerate}
 
 \subsection{Example of the 3rd step}
-\label{sec:org488304a}
+\label{sec:orgffd510f}
 The example below is \(\iint_R x^2 + y^2 \, dA\), where \(R\) is the region bounded by the equation \(x^2 + y^2 \le 1\), the line \(x = 0\) and line \(y = 0\).  \\
 
 In polar form, the equation would be:
 \[\iint_R (r \cos^2 \theta + r \sin^2 \theta) \, r dr d \theta\]
 
 \subsubsection{Keeping \(\theta\) constant}
-\label{sec:org2a1330f}
+\label{sec:orgb1fb62a}
 \begin{tikzpicture}
 \begin{polaraxis}[
 xticklabels={
@@ -1705,7 +1711,7 @@ of=f and axis
 \end{itemize}
 
 \subsubsection{Keeping \(r\) constant}
-\label{sec:org861c02f}
+\label{sec:org328bbf5}
 \begin{tikzpicture}
 \begin{polaraxis}[
 xticklabels={
@@ -1765,13 +1771,13 @@ of=f and axis
  \newpage
 
 \section{Mathematical formulas}
-\label{sec:orgefce3c7}
+\label{sec:org9cee5ad}
 
 \subsection{Trigonometric identities}
-\label{sec:orge2a9e20}
+\label{sec:org8a6621e}
 
 \subsubsection{Basic and Pythagorean identities}
-\label{sec:orgac640d9}
+\label{sec:orgb3c01cc}
 \[\csc x = \frac{1}{\sin x}\]
 \[\sec x = \frac{1}{\cos x}\]
 \[\cot x = \frac{1}{\tan x}\]
@@ -1785,19 +1791,19 @@ of=f and axis
 \[1 + \cot^2 x = \csc^2 x\]
 
 \subsubsection{Angle sum and different identities}
-\label{sec:org83f4a2f}
+\label{sec:org7be8952}
 \[\sin(A \pm B) = \sin A \cos B \pm \cos A \sin B\]
 \[\sin(A \pm B) = \cos A \cos B \mp \sin A \sin B\]
 \[\tan(A \pm B) = \frac{\tan A \pm \tan B}{1 \mp \tan A \tan B}\]
 
 \subsubsection{Double angle identities}
-\label{sec:org06c4b57}
+\label{sec:org90d27f2}
 \[\sin 2A = 2 \sin A \cos A\]
 \[\cos 2A = \cos^2 A - \sin^2 A = 2 \cos^2 A - 1 = 1 - 2 \sin^2 A\]
 \[\tan 2A = \frac{2 \tan A}{1 - \tan^2 A}\]
 
 \subsubsection{Half angle identities}
-\label{sec:org21b9ffe}
+\label{sec:orgd6c2bd1}
 \[\sin \left(\frac{x}{2} \right) = \pm \sqrt{\frac{1 - \cos x}{2}}\]
 \[\cos \left(\frac{x}{2} \right) = \pm \sqrt{\frac{1 + \cos x}{2}}\]
 \[\tan \left(\frac{x}{2} \right) = \pm \sqrt{\frac{1 - \cos x}{1 + \cos x}} = \frac{1 - \cos x}{\sin x} = \frac{\sin x}{1 + \cos x}\]
@@ -1807,14 +1813,14 @@ of=f and axis
 \[\tan^2 x = \frac{1 - \cos 2x}{1 + \cos 2x}\]
 
 \subsubsection{Sum identities}
-\label{sec:orge67b891}
+\label{sec:orge6fbe70}
 \[\sin P + \sin Q = 2 \sin \frac{1}{2}(P + Q) \cos \frac{1}{2}(P - Q)\]
 \[\sin P - \sin Q = 2 \cos \frac{1}{2}(P + Q) \sin \frac{1}{2}(P - Q)\]
 \[\cos P + \cos Q = 2 \cos \frac{1}{2}(P + Q) \cos \frac{1}{2}(P - Q)\]
 \[\cos P - \cos Q = - 2 \sin \frac{1}{2}(P + Q) \sin \frac{1}{2}(P - Q)\]
 
 \subsection{Standard derivatives}
-\label{sec:org28e4805}
+\label{sec:orgc328dd0}
 \[\frac{d}{dx} \left(\arcsin x \right) = \frac{1}{\sqrt{1 - x^2}}\]
 \[\frac{d}{dx} \left(\arccos x \right) = - \frac{1}{\sqrt{1 - x^2}}\]
 \[\frac{d}{dx} \left(\arctan x \right) = \frac{1}{1 + x^2}\]
@@ -1822,7 +1828,7 @@ of=f and axis
 \[\frac{d}{dx} \left(\sec x \right) = \sec x \tan x\]
 
 \subsection{Standard integrals}
-\label{sec:org8e5c5e0}
+\label{sec:org02edf22}
 \[\int \frac{1}{x^2 + a^2} \, dx = \frac{1}{a} \arctan \left(\frac{x}{a} \right)\]
 \[\int \frac{1}{\sqrt{a^2 - x^2}} \, dx = \arcsin \left(\frac{x}{a} \right)\]
 \[\int \frac{1}{x^2 - a^2} \, dx = \frac{1}{2a} \ln \left|\frac{x - a}{x + a} \right|\]
@@ -1838,10 +1844,10 @@ of=f and axis
  \newpage
 
 \section{Laplace transforms}
-\label{sec:orga70fbcf}
+\label{sec:orgc8a4293}
 
 \subsection{Elementary functions}
-\label{sec:org574e7bd}
+\label{sec:orgb47a255}
 \[\mathcal{L} \{ e^{at} \} = \frac{1}{s - a} \text{ for } s > a\]
 \begin{center}
 \includegraphics[width=.9\linewidth]{./images/laplace-transform-of-elementary-functions.png}
@@ -1850,7 +1856,7 @@ of=f and axis
  \newpage
 
 \subsection{Properties}
-\label{sec:org58d3b70}
+\label{sec:org8825b0b}
 \begin{itemize}
 \item Suppose \(\mathcal{L} \{ f(t) \}\) and \(\mathcal{L} \{ g(t) \}\) exists for \(s > c_f\) and \(s > c_g\) respectively, then:
 \[\mathcal{L} \{ \alpha f(t) + \beta g(t) \} = \alpha \mathcal{L} \{ f(t) \} + \beta \mathcal{L} \{ g(t) \} \text{ for } s > \max (c_f, c_g), \quad \alpha, \beta \in \mathbb{R}\]
@@ -1871,7 +1877,7 @@ of=f and axis
 
 Where:
 \begin{itemize}
-\item \(u\) is the \hyperref[orge4ee940]{Heaviside unit step function}
+\item \(u\) is the \hyperref[org347bf95]{Heaviside unit step function}
 \end{itemize}
 
 \item Suppose \(\mathcal{L} \{ f(t) \}\) exists for \(s > c_f\), then:
@@ -1879,7 +1885,7 @@ Where:
 \end{itemize}
 
 \subsection{Table of properties}
-\label{sec:orgf9202d6}
+\label{sec:org55fc46c}
 \begin{center}
 \includegraphics[width=.9\linewidth]{./images/laplace-transform-properties.png}
 \end{center}
