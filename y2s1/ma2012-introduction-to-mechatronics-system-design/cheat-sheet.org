@@ -1345,6 +1345,9 @@ Function to attach the interrupt service routine:
   - RISING means to trigger the interrupt when the pin goes from LOW to HIGH
   - FALLING means to trigger the interrupt when the pin goes from HIGH to LOW
 
+** Pinout
+[[./images/arduino-uno-pinout.png]]
+
 @@latex: \newpage@@
 
 * Input and output interfacing
