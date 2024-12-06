@@ -18,6 +18,7 @@ mod utils;
 
 // Use declarations
 use console::println;
+use constants::ALTERNATE_MOTORS;
 use heapless::Vec;
 use movement::MovementHandler;
 use panic_halt as _;
@@ -109,8 +110,10 @@ fn main() -> ! {
 
         // Call the function to run all of the motors,
         // and store if any motor is still running
-        let any_motor_is_still_running = movement_handler
-            .run_all_motors(run_movement_motors_at_constant_speed);
+        let any_motor_is_still_running = movement_handler.run_all_motors(
+            run_movement_motors_at_constant_speed,
+            ALTERNATE_MOTORS,
+        );
 
         // If no motor is still running, disable the motors
         if !any_motor_is_still_running {

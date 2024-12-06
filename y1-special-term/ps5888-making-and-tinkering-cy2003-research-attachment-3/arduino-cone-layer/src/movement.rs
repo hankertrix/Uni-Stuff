@@ -8,8 +8,8 @@ use core::iter::Once;
 use heapless::Vec;
 
 use crate::{
-    console::println, serial::program_stopped, serial::UsartWriterInterface,
-    stepper_driver::StepperDriver,
+    console::println, constants::ALTERNATE_MOTORS, serial::program_stopped,
+    serial::UsartWriterInterface, stepper_driver::StepperDriver,
 };
 
 /// The radius of the joypad
@@ -243,10 +243,25 @@ impl MovementHandler {
     /// The function to return an iterator over all of the movement motors
     fn iter_movement_motors(
         &mut self,
+        run_right_motors_first: bool,
     ) -> Chain<
         core::slice::IterMut<'_, StepperDriver>,
         core::slice::IterMut<'_, StepperDriver>,
     > {
+        //
+
+        // If running the right side motors first,
+        // return the right side motors chained
+        // with the left side motors
+        if run_right_motors_first {
+            return self
+                .right_side_motors
+                .iter_mut()
+                .chain(self.left_side_motors.iter_mut());
+        }
+
+        // Otherwise, return the left side motors
+        // chained with the right side motors
         return self
             .left_side_motors
             .iter_mut()
@@ -254,18 +269,32 @@ impl MovementHandler {
     }
 
     /// The function to execute a function for the movement motors
-    fn movement_motors_do<Closure>(&mut self, closure: Closure)
-    where
+    fn movement_motors_do<Closure>(
+        &mut self,
+        closure: Closure,
+        alternate_motors: bool,
+    ) where
         Closure: Fn(&mut StepperDriver),
     {
         //
 
+        // Initialise the boolean to store whether to run
+        // the right side motors first
+        let mut run_right_motors_first = false;
+
         // Iterate over all of the movement motors
-        for motor in self.iter_movement_motors() {
+        for motor in self.iter_movement_motors(run_right_motors_first) {
             //
 
             // Execute the closure on the motor
             closure(motor);
+
+            // If alternating the motors is wanted,
+            // set the run_right_motors_first variable to
+            // the opposite of its current value
+            if alternate_motors {
+                run_right_motors_first = !run_right_motors_first;
+            }
         }
     }
 
@@ -554,7 +583,10 @@ impl MovementHandler {
         // If both the left and right side motor speeds are 0,
         // then stop the movement motors and exit the function.
         if left_side_motor_speed == 0 && right_side_motor_speed == 0 {
-            return self.movement_motors_do(|driver| driver.stop(false));
+            return self.movement_motors_do(
+                |driver| driver.stop(false),
+                ALTERNATE_MOTORS,
+            );
         }
 
         // Get the number of milli steps to move for the left side motor
@@ -691,10 +723,13 @@ impl MovementHandler {
         // Set the maximum speed of the movement motors
         // to the maximum speed for laying cones and
         // move the movement motors by the number of steps to lay the cones
-        self.movement_motors_do(|driver| {
-            driver.set_maximum_speed(MAXIMUM_SPEED_FOR_LAYING_CONES);
-            driver.move_by_steps(number_of_steps_to_move as i32, false);
-        });
+        self.movement_motors_do(
+            |driver| {
+                driver.set_maximum_speed(MAXIMUM_SPEED_FOR_LAYING_CONES);
+                driver.move_by_steps(number_of_steps_to_move as i32, false);
+            },
+            ALTERNATE_MOTORS,
+        );
 
         // Lay the cones
         self.lay_cones(
@@ -744,14 +779,21 @@ impl MovementHandler {
     }
 
     /// The function to run the movement motors
-    pub fn run_movement_motors(&mut self, run_at_constant_speed: bool) -> bool {
+    pub fn run_movement_motors(
+        &mut self,
+        run_at_constant_speed: bool,
+        alternate_motors: bool,
+    ) -> bool {
         //
 
         // Initialise the variable to store whether any motor is still running
         let mut any_motor_is_still_running = false;
 
+        // Initialise whether or not to run the right side motors first
+        let mut run_right_motors_first = false;
+
         // Iterate over all of the movement motors
-        for motor in self.iter_movement_motors() {
+        for motor in self.iter_movement_motors(run_right_motors_first) {
             //
 
             // If running the motors at constant speed is wanted,
@@ -772,6 +814,13 @@ impl MovementHandler {
 
                 // Set the any_motor_is_still_running variable to true
                 any_motor_is_still_running = true;
+            }
+
+            // If alternating the motors is wanted,
+            // set the run_right_motors_first variable to
+            // the opposite of its current value
+            if alternate_motors {
+                run_right_motors_first = !run_right_motors_first;
             }
         }
 
@@ -820,25 +869,30 @@ impl MovementHandler {
             });
 
             // Use the movement motors do function
-            self.movement_motors_do(|driver| {
-                //
+            self.movement_motors_do(
+                |driver| {
+                    //
 
-                // Enable the movement motors
-                driver.enable();
+                    // Enable the movement motors
+                    driver.enable();
 
-                // Set the maximum speed for the movement motors
-                driver.set_maximum_speed(MAXIMUM_SPEED_FOR_LAYING_CONES);
+                    // Set the maximum speed for the movement motors
+                    driver.set_maximum_speed(MAXIMUM_SPEED_FOR_LAYING_CONES);
 
-                // Move the motors by the number of steps
-                // before dropping a cone
-                driver
-                    .move_by_steps(number_of_steps_before_dropping_cone, false)
-            });
+                    // Move the motors by the number of steps
+                    // before dropping a cone
+                    driver.move_by_steps(
+                        number_of_steps_before_dropping_cone,
+                        false,
+                    )
+                },
+                ALTERNATE_MOTORS,
+            );
 
             // Block the execution of all other code
             // and run the movement motors if
             // the program is not stopped
-            while self.run_movement_motors(false) {
+            while self.run_movement_motors(false, ALTERNATE_MOTORS) {
                 //
 
                 // If the program is stopped
@@ -846,7 +900,10 @@ impl MovementHandler {
                     //
 
                     // Stop all the movement motors
-                    self.movement_motors_do(|driver| driver.stop(false));
+                    self.movement_motors_do(
+                        |driver| driver.stop(false),
+                        ALTERNATE_MOTORS,
+                    );
 
                     // Exit the function
                     return;
@@ -855,7 +912,7 @@ impl MovementHandler {
         }
 
         // Disable the movement motors
-        self.movement_motors_do(|driver| driver.disable());
+        self.movement_motors_do(|driver| driver.disable(), ALTERNATE_MOTORS);
     }
 
     /// The function to run all of the motors.
@@ -865,6 +922,7 @@ impl MovementHandler {
     pub fn run_all_motors(
         &mut self,
         run_movement_motors_at_constant_speed: bool,
+        alternate_motors: bool,
     ) -> bool {
         //
 
@@ -875,8 +933,11 @@ impl MovementHandler {
         // all the movement motors have reached their maximum speed
         let mut all_movement_motors_have_reached_maximum_speed = false;
 
+        // Initialise whether or not to run the right side motors first
+        let mut run_right_motors_first = false;
+
         // Iterate over all of the movement motors
-        for motor in self.iter_movement_motors() {
+        for motor in self.iter_movement_motors(run_right_motors_first) {
             //
 
             // If running the movement motors at constant speed
@@ -907,6 +968,13 @@ impl MovementHandler {
                 // variable to false
                 all_movement_motors_have_reached_maximum_speed = false;
             }
+
+            // If alternating the motors is wanted,
+            // set the run_right_motors_first variable to
+            // the opposite of its current value
+            if alternate_motors {
+                run_right_motors_first = !run_right_motors_first;
+            }
         }
 
         // Run the dispenser motor at a constant speed
@@ -928,9 +996,10 @@ impl MovementHandler {
         &mut self,
         movement_motors_are_constant_speed: bool,
     ) {
-        self.movement_motors_do(|driver| {
-            driver.stop(movement_motors_are_constant_speed)
-        });
+        self.movement_motors_do(
+            |driver| driver.stop(movement_motors_are_constant_speed),
+            ALTERNATE_MOTORS,
+        );
         self.dispenser_motor.stop(true);
     }
 }
