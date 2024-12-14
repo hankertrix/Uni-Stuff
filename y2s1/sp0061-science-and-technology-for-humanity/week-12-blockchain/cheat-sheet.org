@@ -1,0 +1,470 @@
+#+TITLE: SP0061 Science & Tech for Humanity Week 12 Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** Non-fungible token (NFT)
+- A non-fungible token is essentially a token that is digitally unique, and only one of which can exist in the world.
+- Think of it like a one-of-a-kind trading card that you and only you own.
+
+** Smart contracts
+- Smart contracts are essentially programs that run on the blockchain.
+- They can do basically anything they want on the blockchain since they are just programs but are usually used to ensure that a transaction occurs, such as paying a seller when goods have been received by the buyer.
+- It is also often used to mint NFTs and transfer ownership of NFTs in a trade or a transaction.
+- There are a lot of other things you can do with smart contracts, like writing a trading card game that runs on the blockchain, similar to Card Fight Vanguard, Magic The Gathering and Yu-Gi-Oh, but the trading cards would be NFTs instead of physical trading cards.
+
+** Web 1.0 (Web 1)
+- Web 1.0 is essentially the early days of the internet where most sites were just made of up text, images and hyperlinks, and forms were sent via email.
+- It lacks the interactivity that we enjoy with modern web pages with buttons, forms, and animations.
+- It was designed to make it easier to find information or data.
+- It was made up of a small number of people, usually technical people, creating content for a larger audience.
+- Web 1.0 is also known as the read-only web, as most sites just displayed information and you couldn't really upload content to the site unless you owned the site.
+- Think of the web in the 1990s to 2000s, specifically from 1991 to 2004, that is what Web 1 is.
+
+** Web 2.0 (Web 2)
+- Web 2.0 is the current iteration of the web, with a lot of people creating content for a growing audience.
+- It emphasises making the web accessible to more people, and making it such that people that are not technical can easily upload content that they create, like with social media platforms.
+- It also boasts incredible amounts of interactivity with the creation of JavaScript frameworks and Asynchronous JavaScript and XML (AJAX), so much so that you can create games that are playable entirely in the browser and pretty much do everything you need to do with a web browser, instead of installing a program to your computer.
+- It also boasts far better accessibility features for people with disabilities, so that they can be included in the web.
+- Web 2.0 was responsible for creating communities, collaborations, dialogue and social media.
+- It is also known as the participative social web, as users from everywhere, regardless of their background, can use and participate in the web.
+
+** Web 3.0 (Web 3)
+- Web 3.0 is built on the idea of decentralisation, privacy, anonymity, openness and better usability.
+- It aims to move users of the web away from centralised platforms like Google, Facebook, Twitter and most other big social media platforms, towards platforms that are not owned by a giant tech company.
+- Some examples of such decentralised platforms are Mastodon (decentralised Twitter), Lenny (decentralised Reddit) and the InterPlanetary File System (IPFS), which you can think of as an improved torrent protocol.
+- How IPFS works is very similar to getting files via BitTorrent, as it is a peer-to-peer network file-sharing system, so the protocol will automatically connect you to other users that have chosen to share the file, and you can retrieve the files directly from their device instead of relying on a centralised server like Google or Dropbox to provide you with the file.
+- Web 3.0 also aims to have an intelligent, autonomous and open web that uses artificial intelligence to act as a "global brain" and process content conceptually and contextually, instead of relying on keywords and metadata to find content.
+- So you would find content by using search and analysis that understands language, instead of relying on numbers and keywords.
+- It also presents the connectivity of multiple devices and applications through the Internet of Things (IoT), which makes it possible to leverage the information of all devices connected to the web.
+- This part of the web was never realised due to technological limitations, but the decentralised part lives on.
+- Essentially, what Web 3.0 aims to do is to bring us back to the Web 1.0 era, when the web was decentralised and was just made up of users sharing their own content using their own servers, instead of having all the user-generated content being controlled by one big tech company like Google or Facebook.
+- It also seeks to replace traditionally centralised concepts, like finance and organisations, with decentralised alternatives so that it's not just one entity that has control and visibility over everything.
+- In the case of banks, you can essentially send money without needing to rely on them, and you can keep your transactions entirely private and visible to only you if you want to, so banks can't freeze your account for whatever reason. You truly own your money and can do whatever you want with it.
+- In the case of organisations, a decentralised autonomous organisation is essentially an organisation run by a program on a blockchain that keeps track of all transactions that happen within an organisation, which removes the need for a trusted third party and the recording of transactions, as the blockchain ledger already ensures trust and it records all transactions. Governance is done by using NFTs that grant voting powers.
+- With all these in place, you don't need to go through a governing body to do anything, and you can trust that everything will happen as stated without needing any third party to ensure compliance.
+- Web 3.0 is also known as the Semantic Web.
+
+* Introduction
+
+** Joyce Lee (Saison Capital)
+- Saison Capital is the corporate arm of Credit Saison, which is one of the leading financial institutions in Japan.
+- Saison Capital started as a Web 2 fintech fund investing in Southeast Asia.
+- They started investing in Web 3 companies globally.
+
+** Daniel Liebau (Modular Blockchain Fund)
+- Modular Blockchain Fund is a Singapore-regulated fund management firm.
+- As of May this year, they ventured into the space of blockchains and cryptocurrencies.
+- Their focus is on sustainable smart contract platforms.
+
+** Quah Zheng Wei (Accredify)
+- Accredify helps enterprises to issue verifiable documents by anchoring the data on the blockchain.
+- The documents issued are tamper-proof and traceable back to the source.
+- He wants to share some of the use cases that their technology has been used in.
+
+** Manoj Vembu (Rubik Blockchain)
+- Rubik Blockchain is headquartered in Singapore and is an L1 blockchain company.
+- They focus mainly on developing use cases for oriented smart contracts, and their tech has enabled a lot of enterprise use cases and regulatory use cases across the globe.
+- They try to innovate a lot of the Web 3 space.
+- They have their own proof-of-pledge consensus mechanism, which is completely different from the ones that the world of blockchain has seen to date.
+- They focus mainly on being a lean, green and more adaptable blockchain across the globe.
+
+* Explanation of Web 3 terms
+
+** Daniel Liebau (Modular Blockchain Fund)
+- An analogy for a smart contract is a vending machine, which is a very simple smart contract.
+- You put a dollar into the vending machine, and you get a Snickers bar out.
+- Smart contracts can do a lot more than that, but it is essentially an automatic mechanism that allows you to execute some logic on top of a blockchain.
+
+** Manoj Vembu (Rubik Blockchain)
+- Web 1 was mainly about getting ourselves organised with the data that was pouring in from all sides.
+- The main purpose of Web 1 was kind of organising the data in a structured pattern.
+- Web 2 came up with the way we can optimise this data, like how can we use this data, what are the use cases, and where can you put the data to good use?
+- Web 3 adds a layer to it, which is currently more imaginative, but it's going to become a more use case-oriented layer later on.
+- We are trying to know how the web 2 data processing can be evolved into a meaningful articulation of data going forward.
+- So everything revolves around data, but how we portray now and how we convert ourselves to interact with the data is all about Web 3.
+
+** Quah Zheng Wei (Accredify)
+- Web 3 is still a new narrative that everybody is contributing to.
+- Even after this session, people are going to take things that we talk about and form a new narrative.
+- Web 3 is also about data ownership that sits at the individual level.
+- So instead of big tech companies owning our data, controlling what we share and similar things.
+- We can own, share and monetise your data.
+
+** Jung Younbo (Wee Kim Wee Professor [Moderator])
+- A distributed ledger is so that the information is shared, but that somehow helps people to secure the data and then claim ownership and so on.
+
+* What are the new opportunities for blockchain in the industry?
+
+** Joyce Lee (Saison Capital)
+- Crypto and blockchain are not the same thing, as blockchain is just the technology that powers what we know as cryptocurrency.
+- Blockchain does not only power cryptocurrency but also a lot of real-life use cases.
+- A blockchain is like the highways that we see in Singapore and all the other applications that run on it as cars.
+- Blockchain has created a whole new industry of its own.
+- When she first graduated, crypto, Bitcoin and blockchain were the craze and people were just picking it up and trying to figure out what it was.
+- Then came a plethora of new jobs.
+- If you are an engineer, suddenly smart contract engineer, and then you are creating decentralised applications.
+- If you were a business person, you're thinking about how people could monetise and own their data and what kind of new business models would come out of it.
+- Those are just the tip of the iceberg because we are still defining what Web 3 is and trying to see where this whole blockchain industry will go.
+- Thus, more opportunities will be created very soon.
+
+** Quah Zheng Wei (Accredify)
+- The confusion comes because Bitcoin with a big B and a small b means very different things.
+- Bitcoin (big B) is the blockchain itself.
+- Whereas bitcoin (small b) is the cryptocurrency behind that.
+- The naming is confusing, so they don't blame anybody here.
+- But for them, there are some use cases that they have done in the past that he thinks are quite relevant.
+- Since 2020, they can start issuing verifiable degrees, transcripts and diplomas across the country with large institutes of higher learning (IHLs) like NTU, SMU and NUS.
+- That has allowed us to apply for a job with a single click.
+- We don't have to worry about the verification of such education any more.
+- When the pandemic came, they also ventured into the healthcare space where they introduced the same technology and anchored COVID-19 medical records.
+- Medical records that you have no idea who on the other side they are verifying against.
+- Currently, they are working on a variety of different use cases that he can share about later on.
+
+** Daniel Liebau (Modular Blockchain Fund)
+- There are different types of tokens out there.
+- Some types are commonly described as security tokens, which are effectively a digital representation of a security that is recorded on a decentralised blockchain.
+- There are also cryptocurrencies.
+- Bitcoin is a big one, and Ethereum is another one.
+- These cryptocurrencies basically power smart contract platforms.
+- These platforms are almost like decentralised computers or operating systems where other people can build their applications on top of them.
+- There are also utility tokens, which is where it gets more complicated.
+- So far, a lot of people have bought utility tokens expecting to make money.
+- However, utility tokens are not originally designed for that.
+- Most of them are designed to be spent in a particular crypto ecosystem.
+- Therefore, they are defined as a consumptive right for a product or service.
+- You don't get any typical rights that you get from an investment, maybe control or cash flow, but you can just redeem against the service that the platform is building.
+- To distinguish between those three types of tokens is quite important, not only from an entrepreneurial perspective but also from a regulatory perspective.
+- If there are no utility tokens, there is also no web 3.
+
+** Manoj Vembu (Rubik Blockchain)
+- The underlying philosophy is that there is always a tech layer.
+- There is a technology that's underlying everything.
+- Blockchain is that tech layer that powers the way we all think about how the new level of technology is getting involved.
+- So with that as the fundamental layer, wee can look at the use cases like what Joyce mentioned and Daniel mentioned.
+- It is all about how you put this tech into utility.
+- You can use it for either doing a cryptocurrency project.
+- You can use it for developing a project like what Accredify is doing.
+- Or you can use it for a project, like what a government might be interested in doing on a decent life basis.
+- So there are always these concepts of gamification, tokenisation and how you can propel your whole business from the normal run-of-the-mill process to a Metaverse process.
+- All these things are powered by the underlying tech, which is blockchain.
+- Blockchain is going to be evolving much further than what we are seeing today, and it might go into use cases which we would not have imagined today.
+- Maybe tomorrow we will all be living in at least one use case in a usability manner from the blockchain perspective.
+- So with all these things evolving around us, he thinks that we need to keep an open mind.
+- How are we going to use the tech, and for what purpose?
+- How we are going to use the tech makes a lot of difference, and it is where we need to make sure that people understand blockchain.
+- We can move Web 3 forward in a more clear manner.
+
+** Quah Zheng Wei (Accredify)
+- He really likes how Manoj decouples the infrastructure and the application layer.
+- In a lot of new technology, that is the way it goes.
+- On the internet, we have HTML, TCP/IP, and DNS and nobody knows what's that.
+- People know the application that sits on top of all of this.
+- Blockchain or Web 3 as a whole is still quite nascent.
+- He thinks that we are somewhere where the infrastructure is somewhat there.
+- There are a few applications, but we are not yet at a full application layer.
+- So when they come, he thinks you'll be a lot more mainstream.
+
+** Daniel Liebau (Modular Blockchain Fund)
+- In their daily work, they focus on these smart contract platforms because they think the application level is not really very mature.
+- Looking at information platforms that tell you information about the daily active users of some of the most prominent decentralised applications, whether that is Uniswap, Ethereum or OpenSea, you will see that the numbers are really low.
+- You could also interpret it as a signal that it is still very early and that we are creating the foundations for much broader application and adoption.
+- They thought for the longest time that the adoption of web 3 was going to come from large corporations.
+- There are two interesting trends, the first being a platform business model which is what seemed to have worked over the last decade or so, even in Web 2.
+- The second one has to do with demographics.
+- It would be interesting to quiz students on this.
+- When he was very young and just graduated, the coolest thing was to work for an investment bank.
+- One decade later, the coolest thing was to work for Google.
+- Today, he would like to argue that the coolest thing is to work for yourself and do some sort of startup.
+- So all startups basically need some sort of basic operating system, some base layer.
+- They think that those are the smart contract platforms that other people can then build on.
+
+** Quah Zheng Wei (Accredify)
+- He had the same experience when he first matriculated into NTU, and he was also an NBS student.
+- The first year he came in, they had streaming, and Computer Info System was their last choice.
+- In that last year when he was graduating, business analytics was regarded as his first choice.
+- This huge shift is interesting.
+- The industry is maturing a lot.
+
+** Manoj Vembu (Rubik Blockchain)
+- He thinks that blockchain today is the coolest thing for all of us.
+- He thinks that all of them would love to be associated with one name, at least from the blockchain side of it, because it gives you the cool factor.
+- It gives a very good pay.
+- He thinks that all the students will love it.
+- The most important aspect is getting an understanding of the fundamentals of blockchain technology.
+- There are vast amounts of opportunities, but they are not finding a lot more skill sets that can come in from that opportunity.
+- If someone has really started a startup in blockchain, we need to come in and celebrate them, because it is a very difficult job to really find the right talent and to be a founder or co-founder, or even an employee that is contributing meaningfully to the technology layer of the startup.
+- If there are startups out there on the blockchain, and if they are working on some high-tech things, he thinks we should celebrate them a lot.
+
+** Quah Zheng Wei (Accredify)
+- What Manoj mentioned is how he got his co-founders to join him.
+- He is actually a chartered accountant, but when he decided to switch to the tech space, he was looking at different things that he could potentially do.
+- He develops iOS applications and so on.
+- But he realised that for everything that he was doing, he was decades behind the rest of the people in the industry.
+- He picked up the Bitcoin white paper and thought that it was going to be the future.
+- He finally had the chance to not be at the back of the queue.
+- He convinced his co-founders with the same narrative, and they are all computer science students.
+- He was just like, do you want to start at the front or the back?
+- And that was all it took.
+
+* Is blockchain a big game changer or just another hype that may disappear in the next few years?
+
+** Jung Younbo (Wee Kim Wee Professor [Moderator])
+- The confusion may come from a misunderstanding of the big B and the small b.
+- The big B may mean the highway infrastructure that could enable people to do multiple things and can ease the new startup companies to do their business and provide those kinds of document sharing without worrying about losing the information or security issues.
+- As such, it has good potential.
+
+** Daniel Liebau (Modular Blockchain Fund)
+- We always think about faster, cheaper and better when thinking about new technologies.
+- In the case of machine learning or any other kind of automation technology, the main purpose is to basically make a cost-income ratio of sorts look better.
+- But then that's not what blockchain is all about.
+- Blockchain is about enabling two participants to contract with each other without having to trust.
+- That functionality comes at a cost.
+- You can eventually execute a contract in a much faster, cheaper or better way if you accept that there is an intermediary in between.
+- But if you don't want that intermediary, then the blockchain is probably the best solution that there is.
+- Often, people look at blockchain and say that it is another technology that can help them save money when it is really not about that.
+- If you want something to be cheaper, do it in a centralised way, as it is going to be cheaper for sure.
+
+** Jung Younbo (Wee Kim Wee Professor [Moderator])
+- If you want that decentralisation, and want to do it in a trustless fashion, a blockchain is a good idea.
+- It has the potential to change the way people interact with each other, especially when they first meet together to try to do business.
+- It could really bypass the third party intermediaries and that could save the transaction costs for the companies.
+- He is originally from South Korea and still the traditional way of people doing business is to meet their business partners, have meals, or have some drinks, get to know each other to test the waters to see if the person is really in the business or not, then they talk about the actual business.
+- But with the smart contract and blockchain technologies, this preparation process is just removed.
+- Blockchain is currently happening and we can see more and expect more from this, which is good.
+
+* What are or will be the main technological challenges?
+
+** Jung Younbo (Wee Kim Wee Professor [Moderator])
+- Today's blockchain may be totally different from what the pioneer generation envisioned a Bitcoin blockchain would be.
+- So we talk about the evolution of blockchain and smart contracts.
+- Ethereum is different from how Bitcoin was originally designed.
+
+** Manoj Vembu (Rubik Blockchain)
+- There are versions of every industry or every technology that happens here.
+- He thinks that Bitcoin and Ethereum are kind of the pioneer generation or the version ones.
+- They have shown us what can be good, what need not be good and what can be improvised.
+- With the knowledge that has been accumulated over the last 15 years, we have now evolved new mechanisms, new consensus, new smart contracts and new policies that can define the way they are looking into the future.
+- Blockchain is not just going to be restricted to what's been done and what we want, and we are now looking at version 23 is coming up.
+- There could be infinite versions.
+- From Rubik's perspective, they have invented a new consensus mechanism called proof-of-pledge, which is neither proof-of-work nor proof-of-stake, which are the two most accepted and adapted blockchain consensus mechanisms.
+- They have looked at how proof-of-work is having its pros and cons and how proof-of-stake is having its pros and cons.
+- They interviewed a lot of blockchains which have use cases across the globe and found that there is a huge gap that is still not addressing the trilemma that blockchains always face.
+- Security, scalability and decentralisation.
+- They wanted to at least aim towards achieving the footsteps of all three aspects of the trilemma.
+- So they dialled up the proof-of-pledge mechanism, which is their own consensus mechanism, to ensure that they can achieve scalability, speed, and security.
+- That is very important for the proof-of-pledge mechanism, along with its adaptability.
+- From the perspective of a public blockchain, private blockchains have their pros and cons.
+- But public blockchains are where true decentralisation is going to happen, and they are not seeing adaptability being taken in by the enterprises.
+- Enterprises are the main users of blockchain.
+- If you look at most enterprises, those enterprises that are not so concerned about their data, can use any of the public blockchains.
+- But any serious enterprise, like the bigger ones, like Fortune 500 ones, will never touch a public blockchain because the blockchain does not ensure the safety, security and privacy of their data.
+- There is also the cost aspect which Daniel touched on, which is very important.
+- The consensus that they developed addresses the trilemma that is out there, so they tried to give an enterprise the flexibility to build their own private blockchain on a public blockchain.
+- That is where they brought out their architecture in a more modular concept rather than a monolithic concept.
+- While version one is focused on decentralisation, they become unfortunately monolithic because that is the starting point.
+- If you look at the evolving nature of the blockchain, they are looking at being more modular, so they can have offshoots coming up from a whole public chain.
+- Hence, it is possible to create your own private chains on the main public chain, so enterprises can have data security and privacy in their own private processes, but the transactions and provenance of the data can also be recorded on the public chain so that the enterprise is not doing the data recording themselves.
+- They are not losing their data, which is the new gold for enterprises.
+- They can use the ability of a public blockchain to provide a decentralised and adaptable environment.
+- This is how the versions are developing, and they are only in the initial stages, as it has only been two decades.
+- Web 2 has been around for 5 decades now.
+- We are looking at a huge development that is going to happen, and he thinks we are just scratching the surface of the innovation here.
+- Innovation is going to propel a lot more to come in.
+
+** Quah Zheng Wei (Accredify)
+- From an application point of view, they do see that as infrastructures that transform existing applications get better, there are also new applications that come about.
+- When he got his first phone, we only had General Packet Radio Service (GPRS), or 2.5G.
+- GPRS allowed me to check emails, but that's about it.
+- Then we had 3G, and he could send some images and do streaming.
+- Now, there is 5G coming up that will allow him to render and virtualise augmented reality (AR) across Marina Bay Sands for example.
+- He thinks we can draw the same conclusion in the blockchain space.
+- When Bitcoin first came about, the first currency was the first application.
+- Then there was the concept of coloured coins where we break down a single Bitcoin to Satoshi and attach certain metadata, which represents something else other than the Bitcoin itself.
+- These kinds of applications grew, and that's when Ethereum came in.
+- Applications that work on smart contracts came about.
+- All these new initial coin offerings (ICOs) and initial public offerings (IPOs) came about.
+- Decentralised exchange and decentralised finance (DeFi), of which Daniel is an expert.
+- All these are going to keep growing because of the improvements to the infrastructure.
+- For Accredify, they see themselves like the search of Web 2, which just gets better and better like search engines nowadays (not even remotely close to reality smh).
+- You don't even know when the new application comes about.
+- Google search just gets faster, and more accurate, and they see themselves moving in that direction.
+
+** Daniel Liebau (Modular Blockchain Fund)
+- The differences between different platforms are not really reflected at all in the prices of the tokens.
+- There are some that, at least from Accredify's perspective, are better than others, but the price of everything moves together.
+- They think about the nascent state of the market, and they believe that eventually, the understanding of these different characteristics across different infrastructure platforms will be better understood going forward.
+- There are three important aspects that a blockchain platform needs to have.
+- The stability of a platform is very important, as it doesn't matter as much as the performance of the platform if it is unreliable.
+- The second one is predictably low pricing, and the predictable aspect of it is quite important as it is problematic to build a business on top of a blockchain platform but not know how much a transaction is going to cost you.
+- The last aspect is fairness because if there are lots of unfair advantages being taken by a few actors and defraud the broader ecosystem, that would be terrible for a business.
+- So these things are very important to consider at the base layer.
+
+** Manoj Vembu (Rubik Blockchain)
+- The most important thing is focusing on sustainability.
+- With the world moving towards environmental, social, and governance (ESG) on all fronts, blockchain is not being left out right now.
+- There are a lot of voices that are being heard in the blockchain world as to how their blockchain is more sustainable and how it can propel that sustainability into the utilisation and application layer as well.
+- That is one of the concerns that the whole blockchain industry is having.
+- The first version was mainly focusing on tech.
+- The other versions started providing advancements and are improvisations on the tech with the various aspects of sustainability, governance and predictable handling of the fees, costs and other things.
+- There are low-cost blockchains that have come up and are providing use cases that are useful for retail uses.
+- They also focus on that, as Rubik is a 0 gas fee blockchain.
+- He gets asked how his business model is working because there is no gas fee.
+- They have their own methodologies and understanding as to how it works, but they are trying to develop an interoperable blockchain and cryptocurrency behind it instead of just giving a monolithic structure where people just use their current user tokens only for spending.
+- With these things, sustainability becomes a very important factor.
+- From their perspective on the architecture side of things, they have tried to ensure that their architecture stays as lean and green as possible.
+- There are various architectures which tried to provide some money for the green carbon credit purchase and other things.
+- However, they didn't want to do that as they are just burning a lot more energy on one side than we're just allocating funds towards offsetting it.
+- They have been trying to make their architecture more lean and green such that it doesn't need to use that much energy.
+- Adaptability for the architecture has been well-received by enterprises that are ESG conscious.
+- So sustainability is a major factor.
+
+** Joyce Lee (Saison Capital)
+- The most important part is how do we make the blockchain native to consumers.
+- Even when someone outside the industry uses it, they don't know, and they don't need to care that it is running on decentralised architecture or Web 3 or crypto.
+- We are still a little far from that kind of adoption, but the minute we start working towards things that consumers care about, which are speed, cost, and scalability, then we will be taking the right step forward in that direction.
+
+** Jung Younbo (Wee Kim Wee Professor [Moderator])
+- It would help the public if they could differentiate between the infrastructure and the application.
+- A lot of things are happening in both layers.
+- Daniel mentioned the difference between the tokens, and that the utility tokens are supposed to be used to facilitate those kinds of transactions or smart contracts.
+- So when the public or students try to invest their money in cryptocurrency, they need to see the differences between the different types of tokens and how they are used.
+
+* Would the blockchain change the landscape of finance
+
+** Jung Younbo (Wee Kim Wee Professor [Moderator])
+- The challenge is that it is happening so fast.
+- The learning curve is very steep for the public to understand what you mean by the new currencies and there are a lot of cryptocurrencies available.
+- They didn't know what they were and how they were used.
+- So that is causing and creating some confusion on the user side.
+
+** Daniel Liebau (Modular Blockchain Fund)
+- If you're prudent, then before you put any money into anything, it is never a wrong thing to try and understand what that thing is.
+- We say that and yet people rush into something because of greed and fear of missing out.
+- There is a very interesting comment from Ravi Menon, who runs the Monetary Authority of Singapore (MAS), that Singapore might need to do some sort of suitability test to basically help make sure that people who buy a cryptocurrency actually understand what they are getting themselves into.
+- He likes that because he teaches a class on blockchain, so the more people that want to learn, the better.
+- Singapore has taken a much better stance compared to the stance that some other jurisdictions have taken, where the regulator has basically said that cryptocurrency is a thing that is not available to the public and is only reserved for accredited investors.
+- This way, they cut out a whole group of people that have no chance.
+- He thinks that students taking CC0007 currently could probably take a suitability test, however it may look like, as it may not even be defined.
+- The bottom line is to investigate more.
+- There are a lot of researchers in computer science, economics, finance, and even in design that can look into this topic of blockchain.
+- There is a lot to read about the blockchain so go knock yourself out.
+- There is probably more information that one individual can read, so he thinks that understanding things better before committing even $1 is probably a good idea.
+
+* What do you think of Non-Fungible Tokens (NFTs) and the value of digital artefacts?
+
+** Jung Younbo (Wee Kim Wee Professor [Moderator])
+- Some of the non-fungible tokens, and digital artefacts, the price of which are ridiculous.
+- He's old school, so he doesn't see how that value is determined and how it works.
+
+** Manoj Vembu (Rubik Blockchain)
+- They have a different version of what NFTs are.
+- NFTs are meant to be non-fungible, which means you're tracking a physical asset or an asset that's meant to be an asset on a digital farm in the whole digital universe.
+- That is all NFTs are.
+- Now you can choose to trade it or keep it, it's up to you.
+- There are platforms that will definitely provide asset exchanges and other things, but Rubik Blockchain will provide you with the ability to trade these things.
+- NFTs as a digital asset have an immense use case, especially for enterprises.
+- Any enterprise that is looking at converting their physical assets or the assets in their whole portfolio into NFTs is a huge use case.
+- If you tried to take this as an investable asset, then there are a lot more concepts that you need to understand before you go and put your money into it, as Daniel explained just now.
+- You need to have a lot more understanding of where your money is going.
+- It is easy to put your money into anything, but it is very difficult to take it out.
+- That's the fundamental learning that we all should have.
+- When you look at NFTs from the perspective that he mentioned above, the tech is very scalable and usable and there are a lot more use cases that are available out there.
+- But if you want to just consider this as an asset and how you are going to map the physical asset to the digital asset, there is a lot more development in the technology that needs to happen.
+- To be honest, they did do a lot of research on an NFT, but there is no tech that is available to map a physical asset to its digital form.
+- If you get it in the digital form, the digital assets can be mapped to the digital trail, but that is not all.
+- If you have a physical asset that needs to be mapped to the digital asset, there's no tech that is available in the market to do that today.
+- A lot more research is needed to go into how a digital can be morphed into another digital artefact.
+- It is one of the biggest issues that any platform today is having, is that there are a lot of fake items that are out there.
+- Deciding on whether the item is original or fake and how an investor can make this decision would require more research.
+- A lot more challenges are lying ahead of us, but he thinks that the technology is evolving much better.
+- We will be having much better technologies to track the physical assets in their digital form and vice versa.
+- So the uses of NFTs have been laid out, and the technology is developing.
+- If you really want to look at it purely from an investable asset class, challenges are lying ahead.
+- So you need to be quite sure where you are putting your money into.
+
+** Jung Younbo (Wee Kim Wee Professor [Moderator])
+- People who are interested in these kinds of NFTs need to do a bit of research to understand their nature and see what kind of blockchain technology, cryptocurrency, or smart contract is behind the NFTs.
+- So they really have to bear the responsibility, and it is changing so quickly.
+- So when they wait until it has been proven by the public, it may be a little too late.
+- So they would have to be a bit more proactive to learn things by themselves and see what kind of platform is safer and therefore create more value.
+
+* Would the blockchain change the ways people interact and trust each other?
+
+** Quah Zheng Wei (Accredify)
+- Blockchain and cryptocurrency have now become a little bit synonymous.
+- If you talk to a random person today about NFTs, they won't be talking about the technical part and would talk about the digital art, like the JPEG, the board games or avatars of the world.
+- His friend is a huge fan and purchaser of NFTs and he supports most of the big ones.
+- There is one use case that he never thought was possible.
+- His friend told him that he walked out, made his money, and bought his Rolex and Lamborghini.
+- But his friend couldn't constantly post photos about his car and his watch every single day on Instagram as it is not classy these days.
+- So his friend spent $500 on a verifiable JPEG so that he could put it in his Twitter profile as a way to subtly flex.
+- This use of NFTs to flex wealth blew his mind.
+
+** Daniel Liebau (Modular Blockchain Fund)
+- We have to think about what that means subsequently (referring to what Zheng Wei mentioned about his friend), as there's one person who does that, but he isn't by himself.
+- There is a whole group of them.
+- Then some companies want access to this kind of community because if you own a Lamborghini, you could possibly buy some other item that the company produces.
+- So if he can somehow address that group of people, there is already some value there.
+- He finds that NFTs are not interesting because they have the technology of uniquely representing one particular asset, but that they also show that the community has some value in itself.
+- This is in line with the fallacy that technology needs to be adopted by large companies to gain traction.
+- In the crypto space, that didn't happen.
+- We had smart contract platforms and have all sorts of attempts on how to get companies to get on board the platforms.
+- As Manoj mentioned earlier, most of the large firms didn't use public blockchains.
+- DeFi came about, also known as decentralised finance, which is financial services on top of a blockchain.
+- It is its own little thing.
+- Then NFT is where we are next, and then the metaverse is next.
+- He is sure that there are going to be other things.
+- Not only are the use cases dependent on Fortune 500 companies, they also go back to young people being entrepreneurs and wanting to do their own thing.
+- There is a lot of entrepreneurial energy that can come out into this ecosystem.
+
+** Manoj Vembu (Rubik Blockchain)
+- There are two examples of NFTs that he has seen but have never thought about.
+- The first is when they looked into its use case.
+- YMCA does auctions every year within their community.
+- They used to conduct the auctions back in New York.
+- They also used to conduct their auctions in Japan and Singapore.
+- But today, they are building their digital asset platform on blockchain and they are taking all their art forms into NFT.
+- So a child who has submitted artwork somewhere in the corner of the US, or somewhere in India or in Japan, can now get the whole world to look at his art and map his digital art to his physical art, which will result in a far greater reach compared to its regional reach earlier.
+- This is not a small market, YMCA is looking at this to be a billion-dollar industry going forward for themselves.
+- If you're looking at real use cases like this, NFT has an immense amount of potential.
+- Another use case is carbon credits.
+- There are at least 6 companies on their platform that are developing carbon credits, minting them as NFTs and then taking them onto the global stage instead of just keeping them on the regional stage.
+- So carbon credits are now going global instead of just remaining regional.
+- With NFTs coming in, they are all transferable assets, and these assets can move into any bridge, and can put themselves into any platform, and hence can be available for a global audience.
+- If you can do this, what better use case do you have for Web 3 to exhibit itself in a real-world scenario.
+
+* Conclusion
+
+** Jung Younbo (Wee Kim Wee Professor [Moderator])
+- He loves the blockchain and its potential, as well as how the technology is used in today's world.
+
+* Key takeaway (addressed to students)
+Share or highlight one thing you hope the audience will take away from today's panel discussion about blockchain.
+
+** Daniel Liebau (Modular Blockchain Fund)
+- He thinks that attending a class like this (referring to CC0007) is great.
+- Reading is great, but also experimenting beats reading at any moment.
+- So try it out and be careful with the zeros.
+- But if you can play with the technology, it will really assist you in your learning journey.
+
+** Joyce Lee (Saison Capital)
+- You are super young, so take this time to really learn about the industry, but do not see it for you to get rich quickly or whatever that you see on platforms nowadays.
+- She went into crypto as a university student because she saw that it was going to be the next thing to revolutionise the financial industry.
+- She thinks that after CC0007, you will be seeing the same thing as well.
+- So do take the time to read everything from the Bitcoin white paper to the latest L1 technology right now.
+
+** Quah Zheng Wei (Accredify)
+- He thinks Web 3.0 has really democratised and levelled the playing field for everyone.
+- So he thinks it's one of the best times to start your own company.
+- Be an entrepreneur and you can contribute to society in your own way.
+
+** Manoj Vembu (Rubik Blockchain)
+- He thinks there's no better time to jump into the entrepreneurship journey now, in the Web 3 field, probably by joining a startup.
+- And if you can, you can be more vigilant in terms of what you're getting into.
+- If you can plan for yourself for the next 3 or 4 years ahead, and then get into the Web 3 space with the intention to learn and grow, that's the best time and the best field that you have got now.
+
+** Jung Younbo (Wee Kim Wee Professor [Moderator])
+- He hopes that the panel discussion inspires you to think about the future of your career and the future direction of blockchain technology.

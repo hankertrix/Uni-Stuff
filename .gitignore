@@ -1,0 +1,14 @@
+# Ignore Python cache files
+__pycache__/
+
+# Ignore the target directory for Rust
+target/
+
+# Ignore the data files for BS1009
+*/bs1009-introduction-to-computational-thinking/ay-*/data/
+
+# Ignore the files for CY2001 Research Attachment
+*/cy2001-research-attachment-1/
+
+# Ignore the files for LL5001 Singapore Sign Language Level 1
+*/ll5001-singapore-sign-language-level-1/

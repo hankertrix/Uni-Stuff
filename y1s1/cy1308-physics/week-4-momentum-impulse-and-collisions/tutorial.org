@@ -1,0 +1,288 @@
+#+TITLE: Momentum & Impulse Tutorial
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{siunitx}
+
+\newpage
+
+* Question 1
+
+Since there is no external force on the system in the external direction, the position of the centre of mass for the system (consisting of the dog and the boat), does not change. Let \(x_{CM}\) be the position of the centre of mass of the system.
+
+\[\Delta x_{CM} = 0\]
+\[\frac{m_{dog}  \Delta x_{dog} + m_{boat} \Delta x_{boat}}{m_{dog} + m_{boat}} = 0\]
+\[\frac{5 \Delta x_{dog} + 20 \Delta x_{boat}}{5 + 20} = 0\]
+\[\frac{5 \Delta x_{dog} + 20 \Delta x_{boat}}{25} = 0\]
+\[5 \Delta x_{dog} + 20 \Delta x_{boat} = 0\]
+\[5 \Delta x_{dog} = - 20 \Delta x_{boat}\]
+\[5 (\Delta x_{\text{dog relative to boat}} + \Delta x_{boat}) = - 20 \Delta x_{boat}\]
+\[5 \Delta x_{\text{dog relative to boat}} + 5 \Delta x_{boat} = - 20 \Delta x_{boat}\]
+\[5 \Delta x_{\text{dog relative to boat}} = - 25 \Delta x_{boat}\]
+\[5 (4) = - 25 \Delta x_{boat}\]
+\[20 = - 25 \Delta x_{boat}\]
+\[\Delta x_{boat} = -\frac{20}{25}\]
+\[\Delta x_{boat} = -\frac{4}{5}\]
+
+Hence, the change in the dog's distance from the shore will be:
+\[\Delta x_{dog} = \Delta x_{\text{dog relative to boat}} + \Delta x_{boat}\]
+\[\Delta x_{dog} = 4 + \left(- \frac{4}{5} \right)\]
+\[\Delta x_{dog} = 3.2\]
+
+Hence, the dog's distance from the shore will be:
+\begin{align*}
+x_{dog} &= 10 - 3.2 \\
+&= \qty{6.8}{\unit{m}}
+\end{align*}
+
+* Question 2
+
+Let \(x_{CM}\) be the position of the centre of mass of the object with respect to point $C$. Taking the left side to be positive:
+\[x_{CM} = \frac{m_{\text{larger circle}} x_{\text{larger circle}} - m_{\text{smaller circle}} x_{\text{smaller circle}}}{m_{\text{larger circle}} - m_{\text{smaller circle}}}\]
+\[x_{CM} = \frac{k\pi(2R)^2 (0) - k\pi(R)^2 (0.80R)}{k\pi(2R)^2 - k\pi(R)^2} \quad (\text{where } k \text{ is an arbitrary constant})\]
+\[x_{CM} = \frac{- 0.80k\pi R^3}{4k\pi R^2 - k\pi R^2}\]
+\[x_{CM} = \frac{- 0.80k\pi R^3}{3k\pi R^2}\]
+\[x_{CM} = -\frac{4}{15} R\]
+\[x_{CM} \approx - 0.267 R \text{ from point } C \text{ (3.s.f)}\]
+
+\newpage
+
+* Question 3
+Let \(z_{CM}\) be the z-coordinate of the position of the centre of mass of the object.
+
+Finding $m$ in terms of \(V\):
+\[\frac{m}{V} = \rho\]
+\[m = \rho V\]
+
+Finding the volume of the solid:
+\begin{align*}
+V &= \frac{5}{100} \left(\int_0^3 \frac{(x - 3)^2}{9} \, dx \right) \\
+&= \frac{5}{900} \int_0^3 (x - 3)^2 \, dx \\
+&= \frac{5}{900} \int_0^3 x^2 - 6x + 9 \, dx \\
+&= \frac{5}{900} \left[\frac{x^3}{3} - \frac{6x^2}{2} + 9x \right]_0^3 \\
+&= \frac{5}{900} \left[\frac{(3)^3}{3} - \frac{6(3)^2}{2} + 9(3) - \left( \frac{(0)^3}{3} - \frac{6(0)^2}{2} + 9(0) \right)\right] \\
+&= \frac{5}{900} (9) \\
+&= \frac{5}{100} \\
+\end{align*}
+
+Finding the centre of mass of the track:
+\[x_{CM} = \frac{1}{M} \int x \, dm \]
+\[x_{CM} = \frac{1}{M} \int x \, \rho dV \]
+\[x_{CM} = \frac{\rho}{M} \int x \, dA \cdot \frac{5}{100} \]
+\[x_{CM} = \frac{5 \rho}{100M} \int x \, dA \]
+\[x_{CM} = \frac{5 \rho}{100M} \int x \cdot y \, dy \]
+\[x_{CM} = \frac{5 \rho}{100M} \int x \cdot \frac{(x - 3)^2}{9} \, dx \]
+\[x_{CM} = \frac{5 \rho}{900M} \int_0^3 x \cdot (x - 3)^2 \, dx \]
+\[x_{CM} = \frac{5 \rho}{900 \rho V} \int_0^3 x \cdot (x - 3)^2 \, dx \]
+\[x_{CM} = \frac{5}{900 V} \int_0^3 x (x - 3)^2 \, dx \]
+\[x_{CM} = \frac{5}{900 V} \int_0^3 x (x^2 - 2(1)(3)x + 9) \, dx \]
+\[x_{CM} = \frac{5}{900 V} \int_0^3 x (x^2 - 6x + 9) \, dx \]
+\[x_{CM} = \frac{5}{900 V} \int_0^3 x^3 - 6x^2 + 9x \, dx \]
+\[x_{CM} = \frac{5}{900 V} \left[\frac{x^4}{4} - \frac{6x^3}{3} + \frac{9x^2}{2} \right]_0^3 \]
+\[x_{CM} = \frac{5}{900 V} \left[\frac{x^4}{4} - 2x^3 + 4.5x^2 \right]_0^3 \]
+\[x_{CM} = \frac{5}{900 V} \left[\frac{3^4}{4} - 2(3)^3 + 4.5(3)^2 - \left(\frac{(0)^4}{4} - 2(0)^3 + 4.5(0)^2 \right) \right] \]
+\[x_{CM} = \frac{5}{900 V} (6.75)\]
+\[x_{CM} = \frac{3}{80} V^{-1}\]
+
+Substituting \(V = \frac{5}{100}\):
+\[x_{CM} = \frac{3}{80} \left(\frac{5}{100} \right)^{-1}\]
+\[x_{CM} = \qty{0.75}{\unit{m}}\]
+
+* Question 4
+
+By symmetry,
+\[x_{CM} = y_{CM} = 0\]
+
+Let $h$ be the height of the pyramid and let $l$ be the length of the square base of a slice of the pyramid at height $z$ above the base of the pyramid.
+\\
+
+Using similar triangles:
+\[\frac{l}{s} = \frac{h - z}{h}\]
+\[l = \frac{s}{h} (h - z)\]
+
+Finding the z-coordinate of the centre of mass of the pyramid:
+\begin{align*}
+z_{CM} &= \frac{1}{M} \int z \, dm \\
+&= \frac{1}{\int \, dm} \int z \, dm (\because M = \int \, dm) \\
+&= \frac{1}{\int \rho l^2 \, dz} \int z \rho l^2 \, dz \quad (\because dm = \rho l^2 dz) \\
+&= \frac{1}{\int l^2 \, dz} \int z l^2 \, dz \\
+&= \frac{1}{\int \left[\frac{s}{h} (h - z) \right]^2 \, dz} \int z \left[\frac{s}{h} (h - z) \right] ^2 \, dz \\
+&= \frac{\int z \left[\frac{s}{h} (h - z) \right]^2 \, dz}{\int \left[\frac{s}{h} (h - z) \right]^2 \, dz} \\
+&= \frac{\int z \left(\frac{s}{h} \right)^2 (h - z)^2 \, dz}{\int \left(\frac{s}{h} \right)^2 (h - z)^2 \, dz} \\
+&= \frac{\int z (h - z)^2 \, dz}{\int (h - z)^2 \, dz} \\
+&= \frac{\int z (h^2 - 2zh + z^2) \, dz}{\int h^2 - 2zh + z^2 \, dz} \\
+&= \frac{\int zh^2 - 2z^2h + z^3 \, dz}{\int h^2 - 2zh + z^2 \, dz} \\
+&= \frac{\frac{z^2h^2}{2} - \frac{2}{3} z^3h + \frac{1}{4} z^4}{zh^2 - \frac{2z^2h}{2} + \frac{1}{3} z^3} \\
+&= \frac{\frac{zh^2}{2} - \frac{2}{3} z^2h + \frac{1}{4} z^3}{h^2 - \frac{2zh}{2} + \frac{1}{3} z^2}
+\end{align*}
+
+When \(z = h\):
+\begin{align*}
+z_{CM} &= \frac{\frac{(h)h^2}{2} - \frac{2}{3} h^2 \cdot h + \frac{1}{4} h^3}{h^2 - \frac{2(h)h}{2} + \frac{1}{3} h^2} \\
+&= \frac{\frac{h^3}{2} - \frac{2}{3} h^3 + \frac{1}{4} h^3}{h^2 - h^2 + \frac{1}{3} h^2} \\
+&= \frac{\frac{1}{12}h^3}{\frac{1}{3}h^2} \\
+&= \frac{1}{4}h
+\end{align*}
+
+Finding $h$ in terms of \(s\):
+\begin{align*}
+h &= \sqrt{s^2 - \sqrt{\left(\frac{1}{2}s \right)^2 + \left(\frac{1}{2}s \right)^2}^2} \\
+&= \sqrt{s^2 - \sqrt{\frac{1}{4}s^2 + \frac{1}{4}s^2}^2} \\
+&= \sqrt{s^2 - \sqrt{\frac{1}{2}s^2}^2} \\
+&= \sqrt{s^2 - \frac{1}{2}s^2} \\
+&= \sqrt{\frac{1}{2}s^2} \\
+&= \frac{1}{\sqrt{2}}s
+\end{align*}
+
+Hence, the z-coordinate will be:
+\begin{align*}
+z_{CM} &= \frac{1}{4}h \\
+&= \frac{1}{4} \frac{1}{\sqrt{2}}s \\
+&= \frac{s}{4\sqrt{2}}
+\end{align*}
+
+Thus, the coordinates of the centre of mass will be $\left(0, 0, \frac{s}{4\sqrt{2}}\right)$.
+
+\newpage
+
+* Question 5
+Initial momentum of the system is \(mv_0\).
+\\
+
+Let $a$ be the leftmost mass with initial speed $v_0$, $b$ be the left mass and $c$ be the rightmost mass with mass $M$.
+
+Looking at the collision between the $a$ and \(b\):
+\[mv_0 + 0 = mv'_a + mv'_b\]
+\[v_0 = v'_a + v'_b \tag{1}\]
+
+Since the collisions are elastic, kinetic energy is conserved:
+\[v_a - v_b = v'_b - v'_a\]
+\[v_0 - 0 = v'_b - v'_a\]
+\[v_0 = v'_b - v'_a \tag{2}\]
+
+Equating $(1)$ and \((2)\):
+\[v'_a + v'_b = v'_b - v'_a\]
+\[v'_a + v'_b = v'_b - v'_a\]
+\[2v'_a = v'_b - v'_b\]
+\[2v'_a = 0\]
+\[v'_a = 0\]
+
+Hence, $a$ will stop after the first collision. From \((1)\):
+\[v_0 = 0 + v'_b\]
+\[v'_b = v_0\]
+
+This means that the velocity of $b$ will be $v_0$ after the first collision.
+\\
+
+For the second collision between $b$ and \(c\):
+\[mv_0 + Mv_c = mv'_b + Mv'_c\]
+\[mv_0 + 0 = mv'_b + Mv'_c\]
+\[mv_0 = mv'_b + Mv'_c \tag{3}\]
+
+Again, since the collision is elastic:
+\[v_0 - 0 = v'_c - v'_b\]
+\[v_0 = v'_c - v'_b \tag{4}\]
+
+Substituting $(4)$ into \((3)\):
+\[m(v'_c - v'_b) = mv'_b + Mv'_c\]
+\[mv'_c - mv'_b = mv'_b + Mv'_c\]
+\[mv'_c - Mv'_c = 2mv'_b\]
+\[v'_c(m - M) = 2mv'_b\]
+\[v'_b = \frac{m - M}{2m} v'_c\]
+
+From \((4)\):
+\[v'_c = v_0 + v'_b \tag{5}\]
+
+Finding the final velocity of \(b\) by substituting \((5)\) into \((3)\):
+\[mv_0 = mv'_b + M(v_0 + v'_b)\]
+\[mv_0 = mv'_b + Mv_0 + Mv'_b\]
+\[mv_0 - Mv_0 = mv'_b + Mv'_b\]
+\[v_0(m - M) = (m + M)v'_b\]
+\[v'_b(m + M) = (m - M)v_0\]
+\[v'_b = \frac{m - M}{m + M}v_0 \tag{6}\]
+
+Finding the final velocity of \(c\) by substituting \((6)\) into \((5)\):
+\[v'_c = v_0 + v'_b\]
+\[v'_c = v_0 + \frac{m - M}{m + M} v_0\]
+\[v'_c = \frac{m + M}{m + M} v_0 + \frac{m - M}{m + M} v_0\]
+\[v'_c = \frac{m + M + m - M}{m + M} v_0\]
+\[v'_c = \frac{2m}{m + M} v_0\]
+
+** (a)
+From \((6)\), when \(M \leq m\), \(m - M \ge 0\), thus $v'_b$ will be in the same direction as $v'_c$. This means that $b$ will move in the same direction as $c$ and hence there will not be a third collision.
+
+** (b)
+
+From \((6)\), when \(M > m\), \(m - M < 0\), thus $v'_b$ will be in the opposite direction to $v'_c$. This means that $b$ will hit $c$ and move in the opposite direction to hit $a$ again. Thus, there will be a third collision.
+\\
+
+In this case, the velocity of $a$ will not be 0.
+\[m \left( \frac{m - M}{m + M}v_0 \right) + 0 = mv'_a + mv'_b\]
+\[\frac{m - M}{m + M}v_0 = v'_a + v'_b \tag{7}\]
+
+Since the collision is elastic:
+\[v_b - v_a = v'_a - v'_b\]
+\[\frac{m - M}{m + M}v_0 - 0 = v'_a - v'_b\]
+\[\frac{m - M}{m + M}v_0 = v'_a - v'_b \tag{8}\]
+
+Equating \((7)\) and \((8)\):
+\[v'_b + v'_a = v'_a - v'_b\]
+\[2v'_b = v'_a - v'_a\]
+\[2v'_b = 0\]
+\[v'_b = 0\]
+
+From \((7)\):
+\[\frac{m - M}{m + M} v_0 = v'a + 0\]
+\[v'a = \frac{m - M}{m + M} v_0\]
+
+Hence, the final velocity of $a$ in this case will be $\frac{m - M}{m + M} v_0$ and the final velocity of $b$ will be 0.
+
+* Question 6
+Let the mass of the alpha particle be $m$. Using the conservation of momentum and resolving the vectors in the horizontal direction:
+\[mv + 0 = mv'_{\alpha} \cos (64) + 4mv'_O \cos (51)\]
+\[v = v'_{\alpha} \cos (64) + 4v'_O \cos (51) \tag{1}\]
+
+Using the conservation of momentum and resolving the vectors in the vertical direction:
+\[0 + 0 = mv'_{\alpha} \sin (64) + 4mv'_O \sin (51)\]
+\[0 + 0 = v'_{\alpha} \sin (64) + 4v'_O \sin (51)\]
+\[v'_{\alpha} \sin (64) = - 4v'_O \sin (51)\]
+\[v'_{\alpha} = - \frac{4v'_O \sin (51)}{\sin (64)} \tag{2}\]
+
+Substituting $(2)$ into \((1)\):
+\[v = \frac{4v'_O \sin (51)}{\sin (64)} \cdot \cos (64) + 4v'_O \cos (51)\]
+\[v = 4.03343921v'_O\]
+\[v'_O = 0.2479273761v \tag{3}\]
+
+Finding the final velocity of the alpha particle by substituting $(3)$ into \((1)\):
+\[v = v'_{\alpha} \cos (64) + 4(0.2479273761v) \cos (51)\]
+\[0.37589698969v = 0.4383711468v'_{\alpha}\]
+\[v'_{\alpha} = 0.8574856937v\]
+
+Finding the ratio of the final speed of the alpha particle to the oxygen:
+\begin{align*}
+\frac{v'_{\alpha}}{v'_O} &= \frac{0.8574856937v}{0.2479273761v} \\
+&= 3.458616419 \\
+&\approx 3.46 \text{ (3 s.f)}
+\end{align*}
+
+* Question 7
+
+** (a)
+The force experienced by the astronaut and MMU system would be:
+\begin{align*}
+F &= ma \\
+&= (70 + 110) \cdot 0.029 \\
+&= \qty{5.22}{\unit{N}}
+\end{align*}
+
+Since the change in momentum is equal to the impulse:
+\[F \cdot t = \Delta mv\]
+\[5.22 \cdot 5 = \Delta m(490)\]
+\[\Delta m = 0.05326530612\]
+\[\Delta m \approx 0.0533 \text{ (3 s.f)}\]
+
+Thus, \(\qty{0.0533}{\unit{kg}}\) of gas is used by the thruster in \(\qty{5.0}{\unit{s}}\).
+
+** (b)
+
+The thrust produced by the thruster would be the force experienced by the astronaut and MMU system, which is \(\qty{5.22}{\unit{N}}\), as found in the previous part.

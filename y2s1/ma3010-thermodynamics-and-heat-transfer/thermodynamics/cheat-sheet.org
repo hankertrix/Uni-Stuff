@@ -1,0 +1,2427 @@
+#+TITLE: MA3010 Thermodynamics and Heat Transfer Cheat Sheet (Thermodynamics Section)
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{siunitx}
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \setlength{\parindent}{0em}
+
+* Definitions
+
+** Thermodynamics
+- Thermodynamics analyses the *amount* of energy (heat or work done) as a system undergoes a process from one equilibrium state to another.
+- It only considers the end states in equilibrium and DOES NOT provide information (like time taken) from initial to final state.
+
+** Heat transfer
+- Heat transfer analyses the *rate* of energy transfer and *temperature distribution* during a process.
+- It is related to time and non-equilibrium states when a temperature gradient exists.
+
+** Change in specific internal energy of an ideal gas
+\[\Delta u = c_{\text{v, avg}} (T_2 - T_1)\]
+
+Where:
+- $\Delta u$ is the change in specific internal energy of an ideal gas
+- $c_{\text{v, avg}}$ is the specific heat capacity of the ideal gas at constant volume
+- $T_2$ is the final temperature
+- $T_1$ is the initial temperature
+
+** Change in specific enthalpy of an ideal gas
+\[\Delta h = c_{\text{p, avg}} (T_2 - T_1)\]
+
+Where:
+- $\Delta h$ is the change in specific enthalpy of an ideal gas
+- $c_{\text{p, avg}}$ is the specific heat capacity of the ideal gas at constant pressure
+- $T_2$ is the final temperature
+- $T_1$ is the initial temperature
+
+** Quality (dryness fraction) (\(x\))
+Dryness fraction, or quality, $x$, is the proportion of vapour and liquid by mass in a two-phase mixture. The quality is 0 at the saturated liquid volume (\(v_f\)) and 1 at the saturated gas volume (\(v_g\)). A two-phase system can be treated as a homogenous mixture for convenience.
+
+\[x = \frac{m_{vapour}}{m_{total}} = \frac{m_g}{m_f + m_g}\]
+
+Where:
+- $x$ is the quality or dryness fraction
+- $m_{vapour}$ is the mass of vapour
+- $m_{total}$ is the total mass
+- $m_g$ is the mass of vapour
+- $m_f$ is the mass of liquid
+
+*** Specific entropy in terms of quality (\(s\))
+\[s = (1 - x)s_f - xs_g = s_f + xs_{fg}\]
+
+Where:
+- $s$ is the specific entropy
+- $s_f$ is the specific entropy of the saturated liquid
+- $s_g$ is the specific entropy of the saturated vapour
+- $s_{fg}$ is the specific entropy of the mixture at evaporation, where $s_{fg} = s_g - s_f$
+
+@@latex: \newpage@@
+
+*** Quality in terms of specific entropy (\(x\))
+\[x = \frac{s - s_f}{s_{fg}}\]
+
+The same formula can also be used for other properties, like specific internal energy (\(u\)), specific enthalpy (\(h\)) or specific volume (\(u\)).
+
+Where:
+- $x$ is the quality
+- $s$ is the specific entropy of the mixture
+- $s_f$ is the specific entropy of the saturated liquid
+- $s_g$ is the specific entropy of the saturated vapour
+- $s_{fg}$ is the specific entropy of the mixture at evaporation, where $s_{fg} = s_g - s_f$
+
+** Second Law of Thermodynamics
+
+*** Introduction
+1. It identifies the direction of processes.
+2. It determines the theoretical limits for the performance of engineering systems, like heat engines and refrigerators.
+   - Defines "perfection" for thermodynamic processes
+   - Used as a benchmark for real engineering systems
+3. It asserts that energy has *quality* as well as quantity. It determines the degree of degradation of energy during a process.
+   - Energy at a high temperature has better quality than the same energy at a low temperature.
+4. Predicts degree of completion for chemical reactions.
+   - A process is completed when entropy stops increasing.
+
+** Thermal energy reservoirs
+- A thermal energy reservoir is a hypothetical body with a relatively large *thermal energy capacity (mass \(\boldsymbol{\times}\) specific heat)* that can absorb or supply finite amounts of heat *without undergoing any change in temperature*.
+- In practice, large bodies of water (oceans, lakes and rivers) and the atmospheric air can be modelled as thermal energy reservoirs.
+\[Q = mc \Delta T\]
+
+*** Heat source
+A heat source supplies heat energy. Some examples include the Sun, a furnace, etc.
+
+*** Heat sink
+A heat sink absorbs heat energy. Some examples include the river, atmosphere, etc.
+
+** Heat engines
+- Work is easily converted into other forms of energy such as heat, but the reverse is more difficult.
+- Heat engines convert heat to work.
+  1. Receive heat from a high-temperature source.
+  2. Convert part of the heat received to work.
+  3. Reject the remaining waste heat to a low-temperature sink.
+  4. Operate on a *cycle*.
+- One example is a steam power plant.
+  - \(Q_{in}\) is the heat supplied to the steam in the boiler.
+  - \(W_{out}\) is the work extracted from the steam in the turbine.
+  - \(Q_{out}\) is the heat rejected by the steam in the condenser.
+  - \(W_{in}\) is the work required to pump water into the boiler.
+- Net output from the heat engine is:
+\[W_{\text{net, out}} = W_{out} - W_{in}\]
+
+*** Diagram
+[[./images/heat-engine-diagram.png]]
+
+Where:
+- \(T_H\) is the temperature of the high temperature reservoir
+- \(Q_H\) is the heat transferred from the high temperature reservoir
+- \(T_L\) is the temperature of the low temperature reservoir
+- \(Q_L\) is the heat transferred from the low temperature reservoir
+- \(W_{\text{net, out}}\) is the net work output of the heat engine
+
+*** Energy balance
+From first law:
+\[Q + W = \Delta U\]
+
+For a cycle:
+\[Q + W = 0\]
+\[Q_H + (-Q_L) + (-W_{\text{net, out}}) = 0\]
+\[W_{\text{net, out}} = Q_{in} - Q_{out}\]
+
+Where:
+- \(Q\) is the heat energy input into the system
+- \(W\) is the work done on the system
+- \(Q_H, Q_{in}\) is the heat energy input from the high temperature reservoir (H for high temperature)
+- \(Q_L, Q_{out}\) is the heat energy output from the low temperature reservoir (L for low temperature)
+- \(W_{\text{net, out}}\) is the net work output
+
+*** Thermal efficiency (\(\eta\))
+A measure of how well a heat engine converts heat input into useful work:
+\[\text{Thermal Efficiency} = \frac{\text{Net work output}}{\text{Total heat input}}\]
+\[\eta_{th} = \frac{W_{\text{net, out}}}{Q_{in}} = 1 - \frac{Q_{out}}{Q_{in}}\]
+\[\eta_{th} = \frac{W_{\text{net, out}}}{Q_{H}} = 1 - \frac{Q_L}{Q_H}\]
+
+@@latex: \newpage@@
+
+** Kelvin-Planck statement
+\[\eta_{th} = 1 - \frac{Q_L}{Q_H}\]
+- If \(Q_L = 0\), the heat engine will have 100% efficiency.
+- However, there is always waste heat produced.
+- The cycle cannot be completed without rejecting heat to a low-temperature sink.
+
+Hence, it is impossible for any device that operates on a cycle to receive heat from a single reservoir and produce a net amount of work. Even theoretically perfect heat engines don't have an efficiency of 100%.
+
+This statement is equivalent to the Clausius statement.
+
+@@latex: \newpage@@
+
+** Reverse heat engine (refrigerators and heat pumps)
+
+*** Diagram
+#+ATTR_LATEX: :scale 1.1
+[[./images/reverse-heat-engine-diagram.png]]
+
+Where:
+- \(T_H\) is the temperature of the high temperature reservoir
+- \(Q_H\) is the heat transferred from the high temperature reservoir
+- \(T_L\) is the temperature of the low temperature reservoir
+- \(Q_L\) is the heat transferred from the low temperature reservoir
+- \(W_{\text{net, in}}\) is the net work input of the heat engine
+
+*** Refrigerators and heat pumps
+- Heat transfer form high temperatures to low temperatures by nature
+- The opposite can only be achieved using refrigerators and heat pumps
+- Refrigerators and heat pumps are examples of "reverse heat engines"
+- They operate in a cycle
+- The working fluid is called a refrigerant
+- Vapour-compression refrigeration system is the most commonly used cycle
+- \(W_{in}\) is the work input to compressor to compress refrigerant from low to high pressure
+- \(Q_H\) is the heat rejected by the refrigerant in the condenser
+- \(Q_L\) is the heat absorbed by refrigerant in evaporator
+
+*** Energy balance
+\[W_{\text{net, in}} = Q_H - Q_L\]
+
+** Coefficient of Performance (\(COP\))
+- The efficiency of refrigerators and heat pumps is expressed in terms of *coefficient of performance*.
+- The formula depends on the function of the machine:
+\[\text{Coefficient of Performance} = \frac{\text{Desired output}}{\text{Required input}}\]
+
+@@latex: \newpage@@
+
+*** Refrigerator
+Getting the coefficient of performance:
+\[COP_R = \frac{Q_L}{W_{\text{net, in}}}\]
+
+From the energy balance:
+\[W_{\text{net, in}} = Q_H - Q_L\]
+
+Hence:
+\[COP_R = \frac{Q_L}{Q_H - Q_L} = \frac{1}{\frac{Q_H}{Q_L} - 1}\]
+
+*** Heat pump
+Getting the coefficient of performance:
+\[COP_{HP} = \frac{Q_H}{W_{\text{net, in}}}\]
+
+From the energy balance:
+\[W_{\text{net, in}} = Q_H - Q_L\]
+
+Hence:
+\[COP_{HP} = \frac{Q_H}{Q_H - Q_L} = \frac{1}{1 - \frac{Q_L}{Q_H}}\]
+
+** Clausius statement
+- Heat is never transferred from a cold medium to a warmer one in nature.
+- Impossible to have a working refrigerator or heat pump that requires no power input.
+
+Hence, it is impossible to construct a device that operates in a cycle and produces no effect other than the transfer of heat from a lower-temperature body to a higher-temperature body.
+\\
+
+This statement is equivalent to the Kelvin-Planck statement.
+
+** Perpetual Motion Machines (PMM)
+A device that violates either the first law or second law of thermodynamics.
+
+** Reversible process
+A reversible process is defined as one which can be reversed without leaving any trace on the surroundings.
+- The state of the system & surroundings can be reverted to initial states at the end of the reverse process.
+- It is a theoretical or ideal process, which is usually an ideal version of actual processes.
+- Hence, actual devices and system can be approximated as a reversible process at best.
+- It serves as the theoretical limit for its corresponding irreversible process and is easy to analyse.
+- Thus, actual processes are compared against their corresponding idealised or reversible processes to determine its efficiency.
+
+** Irreversible process
+An irreversible process is the opposite of a reversible process.
+- It is characteristic of all processes in nature.
+
+*** Factors
+- Friction
+- Heat transfer across finite temperature difference
+- Mixing of two fluids
+- Unrestrained expansion
+- Electrical resistance
+- Inelastic deformation of solids
+- Chemical reaction
+
+The presence of any factors above would cause the process to be irreversible.
+
+** Internally reversible
+- Internally reversible means that there is no irreversibility occurring within the system boundaries.
+- An example is the boiling of a fluid (constant temperature and pressure process).
+- An internally reversible system is the same as a reversible system, the word "internally" is to make it clear that it is the system that is reversible, and not the surroundings.
+
+** Externally reversible
+Externally reversible means that there is no irreversibility occurring outside the system boundaries.
+
+** Totally or completely reversible
+Totally or completely reversible means that a process is both internally and externally reversible, i.e. there is no irreversibility within the system or surroundings.
+
+** Carnot cycle
+- It consists of 4 reversible processes:
+  - 2 isothermal processes
+  - 2 adiabatic processes
+- It is applicable to closed systems or steady flow systems.
+- It sets the theoretical limits for heat engines, refrigerators and heat pumps.
+
+@@latex: \newpage@@
+
+*** The cycle
+1. Reversible isothermal expansion (1 - 2, \(T_H = \text{constant}\))
+   - Gas expands at constant temperature while absorbing heat from energy source.
+2. Reversible adiabatic expansion (2 - 3, \(T_H\) drops to $T_L$)
+   - Gas does work on surroundings and expands while its temperature drops.
+3. Reversible isothermal compression (3 - 4, \(T_H = \text{constant}\))
+   - Gas compression at constant temperature while losing heat to energy sink.
+4. Reversible adiabatic compression (4 - 1, $T_L$ rises to $T_H$)
+   - Work done on gas to compress it and its temperature rises.
+
+** Reverse Carnot cycle (Carnot refrigeration cycle)
+- The Carnot cycle is a totally reversible cycle.
+- A reversed Carnot cycle becomes the Carnot refrigeration cycle.
+
+** Carnot Principles
+1. The efficiency of an irreversible heat engine is always less than the efficiency of a reversible one operating between the two same reservoirs.
+   \[\eta_{\text{th, 1, irrev}} < \eta_{\text{th, 2, irrev}}\]
+2. The efficiencies of all reversible heat engines operating between the same two reservoirs are the same.
+   \[\eta_{\text{th, 2, rev}} = \eta_{\text{th, 3, rev}}\]
+
+@@latex: \newpage@@
+
+** Thermodynamic temperature scale (Kelvin scale)
+- A temperature scale that is independent of the properties of substances that are used to measure temperature is called a thermodynamic temperature scale.
+- It offers great convenience for thermodynamic calculations.
+- All reversible heat engines operating between the same two reservoirs have the same efficiency.
+- Thus, thermal reservoirs are characterised only by their temperatures.
+- Thermal efficiencies of reversible heat engines can be expressed as a function of reservoir temperatures.
+- This temperature scale is called the Kelvin scale.
+- The magnitudes of temperature units on the Kelvin and Celsius scales are the same, i.e.
+  \[\qty{1}{K} \equiv \qty{1}{\degreeCelsius}\]
+
+** Absolute temperatures
+Absolute temperatures are temperatures on the thermodynamic temperature scale (Kelvin scale).
+\[T(\unit{K}) = T(\unit{\degreeCelsius} + 273)\]
+
+** Carnot Heat Engines
+- Hypothetical heat engine operating on the Carnot cycle
+- Most efficient (ideal) heat engine
+
+@@latex: \newpage@@
+
+*** Thermal efficiency
+The thermal efficiency of *any* heat engine is:
+\[\eta_{th} = 1 - \frac{Q_L}{Q_H}\]
+
+From the thermodynamic temperature scale:
+\[\left(\frac{Q_H}{Q_L}\right) = \frac{T_H}{T_L} \text{or} \left(\frac{Q_L}{Q_H}\right) = \frac{T_L}{T_H}\]
+
+Hence, the thermal efficiency of a *Carnot heat engine*:
+\[\eta_{\text{th, rev}} = 1 - \frac{T_L}{T_H}\]
+
+Where:
+- $\eta_{th}$ is the efficiency of a heat engine
+- $Q_H$ is the heat transferred from the high temperature reservoir
+- $Q_L$ is the heat transferred from the low temperature reservoir
+- $T_H$ is the temperature of the high temperature reservoir
+- $T_L$ is the temperature of the low temperature reservoir
+- $\eta_{\text{th, rev}}$ is the efficiency of a Carnot heat engine
+
+So:
+- \(\eta_{th} < \eta_{\text{th, rev}}\) is an irreversible heat engine.
+- \(\eta_{th} = \eta_{\text{th, rev}}\) is a reversible heat engine.
+- \(\eta_{th} > \eta_{\text{th, rev}}\) is an impossible heat engine.
+- The efficiency increases with source temperature.
+- Energy has higher *quality* at higher temperatures.
+
+** Carnot refrigerators and heat pumps
+- A device that operates on the reversed Carnot cycle
+
+The coefficient of performance for any refrigerator is:
+\[COP_R = \frac{1}{\frac{Q_H}{Q_L} - 1}\]
+
+Hence, the coefficient of performance for a *Carnot refrigerator*:
+\[COP_{\text{R, rev}} = \frac{1}{\frac{T_H}{T_L} - 1}\]
+
+The coefficient of performance for any heat pump is:
+\[COP_{HP} = \frac{1}{1 - \frac{Q_L}{Q_H}}\]
+
+The coefficient of performance for any heat pump is:
+\[COP_{\text{HP, rev}} = \frac{1}{1 - \frac{T_L}{T_H}}\]
+
+Similarly to the efficiency of a Carnot heat engine:
+- \(COP_{R} < COP_{\text{R, rev}}\) is an irreversible refrigerator.
+- \(COP_{R} = COP_{\text{R, rev}}\) is a reversible refrigerator.
+- \(COP_{R} > COP_{\text{R, rev}}\) is an impossible refrigerator.
+- \(COP_{HP} < COP_{\text{HP, rev}}\) is an irreversible heat pump.
+- \(COP_{HP} = COP_{\text{HP, rev}}\) is a reversible heat pump.
+- \(COP_{HP} > COP_{\text{HP, rev}}\) is an impossible heat pump.
+
+@@latex: \newpage@@
+
+** Clausius Inequality
+The Clausius inequality states that the cyclic integral of \(\frac{\delta Q}{T}\) is always less than or equal to zero for all cycles regardless of the type of cycle.
+
+\[\oint \frac{\delta Q}{T} \leq 0\]
+
+Where:
+- $\delta Q$ is an infinitesimal amount of heat that is taken from the reservoirs and absorbed by the system. \(\delta Q > 0\) if heat from the reservoirs is absorbed by the system, and \(\delta Q < 0\) is heat is leaving from the system to the reservoirs.
+- $T$ is the common temperature of the reservoirs at a particular instant in time in Kelvin
+
+For reversible cycles:
+\[\oint \left(\frac{\delta Q}{T} \right)_{rev} = 0\]
+
+For irreversible cycles:
+\[\oint \left(\frac{\delta Q}{T} \right) < 0\]
+
+** Isentropic process
+An isentropic process is a process with no change in entropy, or a constant entropy process.
+
+@@latex: \newpage@@
+
+** First \(T ds\) equation (Gibbs equation)
+- Entropy in differential form:
+  \[dS = \left(\frac{\delta Q}{T} \right)_{\text{int rev}}\]
+  \[\Delta Q_{\text{int rev}} = T \, dS\]
+- From first law:
+  \[\Delta Q_{\text{int rev}} - \Delta W_{\text{int rev, out}} = dU\]
+- Where:
+  \[\Delta W_{\text{int rev, out}} = P dV\]
+- After substitution:
+  \[T dS - P dV = dU\]
+  \[TdS = dU + P dV\]
+  \[Tds = du + P dv\]
+
+  Where:
+  - $T$ is the temperature in Kelvin
+  - $dS$ is the change in entropy
+  - $dU$ is the change in internal energy
+  - $P$ is the pressure of the system
+  - $dV$ is the change in volume
+  - $ds$ is the change in specific entropy
+  - $du$ is the change in specific internal energy
+  - $dv$ is the change in specific volume
+
+@@latex: \newpage@@
+
+** Second \(T ds\) equation
+- Differentiating the definition of enthalpy (\(h = u + Pv\))
+  \[dh = du + P dv + vdP\]
+  \[du = dh - P dv - vdP\]
+
+- Replace \(du\) with the definition of enthalpy (\(h = u + Pv\)) in the first equation above:
+  \[Tds = du + P dv\]
+  \[Tds = dh - v dP\]
+  \[ds = \frac{dh}{T} - \frac{v dP}{T}\]
+
+  Where:
+  - $T$ is the temperature in Kelvin
+  - $ds$ is the change in specific entropy
+  - $du$ is the change in specific internal energy
+  - $dh$ is the change in specific enthalpy
+  - $P$ is the pressure of the system
+  - $dv$ is the change in specific volume
+  - $dP$ is the change in pressure of the system
+
+- Entropy change can now be related to changes in other properties as these relations are independent of processes.
+
+@@latex: \newpage@@
+
+** Entropy change for liquid and solids
+- Liquids and solids can be approximated as *incompressible substances*, hence \(dv \cong 0\)
+  \[ds = \frac{du}{T} + \frac{P dv}{T}\]
+  \[ds = \frac{du}{T} = \frac{c dT}{T}\]
+- For incompressible substances:
+  \[c_p = c_v = c \quad \rightarrow \quad du = c dT\]
+- Integrating:
+  \[s_2 - s_1 = \int_1^2 c(T) \frac{dT}{T} \cong c_{avg} \ln \left(\frac{T_2}{T_1} \right) \quad (\unit{kJ.kg^{-1}.K^{-1}})\]
+
+  Where:
+  - $s_2$ is the final *specific* entropy
+  - $s_1$ is the initial *specific* entropy
+  - $c$ is the specific heat capacity as a function of temperature
+  - $dT$ is the change in temperature in $\unit{K}$
+  - $c_{avg}$ is the average specific heat capacity
+  - $T_2$ is the final temperature in Kelvin
+  - $T_1$ is the initial temperature in Kelvin
+
+- Entropy change for liquids and solids are only dependent on temperature and independent of pressure
+- For isentropic processes,
+  \[\Delta s = 0, \quad \Delta T = 0\]
+
+@@latex: \newpage@@
+
+** Entropy change for ideal gases
+- For ideal gases:
+  \[R_{sp} = \frac{R_u}{\text{Molar mass}}\]
+  \[Pv = R_{sp} T \quad du = c_v dT \quad dh = c_p dT\]
+- Substituting into \(Tds\) relations:
+  \[ds = \frac{du}{T} + \frac{P dv}{T}\]
+  \[ds = c_v \frac{dT}{T} + R_{sp} \frac{dv}{v}\]
+  \[ds = \frac{dh}{T} - \frac{v dP}{T}\]
+  \[ds = c_p \frac{dT}{T} - R_{sp} \frac{dP}{p}\]
+- Integrating:
+  \[s_2 - s_1 = \int_1^2 c_v(T) \ln \left(\frac{dT}{T} \right)+ R_{sp} \ln \left(\frac{v_2}{v_1} \right)\]
+  \[s_2 - s_1 = \int_1^2 c_p(T) \ln \left(\frac{dT}{T} \right) - R_{sp} \ln \left(\frac{P_2}{P_1} \right)\]
+- Assuming constant (average) specific heats:
+  \[s_2 - s_1 = \int_1^2 c_{\text{v, avg}}(T) \ln \left(\frac{dT}{T} \right) + R_{sp} \ln \left(\frac{v_2}{v_1} \right)\]
+  \[s_2 - s_1 = \int_1^2 c_{\text{p, avg}}(T) \ln \left(\frac{dT}{T} \right) - R_{sp} \ln \left(\frac{P_2}{P_1} \right)\]
+
+  This assumption is sufficiently accurate when the temperature range is less than a few hundred degrees.
+
+*** Isentropic process for the first \(Tds\) equation (\(\Delta s = 0\))
+- From the first \(Tds\) equation:
+  \[s_2 - s_1 = 0 = c_v \ln \left( \frac{T_2}{T_1} \right) + R_{sp} \ln \left( \frac{v_2}{v_1} \right)\]
+  \[\ln \left(\frac{T_2}{T_1} \right) = - \frac{R_{sp}}{c_v} \ln \left( \frac{v_2}{v_1} \right) \quad \rightarrow \quad \frac{T_2}{T_1} = \left(\frac{v_1}{v_2} \right)^{\frac{R_{sp}}{c_v}}\]
+
+- Since:
+  \[R_{sp} = c_p - c_v \text{ and } k = \frac{c_p}{c_v} \quad \rightarrow \quad \frac{R_{sp}}{c_v} = k - 1\]
+
+- Therefore:
+  \[\left(\frac{T_2}{T_1} \right)_{isen} = \left(\frac{v_1}{v_2} \right)^{k - 1}\]
+
+*** Isentropic process for the second \(Tds\) equation (\(\Delta s = 0\))
+- From the second \(Tds\) equation:
+  \[s_2 - s_1 = 0 = c_p \ln \left( \frac{T_2}{T_1} \right) - R_{sp} \ln \left( \frac{P_2}{P_1} \right)\]
+  \[\ln \left(\frac{T_2}{T_1} \right) = \frac{R_{sp}}{c_p} \ln \left( \frac{P_2}{P_1} \right) \quad \rightarrow \quad \frac{T_2}{T_1} = \left(\frac{P_2}{P_1} \right)^{\frac{R_{sp}}{c_p}}\]
+  \[\left( \frac{T_2}{T_1} \right)_{isen} = \left(\frac{P_2}{P_1} \right)^{\frac{k - 1}{k}}\]
+
+- Therefore:
+  \[\left(\frac{P_2}{P_1} \right)_{isen} = \left(\frac{v_1}{v_2} \right)^k \quad \text{or} \quad Pv^k = \text{constant}\]
+
+@@latex: \newpage@@
+
+** Entropy change of a reversible process
+- Differential form of entropy:
+  \[dS = \left( \frac{\delta Q}{T} \right)_{\text{int rev}} \left(\unit{kJ.K^{-1}} \right)\]
+- Integrate the differential form to give the entropy change for reversible processes:
+  \[\Delta S = S_2 - S_1 = \int_1^2 \left(\frac{\delta Q}{T} \right)_{\text{int rev}}\]
+
+Where:
+- $dS$ is the change in entropy for an internally reversible process (int rev)
+- $\delta Q$ is an infinitesimal amount of heat that is taken from the reservoirs and absorbed by the system. \(\delta Q > 0\) if heat from the reservoirs is absorbed by the system, and \(\delta Q < 0\) is heat is leaving from the system to the reservoirs.
+- $T$ is the common temperature of the reservoirs at a particular instant in time in Kelvin
+- $\Delta S$ is the change in entropy
+- $S_2$ is the final entropy
+- $S_1$ is the initial entropy
+
+@@latex: \newpage@@
+
+*** Internally reversible isothermal heat transfer
+\[\Delta S = \int_1^2 \left(\frac{\delta Q}{T} \right)_{\text{int rev}} = \int_1^2 \left(\frac{\delta Q}{T_0} \right)_{\text{int rev}} = \frac{1}{T_0} \int_1^2 (\delta Q)_{\text{int rev}}\]
+
+The above reduces to:
+\[\Delta S = \frac{Q}{T_0} \quad (\unit{kJ.K^{-1}})\]
+
+The formula is commonly used to determine the entropy change of thermal energy reservoirs that supply or absorb heat indefinitely at constant temperature.
+\\
+
+Where:
+- $\Delta S$ is the change in total entropy
+- $\delta Q$ is an infinitesimal amount of heat that is taken from the reservoirs and absorbed by the system. \(\delta Q > 0\) if heat from the reservoirs is absorbed by the system, and \(\delta Q < 0\) is heat is leaving from the system to the reservoirs.
+- $Q$ is the heat transfer for the internally reversible process
+- $T_0$ is the constant temperature in Kelvin
+
+@@latex: \newpage@@
+
+** Entropy change of an irreversible process
+\[\Delta S_{sys} = S_2 - S_1 = \int_1^2 \left(\frac{\delta Q}{T} \right)_{\text{int rev}}\]
+
+- The integral will give the value of entropy change only if the integration is carried out along an *internally reversible path* between two states.
+- For an *irreversible process*, the entropy change can be determined along an *imaginary internally reversible path*.
+
+Where:
+- $\Delta S_{sys}$ is the change in entropy of the system
+- $S_2$ is the final entropy
+- $S_1$ is the initial entropy
+- $\delta Q$ is an infinitesimal amount of heat that is taken from the reservoirs and absorbed by the system. \(\delta Q > 0\) if heat from the reservoirs is absorbed by the system, and \(\delta Q < 0\) is heat is leaving from the system to the reservoirs.
+- $T$ is the common temperature of the reservoirs at a particular instant in time in Kelvin
+
+@@latex: \newpage@@
+
+*** Imaginary internally reversible path
+- Consider a cycle where:
+  - Process 1 to 2 is *arbitrary*
+  - Process 2 to 1 is *reversible*
+- Clausius inequality:
+  \[\oint \left(\frac{\delta Q}{T} \right)_{\text{int rev}} \le 0\]
+- Integration for the cycle:
+  \[\int_1^2 \frac{\delta Q}{T} + \int_2^1 \left(\frac{\delta Q}{T} \right)_{\text{int rev}} \le 0\]
+- Second term is entropy change:
+  \[\int_1^2 \frac{\delta Q}{T} + (S_1 - S_2) \le 0 \quad \rightarrow \quad S_2 - S_1 \ge \frac{\delta Q}{T}\]
+- Differential form:
+  \[dS \ge \frac{\delta Q}{T}\]
+
+Essentially, this means that the entropy change of a *closed system* for an *irreversible process* is *greater than* $\int \frac{\delta Q}{T}$ evaluated for that process.
+
+\[S_2 - S_1 \ge \int_1^2 \frac{\delta Q}{T}\]
+
+- The "additional" entropy change for irreversible processes is due to entropy generation due to the presence of irreversibilities.
+
+\begin{tabular}{ >{\centering\arraybackslash}m{10em} >{\centering\arraybackslash}m{1em} >{\centering\arraybackslash}m{10em} >{\centering\arraybackslash}m{1em} >{\centering\arraybackslash}m{10em} }
+\(S_2 - S_1\) & \(=\) & \(\int_1^2 \frac{\delta Q}{T}\) & \(+\) & \(S_{gen}\) \\
+\(\Delta S_{sys}\) & \(=\) & \(\int_1^2 \frac{\delta Q}{T}\) & \(+\) & \(S_{gen}\) \\
+Entropy change of a closed system & \(=\) & Entropy transfer due to heat transfer & \(+\) & Entropy generation due to irreversibilities \\
+\end{tabular}
+
+** Entropy generation (\(S_{gen}\))
+- Entropy generation is the entropy generated from an irreversible process.
+- This value is always positive for irreversible processes and zero for reversible processes.
+- It is not a property, the value is process dependent.
+
+** Systems
+
+*** Closed system
+- Fixed mass
+- Energy can be transferred through the boundary by heat or work
+- Boundary can be movable
+
+*** Isolated system
+- No mass flow, and no energy transferred through the boundary
+- For example, a system of interest and its surroundings constitutes an isolated system.
+
+** Entropy change of a system
+Entropy change of a system during a process is equal to the net entropy transfer through the system boundary and entropy generated within the system.
+\\
+
+\begin{tabular}{ >{\centering\arraybackslash}m{6em} >{\centering\arraybackslash}m{1em} >{\centering\arraybackslash}m{6em} >{\centering\arraybackslash}m{1em} >{\centering\arraybackslash}m{6em} >{\centering\arraybackslash}m{1em} >{\centering\arraybackslash}m{6em} }
+\(\Delta S_{system}\) & \(=\) & \(S_{in}\) & \(-\) & \(S_{out}\) & \(+\) & \(S_{gen}\) \\
+Change in total entropy of the system & \(=\) & Total entropy entering & \(-\) & Total entropy leaving & \(+\) & Total entropy generated \\
+\end{tabular}
+
+*** \(\Delta S_{system}\)
+- Entropy changes when the state of the system changes
+  \[\Delta S_{system} = S_{final} - S_{initial}\]
+- If the entropy at each state is known, the entropy change between the states is simply:
+  \[\Delta S_{system} = S_{final} - S_{initial} = S_2 - S_1\]
+- Entropy change is *zero* in *steady flow* devices during *steady operation* (turbines, compressors, pumps, nozzles, diffusers, heat exchanger, etc.)
+  \[\Delta S_{system} = S_{final} - S_{initial} = 0\]
+
+*** \(S_{in} - S_{out}\)
+- Entropy transfer (\(S_{in}\) or \(S_{out}\)) does not transfer through work
+  \[S_{work} = 0\]
+- For closed systems, entropy is transferred *only by heat*
+  \[S_{in} - S_{out} = \int_1^2 \frac{\delta Q}{T} \cong \sum \frac{Q_k}{T_k}\]
+
+Where:
+- $Q_k$ is the heat transferred
+- $T_k$ is the boundary temperature through which heat is transferred.
+
+*** Entropy generation (\(S_{gen}\))
+- A measure of *entropy created by irreversibilities* during a process (friction, heat transfer via finite temperature difference, mixing, etc.)
+- Entropy generation is *zero* for *reversible* processes
+
+\begin{displaymath}
+S_{gen} =
+\begin{cases}
+< 0 & \text{impossible process} \\
+= 0 & \text{reversible process} \\
+> 0 & \text{irreversible process} \\
+\end{cases}
+\end{displaymath}
+
+*** Full equation
+\[\Delta S_{system} = S_{in} - S_{out} + S_{gen}\]
+
+For closed systems:
+\[\Delta S_{closed} = S_2 - S_1 = \sum \frac{Q_k}{T_k} + S_{gen}\]
+
+Where:
+- $Q_k$ is the heat transferred
+- $T_k$ is the boundary temperature through which heat is transferred
+
+** Entropy change for closed systems
+- Entropy change of a *closed system* may be negative (e.g. heat removal) but *entropy generation can never be negative*.
+  - When a system loses heat to the surroundings, entropy change in the surroundings is positive.
+- Entropy change of an *isolated system* can never be negative.
+  - Heat transfer between the system and its surroundings usually involve a finite temperature difference which is an irreversibility. Hence, there is entropy generation:
+    \[\Delta S_{isolated} = S_{gen}\]
+    \[\Delta S_{isolated} = \Delta S_{closed} + \Delta S_{surr} = S_{gen}\]
+
+*** Adiabatic process (no heat transfer)
+For an adiabatic process:
+\[\sum \frac{Q_k}{T_k} = 0\]
+\[\Delta S_{closed} = S_2 - S_1 = \sum \frac{Q_k}{T_k} + S_{gen}\]
+\[\Delta S_{closed} = S_2 - S_1 = 0 + S_{gen}\]
+\[\Delta S_{\text{adiabatic system}} = S_{gen} > 0\]
+
+- In adiabatic closed systems, the change in entropy is only due to entropy generation within the system boundaries
+- Since *entropy generation* for *irreversible processes* can never be less than zero, the entropy in an adiabatic closed system *always increases*
+
+*** Isentropic process (constant entropy)
+- If the process is *adiabatic* (no heat transfer) and *reversible*:
+  \[\Delta S_{isen} = S_2 - S_1 = \sum \frac{Q_k}{T_k} + S_{gen}\]
+  \[\Delta S_{isen} = 0 \quad \text{or} \quad S_2 = S_1\]
+- A *reversible adiabatic process* is also known as an *isentropic process*.
+
+*** Isolated systems
+- No mass, heat or work transfer for an isolated system
+  \[\Delta S_{isolated} = S_2 - S_1 = \sum \frac{Q_k}{T_k} + S_{gen}\]
+  \[\Delta S_{isolated} = S_{gen} > 0\]
+- The entropy for an *isolated system* must *always increase*.
+- The lower limit of entropy change is only achieved through reversible processes, in which entropy remains constant.
+- An isolated system may consist of *any number of subsystems*
+- Entropy is an extensive property, so the total entropy is the sum of the entropy of its parts, i.e.
+  \[\Delta S_{total} = \sum_{i = 1}{N} \Delta S_i > 0\]
+- For example, a *closed system* and its surroundings constitutes an *isolated system*.
+  \[\Delta S_{sys} + \Delta S_{surr} = \Delta S_{isolated} = S_{gen} > 0\]
+- For a closed system:
+  \[\Delta S_{sys} = S_2 - S_1\]
+- Consider the surroundings as a thermal energy reservoir (no entropy generation) at temperature $T_{surr}$ receiving heat $Q$ from the system:
+  \[\Delta S_{surr} = \frac{Q}{T_{surr}}\]
+  \[S_2 - S_1 + \frac{Q}{T_{surr}} = S_{gen} > 0\]
+- Having higher entropy generation means the process is more irreversible.
+
+** Entropy balance for flow control volumes
+Entropy transfer by mass flow
+- Flow control volumes involve mass inflow, mass outflow, or both.
+- Mass contains entropy as well as energy, in proportion to the mass and the state condition.
+- Hence:
+  \[S_{\text{in, mass}} = m_i s_i\]
+  \[S_{\text{out, mass}} = m_e s_e\]
+
+** Entropy change for flow control volumes
+\[\Delta S_{CV} = S_{in} - S_{out} + S_{gen}\]
+\[\Delta S_{CV} = \sum m_i s_i - \sum m_e s_e + \sum \frac{Q_k}{T_k} + S_{gen}\]
+\[(S_2 - S_1)_{CV} = \sum m_i s_i - \sum m_e s_e + \sum \frac{Q_k}{T_k} + S_{gen}\]
+
+Rate form (a dot above the variable means rate):
+\[\Delta \dot{S}_{CV} = \sum \dot{m}_i s_i - \sum \dot{m}_e s_e + \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+
+Where:
+- $\Delta S_{CV}$ is the change in entropy
+- $S_{in} - S_{out}$ is the net entropy transfer by *heat and mass* flow
+- $S_{gen}$ is the entropy generation
+
+*** Steady state, steady flow control volume
+For a steady state, steady flow process:
+\[\Delta \dot{S}_{CV} = 0\]
+\[0 = \sum \dot{m}_i s_i - \sum \dot{m}_e s_e + \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+\[\sum \dot{m}_e s_e - \sum \dot{m}_i s_i = \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+
+*** Single stream, steady flow process
+For a *single stream*, steady flow process:
+\[\dot{m}_i = \dot{m}_e = \dot{m}\]
+\[\dot{m} (s_e - s_i) = \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+
+*** Steady state, single stream and steady flow adiabatic process
+For a steady state, single stream and steady flow adiabatic process:
+\[\sum \frac{\dot{Q}_k}{T_k} = 0\]
+\[\dot{m} (s_e - s_i) = \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+\[\dot{S}_{gen} \ge 0 \quad \rightarrow \quad s_e \ge s_i\]
+
+The entropy of the fluid will increase as it flows through an adiabatic device.
+
+*** Adiabatic and reversible process
+\[\sum \frac{\dot{Q}_k}{T_k} = 0 \quad \text{and} \quad \dot{S}_{gen} = 0\]
+\[\dot{m} (s_e - s_i) = \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+\[s_e = s_i\]
+
+The entropy doesn't change in such a process, i.e. the process is isentropic, or a constant entropy process.
+
+@@latex: \newpage@@
+
+** Reversible steady flow work
+- Consider the differential energy balance equation for a *steady state, steady flow* device undergoing an *internally reversible process*:
+  \[\delta q_{rev} - \delta w_{rev} = dh + d(KE) + d(PE)\]
+- From the $Tds$ equations:
+  \[\delta q_{rev} = T ds \text{ and } Tds = dh - v dP \quad \because \ \delta q_{rev} = dh - vdP\]
+- Substituting:
+  \[dh - vdP - \delta w_{rev} = dh + d(KE) + d(PE)\]
+  \[- \delta w_{rev} = v dP + d(KE) + d(PE)\]
+- Integrating:
+  \[w_{rev} = - \int_i^e v \, dP - \Delta KE - \Delta PE\]
+- When \(\Delta KE = 0\) and \(\Delta PE = 0\):
+  \[w_{rev} = - \int_i^e v \, dP\]
+
+*** Meaning of reversible steady flow work
+[[./images/reversible-steady-flow-work.png]]
+
+*** Incompressible fluids
+- For incompressible fluids (constant specific volume \(v\)) and $\Delta KE = 0$ and $\Delta PE = 0$, like pumps:
+  \[w_{rev} = -v (P_2 - P_1)\]
+- In flow devices where it does *no work* and the fluid is *incompressible* (e.g. nozzles or pipes), use the Bernoulli equation
+  \[0 = -v (P_2 - P_1) - \frac{\nu_2^2 - \nu_1^2}{2} - g(z_2 - z_1)\]
+
+*** Fluid types
+- Examining:
+  \[w_{rev} = - \int_1^2 v \, dP\]
+- Reversible steady flow work is closely associated to the specific volume $v$ of the fluid flow through the device. The larger the specific volume, the larger the work produced or consumed.
+- Pumps handle liquids (small specific volume) and hence consumes less power.
+- Compressors handle gases (large specific volume) and tends to consume more power.
+
+@@latex: \newpage@@
+
+** Polytropic work in steady flow devices [formula given]
+- For a *polytropic process*:
+  \[Pv^n = \text{constant}\]
+- Work done when *flow* through the device is *polytropic*:
+  \begin{align*}
+  w_{poly} = \int_1^2 v \, dP &= - \int_1^2 \left(\frac{C}{P} \right)^{\frac{1}{n}} dP
+  &= - \frac{n}{n - 1}(P_2 v_2 - P_1 v_1)
+  \end{align*}
+- Not to be confused with polytropic work in a *closed system*:
+  \[w_{poly} = \int_1^2 P \, dv = - \frac{1}{n - 1} (P_2 v_2 - P_1 v_1)\]
+- For an *ideal gas*:
+  \[Pv = R_{sp} T\]
+  \[w_{poly} = - \frac{n R_{sp} (T_2 - T_1)}{n - 1} = - \frac{n R_{sp} T_1}{n - 1} \left[\left(\frac{P_2}{P_1} \right)^{\frac{n - 1}{n}} - 1 \right]\]
+
+*** Isentropic process for ideal gas
+When the process is isentropic:
+\[n = k\]
+\[w_{isen} = - \frac{k R_{sp} (T_2 - T_1)}{k - 1} = \frac{k R_{sp} T_1}{1 - k} \left[\left(\frac{P_2}{P_1} \right)^{\frac{k - 1}{k}} - 1 \right]\]
+
+*** Isothermal process
+A gas undergoing unrestrained expansion is an isothermal process.
+
+When the process is isothermal:
+\[n = 1\]
+\[w_{\text{isothermal}} = - R_{sp} T \ln \left(\frac{P_2}{P_1} \right)\]
+
+*** Minimum compressor work
+- When compressing an ideal gas between the same pressure ratio, cooling the gas helps reduce the power consumption.
+- Multistage compression with inter-cooling:
+  [[./images/multistage-compression-with-inter-cooling.png]]
+- Work in two-stage compression with inter-cooling:
+  \[w_{comp} = w_{comp_1} + w_{comp_2} = - \frac{n R_{sp} T_1}{n - 1} \left[\left(\frac{P_x}{P_1} \right)^{\frac{n - 1}{n}} - 1 \right] - \frac{n R_{sp} T_1}{n - 1} \left[\left(\frac{P_2}{P_x} \right)^{\frac{n - 1}{n}} - 1 \right]\]
+- Minimum total work is when *pressure ratio* across each stage is the *same*:
+  \[P_x = \sqrt{P_1 P_2} \Rightarrow \frac{P_x}{P_1} = \frac{P_2}{P_x}\]
+
+@@latex: \newpage@@
+
+** Steady state control volume
+- Many steady state control volume devices are *adiabatic* or *close to adiabatic* during operation.
+- Such devices work *best when irreversibilities are minimised*.
+- *Isentropic processes* would serve as the *ideal models* for these devices.
+  - Turbines, which extract work from the fluid, decreases the enthalpy of the fluid.
+  - Pumps and compressors, which do work on the fluid, increases the enthalpy of the fluid.
+  - Nozzles, which accelerate the fluid, decreases the enthalpy but increases the kinetic energy of the fluid. There is no work done for a nozzle.
+- *Isentropic processes* would serve as the *ideal process* for such *adiabatic* steady flow devices.
+- *Isentropic efficiencies* of turbines, compressors and pumps, and nozzles serve to compare the actual performance of these (*adiabatic*) devices to isentropic conditions at the *same inlet state* and *exit pressure*.
+
+[[./images/isentropic-efficiency-comparison.png]]
+
+** Isentropic efficiency
+Isentropic efficiency is the measure of the *deviation* of the *actual* (adiabatic) process from the *idealised* one.
+
+*** Figuring out the isentropic efficiency formula
+1. Draw a $h-s$ diagram.
+2. Draw 2 pressure lines, one representing the initial pressure, and one representing the final pressure.
+3. Draw one vertical connecting the two pressure lines to represent the isentropic process.
+4. Draw a line that curves to the right connecting the two pressure lines to represent the actual process.
+5. To get the efficiency, take the smaller change in enthalpy over the larger change in enthalpy.
+
+@@latex: \newpage@@
+
+*** Turbines
+\[w_T = h_1 - h_2\]
+\[\eta_T = \frac{\text{Actual work}}{\text{Isentropic work}} = \frac{w_a}{w_s}\]
+\[\eta_T = \frac{h_1 - h_{2a}}{h_1 - h_{2s}}\]
+
+- $\eta_T$ is roughly 90% for large turbines
+- $\eta_T$ is roughly 70% for small turbines
+
+#+ATTR_LATEX: :scale 0.75
+[[./images/isentropic-efficiency-of-turbines.png]]
+
+Where:
+- $w_T$ is the work done by the turbine
+- $\eta_T$ is the isentropic efficiency of the turbine
+- $w_s$ is the isentropic work output of the turbine
+- $w_a$ is the actual work output of the turbine
+- $h_1$ is the initial enthalpy of the fluid
+- $h_{2a}$ is the final enthalpy of the actual process
+- $h_{2s}$ is the final enthalpy of the isentropic process
+
+*** Compressors
+\[w_C = -(h_1 - h_2)\]
+\[\eta_C = \frac{\text{Isentropic work}}{\text{Actual work}} = \frac{w_s}{w_a}\]
+\[\eta_T = \frac{h_{2s} - h_1}{h_{2a} - h_1}\]
+
+- $\eta_C$ is roughly 75 - 85% for well-designed devices
+
+#+ATTR_LATEX: :scale 0.8
+[[./images/isentropic-efficiency-of-compressors.png]]
+
+Where:
+- $w_C$ is the work required by the compressor
+- $\eta_C$ is the isentropic efficiency of the compressor
+- $w_s$ is the isentropic work input into the compressor
+- $w_a$ is the actual work input into the compressor
+- $h_{2a}$ is the final enthalpy of the actual process
+- $h_{2s}$ is the final enthalpy of the isentropic process
+- $h_1$ is the initial enthalpy of the fluid
+
+*** Pumps
+\[w_{rev} = - \int v \, dP\]
+\[w_{on} = - \left(- \int v \, dP \right)\]
+\[\eta_P = \frac{w_s}{w_a} = \frac{v \left(P_2 - P_1 \right)}{h_{2a} - h_1}\]
+
+Where:
+- $w_{rev}$ is the work done by the fluid in the isentropic process
+- $w_{on}$ is the work done on the fluid by the pump in the isentropic process
+- $\eta_C$ is the isentropic efficiency of the pump
+- $w_s$ is the isentropic work input of the pump
+- $w_a$ is the actual work input of the pump
+- $v$ is the specific volume of the fluid
+- $P_2$ is the final pressure of the fluid
+- $P_1$ is the initial pressure of the fluid
+- $h_{2a}$ is the final enthalpy of the actual process
+- $h_1$ is the initial enthalpy of the fluid
+
+@@latex: \newpage@@
+
+*** Nozzles
+\[\eta_N = \frac{\text{Actual KE at exit}}{\text{Isentropic KE at exit}} = \frac{\nu_{2a}^2}{\nu_{2s}^2}\]
+\[h_1 - h_{2a} = \frac{\nu_{2a}^2}{2}\]
+\[\eta_N = \frac{h_1 - h_{2a}}{h_1 - h_{2s}}\]
+
+- Typical $\eta_N$ is roughly 90 - 95%
+
+#+ATTR_LATEX: :scale 0.8
+[[./images/isentropic-efficiency-of-nozzles.png]]
+
+Where:
+- $\eta_N$ is the isentropic efficiency of the nozzle
+- $\nu_{2a}$ is the final velocity of the actual process
+- $\nu_{2s}$ is the final velocity of the isentropic process
+- $h_{2a}$ is the final enthalpy of the actual process
+- $h_{2s}$ is the final enthalpy of the isentropic process
+- $h_1$ is the initial enthalpy of the fluid
+
+** Gravimetric analysis
+The total mass of a mixture is equal to the sum of the mass of each component:
+\[m_m = \sum_i^k m_i\]
+
+[[./images/gravimetric-analysis.png]]
+
+*** Mass fraction
+- Mass fraction is the ratio of mass of a component to the total mass of mixture:
+  \[mf_i = \frac{m_i}{m_m}\]
+- Sum of all mass fractions in the mixture is equal to 1:
+  \[\sum_i^k mf_i = 1\]
+
+** Molar analysis
+The total number of moles in a *non-reacting mixture* is equal to the sum of the number of moles of each component:
+\[N_m = \sum_i^k N_i\]
+
+[[./images/molar-analysis.png]]
+
+*** Mole fraction
+- Mole fraction is the ratio of the mole number of a component to the total mole number of the mixture:
+  \[y_i = \frac{N_i}{N_m}\]
+- Sum of all mole fractions in the mixture is equal to 1:
+  \[\sum_i^k y_i = 1\]
+
+** Composition of gas mixtures
+- Mass of substance $m$ is equivalent to the product of its mole number $N$ and molar mass \(M (m = NM)\).
+- Apparent (or average) molar mass of a mixture can be expressed as:
+  \begin{align*}
+  M_m &= \frac{m_m}{N_m} \\
+  &= \frac{\sum m_i}{N_m} \\
+  &= \frac{\sum N_i M_i}{N_m} \\
+  &= \sum_i^k y_i M_i
+  \end{align*}
+- Or:
+  \begin{align*}
+  M_m &= \frac{m_m}{N_m} \\
+  &= \frac{m_m}{\frac{\sum m_i}{M_i}} \\
+  &= \frac{1}{\frac{\sum m_i}{m_m M_i}} \\
+  &= \frac{1}{\sum_i^k \frac{mf_i}{M_i}}
+  \end{align*}
+- Gas constant for the mixture:
+  \[R_m = \frac{R_u}{M_m} \qquad R_u = \qty{8.314}{J.mol^{-1}.K^{-1}}\]
+
+** Dalton's law of additive pressures
+The pressure of a gas mixture is equal to the sum of the pressures each gas would exert if it existed alone at the mixture temperature and volume.
+
+[[./images/daltons-law-of-additive-pressures.png]]
+
+** Amagat's law of additive volumes
+The volume of a gas mixture is equal to the sum of the volumes each gas would occupy if it existed alone at the mixture temperature and pressure.
+
+[[./images/amagats-law-of-additive-volumes.png]]
+
+@@latex: \newpage@@
+
+** \(P-v-T\) behaviour of gas mixtures
+- Dalton's and Amagat's laws hold *exactly* for *ideal-gas mixtures*.
+- The laws are *approximate* for *real-gas* mixtures, due to intermolecular forces which may be significant for real gases at high densities.
+- Dalton's law:
+  \[P_m = \sum_i^k P_i (T_m, V_m) \qquad P_i = \text{Component pressure}\]
+- Amagat's law:
+  \[V_m = \sum_i^k V_i (T_m, P_m) \qquad V_i = \text{Component volume}\]
+  - The component volume is the volume a component would occupy if it existed alone at $T_m$ and $P_m$, *not the actual volume* the component occupies *in the mixture*.
+    [[./images/component-volume-diagram.png]]
+
+@@latex: \newpage@@
+
+*** Ideal gases
+- Pressure fraction:
+  \[\frac{P_i(T_m, V_m)}{P_m} = \frac{\frac{(N_i R_u T_m)}{V_m}}{\frac{(N_m R_u T_m)}{V_m}} = \frac{N_i}{N_m} = y_i\]
+- The quantity $y_i P_m$ is also called the partial pressure (component pressure for ideal gases).
+- Volume fraction:
+  \[\frac{V_i(T_m, P_m)}{V_m} = \frac{\frac{(N_i R_u T_m)}{P_m}}{\frac{(N_m R_u T_m)}{P_m}} = \frac{N_i}{N_m} = y_i\]
+- The quantity $y_i V_m$ is also called the partial volume (component volume for ideal gases)
+- Dalton's law and Amagat's law are identical for ideal gases:
+  \[\frac{P_i}{P_m} = \frac{V_i}{V_m} = \frac{N_i}{N_m} = y_i\]
+
+** Properties of gas mixtures
+
+*** Extensive properties
+\begin{displaymath}
+\begin{array}{c|c}
+\text{Extensive properties of gas mixtures} & \text{Changes in extensive properties of gas mixtures} \\
+\hline
+U_m = \sum_i^k U_i = \sum_i^k m_i u_i = \sum_i^k N_i \bar{u}_i &
+\Delta U_m = \sum_i^k \Delta U_i = \sum_i^k m_i \Delta u_i = \sum_i^k N_i \Delta \bar{u}_i \\
+H_m = \sum_i^k H_i = \sum_i^k m_i h_i = \sum_i^k N_i \bar{h}_i &
+\Delta H_m = \sum_i^k \Delta H_i = \sum_i^k m_i \Delta h_i = \sum_i^k N_i \Delta \bar{h}_i \\
+S_m = \sum_i^k S_i = \sum_i^k m_i s_i = \sum_i^k N_i \bar{s}_i &
+\Delta S_m = \sum_i^k \Delta S_i = \sum_i^k m_i \Delta s_i = \sum_i^k N_i \Delta \bar{s}_i
+\end{array}
+\end{displaymath}
+
+*** Intensive properties
+Intensive properties of a mixture are determined by weighted averages.
+
+\begin{displaymath}
+\begin{array}{c|c}
+u_m = \sum_i^k mf_i u_i & \bar{u}_m = \sum_i^k y_i \bar{u}_i \\
+h_m = \sum_i^k mf_i h_i & \bar{h}_m = \sum_i^k y_i \bar{h}_i \\
+s_m = \sum_i^k mf_i s_i & \bar{s}_m = \sum_i^k y_i \bar{s}_i \\
+c_{v,m} = \sum_i^k mf_i c_{v,i} & \bar{c}_{v,m} = \sum_i^k y_i \bar{c}_{v,i} \\
+c_{p,m} = \sum_i^k mf_i c_{p,i} & \bar{c}_{p,m} = \sum_i^k y_i \bar{c}_{p,i} \\
+\end{array}
+\end{displaymath}
+
+** Dry and atmospheric air
+- Air is a mixture of nitrogen, oxygen and small amounts of other gases.
+- Atmospheric air contains air and water vapour (moisture)
+  - Air and water vapour is atmospheric air
+  - Air without water vapour is dry air
+- Water vapour (humidity) in the air affects human comfort, and hence is an important consideration for air-conditioning and heating applications
+- Water vapour in the air can be treated as an *ideal gas* (the error is less than 0.2%) even when it is a saturated vapour.
+  - Atmospheric air can be treated as an ideal-gas mixture of air and water vapour.
+
+*** Properties
+- Dry air:
+  \[h_{\text{dry air}} = c_p T \qquad c_p = \qty{1.005}{kJ.kg^{-1}.\degreeCelsius^{-1}}\]
+
+  Use \(\qty{0}{\degreeCelsius}\) as the reference temperature, i.e.
+  \[\Delta h_{\text{dry air}} = c_p \Delta T\]
+
+- Pressure:
+  \[P = P_a + P_v\]
+
+  The total pressure is the sum of partial pressure of dry air (\(P_a\)) and the partial pressure of water vapour \(P_v\).
+
+- Water vapour:
+  \[h_v (T, \text{low } P) \cong h_g (T)\]
+  \[h_g (T) \cong 2500.9 + 1.82 T \qquad (\unit{kJ.kg^{-1}})\]
+
+  - The enthalpy of water vapour in atmospheric air can be taken to be equal to the enthalpy of *saturated vapour* at the *same temperature*.
+
+** Humidity of air
+
+*** Specific or absolute humidity (\(\omega\))
+Specific or absolute humidity is the ratio of mass of water vapour to the mass of dry air:
+\[\omega = \frac{m_v}{m_a}\]
+
+Alternatively:
+\begin{align*}
+\omega &= \frac{m_v}{m_a} \\
+&= \frac{\frac{P_v V}{R_v T}}{\frac{P_a V}{R_a T}} \\
+&= \frac{\frac{P_v}{R_v}}{\frac{P_a}{R_a}} \\
+&= \frac{R_a}{R_v} \cdot \frac{P_v}{P_a} \\
+&= 0.622 \frac{P_v}{P_a} \\
+&= \frac{0.622 P_v}{P - P_v} \quad \because P = P_a + P_v
+\end{align*}
+
+No need to memorise this equation below, as it is given in the exam:
+\[\frac{0.622 P_v}{P - P_v}\]
+
+Specific humidity does not change with temperature unless condensation occurs.
+
+*** Saturated air
+- There is a *limit* to the amount of water vapour the air can hold.
+- At *maximum*, air is *saturated* with moisture (saturated air):
+  \[P_v = P_g \quad \text{where } P_g = P_{\text{sat @ T}}\]
+- Comfort level depends more on the *amount of moisture present* relative to the *maximum amount* that the air can hold at the same temperature.
+
+*** Relative humidity (\(\phi\))
+Relative humidity is the ratio of moisture present to maximum amount that the air can hold.
+\begin{align*}
+\phi &= \frac{m_v}{m_g} \\
+&= \frac{\frac{P_v V}{R_v T}}{\frac{P_g V}{R_v T}} \\
+&= \frac{P_v}{P_g} \quad \text{where } P_g = P_{\text{sat @ T}}
+\end{align*}
+
+- Relative humidity changes with temperature since maximum moisture the air can hold depends on temperature.
+- Relative humidity ranges from 0 (dry air) to 1 (saturated air). The equations below are given in the exam:
+  \[\phi = \frac{\omega P}{(0.622 + \omega) P_g}\]
+  \[\omega = \frac{0.622 \phi P_g}{P - \phi P_g}\]
+- For practical applications, mass of dry air remains constant while the mass of water vapours can change.
+
+*** Intensive properties
+- Total enthalpy of atmospheric air:
+  \[H = H_a + H_v = m_a h_a + m_v h_v\]
+- Divide by mass of dry air (\(m_a\)):
+  \[h = \frac{H}{m_a} = h_a + \frac{m_v}{m_a} h_v = h_a + \omega h_v\]
+- Specific enthalpy of atmospheric air is expressed in terms of *per unit mass of dry air*:
+  \[h = h_a + \omega h_g \quad (\unit{kJ.kg^{-1}} \text{ dry air}) \quad \because h_v \cong h_g\]
+- Similarly, *specific volume* of atmospheric air is expressed in terms of per unit mass of dry air as well.
+  \[\text{Specific volume } (v): \unit{m^3.kg^{-1}} \text{ dry air}\]
+
+** Dry-bulb temperature (\(T_{db}\))
+Dry-bulb temperature is the normal temperature of atmospheric air.
+
+** Dew point temperature (\(T_{dp}\))
+Dew point temperature is the temperature at which condensation begins when air is cooled at constant pressure.
+- Saturation temperature corresponding to the saturated vapour pressure.
+
+\[T_{dp} = T_{\text{sat @ } P_v}\]
+
+[[./images/dew-point-temperature-t-s-diagram.png]]
+
+@@latex: \newpage@@
+
+** Adiabatic saturation process
+- Relative and specific humidity are important parameters in dealing with atmospheric air.
+- Calculation of relative and specific humidity can be achieved by measuring the dew point temperature, but this is not very practical.
+- Alternatively, relative and specific humidity can be related to an *adiabatic saturation process*.
+
+*Diagrams:*
+
+  #+ATTR_LATEX: :scale 0.7
+  [[./images/adiabatic-saturation-process-diagram.png]]
+
+  #+ATTR_LATEX: :scale 0.7
+  [[./images/adiabatic-saturation-temperature-t-s-diagram.png]]
+
+*Details:*
+
+- Assuming steady flow and negligible kinetic energy and potential energy.
+- Mass balance:
+  \[\dot{m}_{a_1} = \dot{m}_{a_2} = \dot{m_a} \quad (\text{Dry air})\]
+  \begin{displaymath}
+  \left. \begin{array}{c}
+  \dot{m}_{w_1} + \dot{m}_f = \dot{m}_{w2} \\
+  \omega_1 \dot{m}_{a_1} + \dot{m}_f = \omega_2 \dot{m}_{a_2} \\
+  \dot{m}_f = \dot{m}_a (\omega_2 - \omega_1)
+  \end{array} \right\} (\text{Water vapour})
+  \end{displaymath}
+
+  \(\dot{m}_f\) is the evaporation rate.
+
+- Energy balance: \(\dot{E}_{in} = \dot{E}_{out}\)
+  \[\dot{m}_a h_1 + \dot{m}_f h_{f_2} = \dot{m}_a h_2\]
+  \[\dot{m}_a h_1 + \dot{m}_a (\omega_2 - \omega_1) h_{f_2} = \dot{m}_a h_2\]
+  \[c_p T_1 + \omega_1 h_{g_1} + (\omega_2 - \omega_1) h_{f_2} = c_p T_2 + \omega_2 h_{g_2}\]
+
+- Rearrange for \(\omega_1\):
+  \[\omega_1 = \frac{c_p (T_2 - T_1) + \omega_2 h_{fg_2}}{h_{g_1} - h_{f_2}}\]
+  \begin{align*}
+  \omega_2 &= \frac{0.622 \phi_2 P_{g_2}}{P_2 - \phi_2 P_{g_2}} \qquad \text{when } \phi = 100\% \\
+  &= \frac{0.622 P_{g_2}}{P_2 - P_{g_2}}
+  \end{align*}
+
+- $T_2$ is the adiabatic saturation temperature
+  - Process for determining $T_2$ is still very impractical
+  - Tank needs to be very long depending on the inlet specific humidity and requires perfect insulation and hence a more practical method is required.
+
+** Wet-bulb temperature (\(T_{wb}\))
+- The wet-bulb temperature is the temperature measured using a thermometer whose bulb is covered with a cotton wick saturated with water and air blowing over the wick.
+- Wet-bulb temperature (\(T_{wb}\)) is *approximately equal* to adiabatic saturation temperature (\(T_2\)) at atmospheric pressures.
+  \[T_2 \cong T_{wb}\]
+- Water evaporating from the wick causes the temperature to drop, so:
+  \[T_{wb} < T_{dry}\]
+- At higher humidity, that means there is lower evaporation rate and hence a higher wet-bulb temperature.
+- When the wet-bulb temperature is equal to the temperature of dry air, the air is saturated with water, i.e.
+  \[T_{wb} = T_{dry} \quad \rightarrow \quad \phi = 100\%\]
+
+** Specific volume of dry air
+\[v = \frac{P_a T}{R_a}\]
+
+Where:
+- $v$ is the specific volume of dry air
+- $P_a$ is the partial pressure of dry air
+- $T$ is the temperature of the dry air in Kelvin
+- $R_{a}$ is the molar gas constant per unit mass of dry air, which is $\qty{0.287}{kJ.kg^{-1}.K^{-1}}$
+
+@@latex: \newpage@@
+
+** Psychrometric chart
+- The pressure value of the psychrometric chart below is $\qty{1}{atm}$ or $\qty{101.324}{kPa}$, which means it is only applicable this particular pressure value, which is at sea level.
+- The relative humidity lines are the lines that curve upwards from left to right. Note that the specific humidity values are on the inside of the \(y\)-axis, not outside. The values on the outside to the \(y\)-axis are enthalpy values.
+- The wet-bulb temperature line is the dotted lines parallel to the constant enthalpy lines, which are solid lines.
+- The dew point temperature lines are labelled on the saturation line, but can't be seen as they are blocked by the saturation line label.
+[[./images/psychrometric-chart.png]]
+
+*** Schematic of the chart
+[[./images/psychrometric-chart-schematic.png]]
+
+*** Example
+[[./images/psychrometric-chart-example.png]]
+
+For saturated air:
+\[T_{db} = T_{wb} = T_{dp}\]
+
+** Air conditioning processes
+- Modern air-conditioning systems can heat, cool, humidify and dehumidify the air.
+- Modelling air-conditioning processes on the psychrometric chart:
+  #+ATTR_LATEX: :scale 0.65
+  [[./images/air-conditioning-processes-on-a-psychrometric-chart.png]]
+- These processes are modelled as *steady flow* processes.
+- Kinetic energy and potential energy terms are ignored.
+- Mass balance: \(\sum_{in} \dot{m}_a = \sum_{out} \dot{m}_a\)
+  \[\text{Dry air:} \quad \sum_{in} \dot{m}_a = \sum_{out} \dot{m}_a\]
+  \[\text{Water:} \quad \sum_{in} \dot{m}_w = \sum_{out} \dot{m}_w \quad \rightarrow \quad \sum_{in} \omega \dot{m}_a = \sum_{out} \omega \dot{m}_a\]
+- Energy balance: \(\dot{E}_{in} = \dot{E}_{out}\)
+  \[\dot{Q}_{in} + \dot{W}_{in} + \sum_{in} \dot{m} h = \dot{Q}_{out} + \dot{W}_{out} + \sum_{out} \dot{m} h\]
+- Work term usually consists of *fan work input*, which is small relative to the other terms in the energy equation.
+
+*** Simple heating and cooling
+#+ATTR_LATEX: :scale 0.6
+[[./images/simple-heating-and-cooling-diagram.png]]
+
+#+ATTR_LATEX: :scale 0.7
+[[./images/simple-heating-and-cooling-psychrometric-chart.png]]
+- Process appears as a horizontal line on the psychrometric chart
+- Specific humidity remains constant
+- Relative humidity decreases with heating
+- Relative humidity increases with cooling
+- Mass balance:
+  \[\dot{m}_{a_1} = \dot{m}_{a_2} = \dot{m}_a\]
+  \[\dot{m}_{w_1} = \dot{m}_{w_2} = \dot{m}_w \quad \rightarrow \quad \omega_1 = \omega_2\]
+- Energy balance:
+  \[\dot{Q} = \dot{m}_a (h_2 - h_1) \text{ or } q = (h_2 - h_1)\]
+
+*** Humidification or dehumidification
+\[\dot{m}_w = \dot{m}_a \Delta \omega\]
+
+Where:
+- $\dot{m}_w$ is the mass flow rate of water
+- $\dot{m}_a$ is the mass flow rate of dry air
+- $\Delta \omega$ is the change in specific humidity
+
+*** Heating with humidification
+*Diagrams:*
+#+ATTR_LATEX: :scale 0.6
+[[./images/heating-with-humidification-diagram.png]]
+
+#+ATTR_LATEX: :scale 0.8
+[[./images/heating-with-humidification-psychrometric-chart.png]]
+
+*Details:*
+- 2-step process:
+  1. Simple heating
+  2. Humidification
+- Temperature after humidification depends on the process, for example:
+  1. Water spray: temperature decreases after humidification due to evaporation (a).
+  2. Steam spray: temperature increases (b).
+- Simple heating (\(1 \rightarrow 2\)):
+  \[\dot{m}_{a_1} = \dot{m}_{a_2} = \dot{m}_a\]
+  \[\dot{m}_{w_1} = \dot{m}_{w_2} = \dot{m}_w \quad \rightarrow \quad \omega_1 = \omega_2\]
+  \[\dot{Q}_{in} = \dot{m}_a (h_2 - h_1)\]
+- Humidification (\(2 \rightarrow 3\)):
+  \[\omega_2 \dot{m}_{a_2} + \dot{m}_w = \omega_3 \dot{m}_{a_3}\]
+  \[\dot{m}_w = \dot{m}_a (\omega_3 - \omega_2)\]
+
+@@latex: \newpage@@
+
+*** Cooling with dehumidification
+#+ATTR_LATEX: :scale 0.5
+[[./images/cooling-with-dehumidification-diagram.png]]
+
+#+ATTR_LATEX: :scale 0.5
+[[./images/cooling-with-dehumidification-psychrometric-chart.png]]
+- Relative humidity increases with cooling, and eventually reaches 100%
+- Cooling the air past the dew point temperature causes water vapour to condense. As condensed water (condensate) is removed, the air is dehumidified.
+- One-step process.
+- Mass balance:
+  \[\text{Dry air:} \quad \dot{m}_{a_1} = \dot{m}_{a_2} = \dot{m}_a\]
+  \[\text{Water:} \quad \dot{m}_{v_1} = \dot{m}_{v_2} + \dot{m}_w\]
+  \[\omega_1 \dot{m}_{a_1} = \omega_2 \dot{m}_{a_2} + \dot{m}_w\]
+  \[\dot{m}_w = \dot{m}_a (\omega_1 - \omega_2)\]
+- Energy balance:
+  \[\dot{Q}_{in} + \sum_{in} \dot{m} h = \dot{Q}_{out} + \sum_{out} \dot{m} h\]
+  \[\dot{m}_{a_1} h_1 = \dot{Q}_{out} + \dot{m}_{a_2} h_2 + \dot{m}_{w} h_w\]
+  \[\dot{Q}_{out} = \dot{m}_a (h_1 - h_2) - \dot{m}_w h_w\]
+
+*** Evaporative cooling
+#+ATTR_LATEX: :scale 0.7
+[[./images/evaporative-cooling-diagram.png]]
+
+#+ATTR_LATEX: :scale 0.8
+[[./images/evaporative-cooling-psychrometric-chart.png]]
+- High cost of cooling is avoided by using evaporative coolers in the desert (hot and dry climates).
+- Evaporation of water cools the air and increases the humidity.
+- Evaporative cooling is identical to adiabatic saturation process.
+- Process follows constant wet-bulb temperature line.
+  - Enthalpy is also assumed to remain constant:
+    \[T_{wb} \cong \text{constant}\]
+    \[h \cong \text{constant}\]
+
+*** Adiabatic mixing of airstreams
+*Diagrams:*
+#+ATTR_LATEX: :scale 0.8
+[[./images/adiabatic-mixing-of-airstreams-diagram.png]]
+
+#+ATTR_LATEX: :scale 0.9
+[[./images/adiabatic-mixing-of-airstreams-psychrometric-chart.png]]
+
+*Details:*
+- Mixing of airstreams is commonly used for air-conditioning in large buildings.
+- Heat transfer to the surroundings is usually small, so the process is *assumed to be adiabatic*.
+- Mass balance:
+  \[\text{Dry air:} \quad \dot{m}_{a_1} + \dot{m}_{a_2} = \dot{m}_{a_3}\]
+  \[\text{Water:} \quad \dot{m}_{w_1} + \dot{m}_{w_2} = \dot{m}_{v_3}\]
+  \[\omega_1 \dot{m}_{a_1} + \omega_2 \dot{m}_{a_2} = \omega_3 \dot{m}_{a_3}\]
+- Substituting and eliminating \(\dot{m}_{a_3}\):
+  \[\frac{\dot{m}_{a_1}}{\dot{m}_{a_2}} = \frac{\omega_2 - \omega_3}{\omega_3 - \omega_1}\]
+- Energy balance:
+  \[h_1 \dot{m}_{a_1} + h_2 \dot{m}_{a_2} = h_3 \dot{m}_{a_3}\]
+- Substituting and eliminating \(\dot{m}_{a_3}\):
+  \[\frac{\dot{m}_{a_1}}{\dot{m}_{a_2}} = \frac{h_2 - h_3}{h_3 - h_1} = \frac{\omega_2 - \omega_3}{\omega_3 - \omega_1}\]
+- Equation is in the form of a geometric interpolation.
+- When two airstreams at states 1 and 2 are mixed adiabatically, the state of the mixture lies in the straight line connecting the two states.
+
+@@latex: \newpage@@
+
+* Formulas
+
+** Change in specific internal energy of an ideal gas
+\[\Delta u = c_{\text{v, avg}} (T_2 - T_1)\]
+
+Where:
+- $\Delta u$ is the change in specific internal energy of an ideal gas
+- $c_{\text{v, avg}}$ is the specific heat capacity of the ideal gas at constant volume
+- $T_2$ is the final temperature
+- $T_1$ is the initial temperature
+
+** Change in specific enthalpy of an ideal gas
+\[\Delta h = c_{\text{p, avg}} (T_2 - T_1)\]
+
+Where:
+- $\Delta u$ is the change in specific enthalpy of an ideal gas
+- $c_{\text{p, avg}}$ is the specific heat capacity of the ideal gas at constant pressure
+- $T_2$ is the final temperature
+- $T_1$ is the initial temperature
+
+** Quality (dryness fraction) (\(x\))
+\[x = \frac{m_{vapour}}{m_{total}} = \frac{m_g}{m_f + m_g}\]
+
+Where:
+- $x$ is the quality or dryness fraction
+- $m_{vapour}$ is the mass of vapour
+- $m_{total}$ is the total mass
+- $m_g$ is the mass of vapour
+- $m_f$ is the mass of liquid
+
+*** Specific entropy in terms of quality (\(s\))
+\[s = s_f + xs_{fg}\]
+
+Where:
+- $s$ is the specific entropy
+- $s_f$ is the specific entropy of the saturated liquid
+- $s_g$ is the specific entropy of the saturated vapour
+- $s_{fg}$ is the specific entropy of the mixture at evaporation, where $s_{fg} = s_g - s_f$
+
+*** Quality in terms of specific entropy (\(x\))
+\[x = \frac{s - s_f}{s_{fg}}\]
+
+Where:
+- $x$ is the quality
+- $s$ is the specific entropy of the mixture
+- $s_f$ is the specific entropy of the saturated liquid
+- $s_g$ is the specific entropy of the saturated vapour
+- $s_{fg}$ is the specific entropy of the mixture at evaporation, where $s_{fg} = s_g - s_f$
+
+** Net work output of a heat engine
+\[W_{\text{net, out}} = W_{out} - W_{in}\]
+
+Where:
+- $W_{\text{net, out}}$ is the net work output of the heat engine
+- $W_{out}$ is the work done *by* the heat engine
+- $W_{in}$ is the work done *on* the heat engine
+
+** Energy balance of a heat engine
+\[W_{\text{net, out}} = Q_{in} - Q_{out}\]
+
+Where:
+- $W_{\text{net, out}}$ is the net work output of the heat engine
+- $Q_{in}$ is the heat energy input from the high temperature reservoir
+- $Q_{out}$ is the heat energy output from the low temperature reservoir
+
+** Thermal efficiency
+\[\text{Thermal efficiency} = \frac{\text{Desired output}}{\text{Required input}}\]
+
+*** Heat engine
+\[\eta_{th} = \frac{W_{\text{net, out}}}{Q_{H}} = 1 - \frac{Q_L}{Q_H}\]
+
+Where:
+- $\eta_{th}$ is the efficiency of the heat engine
+- $W_{\text{net, out}}$ is the net work output of the heat engine
+- $Q_{H}$ is the heat energy transferred from the high temperature reservoir ($H$ for high temperature)
+- $Q_{L}$ is the heat energy transferred from the low temperature reservoir ($L$ for low temperature)
+
+*** Carnot heat engine
+\[\eta_{\text{th, rev}} = 1 - \frac{T_L}{T_H}\]
+
+Where:
+- $\eta_{th}$ is the efficiency of a Carnot heat engine
+- $T_{H}$ is the temperature of the high temperature reservoir ($H$ for high temperature)
+- $T_{L}$ is the temperature of the low temperature reservoir ($L$ for low temperature)
+
+** Energy balance of a reverse heat engine (refrigerators and heat pumps)
+\[W_{\text{net, in}} = Q_{H} - Q_{L}\]
+
+Where:
+- $W_{\text{net, in}}$ is the net energy input into the reverse heat engine
+- $Q_{H}$ is the heat energy transferred from the high temperature reservoir ($H$ for high temperature)
+- $Q_{L}$ is the heat energy transferred from the low temperature reservoir ($L$ for low temperature)
+
+** Coefficient of performance
+\[\text{Coefficient of performance} = \frac{\text{Desired output}}{\text{Required input}}\]
+
+*** Refrigerator
+\[COP_R = \frac{Q_L}{Q_H - Q_L} = \frac{1}{\frac{Q_H}{Q_L} - 1}\]
+
+Where:
+- $COP_R$ is the coefficient of performance of the refrigerator
+- $Q_{H}$ is the heat energy transferred from the high temperature reservoir ($H$ for high temperature)
+- $Q_{L}$ is the heat energy transferred from the low temperature reservoir ($L$ for low temperature)
+
+*** Carnot refrigerator
+\[COP_{\text{R, rev}} = \frac{T_L}{T_H - T_L} = \frac{1}{\frac{T_H}{T_L} - 1}\]
+
+Where:
+- $COP_{\text{R, rev}}$ is the coefficient of performance of a Carnot refrigerator
+- $T_{H}$ is the temperature of the high temperature reservoir ($H$ for high temperature)
+- $T_{L}$ is the temperature of the low temperature reservoir ($L$ for low temperature)
+
+*** Heat pump
+\[COP_{HP} = \frac{Q_H}{Q_H - Q_L} = \frac{1}{1 - \frac{Q_L}{Q_H}}\]
+
+Where:
+- $COP_{HP}$ is the coefficient of performance of the heat pump
+- $Q_{H}$ is the heat energy transferred from the high temperature reservoir ($H$ for high temperature)
+- $Q_{L}$ is the heat energy transferred from the low temperature reservoir ($L$ for low temperature)
+
+*** Carnot heat pump
+\[COP_{\text{HP, rev}} = \frac{Q_H}{Q_H - Q_L} = \frac{1}{1 - \frac{Q_L}{Q_H}}\]
+
+Where:
+- $COP_{\text{HP, rev}}$ is the coefficient of performance of a Carnot heat pump
+- $T_{H}$ is the temperature of the high temperature reservoir ($H$ for high temperature)
+- $T_{L}$ is the temperature of the low temperature reservoir ($L$ for low temperature)
+
+@@latex: \newpage@@
+
+** Clausius Inequality
+\[\oint \frac{\delta Q}{T} \leq 0\]
+
+For reversible cycles:
+\[\oint \frac{\delta Q}{T} = 0\]
+
+For irreversible cycles:
+\[\oint \frac{\delta Q}{T} < 0\]
+
+Where:
+- $\delta Q$ is an infinitesimal amount of heat that is taken from the reservoirs and absorbed by the system. \(\delta Q > 0\) if heat from the reservoirs is absorbed by the system, and \(\delta Q < 0\) is heat is leaving from the system to the reservoirs.
+- $T$ is the common temperature of the reservoirs at a particular instant in time in Kelvin
+
+** Entropy
+\[dS = \left(\frac{\delta Q}{T} \right)_{\text{int rev}} \quad \left(\unit{kJ.K^{-1}}\right)\]
+
+Where:
+- $dS$ is the change in entropy for an internally reversible process (int rev)
+- $\delta Q$ is an infinitesimal amount of heat that is taken from the reservoirs and absorbed by the system. \(\delta Q > 0\) if heat from the reservoirs is absorbed by the system, and \(\delta Q < 0\) is heat is leaving from the system to the reservoirs.
+- $T$ is the common temperature of the reservoirs at a particular instant in time in Kelvin
+
+@@latex: \newpage@@
+
+** First \(Tds\) equation
+\[T ds = du + P dv\]
+\[ds = \frac{du}{T} + \frac{P dv}{T}\]
+
+Where:
+- $T$ is the temperature in Kelvin
+- $ds$ is the change in *specific* entropy
+- $du$ is the change in *specific* internal energy
+- $P$ is the pressure of the system
+- $dv$ is the change in *specific* volume of the system
+
+** Second \(Tds\) equation
+\[T ds = dh - v dP\]
+\[ds = \frac{dh}{T} - \frac{v dP}{T}\]
+
+Where:
+- $T$ is the temperature in Kelvin
+- $ds$ is the change in *specific* entropy
+- $dh$ is the change in *specific* enthalpy
+- $v$ is the *specific* volume of the system
+- $dP$ is the change in pressure of the system
+
+@@latex: \newpage@@
+
+** Entropy change for liquids and solids
+\[s_2 - s_1 = \int_1^2 c(T) \frac{dT}{T} \cong c_{avg} \ln \left( \frac{T_2}{T_1} \right)\]
+
+Where:
+- $s_2$ is the final *specific* entropy
+- $s_1$ is the initial *specific* entropy
+- $c$ is the specific heat capacity as a function of temperature
+- $dT$ is the change in temperature in $\unit{K}$
+- $c_{avg}$ is the average specific heat capacity
+- $T_2$ is the final temperature in Kelvin
+- $T_1$ is the initial temperature in Kelvin
+
+** General entropy change for ideal gas
+
+*** First \(T ds\) equation
+\[s_2 - s_1 = c_{\text{v, avg}} \ln \left( \frac{T_2}{T_1} \right) + R_{sp} \ln \left(\frac{v_2}{v_1} \right)\]
+
+Where:
+- $s_2$ is the final *specific* entropy
+- $s_1$ is the initial *specific* entropy
+- $c_{\text{v, avg}}$ is the average specific heat capacity at constant volume
+- $R_{sp}$ is the molar gas constant per unit mass, i.e. \(R_{sp} = \frac{R}{\text{Molar mass}}\)
+- $T_2$ is the final temperature in Kelvin
+- $T_1$ is the initial temperature in Kelvin
+- $v_2$ is the final *specific* volume
+- $v_1$ is the initial *specific* volume
+
+*** Second \(T ds\) equation
+\[s_2 - s_1 = c_{\text{p, avg}} \ln \left( \frac{T_2}{T_1} \right) - R_{sp} \ln \left(\frac{P_2}{P_1} \right)\]
+
+Where:
+- $s_2$ is the final *specific* entropy
+- $s_1$ is the initial *specific* entropy
+- $c_{\text{p, avg}}$ is the average specific heat capacity at constant pressure
+- $R_{sp}$ is the molar gas constant per unit mass, i.e. \(R_{sp} = \frac{R}{\text{Molar mass}}\)
+- $T_2$ is the final temperature in Kelvin
+- $T_1$ is the initial temperature in Kelvin
+- $P_2$ is the final pressure
+- $P_1$ is the initial pressure
+
+** Entropy change for ideal gas for an isentropic process
+
+*** First \(T ds\) equation
+\[\left(\frac{T_2}{T_1} \right)_{isen} = \left(\frac{v_1}{v_2} \right)^{k - 1}\]
+
+Where:
+- $T_2$ is the final temperature in Kelvin
+- $T_1$ is the initial temperature in Kelvin
+- $v_2$ is the final *specific* volume
+- $v_1$ is the initial *specific* volume
+- $k$ is \(\frac{c_p}{c_v}\) or the specific heat capacity at constant pressure divided by the specific heat capacity at constant volume
+
+*** Second \(T ds\) equation
+\[\left(\frac{T_2}{T_1} \right)_{isen} = \left(\frac{P_2}{P_1} \right)^{\frac{k - 1}{k}}\]
+\[\left(\frac{P_2}{P_1} \right)_{isen} = \left(\frac{v_1}{v_2} \right)^{k}\]
+\[Pv^{k} = \text{constant}\]
+
+Where:
+- $T_2$ is the final temperature in Kelvin
+- $T_1$ is the initial temperature in Kelvin
+- $P_2$ is the final pressure
+- $P_1$ is the initial pressure
+- $v_2$ is the final *specific* volume
+- $v_1$ is the initial *specific* volume
+- $k$ is \(\frac{c_p}{c_v}\) or the specific heat capacity at constant pressure divided by the specific heat capacity at constant volume
+- $P$ is the pressure of the system
+- $v$ is the *specific* volume of the system
+
+@@latex: \newpage@@
+
+** Entropy change of a reversible process
+\[dS = \left( \frac{\delta Q}{T} \right)_{\text{int rev}} \left(\unit{kJ.K^{-1}} \right)\]
+\[\Delta S = S_2 - S_1 = \int_1^2 \left(\frac{\delta Q}{T} \right)_{\text{int rev}}\]
+
+Where:
+- $dS$ is the change in entropy for an internally reversible process (int rev)
+- $\delta Q$ is an infinitesimal amount of heat that is taken from the reservoirs and absorbed by the system. \(\delta Q > 0\) if heat from the reservoirs is absorbed by the system, and \(\delta Q < 0\) is heat is leaving from the system to the reservoirs.
+- $T$ is the common temperature of the reservoirs at a particular instant in time in Kelvin
+- $\Delta S$ is the change in entropy
+- $S_2$ is the final entropy
+- $S_1$ is the initial entropy
+
+*** Internally reversible isothermal heat transfer
+\[\Delta S = \frac{Q}{T_0} \quad (\unit{kJ.K^{-1}})\]
+
+Where:
+- $\Delta S$ is the change in total entropy
+- $Q$ is the heat transfer for the internally reversible process
+- $T_0$ is the constant temperature in Kelvin
+
+@@latex: \newpage@@
+
+** Entropy change of an irreversible process
+\[\Delta S_{sys} = S_2 - S_1 = \int_1^2 \frac{\delta Q}{T} + S_{gen}\]
+
+Where:
+- $\Delta S_{sys}$ is the entropy change of a closed system for an irreversible process
+- $S_2$ is the final entropy of the closed system
+- $S_1$ is the initial entropy of the closed system
+- $\int_1^2 \frac{\delta Q}{T}$ is the entropy change due to heat transfer
+- $S_{gen}$ is the entropy generation due to irreversibilities
+
+** Entropy change of a system
+\[\Delta S_{system} = S_{in} - S_{out} + S_{gen}\]
+
+Where:
+- $\Delta S_{system}$ is the total entropy change of the system
+- $S_{in}$ is the total entropy entering the system
+- $S_{out}$ is the total entropy leaving the system
+- $S_{gen}$ is the entropy generated by irreversibilities
+
+@@latex: \newpage@@
+
+** Entropy change of a closed system
+\[\Delta S_{closed} = S_2 - S_1 = \sum \frac{Q_k}{T_k} + S_{gen}\]
+
+Where:
+- $\Delta S_{closed}$ is the total entropy change of a closed system
+- $S_2$ is the final entropy of the system
+- $S_1$ is the initial entropy of the system
+- $Q_k$ is the heat transferred
+- $T_k$ is the boundary temperature through which heat is transferred
+- $S_{gen}$ is the entropy generated by irreversibilities
+
+*** Adiabatic process (no heat transfer)
+\[\sum \frac{Q_k}{T_k} = 0\]
+\[\Delta S_{adiabatic} = S_2 - S_1 = \sum \frac{Q_k}{T_k} + S_{gen}\]
+\[\Delta S_{adiabatic} = S_2 - S_1 = 0 + S_{gen}\]
+\[\Delta S_{adiabatic} = S_{gen} > 0\]
+
+Where:
+- $Q_k$ is the heat transferred
+- $\Delta S_{adiabatic}$ is the total entropy change of a closed adiabatic system
+- $T_k$ is the boundary temperature through which heat is transferred
+- $S_2$ is the final entropy of the system
+- $S_1$ is the initial entropy of the system
+- $S_{gen}$ is the entropy generated by irreversibilities
+
+*** Isentropic process (constant entropy)
+\[\sum \frac{Q_k}{T_k} = 0 \quad \text{and} \quad S_{gen} = 0\]
+\[\Delta S_{isen} = S_2 - S_1 = \sum \frac{Q_k}{T_k} + S_{gen}\]
+\[\Delta S_{isen} = 0\]
+\[S_2 = S_1\]
+
+Where:
+- $Q_k$ is the heat transferred
+- $T_k$ is the boundary temperature through which heat is transferred
+- $S_{gen}$ is the entropy generated by irreversibilities
+- $\Delta S_{isen}$ is the total entropy change of a closed isentropic system
+- $S_2$ is the final entropy of the system
+- $S_1$ is the initial entropy of the system
+
+*** Isolated system
+\[\sum \frac{Q_k}{T_k} = 0\]
+\[\Delta S_{isolated} = S_2 - S_1 = \sum \frac{Q_k}{T_k} + S_{gen}\]
+\[\Delta S_{isolated} = S_2 - S_1 = 0 + S_{gen}\]
+\[\Delta S_{isolated} = S_{gen} > 0\]
+
+Where:
+- $Q_k$ is the heat transferred
+- $T_k$ is the boundary temperature through which heat is transferred
+- $\Delta S_{isolated}$ is the total entropy change of an isolated system
+- $S_{gen}$ is the entropy generated by irreversibilities
+- $S_2$ is the final entropy of the system
+- $S_1$ is the initial entropy of the system
+
+*** Closed system with its surroundings (isolated system)
+\[\Delta S_{closed} = S_2 - S_1\]
+\[\Delta S_{surr} = \frac{Q}{T_{surr}}\]
+\[\Delta S_{closed} + \Delta S_{surr} = \Delta S_{isolated} = S_{gen} > 0\]
+\[S_2 - S_1 + \frac{Q}{T_{surr}} = S_{gen} > 0\]
+
+Where:
+- $\Delta S_{closed}$ is the total entropy change of the closed system
+- $S_2$ is the final entropy of the closed system
+- $S_1$ is the initial entropy of the closed system
+- $\Delta S_{surr}$ is the total entropy change of the closed system
+- $Q$ is the heat transferred from the surroundings to the closed system
+- $T_{surr}$ is the temperature of the surroundings in $\unit{K}$
+- $\Delta S_{isolated}$ is the total entropy change of the isolated system consisting of the closed system and its surroundings
+- $S_{gen}$ is the entropy generated by irreversibilities
+
+@@latex: \newpage@@
+
+** Entropy balance for flow control volumes
+\[S_{\text{in, mass}} = m_i s_i\]
+\[S_{\text{out, mass}} = m_e s_e\]
+
+Where:
+- $S_{\text{in, mass}}$ is the entropy entering the control volume due to mass entering the control volume
+- $m_i$ is the mass entering the control volume
+- $s_i$ is the specific entropy of the mass entering the control volume
+- $S_{\text{out, mass}}$ is the entropy exiting the control volume due to mass exiting the control volume
+- $m_e$ is the mass exiting the control volume
+- $s_e$ is the specific entropy of the mass exiting the control volume
+
+** Entropy change for flow control volumes
+\[\Delta S_{CV} = \sum m_i s_i - \sum m_e s_e + \sum \frac{Q_k}{T_k} + S_{gen}\]
+
+Rate form (a dot above the variable means rate):
+\[\Delta \dot{S}_{CV} = \sum \dot{m}_i s_i - \sum \dot{m}_e s_e + \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+
+Where:
+- $\Delta S_{CV}$ is the total entropy change of the control volume
+- $m_i$ is the mass entering the control volume
+- $s_i$ is the specific entropy of the mass entering the control volume
+- $m_e$ is the mass exiting the control volume
+- $s_e$ is the specific entropy of the mass exiting the control volume
+- $Q_k$ is the heat transferred
+- $T_k$ is the boundary temperature through which heat is transferred
+- $S_{gen}$ is the entropy generated by irreversibilities
+
+*** Steady state, steady flow control volume
+\[\Delta \dot{S}_{CV} = 0\]
+\[\Delta \dot{S}_{CV} = \sum \dot{m}_i s_i - \sum \dot{m}_e s_e + \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+\[0 = \sum \dot{m}_i s_i - \sum \dot{m}_e s_e + \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+\[\sum \dot{m}_e s_e - \sum \dot{m}_i s_i = \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+
+Where:
+- $\Delta \dot{S}_{CV}$ is the rate of total entropy change of the control volume
+- $\dot{m}_i$ is the mass rate entering the control volume
+- $s_i$ is the specific entropy of the mass entering the control volume
+- $\dot{m}_e$ is the mass rate exiting the control volume
+- $s_e$ is the specific entropy of the mass exiting the control volume
+- $\dot{Q}_k$ is the rate of heat transferred
+- $T_k$ is the boundary temperature through which heat is transferred
+- $\dot{S}_{gen}$ is the rate of entropy generated by irreversibilities
+
+@@latex: \newpage@@
+
+*** Single stream, steady flow process
+\[\Delta \dot{S}_{CV} = 0 \quad \text{and} \quad \dot{m}_i = \dot{m}_e = \dot{m}\]
+\[\Delta \dot{S}_{CV} = \sum \dot{m}_i s_i - \sum \dot{m}_e s_e + \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+\[0 = \sum \dot{m}_i s_i - \sum \dot{m}_e s_e + \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+\[\dot{m} (s_e - s_i) = \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+
+Where:
+- $\Delta \dot{S}_{CV}$ is the rate of total entropy change of the control volume
+- $\dot{m}$ is the mass flow rate through the control volume
+- $\dot{m}_i$ is the mass rate entering the control volume
+- $\dot{m}_e$ is the mass rate exiting the control volume
+- $s_i$ is the specific entropy of the mass entering the control volume
+- $s_e$ is the specific entropy of the mass exiting the control volume
+- $\dot{Q}_k$ is the rate of heat transferred
+- $T_k$ is the boundary temperature through which heat is transferred
+- $\dot{S}_{gen}$ is the rate of entropy generated by irreversibilities
+
+@@latex: \newpage@@
+
+*** Steady state, single stream and steady flow adiabatic process
+\[\Delta \dot{S}_{CV} = 0 \quad \text{and} \quad \dot{m}_i = \dot{m}_e = \dot{m} \quad \text{and} \quad \sum \frac{\dot{Q}_k}{T_k} = 0\]
+\[\Delta \dot{S}_{CV} = \sum \dot{m}_i s_i - \sum \dot{m}_e s_e + \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+\[0 = \dot{m} s_i - \dot{m}_e s_e + 0 + \dot{S}_{gen}\]
+\[\dot{m} (s_e - s_i) = \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+\[\dot{S}_{gen} \ge 0 \quad \rightarrow \quad s_e \ge s_i\]
+
+Where:
+- $\Delta \dot{S}_{CV}$ is the rate of total entropy change of the control volume
+- $\dot{m}$ is the mass flow rate through the control volume
+- $\dot{m}_i$ is the mass rate entering the control volume
+- $\dot{m}_e$ is the mass rate exiting the control volume
+- $\dot{Q}_k$ is the rate of heat transferred
+- $T_k$ is the boundary temperature through which heat is transferred
+- $s_i$ is the specific entropy of the mass entering the control volume
+- $s_e$ is the specific entropy of the mass exiting the control volume
+- $\dot{S}_{gen}$ is the rate of entropy generated by irreversibilities
+
+@@latex: \newpage@@
+
+*** Adiabatic and reversible process (isentropic process)
+\[\Delta \dot{S}_{CV} = 0 \quad \text{and} \quad \dot{m}_i = \dot{m}_e = \dot{m} \quad \text{and} \quad \sum \frac{\dot{Q}_k}{T_k} = 0 \quad \text{and} \quad \dot{S}_{gen} = 0\]
+\[\Delta \dot{S}_{CV} = \sum \dot{m}_i s_i - \sum \dot{m}_e s_e + \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+\[0 = \dot{m} s_i - \dot{m} s_e + 0 + 0\]
+\[\dot{m} (s_e - s_i) = \sum \frac{\dot{Q}_k}{T_k} + \dot{S}_{gen}\]
+\[s_e = s_i\]
+
+Where:
+- $\Delta \dot{S}_{CV}$ is the rate of total entropy change of the control volume
+- $\dot{m}$ is the mass flow rate through the control volume
+- $\dot{m}_i$ is the mass rate entering the control volume
+- $\dot{m}_e$ is the mass rate exiting the control volume
+- $\dot{Q}_k$ is the rate of heat transferred
+- $T_k$ is the boundary temperature through which heat is transferred
+- $\dot{S}_{gen}$ is the rate of entropy generated by irreversibilities
+- $s_i$ is the specific entropy of the mass entering the control volume
+- $s_e$ is the specific entropy of the mass exiting the control volume
+
+** Reversible steady flow work
+\[w_{rev} = - \int_i^e v \, dP\]
+
+Where:
+- $w_{rev}$ is the reversible steady flow work
+- $v$ is the specific volume of the fluid
+- $dP$ is the infinitesimal change in pressure of the fluid
+
+*** Incompressible fluids
+\[w_{rev} = -v (P_2 - P_1)\]
+
+Where:
+- $w_{rev}$ is the reversible steady flow work
+- $v$ is the specific volume of the fluid
+- $P_2$ is final pressure of the fluid
+- $P_1$ is initial pressure of the fluid
+
+*** Incompressible fluids with no work done
+\[0 = -v (P_2 - P_1) - \frac{\nu_2^2 - \nu_1^2}{2} - g(z_2 - z_1)\]
+
+Where:
+- $v$ is the specific volume of the fluid
+- $P_2$ is final pressure of the fluid
+- $P_1$ is initial pressure of the fluid
+- $\nu_2$ is the final velocity of the fluid
+- $\nu_1$ is the initial velocity of the fluid
+- $g$ is the gravitational constant of $\qty{9.81}{m.s^{-1}}$
+- $z_2$ is the final height of the fluid
+- $z_1$ is the initial height of the fluid
+
+** Polytropic process
+\[Pv^n = \text{constant}\]
+
+Where:
+- $P$ is the pressure of the fluid
+- $v$ is the specific volume of the fluid
+- $n$ is the polytropic index
+- $\text{constant}$ is an arbitrary constant
+
+** Specific work done when flow through the device is polytropic
+\[w_{poly} = - \frac{n}{n - 1}(P_2 v_2 - P_1 v_1)\]
+
+Where:
+- $w_{poly}$ is the specific work done, or the work done per unit mass
+- $n$ is the polytropic index
+- $P_2$ is the final pressure
+- $P_1$ is the initial pressure
+- $v_2$ is the final specific volume
+- $v_1$ is the final specific volume
+
+*** For an ideal gas
+\[w_{poly} = - \frac{n R_{sp} (T_2 - T_1)}{n - 1} = - \frac{n R_{sp} T_1}{n - 1} \left[\left(\frac{P_2}{P_1} \right)^{\frac{n - 1}{n}} - 1 \right]\]
+
+Where:
+- $w_{poly}$ is the specific work done, or the work done per unit mass
+- $n$ is the polytropic index
+- $R_{sp}$ is the molar gas constant per unit mass, i.e. \(R_{sp} = \frac{R}{\text{Molar mass}}\)
+- $T_2$ is the final temperature in Kelvin
+- $T_1$ is the initial temperature in Kelvin
+- $P_2$ is the final pressure
+- $P_1$ is the initial pressure
+
+*** Isentropic process for ideal gas
+\[n = k\]
+\[w_{isen} = - \frac{k R_{sp} (T_2 - T_1)}{k - 1} = \frac{k R_{sp} T_1}{1 - k} \left[\left(\frac{P_2}{P_1} \right)^{\frac{k - 1}{k}} - 1 \right]\]
+
+Where:
+- $w_{isen}$ is the specific work done, or the work done per unit mass
+- $k$ is given by $\frac{c_p}{c_v}$
+- $R_{sp}$ is the molar gas constant per unit mass, i.e. \(R_{sp} = \frac{R}{\text{Molar mass}}\)
+- $T_2$ is the final temperature in Kelvin
+- $T_1$ is the initial temperature in Kelvin
+- $P_2$ is the final pressure
+- $P_1$ is the initial pressure
+
+*** Isothermal process
+\[n = 1\]
+\[w_{\text{isothermal}} = - R_{sp} T \ln \left(\frac{P_2}{P_1} \right)\]
+
+Where:
+- $w_{isothermal}$ is the specific work done, or the work done per unit mass
+- $R_{sp}$ is the molar gas constant per unit mass, i.e. \(R_{sp} = \frac{R}{\text{Molar mass}}\)
+- $T$ is the temperature of the gas in Kelvin
+- $P_2$ is the final pressure
+- $P_1$ is the initial pressure
+
+*** Specific work done in two-stage compression with inter-cooling
+\[w_{comp} = w_{comp_1} + w_{comp_2} = - \frac{n R_{sp} T_1}{n - 1} \left[\left(\frac{P_x}{P_1} \right)^{\frac{n - 1}{n}} - 1 \right] - \frac{n R_{sp} T_1}{n - 1} \left[\left(\frac{P_2}{P_x} \right)^{\frac{n - 1}{n}} - 1 \right]\]
+
+Where:
+- $w_{comp}$ is the specific work done in the two-stage compression with inter-cooling
+- $w_{comp_1}$ is the specific work done in the first stage
+- $w_{comp_2}$ is the specific work done in the second stage
+- $n$ is the polytropic index
+- $R_{sp}$ is the molar gas constant per unit mass, i.e. \(R_{sp} = \frac{R}{\text{Molar mass}}\)
+- $T_1$ is the initial temperature in Kelvin
+- $P_x$ is the pressure of the intermediate stage
+- $P_2$ is the final pressure
+- $P_1$ is the initial pressure
+
+*** Condition for minimum compressor work
+\[P_x = \sqrt{P_1 P_2} \Rightarrow \frac{P_x}{P_1} = \frac{P_2}{P_x}\]
+
+Where:
+- $P_x$ is the pressure of the intermediate stage
+- $P_1$ is the initial pressure
+- $P_2$ is the final pressure
+
+@@latex: \newpage@@
+
+** Polytropic specific work done in a closed system
+\[w_{poly} = - \frac{1}{n - 1} (P_2 v_2 - P_1 v_1)\]
+
+Where:
+- $w_{poly}$ is the specific work done, or the work done per unit mass
+- $n$ is the polytropic index
+- $P_2$ is the final pressure
+- $P_1$ is the initial pressure
+- $v_2$ is the final specific volume
+- $v_1$ is the final specific volume
+
+** Isentropic efficiency
+
+*** Turbines
+\[\eta_T = \frac{h_1 - h_{2a}}{h_1 - h_{2s}}\]
+
+Where:
+- $\eta_T$ is the isentropic efficiency of the turbine
+- $h_1$ is the initial enthalpy of the fluid
+- $h_{2a}$ is the final enthalpy of the actual process
+- $h_{2s}$ is the final enthalpy of the isentropic process
+
+*** Compressors
+\[\eta_T = \frac{h_{2s} - h_1}{h_{2a} - h_1}\]
+
+Where:
+- $\eta_C$ is the isentropic efficiency of the compressor
+- $h_{2a}$ is the final enthalpy of the actual process
+- $h_{2s}$ is the final enthalpy of the isentropic process
+- $h_1$ is the initial enthalpy of the fluid
+
+*** Pumps
+\[\eta_P = \frac{w_s}{w_a} = \frac{v \left(P_2 - P_1 \right)}{h_{2a} - h_1}\]
+
+Where:
+- $\eta_C$ is the isentropic efficiency of the pump
+- $w_s$ is the isentropic work input of the pump
+- $w_a$ is the actual work input of the pump
+- $v$ is the specific volume of the fluid
+- $P_2$ is the final pressure of the fluid
+- $P_1$ is the initial pressure of the fluid
+- $h_{2a}$ is the final enthalpy of the actual process
+- $h_1$ is the initial enthalpy of the fluid
+
+*** Nozzles
+\[h_1 - h_{2a} = \frac{\nu^2_{2a}}{2}\]
+\[h_1 - h_{2s} = \frac{\nu^2_{2s}}{2}\]
+\[\eta_N = \frac{h_1 - h_{2a}}{h_1 - h_{2s}}\]
+
+Where:
+- $h_1$ is the initial enthalpy of the fluid
+- $h_{2a}$ is the final enthalpy of the actual process
+- $\nu_{2a}$ is the velocity of the fluid in the actual process
+- $h_{2s}$ is the final enthalpy of the isentropic process
+- $\nu_{2s}$ is the velocity of the fluid in the isentropic process
+- $\eta_N$ is the isentropic efficiency of the nozzle
+
+** Gravimetric analysis
+\[m_m = \sum_i^k m_i\]
+
+Where:
+- $m_m$ is the mass of a mixture
+- $m_i$ is the mass of a component gas in the mixture
+
+*** Mass fraction (\(mf\))
+\[mf_i = \frac{m_i}{m_m}\]
+\[\sum_i^k mf_i = 1\]
+
+Where:
+- $mf_i$ is the mass fraction of a component gas in the mixture
+- $m_i$ is the mass of a component gas in the mixture
+- $m_m$ is the mass of the mixture
+
+** Molar analysis
+\[N_m = \sum_i^k N_i\]
+
+Where:
+- $N_m$ is the number of moles of the mixture
+- $N_i$ is the number of moles of a component gas in the mixture
+
+@@latex: \newpage@@
+
+*** Mole fraction (\(y\))
+\[y_i = \frac{N_i}{N_m}\]
+\[\sum_i^k y_i = 1\]
+
+Where:
+- $y_i$ is the mole fraction of a component gas in the mixture
+- $N_i$ is the number of moles of a component gas in the mixture
+- $N_m$ is the number of moles of gas in the mixture
+
+*** Molar mass (\(M\))
+\[M_m = \frac{m_m}{N_m}\]
+
+Where:
+- $M_m$ is the molar mass of the mixture
+- $m_m$ is the mass of the mixture
+- $N_m$ is the number of moles of gas in the mixture
+
+*** Mass specific gas constant (\(R_m\))
+\[R_m = \frac{R_u}{M_m}\]
+
+Where:
+- $R_m$ is mass specific gas constant
+- $R_u$ is the universal gas constant of \(\qty{8.314}{J.mol^{-1}.K^{-1}}\)
+- $M_m$ is the molar mass of the mixture
+
+** Dalton's law
+\[P_m = \sum_i^k P_i (T_m, V_m)\]
+
+Where:
+- $P_m$ is the pressure of the mixture
+- $P_i$ is the pressure of each component at the temperature and volume of the mixture \((T_m, V_m)\)
+
+** Amagat's law
+\[V_m = \sum_i^k V_i (T_m, P_m)\]
+
+Where:
+- $V_m$ is the volume of the mixture
+- $V_i$ is the volume that each component would occupy if it existed alone at the temperature and pressure of the mixture \((T_m, P_m)\)
+
+** Fractions for ideal gases
+
+*** Pressure fraction
+\[\frac{P_i(T_m, V_m)}{P_m} = \frac{\frac{(N_i R_u T_m)}{V_m}}{\frac{(N_m R_u T_m)}{V_m}} = \frac{N_i}{N_m} = y_i\]
+
+Where:
+- $P_i$ is the pressure of the component gas at the temperature and volume of the mixture \((T_m, V_m)\)
+- $P_m$ is the pressure of the mixture
+- $N_i$ is the number of moles of the component gas in the mixture
+- $R_u$ is the universal gas constant of \(\qty{8.314}{J.mol^{-1}.K^{-1}}\)
+- $T_m$ is the temperature of the mixture
+- $V_m$ is the volume of the mixture
+- $N_m$ is the number of moles of gas in the mixture
+- $y_i$ is the mole fraction of the component gas in the mixture
+
+*** Partial pressure
+\[P_i = y_i P_m\]
+
+Where:
+- $P_i$ is the partial pressure (component pressure for ideal gases) of a component of the mixture
+- $y_i$ is the mole fraction of the component in the mixture
+- $P_m$ is the pressure of the mixture
+
+*** Volume fraction
+\[\frac{V_i(T_m, P_m)}{V_m} = \frac{\frac{(N_i R_u T_m)}{P_m}}{\frac{(N_m R_u T_m)}{P_m}} = \frac{N_i}{N_m} = y_i\]
+
+Where:
+- $V_i$ is the volume of the component gas at the temperature and pressure of the mixture \((T_m, P_m)\)
+- $V_m$ is the volume of the mixture
+- $N_i$ is the number of moles of the component gas in the mixture
+- $R_u$ is the universal gas constant of \(\qty{8.314}{J.mol^{-1}.K^{-1}}\)
+- $T_m$ is the temperature of the mixture
+- $P_m$ is the pressure of the mixture
+- $N_m$ is the number of moles of gas in the mixture
+- $y_i$ is the mole fraction of the component gas in the mixture
+
+*** Partial volume
+\[V_i = y_i V_m\]
+
+Where:
+- $V_i$ is the partial volume (component volume for ideal gases) of a component of the mixture
+- $y_i$ is the mole fraction of the component in the mixture
+- $V_m$ is the volume of the mixture
+
+@@latex: \newpage@@
+
+*** Dalton's and Amagat's law
+\[\frac{P_i}{P_m} = \frac{V_i}{V_m} = \frac{N_i}{N_m} = y_i\]
+
+Where:
+- $P_i$ is the pressure of the component gas in the mixture
+- $P_m$ is the pressure of the mixture
+- $V_i$ is the volume of the component gas in the mixture
+- $V_m$ is the volume of the mixture
+- $N_i$ is the number of moles of the component gas in the mixture
+- $N_m$ is the number of moles of gas in the mixture
+
+** Properties of gas mixtures
+
+*** Extensive properties
+\begin{displaymath}
+\begin{array}{c|c}
+\text{Extensive properties of gas mixtures} & \text{Changes in extensive properties of gas mixtures} \\
+\hline
+U_m = \sum_i^k U_i = \sum_i^k m_i u_i = \sum_i^k N_i \bar{u}_i &
+\Delta U_m = \sum_i^k \Delta U_i = \sum_i^k m_i \Delta u_i = \sum_i^k N_i \Delta \bar{u}_i \\
+H_m = \sum_i^k H_i = \sum_i^k m_i h_i = \sum_i^k N_i \bar{h}_i &
+\Delta H_m = \sum_i^k \Delta H_i = \sum_i^k m_i \Delta h_i = \sum_i^k N_i \Delta \bar{h}_i \\
+S_m = \sum_i^k S_i = \sum_i^k m_i s_i = \sum_i^k N_i \bar{s}_i &
+\Delta S_m = \sum_i^k \Delta S_i = \sum_i^k m_i \Delta s_i = \sum_i^k N_i \Delta \bar{s}_i
+\end{array}
+\end{displaymath}
+
+*** Intensive properties
+\begin{displaymath}
+\begin{array}{c|c}
+u_m = \sum_i^k mf_i u_i & \bar{u}_m = \sum_i^k y_i \bar{u}_i \\
+h_m = \sum_i^k mf_i h_i & \bar{h}_m = \sum_i^k y_i \bar{h}_i \\
+s_m = \sum_i^k mf_i s_i & \bar{s}_m = \sum_i^k y_i \bar{s}_i \\
+c_{v,m} = \sum_i^k mf_i c_{v,i} & \bar{c}_{v,m} = \sum_i^k y_i \bar{c}_{v,i} \\
+c_{p,m} = \sum_i^k mf_i c_{p,i} & \bar{c}_{p,m} = \sum_i^k y_i \bar{c}_{p,i} \\
+\end{array}
+\end{displaymath}
+
+@@latex: \newpage@@
+
+** Properties of air
+
+*** Specific enthalpy of dry air
+\[h_{\text{dry air}} = c_p T \qquad c_p = \qty{1.005}{kJ.kg^{-1}.\degreeCelsius^{-1}}\]
+\[\Delta h_{\text{dry air}} = c_p \Delta T\]
+
+Where:
+- $h_{\text{dry air}}$ is the specific enthalpy of the dry air
+- $T$ is the temperature of the dry air
+- $c_p$ is the specific heat capacity at constant pressure of the dry air
+- $\Delta h_{\text{dry air}}$ is the change in specific enthalpy of the dry air
+- $\Delta T$ is the change in temperature of the dry air
+
+*** Pressure
+\[P = P_a + P_v\]
+
+Where:
+- $P$ is the total pressure of air
+- $P_a$ is the partial pressure of dry air
+- $P_v$ is the partial pressure of water vapour
+
+*** Specific enthalpy of water vapour
+\[h_v (T, \text{low } P) \cong h_g (T)\]
+\[h_g (T) \cong 2500.9 + 1.82T \qquad (\unit{kJ.kg^{-1}})\]
+
+Where:
+- $h_v$ is the specific enthalpy of water vapour in atmospheric air (\(T, \text{ low } P\))
+- $T$ is the temperature of the air
+- $h_g$ is the enthalpy of saturated water vapour at temperature $T$
+
+** Humidity of air
+
+*** Specific or absolute humidity (\(\omega\))
+\[\omega = \frac{m_v}{m_a} = \frac{0.622 P_v}{P - P_v}\]
+
+Where:
+- $\omega$ is the specific or absolute humidity
+- $m_v$ is the mass of water vapour in the air
+- $m_a$ is the mass of dry air
+- $P_v$ is the pressure of the water vapour
+- $P$ is the total pressure of the air
+
+*** Saturated air
+\[P_v = P_g\]
+
+Where:
+- $P_v$ is the pressure of the water vapour in the air
+- $P_g$ is the pressure of the saturated water vapour at temperature $T$
+- $T$ is the temperature of the air
+
+*** Relative humidity (\(\phi\))
+\[\phi = \frac{m_v}{m_g} = \frac{P_v}{P_g}\]
+
+Where:
+- $\phi$ is the relative humidity
+- $m_v$ is the mass of water vapour in the air
+- $m_g$ is the mass of water vapour that the air can hold at saturation temperature, when air becomes a saturated vapour
+- $P_v$ is the pressure of the water vapour in the air
+- $P_g$ is the pressure of the saturated water vapour at temperature $T$
+- $T$ is the temperature of the air
+
+*** Converting between absolute and relative humidity [formula given]
+\[\phi = \frac{\omega P}{(0.622 + \omega) P_g}\]
+\[\omega = \frac{0.622 \phi P_g}{P - \phi P_g}\]
+
+Where:
+- $\phi$ is the relative humidity
+- $\omega$ is the absolute humidity
+- $P$ is the total pressure of the mixture
+- $P_g$ is the pressure of the saturated water vapour at temperature $T$
+- $T$ is the temperature of the air
+
+*** Total enthalpy of atmospheric air
+\[H = H_a + H_v = m_a h_a + m_v h_v\]
+
+Where:
+- $H$ is the total enthalpy of atmospheric air
+- $H_a$ is the enthalpy of dry air
+- $H_v$ is the enthalpy of water vapour in the air
+- $m_a$ is the mass of dry air
+- $h_a$ is the specific enthalpy of dry air
+- $m_v$ is the mass of water vapour in the air
+- $h_v$ is the specific enthalpy of water vapour in the air
+
+*** Specific enthalpy of atmospheric air
+\[h = h_1 + \omega h_g\]
+
+Where:
+- $h$ is the specific enthalpy of atmospheric air, expressed in terms of *per unit mass of dry air*
+- $h_a$ is the specific enthalpy of dry air
+- $\omega$ is the absolute humidity
+- $h_g$ is the enthalpy of saturated water vapour at the current air temperature
+
+** Dew point temperature (\(T_{dp}\))
+\[T_{dp} = T_{\text{sat @ } P_v}\]
+
+Where:
+- $T_{dp}$ is the dew point temperature
+- $T_{\text{sat @ } P_v}$ is the saturation temperature that corresponds to the saturated vapour pressure \(P_v\)
+
+** Specific volume of dry air
+\[v = \frac{P_a T}{R_a}\]
+
+Where:
+- $v$ is the specific volume of dry air
+- $P_a$ is the partial pressure of dry air
+- $T$ is the temperature of the dry air in Kelvin
+- $R_{a}$ is the molar gas constant per unit mass of dry air, which is $\qty{0.287}{kJ.kg^{-1}.K^{-1}}$
+
+** Air conditioning processes
+
+*** Mass balance in general
+\begin{align*}
+\sum_{in} \dot{m}_a &= \sum_{out} \dot{m}_a \\
+\text{Dry air:} \quad \sum_{in} \dot{m}_a &= \sum_{out} \dot{m}_a \\
+\text{Water:} \quad \sum_{in} \dot{m}_w &= \sum_{out} \dot{m}_w \quad \rightarrow \quad \sum_{in} \omega \dot{m}_a = \sum_{out} \omega \dot{m}_a
+\end{align*}
+
+Where:
+- $\dot{m}_a$ is the mass flow rate of dry air
+- $\dot{m}_w$ is the mass flow rate of water
+- $\omega$ is the specific or absolute humidity
+
+*** Energy balance in general
+\[\dot{E}_{in} = \dot{E}_{out}\]
+\[\dot{Q}_{in} + \sum_{in} \dot{m} h = \dot{Q}_{out} + \sum_{out} \dot{m} h\]
+
+Where:
+- $\dot{E}_{in}$ is the rate of energy entering the system
+- $\dot{E}_{out}$ is the rate of energy exiting the system
+- $\dot{Q}_{in}$ is the heat entering the system
+- $\dot{m}$ is the mass flow rate of air
+- $h$ is the enthalpy of air
+- $\dot{Q}_{out}$ is the heat exiting the system
+
+*** Simple heating and cooling
+- Mass balance:
+  \[\dot{m}_{a_1} = \dot{m}_{a_2} = \dot{m}_a\]
+  \[\dot{m}_{w_1} = \dot{m}_{w_2} = \dot{m}_w \quad \rightarrow \quad \omega_1 = \omega_2\]
+
+  Where:
+  - $\dot{m}_{a_n}$ is the mass flow rate of dry air at state $n$
+  - $\dot{m}_{w_n}$ is the mass flow rate of water at state $n$
+  - $\omega_n$ is the absolute humidity of the air at state $n$
+
+- Energy balance:
+  \[\dot{Q} = \dot{m}_a (h_2 - h_1) \text{ or } q = (h_2 - h_1)\]
+
+  Where:
+  - $\dot{Q}$ is the rate of heat change of the system
+  - $\dot{m}_a$ is the mass flow rate of dry air
+  - $h_n$ is the enthalpy of the air at state $n$
+  - $q$ is the change in heat per mass of the system
+
+*** Humidification or dehumidification
+\[\dot{m}_w = \dot{m}_a \Delta \omega\]
+
+Where:
+- $\dot{m}_w$ is the mass flow rate of water
+- $\dot{m}_a$ is the mass flow rate of dry air
+- $\Delta \omega$ is the change in specific humidity
+
+@@latex: \newpage@@
+
+*** Heating with humidification
+- Simple heating (\(1 \rightarrow 2\)):
+  \[\dot{m}_{a_1} = \dot{m}_{a_2} = \dot{m}_a\]
+  \[\dot{m}_{w_1} = \dot{m}_{w_2} = \dot{m}_w \quad \rightarrow \quad \omega_1 = \omega_2\]
+  \[\dot{Q}_{in} = \dot{m}_a (h_2 - h_1)\]
+
+  Where:
+  - $\dot{m}_{a_n}$ is the mass flow rate of dry air at state $n$
+  - $\dot{m}_{w_n}$ is the mass flow rate of water at state $n$
+  - $\omega_n$ is the absolute humidity at state $n$
+  - $\dot{m}_{a}$ is the mass flow rate of dry air
+  - $\dot{Q}_{in}$ is the heat input to the air
+  - $h_n$ is the enthalpy of the air at state $n$
+
+- Humidification (\(2 \rightarrow 3\)):
+  \[\dot{m}_w = \dot{m}_a (\omega_3 - \omega_2)\]
+
+  Where:
+  - $\dot{m}_w$ is the mass flow rate of water
+  - $\dot{m}_{a}$ is the mass flow rate of dry air
+  - $\omega_n$ is the absolute humidity at state $n$
+
+@@latex: \newpage@@
+
+*** Cooling with dehumidification
+- Mass balance:
+  \begin{align*}
+  \text{Dry air:} \quad \dot{m}_{a_1} &= \dot{m}_{a_2} = \dot{m}_a \\
+  \text{Water:} \quad \dot{m}_w &= \dot{m}_a (\omega_1 - \omega_2)
+  \end{align*}
+
+  Where:
+  - $\dot{m}_{a_n}$ is the mass flow rate of dry air at state $n$
+  - $\dot{m}_{a}$ is the mass flow rate of dry air
+  - $\dot{m}_w$ is the mass flow rate of water
+  - $\omega_n$ is the absolute humidity at state $n$
+
+- Energy balance:
+  \[\dot{Q}_{out} = \dot{m}_a (h_1 - h_2) - \dot{m}_w h_w\]
+
+  Where:
+  - $\dot{Q}_{out}$ is the rate of heat output from the system
+  - $\dot{m}_a$ is the mass flow rate of the dry air
+  - $\dot{m}_w$ is the mass flow rate of water
+  - $h_w$ is the enthalpy of water
+
+*** Evaporative cooling
+\[T_{wb} \cong \text{constant}\]
+\[h \cong \text{constant}\]
+
+Where:
+- $T_{wb}$ is the wet-bulb temperature
+- $h$ is the enthalpy of the air
+
+*** Adiabatic mixing of airstreams
+\[\frac{\dot{m}_{a_1}}{\dot{m}_{a_2}} = \frac{h_2 - h_3}{h_3 - h_1} = \frac{\omega_2 - \omega_3}{\omega_3 - \omega_1}\]
+
+Where:
+- $\dot{m}_{a_n}$ is the mass flow rate of dry air at state $n$
+- $\omega_n$ is the absolute humidity at state $n$
+- $h_n$ is the enthalpy of the air at state $n$
+
+@@latex: \newpage@@
+
+* Entropy
+- Entropy is a *property*
+- It is a measure of the degree of *microscopic disorder* in the system
+- Entropy can be *transferred by heat* but *not by work*
+- Entropy is *not conserved*
+- Entropy can be generated or created but *not destroyed*
+- Total entropy for isolated systems (system + surroundings) *increases* for *all real processes*
+
+** Relation to the Clausius Inequality
+- Cyclic integral of *work* and the cyclic integral of *heat* is *not zero*
+- However, the cyclic integral of volume (a property) is zero
+  \[\oint \, dV = \Delta V_{cyc} = 0\]
+- More generally, cyclic integrals of any property are zero
+  \[\oint \, d(\text{property}) = 0\]
+- Hence, \(\left(\frac{\delta Q}{T} \right)_{\text{int rev}}\) represents a property
+
+\[dS = \left(\frac{\delta Q}{T} \right)_{\text{int rev}} \quad \left(\unit{kJ.K^{-1}}\right)\]
+
+Where:
+- $dS$ is the change in entropy for an internally reversible process (int rev)
+- $\delta Q$ is an infinitesimal amount of heat that is taken from the reservoirs and absorbed by the system. \(\delta Q > 0\) if heat from the reservoirs is absorbed by the system, and \(\delta Q < 0\) is heat is leaving from the system to the reservoirs.
+- $T$ is the common temperature of the reservoirs at a particular instant in time in Kelvin
+
+** Molecular disorder
+Entropy is a measure of molecular disorder.
+- As a system become more disordered, the position of the molecules become less predictable and thus entropy increases.
+- Quantity of *energy is always conserved* during an actual process (first law) *but the quality decreases (Second law)
+- There is *no entropy transfer* associated with energy transfer in the *form of work*.
+- Heat is a form of disorganised energy and some disorganisation *(entropy) will flow with heat*.
+
+** Entropy of pure substances
+- Entropy data for *pure substances* (including *real gases*) can be obtained from property tables.
+- Specific entropy (\(\unit{kJ.kg^{-1}.K^{-1}}\)) values are assigned to reference states for each substance.
+  - For water or steam: \(s_f = 0 \text{ @ } \qty{0.01}{\degreeCelsius}\)
+  - For R134a refrigerant: \(s_f = 0 \text{ @ } \qty{-40}{\degreeCelsius}\)
+- Entropy change of a specified mass during a process:
+  \[\Delta S = S_2 - S_1 = m(s_2 - s_1)\]
+
+  Where:
+  - $\Delta S$ is the change in entropy
+  - $S_2$ is the final entropy
+  - $S_1$ is the initial entropy
+  - $m$ is the mass of the substance
+  - $s_2$ is the final specific entropy
+  - $s_1$ is the initial specific entropy
+
+@@latex: \newpage@@
+
+** Determination of entropy from tables
+- Superheated vapour region: Tabulated versus pressure (\(P\)) and temperature (\(T\)).
+- Saturated liquid-vapour region: \(s_f, s_g, s_{fg}\) are given at saturation pressure (\(P_{sat}\)) and temperature (\(T_{sat}\)).
+  \[s = s_f + xs_fg\]
+
+  Where:
+  - $s$ is the specific entropy of the substance
+  - $s_f$ is the specific entropy of the saturated liquid
+  - $s_{fg}$ is the specific entropy of the saturated vapour minus the specific entropy of the saturated liquid, i.e. \(s_{fg} = s_g - s_f\)
+- Compressed liquid region: Tabulated versus pressure (\(P\)) and temperature (\(T\))
+  - Fluid is almost incompressible, so the entropy considered is dependent only on temperature, i.e.
+    \[s \cong s_f \text{ @ } T\]
+
+** Property diagrams
+- First Law analysis: \(P-v\) and \(T-v\) diagrams
+- Second Law analysis: \(T-s\) and \(h-s\) diagrams
+
+*** \(T-s\) diagram
+#+ATTR_LATEX: :scale 0.9
+[[./images/T-s-diagram.png]]
+
+- Differential form:
+  \[dS = \left(\frac{\delta Q}{T} \right)_{int rev} \quad \left(\unit{kJ.K^{-1}}\right)\]
+
+- Integrating:
+  \[Q_{int rev} = \int_1^2 T \, dS \left(\unit{kJ} \right)\]
+  \[q_{int rev} = \int_1^2 T \, ds \left(\unit{kJ} \right)\]
+
+  Where:
+  - $Q_{int rev}$ is the heat transferred in an internally reversible process
+  - $T$ is the temperature in Kelvin
+  - $dS$ is the infinitesimal change in entropy
+  - $q_{int rev}$ is the specific heat transferred in an internally reversible process
+  - $ds$ is the infinitesimal change in specific entropy
+- *Area* under the *process curve* in the *T-s* diagram represents the *heat transfer* in an *internally reversible process*.
+- Internally reversible isothermal process:
+  #+ATTR_LATEX: :scale 0.65
+  [[./images/isothermal-process.png]]
+
+  \[Q_{int rev} = T_0 \Delta S\]
+  \[q_{int rev} = T_0 \Delta s\]
+
+  Where:
+  - $Q_{int rev}$ is the heat transferred in an internally reversible process
+  - $T$ is the temperature in Kelvin
+  - $\Delta S$ is the change in entropy
+  - $q_{int rev}$ is the specific heat transferred in an internally reversible process
+  - $\Delta s$ is the change in specific entropy
+
+- Isentropic process is a constant entropy process:
+  #+ATTR_LATEX: :scale 0.65
+  [[./images/isentropic-process.png]]
+
+*** \(h-s\) diagram (Mollier diagram)
+#+ATTR_LATEX: :scale 1
+[[./images/h-s-diagram.png]]
+
+- Useful in analysis of steady flow devices
+- Enthalpy $h$ is the primary property in First Law analysis.
+- Entropy $s$ is the property that accounts for irreversibilities in adiabatic processes.
+
+*** \(P-h\) diagram for water
+[[./images/P-h-diagram-for-water.png]]
+
+@@latex: \newpage@@
+
+* Human comfort and air-conditioning
+- Humans prefer comfortable environments that are neither too hot nor too cold, and neither too humid nor too dry.
+- The weather cannot be changed, but the climate in a confined space can be controlled.
+- Modern air-conditioning systems can do more than simply cooling or heating the air.
+  - Other functions include humification, dehumidification, cleaning and deodorisation, i.e. these systems condition the air.
+- A human body is like a heat engine:
+  - Rate of heat generation depends on the level of activity.
+  - Waste heat is dissipated to the surroundings.
+  - A body feels comfortable when it can dissipate its waste heat freely, and not more.
+  - A body at rest dissipates about $\qty{100}{W}$ when at rest.
+- Comfort of the human body depends primarily on three factors:
+  1. Dry-bulb temperature
+  2. Relative humidity
+  3. Air motion
+- Relative humidity affects the amount of head a body can dissipate through sweat evaporation. $40\% < \phi < 60\%$ is usually preferred
+- Air motion removes the build up of warm moist air around the body and replaces it with fresh air.
+- Air motion should be strong enough for such removal but gentle enough to be unnoticed.
+- If air motion is too strong, a chilling effect is produced (wind-chill factor).

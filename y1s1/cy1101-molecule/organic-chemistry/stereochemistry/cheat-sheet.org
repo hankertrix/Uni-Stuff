@@ -1,0 +1,180 @@
+#+TITLE: Stereochemistry Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \graphicspath{ {./images/} }
+
+\newpage
+
+* Definitions
+
+** Isomers
+Isomers are compounds that have the same molecular formula, but different structures.
+
+** Constitutional isomers
+Constitutional isomers are isomers that have atoms bonded together in different orders. It consists isomers containing different functional groups, different position of functional groups, and different carbon skeletons.
+
+** Stereoisomers
+Stereoisomers are isomers that have all the atoms connected in the same order, but differ only in the 3D orientations of their atoms in space.
+
+** Enantiomers
+Enantiomers are molecules that are mirror images of each other but are non-superimposable. Enantiomers rotate the polarised light in opposite directions, but with the same degree of rotation.
+
+** Chiral carbon (chiral centre)
+Chiral carbons are carbon atoms in a molecule that have 4 different substituents and also have a non-superimposable mirror image.
+
+** Optically active
+Optically active just means a substance or compound *rotates* plane-polarised light.
+
+** Optically inactive
+Optically inactive just means a substance or compound *does not* rotate plane-polarised light.
+
+** Racemic mixture
+A racemic mixture is a mixture that contains an equal amount of two enantiomers, which results in the mixture being optically inactive.
+
+** Polarimeter
+A polarimeter is a device that measures the rotation \(\alpha\) of plane-polarised light in degrees.
+
+** Dextrorotatory (+)
+Dextrorotatory refers to the *clockwise* rotation of plane-polarised light. Molecules that are dextrorotatory are labelled $R$, which is from the Latin word for "right".
+
+** Laevorotatory (-)
+Laevorotatory refers to the *anti-clockwise* rotation of plane-polarised light. It is shown using the symbol $S$ for left or $-$. Molecules that are laevorotatory are labelled $S$, which is from the Latin word for "left".
+
+** Diastereomer
+Diastereomers are stereoisomers which are *not mirror images*. Molecules with more than one chiral centre can have diastereomers.
+
+** Achiral molecules
+Achiral molecules are molecules that are *identical* to the mirror images. Achiral molecules are optically inactive.
+
+** Meso compounds
+Meso compounds are compounds that contain chiral carbons, but the compound as a whole is achiral. Meso compounds are optically inactive.
+
+\newpage
+
+** Prochirality
+Prochirality refers to a molecule that is not chiral, but can become chiral by a single alteration. A \(sp^3\) carbon with only 2 groups that are the same is a prochirality centre.
+
+\[\includegraphics[width = \textwidth]{prochirality}\]
+
+** Pro-S and Pro-R
+
+\[\includegraphics[width = \textwidth]{pro-s-and-pro-r}\]
+
+*** Pro-S
+Pro-S is a prochiral centre that will become the S configuration when an alteration is done.
+
+*** Pro-R
+Pro-R is a prochiral centre that will become the R configuration when an alteration is done.
+
+** Cycloalkanes
+Cycloalkanes are saturated cyclic hydrocarbons and have the general formula ($C_nH_{2n}$).
+
+*** Stereoisomers
+Cycloalkanes are less flexible, so there is much less conformation freedom. Due to the cyclic structure, cycloalkanes have 2 faces when viewed edge-on, which are the "top-face" and the "bottom-face".
+
+\[\includegraphics[width = \textwidth]{top-and-bottom-faces}\]
+
+** Ring strain
+
+*** Angle strain
+Angle strain refers to the expansion or compression of bond angles away from the most stable bond angle.
+
+*** Torsional strain
+Torsional strain refers to the eclipsing of bonds on neighbouring atoms.
+
+*** Steric strain
+Steric strain refers to the repulsive interactions between non-bonded atoms in close proximity.
+
+** Axial bonds
+Axial bonds refer to the bonds that are *parallel* to the axis of symmetry of a ring.
+
+** Equatorial bonds
+Equatorial bonds refer to the bonds that are *perpendicular* to the axis of symmetry of a ring.
+
+\newpage
+
+* Determining chirality
+1. Look at the four atoms directly attached to the chiral carbon, and rank them according to the sequence rule.
+2. With the lowest priority group *pointing away* (into the plane of the paper or screen), look at the remaining 3 groups in a plane.
+3. *Clockwise* is designated $R$ (from the Latin word for "right").
+4. *Counterclockwise* is designated $S$ (from the Latin word for "left").
+
+\[\includegraphics[width = \textwidth]{r-and-s-configuration}\]
+
+** Important notes
+- A *wedge* means that the group is pointing *towards* you.
+- A *dashed or dotted wedge* means the group is pointed *away* from you.
+- If the *lowest priority group* is pointed *towards* you, you can still proceed as normal, but remember to *REVERSE* the direction that you have determined.
+
+\newpage
+
+** Sequence rule [Cahn-Ingold-Prelog (CIP) rule]
+1. Compare the atomic number of the atoms directly attached to the chiral carbon. The group having the atom of the *higher atomic number* receives *higher priority* (i.e. number 1).
+2. If the groups have no atoms with a higher atomic number, then the number of atoms in the group should be considered. The group with the *greater* number of atoms is given a *higher priority*. For example, the priority of a \(-C(CH_3)_3\) group will be higher than a \(-CH(CH_3)_2\) group, which itself is higher in priority than a \(-CH_2CH_3\) group.
+3. If a decision cannot be reached by ranking the first atom in the substitute groups, look at the second, third, or fourth atoms until the difference is found.
+4. Multiple-bonded atoms are equivalent to the same number of single-bonded atoms:
+   \[\includegraphics[width = \textwidth]{double-bond-equivalent}\]
+
+\newpage
+
+* Examples of ring strain
+
+** Cyclopropane
+- It is planar, and has a 60 degree bond angle.
+- The shape around the carbon atoms are distorted, which weakens the \(sp^3\) bond.
+- The hydrogen atoms are eclipsed.
+
+\[\includegraphics[scale = 0.75]{cyclopropane}\]
+
+** Cyclobutane
+- It has torsional and ring strain, but has less angle strain and more torsional strain than cyclopropane due to the larger number of ring hydrogens, and their proximity to each other.
+- It is slightly bent out of plane (25 degrees).
+- The bend in the ring increases angle strain but decreases torsional strain.
+
+\[\includegraphics[scale = 0.75]{cyclobutane}\]
+
+\newpage
+
+** Cyclopentane
+- Planar cyclopentane would have no angle strain but very high torsional strain.
+- Hence, actual conformations of cyclopentane are non-planar to reduce torsional strain.
+- There are 4 carbon atoms in a plane and the \(5^{th}\) carbon atom is above or below the plane.
+- It looks like an envelope.
+- Most of the hydrogen atoms are nearly staggered with respect to their neighbours.
+
+\[\includegraphics[scale = 0.75]{cyclopentane}\]
+
+\newpage
+
+* Conformations of cyclohexane
+- The cyclohexane ring is free of angle strain and torsional strain.
+- The conformation has alternating atoms in a common plane and tetrahedral angles between all carbons.
+- This is called a *chair conformation*.
+- All \(C-C-C\) bond angles are near the \(109.5^{\circ}\) tetrahedral value, and all neighbouring $C-H$ bonds are staggered.
+
+** Drawing the chair conformation
+1. Draw two parallel lines, slanted downwards and slightly offset from each other. This means that 4 of the cyclohexane carbons lie in a plane.
+   \[\includegraphics[scale = 0.75]{cyclohexane-drawing-step-1}\]
+
+2. Place the topmost carbon atom above and to the right of the plane of the other 4, and connect them.
+   \[\includegraphics[scale = 0.75]{cyclohexane-drawing-step-2}\]
+
+3. Place the bottommost carbon atom below and to the left of the plane of the middle four, and connect the bonds. Note that the bonds to the bottommost carbon atom are parallel to the bonds on the topmost carbon.
+   \[\includegraphics[scale = 0.75]{cyclohexane-drawing-step-3}\]
+
+*** Alternative method
+\[\includegraphics[width = \textwidth]{chair-conformation-steps}\]
+
+*** Final molecule
+\[\includegraphics[scale = 0.75]{final-cyclohexane-molecule}\]
+
+** Axial and equatorial position
+\[\includegraphics[width = \textwidth]{axial-and-equatorial-bonds}\]
+
+** Ring flip
+The chair conformations of cyclohexane readily interconvert, resulting in the exchange of axial and equatorial position by a *ring-flip*.
+\[\includegraphics[width = \textwidth]{ring-flip-1}\]
+\[$$\hrule$$\]
+\[\includegraphics[width = \textwidth]{ring-flip-2}\]

@@ -1,0 +1,145 @@
+% Created 2023-11-20 Mon 15:54
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\author{Hankertrix}
+\date{\today}
+\title{Momentum, Impulse \& Collisions Cheat Sheet}
+\hypersetup{
+ pdfauthor={Hankertrix},
+ pdftitle={Momentum, Impulse \& Collisions Cheat Sheet},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.1 (Org mode 9.6.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents \clearpage\newpage
+
+\section{Definitions}
+\label{sec:org893204f}
+
+\subsection{Momentum (vector quantity) (plural: momenta)}
+\label{sec:orgd3047a9}
+The momentum of a particle is the product of its mass and its velocity and is a \textbf{vector} quantity.
+
+\[\vec{p} = m \vec{v}\]
+
+The units of momentum are: \(\unit{kg.m.s^{-1}}\)
+
+\subsection{Newton's Second Law}
+\label{sec:orgcc039e0}
+Newton's second law states that the \textbf{net external force} acting on a particle is \textbf{equal} to the \textbf{rate of change} of the particle's \textbf{momentum}.
+\[\sum \vec{F} = \frac{d \vec{p}}{dt}\]
+
+Using Newton's second law in the special case of constant mass:
+
+\begin{align*}
+\vec{F} &= \frac{d(m \vec{v})}{dt} \\
+&= m \frac{d \vec{v}}{dt} \\
+&= m \vec{a}
+\end{align*}
+
+\subsubsection{Variable mass systems}
+\label{sec:org6f0a987}
+Newton's second law for variable mass systems is:
+\[M \frac{d \vec{v}}{dt} = \sum \vec{F}_{ext} + \vec{v}_{rel} \frac{dM}{dt}\]
+
+The left-hand side represents the mass \(\times\) the acceleration of the object. The first term on the right-hand side represents the external force acting on the system, such as weight and air resistance. The last term on the right-hand side represents the rate at which momentum is being transferred into or out of the mass \(M\) because of the added or removed mass \(dM\).
+
+\subsection{Impulse}
+\label{sec:org4dbe514}
+The impulse of a force is the \textbf{product} of the force and the \textbf{time interval} during which it acts.
+\begin{align*}
+\vec{J} &= \sum \vec{F} (t_2 - t_2) \\
+&= \sum \vec{F} \Delta t
+\end{align*}
+
+The impulse is the area under the curve of a force \(-\) time graph.
+\[\vec{J} = \int_{t_1}^{t_2} \vec{F}_{net} \, dt\]
+
+Hence, if there is \textbf{no net force}, then there is \textbf{no change} in momentum.
+
+\subsection{System}
+\label{sec:org5b879b1}
+A system in physics is a collection of bodies and their interactions. The bodies that are included is up to us to define, and it depends on the problem. It becomes useful to think about bodies and interactions as belonging (internal) or not (external) to the system.
+
+\subsection{Isolated system}
+\label{sec:org1f35242}
+An isolated system is a system that doesn't experience any external forces and has no exchange of matter with the external world.
+
+\subsection{Closed system}
+\label{sec:org6550f1a}
+If the system of bodies does not have any exchange of matter with the external world, then it is a closed system. However, it can still exchange energy (i.e. not isolated). An example of a closed system is a closed bottle of coled water on a hot day.
+
+\subsection{Conservation of momentum}
+\label{sec:org168c655}
+The conservation of momentum states that if the net external force on a system is zero, the total momentum of the system is constant.
+\\[0pt]
+
+The \textbf{momentum of a system} is the \textbf{vector sum} of the momenta of the bodies comprising the system.
+
+\subsection{Elastic collision}
+\label{sec:orgddfc17d}
+An elastic collision is a collision where the \textbf{total kinetic energy} is \textbf{conserved}.
+\\[0pt]
+
+For such collisions, the \textbf{relative speed of approach} is equal to the \textbf{relative speed of separation}.
+
+\[v_A - v_B = v'_B - v'_A\]
+
+Where \(A\) and \(B\) are two bodies and \(v'\) is the final velocities of the bodies.
+
+\subsection{Inelastic collision}
+\label{sec:org5b0dc57}
+An inelastic collision is a collision where the \textbf{total kinetic energy} is \textbf{not} conserved.
+
+\subsection{Perfectly (completely) inelastic collision}
+\label{sec:org8a993e4}
+A perfectly inelastic collision is a collision where there is the \textbf{greatest possible loss} of total kinetic energy. This is usually the case if two bodies \textbf{stick together} in the case of a two-body collision.
+
+\subsection{Coefficient of restitution \(e\)}
+\label{sec:org26cc231}
+The coefficient of restitution is an empirically determined dimensionless quantity that measures the \textbf{loss of kinetic energy}. Its value ranges from 0, which represents a \textbf{perfectly inelastic collision}, to 1, which represents an \textbf{elastic collision}.
+
+\[v'_B - v'_A = - e(v_B - v_A)\]
+
+Where \(A\) and \(B\) are two bodies and \(v'\) is the final velocities of the bodies.
+
+\newpage
+
+\subsection{Centre of mass}
+\label{sec:orgdb65dce}
+The centre of mass is the average position of the matter in a body or system.
+
+\subsubsection{Discrete masses}
+\label{sec:orgb135043}
+The centre of mass of a configuration of \(n\) discrete \textbf{point} masses is the weighted average of their positions:
+
+\begin{align*}
+x_{CM} &= \frac{m_1 x_1 + m_2 x_2 + m_3 x_3 + \ldots + m_n x_n}{m_1 + m_2 + m_3 + \ldots + m_n} \\
+&= \frac{1}{M} \sum_{i = 1}^n m_i x_i
+\end{align*}
+
+For all 3 coordinates:
+\[x_{CM} = \frac{\sum m_i x_i}{M}, \quad y_{CM} = \frac{\sum m_i y_i}{M}, \quad z_{CM} = \frac{\sum m_i z_i}{M}\]
+
+\subsubsection{Continuous masses}
+\label{sec:orgd665237}
+For an object with a continuous distribution of mass, we consider the object to be made of infinitesimally small masses \(dm\), and sum up (integrate) each of their contributions to the weighted average to obtain the centre of mass:
+
+\[x_{CM} = \frac{1}{M} \int x \, dm, \quad y_{CM} = \frac{1}{M} \int y \, dm, \quad z_{CM} = \frac{1}{M} \int z \, dm\]
+\end{document}

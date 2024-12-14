@@ -1,0 +1,577 @@
+% Created 2024-11-11 Mon 15:26
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\usepackage{upquote}
+\setlength{\parindent}{0em}
+\author{Hankertrix}
+\date{\today}
+\title{Logographer}
+\hypersetup{
+ pdfauthor={Hankertrix},
+ pdftitle={Logographer},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.4 (Org mode 9.6.15)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents \clearpage
+\section{Overview}
+\label{sec:org94e2f15}
+Logographer is a \href{https://www.python.org/}{Python} program for drawing logos. It requires at least \textbf{Python version 3.11} to run.
+
+\section{Installation}
+\label{sec:orge27ff45}
+Logographer requires Python to be installed, so please install Python before trying to run the program. This only applies to Windows, and macOS and Linux both have Python come preinstalled, so there's no need to install Python on these operating systems. However, you may need to update your system's version of Python or install a newer Python version for the program to run successfully. This program requires at least \textbf{Python version 3.11}.
+
+ ~\\~  \textbf{Minimum Python version: 3.11}
+
+\subsection{Installing Python on Windows}
+\label{sec:org2c739c7}
+
+\subsubsection{Manual installer}
+\label{sec:org58142ca}
+Download the Python installer from this \href{https://www.python.org/ftp/python/3.12.3/python-3.12.3-amd64.exe}{link} (this links to the official 64-bit Windows installer for Python 3.12.3) and run the installer. Follow the steps to install Python and you should be done.
+
+\subsubsection{Winget (package manager)}
+\label{sec:org99e8c4e}
+Winget is the built-in package manager that comes with Windows. Open up the terminal by using Window + R to open the run dialogue, and type in \texttt{cmd} and press enter to open the Command Prompt. Copy and paste the following command into the command prompt, press enter, and you should be done.
+
+\begin{verbatim}
+winget install -e --id Python.Python.3.11
+\end{verbatim}
+
+ \newpage
+
+\subsubsection{Scoop (package manager)}
+\label{sec:orgba3caf2}
+To use the Scoop package manager, you will need to download and install Scoop first. Feel free to skip this step if you already have Scoop installed. Open up the terminal by using Window + R to open the run dialogue, and type in \texttt{powershell} and to open Powershell. Copy and paste the following command into the command prompt, press enter, and you should be done installing Scoop.
+
+\begin{minted}[]{powershell}
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+\end{minted}
+
+Test that Scoop is working properly by using the command below:
+\begin{minted}[]{powershell}
+scoop
+\end{minted}
+
+Now to install Python, copy and paste the command below, press enter, and you should be done installing Python.
+\begin{minted}[]{powershell}
+scoop install main/python
+\end{minted}
+
+\subsubsection{Chocolatey (package manager)}
+\label{sec:org988aaa7}
+To use the Chocolatey package manager, you will need to download and install Chocolatey first. Feel free to skip this step if you already have Chocolatey installed. Open up the terminal by using Window + R to open the run dialogue, and type in \texttt{powershell} and press Ctrl + Shift + Enter to open Powershell in Administrator mode. Copy and paste the following command into the command prompt, press enter, and you should be done installing Chocolatey.
+
+\begin{minted}[]{powershell}
+Set-ExecutionPolicy Bypass -Scope Process -Force; `
+[System.Net.ServicePointManager]::SecurityProtocol = `
+[System.Net.ServicePointManager]::SecurityProtocol -bor 3072; `
+iex ((New-Object System.Net.WebClient).DownloadString(
+'https://community.chocolatey.org/install.ps1'
+))
+\end{minted}
+
+Test that Chocolatey is working properly by using the command below:
+\begin{minted}[]{powershell}
+choco
+\end{minted}
+
+Now to install Python, copy and paste the command below, press enter, and you should be done installing Python.
+\begin{minted}[]{powershell}
+choco install python
+\end{minted}
+
+ \newpage
+
+\subsection{Updating your Python version on macOS}
+\label{sec:org909352e}
+
+\subsubsection{Manual installer}
+\label{sec:orge696172}
+Download the Python installer from this \href{https://www.python.org/ftp/python/3.12.3/python-3.12.3-macos11.pkg}{link} (this links to the official 64-bit macOS installer for Python 3.12.3) and follow the instructions to install the newer version of Python and you should be done.
+
+\subsubsection{Homebrew (package manager)}
+\label{sec:org24ba114}
+To use the Homebrew package manager, you will need to download and install Homebrew first. Feel free to skip this step if you already have Homebrew installed. Open up the terminal and copy and paste the following command into the command prompt, press enter, and you should be done installing Homebrew.
+\begin{minted}[]{shell}
+/bin/bash -c \
+"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+\end{minted}
+
+Test that Homebrew is working properly by using the command below:
+\begin{minted}[]{shell}
+brew help
+\end{minted}
+
+Now to update your Python version, copy and paste the command below, press enter, and you should be done updating Python.
+\begin{verbatim}
+brew install python3
+\end{verbatim}
+
+ \newpage
+
+\subsection{Updating your Python version on Linux}
+\label{sec:orgbcf36a1}
+Updating your Python version on Linux is just updating your system. The default Python version that comes on all modern Linux distributions should be Python 3.11, so there should be no need to do this.
+
+\subsubsection{Arch-based distributions (Arch, Manjaro, EndeavourOS, etc.)}
+\label{sec:org86a30e1}
+\begin{minted}[]{shell}
+sudo pacman -Syu
+\end{minted}
+
+\subsubsection{Debian-based distributions (Debian, Ubuntu, Linux Mint, etc.)}
+\label{sec:org3c5d4bc}
+\begin{minted}[]{shell}
+sudo apt update && sudo apt upgrade -y
+\end{minted}
+
+\subsubsection{Fedora and Fedora derivatives (Nobara, Asahi Linux, etc.)}
+\label{sec:orgb46454c}
+\begin{minted}[]{shell}
+sudo dnf upgrade
+\end{minted}
+
+\subsubsection{Gentoo}
+\label{sec:org0a09f72}
+\begin{minted}[]{shell}
+sudo emaint -a sync
+sudo emerge -avuDN @world
+\end{minted}
+
+\subsubsection{Void Linux}
+\label{sec:org1a2bc63}
+\begin{minted}[]{shell}
+sudo xbps-install -Su
+\end{minted}
+
+ \newpage
+
+\subsection{Installing \texttt{tk} on macOS and Linux}
+\label{sec:orgd09dc6b}
+On macOS and Linux, the \texttt{tk} library isn't installed by default, so it needs to be installed. This shouldn't be a problem on Windows.
+
+\subsubsection{macOS}
+\label{sec:org6152015}
+If you installed Python \textbf{manually} using the \textbf{installer}, then there is \textbf{no need} to install the \texttt{tk} library.
+
+ ~\\~  Otherwise, if you used Homebrew to install Python, then use the command below to install the \texttt{tk} library.
+\begin{verbatim}
+brew install python-tk
+\end{verbatim}
+
+\subsubsection{Arch-based distributions (Arch, Manjaro, EndeavourOS, etc.)}
+\label{sec:org66c42b0}
+\begin{minted}[]{shell}
+sudo pacman -S tk
+\end{minted}
+
+\subsubsection{Debian-based distributions (Debian, Ubuntu, Linux Mint, etc.)}
+\label{sec:org5533e1e}
+\begin{minted}[]{shell}
+sudo apt install tk-dev
+\end{minted}
+
+\subsubsection{Fedora and Fedora derivatives (Nobara, Asahi Linux, etc.)}
+\label{sec:orge0bed26}
+\begin{minted}[]{shell}
+sudo dnf install tk-devel
+\end{minted}
+
+\subsubsection{Gentoo}
+\label{sec:orge8b6577}
+Update your USE flags for Python.
+\begin{minted}[]{shell}
+sudo cat "USE=\"tk\"" >> /etc/portage/make.conf
+\end{minted}
+
+ \noindent Re-emerge your packages.
+\begin{minted}[]{shell}
+sudo emerge -avuDN @world
+\end{minted}
+
+\subsubsection{Void Linux}
+\label{sec:org286f1a9}
+\begin{minted}[]{shell}
+sudo xbps-install -S tk
+\end{minted}
+
+
+\section{Running the program}
+\label{sec:org976a63c}
+Go to the folder that contains the program, which is most likely where you have extracted the zip file to, or where you have cloned the repository. Once you are in the directory for the program, simply run the command below to start the program:
+\begin{minted}[]{shell}
+python main.py
+\end{minted}
+
+Alternatively, you can run the program by opening the \texttt{main.py} file using Python. On most systems, this should be just double-clicking on the file after you have Python installed. Otherwise, you might have to right-click on the file in your file explorer and use the "Open with" option to select Python to run the \texttt{main.py} file.
+
+
+\section{How to use the program}
+\label{sec:orgd5727d9}
+For the most part, everything should be pretty clear from the dialogues and prompts given by the program when running it. The only part of the program that may be a bit more unintuitive is the file explorer, which can be interacted with by using the mouse to click on the items, or with the keys documented below.
+
+\subsection{File explorer key binds}
+\label{sec:org883e4d0}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+Key & Action\\[0pt]
+\hline
+Up Arrow Key & Move the cursor up 1 item\\[0pt]
+Down Arrow Key & Move the cursor down 1 item\\[0pt]
+Left Arrow Key & Go to the parent folder\\[0pt]
+Right Arrow Key & Select a file or enter a folder\\[0pt]
+w & Move the cursor up 1 item\\[0pt]
+a & Go to the parent folder\\[0pt]
+s & Move the cursor down 1 item\\[0pt]
+d & Select a file or enter a folder\\[0pt]
+h & Go to the parent folder\\[0pt]
+j & Move the cursor down 1 item\\[0pt]
+k & Move the cursor up 1 item\\[0pt]
+l & Select a file or enter a folder\\[0pt]
+c & Select the current folder (for saving a file)\\[0pt]
+\hline
+\end{tabular}
+\end{center}
+
+ \noindent These key binds should be quite intuitive, maybe except \texttt{hjkl}, which are Vim key binds, so they should be quite intuitive if you are a Vim user.
+
+
+\section{Logo file format}
+\label{sec:org7c5e25c}
+The program has the ability to load and save logo files, which is in a standard file format called \href{https://toml.io/en/}{TOML}. The logo file is a TOML table with two keys, one called \texttt{data} and another called \texttt{background\_colour}.
+
+\subsection{Background colour (\texttt{background\_colour})}
+\label{sec:orgba14525}
+The key called \texttt{background\_colour} can either be a string, containing a colour name like \texttt{black}, or a hex string like \texttt{\#000000}, or a list of numbers representing the RGB value of the colour, like \texttt{[0, 0, 0]}. This determines the background colour of the screen. This key can be left out, which means it is \textbf{optional}, and will \textbf{default} to turtle's background colour, which is \textbf{white} if it is not given. Below are a few examples:
+
+\begin{minted}[]{toml}
+background_colour = "#000000"
+\end{minted}
+
+\begin{minted}[]{toml}
+background_colour = [255, 0, 0]  # red
+\end{minted}
+
+\begin{minted}[]{toml}
+background_colour = "blue"
+\end{minted}
+
+\subsection{Data (\texttt{data})}
+\label{sec:orge9dfe9f}
+The key called \texttt{data} is where all the data for each of the icon should be. It is a list containing either dictionaries (TOML tables) or lists of dictionaries. You can nest as many lists as you want, as long as every single item of every list is a dictionary in the format documented below.
+
+ \newpage
+
+\subsubsection{Vertices (\texttt{vertices})}
+\label{sec:org08d4d55}
+Each dictionary (TOML table) \textbf{must contain} a list of vertices, or points. It is required for the program to be able to draw the icon from the file. Each vertex, or point, is a matrix, or a list of list of integers or floats. For example, the matrix below corresponds to the point (2, 1).
+\begin{minted}[]{toml}
+[[2], [1]]
+\end{minted}
+
+ \noindent The \textbf{square brackets} wrapping each of the numbers \textbf{is important}, and must not be left out. The program will tell you that your file is invalid if the square brackets are left out.
+
+ ~\\~ \noindent The list of vertices must contain either \textbf{2 points, or 4 points}. The program will say that your file is invalid if the list of vertices contains any other number of vertices. For a \textbf{straight edge}, the list of vertices should have \textbf{2 points}, i.e.
+\begin{minted}[]{toml}
+{ vertices = [[[3], [5]], [[7.7], [9.9]]] }
+\end{minted}
+
+ \noindent The program will draw a straight line between the two points.
+
+ ~\\~ \noindent For a \textbf{curved edge}, the list of vertices should have \textbf{4 points}, as it is drawn as a Bézier curve. The first and the last points are the start and end points of the curve respectively, and the second and third points are the points on the control polygon of the Bézier curve. For example:
+\begin{minted}[]{toml}
+{ vertices = [[[3.3], [5.5]], [[7], [9]], [[11], [13]], [[15], [17]]] }
+\end{minted}
+
+ \newpage
+
+\subsubsection{Fill colour (\texttt{fill\_colour})}
+\label{sec:org7b42588}
+This should be self-explanatory, this is the colour to fill the shape with. This option is \textbf{optional} and can be left out. If not given, the fill colour will \textbf{default to the last fill colour} that was used. It can either be a string, containing a colour name like \texttt{black}, or a hex string like \texttt{\#000000}, or a list of numbers representing the RGB value of the colour, like \texttt{[0, 0, 0]}. A few examples are shown below:
+
+\begin{minted}[]{toml}
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], fill_colour = "#000000" }
+\end{minted}
+
+\begin{minted}[]{toml}
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], fill_colour = "blue" }
+\end{minted}
+
+\begin{minted}[]{toml}
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], fill_colour = [0, 255, 0] }  # green
+\end{minted}
+
+ \noindent This option will usually accompany the option below.
+
+ \newpage
+
+\subsubsection{Start fill (\texttt{start\_fill})}
+\label{sec:org6baf9f1}
+This should also be self-explanatory, it tells the program to start filling the shape being drawn with the fill colour (\texttt{fill\_colour}) given. This option is also \textbf{optional} and will default to \texttt{false} if it's not given. It is a boolean that can be either \texttt{true} or \texttt{false}, but you'll usually want to set it to \texttt{true}. This should be given together with the fill colour, otherwise the option doesn't do anything, and the fill colour option will also not do anything, since the program doesn't fill anything with colour. Below are some examples:
+
+\begin{minted}[]{toml}
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], fill_colour = "#000000", start_fill = true }
+\end{minted}
+
+\begin{minted}[]{toml}
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], fill_colour = "blue", start_fill = true }
+\end{minted}
+
+\begin{minted}[]{toml}
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], fill_colour = [0, 255, 0], start_fill = true }  # green
+\end{minted}
+
+\subsubsection{End fill (\texttt{end\_fill})}
+\label{sec:org65d1e8b}
+This is another self-explanatory option. This tells the program to stop filling the shape with the fill colour. For this to take effect, the program must already be filling a shape with colour, otherwise there is nothing to stop. This option is also \textbf{optional} and defaults to \texttt{false} if it's not given. It is a boolean that can either be \texttt{true} or \texttt{false}, but you'll usually want to set it to \texttt{true}. This can be given on its own without the fill colour, since it just tells the program to stop filling the shape with colour. Below is an example:
+
+\begin{minted}[]{toml}
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], end_fill = true }
+\end{minted}
+
+\subsubsection{Pen colour (\texttt{pen\_colour})}
+\label{sec:orge94e6c5}
+Yet another self-explanatory option. This tells the program what colour to use to draw the outline of the shape. This option is \textbf{optional} and can be left out. If it is left out, the pen colour will \textbf{default} to the \textbf{previous pen colour} being used. This option can either be a string, containing a colour name like \texttt{black}, or a hex string like \texttt{\#000000}, or a list of numbers representing the RGB value of the colour, like \texttt{[0, 0, 0]}. A few examples are shown below:
+
+\begin{minted}[]{toml}
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], pen_colour = "#000000" }
+\end{minted}
+
+\begin{minted}[]{toml}
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], pen_colour = "blue" }
+\end{minted}
+
+\begin{minted}[]{toml}
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], pen_colour = [0, 255, 0] }  # green
+\end{minted}
+
+ \newpage
+
+\subsubsection{Pen size (\texttt{pen\_size})}
+\label{sec:orga70cd96}
+Once again, yet another self-explanatory option. This tells the program what pen size to use when drawing the edge, be it a curved edge or a straight edge. It affects how thick (or how wide) the line will be when drawn. It is another option that is \textbf{optional} and will \textbf{default} to a \textbf{pen size of 1} when it is not given. This option takes an integer that determines the thickness of the pen. An example is shown below:
+
+\begin{minted}[]{toml}
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], pen_colour = "#000000", pen_size = 10 }
+\end{minted}
+
+ \noindent However, do take note that this option will not scale well if you decide to transform the logo after drawing it, such as by scaling or shearing the logo, as those transformations only affect the vertices and not the pen size. If you would like to have the pen thickness be affected by the transformations, consider creating an outer shape that is filled with the desired colour, and an inner shape that is smaller than the outer shape by the pen thickness and is filled with the background colour.
+
+ \newpage
+
+\subsubsection{Number of segments (\texttt{number\_of\_segments})}
+\label{sec:org6150f6f}
+Finally, an option that isn't self-explanatory. This option tells the program to draw the Bézier curve in the given number of segments. Simply put, this represents the resolution of the Bézier curve drawn. This option should be given with a list of vertices with \textbf{4 points}, as that is a Bézier curve. Otherwise, this option will have no effect. This option is \textbf{optional}, and defaults to \textbf{100 segments} if it is not given, which should be sufficient for most icons. The higher the number, the smoother the Bézier curve will look. However, a higher number also means that the program will take a longer time to draw your icon. The icons you see in the next major section are all drawn with this option set to the default value of 100, so it is definitely more than enough to draw beautiful icons. An example of setting this option is given below:
+
+\begin{minted}[]{toml}
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]],
+    [[11], [13]],
+    [[15.5], [17.7]]
+], number_of_segments = 500 }
+\end{minted}
+
+ \newpage
+
+\subsubsection{Trivial example of the full data}
+\label{sec:org590c867}
+Below is an example of a blue square:
+\begin{minted}[]{toml}
+data = [
+    { vertices = [
+        [[-300], [300]],
+        [[300], [300]]
+    ], fill_colour = "blue", pen_colour = "blue", start_fill = true },
+    { vertices = [
+        [[300], [300]],
+        [[300], [-300]]
+    ]},
+    { vertices = [
+        [[300], [-300]],
+        [[-300], [-300]]
+    ]},
+    { vertices = [
+        [[-300], [-300]],
+        [[-300], [300]]
+    ], end_fill = true },
+]
+\end{minted}
+
+ \newpage
+
+\subsection{Trivial example of a logo file}
+\label{sec:org9642796}
+Below is an example of a logo file that has a green rectangle on an orange background.
+\begin{minted}[]{toml}
+background_colour = "orange"
+data = [
+    { vertices = [
+        [[-300], [200]],
+        [[300], [200]]
+    ], fill_colour = "green", pen_colour = "green", start_fill = true },
+    { vertices = [
+        [[300], [200]],
+        [[300], [-200]]
+    ]},
+    { vertices = [
+        [[300], [-200]],
+        [[-300], [-200]]
+    ]},
+    { vertices = [
+        [[-300], [-200]],
+        [[-300], [200]]
+    ], end_fill = true },
+]
+\end{minted}
+
+\subsection{Non-trivial examples}
+\label{sec:org2ccd863}
+For non-trivial examples of what a logo file looks like, take a look at the \texttt{logo\_files} folder. Inside the folder are the logo files for the logos drawn in the next section. Specifically, it includes the World Bank logo (\texttt{world\_bank\_logo.toml}), the CERN logo (\texttt{cern\_logo.toml}) and the logo of the Rust programming language (\texttt{rust\_logo.toml}).
+
+ \newpage
+
+\section{Drawn logos}
+\label{sec:orgcab13dc}
+Just a few examples of what the program can do!
+
+\subsection{World Bank Logo}
+\label{sec:org003fa08}
+
+\subsubsection{Original}
+\label{sec:orgcff5bee}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/world_bank_logo.png}
+\end{center}
+
+\subsubsection{Reflected about the line y = x}
+\label{sec:org84ea4ef}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/world_bank_logo_reflected_about_line_y_equal_x.png}
+\end{center}
+
+\subsection{CERN Logo}
+\label{sec:org09c5441}
+
+\subsubsection{Original}
+\label{sec:org2f94451}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/cern_logo.png}
+\end{center}
+
+\subsubsection{Scaled down two-thirds and rotated 45 degrees clockwise}
+\label{sec:orga24bb02}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/cern_logo_scaled_down_two_thirds_and_rotated_45_degrees.png}
+\end{center}
+
+\subsection{Rust Programming Language Logo}
+\label{sec:orgad60346}
+
+\subsubsection{Original}
+\label{sec:org464a323}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/rust_logo.png}
+\end{center}
+
+\subsubsection{Sheared with x shear factor of 1 and y shear factor of 0}
+\label{sec:org92d1af4}
+\begin{center}
+\includegraphics[width=.9\linewidth]{./images/rust_logo_sheared_with_x_shear_as_one_and_y_shear_as_zero.png}
+\end{center}
+
+ \newpage
+
+\section{Strengths and weaknesses}
+\label{sec:orga19d61d}
+
+\subsection{Strengths}
+\label{sec:org9440a6f}
+\begin{itemize}
+\item No additional Python packages are used, as this program is built entirely using Python's standard library.
+\item Can draw pretty much any logo you want if you can turn it into list of points and put it into the logo file format documented above.
+\item Homogeneous coordinates make it easy to transform a logo. It also allows for multiple transformations to be applied at once.
+\item Circles and circular arcs are turned into Bézier curves that only have an error of 0.0273\% of the circle's radius in their approximation.
+\item It can transform your logos in 5 different ways, translation, scaling, rotation, shearing, and reflection.
+\item You can use it to create an icon manually, through the graphical user interface, either by typing in the coordinates manually or by clicking on the screen. However, this is an extremely slow way to create an icon, especially if it is more complex than just a few rectangular shapes. A better and faster way to draw an icon using the program is to create a logo file in the format documented above.
+\end{itemize}
+
+\subsection{Weaknesses}
+\label{sec:org7bb56bd}
+\begin{itemize}
+\item Can only draw one logo at a time. The screen needs to be cleared to draw another logo.
+\item Creating a logo is extremely tedious. Using the program's interface to create a logo is even more tedious than creating a logo file and loading the logo file.
+\item Having a graphical user interface makes the program quite complicated and hence it has a lot of files and directories.
+\end{itemize}
+
+ \newpage
+
+\section{Features}
+\label{sec:org96585bb}
+\begin{itemize}
+\item Has a beautiful title screen (subjective).
+\item Has a purely graphical user interface (GUI), so there's no need to touch the command line or the terminal!
+\item Has a built-in file explorer, so you don't have to type the files you want to load or save manually, or wonder about why the file you have given isn't found.
+\item Automatically resizes the screen to make sure the logo drawn is fully visible. No more cut-off logos and scrolling in the turtle window to view the full logo, unless your logo is bigger than your entire screen, then that's on you.
+\item You can create an icon programmatically by using this program as a library, using the functions in the \texttt{math\_utils.py} file to much more easily create your own logos. The \texttt{math\_utils.py} file contains a lot of convenience functions to make logo creation easier. After creating the logo, the logo can be exported as a logo file using the functions in the \texttt{save\_lib.py} file. You can find a few examples in the \texttt{default-logos} folder.
+\item The code is fully documented with comments and documentation strings.
+\item Uses TOML as the logo file format, which is easy to read and learn.
+\end{itemize}
+
+\section{Licence}
+\label{sec:orgc3a5a8f}
+This program is licensed under the GNU AGPL V3 licence. You can view the \texttt{LICENCE.txt} file that is distributed with the program for the licence text.
+\end{document}

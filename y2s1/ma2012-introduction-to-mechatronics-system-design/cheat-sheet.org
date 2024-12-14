@@ -1,0 +1,1456 @@
+#+TITLE: MA2012 Introduction to Mechatronics System Design Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{siunitx}
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \setlength{\parindent}{0em}
+
+* Definitions
+
+** Mechatronics
+- A combination of the word "Mecha-nical" and "Elec-tronics". It is a termed coined in Japan in the 1960s.
+- It is an interdisciplinary field of engineering dealing with the design of products whose function relies on the integration of mechanical and electronic components coordinated by a control architecture.
+
+** System
+A combination of related parts combined into a complex whole.
+
+** System science
+An interdisciplinary field of science that studies the nature of complex systems.
+
+** System engineering
+An interdisciplinary field of engineering that focuses on how complex systems should be designed, engineered and managed.
+
+** Measurement system
+A system that presents an observer with a numerical value that represents the state or change of a variable of a process, machine or system being measured.
+[[./images/measurement-system.png]]
+
+** Actuation system
+A system that converts one form of energy (e.g. electrical, chemical, etc.) to another to perform mechanical work (e.g. movement, heat, etc.).
+[[./images/actuation-system.png]]
+
+** Control system
+A system to modify one or more measurable parameters of a plant or process to achieve desired outputs. For example, a central heating system:
+- Input: Electrical power
+- Actuation system: Heating coil and blower
+- Plant: Environment or room
+- Measurement system: Temperature sensor
+- Output: Desired temperature
+
+** Microprocessor (MPU)
+A microprocessor refers to the Central Processing Unit (CPU) on a single integrated-circuit (IC) chip.
+
+** Microcomputer
+A microcomputer refers to the MPU combined with the memory (RAM) and input and output unit (I/O unit).
+
+** Microcontroller (MCU)
+A microcontroller (MCU) refers to the microcomputer (CPU + Memory + I/O) in a single integrated-circuit (IC) chip.
+
+** Embedded systems
+Embedded systems are microcontrollers for a single purpose (not single function).
+
+*** Examples
+- Consumer products: Mobile phones, washers, fridge, air-conditioner, etc.
+- Healthcare products: Treadmills, blood glucose metre, etc.
+- Automobile system controller
+- And much more...
+
+*** Advantages
+Embedded systems are cheap, small and have low power consumption.
+
+*** Disadvantages
+Embedded systems are inflexible and have limited or even no expandability.
+
+** General purpose computers
+General purpose computers are computers that are for general use and can do a wide variety of tasks. They are outnumbered by embedded systems in a ratio of \(\textgreater 100:1\)
+
+*** Examples
+Personal computer (PC), Macintosh, Workstations, Personal Digital Assistant (PDA), Smartphone, etc.
+
+*** Advantages
+- Flexibility, as general purpose computers are capable of running many kinds of software and interface with lots of devices.
+- Expandability and scalability, as the software and the hardware of general purpose computers are upgradeable.
+
+*** Disadvantages
+- Complexity, to cater for flexibility and expandability
+- Cost, as general purpose computers cost from $100 to upwards of \(\$\)10,000
+- High power consumption
+
+** Central Processing Unit (CPU)
+- The CPU consists of the arithmetic and logic unit and the control unit
+- Arithmetic and Logic Unit (ALU)
+  - Arithmetic: \(+, -, \times, \div\), etc.
+  - Logic: OR, AND, NOT, NOR, NAND, XOR, etc.
+  - Result of ALU is usually stored in the accumulator register
+- Control Unit
+  - Directs the operation of all parts of a computer by providing timing and control signals
+  - Fetches, decodes, and executes the instructions in memory.
+
+** Memory
+- A memory cell is a device or circuit used to store a single bit ("1" or "0"), like flash file system (FFS), magnetic core memory, disks.
+- A memory word is a group of memory cells.
+- Internal memory, also known as main or working memory, is the highest speed memory.
+- Memory is used to store programs for sequenced execution.
+- Memory is also used to store data for output at required time.
+- Types of memory
+  - Random Access Memory (RAM)
+  - Read-Only Memory (ROM)
+  - Electrically Erasable Programmable Read-Only Memory (EEPROM)
+  - Flash memory
+
+*** Random access memory (RAM)
+- Any memory device that can go directly to an address without having to sequence through other locations.
+- Random access memory is volatile, which means the data is lost when the system loses power.
+- Variables and I/O data are stored in random access memory when arithmetic and logic operations are performed on them.
+- The Arduino Uno has static random access memory with a capacity of \(\qty{2}{kB}\)
+
+*** Static RAM (SRAM)
+- A semiconductor RAM device that consists essentially of flip-flop registers and the necessary circuitry for decoding.
+- Information will remain valid as long as power is on.
+- It has the advantages of fast access speed and simple circuitry.
+
+*** Dynamic RAM (DRAM)
+- Memory devices that store binary data by charging the gate capacitances of Metal Oxide Semiconductor (MOS) transistors.
+- Refreshing or periodically recharging (roughly ever \(\qty{4}{ms}\)) is required
+- It has the advantages of lower cost for higher memory density, as well as low power consumption.
+
+*** Synchronous dynamic RAM (SDRAM)
+- Synchronous dynamic RAM is DRAM which is synchronous with the system bus.
+- Use DRAM is when capacity and power consumption are valued more than access speed.
+
+*** Read-Only memory (ROM)
+- A semiconductor memory device designed primarily for having data read from them.
+- Data cannot be changed during operation.
+- The memory is non-volatile, which means the data persists even if the power is turned off.
+
+*** Erasable programmable ROM (EPROM)
+- A semiconductor ROM device with which the user can erase and reprogram the contents of memory as many times as desired.
+- Exposure to UV lights erases information on the memory chip. The UV light sets all the cells to 1s.
+
+*** Electrically erasable programmable ROM (EEPROM)
+- A semiconductor ROM device with which the user can erase and reprogram individual locations by the application of appropriate voltage levels and pulse durations.
+- The size of the EEPROM in the Arduino Uno is \(\qty{1}{kB}\).
+
+@@latex: \newpage@@
+
+*** Flash memory
+- Flash memory is a type of EEPROM, which means it is non-volatile.
+- It is erasable and programmable, and it works with a block of data instead singular bits.
+- It also can be used as read-only memory (ROM), such as in flash Basic Input/Output System (BIOS), as a disk drive (USB drive, SD card, solid state drive, etc.) or random access memory (RAM), like flash RAM.
+- Flash memory has advantages over:
+  - EEPROM in versatility, as it can be used as RAM instead of just ROM
+  - RAM in being non-volatile, as it can persist data even when the device is powered off, and it is also as fast as dynamic RAM (DRAM).
+  - Disk drive in speed, as it has no moving parts, being a solid state drive.
+- The Arduino Uno contains \(\qty{32}{kB}\) of flash memory.
+
+** Microprogram
+- A collection of instructions that control the timing and control logic of all components of the microprocessor.
+- It is built into the microprocessor by the chipmaker and cannot be modified by programmers.
+
+** Firmware
+- Firmware is software programmed into the Read-Only Memory (ROM) of a microprocessor for the execution of functions of a device.
+- Programmed by device manufacturer and cannot be modified by users.
+
+** Program (noun)
+- A program is software loaded into the Random Access Memory (RAM) of a general purpose computer.
+- It is programmed by software developers (not necessarily device manufacturers) and cannot be modified by users.
+
+** Program (verb)
+Programming refers to a procedure of putting data into memory for non-volatile storage.
+
+** Write
+Writing means an instruction that sends data to an address in RAM or external storage.
+
+** System or frontside bus
+- A system or frontside bus is the parallel conductor lines which connects the CPU to the other components.
+- A 64-bit processor needs the bus to be 64-bit wide, which is 1 bit of information per line.
+
+** Double Data Rate (DDR)
+- Double data rate refers to data transfer at both the positive and negative transitions.
+- DDR\(n\), where $n$ is a number, stands for DDR generation $n$.
+
+*** Lower Power DDR (LPDDR)
+Lower Power DDR is just DDR with lower power consumption to be used in mobile devices.
+
+*** Graphics DDR (GDDR)
+Graphics DDR is just DDR for graphics cards.
+
+** Bootloader program
+- A bootloader program is a program to "boot-up" or "bootstrap" the computer.
+- For a general purpose computer, it loads the operating system (Windows, iOS, Android, etc.) from hard drive or flash memory on to the RAM.
+- For the Arduino Uno, it does the following:
+  - It checks for new programming command from the serial connection to the PC.
+  - If there is a new programming command, it downloads the new program from the PC into the Arduino.
+  - Otherwise, it loads the latest programme stored in the flash memory.
+- The Arduino Uno bootloader program is activated when it is powered on or reset.
+
+** Transducer
+A device which converts one form of energy into another.
+
+** Sensor
+- A sensor is a transducer which performs measurement.
+- It is a device which produces an output signal (typically electrical) for the purpose of sensing physical phenomena.
+
+** Analogue quantity
+- An analogue quantity refers to a sensed quantity (voltage, current, etc.) that is continuous.
+- It usually (not always) needs an analogue-to-digital converter (ADC) to interface with the MCU.
+
+** Digital quantity
+- A digital quantity refers to a sensed quantity that is discrete.
+- One example of digital quantities are two-state devices, such as switches and proximity sensors, which only have on or off, or high (1) or low (0).
+- Another example are multiple state devices such as encoders, which have two types, one incremental, and another absolute.
+
+** Slotted opto switch
+A slotted opto switch is a switch that returns an output, like high (1) or low (0), when there is something in the slot. It works by using an LED to shine a light into the sensor right beside it, and when the light is blocked, the slotted opto switch returns an output.
+
+#+ATTR_LATEX: :scale 1
+[[./images/slotted-opto-switch.png]]
+
+** Data acquisition (DAQ)
+Data acquisition is the process of sensing a physical state and converting it into a digital form for processing, presentation and storage.
+
+** Digitised signal
+A digitised signal is a series of numbers which approximates an analogue signal at the sampling time instances. There are two important parameters, sampling rate (x-axis) and digitisation resolution (y-axis).
+
+** Shannon sampling theorem
+The Shannon sampling theorem states that there is no maximum sampling frequency, higher sampling frequency also means more noise and higher costs. It also states that the sampling frequency (\(f_s\)) must be at least 2 times higher than the highest frequency component (\(f_{max}\)) in the signal, i.e.
+\[f_s > 2f_{max} \Longleftrightarrow T_s < \frac{1}{2} T_{min} \quad \because \ \text{Period } T = \frac{1}{f}\]
+
+The Nyquist frequency refers to this frequency, which is $2f_{max}$.
+\\
+
+Consider the following $\qty{1}{Hz}$ signals:
+[[./images/shannon-sampling-theorem.png]]
+
+@@latex: \newpage@@
+
+** Aliasing
+Aliasing is an effect that causes different signals to become indistinguishable (or aliases of one another) as a result of undersampling.
+
+Example:
+- The original signal is 10 cycles at $f_0$.
+- The sampling frequency $f_s$ is $1.2 f_0$.
+- There is a total of 12 sampling points.
+- The resulting sampled signal appears to be $0.2 f_0$.
+
+[[./images/aliasing-example.png]]
+
+** Quantising theory
+[[./images/quantising-theory.png]]
+
+*** Quantising
+Quantising refers to the conversion of a continuous analogue signal to a series of discrete states.
+
+*** Coding
+Coding refers to the assignment of a digital code number to each state.
+
+*** Number of states
+The number of states is given by:
+\[N = 2^n \text{ for the states } 0 \ldots N - 1\]
+
+Where:
+- $N$ is the number states
+- $n$ is the number of bits of the analogue to digital conversion
+
+** Pulse width modulation
+Pulse width modulation varies the duty cycle or the duration of a pulse to control the average power or amplitude delivered by an electrical signal.
+
+*** Example
+- If a switch is always on, the lamp receives $\qty{9}{V}$ and lights up to the rated brightness.
+- If a switch is 50% on and 50% off very quickly (1 - \(\qty{200}{kHz}\)), the lamp receives and equivalent of $\qty{4.5}{V}$, and lights up to only 50% of the rated brightness.
+
+** Inductive kickback
+#+ATTR_LATEX: :scale 0.75
+[[./images/inductive-kickback.png]]
+
+- The steady-state current through an inductor, $I_{on}$, cannot immediately go to zero when the switch is opened. The changing current induces a voltage across the inductor, making the potential $A$ greater than $B$, causing the switch to "blow up".
+- A kickback or flyback diode protects the switch (physical or transistor) from blowing up.
+
+** Servo motor
+The drive flange of the servo motor can rotate $180^{\circ}$. It is driven by width of high pulse (Logic 1) called "Mark" length.
+
+#+ATTR_LATEX: :scale 0.6
+[[./images/servo-motor-mark-length.png]]
+
+*** Working principle
+[[./images/servo-motor-working-principle.png]]
+
+*** Driving a servo motor
+[[./images/driving-a-servo-motor.png]]
+
+** Stator
+Stator just means an element or part that is static, or doesn't move.
+
+** Rotor
+Rotor just means an element or part that rotates.
+
+** Solenoid
+#+ATTR_LATEX: :scale 0.6
+[[./images/solenoid-diagram.png]]
+
+*** Construction
+- Stationary iron frame (stator)
+- Coil (solenoid)
+- Ferromagnetic plunger (armature)
+
+*** Types
+A solenoid can be one of two types, a push solenoid or a pull solenoid.
+
+*** Control
+A pulse is used to turn the solenoid on and off.
+
+** Stepper motor
+#+ATTR_LATEX: :scale 0.5
+[[./images/stepper-motor-configuration.png]]
+
+*** Construction
+[[./images/stepper-motor-construction.png]]
+- Permanent magnet rotor
+- Stator with rotating magnetic field
+
+@@latex: \newpage@@
+
+*** Working principle
+[[./images/stepper-motor-working-principle-diagram.png]]
+- If just one winding of the motor is energized, the rotor will snap (rotate) to a fixed angle and then hold that angle until the torque exceeds the holding torque of the motor.
+- As the polarity of the stator changes, the permanent magnet motor will rotate to the next fixed position.
+- Doubling the number of poles will half the step size, as each step is now smaller.
+
+*** Wave drive or single phase stepping method
+- In the wave drive or single phase stepping method, only one magnet in the stator is turned on at a time.
+- This means the rotor inside the stepper motor will be attracted to one magnet of the stator of the stepper motor each time it takes a step.
+- The rotor will therefore be aligned to the one magnet each step.
+
+@@latex: \newpage@@
+
+*** Two phase full step stepping method
+- In the two phase full step stepping method, two magnets beside each other in the stator are turned on at a time.
+- This means the rotor inside the stepper motor will be attracted to both magnets of the stator of the stepper motor each time it takes a step.
+- The rotor will therefore be aligned in between the two magnets of the stator.
+- These two magnets being activated allows the stepper motor to have more holding torque as the magnetic force holding the rotor in place is much higher compared to the wave drive stepper motor.
+- As such, the motor can take a higher payload (more weight can be attached to the stepper motor).
+- However, the motor also consumes more power.
+
+@@latex: \newpage@@
+
+*** Two phase half step stepping method
+- In the two phase half step stepping method, the stepper motor alternates between the wave drive stepping method and the two phase full step stepping method.
+- On the first step, the two phase full step stepping method is used, so the rotor will be attracted to two magnets of the stepper motor on the first step, and it will be in between both magnets.
+- On the second step, the wave drive stepping method is used, so the rotor will be attracted to one magnet of the stepper motor on the second step, and it will be aligned to the one activated magnet on the stator.
+- On the third step, the two phase full step stepping method is used, so the rotor will be attracted to two magnets of the stepper motor on the first step, and it will be in between both magnets.
+- On the fourth step, the wave drive stepping method is used, so the rotor will be attracted to one magnet of the stepper motor on the second step, and it will be aligned to the one activated magnet on the stator.
+- This pattern continues for the rest of the steps, with the motor alternating between the two phase full step stepping method and the wave drive stepping method.
+- This stepping method has the advantage of a smaller step resolution than the two phase full step stepping method, as each step of this stepping method is half a step of the two phase full step stepping method.
+
+@@latex: \newpage@@
+
+*** Micro-stepping
+- Micro-stepping is a way to achieve smaller step resolutions by controlling the fractions of the current flowing into the two magnets being activated in the two phase stepping method individually.
+- This allows the motor to step in fractions of a full step at a time instead of a full step.
+- For example, the second magnet can be powered with one-eighth the current of the first magnet, which will cause the rotor to be much closer to the first magnet than the second magnet, allowing the rotor to rotate one-eighth of a step.
+
+** Handshaking
+Handshaking is the process when the MCU sends a data available (DAV) control signal to an output device, and the output device accepts the data upon receiving the DAV signal, and sends a data accepted (DACK) control signal back to the MCU.
+
+#+ATTR_LATEX: :scale 1
+[[./images/handshaking-diagram.png]]
+
+** Interrupt service routine (ISR)
+Interrupt service routine contains the commands for transferring to and from the interrupting I/O devices.
+
+[[./images/interrupt-service-routine-diagram.png]]
+
+@@latex: \newpage@@
+
+*** In an Arduino
+- The interrupt service routine cannot have parameters and returns nothing.
+- Only 1 interrupt service routine can run at any one time, other interrupt service routines (if any) will be turned off until the current one is executed.
+- Functions which rely on timer interrupts will not work while an interrupt service routine is running, like ~delay()~ and ~millis()~.
+- Global variables are used to pass parameters between the main program and the interrupt service routine, so declare these variables as ~volatile~.
+
+Example:
+#+begin_src cpp :results discard
+int pin = 1;
+volatile int state = LOW;
+
+void setup() {
+    pinMode(pin, OUTPUT);
+    attachInterrupt(0, blink, CHANGE);
+}
+
+void loop() {
+    digitalWrite(pin, state);
+}
+
+void blink() {
+    state = !state;
+}
+#+end_src
+
+** Parallel data communications
+- Multiple bits of data are transmitted all at one time.
+- One data line or pin per bit is needed.
+- The advantage of parallel data communications is faster data transfer rate.
+
+** Serial data communications
+- Data is transmitted one bit after another
+- Only one data line or pin is needed
+- Advantages:
+  - Cheaper to implement as physical pins and data lines are costly.
+  - Easier to integrate into IC & PCB design as fewer physical pins and lines result in a smaller footprint.
+
+** Parallel-serial interface
+A parallel-serial interface is for serial or parallel conversions for communications between the MPU and a serial I/O device.
+- It converts an N bit parallel word from the MPU data bus to a serial data word.
+- It also converts a serial data signal from a serial device to an N bit parallel data word.
+
+** Bit time interval (\(T_B\))
+The bit time interval is the period of time between one bit to another, when transferring data.
+
+** Baud rate
+Baud rate is the data rate, or the rate of data transmission, which is measured in bits per second or $\unit{Mbps}$.
+
+\[\text{Baud rate} = \frac{1}{T_B}\]
+
+Common baud rates are 19200, 14400, 9600, etc.
+
+*** Example
+If the data rate (baud rate) is 9600 baud, what is the time duration of 1 bit?
+- The data rate is 9600 bits per second
+- The bit time is \(\frac{1}{9600} = \qty{104.17}{\micro s}\)
+
+** Universal asynchronous receiver and transmitter (UART)
+- It uses one to one communication, which means a pin receives the data and another pin transmits the data.
+- For the Arduino Uno, digital pin 0 is the Rx pin and digital pin 1 is the Tx pin.
+- For other pins that don't have hardware serial, use the ~SoftwareSerial~ library to use them for communication.
+- It consists of the following components:
+
+*** Serial receiver (Rx)
+A serial receiver converts a serial input to a parallel format, and stores it in the receiver data register (RxDR) for eventual transmission to the MPU. For the Arduino Uno, this is digital pin 0.
+
+*** Serial transmitter (Tx)
+A serial transmitter takes a parallel word from the transmitter data register (TxDR) and converts it to a serial format for transmission. For the Arduino Uno, this is digital pin 1.
+
+*** Bidirectional data bus buffer
+A bidirectional data bus buffer is to pass data from the MPU to the transmitter data register (TxDR) or from the receiver data register (RxDR) to the MPU over the system bus.
+
+*** Baud rate generator
+Sometimes an external clock is used instead of the timer on the Arduino.
+
+*** How UART works
+[[./images/uart-data-stream-diagram.png]]
+1. It first organises data into packets, and each packet contains:
+   - 1 start bit (LOW)
+   - 5 - 9 data bits
+   - 1 optional parity bit, to validate that the data is transferred correctly
+   - 1 - 2 stop bits (HIGH)
+2. Read the data according to the baud rate.
+
+** Bus
+A bus is a group of wires used as a common path connecting all the inputs and outputs of several registers and devices so that the data can be easily transferred from any one register or device to any other using various control signals.
+
+** Asynchronous communication
+- The transmitter can send data to the receiver at any time.
+- The time delay between the transmission of two words may be indeterminate.
+- Transmitter clock need not synchronise with the receiver clock.
+
+@@latex: \newpage@@
+
+** Synchronous communication
+- Transmitting and receiving are synchronised by common clock pulses.
+- Transmitter sends data to receiver continually.
+- Transmitter sends meaningless data, like the ASCII sync character 16_{16} continually when there is no data to send.
+
+** Inter-integrated Circuit (I2C) Bus
+- I2C bus is controlled by a master device, which is usually the MCU.
+- One or more slave devices, usually an I/O device, receives the control signal from the master device.
+- All devices share the same clock signal (SCL) and a bidirectional data line (SDA), and hence there are only 2 signal lines.
+- Only the master device can initiate communications between master and slaves to avoid bus contention.
+- Each slave device has its own unique 7-bit address or ID number. This address may be fixed or selectable, and is dependent on the manufacturer.
+- Each signal line requires a pull-up resistor to restore the signal to HIGH when no device is set to LOW.
+- When a master device initiates a communication, a device address is transmitted.
+- Only the slave device with the correct address shall respond to the master.
+
+#+ATTR_LATEX: :scale 0.6
+[[./images/i2c-bus-diagram.png]]
+
+*** Communication protocol
+Steps to communicate with different I2C slave devices need to follow protocol defined by manufacturers in the provided data sheets.
+\\
+
+Basic steps:
+1. Master sends a Start bit.
+2. Master sends a 7-bit slave address of intended device.
+3. Master sends a Read (1) or Write (0) bit depending on application.
+4. Slaves responds with an "acknowledge", i.e. ACK bit (0).
+5. In Write mode, master sends 1 byte of information (command or data) at a time, and slaves respond with ACKs. In Read mode, master receives 1 byte of information at a time and sends an ACK to the slave after each byte.
+6. When communication has been completed, master sends a Stop bit.
+
+*** On the Arduino
+- Use the ~Wire.h~ library to use I2C communication.
+- Analogue pin A4 is the bidirectional data line (SDA).
+- Analogue pin A5 is the line for the same clock signal (SCL).
+- The data is transferred in 8 bits.
+- To read data, a request for data must be sent first using ~Wire.requestFrom(address, quantity, stop)~.
+  - Address refers to the 7-bit address of the device to request data from.
+  - Quantity refers to the number of bytes to request.
+  - Stop is a boolean. When set to ~true~, the protocol will send a stop message after the request, releasing the bus. When set to ~false~, it will continually send a repeated start message after the request, keeping the connection active.
+
+*** I2C vs SPI
+| I2C advantages                      | SPI advantages                |
+| /                                   | <                             |
+|-------------------------------------+-------------------------------|
+| Requires only 2 communication lines | Higher data transmission rate |
+|                                     | Easier to implement           |
+|                                     | No pull-up resistors needed   |
+
+** Full-duplex
+Full-duplex means simultaneous bidirectional transmission of information.
+
+@@latex: \newpage@@
+
+** Serial Peripheral Interface (SPI) bus
+SPI bus is a full-duplex serial communication protocol between master and one or more slaves. It is an interface bus used to send data between microcontrollers and small peripherals such as shift registers, sensors, and SD cards.
+
+- There are 3 pins for communications between master and all slaves
+  - Shared or Serial Clock (SCLK)
+  - Master Out Slave In (MOSI) or Slave Data In (SDI)
+  - Master In Slave Out (MISO) or Slave Data Out (SDO)
+- Each slave device requires an additional slave select (SS) or chip select (CS) pin, so 1 slave select (SS) or chip select (CS) line is needed for each slave device.
+  - This line is normally held HIGH to disconnect the slave.
+  - When it is brought to LOW, communication is initiated with the slave.
+  - It is brought to HIGH again after communication has completed.
+- The total number of I/O pins required is $3 + n$, where $n$ is the number of slave devices.
+- All slave devices share MOSI, MISO and SCLK lines, hence all commands from the master are sent to each slave device.
+- Every clock cycle a bit must be sent and received (i.e. synchronous), but that bit may be meaningless.
+
+[[./images/spi-bus-diagram.png]]
+
+*** Modes of communication
+SPI devices are synchronous, i.e. data is transmitted in sync with a SCLK. There are 4 modes of communication.
+
+#+ATTR_LATEX: :align m{2.5em}|m{10em}|m{15em}
+| Mode | Clock polarity | Clock phase (data capture on ...) |
+|    / | <              | <                                 |
+|------+----------------+-----------------------------------|
+|    0 | Low at idle    | Rising edge                       |
+|    1 | Low at idle    | Falling edge                      |
+|    2 | High at idle   | Falling edge                      |
+|    3 | High at idle   | Rising edge                       |
+
+@@latex: \newpage@@
+
+*** Communication protocol
+Basic process:
+1. Set the SS pin to LOW for the targeted slave device
+2. Toggle SCLK (square wave) at a speed that is less than or equal to the transmission speed supported by the slave device.
+3. For each clock cycle, master sends 1 bit on MOSI and receives 1 bit on MISO.
+4. Continue until data transmission is complete, and stop toggling the clock line.
+5. Set SS pin to HIGH.
+
+*** On the Arduino Uno
+- Use the ~SPI.h~ library to use SPI communication.
+- Digital pin 11 is the MOSI pin.
+- Digital pin 12 is the MISO pin.
+- Digital pin 13 is the SCK pin.
+- Digital pin 10 is the SS pin.
+- ~SPISettings(speed, MSB/LSB, mode)~
+  - Speed is the rated data transfer speed of the slave in bits per second.
+  - Most Significant Bit (MSB) or Least Significant Bit (LSB) first.
+  - Mode:
+    | Mode        | Clock Polarity (CPOL) | Output Edge | Data Capture |
+    |-------------+-----------------------+-------------+--------------|
+    | ~SPI_MODE0~ | Low at idle           | Falling     | Rising       |
+    | ~SPI_MODE1~ | Low at idle           | Rising      | Falling      |
+    | ~SPI_MODE2~ | High at idle          | Rising      | Falling      |
+    | ~SPI_MODE3~ | High at idle          | Falling     | Rising       |
+
+*** Communication using SPI in the Arduino
+- The slave select or chip select pin must be set to LOW to enable communication first, i.e. ~digitalWrite(10, LOW)~
+- SPI transfer works in two steps, and the first step is to send a byte to the slave device.
+- The first bit of this byte (8 bits) is the read or write bit. Set this bit to 1 to read, and 0 to write.
+- The second bit is the multiple byte (MB) bit, which when set to 1, allows the SPI communication protocol to transfer multiple bytes at once, instead o just one byte at a time. The next byte transferred from the slave device is the register address that is 1 more than the current register address.
+- When this second bit is set to 0, the SPI communication must be terminated, i.e. slave select or chip select pin set to HIGH, ~digitalWrite(10, HIGH)~, after the data is read or written.
+- The third bit to the eighth bit holds the register address to read or write from, which is determined from the data sheet of the slave device.
+- The second step is to read or write the data.
+- For a read operation, transfer a 0 to the slave device, i.e. ~SPI.transfer(0)~.
+- For a write operation, send a byte that corresponds to the operation to perform on the address sent in the first step, which can be obtained from the slave device's data sheet.
+
+*** I2C vs SPI
+| I2C advantages                      | SPI advantages                |
+| /                                   | <                             |
+|-------------------------------------+-------------------------------|
+| Requires only 2 communication lines | Higher data transmission rate |
+|                                     | Easier to implement           |
+|                                     | No pull-up resistors needed   |
+
+** 16-key hexadecimal keypad
+[[./images/16-key-hexadecimal-keypad.png]]
+The 16-key hexadecimal keypad has 8 outputs, and hence requires 8 pins.
+
+** 74C922 keypad encoder
+[[./images/74c922-keypad-encoder.png]]
+The 74C922 keypad encoder has 8 inputs for the keypad and 4 outputs to the Arduino. The data available pin tells the Arduino that the keypad has been pressed.
+
+*** Position of the key pressed
+[[./images/74c922-keypad-encoder-truth-table.png]]
+\[\text{Position} = A + 2 \cdot B + 4 \cdot C + 8 \cdot D\]
+
+@@latex: \newpage@@
+
+** Input signal conditioning
+Input signal conditioning is to convert the output of sensing elements into a form suitable for further processing.
+
+*** Types
+- Analogue-to-Digital conversion
+- Reducing noise level
+- Enhancing a signal's power
+- Improving noise immunisation
+- Eliminate non-linearity
+
+** Output signal conditioning
+Output signal conditioning is to convert the output of digital control systems, like the MCU or the PC, into a form suitable for interfacing with output elements.
+
+*** Types
+- Digital-to-Analogue conversion
+- Amplifying signals
+- Improving noise immunisation
+
+** Noise
+- Noise is unwanted signal.
+- White noise is a signal with equal power in all frequencies and zero mean, i.e. a totally random signal.
+- Coloured noise is unwanted signal with certain bias or distinctive frequencies. An example of coloured noise is leaves falling from a tree when the wind is blowing. The mean of the leaves spread is no longer at the foot of the tree, i.e. the mean or bias is non-zero.
+
+** Signal-to-noise ratio
+- Signal-to-noise ratio is defined as the ratio of the power of a signal (meaningful information) and the power of the background noise (unwanted signal).
+  \[SNR = \frac{\text{Total signal power}}{\text{Total noise power}} = \frac{w_S}{w_N}\]
+- Expressed in decibels:
+  \[SNR = 10 \log_{10} \left(\frac{w_S}{w_N} \right) \unit{dB}\]
+
+** Arcing
+Arcing is the process of raising the potential to cause electrical current to flow between the anode and cathode through the inert gases inside the tube of a fluorescent light.
+
+** Logic level converter
+A logic level converter converts from $\qty{5}{V}$ to $\qty{3.3}{V}$.
+
+** Bitwise OR
+Bitwise OR returns 0 only if both inputs are 0, otherwise it returns a 1. Using bitwise OR with 0 is the identity operation for binary, like how multiplication by 1 just gives you back the same number, the bitwise OR operation with 0 returns the same bit back.
+
+@@latex: \newpage@@
+
+* Mechatronics system components
+[[./images/mechatronics-system-components-overview.png]]
+
+** Mechanical system
+A mechanical system is when you put the actuators and sensors together.
+
+*** Actuators
+- Motors (AC motors, DC motors, Stepper motors, Servo motors, Voice coil, etc.)
+- Hydraulics, pneumatics, solenoids
+- Piezoelectrics and other smart materials
+- Others elements like heating and cooling elements
+
+@@latex: \newpage@@
+
+*** Sensors
+- Switches for turning things on and off
+- Potentiometer and encoder for position or displacement
+- Inertial sensors:
+  - Accelerometer for acceleration
+  - Rate gyroscope for angular velocity
+- Thermocouple for temperature
+- Strain Gage for deflection
+- Photoelectrics for light intensity
+
+@@latex: \newpage@@
+
+*** System model
+- First order system, which consists of a damper and a spring.
+  [[./images/first-order-system-diagram.png]]
+  \[F_{in} - F = \lambda \frac{dx}{dt}\]
+
+- Second order system, which also consists of a damper and a spring, but the mass is no longer negligible.
+  [[./images/second-order-system-diagram.png]]
+  \[m \ddot{x} + \lambda \dot{x} + kx = F\]
+
+*** Static and dynamic responses
+- Step response
+  A step response is like dropping an accelerometer to induce a sudden acceleration. This step response is essentially the input into the mechanical system.
+
+  #+ATTR_LATEX: :scale 0.4
+  [[./images/step-response.png]]
+
+- 1st order
+  A 1^{st} order system will behave in response to a step response as shown in the graph below:
+
+  #+ATTR_LATEX: :scale 0.4
+  [[./images/first-order-system-response.png]]
+
+@@latex: \newpage@@
+
+- Second order
+  A second order system will behave in response to a step response as shown in the graph below:
+  [[./images/second-order-system-response.png]]
+
+@@latex: \newpage@@
+
+** Input signal conditional and interfacing
+
+*** Discrete circuits
+Discrete circuits are circuits made up of discrete components, like resistors, capacitors, etc.
+
+*** Amplifiers
+Amplifiers amplify the signal to improve signal-to-noise ratio (SNR).
+
+*** Filters
+Filters get rid of unwanted signal contents, e.g. high-pass, low-pass, band-pass, band-stop, etc.
+
+*** Analogue to digital converter
+Analogue to digital converters convert analogue signals like the turning of a knob, into a digital signal.
+
+** Output signal conditioning and interfacing
+- Filters
+- Output amplifiers
+- Digital to analogue converter (DAC)
+- Etc.
+
+** Graphical displays
+- Light Emitting Diodes (LED)
+- Liquid Crystal Display (LCD)
+
+@@latex: \newpage@@
+
+** Digital control architectures
+- The digital control architecture is the "brain" of the system, and is usually a microcomputer.
+- Microprocessor (MPU) refers to the Central Processing Unit (CPU) on a single integrated-circuit (IC) chip.
+- Microcomputer refers to the MPU combined with the memory (RAM) and input and output unit (I/O unit)
+- Microcontroller (MCU) refers to the microcomputer in a single integrated-circuit (IC) chip.
+- Function: Logic, Arithmetic, Control, Timing and Sequencing, Communications, etc.
+
+@@latex: \newpage@@
+
+* Basic computer structure
+All computers contain 3 basic units.
+
+[[./images/basic-computer-structure.png]]
+
+** Central Processing Unit (CPU)
+- Arithmetic and Logic Unit (ALU)
+- Control Unit
+
+** Memory Unit
+- Internal memory, like Random Access Memory (RAM), Read-only Memory (ROM).
+- External memory, like Hard Disk Drives (HDD), Cassette Tape, etc.
+
+** Input/Output Unit (I/O Unit)
+- Input unit - Mouse, keyboard (K/B), Analogue to Digital Converter (ADC)
+- Output unit - Display, Digital to Analogue Converter (DAC)
+
+* Design tips for mechatronics systems
+1. Understand the task and define the problem
+2. Sketch a function block diagram
+3. Decide and select mechatronics components (type, number, communication protocol, etc.):
+   - Digital control architecture
+   - Sensors and input interfacing
+   - Actuators and output interfacing
+   - Display
+4. Look for the components with suitable specifications and ensure compatibility of components when they interface with each other
+5. Construct hardware prototypes
+6. Program software or firmware
+
+* Examples of mechatronics systems
+
+** Car
+A typical car contains over 50 microprocessors for the systems listed below:
+- Fuel and fluid alert system
+- Airbag system
+- Entertainment and navigation systems
+- Speed control system
+- Combustion engine control
+- Automatic gearbox
+- Active stabilisation
+- Anti-lock braking system (ABS)
+- Climate control (air-conditioning)
+- Seatbelt alert system
+- Door security system
+
+** Inkjet printer
+
+*** Actuators
+- Stepper motor to drive print head mechanism
+- Stepper motor to drive paper feeding mechanism
+- Stepper motor to park print head mechanism (some models)
+- Ink firing at nozzles
+  - Piezoelectric (Epson) or Thermal resistor (Canon and HP)
+
+*** Sensors in paper feeding mechanism
+- Proximity sensors or limit switch to detect presence of paper
+- Proximity sensors to detect paper loaded in position at the start of a print
+
+*** Sensors in print head mechanism
+- Linear encoder for precision positioning of print head
+- Limit switch to detect print head in parked position
+
+*** Digital control architecture
+- Microcontroller based
+- Communications
+  - USB (parallel) port
+  - Bluetooth
+  - Local Area Network (LAN) port
+  - Wi-Fi
+- Graphics display is a simple LCD to high definition LED
+
+** Robots
+- Serial robot
+- Parallel robot
+
+* Sensors
+
+** Digital sensors
+
+*** Switches
+[[./images/toggle-and-slotted-opto-switches.png]]
+[[./images/pushbutton-and-limit-switches.png]]
+
+@@latex: \newpage@@
+
+*** Proximity sensor
+A proximity sensor detects the presence of an object. Its output is either high, or low upon detection.
+- Infrared and ultrasound sensors detect the incoming waves reflected by the object. An example is a car reverse sensor.
+- Inductive sensors change the induced current upon detection of ferrous or magnetic materials. An example is a metal detector for security.
+- Capacitive sensors change their capacitance upon detection of conductive materials. An example is a touch screen.
+
+#+ATTR_LATEX: :scale 0.7
+[[./images/proximity-sensors.png]]
+
+*** Incremental encoders
+#+ATTR_LATEX: :scale 0.7
+[[./images/incremental-encoder.png]]
+Incremental encoders have the same working principle as the slotted opto switch.
+- When channel A *leads* channel B by \(90^{\circ}\), the direction is anti-clockwise.
+- When channel A *lags* channel B by \(90^{\circ}\), the direction is clockwise.
+- The time \(\Delta T_i\) between 2 pulses determines the rotation speed, as:
+
+*** Digital encoders
+[[./images/digital-encoders.png]]
+  \[\omega_i = \frac{2 \pi}{\Delta T_i}\]
+
+** Interfacing with digital sensors
+
+*** Sensing modalities
+- One modality is to sense a state, like high (1) or low (0).
+- Another modality is to measure the time duration of a state.
+
+*** Communication protocols
+- Serial, where data is fed one after another.
+  - There are two types of serial communication, synchronous and asynchronous.
+  - Serial is cheaper but slower
+- Parallel, where multiple streams of data is fed via multiple I/O pins.
+  - It is more expensive, but also faster.
+
+@@latex: \newpage@@
+
+** Analogue sensors
+
+*** Potentiometer
+- A potentiometer is used to measure angular or linear displacement.
+- It works based on the voltage divider principle where:
+  \[\text{Variable resistance} \propto \text{Variable voltage}\]
+- Applications of potentiometers include light dimmers and the knob to adjust the audio volume.
+
+#+ATTR_LATEX: :scale 0.5
+[[./images/potentiometer-diagram.png]]
+
+#+ATTR_LATEX: :scale 0.5
+[[./images/potentiometer-circuit.png]]
+
+*** Accelerometer
+- An accelerometer is used to measure linear acceleration from movement and gravity.
+- For an analogue accelerometer, its output is a voltage value.
+- For a digital accelerometer, its output is a duty cycle.
+- It works because motion causes a change in the distance between the plates and hence a change in the capacitance of the accelerometer.
+- Applications of accelerometers include mobile devices and inclinometer, which is an instrument used for measuring angles of slope, elevation, or depression with respect to gravity's direction.
+
+#+ATTR_LATEX: :scale 0.9
+[[./images/accelerometer-diagram.png]]
+
+* Analogue to digital converters
+
+** Successive approximation
+Successive is a fast, cheap and the most widely used method to convert analogue signals to digital signals.
+\\
+
+The steps to convert an analogue signal to a digital signal using successive approximation:
+1. With a start signal, analogue input is temporarily stored at the sample and hold (S&H) latch.
+2. The control unit makes an approximation of a digital equivalent of the analogue input and hold the result at an output latch.
+3. The digital to analogue convert converts the digital approximation to analogue signal compares it with the analogue input.
+4. If both are equal, the result held at the latch is the output. Otherwise, it goes back to step 2 to make the next successive approximation iteration.
+
+[[./images/successive-approximation.png]]
+
+*** Example
+#+ATTR_LATEX: :scale 0.7
+[[./images/successive-approximation-example.png]]
+
+- Full Scale (\(FS\)) is $\qty{1.0}{V}$
+- Resolution (\(n\)) is 4 bits
+- Analogue input is $\qty{0.4}{V}$
+
+Steps:
+1. Control unit turns on only the most significant bit (MSB), which is Bit 3, that represents \(\frac{1}{2} FS = \qty{0.5}{V}\). The first approximation is 1000 in binary.
+2. It is larger than the analogue input given (\(\qty{0.4}{V}\)), hence Bit 3 is turned off.
+3. Control unit turns on Bit 2 \(\frac{1}{4} FS = \qty{0.25}{V}\). The second approximation is 0100 in binary.
+4. Current value of \(\qty{0.25}{V} < \qty{0.4}{V}\), hence Bit 2 remains on.
+5. Control unit turns on Bit 1 \(\frac{1}{8} FS = \qty{0.125}{V}\). The third approximation is 0110 in binary.
+6. Current value of \(\qty{0.25}{V} + \qty{0.125}{V} = \qty{0.375}{V} < \qty{0.4}{V}\). Bit 1 remains on.
+7. Control unit turns on Bit 0 \(\frac{1}{16} FS = \qty{0.0625}{V}\). The fourth approximation is 0111 in binary.
+8. Current value of \(\qty{0.375}{V} + \qty{0.0625}{V} = \qty{0.4375}{V} > \qty{0.4375}{V}\). Bit 0 is turned off.
+9. Final output is 0110 in binary, which is $\qty{0.375}{V}$.
+
+** Flash converter
+- A flash converter is a series of comparators acting in parallel to approximate an analogue input.
+- Fastest type of analogue-to-digital converter.
+- Increasing resolution does not increase conversion time.
+- Flip-flop latches produce 3-bit code.
+- AND & OR gates to convert 3-bit code to binary output.
+
+[[./images/flash-converter.png]]
+
+| State | Code (G_2 G_1 G_0) | Binary (B_1 B_0) | Voltage Range (V) |
+|     / |                  < |                < | <                 |
+|-------+--------------------+------------------+-------------------|
+|     0 |                000 |               00 | 0 to 1            |
+|     1 |                001 |               01 | 1 to 2            |
+|     2 |                011 |               10 | 2 to 3            |
+|     3 |                111 |               11 | 3 to 4            |
+
+\[B_0 = G_0 \cdot G_1 + G_2\]
+\[B_1 = G_1\]
+
+* Data acquisition (DAQ) process
+[[./images/data-acquisition-process.png]]
+
+** Sensing element
+The sensing element is the element in contact with the process and gives an output which depends in some ways on the variables to be measured.
+
+Examples:
+- Thermocouple: Measured E.M.F in \(\unit{mV}\) depends on temperature.
+- Strain gauge: Its resistance depends on mechanical strain.
+
+** Signal conditioning element
+The signal conditioning element takes the output of the sensing element and converts it into a form more suitable for further processing, usually a DC voltage, a DC current or frequency signal.
+
+Examples:
+- An amplifier which amplifies \(\unit{mV}\) to $\unit{V}$.
+- Wheatstone bridge that converts impedance change into voltage change.
+
+** Signal processing element
+The signal processing element takes the output of the signal conditioning element and converts it into a form more suitable for presentation.
+
+Examples:
+- Analogue-to-Digital converter which converts a voltage into a digital form.
+- Computer which calculates the desirable measurement from raw data, like:
+  - The mass of gas from flow rate and density.
+  - Correction for non-linearity.
+
+** Data presentation element
+The data presentation element presents the measured value in a form which can be easily recognised by the observer.
+
+Examples:
+- Visual Display Unit (VDU)
+- Dial or pointer-scale indicator
+
+** Examples of the DAQ process
+[[./images/data-acquisition-process-examples.png]]
+
+@@latex: \newpage@@
+
+* Direct current motor
+
+** Permanent magnet or brushed DC motors
+- The stator, which is the external shell containing the components of the DC motor, is fixed in place.
+- The rotor, which is the rotating internal part inside the stator, rotates to produce the movement.
+- The motor works based on Fleming's left-hand rule.
+
+[[./images/brushed-dc-motor.png]]
+
+@@latex: \newpage@@
+
+** Brushless DC motor
+- It has the same body as a brushed DC motor, with a permanent magnet rotor on the inside and a fixed stator with rotating magnetic fields.
+- It needs to know the exact angular position of the rotor to excite the correct coils. This is usually done with Hall effect sensors.
+
+[[./images/brushless-dc-motor-diagram.png]]
+[[./images/brushless-dc-motor.png]]
+
+** Brushless vs brushed DC motors
+#+ATTR_LATEX: :align m{16em}|m{16em}
+| Brushless                                                                                     | Brushed                                                                                |
+| /                                                                                             | <                                                                                      |
+|-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------|
+| Simple maintenance                                                                            | Low cost thanks to the simple construction and control, and only two wires are needed. |
+|-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------|
+| High efficiency as there is no drop in voltage across the brush, and has low electrical noise | More robust in harsh environments as there are no electronic components                |
+|-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------|
+| Higher speed range                                                                            |                                                                                        |
+|-----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------|
+| Reduced size                                                                                  |                                                                                        |
+
+** Controlling DC motors
+[[./images/controlling-dc-motors.png]]
+
+*** Motion control fundamentals
+- Power $= VI = \tau \omega$
+- DC motor control
+  - Voltage controls velocity: $V \propto \omega$
+  - Current controls torque: $I \propto \tau$
+
+*** Power amplifiers
+Using power amplifiers is possible but is typically avoided. There is usually large power dissipation, and the amplifier usually overheats.
+
+*** Digital-to-analogue converter
+Digital to analogue converters (DACs) are expensive, so most MCUs are not equipped with a DAC.
+
+*** Uni-directional PWM control
+[[./images/uni-directional-pwm-control.png]]
+
+*** Bidirectional PWM control
+Below is a bidirectional DC motor control using a dual power supply.
+
+#+ATTR_LATEX: :scale 1
+[[./images/bidirectional-pwm-control.png]]
+
+*** Bidirectional PWM control with H-bridge circuit
+
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/bidirectional-pwm-control-with-h-bridge-clockwise.png]]
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/bidirectional-pwm-control-with-h-bridge-anti-clockwise.png]]
+#+end_center
+
+#+ATTR_LATEX: :align >{\centering\arraybackslash}m{0.49\textwidth} >{\centering\arraybackslash}m{0.49\textwidth}
+| Clockwise direction | Anti-clockwise direction |
+
+* Process and instrument control I/O
+- The microcontroller operates automatically and continuously under the control of the program stored in the ROM, no human intervention is required.
+  - The operation is changed only by changing the content of the ROM.
+- During execution, the microcontroller receives data from devices monitoring some physical states (temperature, speed, etc.), operates on the data and sends data or control signals to the process or instrument via output devices.
+
+*** Examples
+- Traffic red-light camera
+- Car airbag system
+- Fire and burglar alarm systems
+
+@@latex: \newpage@@
+
+* Keyboard entry and display I/O
+- Communication with human operators
+- The microcontroller executes a keyboard monitoring program stored in ROM.
+  - It reads the keyboard continuously until a key is actuated, then determines the actuated key, and executes the appropriate instructions.
+- Once the instructions are executed, it gets back to the keyboard monitoring program.
+
+*** Examples
+- Point-of-sale machines
+- Lift
+- Television
+
+@@latex: \newpage@@
+
+* Deterministic and random signals
+#+ATTR_LATEX: :scale 0.9
+[[./images/deterministic-vs-random-signals.png]]
+
+** Deterministic signals
+Deterministic signals are signals with values that can be predicted exactly, after an observation period $T_0$.
+
+** Random signals
+Random signals are signals that cannot be predicted exactly, after an observation period $T_0$. Essentially, the signal cannot be represented by a continuous algebraic equation $y(t)$ for the signal $y$ at time $t$.
+
+** Randomness
+- A real process has many parameters that cannot be exactly known, because of the randomness of nature.
+- An absolutely clean signal does not exist if the resolution is allowed to be infinitesimally small.
+- Observed randomness is dependent on resolution.
+
+*** Leaves falling from a tree example
+[[./images/leaves-falling-from-a-tree-signal.png]]
+
+With a resolution of:
+- $\qty{1}{m^2}$, the outcome is noisy
+- $\qty{100}{m^2}$, the outcome is clean
+
+@@latex: \newpage@@
+
+*** Voltage source example
+[[./images/voltage-source-signal.png]]
+
+With a resolution of:
+- $\qty{0.1}{V}$, the outcome is clean
+- $\qty{0.001}{V}$, the outcome is noisy
+
+* Sources of noise
+
+** Internal noise sources
+ - Johnson or thermal noise is random, temperature-induced motion of electrons and other charge carriers in resistors and semiconductors that give rise to a corresponding random voltage. The white noise is proportional to the absolute temperature in Kelvin (\(\unit{K}\)).
+ - Shot noise is the random fluctuations in the rate at which charge carriers diffuse across a junction of a transistor. It is another source of white noise.
+
+@@latex: \newpage@@
+
+** External noise and interference sources
+- AC power circuits operating at $\qty{220}{V}, \qty{50}{Hz}$ (US: $\qty{110}{V}, \qty{60}{Hz}$) produce "mains pick-up" or "hum" which is a corresponding sinusoidal interference signal in the measurement circuit.
+- Fluorescent lighting arcing at 2 times per cycle of the AC power. Arcing is the process of raising the potential to cause electrical current to flow between the anode and cathode through the inert gases inside the tube of a fluorescent light.
+- Radio frequency (RF) interference. Transmitters, welding equipment and electric arc furnaces can produce interference at frequencies of several $\unit{MHz}$.
+
+* Input signal conditioning elements
+- Types of input signals that can be conditioned:
+  - DC voltage
+  - DC current
+  - Variable frequency AC voltage
+- Examples:
+  - Deflection bridges
+  - Operational amplifiers (Op-Amp)
+  - Filters
+
+** Deflection bridges
+- Deflection bridges measure the deflection of a material by using strain gauges that change their resistance when there is strain on the gauge.
+
+*** Quarter bridge
+[[./images/quarter-bridge-deflection-bridge.png]]
+
+The voltage output is given by \(V_g\):
+\[V_g = V_s \left(\frac{1}{1 + \frac{R_4}{R_1}} - \frac{1}{1 + \frac{R_3}{R_2}} \right)\]
+
+*** Half bridge
+Half bridges have double the sensitivity of the quarter bridges.
+[[./images/half-bridge-deflection-bridge.png]]
+
+*** Full bridge
+Compared to half bridges, full bridges simplify the equation used to calculate the voltage output, and their output is more linear.
+[[./images/full-bridge-deflection-bridge.png]]
+
+@@latex: \newpage@@
+
+** Operation amplifiers (Op-Amp)
+- Operational amplifiers (op-amps) are used as the basic building blocks for instrumentation and power amplifiers.
+- Types of op-amps:
+  - Inverting
+  - Non-inverting
+  - Voltage follower
+  - Voltage adder
+  - Differential
+
+*** Inverting amplifier
+The voltage input is being amplified by the ratio $\frac{R_F}{R_{IN}}$ and is inverted.
+[[./images/inverting-amplifier.png]]
+\[V_{OUT} = \frac{-R_F V_{IN}}{R_{IN}}\]
+
+*** Non-inverting amplifier
+[[./images/non-inverting-amplifier.png]]
+\[V_{OUT} = \left(1 + \frac{R_F}{R_{IN}} \right)\]
+
+*** Voltage follower
+Voltage followers increase the current passing through them while keeping the voltage from the input.
+[[./images/voltage-follower.png]]
+\[V_{OUT} = V_{IN}\]
+
+*** Voltage adder
+Voltage adders add up all the input voltages and amplify the sum of the input voltage.
+[[./images/voltage-adder.png]]
+\[V_{OUT} = -R_F \left(\frac{V_1}{R_1} + \frac{V_2}{R_2} + \cdots + \frac{V_n}{R_n} \right)\]
+
+@@latex: \newpage@@
+
+*** Differential amplifier
+- Differential amplifiers amplify the difference between two voltage inputs.
+- A useful application of differential amplifiers is in removing background noise from a person speaking, which is a type of interference called common mode interference.
+- The microphone picks up both the person's voice and the background noise, then another microphone picks up only the background noise.
+- The differential amplifier is then used to amplify the difference between the two signals from the microphones, resulting in a clean signal of the person's voice.
+
+#+ATTR_LATEX: :scale 0.8
+[[./images/differential-amplifier.png]]
+
+#+ATTR_LATEX: :scale 0.8
+[[./images/differential-amplifier-alt.png]]
+\[V_{OUT} = \frac{R_F}{R_{IN}} \left(V_2 - V_1 \right)\]
+
+** Filters
+- A frequency selective filter is an element which transmit a certain selected range of frequencies and rejects all others.
+- An analogue filter is a network of resistors, capacitors and op amps to process continuous signals.
+- A digital filter is a computer programmed to process sampled values of a signal.
+- RC filters refer to filters that have both a resistor and a capacitor.
+
+[[./images/filtering-image.png]]
+
+*** Low and high pass filters (RC filters)
+[[./images/low-and-high-pass-filters.png]]
+
+@@latex: \newpage@@
+
+*** Passive low pass filters
+Passive low pass filters block all frequencies *above* the cut-off frequency $f_c$.
+[[./images/passive-low-pass-filter.png]]
+\[f_c = \frac{1}{2 \pi \tau} = \frac{1}{2 \pi RC}\]
+
+@@latex: \newpage@@
+
+*** Active low pass filters
+Active low pass filters behave exactly the same as passive ones, just that they increase the current passing through them as they have an op-amp in the circuit. They also block all frequencies *above* the cut-off frequency $f_c$.
+[[./images/active-low-pass-filter.png]]
+\[f_c = \frac{1}{2 \pi R_2 C}\]
+
+@@latex: \newpage@@
+
+*** Passive high pass filters
+Passive high pass filters block all frequencies *below* the cut-off frequency $f_c$.
+[[./images/passive-high-pass-filter.png]]
+\[f_c = \frac{1}{2 \pi \tau} = \frac{1}{2 \pi RC}\]
+
+@@latex: \newpage@@
+
+*** Active high pass filters
+Active low pass filters behave exactly the same as passive ones, just that they increase the current passing through them as they have an op-amp in the circuit. They also block all frequencies *below* the cut-off frequency $f_c$.
+[[./images/active-high-pass-filter.png]]
+\[f_c = \frac{1}{2 \pi R_1 C}\]
+
+@@latex: \newpage@@
+
+*** Band pass and band stop filters
+- Band pass filters allow frequencies within the band to pass through, blocking out all other frequencies.
+- Band stop filters block out frequencies within the band, allowing all other frequencies to pass through.
+[[./images/band-pass-and-band-stop-filters.png]]
+
+@@latex: \newpage@@
+
+** Averaging
+[[./images/averaging-diagram.png]]
+[[./images/averaging-detailed-diagram.png]]
+For a repetitive measure signal affected by random noise, suppose that:
+- It has a period $T$, a total of $p$ cycles and $N$ samples in each cycle, giving $pN$ samples in total.
+- For each sample, there are $p$ number of corresponding samples from each cycle.
+- The average value of the \(i\)-th sample is:
+  \[y_i^{AV} = \frac{1}{p} y_{i_1} + y_{i_2} + \ldots + y_{i_p}, i = 1, \ldots, N\]
+
+Since the noise is random, that means it has zero mean, which means that taking the average of the signal over time will effectively remove the noise.
+
+@@latex: \newpage@@
+
+* Output signal conditioning elements
+Output signal conditioning elements are to convert the output of the MCU into a form suitable for interfacing with the output devices.
+
+Some suitable forms are:
+- Analogue signal: voltage or current
+- Higher voltage
+- Higher current
+- Alternating current
+
+** Digital-to-Analogue converter (DAC)
+- The simplest type of digital-to-analogue converter is a resistor ladder network connected to an inverting op-amp circuit.
+  [[./images/digital-to-analogue-converter.png]]
+
+@@latex: \newpage@@
+
+*** Example
+- Consider a 4-bit output of 0001, the analogue circuit equivalent would be:
+  [[./images/digital-to-analogue-converter-analogue-circuit-equivalent-of-0001.png]]
+- Using voltage division:
+  \[V_0 = 0.5 V_1 \quad V_1 = 0.6 V_2 \quad V_2 = 0.5 V_3\]
+- Therefore, \(V_0 = 0.125 V_3 = 0.125 V_s\).
+- $V_0$ is the input to the inverting op-amp, which has a gain of $\frac{-R}{2R} = -0.5$.
+- Therefore, the analogue output voltage of input 0001 is \(V_{out_0} = -0.0625V_s\)
+- The analogue output voltage for the binary input is:
+  - 0001 is \(V_{out_1} = - 0.0625 V_s\)
+  - 0010 is \(V_{out_1} = - 0.125 V_s\)
+  - 0100 is \(V_{out_2} = - 0.125 V_s\)
+  - 1000 is \(V_{out_3} = - 0.125 V_s\)
+- The output for any combination of the four bits is:
+  \[V_{out} = b_3 V_{out_3} + b_2 V_{out_2} + b_1 V_{out_1} + b_0 V_{out_0}\]
+
+* Arduino Uno MCU
+
+** Specifications
+| Microcontroller      | ATmega328                          |
+| /                    | <                                  |
+| Digital I/O          | 14 (of which 6 provide PWM output) |
+| Analogue Input       | 6                                  |
+| Microprocessor speed | 16 MHz                             |
+| Flash (Memory)       | 32 kB                              |
+| SRAM (Memory)        | 2 kB                               |
+| EEPROM (Memory)      | 1 kB                               |
+| Operating voltage    | 5 V                                |
+| Input voltage        | 7 - 12 V                           |
+| Physical dimensions  | 68.6 x 53.4 mm                     |
+| Weight               | 25 g                               |
+
+** Arduino Uno and ATmega328
+Arduino Uno is an MCU and ATmega328 is also an MCU. Because Arduino uses OEM (Original Equipment Manufacturer) microcontrollers and re-engineers them into different architectures (i.e. memory, bus, I/O configuration, communication integrated chips (IC), etc.) for their own customised needs.
+
+** Number of bits
+- ATmega328 is an 8-bit MCU, i.e. Arduino Uno is an 8-bit MCU
+  - Amount of data processed at one time = 8 bits = 1 byte
+- 16-bit MCUs would process twice the amount of data, while 32-bit MCUs would process 4 times the amount of data and 64-bit MCUs would process 8 times the amount of data
+- N-bit MCU has:
+  - N-bit word (variable) size, 2^N different possible values
+  - N-bit instruction size, 2^N number of instructions or commands
+
+@@latex: \newpage@@
+
+** Program execution speed
+- Arduino Uno microprocessor speed is \(\qty{16}{MHz}\)
+- Program execution speed is not equal to the driven clock speed or microprocessor speed.
+- The microprocessor runs at a higher frequency than all other components, i.e. memory, bus I/O, etc.
+- Program execution speed is heavily influenced by the slowest components.
+
+** Memory
+
+*** \(\qty{2}{kB}\) of RAM
+This RAM is used to store runtime data.
+
+*** \(\qty{1}{kB}\) of EEPROM
+This EEPROM is used to store settings and fixed parameters between resets.
+
+*** \(\qty{32}{kB}\) of flash memory
+- This flash memory acts like a hard drive to store programs and data.
+- The programs uploaded into the Arduino are stored here.
+- \(\qty{0.5}{kB}\) is reserved for the bootloader program.
+
+** Components
+[[./images/arduino-uno-components.png]]
+
+*** Other components
+- General or Digital Input/Output pins
+  - 14 pins in total
+  - Digital signal has two states:
+    - LOW, or 0, which refers to \(\qty{0}{V}\)
+    - HIGH, or 1, which refers to \(\qty{5}{V}\)
+- Analogue-to-Digital Converter (ADC) pins
+  - 6 pins in total
+  - These are used to convert analogue (continuous) signals into their digital equivalents.
+- Power supply
+  - The Arduino accepts 6 - 20 \(\unit{V}\) of DC input, but 7 - 12 \(\unit{V}\) DC is recommended.
+
+@@latex: \newpage@@
+
+** Hardware interrupts
+INT 0 pin (digital pin 2) and INT 1 (digital pin 3).
+\\
+
+Function to attach the interrupt service routine:
+
+~attachInterrupt(interrupt, ISR, mode)~
+- ~interrupt~ is 0 (digital pin 2) or 1 (digital pin 3)
+- ~ISR~ is the interrupt service routine, which is a function that takes no parameters and returns nothing
+- Mode:
+  - LOW means to trigger the interrupt when the interrupt pin is LOW
+  - CHANGE means to trigger the interrupt when the pin changes state
+  - RISING means to trigger the interrupt when the pin goes from LOW to HIGH
+  - FALLING means to trigger the interrupt when the pin goes from HIGH to LOW
+
+** Pinout
+[[./images/arduino-uno-pinout.png]]
+
+@@latex: \newpage@@
+
+* Input and output interfacing
+[[./images/input-and-output-interfacing-diagram.png]]
+
+** MCU-initiated transfer
+
+*** Unconditional transfer
+I/O device must always be ready for communication.
+
+Examples:
+- To input an 8-bit data word from a set of 8 switches
+- Output data to LEDs
+
+[[./images/unconditional-transfer-diagram.png]]
+
+*** Conditional transfer
+
+#+ATTR_LATEX: :scale 0.55
+[[./images/conditional-transfer-process-diagram.png]]
+- Communication takes place only when the I/O device is ready. The Arduino performs handshaking to transfer data to the I/O device.
+- The MCU must read the status information from the I/O device (1).
+- The MCU then tests the status to see if the device is ready for data transfer (2).
+- If the device isn't ready for data transfer, remain in the "wait loop" until the device is ready.
+- If the device is ready, perform the data transfer (3).
+- Handshaking is needed for the data to be transferred.
+- The data acquisition subroutine may be accessed at any point in the user's program.
+- However, there are some disadvantages to conditional transfer:
+  - Needing to wait for I/O devices to be ready.
+  - MPU can do other things while waiting, especially when I/O devices are slow.
+
+*** Example of conditional transfer
+[[./images/conditional-transfer-example.png]]
+- The circuit converts analogue voltage input $V_A$ so an 8-bit output ($D_7$ - $D_0$)
+- Conversion process is initiated by a pulse to START
+- Conversion time, $t_c$ can be up to $\qty{100}{\micro s}$
+- End-of-conversion (EOC) is LOW during conversion
+- EOC is HIGH when conversion is completed
+- When ENABLE is HIGH, make the latched binary output available
+- When ENABLE is LOW, the output is at the High-Z state (disconnected)
+
+Steps to use the circuit above:
+1. MCU issues a START pulse to the ADC to convert $V_A$ to its digital equivalent
+2. MCU polls the status of EOC output until conversion is completed
+3. MCU reads the ADC output into one of its internal registers
+
+** Device-initiated transfer
+
+*** Interrupt transfer
+- Handshaking is required for an interrupt transfer.
+- The I/O device sends a signal to an interrupt input to inform the MCU it is ready for data transfer.
+- Hardware interrupts are triggered by a state (HIGH or LOW) or a change in state (HIGH to LOW or LOW to HIGH).
+
+[[./images/interrupt-transfer-diagram.png]]
+
+- When an interrupt occurs, all the important registers content which define the current state of the MCU are immediately stored away in a dedicated memory location, before going to the interrupt service routine (ISR).
+- Upon returning from the ISR, the MCU returns to the previous state by restoring the contents of the important registers.
+
+** Polling vs interrupting
+
+*** Advantages of polling
+- Ease of software implementation
+
+*** Advantages of interrupting
+- Multitasking, as the MCU can process other commands while waiting for an I/O device to be ready.
+- Acquisition accuracy for fast acquisition tasks. For example, like reading an encoder on a fast rotating motor shaft. These pulses are too short for the polling method to capture, resulting in missing pulses.
+
+* Determining the output of switches
+1. Look at what the ends of the switch is connected to.
+2. If the switch has one end connected to ground, that means when it is closed, the electric potential will decrease to zero, which means the switch will output a "LOW".
+3. If the switch has one end connected to a power output, like +5V or something similar, that means when it is closed, the electric potential will increase to the potential of the power output, which means the switch will output a "HIGH".
+4. The voltage is considered high when it is above 3V, low if it is under 0.8V, and indeterminate if it is between 0.8V to 3V.
+
+* Breadboard wiring
+Each line in the image below represents a line of slots that are connected.
+[[./images/breadboard-wiring.jpg]]
+
+* Resistor colour code chart
+[[./images/resistor-colour-code-chart.jpg]]
+
+@@latex: \newpage@@
+
+* Calculating voltage resolution
+\[\text{Voltage resolution} = \frac{V_{max} - V_{min}}{2^n - 1}\]
+
+Where:
+- Voltage resolution is the change in voltage for a single step
+- $V_{max}$ is the maximum voltage value
+- $V_{min}$ is the minimum voltage value
+- $n$ is the maximum resolution of the Arduino in bits. For the Arduino Uno, this value is 10 as [[https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/][the maximum resolution of the Arduino Uno is 10 bits]].
+
+** Example
+For a reference high voltage of 5V and a reference low voltage of 0V and using an Arduino Uno:
+\[\text{Voltage resolution} = \frac{5 - 0}{2^{10} - 1} = \qty{0.0048828125}{V}\]
+
+@@latex: \newpage@@
+
+* Parsing multiple bytes into a single integer
+- Read the data from the first byte and the second byte.
+- If the first byte is the lower byte, just leave it be.
+- Otherwise, the first byte is the higher byte, so bitwise shift the first byte left by 8 bits, i.e. ~first_byte << 8~, as a byte is 8 bits long.
+- If the second byte is the higher byte, bitwise shift the second byte left by 8 bits, i.e. ~second_byte << 8~, as a byte is 8 bits long.
+- Otherwise, the second byte is the lower byte, so just leave it be.
+- Do a bitwise OR operation on the first byte and second byte to get back the final 16-bit integer.
+- The process is the same for parsing from larger amounts of data, like 2 bytes, just that the bit shift needs to be 16 bits as 2 bytes is 16 bits. The end result of this parsing would be a 32-bit integer.
+- The process is also the same for parsing into larger integer representations, like 32-bit integers, just that the most significant byte will have to be shifted by 32 bits to the left, the second most significant byte will be shifted by 24 bits to the left, and so on, subtracting 8 bits from the number of bits to shift to the left every time.

@@ -1,0 +1,1386 @@
+#+TITLE: Mechanics Of Materials Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{siunitx}
+
+* Definitions
+
+** Member
+An object that experiences stress. It can be something like a rod.
+
+** Two-force member
+A two-force member just means that there is no transverse load between the pinned ends of an object.
+
+** Axial loading
+Axial loading just means that the object is loaded on a plane parallel to the object's axis. For example, a beam is axially loaded when the forces are on the ends of the beam.
+
+** Normal stress (\(\sigma\))
+The force intensity on a section of an object due to axial loading is called normal stress. It is called normal because the force is perpendicular to the plane of the exposed section where the object is cut.
+
+** Centroid
+The centroid is the centre of the object.
+
+** Centric (concentric) loading
+- A uniform distribution of stress in a section infers that the line of action for the result of the internal forces passes through the *centroid* of the section.
+- A uniform distribution of stress is only possible if the concentrated loads on the end sections of two-force members are applied at the centre of the sections at the ends of the object.
+
+\newpage
+
+** Eccentric loading
+- Axial loading which does not pass through the centroid of a section produces internal forces equivalent to an axial force and a bending moment.
+- If a two-force member is eccentrically loaded, then the resultant of the stress distribution in a section must yield an axial force and a moment.
+- The stress distributions in eccentrically loaded members cannot be uniform or symmetric.
+- The direction of the force and the resultant moment can be found through equilibrium.
+
+** Shearing stress (\(\tau\))
+- Two forces are applied transversely to an object results in a shearing force
+- The resultant of the internal shear force distribution is known as the shear of the section and is equal to the load.
+
+\[\tau_{avg} = \frac{F}{A}\]
+
+Where:
+- $\tau_{avg}$ is the average shearing stress
+- $F$ is the shear force
+- $A$ is the cross-sectional area of the shearing surface, which is the area of the surface that is being sheared.
+
+For a *single shear*, the formula for shearing stress is the above. However, for *double* shear, the force needs to be divided by 2.
+
+\newpage
+
+** Bearing stress (\(\sigma_b\))
+- Bolts, rivets, and pins create stresses on the points of contact of the objects.
+- The average force intensity is called bearing stress.
+
+\[\sigma_b = \frac{F}{A} = \frac{F}{t \, d}\]
+
+Where:
+- $\sigma_b$ is the bearing stress
+- $F$ is the force applied by the pin
+- $A$ is the projected area
+- $t$ is the thickness of the material the pin is in contact with
+- $d$ is the diameter of the pin
+
+\newpage
+
+** Factor of safety (\(FS\))
+Factor of safety considerations:
+- Uncertainty in material properties
+- Uncertainty of loadings
+- Uncertainty of analyses
+- Number of loading cycles
+- Types of failure
+- Maintenance requirements and deterioration effects
+- Importance of member to structure integrity
+- Risk to life and property
+- Influence on machine function
+
+\[FS = \frac{\sigma_u}{\sigma_{all}}\]
+
+Where:
+- $FS$ is the factor of safety
+- $\sigma_u$ is the ultimate stress
+- $\sigma_all$ is the allowable stress
+
+** Normal strain (\(\varepsilon\))
+\[\varepsilon = \frac{\delta}{L}\]
+
+Where:
+- $\varepsilon$ is the normal strain
+- $\delta$ is the extension of the object under strain
+- $L$ is the length of the object
+
+** Elastic behaviour
+Elastic behaviour is when the strain disappears when the stress is removed. The largest stress for which this occurs is called the elastic limit.
+
+** Plastic (inelastic) behaviour
+Plastic behaviour is when the strain does not return to zero after the stress is removed.
+
+** Hooke's Law: Modulus of Elasticity (Stiffness) (\(E\))
+For uniaxial stress:
+\[\sigma = E \varepsilon \qquad E = \frac{\sigma}{\varepsilon}\]
+
+Where:
+- $\sigma$ is the normal stress
+- $\varepsilon$ is the normal strain
+- $E$ is Young's Modulus or Modulus of Elasticity or Elastic Modulus
+
+The strength of a material is affected by alloying, heat treating, and manufacturing process but the stiffness of a material (Modulus of Elasticity) is not.
+
+** Fatigue
+- Fatigue properties are shown on stress vs number of cycles to failure graphs.
+- A member may fail due to fatigue at stress levels significantly below the ultimate strength if subjected to many loading cycles.
+- When the stress is reduced below the *endurance limit*, fatigue failures do not occur for any number of cycles.
+
+\newpage
+
+** Poisson's ratio (\(\nu\))
+- For a slender bar subjected to axial loading:
+  \[\varepsilon_x = \frac{\sigma_x}{E} \qquad \sigma_y = \sigma_z = 0\]
+
+- The elongation in the \(x\)-direction is accompanied by a contraction in the other directions. Assuming that the material is isotropic (no directional dependence),
+  \[\varepsilon_y = \varepsilon_z \ne 0\]
+
+Poisson's ratio is defined as:
+\[\nu = \left| \frac{\text{lateral strain}}{\text{axial strain}} \right| = - \frac{\varepsilon_y}{\varepsilon_x} = - \frac{\varepsilon_z}{\varepsilon_x}\]
+
+Where:
+- $\nu$ is the Poisson's ratio
+- $\varepsilon_x$ is the normal strain on the object in the \(x\)-direction
+- $\varepsilon_y$ is the normal strain on the object in the \(y\)-direction
+- $\varepsilon_z$ is the normal strain on the object in the \(z\)-direction
+
+** Generalised Hooke's Law
+\[\varepsilon_x = + \frac{\sigma_x}{E} - \frac{\nu \sigma_y}{E} - \frac{\nu \sigma_z}{E}\]
+\[\varepsilon_y = + \frac{\sigma_y}{E} - \frac{\nu \sigma_x}{E} - \frac{\nu \sigma_z}{E}\]
+\[\varepsilon_z = + \frac{\sigma_z}{E} - \frac{\nu \sigma_x}{E} - \frac{\nu \sigma_y}{E}\]
+
+Where:
+- $\varepsilon$ is the normal strain on the object in the respective $x$, $y$ and $z$ directions.
+- $\nu$ is the Poisson's ratio
+- $E$ is the elastic modulus
+
+** Shearing strain (\(\gamma\))
+- A cubic element subjected to a shearing stress will deform into a rhomboid. The corresponding *shear strain* is quantified in terms of the change in angle between the sides.
+- Shearing stress in one plane only affects shearing strain in the same plane.
+- For small strains, \(\tan \gamma \approx \gamma\):
+  \[\tau_{xy} = G \gamma_{xy}\]
+  \[\tau_{yz} = G \gamma_{yz}\]
+  \[\tau_{zx} = G \gamma_{zx}\]
+
+  Where:
+  - $\tau$ is the shearing stress in the respective planes
+  - $G$ is the shear modulus
+  - $\gamma$ is the *shearing strain*, or the change in angle *in radians* due to shearing in the respective planes
+
+** Modulus of rigidity (Shear modulus) (\(G\))
+\[G = \frac{\tau}{\gamma}\]
+
+  Where:
+  - $G$ is the modulus of rigidity or the shear modulus
+  - $\tau$ is the shearing stress
+  - $\gamma$ is the *shearing strain*, or the change in angle *in radians* due to shearing
+
+\[G = \frac{E}{2(1 + \nu)}\]
+
+Where:
+- $G$ is the shear modulus
+- $E$ is the elastic modulus
+- $\nu$ is Poisson's ratio
+
+** Net torque due to internal stresses (\(T\))
+The net internal shearing stress is an internal torque that is *equal and opposite to the applied torque*.
+
+\[T = \int \rho \, dF = \int \rho (\tau dA)\]
+
+Where:
+- $T$ is the internal torque
+- $\rho$ is the radius at any point
+- $dF$ is the force on an infinitesimal element of the cross-sectional area
+- $\tau$ is the internal shearing stress on the object
+- $dA$ is an infinitesimal element of the cross-sectional area
+
+Unlike the normal stress due to axial loads, the distribution of shearing stresses due to torsional loads *cannot be assumed uniform*.
+
+\newpage
+
+** Shearing strain due to torsion (\(\gamma\))
+\[L \gamma = \rho \phi \text{ or } \gamma = \frac{\rho \phi}{L}\]
+
+Where:
+- $L$ is the length of the shaft
+- $\gamma$ is the *shearing strain*, or the change in angle *in radians* due to shearing
+- $\rho$ is the radius at any point
+- $\phi$ is the twisting angle
+
+Shearing strain is proportional to the twisting angle and the radius of the shaft.
+\\
+
+As $\rho \rightarrow c$,
+\[\gamma_{max} = \frac{c \phi}{L}\]
+\[\gamma = \frac{\rho}{c} \gamma_{max}\]
+
+Where:
+- $\gamma_{max}$ is the *maximum shearing strain*, or the maximum change in angle *in radians* due to shearing
+- $c$ is the outer radius of the shaft
+- $L$ is the length of the shaft
+- $\gamma$ is the *shearing strain*, or the change in angle *in radians* due to shearing
+- $\rho$ is the radius at any point
+- $\phi$ is the twisting angle
+
+*** Shearing stress in elastic range (\(\tau\))
+Multiplying the previous equation by the shear modulus:
+\[G \gamma = \frac{\rho}{c} G \gamma_{max}\]
+
+Where:
+- $G$ is the shear modulus
+- $\gamma$ is the *shearing strain*, or the change in angle *in radians* due to shearing
+- $\rho$ is the radius at any point
+- $c$ is the outer radius of the shaft
+
+From Hooke's law, \(\tau = G \gamma\):
+\[\tau = \frac{\rho}{c} \tau_{max}\]
+
+Where:
+- $\tau$ is the shearing stress due to torsion
+- $\rho$ is the radius at any point
+- $c$ is the outer radius of the shaft
+- $\tau_{max}$ is the maximum shearing stress due to torsion
+
+The shearing stress due to torsion varies *linearly* with the *radial position* in the section.
+
+** Polar moment of inertia (\(J\))
+
+*** Solid circular shaft
+\[J = \frac{1}{2}\pi c^4 = \frac{1}{32}\pi d^4\]
+
+Where:
+- $J$ is the polar moment of inertia
+- $c$ is the outer radius of the shaft
+- $d$ is the diameter of the shaft
+
+*** Hollow circular shaft
+\[J = \frac{1}{2} \pi \left(r_2^4 - r_1^4 \right) = \frac{1}{32} \pi \left(d_2^4 - d_1^4 \right)\]
+
+Where:
+- $J$ is the polar moment of inertia
+- $r_2$ is the *external* radius
+- $r_1$ is the *internal* radius
+- $d_2$ is the *external* diameter
+- $d_1$ is the *internal* diameter
+
+** Elastic torsion formula
+\[\tau_{max} = \frac{Tc}{J}\]
+\[\tau = \frac{T \rho}{J}\]
+
+Where:
+- $\tau_{max}$ is the maximum shearing stress on the shaft
+- $T$ is the torque on the shaft
+- $c$ is the outer radius of the shaft
+- $J$ is the polar moment of inertia
+- $\tau$ is the shearing stress on the shaft
+- $\rho$ is the radius at any point on the shaft
+
+\newpage
+
+** Angle of twist in elastic range (\(\phi\))
+\[\phi = \frac{TL}{GJ}\]
+
+Where:
+- $\phi$ is the twisting angle
+- $T$ is the torque on the shaft
+- $L$ is the length of the shaft
+- $G$ is the shear modulus
+- $J$ is the polar moment of inertia
+
+If the torsional loading or shaft cross-section changes along the length, the angle of rotation is found as the sum of segment rotations.
+\[\phi = \sum_i \frac{T_i L_i}{G_i J_i}\]
+
+Where:
+- $\phi$ is the twisting angle
+- $T_i$ is the torque on the respective part of the shaft
+- $L_i$ is the length of the respective part of the shaft
+- $G_i$ is the shear modulus for the respective part of the shaft
+- $J_i$ is the polar moment of inertia for the respective part of the shaft
+
+** Power due to torque (\(P\))
+\[P = T \omega = 2 \pi f T\]
+
+Where:
+- $P$ is the power due to the applied torque
+- $T$ is the torque applied
+- $\omega$ is the angular velocity
+- $f$ is the frequency
+- $t$ is the period
+
+*** Torque in terms of power (\(T\))
+\[T = \frac{P}{\omega} = \frac{P}{2 \pi f}\]
+
+Where:
+- $P$ is the power due to the applied torque
+- $T$ is the torque applied
+- $\omega$ is the angular velocity
+- $f$ is the frequency
+- $t$ is the period
+
+** Bending moment (\(M\))
+Bending moment is the reaction induced in a structural element when an external force or moment is applied to the element, causing the element to bend.
+
+** Pure bending
+Pure bending is a condition of stress where a bending moment is applied to a beam without the simultaneous presence of axial, shear or torsional forces. Basically, pure bending just means that the object *only* experiences bending.
+
+** Transverse loading
+Concentrated or distributed transverse load produces internal forces equivalent to a shear force and a bending moment.
+
+** Principle of superposition
+The normal stress due to pure bending may be combined with the normal stress due to axial loading, and the shearing stress due to shear loading, to find the complete state of stress.
+
+** Neutral axis (NA)
+The neutral axis is the axis of the *bending moment*. The neutral axis passes through the centroid of the cross-section.
+
+** Normal strain due to bending (\(\varepsilon_x\))
+\[\varepsilon_x = - \frac{y}{c} \left| \varepsilon_m \right|\]
+
+Where:
+- $\varepsilon_x$ is the normal strain due to the bending moment
+- $y$ is the distance from the neutral axis to the point of interest
+- $c$ is the distance from the centroid of the object to the outer surface
+- $\varepsilon_m$ is the maximum normal strain due to the bending moment
+
+*** Maximum normal strain (\(\varepsilon_m\))
+\[\varepsilon_m = \frac{c}{\rho}\]
+\[\rho = \frac{c}{\left| \varepsilon_m \right|}\]
+
+Where:
+- $\varepsilon_m$ is the maximum normal strain due to the bending moment
+- $c$ is the distance from the centroid of the object to the outer surface
+- $\rho$ is the distance from the centroid to the centre of the circle
+
+\newpage
+
+** Normal stress due to bending (\(\sigma_x\))
+- The stress due to bending is always uniaxial.
+- The stress due to bending must be parallel to the axis of the object, which is in the x-direction.
+
+For a linearly elastic material:
+\[\sigma_x = E \varepsilon_x = - \frac{y}{c} E \varepsilon_m\]
+\[\sigma_x = - \frac{y}{c} \sigma_m\]
+\[\sigma_x = \frac{My}{I}\]
+
+Where:
+- $\sigma_x$ is the normal stress due to the bending moment
+- $E$ is the elastic modulus
+- $\varepsilon_x$ is the normal strain due to the bending moment
+- $y$ is the distance from the neutral axis to the point of interest
+- $c$ is the distance from the centroid of the object to the outer surface
+- $M$ is the total bending moment
+- $\varepsilon_m$ is the maximum normal strain due to the bending moment
+- $\sigma_m$ is the maximum normal stress due to the bending moment
+
+\newpage
+
+*** Maximum normal stress (\(\sigma_m\))
+\[\sigma_m = \left| \frac{Mc}{I} \right| = \left| \frac{M}{S} \right|\]
+
+Where:
+- $\sigma_m$ is the maximum normal stress due to the bending moment
+- $M$ is the total bending moment
+- $c$ is the distance from the centroid of the object to the outer surface
+- $I$ is the second moment of area
+- $S$ is the section modulus, where \(S = \frac{I}{c}\)
+
+** Second moment of area (\(I\))
+The second moment of area is *always perpendicular* to the shear force.
+
+*** Rectangular section
+\[I_{\text{NA}} = \frac{1}{12} bh^3\]
+
+Where:
+- $I_{\text{NA}}$ is the second moment of area about the neutral axis
+- $b$ is the base of the rectangular section
+- $h$ is the height of the rectangular section
+
+*** Solid circular shaft
+\[I_{\text{NA}} = \frac{1}{4}\pi c^4 = \frac{1}{64}d^4 = \frac{J}{2}\]
+
+Where:
+- $I_{\text{NA}}$ is the second moment of area about the neutral axis
+- $c$ is the radius of the circular shaft
+- $d$ is the diameter of the circular shaft
+- $J$ is the polar moment of inertia
+
+*** Hollow circular shaft
+\[I_{\text{NA}} = \frac{1}{4}\pi \left(r_2^4 - r_1^4 \right) = \frac{1}{64}\pi \left(d_2^4 - d_1^4 \right) = \frac{J}{2}\]
+
+Where:
+- $I_{\text{NA}}$ is the second moment of area about the neutral axis
+- $r_2$ is the *external* radius
+- $r_1$ is the *internal* radius
+- $d_2$ is the *external* diameter
+- $d_1$ is the *internal* diameter
+- $J$ is the polar moment of inertia
+
+** Section modulus (\(S\))
+- A beam with a larger section modulus will have a lower maximum stress.
+- A rectangular beam with greater depth will be more effective in resisting bending.
+- Structural steel beams are designed to have a large section modulus.
+
+\[S = \frac{I_{\text{NA}}}{c}\]
+
+Where:
+- $S$ is the section modulus
+- $I_{\text{NA}}$ is the second moment of area about the neutral axis
+- $c$ is the distance from the centroid of the object to the outer surface
+
+** Parallel axis theorem
+\[I = \sum \left(\bar{I} + Ad^2 \right) = \sum \left(\frac{1}{12} bh^3 + Ad^2 \right)\]
+
+Where:
+- $I$ is the second moment of area of the object
+- $\bar{I}$ is the second moment of area for an *individual* section of the object
+- $A$ is the area of an *individual* section of the object
+- $d$ is the distance from the centroid of the *individual* section from the centroid of the whole object
+- $b$ is the base of an *individual* section of the object
+- $h$ is the height of an *individual* section of the object
+
+** Stress due to eccentric axial loading (\(\sigma\))
+Stress due to eccentric loading is found by superposing the uniform stress due to a concentric load and the linear stress distribution due to the bending moment.
+\begin{align*}
+\sigma &= \sigma_{\text{concentric}} + \sigma_{\text{bending}} \\
+&= \frac{P}{A} \pm \frac{My}{I}
+\end{align*}
+
+** Concentrated loads
+Concentrated loads are basically point loads.
+
+** Distributed loads
+Distributed loads are loads distributed over an area. Basically any load that isn't a point load or a concentrated load is a distributed load.
+
+** Force
+The word "force" just means a force-type quantity, which includes a concentrated force, moment or torque.
+
+** Statically determinate beams
+- Statically *determinate* beams are beams that have *only* the necessary amount of support.
+- Using the equilibrium equations for forces and moments is *sufficient* to find all the unknowns of a statically determinate beam.
+
+[[./images/statically-determinate-beams.png]]
+
+** Statically indeterminate beams
+- Statically *indeterminate* beam have *more* support than is strictly necessary.
+- Using the equilibrium equations for forces and moments is *insufficient* to find all the unknowns of a statically indeterminate beam.
+- Additional information is usually required to figure out all the unknowns of a statically indeterminate beam.
+
+[[./images/statically-indeterminate-beams.png]]
+
+\newpage
+
+** First moment of area about the neutral axis (\(Q\))
+\[Q = \int_{A} y \, dA = A \bar{y}\]
+
+Where:
+- $Q$ is the first moment of area about the neutral axis
+- $y$ is the distance from the neutral axis from a point on the object
+- $dA$ is the infinitesimal area element
+- $A$ is the area of the region of interest, which is the surface the force is acting on
+- $\bar{y}$ is the distance from the neutral axis to the centroid of the area $A$
+
+*** For circular sections
+Centroid of semicircular area is:
+\[\bar{y} = \frac{4r}{3 \pi}\]
+
+For a *solid* section:
+\[Q = A \bar{y} = \frac{\pi r^2}{2} \frac{4r}{3 \pi} = \frac{2r^3}{3}\]
+
+For a *hollow* section:
+\[Q = \frac{2}{3} \left(r_2^3 - r_1^3 \right)\]
+
+Where:
+- $Q$ is the first moment of area bout the neutral axis
+- $\bar{y}$ is the distance from the neutral axis to the centroid of the area $A$
+- $r$ is the radius of the semicircle
+- $r_2$ is the outer radius of the semicircle
+- $r_1$ is the inner radius of the semicircle
+
+** Shear force due to bending
+\[F_{shear} = \frac{MQ}{I}\]
+
+Where:
+- $F_{shear}$ is the shear force on the object. The direction of the force depends on whether the region is in compression or tension.
+- $M$ is the total bending moment
+- $Q$ is the first moment of area about the neutral axis
+- $I$ is the second moment of area of the object
+
+** Shear flow (force per unit length) (\(q\))
+\[q = \frac{dF}{dx} = \frac{dM}{dx} \frac{Q}{I} = \frac{VQ}{I}\]
+
+Where:
+- $q$ is the shear flow
+- $\frac{dF}{dx}$ is the shear force per unit length
+- $\frac{dM}{dx}$ is the bending moment per unit length
+- $Q$ is the first moment of the area of interest
+- $I$ is the second moment of area of the entire section about the neutral axis
+- $V$ is the total shear force at the section of interest
+
+\newpage
+
+** Shearing stress due to bending (\(\tau\))
+\[\tau = \frac{q}{t} = \frac{VQ}{It} = \frac{VA \bar{y}}{It}\]
+
+Where:
+- $\tau$ is the shearing stress due to bending
+- $q$ is the shear flow, or the force per unit length
+- $t$ is the width of the imaginary cut of interest. For hollow circular shafts, $t$ is *twice the thickness of the shaft*, unless the *cut area* is only as thick as the *shaft thickness*, then it's just the *thickness of the shaft*.
+- $V$ is the total shear force at the section of interest
+- $Q$ is the first moment of the area of interest
+- $I$ is the second moment of area of the entire section about the neutral axis
+- $A$ is the area of interest
+- $\bar{y}$ is the distance from the neutral axis to the centroid of the area $A$
+
+** Plane stress
+Plane stress is a state of stress where 2 faces of a cubic element is free of stress. The state of stress is defined by:
+\[\sigma_x, \sigma_y, \tau_{xy} \text{ and } \sigma_z = \tau_{zx} = \tau_{zy} = 0\]
+
+*** Examples
+- Thin plate subjected to forces acting in the mid-plane of the plate.
+- Any point on free surface not subjected to an external force.
+
+\newpage
+
+** Stress transformation equations
+
+*** Sign conventions
+- The normal stress (\(\sigma\)) is *positive* if it is tensile.
+- The shearing stress (\(\tau\)) is *positive* if the line formed by the shearing stress has a *positive gradient*.
+- The rotation of the element (\(\theta\)) is positive when the element is rotated *anticlockwise* with respect to the \(x\)-axis.
+
+*** Normal stress (\(\sigma_{x'}\))
+\[\sigma_{x'} = \frac{\sigma_x + \sigma_y}{2} + \frac{\sigma_x - \sigma_y}{2} \cos 2 \theta + \tau_{xy} \sin 2 \theta\]
+
+Where:
+- $\sigma_{x'}$ is the normal stress of the element in the \(x\)-direction rotated $\theta$ degrees *anticlockwise*.
+- $\sigma_x$ is the normal stress of the element in the \(x\)-direction
+- $\sigma_y$ is the normal stress of the element in the \(y\)-direction
+- $\tau_{xy}$ is the shearing stress of the element in the $xy$ plane.
+
+Replacing $\theta$ with \(\theta + 90\):
+\[\sigma_{y'} = \frac{\sigma_x + \sigma_y}{2} + \frac{\sigma_x - \sigma_y}{2} \cos 2 \theta - \tau_{xy} \sin 2 \theta\]
+
+Where:
+- $\sigma_{y'}$ is the normal stress of the element in the \(y\)-direction rotated $\theta$ degrees *anticlockwise*.
+- $\sigma_x$ is the normal stress of the element in the \(x\)-direction
+- $\sigma_y$ is the normal stress of the element in the \(y\)-direction
+- $\tau_{xy}$ is the shearing stress of the element in the $xy$ plane.
+
+*** Shearing stress (\(\tau_{x'y'}\))
+\[\tau_{x'y'} = - \frac{\sigma_x - \sigma_y}{2} \sin 2 \theta + \tau_{xy} \cos 2 \theta\]
+
+Where:
+- $\tau_{x'y'}$ is the shearing stress of the element in the $xy$ plane rotated $\theta$ degrees *anticlockwise*.
+- $\sigma_x$ is the normal stress of the element in the \(x\)-direction
+- $\sigma_y$ is the normal stress of the element in the \(y\)-direction
+- $\tau_{xy}$ is the shearing stress of the element in the $xy$ plane.
+
+** Principal plane (\(\theta_p\))
+- The principal plane is the plane where the *normal stresses* are the maximum and the minimum.
+- To obtain the principal plane, differentiate the stress transformation equation for *normal stress* and equate it to 0.
+- The angle is measured with respect to the \(x\)-axis.
+- There are two answers to the equation below, and the second answer is just the *first answer plus* $\boldsymbol{90^{\circ}}$.
+- The angle between the principal plane (\(\theta_p\)) and the in-plane shearing stress plane (\(\theta_s\)) is $\boldsymbol{45^{\circ}}$.
+
+\[\tan 2 \theta_p = \frac{2 \tau_{xy}}{\sigma_x - \sigma_y}\]
+
+Where:
+- $\theta_p$ is the principal plane
+- $\sigma_x$ is the normal stress of the element in the \(x\)-direction
+- $\sigma_y$ is the normal stress of the element in the \(y\)-direction
+- $\tau_{xy}$ is the shearing stress of the element in the $xy$ plane.
+
+\newpage
+
+** Principal stresses (\(\sigma_{max, min}\))
+- $\sigma_{max}$ is the normal stress with more *tension*, and will be the maximum normal stress by default.
+- $\sigma_{min}$ is the normal stress with more *compression*.
+- There is *no shearing stress* on the principal element. Hence, on an element with no shearing stress, the normal stresses on the element must be the principal stresses.
+- Substituting the equation for the principal plane (\(\theta_p\)) into the stress transformation equation for *normal stress* will yield the equation below.
+
+\[\sigma_{max, min} = \frac{\sigma_x + \sigma_y}{2} \pm \sqrt{\left(\frac{\sigma_x - \sigma_y}{2} \right)^2 + \tau_{xy}^2}\]
+
+Where:
+- $\sigma_{max, min}$ are the principal stresses
+- $\sigma_x$ is the normal stress of the element in the \(x\)-direction
+- $\sigma_y$ is the normal stress of the element in the \(y\)-direction
+- $\tau_{xy}$ is the shearing stress of the element in the $xy$ plane.
+
+\newpage
+
+** In-plane shearing stress plane (\(\theta_s\))
+- The *in-plane* shearing stress plane is the plane where the *shearing stress* is the maximum.
+- The angle is measured with respect to the \(x\)-axis.
+- To obtain the in-plane shearing stress plane, differentiate the stress transformation equation for *shearing stress* and equate it to 0.
+- There are two answers to the equation below, and the second answer is just the *first answer plus* $\boldsymbol{90^{\circ}}$.
+- The angle between the principal plane (\(\theta_p\)) and the in-plane shearing stress plane (\(\theta_s\)) is $\boldsymbol{45^{\circ}}$.
+
+\[\tan 2 \theta_s = - \frac{\sigma_x - \sigma_y}{2 \tau_{xy}}\]
+
+Where:
+- $\theta_s$ is the *in-plane* shearing stress plane
+- $\sigma_x$ is the normal stress of the element in the \(x\)-direction
+- $\sigma_y$ is the normal stress of the element in the \(y\)-direction
+- $\tau_{xy}$ is the shearing stress of the element in the $xy$ plane.
+
+\newpage
+
+** Maximum in-plane shearing stress (\(\tau_{\text{max(in-plane)}}\))
+\[\tau_{max(in-plane)} = \sqrt{\left( \frac{\sigma_x - \sigma_y}{2} \right)^2 + \tau_{xy}^2}\]
+
+Where:
+- $\tau_{\text{max(in-plane)}}$ is the maximum *in-plane* shearing stress
+- $\sigma_x$ is the normal stress of the element in the \(x\)-direction
+- $\sigma_y$ is the normal stress of the element in the \(y\)-direction
+- $\tau_{xy}$ is the shearing stress of the element in the $xy$ plane.
+
+*** Corresponding normal stress (\(\sigma'\) or \(\sigma_{avg}\))
+Substituting \(\theta_s\) into the stress transformation equation for *normal stress* will yield the *corresponding normal stress*.
+
+\[\sigma' = \sigma_{avg} = \frac{\sigma_x + \sigma_y}{2}\]
+
+Where:
+- $\sigma', \sigma_{avg}$ is the corresponding normal stress for the maximum in-plane shearing stress
+- $\sigma_x$ is the normal stress of the element in the \(x\)-direction
+- $\sigma_y$ is the normal stress of the element in the \(y\)-direction
+
+** Mohr's circle
+
+*** Sign conventions
+- Tensile normal stress must be on the *positive \(\boldsymbol{x}\)-axis*
+- A shear stress that turns an element clockwise is on the *positive \(\boldsymbol{y}\)-axis*
+- The \(x\)-axis and the \(y\) axis must have the *same scale*.
+
+*** Constructing the Mohr's circle
+1. Figure out the normal and shearing stresses on the element.
+2. Plot the stresses in the \(x\)-direction, following the sign conventions above.
+3. The normal stress will the \(x\)-coordinate and the corresponding shearing stress will be the \(y\)-coordinate. This point will be called \(X\).
+4. Plot the stresses in the \(y\)-direction, again following the sign conventions above.
+5. Similarly, the normal stress will the \(x\)-coordinate and the corresponding shearing stress will be the \(y\)-coordinate. This point will be called \(Y\).
+6. Join the two points that have been plotted with a straight line.
+7. The point where the line passes through the \(x\)-axis will be the centre of the circle.
+8. Draw the Mohr's circle with the diameter being the length of the straight line.
+9. Find the \(x\)-coordinate of the centre of the circle, which is just the average normal stress:
+   \[x = \frac{\sigma_x + \sigma_y}{2}\]
+
+   Where:
+   - $x$ is the \(x\)-coordinate of the centre of the circle
+   - $\sigma_x$ is the normal stress in the \(x\)-direction
+   - $\sigma_y$ is the normal stress in the \(y\)-direction
+
+10. Another method is to use geometry to find the \(x\)-coordinate of the centre of the circle.
+11. The centre of the circle will be called \(C\).
+12. Find the radius of the circle by using Pythagoras' Theorem, as the radius of the circle is just the hypotenuse of the triangle formed by the points C, X and the \(x\)-coordinate of the normal stress in the \(x\)-direction, which will be called point \(F\).
+
+*** Interpreting the Mohr's circle
+- The principal stresses will be the points where the circle intersects the \(x\)-axis.
+- The minimum normal stress is the stress with a lower \(x\)-value and the maximum stress is the stress with a higher \(x\)-value.
+- \(2\theta_p\) or twice the principal plane is the angle between \(CX\) and \(CF\).
+- The first angle can be found by using the trigonometric functions \(\sin, \cos\), or \(\tan\). The second angle is just the first angle plus \(90^{\circ}\).
+- The maximum in-plane shearing stress can be found from the maximum \(y\)-coordinate of the Mohr's circle.
+- The \(x\)-coordinate of the point with the maximum \(y\)-coordinate is the corresponding normal stress, which is also the average normal stress.
+- \(2 \theta_s\) or twice the in-plane shearing stress plane can be found by rotating the line \(XY\) to be parallel with the \(y\)-axis and then using trigonometry to find the angle between the rotated line and the original line.
+- The angles in the Mohr's circle is *always twice* the given angle.
+
+** Maximum out-of-plane shearing stress (\(\tau_{\text{max(out-of-plane)}}\))
+- When the Mohr's circle contains the origin or intersects the origin, there is *no out-of-plane shearing stress*.
+- When the principal normal stresses (\(\sigma_{max}\) and \(\sigma_{min}\)) are of the *opposite* sign, there is *no out-of-plane shearing stress*.
+
+\[\tau_{\text{max(out-of-plane)}} = \frac{1}{2} \sigma_{\text{largest}}\]
+
+Where:
+- $\tau_{\text{max(out-of-plane)}}$ is the maximum out-of-plane shearing stress
+- $\sigma_{\text{largest}}$ is the normal stress with the largest value, i.e. \(|\sigma_{\text{largest}}|\) is the largest.
+
+** Pressure vessel
+A *cylindrical* vessel that is *sealed on both ends* and there must be *pressure* inside the cylinder.
+
+** Thin-walled
+A cylinder is considered *thin-walled* if it satisfies the equation below:
+
+\[\frac{2r}{t} > 20\]
+
+Where:
+- $r$ is the *internal* radius of the cylinder
+- $t$ is the thickness of the cylinder
+
+** Thin-walled pressure vessel
+- For an element on the surface of the vessel, it is a principal element, which means the element has *no shear stress*, and only has *normal stress*.
+- There are two normal stresses acting on the element, hoop or circumferential stress, and longitudinal stress.
+- Both of the stresses are always in tension due to the pressure in the cylinder.
+
+*** Hoop or circumferential stress (\(\sigma_1\))
+Hoop or circumferential stress is the stress that is *tangent* to the circle of the cylinder.
+\[\sigma_1 = \frac{pr}{t}\]
+\[\sigma_1 = 2 \sigma_2\]
+
+Where:
+- $\sigma_1$ is the hoop or circumferential stress
+- $p$ is the pressure in the cylinder
+- $r$ is the *internal* radius of the cylinder
+- $t$ is the thickness of the cylinder
+- $\sigma_2$ is the longitudinal stress
+
+*** Longitudinal stress (\(\sigma_2\))
+Longitudinal stress is the stress acting against the end caps of the pressure vessel.
+\[\sigma_2 = \frac{pr}{2t}\]
+\[\sigma_2 = \frac{\sigma_1}{2}\]
+
+Where:
+- $\sigma_2$ is the longitudinal stress
+- $p$ is the pressure in the cylinder
+- $r$ is the *internal* radius of the cylinder
+- $t$ is the thickness of the cylinder
+
+*** Maximum in-plane shearing stress (\(\tau_{\text{max(in-plane)}}\))
+\[\tau_{\text{max(in-plane)}} = \frac{\sigma_2}{2} = \frac{pr}{4t}\]
+
+Where:
+- $\tau_{\text{max(in-plane)}}$ is the maximum in-plane shearing stress
+- $\sigma_2$ is the longitudinal stress
+- $p$ is the pressure in the cylinder
+- $r$ is the *internal* radius of the cylinder
+- $t$ is the thickness of the cylinder
+
+*** Maximum out-of-plane shearing stress (\(\tau_{\text{max(out-of-plane)}}\))
+\[\tau_{\text{max(out-of-plane)}} = \sigma_2 = \frac{pr}{2t}\]
+
+Where:
+- $\tau_{\text{max(out-of-plane)}}$ is the maximum out-of-plane shearing stress
+- $\sigma_2$ is the longitudinal stress
+- $p$ is the pressure in the cylinder
+- $r$ is the *internal* radius of the cylinder
+- $t$ is the thickness of the cylinder
+
+** Plane strain
+Plane strain is the deformations in the material in a corresponding plane, like the x-y plane.
+
+** Strain transformation equations
+
+*** Sign conventions
+- The normal strain (\(\varepsilon\)) is positive when *elongated*.
+- The shearing strain (\(\gamma_{xy}\)) is positive when the angle at the origin becomes less than \(90^{\circ}\).
+- The rotation of the element (\(\theta\)) is positive when the element is rotated *anticlockwise* with respect to the \(x\)-axis.
+
+*** Normal strain in the \(x'\)-direction (\(\varepsilon_{x'}\))
+\[\varepsilon_{x'} = \frac{\varepsilon_x + \varepsilon_y}{2} + \frac{\varepsilon_x - \varepsilon_y}{2} \cos 2 \theta + \frac{\gamma_{xy}}{2} \sin 2 \theta\]
+
+Where:
+- $\varepsilon_{x'}$ is the normal strain in the \(x'\)-direction
+- $\varepsilon_{x}$ is the normal strain in the \(x\)-direction
+- $\varepsilon_{y}$ is the normal strain in the \(y\)-direction
+- $\theta$ is the angle the element is rotated *anticlockwise*
+- $\gamma_{xy}$ is the shearing strain of the element
+
+*** Normal strain in the \(y'\)-direction (\(\varepsilon_{y'}\))
+\[\varepsilon_{y'} = \frac{\varepsilon_x + \varepsilon_y}{2} - \frac{\varepsilon_x - \varepsilon_y}{2} \cos 2 \theta - \frac{\gamma_{xy}}{2} \sin 2 \theta\]
+
+Where:
+- $\varepsilon_{y'}$ is the normal strain in the \(y'\)-direction
+- $\varepsilon_{x}$ is the normal strain in the \(x\)-direction
+- $\varepsilon_{y}$ is the normal strain in the \(y\)-direction
+- $\theta$ is the angle the element is rotated *anticlockwise*
+- $\gamma_{xy}$ is the shearing strain of the element
+
+*** Shearing strain in the \(x'y'\) plane (\(\gamma_{x'y'}\))
+\[\gamma_{x'y'} = - (\varepsilon_x - \varepsilon_y) \sin 2 \theta + \gamma_{xy} \cos 2 \theta\]
+
+Where:
+- $\gamma_{x'y'}$ is the shearing strain in the \(x'y'\) plane
+- $\varepsilon_{x}$ is the normal strain in the \(x\)-direction
+- $\varepsilon_{y}$ is the normal strain in the \(y\)-direction
+- $\theta$ is the angle the element is rotated *anticlockwise*
+- $\gamma_{xy}$ is the shearing strain of the element
+
+** Small deflection
+A small deflection is a deflection less than \(\qty{0.1}{\radian}\) or \(5.73^{\circ}\).
+\[\theta < \qty{0.1}{\radian}\]
+\[\theta < 5.73^{\circ}\]
+
+** Origin of a beam
+The origin of a beam is just the leftmost end of the beam.
+
+** Buckling load (Euler's load) (\(F_{buckle}\))
+Use the smaller \(I\) value for calculating the critical buckling load.
+
+*** Axially loaded pin-ended beam
+\[F_{buckle} = \frac{\pi^2 EI}{L^2}\]
+
+Where:
+- $F_{buckle}$ is the buckling load
+- $E$ is the modulus of elasticity
+- $I$ is the second moment of area
+- $L$ is the *original length* of the beam when it is straight
+
+*** Beams with other types of ends
+\[F_{buckle} = \frac{\pi^2 EI}{L_e^2}\]
+
+Where:
+- $F_{buckle}$ is the buckling load
+- $E$ is the modulus of elasticity
+- $I$ is the second moment of area
+- $L_e$ is the *equivalent length* of the beam when it is straight
+
+** Buckling stress (\(\sigma_{buckle}\))
+
+*** Axially loaded pin-ended beam
+\[\sigma_{buckle} = \frac{\pi^2 E}{\left( \frac{L}{r} \right)^2}\]
+
+Where:
+- $\sigma_{buckle}$ is the buckling stress
+- $E$ is the modulus of elasticity
+- $r$ is the radius of gyration
+- $L$ is the *original length* of the beam when it is straight
+- $\frac{L}{r}$ is the slenderness ratio
+
+*** Beams with other types of ends
+\[\sigma_{buckle} = \frac{\pi^2 E}{\left( \frac{L_e}{r} \right)^2}\]
+
+Where:
+- $\sigma_{buckle}$ is the buckling stress
+- $E$ is the modulus of elasticity
+- $r$ is the radius of gyration
+- $L_e$ is the *equivalent length* of the beam when it is straight
+- $\frac{L_e}{r}$ is the slenderness ratio
+
+** Equivalent length for buckling
+[[./images/beam-buckling.png]]
+
+\newpage
+
+* Review of statics
+
+** Tie or strut (two-force member)
+- Pin-ended members
+- Two-force member
+- Axial or longitudinal load (no bending) produces axial stresses
+- Assume that the member is weightless
+
+** Beam
+- Multiple internal forces
+- Pin-ended or fix-ended
+- Bending produces bending stresses and shearing stresses
+
+\newpage
+
+* Normal stress
+- Stress is an *internal* force.
+- For an object in *tension*, the stress is *positive*.
+- For an object in *tension*, the cross-sectional area to calculate stress must be at the smallest area, like the hinge part of a bar.
+- For an object in *compression*, the stress is *negative*.
+- For an object in *compression*, the cross-sectional area to calculate the stress is the whole area of the bar.
+- The stress at a transition point from tension to compression or vice versa is *undefined*.
+- To figure out whether an object is in tension or compression, draw out the object and find the internal forces on the object. The internal forces must balance out the forces acting on the object. Then use the direction of the force to figure out whether the object is in compression or in tension.
+
+\[\sigma = \frac{F}{A}\]
+
+Where:
+- $\sigma$ is the normal stress
+- $F$ is the force on the ends of the object, or the axial force on the object
+- $A$ is the cross-sectional area
+
+
+* Method of joints
+- The object must be a two-force member, or have no transverse load on the object. Weight of the object is assumed to be negligible.
+
+
+* Stresses in objects
+- Axial forces on a two-force member result in only *normal stresses* on a plane cut perpendicular to the member axis.
+- Transverse forces on bolts and pins result in only shearing stresses on the plane perpendicular to the bolt or pins axis.
+- Either axial or transverse forces may produce both normal and shearing stresses with respect to a plane other than one cut perpendicular to the member axis.
+
+
+* Stresses on an oblique plane
+
+** Normal stress
+\[\sigma = \frac{F}{A} \cos^2 \theta\]
+
+Where:
+- $\sigma$ is the normal stress
+- $F$ is the axial force on the object
+- $A$ is the cross-sectional are of the object
+- $\theta$ is the angle between the normal of the oblique plane and the axial force on the object
+
+** Shearing stress
+\[\sigma = \frac{F}{A} \sin \theta \cos \theta\]
+
+Where:
+- $\sigma$ is the normal stress
+- $F$ is the axial force on the object
+- $A$ is the cross-sectional are of the object
+- $\theta$ is the angle between the normal of the oblique plane and the axial force on the object
+
+** Maximum stresses
+
+*** Normal stress
+The maximum normal stress occurs when the oblique plane is perpendicular to the axis of the object.
+
+*** Shearing stress
+The maximum shearing stress occurs when the oblique plane is $\pm 45^{\circ}$ with respect to the axis of the object.
+
+
+* Deformations under axial loading
+- From Hooke's Law:
+  \[\sigma = E \varepsilon \qquad \varepsilon = \frac{\sigma}{E} = \frac{F}{AE}\]
+
+- From the definition of strain:
+  \[\varepsilon = \frac{\delta}{L} = \frac{F}{AE}\]
+
+- Equating and solving for the deformation:
+  \[\delta = \frac{FL}{AE}\]
+
+- With variations in loading, cross-section or material properties,
+  \[\delta = \sum_i \frac{F_i L_i}{A_i E_i}\]
+
+
+* Limits (e.g. maximum shearing stress, maximum normal stress, etc.)
+The presence of limits (e.g. maximum shearing stress, maximum normal stress, etc.) usually means there is *an answer for each limit*. Each answer that is derived from a limit must then be *compared with each other* in regard to *safety* to get the final correct answer.
+
+
+* Axial shear
+- Torque applied to a shaft produce *shearing stresses* on the faces perpendicular to the axis (basically the ends of a bar or a beam).
+- Equilibrium requires the existence of equal stresses on the faces of the two planes containing the axis of the shaft.
+
+
+* Shaft deformation
+- The twisting angle of the shaft is proportional to the applied torque and to the shaft length.
+
+  \[\phi \propto T \text{ and } \phi \propto L\]
+  \[\phi = \frac{TL}{GJ}\]
+
+  Where:
+  - $\phi$ is the twisting angle of the shaft
+  - $T$ is the applied torque
+  - $L$ is the shaft length
+  - $G$ is the shear modulus
+  - $J$ is the polar moment of inertia
+
+- When subjected torsion, every cross-section of a circular shaft remains *planar* and undistorted.
+- Cross-sections for hollow and solid circular shafts remain planar and undistorted as a circular shaft is axisymmetric.
+- Cross-sections of non-circular (non-axisymmetric) shafts, like rectangular shafts, are distorted when subjected to torsion.
+
+
+* Pure shear element at \(45^{\circ}\) degrees
+- There is only tension and compression, which are normal stresses.
+- There is no shearing stress on the element.
+
+\newpage
+
+* Right-hand screw rule
+- The four fingers of your right hand must follow the direction of the torque applied.
+- The thumb will then give the torque direction.
+- The torque direction is an arrow with two arrowheads.
+
+
+* Failure modes of a bar
+
+** Summary
+[[./images/failure-modes-summary.png]]
+
+\newpage
+
+** Torsional failure modes
+
+*** Ductile materials
+- Ductile materials generally fail in *shear*. They are weaker in shear than in tension.
+- When subjected to torsion, a ductile material breaks along the plane of *maximum shear*, which is a plane perpendicular to the shaft's axis.
+
+[[./images/ductile-material-torsional-failure.png]]
+
+*** Brittle materials
+- Brittle materials generally fail in *tension*. They are weaker in tension than in shear.
+- When subjected to torsion, a brittle material breaks along planes perpendicular to the direction in which *tension is a maximum*, which is along surfaces at \(45^{\circ}\) to the shaft's axis.
+- This is called a spiral or helical failure.
+
+[[./images/brittle-material-torsional-failure.png]]
+
+\newpage
+
+* Difference between torque and bending moment
+
+** Torque
+Torque is the bending or twisting about the object's longitudinal axis.
+
+** Bending moment
+Bending moment is bending the object about an axis that is *perpendicular* to the member's longitudinal axis.
+
+
+* Bending deformations
+For a beam with a plane of symmetry in pure bending:
+- The beam remains symmetric.
+- The beam bends uniformly to form a circular arc.
+- The sides of the beam should pass through the centre of the circle and remain planar.
+- The length of the *top* side of the beam *decreases* and the length of the *bottom* side *increases*.
+- A neutral surface must exist that is parallel to the upper and lower surfaces and for which the length does not change.
+- Stresses and strains are *negative (compressive)* above the neutral plane or neutral surface and *positive (tensive)* below it.
+
+
+* Finding the centroid of an irregularly-shaped object
+\[\bar{Y} = \frac{\sum \bar{y} A}{\sum A}\]
+
+Where:
+- $\bar{Y}$ is the distance of the centroid from the reference plane
+- $\bar{y}$ is the distance of the centroid of an *individual* section of the object from the reference plane
+- $A$ is the area of each *individual* section of the object
+
+* Calculating the \(I\) for an irregularly-shaped object
+
+** Method 1: Using parallel axis theorem directly
+\[I = \sum \left(\bar{I} + Ad^2 \right) = \sum \left(\frac{1}{12} bh^3 + Ad^2 \right)\]
+
+Where:
+- $I$ is the second moment of area of the object
+- $\bar{I}$ is the second moment of area for an *individual* section of the object
+- $A$ is the area of an *individual* section of the object
+- $d$ is the distance from the centroid of the *individual* section from the centroid of the whole object
+- $b$ is the base of an *individual* section of the object
+- $h$ is the height of an *individual* section of the object
+
+\newpage
+
+** Method 2: Calculate \(I\) about the base of each rectangle
+
+*** Finding the \(I\) about the base of the rectangle
+\begin{align*}
+I_{base} &= I_{\text{NA}} + Ad^2 \\
+&= \frac{bh^3}{12} + bh \left( \frac{h}{2} \right)^2 \\
+&= \frac{bh^3}{12} + \frac{bh^3}{4} \\
+&= \frac{bh^3}{3}
+\end{align*}
+
+Where:
+- $I_{base}$ is the second moment of area at the base of a rectangular section of the object
+- $I_{\text{NA}}$ is the second moment of area about the neutral axis of a rectangular section of the object
+- $b$ is the base of a rectangular section of the object
+- $h$ is the height of a rectangular section of the object
+
+*** Summing up the individual \(I\)s to get the \(I\) of the object
+- When doing this, all the rectangles taken into account must have their second moment of area (\(I\)) taken at the centroid of the object.
+- There will likely be extra space that has been considered, and hence those extra spaces that are not part of the object must be removed by subtracting from the sum below.
+- This is useful for objects that are not symmetrical about their neutral axis, such as a T shape cross-section.
+
+\[I = \sum \left( \frac{bh^3}{3} \right)\]
+
+Where:
+- $I$ is the second moment of area of the object
+- $b$ is the base of a rectangular section of the object
+- $h$ is the height of a rectangular section of the object
+
+\newpage
+
+** Method 3: Subtract smaller rectangles from a larger rectangle
+- This method only applies when the object is symmetrical about its neutral axis, such as an I-beam.
+- The centroid of the rectangular section must *coincide* with the centroid of the object's centroid.
+
+For an I-beam:
+
+#+ATTR_LATEX: :scale 1
+[[./images/i-beam-section-moment-of-inertia.png]]
+
+\[I_{\text{NA}} = \frac{bh_1^3}{12} - \frac{(b - t)h_2^3}{12}\]
+
+Where:
+- $I_{\text{NA}}$ is the second moment of area of the I-beam
+- $b$ is the base of the I-beam
+- $h_1$ is the height of the I-beam
+- $t$ is the width of the middle section of the I-beam
+- $h_2$ is the distance between the bottom part of the I-beam and the top part of the I-beam
+
+
+* Eccentric Axial Loading
+
+** Determining the resultant force and bending moment on the centroid
+1. Transfer the applied force to the centroid of the section and use that applied force to calculate the moment about the centroid
+2. Determine the force and the moment using equilibrium equations. Assume a direction for the force and the moment and equate the resultant to zero to find the actual magnitude and direction of the force and the moment.
+
+** General case of eccentric axial loading
+- Consider a straight member subject to equal and opposite eccentric forces.
+- The eccentric force is equivalent to the system of a centric force and two bending moments.
+- The stress at any point can be obtained using the principle of superposition.
+- The sign of the stress can be determined through visualisation.
+
+\newpage
+
+* Types of supports and their corresponding forces
+[[./images/types-of-supports.png]]
+
+* Beam types
+
+** Statically determinate beams
+
+*** Simply supported beams
+Simply supported beams have a fixed end on the left and a roller on the right end.
+[[./images/simply-supported-beam-type.png]]
+
+*** Cantilever beams
+Cantilever beams are supported from one end, with a fixed support.
+[[./images/cantilever-beam-type.png]]
+
+** Statically indeterminate beams
+
+*** Continuous beams
+Continuous beams are multi-spanned beams with multiple supports across the length of the beam.
+[[./images/continuous-beam-type.png]]
+
+*** Fixed beams
+Fixed beams have fixed supports on either end.
+[[./images/fixed-beam-type.png]]
+
+*** Overhanging beams
+Overhanging beams are beams with two supports, but one of the supports is not at the end of the beam.
+[[./images/overhanging-beam-type.png]]
+
+\newpage
+
+* Sign conventions
+1. *Smiley face* or sagging action is considered *positive bending moment*.
+   #+ATTR_LATEX: :scale 0.6
+   [[./images/bending-moment-sign-convention.png]]
+
+2. A *clockwise rotation* is considered positive shear *force*.
+   #+ATTR_LATEX: :scale 0.6
+   [[./images/shear-force-sign-convention.png]]
+
+3. *Tension* is *positive* normal stress.
+   #+ATTR_LATEX: :scale 0.5
+   [[./images/positive-normal-stress.png]]
+
+4. *Shearing stress* is considered *positive* when the *right-hand side* of the element has an arrow pointing *upwards*. Another way to think of it is that the line formed by the arrows of the shearing stress is *positive* when the line has a *positive gradient*.
+   #+ATTR_LATEX: :scale 0.7
+   [[./images/positive-shear-stress.png]]
+
+5. *Internal forces* should always be assumed to be *positive*.
+6. The moment at unconstrained ends must be 0.
+
+\newpage
+
+*** Applying the sign conventions
+- These sign conventions only apply when the beam is cut on the right side of the beam, which means the cut part has the *fixed end on the right* and the *free end on the left*.
+- If the beam is cut on the left side of the beam, which means the cut part has the *fixed end on the left* and the *free end on the right*, the sign conventions are *reversed*.
+
+* Bending moment and shear force diagrams
+
+** Free body diagram method
+1. Draw free body diagrams for each section of interest.
+2. Start drawing the free body diagrams starting from both sides so that the answer can be checked.
+3. If the final result in the middle calculated both sides are the same, then the answer is most probably correct.
+4. Assume internal forces to be positive, which means the bending moment forms a smiley face and the shear force causes a clockwise rotation.
+5. Use the equilibrium expressions \(\sum M_i = 0\) and \(\sum F_i = 0\) to find the internal forces.
+6. Alternatively, the sign conventions above can also be used to find the internal forces.
+7. Distributed loads must always be assumed to act at the centre of the segment of interest after obtaining the total load.
+
+\newpage
+
+** Direct method for shear force diagrams
+1. Start from the left of the beam and move across the beam.
+2. The shear force starts from zero.
+3. When a point load is encountered, add the shear force due to it to the current shear force value. Use the sign convention of upwards shear forces being positive and downwards shear forces being negative. The shear force diagram should have a vertical line to the new shear force value.
+4. When a distributed load is encountered, find the effective increase or decrease in shear force due to the distributed load by treating it as a point load. Then, draw a straight line to the new value of the shear force at the end of the distributed load region.
+5. Alternatively, jumping over to the right side of the beam and doing point 3 in reverse will also work. Essentially, when working from the right side of the beam, the sign conventions are flipped, so a shear force acting downwards will be considered as positive while a shear force acting upwards will be considered negative and so on.
+
+** Relationship between load and shear force
+\begin{align*}
+\sum F_y &= 0 \\
+V &= (V + \Delta V) + w \Delta x \\
+\Delta V &= -w \Delta x \tag{1}
+\end{align*}
+
+Dividing both sides of \((1)\) by \(\Delta x\) and let \(\Delta x \rightarrow 0\):
+\[\frac{dV}{dx} = -w\]
+
+Where:
+- $\sum F_y$ is the sum of the forces in the y-axis on a segment of the object
+- $V$ is the shear force on a segment of the object
+- $\Delta V$ is the change in the shear force due to the distributed load
+- $w$ is the distributed load on a segment of the object
+- $\Delta x$ is the length of a segment of the object
+- $\frac{dV}{dx}$ is the change in shear force over the length of the object
+
+*** Implications
+- When there is *no* distributed load, i.e. \(w = 0\), the shear force is *constant*.
+- When there is a *distributed* load, i.e. \(w \ne 0\), the shear force has a *linear* variation.
+- The net change in bending moment is equal to the area under the shear distribution segments, i.e:
+  \[\text{Change in bending moment, } \Delta M = \text{Area under the shear force diagram}\]
+
+** Relationship between shear force and bending moment
+\begin{align*}
+\sum M &= 0 \\
+(M + \Delta M) + w \Delta x \left(\frac{\Delta x}{2} \right) &= M + V \Delta x \\
+\Delta M &= V \Delta x - \frac{1}{2}w\left(\Delta x \right)^2 \\
+\Delta M &= (V - \frac{1}{2} w \Delta x) \Delta x \tag{2}
+\end{align*}
+
+Dividing both sides of \((2)\) by \(\Delta x\) and let \(\Delta x \rightarrow 0\):
+\[\frac{dM}{dx} = V\]
+
+Where:
+- $\sum M$ is the sum of moments about a pivot in a segment of the object
+- $M$ is the bending moment on a segment of the object
+- $\Delta M$ is the change in the bending moment due to the distributed load
+- $w$ is the distributed load on a segment of the object
+- $\Delta x$ is the length of a segment of the object
+- $V$ is the shear force on a segment of the object
+- $\frac{dM}{dx}$ is the change in bending moment over the length of the object
+
+*** Implications
+- The variation in bending moment is *linear* when the shear force is *constant*, i.e. \(\frac{dV}{dx} = 0\).
+- The variation in bending moment is *quadratic* when the shear force is *not* constant, i.e. \(\frac{dV}{dx} \ne 0\).
+- The bending moment is *maximum or minimum* when the shear force is zero, or when the shear force line crosses the zero line. Basically, there is a *turning point* in the bending moment diagram whenever the *shear force is zero*.
+- The bending moment at *free ends* must be *zero*.
+
+\newpage
+
+* Design of beams for bending
+- The largest normal stress is found at the *surface* where the maximum bending moment occurs.
+  \[\sigma_m = \frac{|M|_{max} c}{L} = \frac{|M|_{max}}{S}\]
+
+  Where:
+  - $\sigma_m$ is the maximum normal stress
+  - $|M|_{max}$ is the absolute value of the maximum bending moment
+  - $c$ is the outer radius of the beam
+  - $L$ is the length of the beam
+  - $S$ is the section modulus of the beam
+
+- A safe design requires that the maximum normal stress be lower that the allowable stress for the material used. These criteria lead to the determination of the minimum acceptable section modulus.
+  \[\sigma_m \le \sigma_{all}\]
+  \[\sigma_{all} = \frac{|M|_{max}}{S_{min}}\]
+  \[S_{min} = \frac{|M|_{max}}{\sigma_{all}}\]
+
+  Where:
+  - $\sigma_m$ is the maximum normal stress
+  - $\sigma_{all}$ is the allowable normal stress
+  - $|M|_{max}$ is the absolute value of the maximum bending moment
+  - $S_{min}$ is the minimum section modulus of the beam
+
+\newpage
+
+* Yield criteria
+
+** Ductile materials
+- Mild steel (steel with low amounts of carbon)
+- Aluminium alloy
+
+*** Maximum shearing stress criteria (Tresca) criterion
+Use the *maximum out-of-plane* shearing stress if it exists.
+\[\tau_{max} < \frac{\sigma_Y}{2}\]
+
+Where:
+- $\sigma_Y$ is the material yield stress
+- $\tau_{max}$ is the maximum shearing stress
+
+*** Maximum distortion energy (Von Mises) criterion
+\[\sigma_{max}^2 - \sigma_{max} \sigma_{min} + \sigma_{min}^2 < \sigma_Y^2\]
+
+Where:
+- $\sigma_{max}$ is the maximum normal stress
+- $\sigma_{min}$ is the minimum normal stress
+- $\sigma_{Y}$ is the material yield stress
+
+\newpage
+
+** Brittle materials
+- Brittle materials fail suddenly through rupture or fracture.
+- Failure condition is characterised by *ultimate strength \(\boldsymbol{\sigma_U}\)*.
+
+Examples:
+- Cast iron
+- Glass
+- Ceramics
+
+*** Maximum normal stress (Coulomb's) criterion
+\[|\sigma_{max}| < \sigma_U\]
+\[|\sigma_{min}| < \sigma_U\]
+
+Where:
+- $\sigma_{max}$ is the maximum normal stress
+- $\sigma_{min}$ is the minimum normal stress
+- $\sigma_U$ is the ultimate strength of the material
+
+** Factor of safety consideration
+When a factor of safety needs to be taken into account, divide the stress used in the criterion by the factor of safety.
+
+*** Maximum shearing stress criteria (Tresca) criterion
+Use the *maximum out-of-plane* shearing stress if it exists.
+\[\tau_{max} < \frac{\sigma_Y}{2FS}\]
+
+Where:
+- $\sigma_Y$ is the material yield stress
+- $\tau_{max}$ is the maximum shearing stress
+- $FS$ is the factor of safety
+
+*** Maximum distortion energy (Von Mises) criterion
+\[\sigma_{max}^2 - \sigma_{max} \sigma_{min} + \sigma_{min}^2 < \left(\frac{\sigma_Y}{FS} \right)^2\]
+
+Where:
+- $\sigma_{max}$ is the maximum normal stress
+- $\sigma_{min}$ is the minimum normal stress
+- $\sigma_{Y}$ is the material yield stress
+- $FS$ is the factor of safety
+
+*** Maximum normal stress (Coulomb's) criterion
+\[|\sigma_{max}| < \frac{\sigma_U}{FS}\]
+\[|\sigma_{min}| < \frac{\sigma_U}{FS}\]
+
+Where:
+- $\sigma_{max}$ is the maximum normal stress
+- $\sigma_{min}$ is the minimum normal stress
+- $\sigma_U$ is the ultimate strength of the material
+- $FS$ is the factor of safety
+
+\newpage
+
+* Deflection of beams
+Use the elastic curve and singularity function to find the deflection of beams.
+- Assume small deflection \(\theta < \qty{5.73}{\degree}\).
+- Begin with the origin on the left end of the beam and cut last section on the right.
+- For distributed loads, extend to the distributed load all the way until the right end of the beam and cancel the excess distributed load with another distributed load.
+- Use symmetry of the beam if possible, but take note that the boundary condition at the point of symmetry is \(\boldsymbol{y' = 0}\).
+
+** Elastic curve equation
+\[EIy'' = M(x)\]
+\[EIy' = \int_0^x M(x) \, dx + C_1\]
+\[EIy = \int_0^x \, dx \int_0^x M(x) \, dx + C_1 x + C_2\]
+
+Where:
+- $E$ is the modulus of elasticity
+- $I$ is the second moment of area
+- $M$ is the bending moment of the beam, expressed as a function of \(x\), or the distance from the left end of the beam
+- $y$ is the general equation for the deflection of the beam at any point. It is a function of \(x\) or the distance from the left end of the beam.
+
+\newpage
+
+** Singularity function method
+
+*** Rules
+- The distance \(x\) must be within the last section of the beam, which is on the right of the origin.
+- You *cannot expand* a singularity function (<...>).
+- When finding constants using boundary conditions, *ignore* the content inside the singularity function (<...>) if it is *negative*.
+- If the content inside the singularity function (<...>) is *positive*, *include* it.
+- Find constants \(C_1\) and \(C_2\) using boundary conditions of zero or known deflection or slope.
+  - For pinned ends, \(y = 0\) when \(x = 0\) and \(x = L\).
+  - For clamped ends, \(y = 0\) and \(y' = 0\) when \(x = 0\) and \(x = L\).
+
+*** Distributed load
+\[\frac{w}{2} < x - x_0 >^2\]
+
+Where:
+- $w$ is the distributed load
+- $x$ is a *variable* representing the distance from the *left end* of the beam
+- $x_0$ is the location of the *left end* of the distributed load measured from the *left end* of the beam.
+
+*** Point load
+\[F_p < x - x_0 >\]
+
+Where:
+- $F_p$ is the point load
+- $x$ is a *variable* representing the distance from the *left end* of the beam
+- $x_0$ is the location of the point load measured from the *left end* of the beam
+
+*** Point moments
+\[M < x - x_0 >^0\]
+
+Where:
+- $M$ is the point moment
+- $x$ is a *variable* representing the distance from the *left end* of the beam
+- $x_0$ is the location of the point moment measured from the *left end* of the beam
+
+** Figuring out the point of maximum deflection
+- For a single point load in the middle of the beam, the point of maximum deflection will be at the middle of the beam.
+- When the point load is moved to one side of a beam, the point of maximum deflection will move with the point load, but it'll lag behind.
+- This means that the point of maximum deflection will be closer to the middle of the beam compared to the position of the point load when the point load is not at the middle of the beam.
+
+\newpage
+
+* Important points to note
+1. Forces on an object is assumed to act on the *centroid* unless otherwise stated.
+2. Stresses on a point or an element is assumed to be on the *surface* of the structure.
+3. The word *'force'* means a force-type quantity, including a concentrated force (\(\unit{N}\)), moment (\(\unit{N.m}\)), or a torque (\(\unit{N.m}\))
+4. Internal forces on a member can be *action* or *reaction (equilibrium)* forces.
+5. Offset loads must be transferred to the *centroid* at the cross-section of interest.
+6. *Action* forces or *reaction (equilibrium)* forces must result in the same stresses on a particular element.
+7. Sign conventions are *reversed* when cutting the left side of the beam. Usually, the cuts are on the right side of the beam, not the left.

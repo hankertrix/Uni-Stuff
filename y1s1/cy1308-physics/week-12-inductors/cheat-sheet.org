@@ -1,0 +1,266 @@
+#+TITLE: Physics Inductors Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{siunitx}
+
+* Definitions
+
+** Potential difference across an inductor
+The potential difference across an inductor depends on the *rate of change of the current*.
+\[V_{ab} = L \frac{dI}{dt}\]
+
+Where:
+- \(V_{ab}\) is the potential difference across the conductor.
+- \(L\) is the self inductance of the conductor.
+- \(\frac{dI}{dt}\) is the rate of change of the current with respect to time.
+
+** Inductive reactance (SI Unit: \(\unit{\ohm}\))
+\[X_L = \omega L = 2 \pi f L\]
+
+Where:
+- \(X_L\) is the inductive reactance.
+- \(\omega\) is the angular frequency.
+- \(L\) is the inductance.
+- \(f\) is the frequency.
+
+** Capacitive reactance (SI Unit: \(\unit{\ohm}\))
+\[X_C = \frac{1}{\omega C} = \frac{1}{2 \pi f C}\]
+
+Where:
+- \(X_C\) is the capacitive reactance.
+- \(\omega\) is the angular frequency.
+- \(C\) is the capacitance.
+- \(f\) is the frequency.
+
+** Resonance in A.C. circuits
+\[f_0 = \frac{\omega_0}{2 \pi} = \frac{1}{2 \pi} \sqrt{\frac{1}{LC}}\]
+
+Where:
+- $f_0$ is the resonance frequency.
+- $\omega_0$ is the angular frequency.
+- $L$ is the impedance of the circuit.
+- $C$ is the capacitance of the circuit.
+
+
+* RL circuit
+[[./images/rl-circuit.png]]
+
+Consider the circuit shown above. At the instant the switch is closed, current starts to flow. The voltage or e.m.f induced across the inductor by this change in current from zero to some finite value opposes the change that induces it.
+\\
+
+Derivation of $I(t)$. By Kirchhoff's voltage rule:
+\begin{align*}
+V_0 - IR - L \frac{dI}{dt} = 0 \\
+L \frac{dI}{dt} &= V_0 - IR \\
+\int_0^I \frac{dI}{V_0 - IR} &= \int_0^t \frac{dt}{L} \\
+-\frac{1}{R} \left[\ln |V_0 - IR| \right]_0^I &= \frac{1}{L}[t]_0^t \\
+-\frac{1}{R} \left(\ln |V_0 - IR| - \ln |V_0| \right) &= \frac{t}{L} \\
+\ln |V_0 - IR| - \ln |V_0| &= -\frac{Rt}{L} \\
+\ln \left| \frac{V_0 - IR}{V_0} \right| &= -\frac{Rt}{L} \\
+\frac{V_0 - IR}{V_0} &= e^{-\frac{Rt}{L}} \\
+V_0 - IR &= V_0 e^{-\frac{Rt}{L}} \\
+IR &= V_0 - V_0 e^{- \frac{Rt}{L}} \\
+I(t) &= \frac{V_0}{R} \left(1 - e^{- \frac{Rt}{L}} \right)
+\end{align*}
+
+** Application: surge arrestor
+- If lightning strikes part of an electrical power transmission system, it causes a sudden spike in voltage that can damage the components of the system.
+- To minimise these effects, large inductors are incorporated into the transmission system.
+- These use the principle that an inductor opposes and suppresses any rapid changes in the current.
+
+
+* LC circuit (without voltage source)
+
+#+ATTR_LATEX: :scale 0.8
+[[./images/lc-circuit.png]]
+
+By Kirchhoff's voltage law:
+\[-L \frac{dI}{dt} + \frac{Q}{C} = 0 \tag{1}\]
+
+The current comes from the decrease of the capacitor's charge:
+\[I = - \frac{dQ}{dt} \tag{2}\]
+
+Substituting $(2)$ into \((1)\):
+\[- L \cdot -\frac{d^2Q}{dt^2} + \frac{Q}{C} = 0\]
+\[\frac{d^2Q}{dt^2} + \frac{Q}{LC} = 0 \tag{3}\]
+
+Trying \(Q = Q_0 \cos (\omega t + \phi)\) with \((3)\):
+\[- \omega^2 Q_0 \cos (\omega t + \phi) + \frac{1}{LC} Q_0 \cos (\omega t + \phi) = 0\]
+\[\left(- \omega^2 + \frac{1}{LC} \right) \cos ( \omega t + \phi ) = 0\]
+\[\Longrightarrow = \left(- \omega^2 + \frac{1}{LC} \right) = 0\]
+\[\omega = 2 \pi f = \sqrt{\frac{1}{LC}}\]
+
+** Graph
+
+#+ATTR_LATEX: :scale 0.8
+[[./images/lc-circuit-graph.png]]
+
+** Total energy in the circuit
+The total energy in the circuit is constant, it oscillates between the capacitor and the inductor.
+
+\begin{align*}
+U &= U_E + U_B \\
+&= \frac{1}{2} \frac{Q^2}{C} + \frac{1}{2} LI^2 \\
+&= \frac{Q_0}{2C} \left[\cos^2 (\omega t + \phi) + \sin^2 (\omega t + \phi) \right] \\
+&= \frac{Q_0^2}{2C}
+\end{align*}
+
+The frequency of energy oscillations is twice that of the frequency of charge and current oscillations.
+
+#+ATTR_LATEX: :scale 0.6
+[[./images/lc-circuit-energy.png]]
+
+
+* RCL circuit (without voltage source)
+
+#+ATTR_LATEX: :scale 0.52
+[[./images/rcl-circuit.png]]
+
+Consider the circuit above. The e.m.f source charges the capacitor initially. When the switch is moved to the lower position, we have an inductor with inductance $L$ and a resistor of resistance $R$ connected in series across the terminals of a charged capacitor, forming an *RCL series circuit*. An RCL circuit exhibits damped harmonic motion if the resistance is not too large.
+\\
+
+The charge as a function of time is a sinusoidal oscillation with an exponentially decaying amplitude, and angular frequency:
+
+\[\omega ' = \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}\]
+
+Where:
+- \(\omega '\) is the angular frequency of under damped oscillations in an L-R-C series circuit.
+- \(L\) is the inductance of the circuit.
+- \(C\) is the capacitance of the circuit.
+- $R$ is the resistance of the circuit.
+
+
+* RCL circuit
+[[./images/rcl-circuit-with-source.png]]
+
+** Phasor diagram analysis
+[[./images/rcl-circuit-phasor-diagram.png]]
+
+** Impedance
+\[Z = \sqrt{R^2 + \left(\omega L - \frac{1}{\omega C} \right)^2}\]
+
+Where:
+- \(Z\) is the impedance of the circuit.
+- \(R\) is the resistance of the circuit.
+- \(\omega\) is the angular frequency.
+- \(L\) is the inductance of the circuit.
+- \(C\) is the capacitance of the circuit.
+
+** Current
+\[I(t) = I_0 \cos \omega t\]
+
+- \(I(t)\) is the current.
+- \(I_0\) is the peak current.
+- \(\omega\) is the angular frequency.
+- \(t\) is the time.
+
+** Voltage
+\[V(t) = I_0 Z \cos (\omega t + \phi)\]
+
+- \(V(t)\) is the voltage
+- \(I_0\) is the peak current.
+- \(Z\) is the impedance.
+- \(\omega\) is the angular frequency.
+- \(t\) is the time.
+- \(\phi\) is the phase angle between the voltage and the current.
+
+\newpage
+
+** Phase angle between the voltage and the current
+[[./images/rcl-circuit-phasor-diagram-phase-angle.png]]
+
+\[\phi = \arctan \left(\frac{X_L - X_C}{R} \right)\]
+
+Where:
+- \(\phi\) is the phase angle between the voltage and the current.
+- \(X_L\) is the inductive reactance.
+- \(X_C\) is the capacitive reactance.
+- \(R\) is the resistance of the circuit.
+
+
+
+* A.C. circuit components
+
+** Resistor
+
+*** Current
+The current through a resistor is *in phase* with the voltage. The root-mean-square current is an average measure of the current.
+\[I_{rms} = \frac{I_0}{\sqrt{2}}\]
+
+Where:
+- \(I_{rms}\) is the root-mean-square current.
+- \(I_0\) is the peak current.
+
+** Inductor
+
+*** Voltage
+The voltage across an inductor is given by:
+\begin{align*}
+V &= L\frac{dI}{dt} \\
+&= - \omega L I_0 \sin \omega t \\
+&= \omega L I_0 \cos \left(\omega t + \frac{\pi}{2} \right) \\
+&= V_0 \cos \left(\omega t + \frac{\pi}{2} \right)
+\end{align*}
+
+Where:
+- \(L\) is the inductance of the inductor.
+- \(\frac{dI}{dt}\) is the rate of change of current.
+- \(V\) is the voltage.
+- \(I_0\) is the peak current.
+- \(\omega\) is the angular frequency.
+- \(t\) is the time.
+- \(V_0\) is the peak voltage.
+
+*** Current
+The current through an inductor *lags* the voltage by \(90^{\circ}\).
+\[I_0 = \frac{V_0}{\omega L}\]
+
+Where:
+- \(I_0\) is the peak current.
+- \(V_0\) is the peak voltage.
+- \(\omega\) is the angular frequency.
+- \(L\) is the inductance of the inductor.
+
+** Capacitor
+
+*** Voltage
+The voltage across a capacitor is given by:
+\begin{align*}
+V &= \frac{Q}{C} \\
+&= \frac{1}{C} \int I_0 \cos \omega t \, dt \\
+&= \frac{I_0}{\omega C} \sin \omega t \\
+&= \frac{I_0}{\omega C} \cos \left(\omega t - \frac{\pi}{2} \right) \\
+&= V_0 \cos \left( \omega t - \frac{\pi}{2} \right)
+\end{align*}
+
+Where:
+- \(V\) is the voltage.
+- \(Q\) is the charge held in the capacitor.
+- \(C\) is the capacitance of the capacitor.
+- \(I_0\) is the peak current.
+- \(\omega\) is the angular frequency.
+- \(t\) is the time.
+- \(V_0\) is the peak voltage.
+
+*** Current
+The current through a capacitor *leads* the voltage by \(90^{\circ}\).
+\[I_0 = V_0 \omega C\]
+
+Where:
+- \(I_0\) is the peak current.
+- \(V_0\) is the peak voltage.
+- \(\omega\) is the angular frequency.
+- \(C\) is the capacitance of the capacitor.
+
+
+** High pass filter
+A high pass filter is a filter that filters out low frequencies. Think of the name as high frequencies passing through the filter unhindered.
+
+#+ATTR_LATEX: :scale 0.69
+[[./images/high-pass-filter.png]]
+
+** Low pass filter
+A low pass filter is a filter that filters out high frequencies. Think of the name as low frequencies passing through the filter unhindered.
+
+[[./images/low-pass-filter.png]]

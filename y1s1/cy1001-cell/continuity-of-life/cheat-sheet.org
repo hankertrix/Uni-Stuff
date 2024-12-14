@@ -1,0 +1,473 @@
+#+TITLE: Continuity Of Life Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+\newpage
+
+* Definitions
+
+** Continuity of life
+The continuity of life refers to the passing on of hereditary material from generation to the next and the continuation of the same species through generations.
+
+** DNA polymerase
+DNA polymerase is an enzyme that forms phosphodiester bonds between adjacent nucleotide units that are pairing to the template strand of the DNA during DNA replication. It cannot initiate the DNA replication process by forming phosphodiester bonds between two free nucleotides and can only add nucleotides to an existing chain of polynucleotides which is already complementarily bonded to the template strand.
+
+** Primer
+A primer is a short chain of polynucleotide that is required to initiate the DNA replication process.
+
+** Helicase
+Helicase is an enzyme that unwinds the DNA for replication. Think of it like a zip that unzips the DNA.
+
+** Parental strand (template strand)
+The parental or template strand is the strand of the DNA that serves as the template for DNA replication. It is the strand of the DNA that *has* complementary nucleotides bound to it by DNA polymerase.
+
+** Daughter strand
+The daughter strand is the strand of the DNA that is *created from* the template strand. It is the strand formed by DNA polymerase, which bind complementary nucleotides to the template strand to form the daughter strand.
+
+** Replication fork
+A replication fork refers to the region of DNA where the helicase "opens" the two strands of the DNA. Using the zip analogy, it's just the place where the two rows of teeth diverge.
+
+** Leading strand
+The leading strand of the DNA is the strand of the DNA that is in the *same* direction as template strand.
+
+** Okazaki fragments
+Okazaki fragments are short stretches of the template DNA that are exposed at the replication fork.
+
+** DNA ligase
+DNA ligase is an enzyme that joins Okazaki fragments together to form a continuous new strand.
+
+** Lagging strand
+The lagging strand refers to the strand of the DNA that is in the *opposite* direction as the template strand, and is replicated in short stretches.
+
+** Parent cell
+A parent cell is the cell that splits to create more cells.
+
+** Daughter cells
+Daughter cells are cells that are formed from the splitting of a parent cell.
+
+** Binary fission
+Binary fission is the process of splitting a cell into two daughter cells.
+
+** Origin of replication
+The origin of replication is a site where DNA replication begins in a prokaryotic chromosome.
+
+** Chromosomal resolution
+Chromosomal resolution is a process where the interwoven circular chromosomes are separated (resolved) to form two separate circular chromosomes during DNA replication.
+
+** Cell pinching
+Cell pinching refers to the process where the cell membrane forms inwards and constricts the cell, before pinching the cell in 2.
+
+** Somatic cells
+Somatic cells are non-reproductive cells in eukaryotes. Most cells that make up the bulk of an organism are somatic cells.
+
+** Haploid cells
+Haploid cells are cells which have only *one* of each type of chromosome.
+
+** Diploid cells
+Diploid cells are cells which have *two* of each type of chromosome.
+
+** Homologues (homologous chromosomes)
+Homologues are pairs of chromosomes that exist in the somatic cells of diploid organisms. They contain information about the same traits, but the information may vary. One chromosome of each pair is inherited form the mother and the other is inherited from the father.
+
+** Sister chromatids
+Homologous chromosomes replicate to form *two identical copies*, called sister chromatids.
+
+** Centromere
+Centromere is a structure that joins the sister chromatids together.
+
+** Germ-line cells
+Germ-line cells are cells that are involved in sexual reproduction in eukaryotes.
+
+** Mitosis
+Mitosis is a cell division mechanism in eukaryotes that primarily occurs in non-reproductive cells.
+
+** Meiosis
+Meiosis is a cell division mechanism in eukaryotes that occurs in cells that are involved in sexual reproduction. It is essential for generating gametes.
+\\
+
+The formation of gametes must involve some mechanism to halve the number of chromosomes (haploid) found in somatic cells. Otherwise, the number of chromosomes would double with each fertilisation, and all somatic cells that result from mitosis of this zygote will have double the chromosomes of the parental individuals. This reduction division that results in the formation of gametes is achieved through the process of meiosis.
+
+** Gametes
+Gametes are reproductive cells like eggs and sperm that contain a haploid number of chromosomes.
+
+** Zygote
+A zygote is formed when two gametes fuse together. Zygotes contain a diploid number of chromosomes, like in a somatic cell.
+
+** Syngamy (fertilisation)
+Syngamy is the fusion of gametes.
+
+\newpage
+
+** Synapsis
+A synapsis is formed when homologous chromosomes pair along their entire lengths. The chromosomes are held together by cohesin proteins. This close association permits crossing over between sister and non-sister chromatids. During crossing-over, the chromatids break in the same place and sections of chromosomes are swapped.
+
+** Reduction division
+Reduction division refers to the fact that the final amount of genetic material passed to the gametes is halved. This is due to meiosis involving 2 nuclear divisions but only 1 replication of DNA.
+
+** Asexual reproduction
+Asexual reproduction refers to reproduction that does not involve gametes. It occurs through cell division, either through binary fission or mitosis. Some examples include binary fission in prokaryotes and mitosis in protists.
+\\
+
+There are a few multicellular organisms that can reproduce asexually, like invertebrates such as sponges, cnidarians, flatworms, annelids and echinoderms.
+- Flatworms reproduce asexually by splitting in half.
+- Sponges, annelids, and echinoderms have the ability to regenerate a full mature body from fragments.
+- Hydras can reproduce asexually as an outgrowth (bud) of the parent.
+
+Some plants carry also reproduce asexually through vegetative propagation.
+- Budding off a part of a plant and growing it elsewhere to generate a new plant.
+- Parts that can be broken off for this purpose differ from plant to plant, like underground branches for peanuts, suckering shoots for roses, underground stems for ginger, and runner or prostrate aerial stems for strawberry.
+
+
+*** Advantages
+In asexual reproduction, an individual inherits all of its chromosomes from a single parent, which means that it is *genetically identical* to the parent. In a stable environment, this may prove advantageous as it allows individuals to:
+- Reproduce with a lower investment of energy
+- Maintain characteristics from the parent which are successful for survival in this environment.
+
+** Sexual reproduction
+Sexual reproduction occurs when a new individual (offspring) is formed by the union of two cells, which results in offspring that are not genetically identical to either of the parents. Meiosis and fertilisation constitute a cycle of sexual reproduction. The genetic variation in the offspring is brought about by meiosis.
+\\
+
+In sexual reproduction, during the life-span of the organism, haploid cells or organisms alternate with diploid cells or organisms in a cyclical manner. Protists spend most of their life cycle as a haploid individual while animals spend most of their life cycle as a diploid individual. Plants spend significant portions of its life cycle as haploid and diploid individuals.
+
+*** Sexual life cycle of animals
+In animals, the cells that will eventually undergo meiosis are reserved and set aside during the animals' growth and development for the purpose of reproduction.
+- They are referred to as germ-line cells and are diploid, like somatic cells.
+- These cells will undergo meiosis to produce haploid gametes.
+- In most animals, this is the only stage during which the animal maintains its haploid state.
+- Once fertilisation occurs, the diploid state predominates.
+
+*** Sexual life cycle in humans
+
+\begin{center}
+The adult male and female carry diploid germ-line cells, which undergo meiosis. \\
+$\downarrow$ \\
+This gives rise to a sperm and egg, respectively. They are the haploid stage of human lifecycle. These gametes fertilise. \\
+$\downarrow$ \\
+The zygote is formed, which is a diploid cell. From a single-celled zygote, more cells are produced through mitosis. \\
+$\downarrow$ \\
+Eventually, a mature baby is formed. The baby then grows up through further mitosis to reach adulthood, and the cycle then repeats itself.
+\end{center}
+
+*** Advantages
+Sexual reproduction generates genetic variation, which ensures genetic diversity within a population for greater survivability.
+
+** Autologous chromosomes
+Autologous chromosomes are the first 22 pairs of homologous chromosomes in humans, and they are numbered 1 - 22.
+
+** Sex chromosome
+The sex chromosome is the last pair of chromosomes in humans and is not numbered. If an individual possesses an XX chromosome, they are female. If they possess an XY chromosome, they are male.
+
+** Crossing over
+Crossing over refers to the phenomenon where sections of two pairs of chromatids are swapped.
+
+** Independent assortment
+Independent assortment means that the placement of the homologous chromosomes across the two sides of a cell is random.
+
+** Fertilisation
+Fertilisation refers to the union of male and female gametes. Chromosomes donated by the parents are combined in the resulting zygote.
+
+*** Genetic variation
+3 chromosomes in a haploid set result in $2^3 = 8$ possible combinations in each collection of parental gametes. If one is picked from each parent, then there would be $(2^3)^2 = 64$ chromosomally different zygotes.
+\\
+
+In the case of humans, which have 23 chromosomes in a haploid set, $(2^{23})^2 = 70,368,744,000,000$ chromosomally different zygotes are possible due to independent assortment.
+\\
+
+If *crossing over* occurs only once, then $(4^{23})^2 = 4961,760,200,000,000,000,000,000,000$ genetically different zygotes are possible. This number is likely to be higher as crossing over may occur several times in each chromosome.
+
+** Ovum
+Ovum just means egg.
+
+** Spermatozoa
+Spermatozoa just means sperm.
+
+** Gonads
+Gonads are the organs that are involved in gamete production, storage and sometimes, sexual union. Basically, gonads refer to sex organs like the ovary in human females and the testes in human males.
+
+** Reproductive system
+The reproductive system refers to the collection of organs that:
+1. Produce and store gametes.
+2. Allow the gametes from the two sexes to meet and fuse into a zygote.
+3. Allow the zygote to develop into a new multicellular individual.
+
+** Indifferent state
+Indifferent state refers to the state where the gonads are not actively influenced by the sex chromosome.
+
+\newpage
+
+* DNA replication process
+When DNA is replicated, each of the parental DNA strand serves as template. By base-pairing with one template strand, the specific sequence of bases of the parental genome can be carried by the new DNA as complementary sequences. The sequence of the new DNA strand will be identical to the other strand in the parental DNA.
+\\
+
+This new strand of DNA is synthesised by an enzyme called DNA polymerase. As free nucleotides bind to the complementary bases on the template strand, the DNA polymerase sequentially synthesises phosphodiester bonds to incorporate the nucleotides, and the strand of DNA elongates, one base by one base.
+\\
+
+The parental DNA duplex has to be first separated or unwound to expose the sequence of bases. This unwinding is handled by the enzyme called helicase.
+\\
+
+The DNA polymerase will then initiate DNA synthesis by adding a nucleotide to the 3' end of a primer. This ensures that the new DNA strand is synthesised in a 5' to 3' direction. Replication using each of the parental DNA will run in opposite directions concurrently. The two events of replication requires considerable molecular coordination.
+\\
+
+When the helicase unwinds parental DNA in a certain direction, one of the replication processes will simply "follow" this unwinding and grow in the same direction as the parental DNA gets further unwound. The new DNA strand formed in this process is called the leading strand. However, because the other new strand can only be synthesised in the opposite direction, it needs to be formed in short stretches based on the part of the template that is exposed at the replication fork. These short stretches are then joined by the enzyme DNA ligase, to form a  continuous new strand. This strand is called the lagging strand.
+
+\newpage
+
+* Prokaryotic cell replication
+\begin{center}
+The prokaryotic cell carries a singular chromosome of circular DNA. \\
+$\downarrow$ \\
+DNA replication begins at a site on the circular DNA called the origin of replication. \\
+$\downarrow$ \\
+The double stranded DNA is then unzipped in both directions from the origin of replication and the replication forks formed move along in both directions. \\
+$\downarrow$ \\
+The end result of replication is that the cell possesses two complete copies of the hereditary information and the chromosomes are interwound due to way the circular DNA is replicated. \\
+$\downarrow$ \\
+The interwound chromosomes are then resolved (separated) by a process called chromosomal resolution. \\
+$\downarrow$ \\
+The cell will then undergo cell division by elongating itself through collecting more cytoplasmic material. \\
+$\downarrow$ \\
+When the cell reaches an appropriate size, the chromosomes move to the opposite ends of the cell. \\
+$\downarrow$ \\
+New plasma membrane and cell wall material are added at the central region, separating the chromosomes. \\
+$\downarrow$ \\
+The cell constricts, with the membrane forming inwards and two daughter cells are formed, with each carrying one copy of chromosome.
+\end{center}
+
+\newpage
+
+* Chromosomes in eukaryotes
+- Chromosomes are organised as linear chromosomes in eukaryotic cells.
+- Most eukaryotes have between *10* and *50* chromosomes in the somatic cells
+- Chromosomes in diploid organisms exist as pairs in somatic cells
+- Humans have *23 pairs* of homologues
+- This means there are *92 chromatids* when the homologues are replicated
+
+\newpage
+
+* Mitosis
+Mnemonic for mitosis:
+\\
+
+PMAT:
+- Prophase (beginning phase)
+- Metaphase (M for "middle")
+- Anaphase (A for "away")
+- Telophase (T for "two")
+
+** Interphase
+
+*** \(G_1\) phase
+- The primary growth phase of the cell following division.
+- Most cells spend the majority of their lifespan in this phase.
+
+*** S phase
+DNA replication occurs in preparation for cell division
+
+*** \(G_2\) phase
+Further preparation occurs, such as:
+- The replication of centrioles
+- The condensation of chromosomes
+
+** Mitosis (M phase)
+- During mitosis, a division of the nuclear contents occurs.
+- Mitosis is a continuous process whereby a microtubular apparatus binds to the chromosomes and moves them apart.
+
+*** Prophase
+- The chromosomes condense.
+- The spindle, which is attached to the chromosomes, forms.
+- The nuclear envelope breaks down
+
+*** Metaphase
+The chromosomes line up on the central plane of the cell in this phase.
+
+*** Anaphase
+- The chromosomes divide at the centromere.
+- The chromatids move towards opposite poles of the cell.
+
+*** Telophase
+- A new nuclear envelope forms at each pole.
+- The chromosomes at both poles of the cell uncoil and lose their condensed appearance.
+- The spindle fibres disappear.
+
+** Cytokinesis (C phase)
+- It occurs at the end of mitosis.
+- The cytoplasm divides into roughly equal halves, creating two daughter cells.
+- In animals, cytokinesis occurs by actin filaments contracting and pinching the cell in two, forming a cleavage furrow.
+- In plants, a new cell wall is laid down to divide the two daughter cells.
+
+\newpage
+
+* Meiosis
+- DNA is replicated only before Meiosis I.
+- Meiosis I separates the homologous chromosomes.
+- Meiosis II separates the replicated sister chromatids the homologous chromosomes.
+- When meiosis is complete, the result is that one diploid cell has become four haploid cells.
+
+Both Meiosis I and Meiosis II both have 4 stages and both have phases that have names that are quite similar to mitosis, only that they have Roman numerals appended to the back of phase to indicated that they are the phases for Meiosis I or Meiosis II.
+\\
+
+Meiosis has two unique features that aren't found in mitosis
+1. Synapsis
+2. Reduction division
+
+Mnemonic for meiosis:
+\\
+
+PMAT:
+- Prophase (beginning phase)
+- Metaphase (M for "middle")
+- Anaphase (A for "away")
+- Telophase (T for "two")
+
+\newpage
+
+** Meiosis I
+
+*** Prophase I
+- The homologous chromosomes pair up.
+- Crossing over occurs between non-sister chromatids of homologous chromosomes.
+
+*** Metaphase I
+The paired homologous chromosomes align on a central plane of the cell.
+
+*** Anaphase I
+The homologues separate and move to opposite poles of the cell.
+
+*** Telophase I
+The chromosomes gather at each of the two poles to form two chromosome clusters.
+
+** Meiosis II
+
+*** Prophase II
+New spindle forms to attach to chromosome clusters.
+
+*** Metaphase II
+- Spindle fibres bind to both sides of the centromere.
+- Individual chromosomes align along a central plane.
+
+*** Anaphase II
+- The sister chromatids are pulled apart at the centromere.
+- The chromatids move to the opposite poles.
+
+*** Telophase II
+The nuclear envelope is reformed around each of the four sets of daughter chromosomes.
+
+
+* Comparison of meiosis and mitosis
+\begin{center}
+\begin{tabular}{c|c}
+\textbf{Meiosis} & \textbf{Mitosis} \\
+\hline
+Homologous chromosomes pair up & Homologous chromosomes do not normally pair up \\
+Crossing over & No crossing over \\
+Two cell divisions & One cell division \\
+Four daughter cells & Two daughter cells \\
+Haploid daughter cells ($n$) & Diploid daughter cells ($2n$)
+\end{tabular}
+\end{center}
+
+
+* Genetic variation through meiosis I
+Meiosis brings about genetic variation in 2 key ways, crossing over, and independent assortment.
+
+** Crossing over
+Crossing over refers to the phenomenon where sections of two pairs of chromatids are swapped.
+
+*** Process
+Homologous chromosomes line up together as a pair. Crossing over then occurs between non-sister chromatids of homologous chromosomes. The chromatids break in the same place and sections of chromosomes are swapped. Crossing over only occurs in prophase I.
+
+** Independent assortment
+Independent assortment means that the placement of the homologous chromosomes across the two sides of a cell is random. The orientation of which homologue faces which pole is shuffled and determined in prophase I, but only shows up during metaphase I. Thus, independent assortment occurs in prophase I and not metaphase I.
+
+*** Process
+During prophase I of meiosis, the homologous chromosomes pair up. If there are 3 pairs of homologous chromosomes, the pairs may be distributed in 4 possible ways and show up during metaphase I. This randomness of distribution is known as independent assortment.
+
+
+* Variation in macro organisms
+
+** Sex determination
+In most organisms, sexes are separate and individuals develop into one or the other of the sexes, so that the egg of one sex is fertilised by the sperm of another sex. Sex is determined by the individual's sex chromosomes.
+\\
+
+The reproductive systems of human males and females appear similar for the first 30 days after conception, then develop sexual characteristics according to the XY chromosome system.
+\\
+
+The development of sexual characteristics may be dictated by sex chromosomes adopting:
+- The XY system for most mammals.
+- The ZW system for some birds and reptiles.
+- The UV system for some mosses and algae.
+
+In the XY system, if an embryo carries XX chromosomes, it is a female, and the gonads will become ovaries (female sex organ). If an embryo carries XY chromosomes, it is a male and the gene product from the Y chromosome converts gonads into testes (male sex organ). The default state is "female" in the XY system. Without Y, the gonads will "stay" female.
+
+\newpage
+
+*** Parthenogenesis
+A variation to the norm in sex determination is parthenogenesis, which is a special type of reproduction in which offspring are produced from unfertilised eggs. This is *NOT asexual reproduction*, but rather a modified form of sexual reproduction.
+\\
+
+The most common pattern is:
+- Unfertilised haploid egg $\rightarrow$ male offspring
+- Fertilised diploid zygote $\rightarrow$ female offspring
+
+However, many other variations exist.
+\\
+
+An example is honeybees, where the queen mates only once and stores sperm.
+- If no sperm are released, the eggs develop into drones, which are male.
+- If sperm are released, the eggs develop into other queens or workers, which are female.
+
+
+*** Hermaphroditism
+Hermaphroditism is a reproductive strategy in which one individual has both male and female gonads (i.e. testes and ovaries, respectively). Therefore, it can produce both sperm and eggs.
+\\
+
+Most hermaphroditic organisms require another individual to reproduce. Each individual switches roles from producing eggs to producing sperm during mating.
+\\
+
+Some hermaphroditic organisms exist as one sex at any one time, but can change their sex as required. This is called sequential hermaphroditism.
+- Protogyny is a change from female to male.
+- Protandry is a change from male to female.
+
+** Mode of fertilisation
+
+*** External fertilisation
+External fertilisation refers to the phenomenon where gametes are released and unite outside the bodies of reproducing animals. Many aquatic animals practice external fertilisation.
+
+*** Internal fertilisation
+Many animals practice internal fertilisation through the act of copulation. Copulation refers to the sexual union to facilitate the reception of sperm within the body of the female.
+
+*** Sexual reproduction in flowering plants
+A flowering plant practices a strategy of producing two types of spores after meiosis. One of them is the microspore, which is the male gametophyte. It undergoes mitosis and becomes a pollen grain. The other is the megaspore, which is the female gametophyte. It undergoes mitosis and becomes an embryo sac within an ovule, which in itself is within an ovary. The ovule (within which the zygote grows) become a seed and the ovary becomes a fruit.
+\\
+
+Variation can occur in the form of perfect and imperfect flowers:
+- Perfect (bisexual) flowers have both types of gametophyte.
+- Imperfect (unisexual) flowers have one but not the other.
+
+In the case of bisexual flowers, it is easier for one flower to self-fertilise within itself. However, in most cases, fertilisation is facilitated by the wind and insects that carry the pollen to another flower.
+
+\newpage
+
+** Lifestyle and life history strategies
+
+*** Oviparous
+- Animals deposit eggs in the external environment.
+- The parent provides eggs with plentiful yolk.
+- The development of the zygote takes place in a shelled egg environment.
+- The yolk provides nutrients.
+- Parents often tend to their young and their eggs.
+- Most reptiles and birds adopt this strategy, but some unusual mammals, like the platypus, do it too.
+
+*** Ovoviviparous
+- Animals retain their eggs in the parental body.
+- The yolk also provides nutrients.
+- Eggs are hatched within the body.
+- Young which are able to fend for themselves are born alive.
+- Certain reptiles, insects and marine animals, like oysters, adopt this strategy.
+- This strategy is less common than oviparous.
+
+*** Viviparous
+- Nourishment of zygote is provided through the placenta and not the yolk of an egg.
+- Care and development of the zygote occur within the female body.
+- The placenta allows exchange of material between the mother and the developing embryo.

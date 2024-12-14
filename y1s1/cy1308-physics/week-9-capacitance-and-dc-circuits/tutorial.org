@@ -1,0 +1,666 @@
+#+TITLE: Physics Capacitance & DC Circuits Tutorial
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{siunitx}
+
+\newpage
+
+* Question 1
+Finding the potential at the surface of the smaller conducting sphere:
+\[V_a = \frac{q}{4 \pi \varepsilon_0 r}\]
+\[V_a = \frac{Q}{4 \pi \varepsilon_0 a}\]
+
+Finding the potential at the surface of the bigger conducting sphere:
+\[V_b = \frac{q}{4 \pi \varepsilon_0 r}\]
+\[V_b = \frac{Q}{4 \pi \varepsilon_0 b}\]
+
+Finding the potential difference between the two surfaces:
+\[V_{ab} = V_a - V_b\]
+\[V_{ab} = \frac{Q}{4 \pi \varepsilon_0 a} - \frac{Q}{4 \pi \varepsilon_0 b}\]
+\[V_{ab} = \frac{Q}{4 \pi \varepsilon_0 a} - \frac{Q}{4 \pi \varepsilon_0 b}\]
+\[V_{ab} = \frac{Qb}{4 \pi \varepsilon_0 ab} - \frac{Qa}{4 \pi \varepsilon_0 ab}\]
+\[V_{ab} = \frac{Q(b - a)}{4 \pi \varepsilon_0 ab}\]
+
+Finding the capacitance of the spherical capacitor:
+\[C = \frac{Q}{\frac{Q(b - a)}{4 \pi \varepsilon_0 ab}}\]
+\[C = \frac{4 \pi \varepsilon_0 ab}{(b - a)}\]
+
+
+* Question 2
+
+** (a)
+Using Gauss' law:
+\begin{align*}
+\oint \vec{E} \cdot d \vec{A} &= \frac{Q_{encl}}{\varepsilon_0} \\
+\oint E \cos \theta \cdot dA &= \frac {Q_{encl}}{\varepsilon_0} \\
+\oint E \cdot dA &= \frac {Q_{encl}}{\varepsilon_0} \quad (\because \cos \theta = 1) \\
+E \oint dA &= \frac {Q_{encl}}{\varepsilon_0} \\
+E A &= \frac {Q_{encl}}{\varepsilon_0} \\
+E &= \frac {Q_{encl}}{A \varepsilon_0} \\
+\end{align*}
+
+\newpage
+
+Let $a$ and $b$ be the positions of the two plates of the capacitor. Finding the potential difference of the capacitor:
+\begin{align*}
+V_{ab} &= - \int_b^a \vec{E} \cdot d \vec{l} \\
+&= - \int_b^a E \cos \theta \, dl \\
+&= - \int_b^a E \, dl \quad (\because \cos \theta = 1) \\
+&= - \int_b^a \frac{Q_{encl}}{A \varepsilon_0} \, dl \\
+&= - \frac{Q_{encl}}{A \varepsilon_0} \int_b^a \, dl \\
+&= - \frac{Q_{encl}}{A \varepsilon_0} \int_b^a \, dl \\
+&= \frac{Q_{encl}}{A \varepsilon_0} \int_a^b \, dl \\
+&= \frac{Q_{encl}}{A \varepsilon_0} \cdot d \\
+&= \frac{Q_{encl}d}{A \varepsilon_0} \\
+\end{align*}
+
+Finding the capacitance of the capacitor:
+\begin{align*}
+C &= \frac{Q}{V_{ab}} \\
+&= \frac{Q_{encl}}{\frac{Q_{encl}d}{A \varepsilon_0}} \\
+&= \frac{A \varepsilon_0 Q_{encl}}{Q_{encl} d} \\
+&= \frac{A \varepsilon_0}{d} \\
+&= \frac{\varepsilon_0 A}{d} \textbf{ (Shown)} \\
+\end{align*}
+
+\newpage
+
+** (b)
+\[1.0 \times 10^{-12} \ge C \ge 1000 \times 10^{-12}\]
+\[1.0 \times 10^{-12} \ge \frac{\varepsilon_0 A}{d} \ge 1000 \times 10^{-12}\]
+\[1.0 \times 10^{-12} \ge \frac{8.85 \times 10^{-12} \cdot 25 \times 10^{-6}}{d} \ge 1000 \times 10^{-12}\]
+\[1.0 \times 10^{-12} \ge \frac{2.2125 \times 10^{-16}}{d} \ge 1000 \times 10^{-12}\]
+\[4519.774011 \ge \frac{1}{d} \ge 1000 \times 4519774.011\]
+\[2.2125 \times 10^{-4} \le d \le 2.2125 \times 10^{-7}\]
+\[2.2125 \times 10^{-7} \le d \le 2.2125 \times 10^{-4}\]
+\[2.2125 \times 10^{-7} \le d \le 2.2125 \times 10^{-4}\]
+\[\qty{0.22125}{\unit{\micro\metre}} \le d \le \qty{221.25}{\unit{\micro\metre}}\]
+\[\qty{0.22}{\unit{\micro\metre}} \le d \le \qty{220}{\unit{\micro\metre}} \text{ (3 s.f)}\]
+
+** (c)
+\[C = \frac{\varepsilon_0 A}{d}\]
+\[d = \frac{\varepsilon_0 A}{C}\]
+
+Differentiating the distance equation gives the approximate uncertainty in distance:
+\begin{align*}
+\Delta d &= \frac{dd}{dC} \Delta C \\
+&= -\frac{\varepsilon_0 A}{C^2} \Delta C \\
+&= -\frac{\varepsilon_0 A}{\left(\frac{\varepsilon_0 A}{d} \right)^2} \Delta C \\
+&= -\frac{\varepsilon_0 A}{\frac{\varepsilon_0^2 A^2}{d^2}} \Delta C \\
+&= -\frac{d^2 \Delta C}{\varepsilon_0 A} \\
+\end{align*}
+
+The absolute uncertainty would be:
+\[\Delta d = \frac{d^2 \Delta C}{\varepsilon_0 A}\]
+
+** (d)
+\begin{align*}
+\Delta d_{min} &= \frac{d^2 \Delta C}{\varepsilon_0 A} \\
+&= \frac{(0.22125 \times 10^{-6})^2 \cdot 0.1 \times 10^{-12}}{8.85 \times 10^{-12} \cdot 25 \times 10^{-6}} \\
+&= 2.125 \times 10^{-11}
+\end{align*}
+
+\begin{align*}
+\frac{\Delta d_{min}}{d} &= \frac{2.125 \times 10^{-11}}{0.22125 \times 10^{-6}} \\
+&= 0.01\%
+\end{align*}
+
+\begin{align*}
+\Delta d_{max} &= \frac{d^2 \Delta C}{\varepsilon_0 A} \\
+&= \frac{(221.25 \times 10^{-6})^2 \cdot 0.1 \times 10^{-12}}{8.85 \times 10^{-12} \cdot 25 \times 10^{-6}} \\
+&= 2.125 \times 10^{-5}
+\end{align*}
+
+\begin{align*}
+\frac{\Delta d_{max}}{d} &= \frac{2.125 \times 10^{-5}}{221.25 \times 10^{-6}} \\
+&= 10.0\%
+\end{align*}
+
+\newpage
+
+* Question 3
+An uncharged capacitor acts like a regular wire with no resistance, so the total resistance of the circuit is:
+\begin{align*}
+R_{total} &= R + \frac{1}{\frac{1}{R} + \frac{1}{R}} \\
+&= R + \frac{R}{2} \\
+&= 1.5R
+\end{align*}
+
+\begin{align*}
+I_1 &= \frac{\mathcal{E}}{R} \cdot \frac{R}{1.5R} \\
+&= \frac{2}{3} \frac{\mathcal{E}}{R}
+\end{align*}
+
+\begin{align*}
+I_2 &= \frac{\mathcal{E}}{R} \cdot \frac{\frac{R}{2}}{1.5R} \\
+&= \frac{1}{3} \frac{\mathcal{E}}{R}
+\end{align*}
+
+\begin{align*}
+I_3 &= \frac{\mathcal{E}}{R} \cdot \frac{\frac{R}{2}}{1.5R} \\
+&= \frac{1}{3} \frac{\mathcal{E}}{R}
+\end{align*}
+
+\newpage
+
+A charged capacitor acts like a break in the circuit, or an open circuit, so the total resistance of the circuit is:
+\begin{align*}
+R_{total} &= R + R \\
+&= 2R
+\end{align*}
+
+\begin{align*}
+I_1 &= \frac{\mathcal{E}}{R} \cdot \frac{R}{2R} \\
+&= \frac{1}{2} \frac{\mathcal{E}}{R}
+\end{align*}
+
+\begin{align*}
+I_2 &= \frac{\mathcal{E}}{R} \cdot \frac{R}{2R} \\
+&= \frac{1}{2} \frac{\mathcal{E}}{R}
+\end{align*}
+
+\[I_3 = 0\]
+
+
+* Question 4
+
+** (a)
+\begin{align*}
+C_{equiv} &= \left( \frac{1}{\left(\frac{1}{15} + \frac{1}{3} \right)^{-1} + 6.00} + \frac{1}{20.0} \right)^{-1} \\
+&= \frac{340}{57} \\
+&\approx \qty{5.96}{\unit{p.F}}
+\end{align*}
+
+\newpage
+
+** (b)
+For the initial case:
+\[V_{C_1} = \qty{100}{\unit{V}}\]
+\[C_1 = \frac{Q_{C_1}}{V}\]
+\[15 \times 10^{-6} = \frac{Q_{C_1}}{100}\]
+\[Q_{C_1} = 1.5 \times 10^{-3} \ \unit{C}\]
+
+\[V_{C_2} = \qty{0}{\unit{V}}\]
+\[Q_{C_2} = \qty{0}{\unit{C}}\]
+
+For the case where the switch is flipped to position B, the charge is conserved and the potential difference across the 2 capacitors is the same:
+\[Q_1 + Q_2 = 1.5 \times 10^{-3}\]
+\[Q_1 = 1.5 \times 10^{-3} - Q_2 \tag{1}\]
+
+\[V_{C_1} = V_{C_2}\]
+\[C_2 = \frac{Q_2}{V_{C_2}}\]
+\[V_{C_2} = \frac{Q_2}{C_2} \tag{2}\]
+
+\[C_1 = \frac{Q_1}{V_{C_1}}\]
+\[V_{C_1} = \frac{Q_1}{C_1} \tag{3}\]
+
+\newpage
+
+Equating $(1)$ and \((2)\):
+\[\frac{Q_1}{C_1} = \frac{Q_2}{C_2}\]
+\[\frac{2 \times 10^{5}}{3}Q_1 = 5 \times 10^{4} \cdot Q_2\]
+\[\frac{2 \times 10^{5}}{3} (1.5 \times 10^{-3} - Q_2) = 5 \times 10^{4} \cdot Q_2\]
+\[100 - \frac{2 \times 10^{5}}{3} Q_2 = 5 \times 10^{4} \cdot Q_2\]
+\[100 = \frac{2 \times 10^{5}}{3} Q_2 + 5 \times 10^{4} \cdot Q_2\]
+\[Q_2 = \frac{3}{3500}\]
+\[Q_2 \approx 8.57 \times 10^{-4} \ \unit{C}\]
+
+Finding \(Q_1\) using \((1)\):
+\[Q_1 = 1.5 \times 10^{-3} - Q_2\]
+\[Q_1 = 1.5 \times 10^{-3} - \frac{3}{3500}\]
+\[Q_1 = \frac{9}{14000}\]
+\[Q_1 \approx 6.43 \times 10^{-4} \ \unit{C}\]
+
+Since \(V_1 = V_2\):
+\[V_{C_1} = \frac{Q_1}{C_1}\]
+\[V_{C_1} = \frac{\frac{9}{14000}}{15 \times 10^{-6}}\]
+\[V_{C_1} = \frac{300}{7}\]
+\[V_{C_1} = \qty{42.9}{\unit{V}}\]
+
+
+* Question 5
+
+** (a)
+When the capacitor is fully charged, it acts as a break in the circuit.
+\\
+
+Finding the current passing through the $\qty{1}{\unit{\ohm}}$ resistor:
+\[I_1 = \frac{V}{R}\]
+\[I_1 = \frac{12}{10}\]
+\[I_1 = \qty{1.2}{\unit{A}}\]
+
+Finding the potential difference across the $\qty{1}{\unit{\ohm}}$ resistor:
+\[V_1 = IR\]
+\[V_1 = 1.2 \cdot 1\]
+\[V_1 = \qty{1.2}{\unit{V}}\]
+
+Finding the current passing through the $\qty{10}{\unit{\ohm}}$ resistor:
+\[I_{10} = \frac{V}{R}\]
+\[I_{10} = \frac{12}{15}\]
+\[I_{10} = \qty{0.8}{\unit{A}}\]
+
+Finding the potential difference across the $\qty{10}{\unit{\ohm}}$ resistor:
+\[V_{10} = IR\]
+\[V_{10} = 0.8 \cdot 10\]
+\[V_{10} = \qty{8}{\unit{V}}\]
+
+Hence, finding the potential difference across the capacitor:
+\[V_{cap} = |V_1 - V_{10}|\]
+\[V_{cap} = |1.2 - 8|\]
+\[V_{cap} = \qty{6.8}{\unit{V}}\]
+
+Finding the charge of the capacitor:
+\[C = \frac{Q}{V}\]
+\[2.2 \times 10^{-6} = \frac{Q}{6.8}\]
+\[Q = 1.496 \times 10^{-5} \ \unit{C}\]
+\[Q \approx \qty{15}{\unit{\micro C}}\]
+
+** (b)
+Finding the effective resistance of the circuit:
+\begin{align*}
+R_{equiv} &= \left( \frac{1}{1 + 10} + \frac{1}{9 + 5} \right)^{-1} \\
+&= \qty{6.16}{\unit{\ohm}}
+\end{align*}
+
+Using the equation for discharging of a capacitor:
+\[q = Q_0 e^{-\frac{t}{RC}}\]
+\[\frac{3}{100} Q_0 = Q_0 e^{-\frac{t}{6.16 \cdot 2.2 \times 10^{-6}}}\]
+\[\frac{3}{100} = e^{-\frac{t}{1.3552 \times 10^{-5}}}\]
+\[\ln \left( \frac{3}{100} \right) = - \frac{t}{1.3552 \times 10^{-5}}\]
+\[t = 4.752087262 \times 10^{-5} \ \unit{s}\]
+\[t \approx \qty{48}{\unit{\micro s}}\]
+
+
+* Question 6
+
+** (a)
+At $t = 0$, the capacitor acts like a regular metal wire, so the potential difference across the resistor $R_1$ is equivalent to the e.m.f of the battery.
+\[V_1 = \qty{15.0}{\unit{V}}\]
+
+Potential difference across the capacitor and the other resistor will hence be 0:
+\[V_2 = \qty{0}{\unit{V}}\]
+\[V_c = \qty{0}{\unit{V}}\]
+
+** (b)
+After the switch is closed for a long time, the capacitor is fully charged, and hence acts like a break in the circuit. The total resistance of the circuit is:
+\begin{align*}
+R_{total} &= 5.00 + 8.00 \\
+&= \qty{13}{\unit{\ohm}}
+\end{align*}
+
+The current through the circuit is:
+\begin{align*}
+I &= \frac{V}{R} \\
+&= \frac{15}{13} \\
+&\approx \qty{1.15}{\unit{V}}
+\end{align*}
+
+Hence:
+\[I_1 = I_2 = \approx \qty{1.15}{\unit{V}}\]
+
+Since the capacitor is fully charged, no current runs through the capacitor. Thus, \(I_c = 0\).
+\\
+
+Finding the potential difference across \(R_1\):
+\[V_1 = IR\]
+\[V_1 = \frac{15}{13} \cdot 5.00\]
+\[V_1 = \frac{75}{13}\]
+\[V_1 \approx \qty{5.77}{\unit{V}}\]
+
+Finding the potential difference across \(R_2\):
+\[V_2 = IR\]
+\[V_2 = \frac{15}{13} \cdot 8.00\]
+\[V_2 = \frac{120}{13}\]
+\[V_2 \approx \qty{9.23}{\unit{V}}\]
+
+The potential difference across the capacitor is equal to the potential difference across \(R_2\):
+\[V_c = V_2 \approx \qty{9.23}{\unit{V}}\]
+
+** (c)
+\[I = I_1 + I_2 \tag{1}\]
+\[\mathcal{E} = IR_1 + V_c \tag{2}\]
+\[\mathcal{E} = IR_1 + I_2R_2 \tag{3}\]
+
+Equating $(2)$ and \((3)\):
+\[IR_1 + V_c = IR_1 + I_2 R_2\]
+\[V_c = I_2 R_2\]
+\[I_2 = \frac{V_c}{R_2} \tag{4}\]
+
+Substituting $(1)$ into \((3)\):
+\[\mathcal{E} = (I_1 + I_2) R_1 + I_2R_2\]
+\[\mathcal{E} = I_1 R_1 + I_2 R_1 + I_2R_2 \tag{5}\]
+
+Substituting $(4)$ into \((5)\):
+\[\mathcal{E} = I_1 R_1 + \frac{V_c}{R_2} R_1 + \frac{V_c}{R_2} R_2\]
+\[\mathcal{E} = I_1 R_1 + \frac{V_c R_1}{R_2} + V_c\]
+\[\mathcal{E} = I_1 R_1 + V_c \left( 1 + \frac{R_1}{R_2}\right)\]
+\[\frac{\mathcal{E}}{R_1} = I_1 + V_c \left( \frac{1}{R_1} + \frac{R_1}{R_2R_1}\right)\]
+\[I_1 = \frac{\mathcal{E}}{R_1} - V_c \left( \frac{R_2 + R_1}{R_1R_2}\right) \]
+
+\newpage
+
+Letting \(I_1 = \frac{dQ}{dt}\) and \(V_c = \frac{Q}{C}\):
+\[\frac{dQ}{dt} = \frac{\mathcal{E}}{R_1} - \frac{Q}{C} \left( \frac{R_2 + R_1}{R_1 R_2} \right)\]
+
+Let \(\frac{\mathcal{E}}{R_1} = I_0\):
+\[\frac{dQ}{dt} = I_0 - \frac{Q}{C} \left( \frac{R_2 + R_1}{R_1 R_2} \right)\]
+
+Let \(\frac{R_1 R_2}{R_1 + R_2} = R_{eq}\):
+\[\frac{dQ}{dt} = I_0 - \frac{Q}{R_{eq}C}\]
+\[\frac{dQ}{dt} = \frac{I_0 R_{eq}C}{R_{eq}C} - \frac{Q}{R_{eq}C}\]
+\[\frac{dQ}{dt} = \frac{I_0 R_{eq}C - Q}{R_{eq}C}\]
+\[\frac{1}{\frac{I_0 R_{eq}C - Q}{R_{eq}C}} \frac{dQ}{dt} = 1\]
+\[\frac{R_{eq}C}{I_0 R_{eq}C - Q} \frac{dQ}{dt} = 1\]
+
+Integrating both sides with respect to \(t\):
+\[\int \frac{R_{eq}C}{I_0 R_{eq}C - Q} \frac{dQ}{dt} \, dt = \int 1 \, dt\]
+\[\int \frac{R_{eq}C}{I_0 R_{eq}C - Q} \, dQ = \int 1 \, dt\]
+\[R_{eq} C \int \frac{1}{I_0 R_{eq}C - Q} \, dQ = \int 1 \, dt\]
+\[\int \frac{1}{I_0 R_{eq}C - Q} \, dQ = \frac{1}{R_{eq} C} \int 1 \, dt\]
+\[- \ln |I_0 R_{eq} C - Q| = \frac{1}{R_{eq} C} \cdot t + A, \text{ where } A \text{ is an arbitrary constant}\]
+\[\ln |I_0 R_{eq} C - Q| = - \frac{t}{R_{eq} C} - A\]
+\[\ln |I_0 R_{eq} C - Q| = e^{- \frac{t}{R_{eq} C} - A}\]
+\[I_0 R_{eq} C - Q = Be^{- \frac{t}{R_{eq} C}}, \text{ where } B = e^{-A}\]
+\[Q = I_0 R_{eq} C - Be^{- \frac{t}{R_{eq} C}}\]
+
+\newpage
+
+When the capacitor is initially uncharged, \(Q = 0\) and \(t = 0\):
+\[0 = I_0 R_{eq} C - Be^{- \frac{0}{R_{eq} C}}\]
+\[I_0 R_{eq} C = B(1)\]
+\[B = I_0 R_{eq} C\]
+
+Hence:
+\[Q = I_0 R_{eq} C - I_0 R_{eq} e^{- \frac{t}{R_{eq} C}}\]
+\[Q = I_0 R_{eq} C \left(1 - e^{- \frac{t}{R_{eq} C}} \right)\]
+
+Where:
+- $I_0 = \frac{E}{R_1}$
+- $R_{eq} = \frac{R_1 R_2}{R_1 + R_2}$
+
+
+* Question 7
+
+** (a)
+Finding the equivalent capacitance of the capacitors:
+\begin{align*}
+C_{eq} &= \left( \frac{1}{3200} + \frac{1}{1800} \right)^{-1} \\
+&= \qty{1152}{\unit{pF}}
+\end{align*}
+
+Finding the total energy stored in the capacitors:
+\begin{align*}
+U &= \frac{1}{2} C_{eq} V^2 \\
+&= \frac{1}{2} \cdot 1152 \times 10^{-12} \cdot 12.0^2 \\
+&= 8.2944 \times 10^{-8} \ \unit{J} \\
+&\approx \qty{82.9}{\unit{nJ}}
+\end{align*}
+
+** (b)
+Finding the equation for the potential difference across the capacitor:
+\[C = \frac{Q}{V}\]
+\[Q = VC\]
+
+Since the capacitors are in series, they have the same charge. Finding the charge on each of the capacitors:
+\[Q = VC\]
+\[Q = 12 \cdot 1152 \times 10^{-12}\]
+\[Q = 1.3824 \times 10^{-8} \ \unit{C}\]
+
+When the capacitors are connected, positive plate to positive plate and negative plate to negative plate. The charges will flow until the potential difference across both capacitors are equal. Also, since the capacitors are connected in parallel, the charge held by the capacitors is doubled. Hence:
+\[V_1 = V_2\]
+\[\frac{Q_1}{C_1} = \frac{Q_2}{C_2}\]
+\[\frac{Q_1}{3200 \times 10^{-12}} = \frac{Q_2}{1800 \times 10^{-12}}\]
+\[Q_1 = \frac{16}{9}Q_2 \tag{1}\]
+
+By the conservation of charge:
+\[Q_{total} = Q_1 + Q_2\]
+\[Q_{total} = \frac{16}{9} Q_2 + Q_2\]
+\[1.3824 \times 10^{-8} \cdot 2  = \frac{25}{9} Q_2\]
+\[Q_2 = 9.95328 \times 10^{-9}\]
+\[Q_2 \approx \qty{0.10}{\unit{\micro F}}\]
+
+From \((1)\):
+\[Q_1 = \frac{16}{9} \cdot 9.95328 \times 10^{-9}\]
+\[Q_1 = 1.769472 \times 10^{-8}\]
+\[Q_1 \approx \qty{0.18}{\unit{\micro F}}\]
+
+
+* Question 8
+Finding the current in the circuit:
+\[I = \frac{V}{R}\]
+\[I = \frac{E}{r + R}\]
+
+Finding the potential difference across the variable resistor:
+\[V = IR\]
+\[V = \frac{ER}{r + R}\]
+
+Finding the power delivered to the load:
+\[P = \frac{V^2}{R}\]
+\[P = \frac{\left( \frac{ER}{r + R}\right)^2}{R}\]
+\[P = \frac{\frac{E^2 R^2}{(r + R)^2}}{R}\]
+\[P = \frac{E^2 R}{(r + R)^2}\]
+
+Differentiating with respect to \(R\):
+\begin{align*}
+\frac{dP}{dR} &= E \left( \frac{(r + R)^2 - (2R(r + R))}{((r + R)^2)^2} \right) \\
+&= E \left( \frac{r^2 + 2rR + R^2 - 2rR - 2R^2}{(r + R)^4} \right) \\
+&= E \left( \frac{r^2 - R^2}{(r + R)^4} \right) \\
+&= E \left( \frac{(r + R)(r - R)}{(r + R)^4} \right) \\
+&= E \left( \frac{(r - R)}{(r + R)^3} \right) \\
+&= \frac{E(r - R)}{(r + R)^3} \\
+\end{align*}
+
+Finding the stationary points of \(P\) by setting \(\frac{dP}{dR} = 0\):
+\[\frac{dP}{dR} = 0\]
+\[\frac{E(r - R)}{(r + R)^3} = 0\]
+\[E(r - R) = 0\]
+\[r - R = 0\]
+\[R = r\]
+
+Finding the second derivative of \(P\):
+\begin{align*}
+\frac{d^2P}{dR^2} &= E \left( \frac{-(r + R)^3 - 3(r + R)^2 (r - R)}{((r + R)^3)^2} \right) \\
+&= E \left( \frac{(r + R)^2 (- r - R - 3r + 3R)}{(r + R)^6} \right) \\
+&= \frac{E(- r - R - 3r + 3R)}{(r + R)^4} \\
+&= \frac{E(2R - 4r)}{(r + R)^4} \\
+&= \frac{2E(R - 2r)}{(r + R)^4} < 0 \text{ for } R > 0, r > 0\\
+\end{align*}
+
+Since the second derivative of \(P\) is always negative, \(R = r\) must be a maximum point. Hence, when \(R = r\), there is maximum power transfer *(shown)*.
+
+\newpage
+
+* Question 9
+
+** (a)
+Let \(I_1\) be the current running through battery \(A\) and \(I_2\) be the current running through battery \(B\).
+\\
+
+Using Kirchhoff's voltage law on the loop on the left, with the current starting at \(P\) and moving in the clockwise direction:
+\[20 - V_4 - V_{R_A} - 12 - V_{4} = 0\]
+\[8 - 2V_4 - V_{R_A} = 0\]
+\[V_{R_A} = 8 - 2V_4\]
+\[V_{R_A} = 8 - 2 \cdot 0.5 \times 4\]
+\[V_{R_A} = 4\]
+\[I_1R = 4\]
+\[I_1 = \frac{4}{R} \tag{1}\]
+
+Using Kirchhoff's voltage law on the loop on the right, with the current starting at \(Q\) and moving in the clockwise direction:
+\[-V_{30} + 12 - V_{R_B} + 12 + V_{R_A} = 0\]
+\[-30I_2 + 12 - I_2 R + 12 + I_1 R = 0\]
+\[-30I_2 - I_2 R + I_1 R = -24\]
+\[30I_2 + I_2 R - I_1 R = 24\]
+\[30I_2 + I_2 R = 24 + I_1 R\]
+\[(30 + R)I_2 = 24 + I_1 R\]
+\[I_2 = \frac{24 + I_1 R}{30 + R} \tag{2}\]
+
+\newpage
+
+Substituting $(1)$ into \((2)\):
+\[I_2 = \frac{24 + \frac{4}{R} R}{30 + R}\]
+\[I_2 = \frac{24 + 4}{30 + R}\]
+\[I_2 = \frac{28}{30 + R} \tag{3}\]
+
+Using Kirchhoff's current law at the junction \(Q\):
+\[0.5 = I_1 + I_2\]
+\[0.5 = \frac{4}{R} + \frac{28}{30 + R}\]
+\[1 = \frac{8}{R} + \frac{56}{30 + R}\]
+\[1 = \frac{8(30 + R)}{R (30 + R)} + \frac{56R}{R(30 + R)}\]
+\[R(30 + R) = 8(30 + R) + 56R\]
+\[30R + R^2 = 240 + 8R + 56R\]
+\[30R + R^2 = 240 + 64R\]
+\[R^2 - 34R = 240\]
+\[R^2 - 34R - 240 = 0\]
+
+Using a calculator to solve the equation:
+\[R = 40 \quad \text{or} \quad R = -6\]
+
+Since \(R > 0\):
+\[R = \qty{40}{\unit{\ohm}} \textbf{ (Shown)}\]
+
+Finding \(I_1\) from \((1)\):
+\[I_1 = \frac{4}{R}\]
+\[I_1 = \frac{4}{40}\]
+\[I_1 = \qty{0.1}{\unit{A}}\]
+
+Finding \(I_2\) from \((3)\):
+\[I_2 = \frac{28}{30 + R}\]
+\[I_2 = \frac{28}{30 + 40}\]
+\[I_2 = \frac{28}{70}\]
+\[I_2 = \qty{0.4}{\unit{A}}\]
+
+** (b)
+Finding the potential difference across the internal resistance of battery \(B\):
+\[V_{B} = I_2 R\]
+\[V_{B} = 0.4 \cdot 40\]
+\[V_{B} = 16\]
+
+Since the potential difference across the internal resistance of battery \(B\) is the same as the potential difference between the \(\qty{0}{\unit{V}}\) point and the point between battery $B$ and its internal resistance, the point between battery $B$ and its internal resistance will hence be at a potential of \(\qty{16}{\unit{V}}\). This will be the reference point to calculate the rest of the potentials.
+\\
+
+Walking backwards through the circuit and using the assignments for the components in the part \((a)\), we subtract the potential difference across battery $B$, then we add the potential difference across the \(\qty{30}{\unit{\ohm}}\) resistor. Hence, the potential at \(Q\) is:
+\begin{align*}
+V_Q &= 16 - 12 + 0.4 \cdot 30 \\
+&= \qty{16}{\unit{V}}
+\end{align*}
+
+Continuing to walk backwards through the circuit from point \(Q\), we add the potential difference across the \(\qty{4}{\unit{\ohm}}\) resistor, then we subtract the potential difference across the main \(\qty{20}{\unit{V}}\) battery. Hence, the potential at \(P\) is:
+\begin{align*}
+V_P &= 16 + 0.5 \cdot 4 - 20 \\
+&= \qty{-2}{\unit{V}}
+\end{align*}
+
+* Question 10
+
+** (a)
+Let $I_1$ be the current pointing from $X$ to $A$, $I_2$ be the current pointing straight down from $X$, $I_3$ be the current pointing from $X$ to $Y$, $I_4$ be the current pointing from $Y$ to $X$, $I_5$ be the current pointing straight up from point $Y$, and $I_6$ be the current pointing from $Y$ to $B$.
+\[I_1 + I_2 + I_3 = 0\]
+\[\frac{V_X - V_A}{1000} + \frac{V_X - V_B}{3000} + \frac{V_X - V_Y}{100} = 0\]
+\[\frac{V_X - 1}{1000} + \frac{V_X - 0}{3000} + \frac{V_X - V_Y}{100} = 0\]
+\[\frac{V_X - 1}{1000} + \frac{V_X}{3000} + \frac{V_X - V_Y}{100} = 0\]
+\[\frac{3V_X - 3}{3000} + \frac{V_X}{3000} + \frac{30V_X - 30V_Y}{3000} = 0\]
+\[\frac{34V_X - 30V_Y - 3}{3000} = 0\]
+\[34V_X - 30V_Y - 3 = 0\]
+\[34V_X = 30V_Y + 3\]
+\[V_X = \frac{15}{17}V_Y + \frac{3}{34} \tag{1}\]
+
+\newpage
+
+\[I_4 + I_5 + I_6 = 0\]
+\[\frac{V_Y - V_X}{100} + \frac{V_Y - V_A}{1000} + \frac{V_Y - V_B}{2000} = 0\]
+\[\frac{V_Y - V_X}{100} + \frac{V_Y - 1}{2000} + \frac{V_Y - 0}{2000} = 0\]
+\[\frac{V_Y - V_X}{100} + \frac{V_Y - 1}{2000} + \frac{V_Y}{2000} = 0\]
+\[\frac{20V_Y - 20V_X}{2000} + \frac{V_Y - 1}{2000} + \frac{V_Y}{2000} = 0\]
+\[\frac{22V_Y - 20V_X - 1}{2000} = 0\]
+\[22V_Y - 20V_X - 1 = 0\]
+\[22V_Y = 20V_X + 1\]
+\[V_Y = \frac{10}{11} V_X + \frac{1}{22} \tag{2}\]
+
+Substituting $(2)$ into \((1)\):
+\[V_X = \frac{15}{17} \left( \frac{10}{11} V_X + \frac{1}{22} \right) + \frac{3}{34}\]
+\[V_X = \frac{150}{187}V_X + \frac{24}{187}\]
+\[\frac{37}{187}V_X = \frac{24}{187}\]
+\[V_X = \frac{24}{37}\]
+\[V_X \approx \qty{0.65}{\unit{V}} \tag{3}\]
+
+Finding \(V_Y\):
+\[V_Y = \frac{10}{11} \frac{24}{37} + \frac{1}{22}\]
+\[V_Y = \frac{47}{74}\]
+\[V_Y \approx \qty{0.63}{\unit{V}}\]
+
+** (b)
+Finding the current from point $A$ to point \(X\):
+\begin{align*}
+I_{AX} &= \frac{V_A - V_X}{1000} \\
+&= \frac{1 - \frac{24}{37}}{1000} \\
+&= 3.513513514 \times 10^{-4}
+\end{align*}
+
+Finding the current from point $A$ to point \(Y\):
+\begin{align*}
+I_{AY} &= \frac{V_A - V_Y}{1000} \\
+&= \frac{1 - \frac{47}{74}}{2000} \\
+&= 1.824324324 \times 10^{-4}
+\end{align*}
+
+Finding the total current:
+\begin{align*}
+I_{T} &= I_{AX} + I_{AX} \\
+&= 3.513513514 \times 10^{-4} + 1.824324324 \times 10^{-4} \\
+&= 5.337837838 \times 10^{-4}
+\end{align*}
+
+Finding the resistance of the circuit between $A$ and \(B\):
+\begin{align*}
+R_{T} &= \frac{V}{I} \\
+&= \frac{1}{5.337837838} \\
+&= 1873.417722 \\
+&\approx \qty{1873}{\unit{\ohm}}
+\end{align*}
+
+\newpage
+
+* Question 11
+
+** (a)
+For the arrangement on the right, it can be treated as 2 capacitors in parallel.
+\begin{align*}
+C_1 &= \frac{K_1 \varepsilon_0 \frac{A}{2}}{d} \\
+&= \frac{K_1 \varepsilon_0 A}{2d}
+\end{align*}
+
+\begin{align*}
+C_2 &= \frac{K_2 \varepsilon_0 \frac{A}{2}}{d} \\
+&= \frac{K_2 \varepsilon_0 A}{2d}
+\end{align*}
+
+\begin{align*}
+C_{equiv} &= C_1 + C_2 \\
+&= \frac{K_1 \varepsilon_0 A}{2d} + \frac{K_2 \varepsilon_0 A}{2d} \\
+&= \frac{\varepsilon_0 A (K_1 + K_2)}{2d}
+\end{align*}
+
+\newpage
+
+For the arrangement on the left, it can be treated as 2 capacitors in series:
+\begin{align*}
+C_1 &= \frac{K_1 \varepsilon_0 A}{\frac{d}{2}} \\
+&= \frac{2K_1 \varepsilon_0 A}{d}
+\end{align*}
+
+\begin{align*}
+C_2 &= \frac{K_2 \varepsilon_0 A}{\frac{d}{2}} \\
+&= \frac{2K_2 \varepsilon_0 A}{d}
+\end{align*}
+
+\begin{align*}
+C_{equiv} &= \frac{1}{C_1} + \frac{1}{C_2} \\
+&= \left( \frac{1}{\frac{2K_1 \varepsilon_0 A}{d}} + \frac{1}{\frac{2K_2 \varepsilon_0 A}{d}} \right)^{-1} \\
+&= \left( \frac{d}{2K_1 \varepsilon_0 A} + \frac{d}{2K_2 \varepsilon_0 A} \right)^{-1} \\
+&= \left( \frac{d}{2 \varepsilon_0 A} \left( \frac{1}{K_1} + \frac{1}{K_2} \right) \right)^{-1} \\
+&= \left( \frac{d}{2 \varepsilon_0 A} \left( \frac{K_2}{K_1 K_2} + \frac{K_1}{K_2 K_1} \right) \right)^{-1} \\
+&= \left( \frac{d}{2 \varepsilon_0 A} \left( \frac{K_2 + K_1}{K_1K_2} \right) \right)^{-1} \\
+&= \left( \frac{d(K_1 + K_2)}{2 \varepsilon_0 A K_1 K_2} \right)^{-1} \\
+&= \frac{2 \varepsilon_0 A K_1 K_2}{d (K_1 + K_2)} \\
+\end{align*}

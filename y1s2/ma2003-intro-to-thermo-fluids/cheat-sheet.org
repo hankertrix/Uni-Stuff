@@ -1,0 +1,2322 @@
+#+TITLE: Intro To Thermo Fluids Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{siunitx}
+
+* Definitions
+
+** System (sys)
+- A system is a collection of fluid particles. It moves, flows and interacts with its surroundings by exerting a force.
+- The mass of air drawn into the compressor of a jet engine is considered a "system". The air changes its properties as it is compressed and expelled through the outlet.
+
+** Intensive property
+An intensive property is a physical quantity whose value *does not* depend on the amount of substance which was measured.
+
+** Extensive property
+An extensive property is a physical quantity whose value *depends* on the amount of substance which was measured.
+
+** Specific property
+A specific property is the intensive property obtained by dividing an extensive property of a system by its mass. For example, heat capacity is an extensive property of a system.
+
+** State
+The condition of a system described by a set of properties.
+- It is defined by at least *2 independent intensive* properties, which is usually pressure and volume or pressure and temperature.
+
+** Boundary
+The real or imaginary surface that separates the system from its surroundings.
+
+** Surroundings
+The mass or region outside the system.
+
+** Isolated system
+An isolated system is a system that *does not have any exchange* of matter or energy with its surroundings. A thermos bottle containing hot water is one example, as the hot water does not spill out and the water stays hot.
+
+** Closed system
+A closed system is a system that *only exchanges energy* with its surroundings. A closed system does not exchange matter with its surroundings. A mercury thermometer is one example.
+
+** Open system (Flow system)
+An open system is a system where *both matter and energy* is exchanged with its surroundings. A bacterial cell is an open system, as it takes in organic matter from its surroundings, and releases heat and waste compounds to its surroundings.
+
+** Control volume (C.V.)
+- A control volume is the space enclosed by the control surface in an open system.
+- A control volume is a volume in space through which a fluid may or may not flow.
+
+*** Selection of a control volume
+- Make the interested point *on* the control surface, not "buried" within a control volume.
+- If possible, make the control surface *perpendicular* to the fluid velocity so that the angle is either \(\qty{0}{\degree}\) or \(\qty{180}{\degree}\).
+
+** Control surface (C.S.)
+- A control surface gives a selected region in space or boundary in an open system.
+- A control surface is a surface of a control volume.
+
+** Equilibrium
+Equilibrium is a state of balance, and there are no unbalanced potentials within the system.
+
+*** Mechanical equilibrium
+All forces add up to zero, or the net force on a body is zero. This occurs in systems with weights, springs, etc.
+
+*** Thermal equilibrium
+No heat transfer in a system.
+
+*** Chemical equilibrium
+No net reaction.
+
+** Process
+- A process occurs whenever a system changes from one state to another state.
+- Need to specify *initial* and *final* state, as well as the *path*, and the *interaction* with the surroundings.
+
+** Reversible process
+Both the system and surroundings are returned to their initial state at the end of the reverse process. It is an idealised process that doesn't happen in reality.
+
+\newpage
+
+** Irreversible process
+An irreversible process cannot return both the system and the surroundings to their original conditions.
+
+*** Factors that make a process irreversible
+- Friction
+- Unrestrained expansion of a fluid
+- Mixing of different substances
+- Heat transfer through a finite temperature difference
+- Chemical reaction
+
+** Quasi-equilibrium process
+- An idealised process where a system passes through a series of equilibrium states. Basically, the system changes extremely slowly to improve the efficiency of the system and reduce the irreversibility of the system.
+- A process during which the system remains nearly in equilibrium at all times.
+
+** Path
+The series of states through which a system passes during a process.
+
+** Cycle
+A sequence of processes in which the working fluid returns to its original thermodynamic state.
+
+** Macroscopic forms of energy
+Macroscopic forms of energy are possessed by a system as a whole with respect to an external reference frame. Examples of such forms of energy are kinetic and potential energy.
+
+** Microscopic forms of energy
+Microscopic forms of energy are related to the molecular structure and degree of molecular activity. An example of such a form of energy is internal energy.
+
+\newpage
+
+** Total energy (\(E\))
+\[E = KE + PE + U\]
+\[E = \frac{1}{2} mv^2 + mgh + U\]
+
+Where:
+- $E$ is the total energy
+- $KE$ is the total kinetic energy
+- $U$ is the internal energy
+- $m$ is the mass of the system
+- $v$ is the velocity of the system
+- $g$ is the gravitational acceleration
+- $h$ is the height of the system
+
+*** Change in total energy (\(\Delta E\))
+\[\Delta E = \Delta KE + \Delta PE + \Delta U\]
+
+For a stationary, closed system:
+\[\Delta E = \Delta U\]
+
+Where:
+- $\Delta E$ is the change in total energy
+- $\Delta KE$ is the change in kinetic energy
+- $\Delta PE$ is the change in potential energy
+- $\Delta U$ is the change in internal energy
+
+** Internal energy (\(U\))
+Internal energy is the sum of the energy of molecules. It is a property that includes:
+- Molecular translation
+- Molecular rotation
+- Molecular vibration
+- Electron translation
+- Electron spin
+- Nuclear spin
+
+\[U = U_{\text{sensible}} + U_{\text{latent}}\]
+
+Where:
+- $U$ is the total internal energy
+- $U_{\text{sensible}}$ is the sensible internal energy, which includes the internal energy from the above examples.
+- $U_{\text{latent}}$ is the latent internal energy, which is the internal energy from the binding force between particles.
+
+** Ice point
+A mixture of ice and water that is in equilibrium with air saturated with water vapour at \(\qty{1}{atm}\) pressure ($\qty{0}{\degreeCelsius}$).
+
+** Steam point
+A mixture of liquid water and water vapour with no air, in equilibrium at \(\qty{1}{atm}\) pressure ($\qty{100}{\degreeCelsius}$).
+
+** Two-point temperature scale
+\[\frac{T - 0}{100 - 0} = \frac{X_\theta - X_0}{X_{100} - X_\theta}\]
+\[T = \frac{X_\theta - X_0}{X_{100} - X_0} \times 100\]
+
+Where:
+- $T$ is the current temperature
+- $X_0$ is the value of the thermometric property at $\qty{0}{\degreeCelsius}$
+- $X_{100}$ is the value of the thermometric property at $\qty{100}{\degreeCelsius}$
+- $X_\theta$ is the value of the thermometric property at $T \, \unit{\degreeCelsius}$
+
+** Constant volume gas thermometer
+\[P = P_{atm} + h \rho g\]
+
+Where:
+- $P$ is the pressure of the gas
+- $P_{atm}$ is the atmospheric pressure
+- $h$ is the difference in the height of the liquid between the chamber exposed to the air and the chamber exposed to the gas
+- $\rho$ is the density of the liquid in the thermometer
+- $g$ is the gravitational acceleration
+
+** Pure substances
+- A substance of a fixed chemical composition throughout.
+- It can have more than one *phase*, provided the chemical composition is the same (e.g. liquid water and water vapour)
+- It can be a homogenous mixture (e.g. air)
+- Non-homogeneous mixtures (e.g. oil and water) are not pure substances.
+- Homogenous mixtures with more than one phase may not be pure substances (e.g. air)
+
+** Critical point
+A point at both which the saturated liquid and the saturated vapour phases are identical.
+
+*** Critical temperature (\(T_{cr}\))
+The temperature at the critical point.
+
+*** Critical pressure (\(P_{cr}\))
+The pressure at the critical point.
+
+*** Critical volume (\(V_{cr}\))
+The volume at the critical point.
+
+** Supercritical region (\(P > P_{cr} \text{ and } T > T_{cr}\))
+The supercritical region is a region where there is no distinct phase-change process.
+
+** Saturation temperature (\(T_{sat}\))
+The temperature at which a pure substance changes phase at a *given pressure*.
+
+** Saturation pressure (\(P_{sat}\))
+The pressure at which a pure substance changes phase at a *given temperature*.
+
+** Triple point
+- The triple point is the point where the three phases of a pure substance coexist in equilibrium.
+- The lines representing sublimation (solid to vapour), vaporisation (liquid to vapour), and melting (solid to liquid) meet at the triple point.
+
+** Latent heat of fusion
+The energy absorbed in melting. It is equivalent to the energy released during freezing.
+
+** Latent heat of vaporisation
+The energy absorbed in vaporisation. It is equivalent to the energy released in condensation.
+
+** Latent heat of sublimation
+The energy absorbed in sublimation. It is equivalent to the energy released during deposition.
+
+** Quality (dryness fraction) (\(x\))
+Dryness fraction, or quality, $x$, is the proportion of *vapour* and *liquid* by *mass* in a two-phase mixture. The quality is $0$ at the saturated liquid volume ($v_f$) and $1$ at the saturated gas volume ($v_g$). A two-phase system can be treated as a homogenous mixture for convenience.
+
+\[x = \frac{m_{\text{vapour}}}{m_{\text{total}}} = \frac{m_g}{m_f + m_g}\]
+
+Where:
+- $x$ is the quality or dryness fraction
+- $m_{\text{vapour}}$ is the mass of vapour
+- $m_{\text{total}}$ is the total mass
+- $m_g$ is the mass of vapour
+- $m_f$ is the mass of liquid
+
+\newpage
+
+*** Specific volume in terms of quality (\(v\))
+Getting the value of \(1 - x\):
+\begin{align*}
+1 - x &= 1 - \frac{m_g}{m_{\text{total}}} \\
+&= \frac{m_{\text{total}}}{m_{\text{total}}} - \frac{m_g}{m_{\text{total}}} \\
+&= \frac{m_f}{m_{\text{total}}}
+\end{align*}
+
+@@latex: \noindent@@ Getting the specific volume in terms of quality:
+\begin{align*}
+v &= \frac{V_{\text{total}}}{m_{\text{total}}} \\
+&= \frac{m_f v_f}{m_{\text{total}}} + \frac{m_g v_g}{m_{\text{total}}} \\
+&= (1 - x) v_f + x v_g \\
+&= v_f - x v_f + x v_g \\
+&= v_f + x (v_g - v_f) \\
+&= v_f + xv_{fg} \qquad \because v_{fg} = v_g - v_f
+\end{align*}
+
+Where:
+- $x$ is the quality
+- $m_{\text{total}}$ is the total mass
+- $m_g$ is the mass of vapour
+- $m_f$ is the mass of liquid
+- $v$ is the specific volume of the mixture
+- $v_f$ is the specific volume of the liquid
+- $v_g$ is the specific volume of the gas
+- $v_{fg}$ is the specific volume of the mixture at evaporation
+
+\newpage
+
+*** Specific internal energy in terms of quality (\(u\))
+\[u = (1 - x) u_f + xu_g = u_f + x u_{fg}\]
+
+Where:
+- $u$ is the specific internal energy of the mixture
+- $u_f$ is the specific internal energy of the liquid
+- $u_g$ is the specific internal energy of the gas
+- $u_{fg}$ is the specific internal energy of the mixture at evaporation
+
+*** Specific enthalpy in terms of quality (\(h\))
+\[h = (1 - x) h_f + xh_g = h_f + x h_{fg}\]
+
+Where:
+- $h$ is the specific enthalpy of the mixture
+- $h_f$ is the specific enthalpy of the liquid
+- $h_g$ is the specific enthalpy of the gas
+- $h_{fg}$ is the specific enthalpy of the mixture at evaporation
+
+\newpage
+
+*** Quality in terms of other properties (\(x\))
+\[x = \frac{v - v_f}{v_{fg}} = \frac{u - u_f}{u_{fg}} = \frac{h - h_f}{h_{fg}}\]
+
+Where:
+- $x$ is the quality
+- $v$ is the specific volume of the mixture
+- $v_f$ is the specific volume of the liquid
+- $v_g$ is the specific volume of the gas
+- $v_{fg}$ is the specific volume of the mixture at evaporation
+- $u$ is the specific internal energy of the mixture
+- $u_f$ is the specific internal energy of the liquid
+- $u_g$ is the specific internal energy of the gas
+- $u_{fg}$ is the specific internal energy of the mixture at evaporation
+- $h$ is the specific enthalpy of the mixture
+- $h_f$ is the specific enthalpy of the liquid
+- $h_g$ is the specific enthalpy of the gas
+- $h_{fg}$ is the specific enthalpy of the mixture at evaporation
+
+\newpage
+
+** Enthalpy (\(H\))
+\[H = U + PV\]
+
+Where:
+- $H$ is the total enthalpy of the system
+- $U$ is the total internal energy of the system
+- $P$ is the pressure of the system
+- $V$ is the total volume of the system
+
+*** Specific enthalpy (\(h\))
+\[h = u + Pv\]
+
+Where:
+- $h$ is the specific enthalpy of the system
+- $u$ is the specific internal energy of the system
+- $P$ is the pressure of the system
+- $v$ is the specific volume of the system
+
+\newpage
+
+** Van der Waals equation
+\[\left(P + \frac{a}{v^2} \right) \left(v - b \right) = RT\]
+
+Where:
+- $P$ is the pressure of the gas
+- $a$ is related to the attraction between molecules in the gas
+- $v$ is the molar volume, which is the total volume of the gas divided by the number of molecules of the gas
+- $b$ is related to the size of the molecules
+- $R$ is the universal gas constant
+- $T$ is the current temperature
+
+*** Meaning of \(a\) in the equation
+\[a = \frac{27 R^2 T_{cr}^2}{64 P_{cr}}\]
+
+Where:
+- $P_{cr}$ is the critical pressure of the gas
+- $R$ is the universal gas constant
+- $T_{cr}$ is the critical temperature of the gas
+
+*** Meaning of \(b\) in the equation
+\[b = \frac{RT_{cr}}{8 P_{cr}}\]
+
+Where:
+- $R$ is the universal gas constant
+- $T_{cr}$ is the critical temperature of the gas
+- $P_{cr}$ is the critical pressure of the gas
+
+** Ideal gas
+The ideal gas model assumes that:
+- The molecules are identical.
+- The molecules are in random motion.
+- The molecules obey Newton's law of motion.
+- There are *numerous molecules*.
+- The molecules are *small*.
+- There is *no intermolecular forces* between molecules.
+- Collision between molecules are *elastic*.
+- The gas is in *thermal equilibrium*, which means the temperature in every part of the gas is the same.
+- Real gases approach ideal gas behaviour when the temperature is high or the pressure is low, or low relative to temperature.
+- Real gas deviate the most from ideal gas behaviour near the critical point.
+
+** Ideal gas laws
+
+*** Boyle's law
+The absolute pressure $P$ exerted by an ideal gas is inversely proportional to the volume $V$ if the temperature remains unchanged within a closed system.
+
+*** Charles' law
+The volume $V$ of an ideal gas is directly proportional to its temperature $T$ in Kelvin if pressure remains constant in a closed system.
+
+*** Gay-Lussac's law
+The absolute gas pressure $P$ is proportional to the absolute gas temperature $T$ at constant volume in a closed system.
+
+*** Avogadro's law
+Under the same conditions of temperature and pressure, equal volumes of different gases contain an equal number of molecules.
+
+** The ideal gas equation
+\[PV = nRT\]
+
+Where:
+- $P$ is the pressure of the gas
+- $V$ is the volume of the gas
+- $n$ is the number of moles of the gas
+- $R$ is the molar gas constant \(\qty{8.314462836}{J.mol^{-1}.K^{-1}}\)
+- $T$ is the temperature of the gas
+
+*** Molar gas constant (\(R\))
+\begin{align*}
+R &= N_A \times k_B \\
+&= 6.02214179 \times 10^{23} \times 1.3806488 \times 10^{-23} \\
+&= \qty{8.314462836}{J.mol^{-1}.K^{-1}} \\
+\end{align*}
+
+Where:
+- $N_A$ is Avogadro's Constant
+- $k_B$ is the Boltzmann Constant
+
+*** Gas constant in terms of mass (\(R_m\))
+\[R_m = \frac{R}{M}\]
+
+Where:
+- $R_m$ is the gas constant in terms of mass
+- $R$ is the molar gas constant
+- $M$ is the molecular weight of a substance in \(\unit{kg.mol^{-1}}\)
+
+*** Compressibility factor \(Z\)
+- For ideal gases, the compressibility factor is 1.
+
+\[Z = \frac{v_{\text{actual}}}{v_{\text{ideal}}}\]
+
+Where:
+- $Z$ is the compressibility factor
+- $v_{\text{actual}}$ is the actual specific volume of the gas
+- $v_{\text{ideal}}$ is the specific volume of an idea gas
+
+\[Pv = ZR_mT\]
+
+Where:
+- $P$ is the pressure of the gas
+- $v$ is the specific volume of the gas
+- $R_m$ is the gas constant based on mass
+- $T$ is the temperature of the gas
+
+*** Comparing ideal gas states
+\[\frac{P_1 V_1}{T_1} = \frac{P_2 V_2}{T_2}\]
+
+Where:
+- $P$ is the pressure of the gas in the respective states
+- $V$ is the volume of the gas in the respective states
+- $T$ is the temperature of the gas the respective states
+
+*** Obtaining the specific heats
+For an ideal gas, specific internal energy $u$ and specific enthalpy $h$ are functions of temperature only, i.e:
+\[u = u(T)\]
+\[h = u(T) + R_mT = u(T) + Pv = h(T)\]
+
+The specific heats of ideal gases are hence functions of temperature only as well:
+\[c_v = c_v(T) = \frac{du}{dT}\]
+\[c_p = c_p(T) = \frac{dh}{dT}\]
+
+Hence:
+\[\Delta u = u_2 - u_1 = \int_1^2 c_v(T) \, dT \cong c_{v_{avg}} \left(T_2 - T_1 \right)\]
+\[\Delta h = h_2 - h_1 = \int_1^2 c_p(T) \, dT \cong c_{p_{avg}} \left(T_2 - T_1 \right)\]
+
+Where:
+- $u$ is the specific internal energy of the system
+- $h$ is the specific enthalpy of the system
+- $T$ is the temperature of the system
+- $R_m$ is the gas constant based on mass
+- $P$ is the pressure of the gas
+- $v$ is the specific volume of the gas
+- $T_2$ is the *final* temperature of the system
+- $T_1$ is the *initial* temperature of the system
+- $c_v$ is the specific heat at constant volume
+- $c_p$ is the specific heat at constant pressure
+- $c_{v_{avg}}$ is the specific heat at constant volume at an average temperature
+- $c_{p_{avg}}$ is the specific heat at constant pressure at an average temperature
+
+*** Relations between specific heats
+\[c_p = c_v + R_m\]
+\[c_v = \frac{R_m}{k - 1}\]
+\[c_p = \frac{kR_m}{k - 1}\]
+
+Where:
+- $c_p$ is the specific heat at constant pressure
+- $c_v$ is the specific heat at constant volume
+- $R_m$ is the gas constant based on mass
+- $k$ is the specific heat ratio
+
+** Virial equation
+The virial equation is used to describe the causes of non-ideality at a molecular level as very few gases are mono-atomic.
+
+\[Z = \frac{Pv}{R_m T} = 1 + \frac{B(T)}{v} + \frac{C(T)}{v^2} + \frac{D(t)}{v^3} + \cdots\]
+
+Where:
+- $Z$ is the compressibility factor
+- $P$ is the pressure of the gas
+- $v$ is the specific volume of the gas
+- $R_m$ is the gas constant based on mass
+- $T$ is the temperature of the gas
+- $B, C, D$ are known as virial coefficients and are functions of temperature
+
+** Reduced pressure (\(P_R\))
+\[P_R = \frac{P}{P_{cr}}\]
+
+Where:
+- $P_R$ is the reduced pressure
+- $P$ is the pressure of the gas
+- $P_{cr}$ is the critical pressure of the gas
+
+When reduced pressure is much smaller than 1 (\(P_R << 1\)), the gas approaches ideal gas behaviour.
+
+** Reduced temperature (\(T_R\))
+\[T_R = \frac{T}{T_{cr}}\]
+
+Where:
+- $T_R$ is the reduced temperature
+- $T$ is the temperature of the gas
+- $T_{cr}$ is the critical temperature of the gas
+
+When reduced temperature is greater than 2 (\(T_R > 2\)), the gas approaches ideal gas behaviour.
+
+** Pseudo-reduced specific volume (\(v_R\))
+\[v_R = \frac{v_{\text{actual}}}{\frac{1}{P_{cr}} \left(R_m T_{cr} \right)}\]
+
+Where:
+- $v_R$ is the pseudo-reduced specific volume
+- $v_{\text{actual}}$ is the actual specific volume of the gas
+- $R_m$ is the gas constant based on mass
+- $T_{cr}$ is the critical temperature of the gas
+- $P_{cr}$ is the critical pressure of the gas
+
+** Zeroth law of thermodynamics
+If two objects are each in thermal equilibrium with third object, then the two objects are in equilibrium with each other.
+
+** First law of thermodynamics
+The first law of thermodynamics states that in any process, regardless of the process' spontaneity, the total energy of a system and its surroundings is constant.
+
+\[E_{in} - E_{out} = \Delta E_{\text{system}}\]
+
+Where:
+- $E_{in}$ is the energy input into the system
+- $E_{out}$ is the energy leaving the system
+- $\Delta E_{\text{system}}$ is the change in energy of the system
+
+** Second law of thermodynamics
+The second law of thermodynamics states that in any *spontaneous* process, the total entropy of a system and its surroundings always increases.
+
+** Third law of thermodynamics
+The third law of thermodynamics states that the entropy of a perfectly ordered crystalline substance at 0 K is zero.
+
+** Heat (\(Q\))
+- Heat is a means of energy transfer between a system and its surroundings as a result of a *temperature difference* between them.
+- Heat is process related (i.e. it is a path function), not a property.
+
+Units: \(\unit{J}\) or \(\unit{kJ}\)
+
+*** Heat rate (\(Q\))
+Heat rate is the rate of heat transferred.
+\\
+
+@@latex: \noindent@@ Units: \(\unit{W}\) or \(\unit{kW}\)
+
+** Heat per unit mass (\(q\))
+\[q = \frac{Q}{m}\]
+
+Where:
+- $q$ is the heat per unit mass
+- $Q$ is the total heat transferred
+- $m$ is the mass of the object
+
+Units: \(\unit{kJ.kg^{-1}}\)
+
+** Temperature difference
+- Temperature difference is the driving force for heat transfer. The larger the temperature difference, the higher the rate of heat transfer.
+- Energy is recognised as heat transfer only as it *crosses* the system boundary.
+- The larger the driving force, the higher the heat transferred.
+
+** Conduction: Fourier's law
+\[Q_{cond} = -kA \frac{dT}{dx}\]
+
+** Convection: Newton's law of cooling
+\[Q_{conv} = hA(T_s - T_f)\]
+
+** Radiation: Stefan-Boltzmann's law
+\[Q_{rad} = \varepsilon \sigma A(T_s^4 - T_{surr}^4)\]
+
+\newpage
+
+** Work done (\(W\))
+- Work is a means of energy transfer between a system and its surroundings. For a *closed* system, if energy transfer is not by *heat*, it must be by *work*.
+- Work is energy transfer associated with a *force* acting through a *distance*. For example, a rising piston, a rotating shaft, and electric current through a wire.
+- Work is *process* related (i.e. it is a path function), not a property.
+
+\[W = \int_1^2 \vec{F} \cdot ds\]
+
+Where:
+- $W$ is the work done
+- $\vec{F}$ is the force acting on the system
+- $ds$ is the length of infinitesimal element of the path taken by the force
+
+*** Work rate (Power) (\(P\))
+\[P = \frac{W}{t}\]
+
+Where:
+- $P$ is the power
+- $W$ is the work done
+- $t$ is the time taken for the work to be done on the system in seconds
+
+Units: \(\unit{W}\) or \(\unit{kW}\)
+
+\newpage
+
+*** Work done per unit mass (\(w\))
+\[w = \frac{W}{m}\]
+
+Where:
+- $w$ is the work done per unit mass on the system
+- $W$ is the work done
+- $m$ is the mass of the system
+
+Units: \(\unit{kJ.kg^{-1}}\)
+
+*** Mechanical work done (\(W\))
+Mechanical work done is the product of the force $F$ displace a distance $s$ in the direction of the force.
+
+\[W = Fs\]
+
+Where:
+- $W$ is the mechanical work done
+- $F$ is the force on the system
+- $s$ is the distance displaced by the force
+
+When the force is not constant:
+
+\[W = \int_1^2 \vec{F} \cdot ds = \int_1^2 F \, ds\]
+
+Where:
+- $W$ is the mechanical work done
+- $F$ is the force on the system
+- $ds$ is the length of infinitesimal element of the path taken by the force
+
+\newpage
+
+*** Boundary work (\(P \, dV\) work) (\(W_b\))
+- Boundary work is the work associated with a moving boundary.
+- An example is the work done by the expansion and the compression of a piston cylinder device.
+- Boundary work is *positive for expansion*, and *negative for compression*.
+- The area under the curve on a $P - V$ diagram represents the boundary work.
+
+\[\delta W_b = F \, ds = PA \, ds = P \, dV\]
+\[W_b = \int_1^2 P \, dV\]
+
+Where:
+- $\delta W_b$ is the infinitesimal change in boundary work
+- $W_b$ is the boundary work
+- $F$ is the force on the system
+- $ds$ is the length of the infinitesimal element of the path taken by the force
+- $P$ is the pressure of the system
+- $A$ is the area of the system
+- $dV$ is the infinitesimal change in volume of the system
+
+\newpage
+
+*** Shaft work (\(W_{sh}\))
+\[P = W_{sh} = \tau \omega = 2 \pi f \tau\]
+
+Where:
+- $P$ is the power
+- $W_{sh}$ is the work done
+- $\tau$ is the torque applied on the shaft
+- $\omega$ is the angular frequency
+- $f$ is the frequency of rotation of the shaft, or the number of revolutions per unit time of the shaft
+
+\newpage
+
+*** Spring work (\(W_{\text{spring}}\))
+For a linear elastic spring, the displacement is proportional to the force applied:
+\[F = kx\]
+
+Where:
+- $F$ is the elastic spring force
+- $k$ is the spring constant
+- $x$ is the displacement of the spring
+
+The spring work is:
+\[W_{\text{spring}} = \int_1^2 F \, dx = \int_1^2 kx \, dx = \frac{1}{2}k \left(x_2^2 - x_1^2 \right)\]
+
+Where:
+- $W_{\text{spring}}$ is the work done
+- $F$ is the elastic spring force
+- $dx$ is the infinitesimal element of the path taken by the spring
+- $k$ is the spring constant
+- $x$ is the displacement of the spring
+- $x_2$ is the *final* displacement of the spring
+- $x_1$ is the *initial* displacement of the spring
+
+For the expansion of a gas in a piston-cylinder against a spring:
+\[W_{\text{linear}} = \frac{P_2 + P_1}{2} \left(V_2 - V_1 \right) = P_{avg} \Delta V\]
+
+Where:
+- $P_2$ is the *final* pressure
+- $P_1$ is the *initial* pressure
+- $V_2$ is the *final* volume
+- $V_1$ is the *initial* volume
+- $P_{avg}$ is the average pressure of the final and initial pressures
+- $\Delta V$ is the change in volume of the system
+
+*** Gravitational work (\(W_g\))
+- Gravitational work is the work done against a gravitational field.
+- It is equal to the change in gravitational potential energy of the system
+- As potential energy is dependent only on the end states, it is a property.
+
+\[W_g = \int_1^2 F \, dz = \int_1^2 mg \, dz = mg(z_2 - z_1)\]
+
+Where:
+- $W_g$ is the work done against gravity
+- $F$ is the gravitational force
+- $m$ is the mass of the object
+- $g$ is the gravitational acceleration
+- $dz$ is the infinitesimal element of the path taken by the object through a gravitational field
+- $z_2$ is the *final* height of the object
+- $z_1$ is the *initial* height of the object
+
+\newpage
+
+*** Acceleration work (\(W_a\))
+- Acceleration work is the work associated with the change in velocity of a system.
+- It is equal to the change in *kinetic* energy of the system.
+
+\[W_a = \int_1^2 F \cdot ds = \int_1^2 m \frac{dv}{dt} v \, dt = m \int_1^2 v \, dv = \frac{1}{2} \left(v_2^2 - v_1^2 \right)\]
+
+Where:
+- $W_a$ is the work done due to acceleration
+- $F$ is the force
+- $m$ is the mass of the object
+- $\frac{dv}{dt}$ is the change in velocity with respect to time
+- $v_2$ is the *final* velocity of the object
+- $v_1$ is the *initial* velocity of the object
+
+\newpage
+
+*** Electrical work (\(W_e\))
+\[W_e = V_e N\]
+\[W_e = \int_1^2 V_e I \, dt\]
+
+Where:
+- $W_e$ is the electrical work done
+- $V_e$ is the potential difference
+- $N$ is the charge
+- $I$ is the current
+- $dt$ is the infinitesimal time element
+
+\[P_e = V_e I\]
+Where:
+- $P_e$ is the electrical power
+- $V_e$ is the potential difference
+- $I$ is the current
+
+** Properties
+Properties are *point* functions and are state dependent.
+
+** Specific heat capacity (\(c\))
+Specific heat capacity is the energy required to raise the temperature of a unit mass of a substance by one degree Celsius.
+\\
+
+For gases, there are:
+1. Specific heat at constant volume, \(c_v\)
+2. Specific heat at constant pressure, \(c_p\)
+
+\newpage
+
+*** Specific heat at constant volume (\(c_v\))
+- The specific heat at constant volume is the energy required to raise the temperature of a unit mass of a substance by one degree while the *volume remains constant*.
+- This only applies to gases.
+- It is an intensive property and is dependent on volume $v$ and temperature $T$.
+
+\[c_v = \left. \frac{\partial u}{\partial T} \right|_v\]
+
+Where:
+- $c_v$ is the specific heat at constant volume
+- $\left. \frac{\partial u}{\partial T} \right|_v$ is the partial derivative of the internal energy with respect to temperature, restricted to the constant volume $v$
+
+*** Specific heat at constant pressure (\(c_p\))
+- The specific heat at constant volume is the energy required to raise the temperature of a unit mass of a substance by one degree while the *pressure remains constant*.
+- This only applies to gases.
+- It is an intensive property and is dependent on pressure $P$ and temperature $T$.
+
+\[c_p = \left. \frac{\partial h}{\partial T} \right|_v\]
+
+Where:
+- $c_p$ is the specific heat at constant pressure
+- $\left. \frac{\partial h}{\partial T} \right|_v$ is the partial derivative of the enthalpy with respect to temperature, restricted to the constant volume $v$
+
+*** Specific heat ratio (\(k\))
+\[k = \frac{c_p}{c_v}\]
+
+Where:
+- $c_p$ is the specific heat at constant pressure
+- $c_v$ is the specific heat at constant volume
+
+** Internal energy change (\(\Delta U\))
+The internal energy change *does not* include the work done by the gas during expansion or compression.
+\[\Delta u = u_2 - u_1 \cong c_v \left(T_2 - T_1 \right)\]
+
+Where:
+- $\Delta u$ is the change in internal energy
+- $u_2$ is the *final* specific internal energy
+- $u_1$ is the *initial* specific internal energy
+- $c_v$ is the specific heat capacity at constant volume
+- $T_2$ is the *final* temperature
+- $T_1$ is the *initial* temperature
+
+\newpage
+
+** Enthalpy change (\(\Delta H\))
+- The enthalpy change *does* include the work done by the gas during expansion or compression.
+- Use this when there is no need to calculate the work done by the gas.
+\[\Delta h = h_2 - h_1 \cong c_p \left(T_2 - T_1 \right)\]
+
+Where:
+- $\Delta h$ is the change in enthalpy
+- $h_2$ is the *final* specific enthalpy
+- $h_1$ is the *initial* specific enthalpy
+- $c_p$ is the specific heat capacity at constant pressure
+- $T_2$ is the *final* temperature
+- $T_1$ is the *initial* temperature
+
+** Energy of a system (\(E_{\text{system}}\))
+
+*** Total energy (\(E_{\text{system}}\))
+\[E_{\text{system}} = U + KE + PE\]
+
+Where:
+- $E_{\text{system}}$ is the total energy of the system
+- $U$ is the total internal energy of the system
+- $KE$ is the total kinetic energy of the system
+- $PE$ is the total potential energy of the system
+
+\newpage
+
+*** Change in energy (\(\Delta E\))
+\[\Delta E_{\text{system}} = \Delta U + \Delta KE + \Delta PE\]
+
+Where:
+- $\Delta E_{\text{system}}$ is the change in energy of the system
+- $\Delta U$ is the change in internal energy of the system
+- $\Delta KE$ is the change in kinetic energy of the system
+- $\Delta PE$ is the change in potential energy of the system
+
+For a fixed mass:
+\[\Delta U = m (u_2 - u_1)\]
+\[\Delta KE = \frac{1}{2} m (v_2^2 - v_1^2)\]
+\[\Delta U = mg (z_2 - z_1)\]
+
+Where:
+- $\Delta U$ is the change in internal energy of the system
+- $m$ is the mass of the system
+- $u_2$ is the *final* specific internal energy of the system
+- $u_1$ is the *initial* specific internal energy of the system
+- $\Delta KE$ is the change in kinetic energy of the system
+- $v_2$ is the *final* velocity of the system
+- $v_1$ is the *initial* velocity of the system
+- $\Delta PE$ is the change in potential energy of the system
+- $z_2$ is the *final* height of the system
+- $z_1$ is the *initial* height of the system
+
+For stationary systems, \(\Delta KE = 0\) and \(\Delta PE = 0\):
+\[\Delta E_{\text{system}} = \Delta U\]
+
+Where:
+- $\Delta E_{\text{system}}$ is the change in energy of the system
+- $\Delta U$ is the change in internal energy of the system
+
+** Conservation of mass principle
+- For *closed systems*, the principle is implicit since the mass of a closed system is kept constant during a process.
+- For *control volumes*, mass can cross boundaries, so it is required to track the amount of mass *leaving* and *entering* the control volume.
+- The net *mass transfer* to or from a system during a process is equal to the *net change* (increase or decrease) in the total mass of the control volume.
+
+\[\sum m_{i} - \sum m_{e} = \Delta m_{CV} = \left(m_2 - m_1 \right)_{CV}\]
+
+Where:
+- $\sum m_{i}$ is the total mass entering (mass input) the control volume
+- $\sum m_{e}$ is the total mass exiting the control volume
+- $\Delta m_{CV}$ is change in total mass of the control volume
+- $m_2$ is the final mass of the control volume
+- $m_1$ is the initial mass of the control volume
+
+\newpage
+
+** Flow work (Flow energy) (\(W_{flow}\))
+- The work (or energy) required to push the mass into or out of the control volume.
+- This work is necessary for maintaining a continuous flow through a control volume.
+- Flow work is the energy needed to maintain continuous flow through a control volume.
+
+\[W_{flow} = FL = PAL = PV\]
+
+Where:
+- $W_{flow}$ is the flow work
+- $F$ is the force on the control volume
+- $L$ is the distance acted upon by the force
+- $P$ is the pressure due to the force
+- $A$ is the cross-sectional area of the fluid that the force is acting on
+- $V$ is the volume acted on by the force
+
+*** Specific flow work (flow work per unit mass) (\(w_{flow}\))
+\[w_{flow} = Pv\]
+
+Where:
+- $w_{flow}$ is the *specific* flow work
+- $P$ is the pressure due to the force
+- $v$ is the *specific* volume acted on by the force
+
+*** Total energy per unit mass of a /flowing fluid/ (\(\theta\))
+\[\theta = Pv + e = Pv + (u + \text{ke} + \text{pe})\]
+
+Since \(h = u + Pv\):
+\[\theta = h + \text{ke} + \text{pe} = h + \frac{V^2}{2} + gz\]
+
+For a *non-flowing* fluid:
+\[e = u + \text{ke} + \text{pe}\]
+
+For a *flowing* fluid:
+\[\theta = h + \text{ke} + \text{pe}\]
+
+Where:
+- $\theta$ is the total energy per unit mass of a *flowing fluid*
+- $P$ is the pressure on the fluid
+- $v$ is the *specific* volume of the fluid
+- $e$ is the *specific* energy of the fluid
+- $u$ is the *specific* internal energy of the fluid
+- $\text{ke}$ is the *specific* kinetic energy of the fluid
+- $\text{pe}$ is the *specific* potential energy of the fluid
+- $h$ is the *specific* enthalpy of the fluid
+- $V$ is the velocity of the fluid
+- $g$ is the gravitation acceleration
+- $z$ is the height of the fluid
+
+*** Net energy change in a control volume
+\[E_{\text{mass, } i} - E_{\text{mass, } e} = m_i \theta_i - m_e - \theta_e\]
+
+Where:
+- $E_{\text{mass, } i}$ is the energy input into the control volume
+- $E_{\text{mass, } e}$ is the energy exiting the control volume
+- $m_i$ is the mass input into the control volume
+- $\theta_i$ is the total energy per unit mass input into the control volume
+- $m_e$ is the mass exiting the control volume
+- $\theta_e$ is the total energy per unit mass exiting the control volume
+
+*** First law of thermodynamics for a control volume
+\[Q - W + m_i \theta_i - m_e \theta_e = \left(E_2 - E_1 \right)_{CV}\]
+
+Where:
+- $Q$ is the heat supplied to the control volume
+- $W$ is the work done by the control volume
+- $m_i$ is the mass input into the control volume
+- $\theta_i$ is the total energy per unit mass input into the control volume
+- $m_e$ is the mass exiting the control volume
+- $\theta_e$ is the total energy per unit mass exiting the control volume
+- $E_2$ is the final total energy of the control volume
+- $E_1$ is the initial total energy of the control volume
+
+** Steady state
+A steady state implies that fluid properties can be different from point to point in the control volume, but they do not change with time.
+
+** Steady flow
+- Steady flow implies that properties at the inlet and exit may be different but do not change with time.
+- Properties at each opening are usually considered uniform.
+- Heat and work interactions also don't change with time.
+- Hence, net energy transfer across the boundary is zero.
+- A steady state is used to evaluate devices that operate for long periods of time under the same conditions (steady-flow devices).
+
+*** Mass balance
+\[\frac{dm_{CV}}{dt} = 0\]
+
+- Multiple inlets and exits
+  \[\sum \dot{m}_i = \sum \dot{m}_e\]
+
+- Single stream
+  \[\dot{m}_i = \dot{m}_e \quad \Rightarrow \quad \frac{V_i A_i}{v_i} = \frac{V_e A_e}{v_e}\]
+
+Where:
+- $\frac{dm_{CV}}{dt}$ is the change in mass per unit time of the control volume
+- $\sum \dot{m}_i$ is the total mass input per unit time into the control volume
+- $\sum \dot{m}_e$ is the total mass per unit time leaving the control volume
+- $V_i$ is the *velocity* of the fluid at the inlet
+- $A_i$ is the cross-sectional area of the inlet
+- $V_e$ is the *velocity* of the fluid at the outlet
+- $A_e$ is the cross-sectional area of the outlet
+
+\newpage
+
+For steady incompressible fluids (constant specific volume):
+
+- Multiple inlets and exits
+  \[\sum \dot{V}_i = \sum \dot{V}_e\]
+
+- Single stream
+  \[\dot{v}_i = \dot{v}_e \quad \Rightarrow \quad V_i A_i = V_e A_e\]
+
+Where:
+- $\sum \dot{V}_i$ is the total volume input per unit time into the control volume
+- $\sum \dot{V}_e$ is the total volume per unit time leaving the control volume
+- $V_i$ is the *velocity* of the fluid at the inlet
+- $A_i$ is the cross-sectional area of the inlet. This area has to be perpendicular to the velocity.
+- $V_e$ is the *velocity* of the fluid at the outlet
+- $A_e$ is the cross-sectional area of the outlet. This area has to be perpendicular to the velocity.
+
+*** No "conservation of volume"
+- During a steady-flow process, volume flow rates are not necessarily conserved although mass flow rates are.
+- The seeming "conservation of volume" above is due to the fluid, usually a liquid, being incompressible and having a constant specific volume.
+
+*** Single stream devices (one inlet and one outlet)
+- Engineering devices
+- Nozzles
+- Diffusers
+- Turbines
+- Compressors
+- Pumps
+
+\newpage
+
+*** Energy balance
+\[\dot{Q} - \dot{W} + \dot{m}_i \theta_i - \dot{m}_e \theta_e = 0 \tag{1}\]
+
+Where:
+- $\dot{Q}$ is the heat transferred to the control volume per unit time
+- $\dot{W}$ is the work done by the control volume per unit time
+- $\dot{m}_i$ is the mass input into the control volume per unit time
+- $\theta_i$ is the total energy per unit mass input into the control volume
+- $\dot{m}_e$ is the mass leaving the control volume per unit time
+- $\theta_i$ is the total energy per unit mass leaving the control volume
+
+For the case of single inlet and single-exit case:
+\[\dot{m}_i = \dot{m}_e = \dot{m}\]
+\[\dot{Q} - \dot{W} = \dot{m} \left[h_e - h_i + \frac{V_e^2 - V_i^2}{2} + g(z_e - z_i) \right]\]
+
+Where:
+- $\dot{m}_i$ is the mass transfer into the control volume
+- $\dot{m}_e$ is the mass transfer out of the control volume
+- $\dot{m}$ is the mass transfer in and out of the control volume
+- $\dot{Q}$ is the heat transferred to the control volume per unit time
+- $\dot{W}$ is the work done by the control volume per unit time
+- $h_e$ is the *specific* enthalpy leaving the control volume
+- $h_i$ is the *specific* enthalpy input into the control volume
+- $V_e$ is the velocity of the fluid leaving the control volume
+- $V_i$ is the velocity the fluid entering into the control volume
+- $g$ is the gravitational acceleration
+- $z_e$ is the height of the fluid leaving the control volume
+- $z_i$ is the height of the fluid entering the control volume
+
+\newpage
+
+The equation \((1)\) above can be rewritten as:
+\[\dot{Q}_{in} + \dot{W}_{in} + \dot{m}_i \theta_i = \dot{Q}_{out} + \dot{W}_{out} + \dot{m}_e \theta_e\]
+
+Where:
+- $\dot{Q}_{in}$ is the heat transferred to the control volume per unit time
+- $\dot{W}_{in}$ is the work done on the control volume per unit time
+- $\dot{Q}_{out}$ is the heat leaving the control volume per unit time
+- $\dot{W}_{out}$ is the work done by the control volume per unit time
+- $\dot{m}_i$ is the mass input into the control volume per unit time
+- $\theta_i$ is the total energy per unit mass input into the control volume
+- $\dot{m}_e$ is the mass leaving the control volume per unit time
+- $\theta_i$ is the total energy per unit mass leaving the control volume
+
+\newpage
+
+*** Meaning of the symbols
+- \(\dot{Q}\) is the rate of heat transfer between the control volume and the surroundings
+  - When there is heat loss to the surroundings, \(\dot{Q} < 0\)
+  - In an adiabatic system, \(\dot{Q} = 0\)
+
+- \(\dot{W}\) is the power transfer between the control volume and the surroundings.
+  - For a steady state in the control volume, all properties are constant, hence there is no moving boundary work.
+  - Flow work is included in the enthalpy.
+  - \(\dot{W}\) is usually shaft work or electrical work, and \(\dot{W}\) is positive for power output, and is negative for power input.
+  - There is no work if \(\dot{W} = 0\).
+
+- \(\left(h_e - h_i \right)\) is the enthalpy values which can be read from tables based on inlet and outlet states.
+  - For ideal gas, it can be approximated by:
+    \[\Delta h = h_e - h_i = c_{p_{avg}} \left(T_e - T_i \right)\]
+
+  - The units are \(\unit{kJ.kg^{-1}}\), which means the enthalpy value needs to be multiplied by 1000.
+
+- \(\Delta \text{ke} = \frac{V_e^2 - V_i^2}{2}\) is usually in relation to the magnitude of the enthalpy term, unless velocity is important, like for nozzles and diffusers.
+  - The units are \(\unit{J.kg^{-1}}\)
+
+- \(\Delta \text{pe} = g \left(z_e - z_i \right)\) is usually neglected unless the process involves pumping fluids against a static head.
+  - The units are \(\unit{J.kg^{-1}}\)
+
+If there is no information on velocity or height is given, assume that:
+\[\Delta \text{ke} \cong 0 \text{ and } \Delta \text{pe} \cong 0\]
+
+** Fluid
+A fluid is a substance that *deforms continuously* under an applied force. Examples include air and liquid.
+
+** Density (\(\rho\))
+- Density is the mass per unit volume of a substance.
+- Density is a function of temperature. Basically, density changes when the temperature changes.
+\[\rho = \frac{m}{V}\]
+
+Where:
+- $\rho$ is the density
+- $m$ is the mass
+- $V$ is the total volume
+
+*** Density of water
+\[\rho_w \text{ @ } \qty{4}{\degreeCelsius} = \qty{1000}{kg.m^{-3}}\]
+
+*** Density of air
+\[\rho_{air} \text{ @ } \qty{15}{\degreeCelsius} = \qty{1.23}{kg.m^{-3}}\]
+
+** Specific weight (\(\gamma\))
+Specific weight is the weight per unit mass of a substance.
+\[\gamma = \rho g\]
+
+Where:
+- $\gamma$ is the specific weight
+- $\rho$ is the density
+- $g$ is the gravitational acceleration
+
+** Specific gravity (\(SG\))
+Specific gravity is the density of a substance with respect to the density of water.
+\[SG = \frac{\rho}{\rho_w}\]
+
+Where:
+- $SG$ is the specific gravity
+- $\rho$ is the density of the substance
+- $\rho_w$ is the density of water, which is \(\qty{1000}{kg.m^{-3}}\)
+
+** Viscosity \(\mu\)
+- Viscosity is a form of internal resistance ("stickiness") of the fluid causing resistance to flow.
+- Viscosity is a function of temperature. Basically, viscosity changes when the temperature changes.
+
+*** Dynamic viscosity (\(\mu\))
+\[\tau = \mu \frac{du}{dy}\]
+
+Where:
+- $\tau$ is the shear stress in \(\unit{N.m^{-2}}\)
+- $\mu$ is the dynamic viscosity in \(\unit{N.s.m^{-2}}\)
+- $\frac{du}{dy}$ is the shear strain or the velocity gradient in \(\unit{s^{-1}}\)
+
+*** Dynamic viscosity of water (\(\mu_{water}\))
+\[\mu_{water} \text{ @ } \qty{25}{\degreeCelsius} = 8.90 \times 10^{-4} \ \unit{N.s.m^{-2}}\]
+
+*** Dynamic viscosity of air (\(\mu_{air}\))
+\[\mu_{air} \text{ @ } \qty{15}{\degreeCelsius} = 1.78 \times 10^{-5} \ \unit{N.s.m^{-2}}\]
+
+*** Kinematic velocity (\(\nu\))
+\[\nu = \frac{\mu}{\rho}\]
+
+Where:
+- $\nu$ is the kinematic viscosity in \(\unit{m^2.s}\)
+- $\mu$ is the dynamic viscosity in \(\unit{N.s.m^{-2}}\)
+- $\rho$ is the density of the substance
+
+** Newtonian fluid
+Newtonian fluids are fluids whose dynamic viscosity is not a function of the velocity of the fluid. Basically, the dynamic viscosity of Newtonian fluids don't change with when their velocity changes.
+
+** Shear thickening
+- Shear thickening fluids are fluids whose dynamic viscosity *increases* when the velocity of the fluid *increases*.
+- These fluids are considered non-Newtonian fluids.
+- An example is corn starch solution.
+
+** Shear thinning
+- Shear thinning fluids are fluids whose dynamic viscosity *decreases* when the velocity of the fluid *increases*.
+- These fluids are considered non-Newtonian fluids.
+- Examples include blood and paint.
+
+** Bingham plastic
+- Bingham plastic fluids are fluids that don't flow until the shear force reaches a certain critical point.
+- After that critical point, the fluid behaves like a Newtonian-fluid.
+- Examples include toothpaste and mayonnaise, where you have to squeeze the bottle hard enough before the fluid starts flowing out.
+
+** Free surface
+A free surface is the boundary between air and a liquid.
+
+** Pascal's law
+Pressure at a point is independent of direction and pressure is a scalar property of a fluid at that point.
+
+** Absolute pressure
+Absolute pressure is the total pressure of a system, inclusive of atmospheric pressure and gauge pressure. Essentially:
+\[p_{abs} = p_{atm} + p_{gauge}\]
+
+** Gauge pressure
+- Gauge pressure is the pressure of the system above atmospheric pressure.
+- The gauge pressure takes atmospheric pressure as the reference pressure, or the 0 pressure point.
+
+Essentially:
+\[p_{gauge} = p_{abs} - p_{atm}\]
+
+** Centroid
+The centroid of an object is the centre of an object.
+
+*** Right-angled triangle
+\[\bar{x} = \frac{2}{3} x\]
+
+Where:
+- $\bar{x}$ is the distance of the centroid of the right-angled triangle from a given origin
+- $x$ is the length of the second-longest side (the long side that isn't the hypotenuse)
+
+*** Semicircle
+\[\bar{x} = \frac{4r}{3\pi}\]
+
+Where:
+- $\bar{x}$ is the distance of the centroid of the semicircle from the *base* of the semicircle
+- $r$ is the radius of the semicircle
+
+*** Generic object with function \(f(x)\)
+\[\bar{x} = \frac{1}{A} \int x f(x) \, dx\]
+
+Where:
+- $\bar{x}$ is the distance of the centroid of the object from the origin
+- $A$ is the total area of the object, which is also \(\int f(x) \, dx\)
+- $f(x)$ is the function describing the shape of the object
+
+** Total force (\(F\))
+\[F = P_{avg} A\]
+
+Where:
+- $F$ is the total force
+- $P_{avg}$ is the *average* pressure or force per unit area
+- $A$ is the area at which the force is acting upon
+
+\newpage
+
+** First moment of area (\(X_G\))
+\begin{align*}
+X_G &= \frac{A_1 x_1 + A_2 x_2 + \cdots + A_n x_n}{A_1 + A_2 + \cdots + A_n} \\
+&= \frac{\sum_{i = 1}^n A_i x_i}{\sum_{i = 1}^n A} \\
+&= \frac{\int_A x \, dA}{A}
+\end{align*}
+
+Where:
+- $X_G$ is the first moment of area
+- $A$ is the area of a specific section of an object
+- $x$ is the perpendicular distance from a reference point of a specific section of an object
+- $dA$ is the infinitesimal area element of an object
+- $A$ is the total area of an object
+
+** Second moment of area (\(I\))
+[[./images/second-moment-of-area.png]]
+
+\newpage
+
+** Buoyancy force (\(F_B\))
+- Buoyancy force is the resultant force acting on a submerged or partially submerged object, and it is equal to the weight of fluid displaced.
+- The direction of this force is upwards.
+
+\[F_B = \rho g V\]
+
+Where:
+- $\rho$ is the density of the fluid
+- $g$ is the gravitational acceleration
+- $V$ is the volume of the *fluid* displaced
+
+*** Density ratio
+\[\frac{\rho_{object}}{\rho_{fluid}} = \frac{V_{submerged}}{V_{object}}\]
+
+Where:
+- $\rho_{object}$ is the density of the object submerged in the fluid
+- $\rho_{fluid}$ is the density of the fluid
+- $V_{submerged}$ is the volume of the object submerged in the fluid
+- $V_{object}$ is the *total* volume of the object
+
+\newpage
+
+** Centre of buoyancy (\(CB\))
+- The centre of buoyancy is the line of action of the buoyancy force, which is vertically upwards, and it acts through the centre (centroid) of the *volume* of the fluid *displaced*.
+- For partially submerged objects, this line of action will be located at the centroid of the *volume* of the bottom half of the object, *up until the water surface*.
+- The volume of the top half of the object is *not considered*.
+- Hence, the centre of buoyancy for partially submerged objects is *not* the same as the centre of gravity of the object.
+- The centre of buoyancy for an object with *non-uniform* density is also *not* the same as the centre of gravity of the object.
+
+** Neutral buoyancy
+Neutral buoyancy occurs when an object's average density is equal to the density of the fluid in which it is immersed, resulting in the buoyant force balancing the force of gravity that would otherwise cause the object to sink or rise.
+
+\[F_B = W\]
+
+Where:
+- $F_B$ is the buoyancy force
+- $W$ is the weight of the object
+
+** Stability
+An object is considered stable when it *goes back to its original position* when displaced.
+
+*** Fully submerged object
+- When the centre of buoyancy is *above* the centre of gravity, the object is *stable*.
+- When the centre of buoyancy is *below* the centre of gravity, the object is *unstable*.
+
+** Metacentre (\(M\))
+- Metacentre is the point of intersection of the buoyancy forces before and after rotation.
+- For a *stable* configuration, the metacentre must be *above* the centre of gravity.
+- For an *unstable* configuration, the metacentre must be *below* the centre of gravity.
+
+*** Determining the metacentre (\(M\))
+1. Draw a vertical line passing through the centre of buoyancy
+2. Tilt the object by any angle.
+3. Find the centre of buoyancy for the object when it is tilted.
+4. Draw a vertical line passing through the new centre of buoyancy.
+5. The intersection of the two lines is the metacentre.
+
+** Stagnation point
+The stagnation point is defined as the point where the fluid's velocity is zero.
+
+** Bernoulli's equation along the streamline
+\[\frac{p_1}{\rho g} + \frac{V_1^2}{2g} + z_1 = \frac{p_2}{\rho g} + \frac{V_2^2}{2g} + z_2\]
+\[p_1 + \frac{1}{2} \rho V_1^2 + \rho gz_1 = p_2 + \frac{1}{2} \rho V_2^2 + \rho gz_2\]
+
+Where:
+- $p$ is the pressure of the fluid at the 2 points along the streamline
+- $\rho$ is the density of the fluid
+- $g$ is the gravitational acceleration
+- $V$ is the velocity of the fluid at the 2 points along the streamline
+- $z$ is height of the fluid above the ground at the 2 points along the streamline
+
+*** Assumptions
+- Inviscid flow (no viscous effect, no drag, etc.)
+- Steady flow (not changing with time)
+- Constant density (the fluid is incompressible)
+- No work or heat input
+- Along a streamline (a line tangent to velocity vectors)
+
+*** Flow (pressure) energy
+\[\text{Pressure head} = \frac{p}{\rho g}\]
+
+Where:
+- $\text{Pressure head}$ is the flow or pressure energy of the fluid
+- $p$ is the pressure of the fluid
+- $\rho$ is the density of the fluid
+- $g$ is the gravitational acceleration
+
+*** Kinetic energy
+\[\text{Velocity head} = \frac{V^2}{2g}\]
+
+Where:
+- $\text{Velocity head}$ is the kinetic energy of the fluid
+- $V$ is the velocity of the fluid
+- $g$ is the gravitational acceleration
+
+*** Potential energy
+\[\text{Elevation head} = z\]
+
+Where:
+- $\text{Elevation head}$ is the potential energy of the fluid
+- $z$ is the height of the fluid above the ground
+
+*** Static pressure
+Static pressure is the actual pressure of a fluid at a point.
+
+\[\text{Static pressure} = p\]
+
+Where:
+- $p$ is the pressure of the fluid
+
+*** Dynamic pressure
+Dynamic pressure is the pressure due to the velocity of the fluid.
+
+\[\text{Dynamic pressure} = \frac{\rho V^2}{2}\]
+
+Where:
+- $\rho$ is the density of the fluid
+- $V$ is the velocity of the fluid
+
+*** Hydrostatic pressure
+Hydrostatic pressure is due to the elevation of the fluid.
+
+\[\text{Hydrostatic pressure} = \rho g z\]
+
+Where:
+- $\rho$ is the density of the fluid
+- $g$ is the gravitational acceleration
+- $z$ is the height of the fluid above the ground
+
+*** Stagnation pressure
+\[\text{Stagnation pressure} = p + \frac{1}{2} \rho V^2\]
+
+Where:
+- $p$ is the pressure of the fluid
+- $\rho$ is the density of the fluid
+- $V$ is the velocity of the fluid
+
+\newpage
+
+*** Total pressure
+\[\text{Total pressure} = p + \frac{1}{2} \rho V^2 + \rho g z\]
+
+Where:
+- $p$ is the pressure of the fluid
+- $\rho$ is the density of the fluid
+- $V$ is the velocity of the fluid
+- $g$ is the gravitational acceleration
+- $z$ is the height of the fluid above the ground
+
+** Bernoulli's equation across the streamline
+\[\frac{\partial \left(p + \rho g z \right)}{\partial n} = - \frac{\rho V^2}{R}\]
+
+Where:
+- $p$ is the pressure of the fluid
+- $\rho$ is the density of the fluid
+- $g$ is the gravitational acceleration
+- $z$ is the height of the fluid
+- $\partial n$ is the partial derivative with respect to the axis across the streamline
+- $V$ is the velocity of the fluid
+- $R$ is the radius of the circular arc of the rotating streamline. $R$ is infinity when the streamline is straight.
+
+** Mass continuity equation
+\[A_1 V_1 = A_2 V_2\]
+
+Where:
+- $A$ is the cross-sectional area of the fluid at each point. This cross-sectional area must be perpendicular to the velocity of the fluid.
+- $V$ is the velocity of the fluid at each point
+
+** Large tank assumption
+The velocity of the fluid moving down from the top of the tank can be taken to be zero if the tank is at least *4 times* the size of the outlet.
+
+** Vapour pressure (\(p_v\))
+- Vapour pressure is the pressure of the vapour bubbles formed in a liquid at *room temperature*.
+- For \(H_{2}O\) at \(\qty{15}{\degreeCelsius}\), the vapour pressure \(p_v\) is \(\qty{1700}{Pa}\).
+
+** Cavitation
+When the pressure drops to the vapour pressure, vapour bubbles are formed. Basically, cavitation occurs at saturation pressure (\(P_{sat}\)).
+
+*** Negative effects of cavitation
+1. The vapour bubbles may burst to cause corrosion and subsequent structural failure on pump blades.
+2. The efficiency of a pump may be reduced as each pump is designed to deliver liquids (not bubbles) only.
+
+** Velocity field
+\[\boldsymbol{V} = u(x, y, z, t) \boldsymbol{i} + v(x, y, z, t) \boldsymbol{j} + v(x, y, z, t) \boldsymbol{k}\]
+
+Where:
+- $\boldsymbol{V}$ is the velocity field
+- $u, v, w$ are the $x, y, z$ components of the velocity vector respectively
+
+*** Magnitude
+\[\left| \boldsymbol{V} \right| = \sqrt{u^2 + v^2 + w^2}\]
+
+Where:
+- $\left| \boldsymbol{V} \right|$ is the speed of the fluid
+- $u, v, w$ are the $x, y, z$ components of the velocity vector respectively
+
+** Flow analysis methods
+
+*** Lagrangian method
+The Lagrangian method follows the individual fluid particles.
+
+*** Eulerian method
+- The Eulerian method studies the flow that passes through a fixed space.
+- Usually, the Eulerian method is used in fluid mechanics.
+
+** Streamlines
+A streamline is the curve formed by velocity vectors of each fluid particle at a certain time.
+
+** Streak lines
+A streak line is a line formed by fluid particles that pass a fixed point in the stream.
+
+** Path lines
+A path line is the path of one particular fluid particle.
+
+** Newton's second law
+The rate of change of momentum of a system is equal to the sum of all the forces acting on the system. Essentially:
+\[\frac{dp}{dt} = \frac{\Delta m \Delta v}{\Delta t} = \sum F = F_{net}\]
+
+Where:
+- $\frac{dp}{dt}$ is the rate of change of momentum with respect to time
+- $\Delta m$ is the change in mass
+- $\Delta v$ is the change in velocity
+- $\Delta t$ is the change in time
+- $\sum F$ and $F_{net}$ is the net force acting on an object
+
+** Reynold's transport theorem (RTT)
+\[\frac{dB_{sys}}{dt} = \frac{\partial}{\partial t} \int_{CV} \rho b \, dV + \int_{CS} \rho b \boldsymbol{V} \cdot \boldsymbol{n} \, dA\]
+
+Where:
+- $\frac{dB_{sys}}{dt}$ is the rate of change of \(B\) of a system with respect to time
+- $\frac{\partial}{\partial t} \int_{CV} \rho b \, dV$ is the rate of change of \(B\) within the control volume with respect to time
+- $\int_{CS} \rho b \boldsymbol{V} \cdot \boldsymbol{n} \, dA$ is the net flow rate of \(B\) through the *entire control surface*
+- $B$ represents any of the fluid parameters, \(B = bm\), which is an extensive property
+- $b$ represent the amount of that parameter per unit mass, which is an intensive property
+- $\rho$ is the density of the fluid
+- $dV$ is the infinitesimal volume of the system
+- $\boldsymbol{V}$ is the *velocity vector* of the fluid particle
+- $\boldsymbol{n}$ is the *outward normal unit vector* of the control surface
+
+*** B for the system and control volume
+\[B_{sys} = \int_{sys} \rho b \, dV\]
+\[B_{CV} = \int_{CV} \rho b \, dV\]
+
+Where:
+- $B$ represents any of the fluid parameters, \(B = bm\), which is an extensive property
+- $b$ represent the amount of that parameter per unit mass, which is an intensive property
+- $\rho$ is the density of the fluid
+- $dV$ is the infinitesimal volume of the system
+
+*** With steady flow
+\[\frac{\partial}{\partial t} = 0\]
+\[\frac{dB_{sys}}{dt} = \int_{CS} \rho b \boldsymbol{V} \cdot \boldsymbol{n} \, dA\]
+
+Where:
+- $\frac{dB_{sys}}{dt}$ is the rate of change of \(B\) of a system with respect to time
+- $\int_{CS} \rho b \boldsymbol{V} \cdot \boldsymbol{n} \, dA$ is the net flow rate of \(B\) through the *entire control surface*
+- $B$ represents any of the fluid parameters, \(B = bm\), which is an extensive property
+- $b$ represent the amount of that parameter per unit mass, which is an intensive property
+- $\rho$ is the density of the fluid
+- $\boldsymbol{V}$ is the *velocity vector* of the fluid particle
+- $\boldsymbol{n}$ is the *outward normal unit vector* of the control surface
+
+\newpage
+
+*** With control volume moving at constant speed
+- If the control volume is moving at velocity \(\boldsymbol{V_{CV}}\), an observer fixed to the control volume will see a relative velocity \(\boldsymbol{W}\) of the fluid crossing the control volume.
+- Relationship between absolute velocity \(\boldsymbol{V}\), velocity of the control volume \(V_{CV}\) and relative velocity \(\boldsymbol{W}\) is:
+  \[\boldsymbol{V} = \boldsymbol{W} + \boldsymbol{V_{CV}}\]
+
+\[\frac{dB_{sys}}{dt} = \frac{\partial}{\partial t} \int_{CV} \rho b \, dV + \int_{CS} \rho b \boldsymbol{W} \cdot \boldsymbol{n} \, dA\]
+
+Where:
+- $\frac{dB_{sys}}{dt}$ is the rate of change of \(B\) of a system with respect to time
+- $\frac{\partial}{\partial t} \int_{CV} \rho b \, dV$ is the rate of change of \(B\) within the control volume with respect to time
+- $\int_{CS} \rho b \boldsymbol{W} \cdot \boldsymbol{n} \, dA$ is the net flow rate of \(B\) through the *entire control surface*
+- $B$ represents any of the fluid parameters, \(B = bm\), which is an extensive property
+- $b$ represent the amount of that parameter per unit mass, which is an intensive property
+- $\rho$ is the density of the fluid
+- $dV$ is the infinitesimal volume of the system
+- $\boldsymbol{W}$ is the *relative velocity vector* of the fluid particle
+- $\boldsymbol{n}$ is the *outward normal unit vector* of the control surface
+
+\newpage
+
+** Continuity equation
+When \(\frac{dm_{sys}}{dt} = 0\),
+\[B = m\]
+\[b = 1\]
+
+\[\therefore \frac{dm_{sys}}{dt} = 0 = \frac{\partial}{\partial t} \int_{CV} \rho \, dV + \int_{CS} \rho \boldsymbol{V} \cdot \boldsymbol{n} \, dA\]
+
+Which results in the continuity equation:
+\[\frac{\partial}{\partial t} \int_{CV} \rho \, dV + \int_{CS} \rho \boldsymbol{V} \cdot \boldsymbol{n} \, dA = 0\]
+
+Where:
+- $\frac{dm_{sys}}{dt}$ is the rate of change of mass of a system with respect to time
+- $\frac{\partial}{\partial t} \int_{CV} \rho \, dV$ is the rate of change of the mass content of the control volume with respect to time.
+- $\int_{CS} \rho \boldsymbol{V} \cdot \boldsymbol{n} \, dA$ is the net mass flow rate through the *entire control surface*
+- $B$ represents any of the fluid parameters, \(B = bm\), which is an extensive property
+- $b$ represent the amount of that parameter per unit mass, which is an intensive property
+- $\rho$ is the density of the fluid
+- $dV$ is the infinitesimal volume of the system
+- $\boldsymbol{V}$ is the *velocity vector* of the fluid particle
+- $\boldsymbol{n}$ is the *outward normal unit vector* of the control surface
+
+\newpage
+
+*** With steady flow
+When the flow is steady,
+\[\frac{\partial}{\partial t} = \int_{CV} \rho \, dV = 0\]
+
+Hence:
+\[\int_{CS} \rho \boldsymbol{V} \cdot \boldsymbol{n} \, dA = \sum \dot{m}_{out} - \sum \dot{m}_{in} = 0\]
+
+Where:
+- $\int_{CS} \rho \boldsymbol{V} \cdot \boldsymbol{n} \, dA$ is the net mass flow rate through the *entire control surface*
+- $\dot{m}_{out}$ is the mass flow rate out of the system
+- $\dot{m}_{in}$ is the mass flow rate into the system
+
+*** With steady flow and incompressible fluid
+\[\int_{CS} \rho \boldsymbol{V} \cdot \boldsymbol{n} \, dA = \sum Q_{out} - \sum Q_{in} = 0\]
+
+Where:
+- $\int_{CS} \rho \boldsymbol{V} \cdot \boldsymbol{n} \, dA$ is the net mass flow rate through the *entire control surface*
+- $Q_{out}$ is the volume flow rate out of the system
+- $Q_{in}$ is the volume flow rate into the system
+
+*** With uniformly distributed flow over the control surface opening
+\[\dot{m} = \rho A V\]
+
+Where:
+- $\dot{m}$ is the net mass flow rate through the *entire control surface*
+- $\rho$ is the density of the fluid
+- $A$ is the area of the control surface
+- $V$ is the velocity component *perpendicular* to the control surface
+
+*** With uniformly distributed flow over the control surface opening but non-uniformly distributed velocity
+\[\dot{m} = \rho A \overline{V}\]
+\[\overline{V} = \frac{\int_A \rho \boldsymbol{V} \cdot \boldsymbol{n} \, dA}{\rho A}\]
+
+Where:
+- $\dot{m}$ is the net mass flow rate through the *entire control surface*
+- $\rho$ is the density of the fluid
+- $A$ is the area of the control surface
+- $\overline{V}$ is the *average* velocity component *perpendicular* to the control surface
+
+** Mass flow rate
+\[\dot{m} = \int_A \rho \boldsymbol{V} \cdot \boldsymbol{n} \, dA\]
+
+Where:
+- $\dot{m}$ is the mass flow rate through a control surface of area \(A\)
+- $A$ is the area of the control surface
+- $\rho$ is the density of the fluid
+- $\boldsymbol{V}$ is the *velocity vector* of the fluid particle
+- $\boldsymbol{n}$ is the *outward normal unit vector* of the control surface
+
+** Volume flow rate
+\[Q = \int_A \boldsymbol{V} \cdot \boldsymbol{n} \, dA\]
+
+Where:
+- $Q$ is the volume flow rate through a control surface of area \(A\)
+- $A$ is the area of the control surface
+- $\boldsymbol{V}$ is the *velocity vector* of the fluid particle
+- $\boldsymbol{n}$ is the *outward normal unit vector* of the control surface
+
+\newpage
+
+* Types of systems
+| Type of system  | Mass flow | Heat |
+|-----------------+-----------+------|
+| /               | <         | <    |
+| Open system     | Yes       | Yes  |
+| Closed system   | No        | Yes  |
+| Isolated system | No        | No   |
+
+
+* Boiling process
+A closed system, comprising a pure substance, heated at constant pressure passes through several phases:
+- Subcooled or compressed liquid (the liquid does not vaporise except for normal evaporation)
+- Saturated liquid (the liquid is about the vaporise)
+- Saturated liquid-vapour mixture
+- Saturated vapour (the vapour is about to condense)
+- Superheated vapour (the vapour is heated beyond the condensation point and hence does not condense)
+
+
+* States
+| State                           | Requirements                                                          |
+|---------------------------------+-----------------------------------------------------------------------|
+| /                               | <                                                                     |
+| Supercritical                   | T > T_{critical} & P > P_{critical}                                   |
+| Compressed liquid               | P < P_{critical} & T < T_{sat} or P > P_{critical} & T < T_{critical} |
+| Saturated liquid-vapour mixture | P < P_{critical} & T = T_{sat}                                        |
+| Superheated vapour              | P < P_{critical} & T > T_{sat}                                        |
+
+\newpage
+
+* Steam table
+
+** Table A4
+For calculating the saturation properties at a given *temperature*.
+
+** Table A5
+For calculating the saturated properties at a given *pressure*.
+
+** Table A6
+For calculating the superheated properties. Two independent intrinsic properties are required, for example:
+- Pressure and temperature
+- Pressure and volume
+- Temperature and volume
+- Pressure and internal energy
+- Temperature and internal energy
+- Volume and internal energy
+
+** Table A7
+For calculating the compressed liquid properties.
+
+** R-134a (a refrigerant)
+Includes additional tables A11 - A13
+
+*** Table A11
+For calculating saturated properties.
+
+*** Table A12
+For calculating saturated properties as well.
+
+*** Table A13
+For calculating superheated properties.
+
+** Saturated liquid-vapour tables
+- *Temperature or pressure* given as the first column
+- *Saturated liquid* ($f$), *saturated vapour* ($g$) values and evaporation ($fg$) values given for other properties.
+  - "$v$" is the specific *volume*
+  - "$u$" is the specific *internal energy*
+  - "$h$" is the specific *enthalpy*
+  - "$s$" is the specific *entropy*
+
+** Superheated vapour tables
+Use the superheated vapour tables if:
+- $P < P_{sat}$ for a given $T$
+- $T > T_{sat}$ for a given $P$
+- $v > v_g, u > u_g, h > h_g$ for given $P$ and $T$
+
+** Compressed liquid tables
+Use the compressed liquid tables if:
+- $T < T_{sat}$ for a given $P$
+- $P > P_{sat}$ for a given $T$
+
+*** Other properties
+$v \approx v_f, u \approx u_f, h \approx h_f$ for given $P$ and $T$
+- These properties are more dependent on temperature $T$ as compared to pressure $P$
+- For a better estimate of \(h\):
+  \[h \approx h_{f@T} + v_{f@T} (P - P_{sat})\]
+
+
+* Generalised compressibility chart
+- Principle of corresponding states: gases behave similarly when normalised with respect to their critical pressure and temperature.
+- The normalised variables are called *reduced pressure (\(P_R\))* and *reduced temperature (\(T_R\))*.
+- The pressure or temperature of a gas is high or low relative to its critical temperature or pressure
+- The lines that look like a checkmark or a tick on the generalised compressibility chart are the reduced temperature (\(T_R\)) lines.
+- The lines that start from the bottom and then get higher over time are the pseudo-reduced specific volume (\(v_R\)) lines.
+
+\newpage
+
+* Thermodynamic processes
+The prefix /iso-/ is used to define a process with a constant property.
+
+** Isothermal process
+- A process during which the temperature $T$ remains constant.
+- An isothermal system has equivalent temperatures in and out of the system under one state.
+
+*** Work done
+\[W_b = \int_1^2 P \, dV = \int_1^2 \frac{C}{V} \, dV = C \ln \left(\frac{V_2}{V_1} \right) = C \ln \left(\frac{P_1}{P_2} \right)\]
+
+Where:
+- $W_B$ is the work done
+- $P$ is the pressure on the system
+- $dV$ is the infinitesimal change in volume of the system
+- $V_2$ is the *final* volume of the system
+- $V_1$ is the *initial* volume of the system
+- $P_1$ is the *initial* pressure of the system
+- $P_2$ is the *final* pressure of the system
+- $C$ is a constant given by:
+
+  \[C = PV = m R_m T = nRT\]
+
+  Where:
+  - $P$ is the pressure on the system
+  - $V$ is the volume on the system
+  - $m$ is the mass of the gas
+  - $R_m$ is the gas constant in terms of mass
+  - $T$ is the temperature of the gas
+  - $n$ is the number of moles of the gas
+  - $R$ is the molar gas constant
+
+** Isobaric process
+- A process during which the pressure $P$ remains constant.
+- Some examples include a piston-cylinder setup where the *piston is free to move*.
+
+*** Work done
+The work done $W$ is equal to the pressure $P$ multiplied by the change in volume $V_2 - V_1$. I.e:
+
+\[W_b = P \left(V_2 - V_1 \right)\]
+
+Where:
+- $W_b$ is the work done
+- $P$ is the pressure of the system
+- $V_2$ is the *final* volume of the system
+- $V_1$ is the *initial* volume of the system
+
+** Isochoric (isometric) process
+- A process during which the specific volume $v$ remains constant.
+- The work done $W_b$ of such a process is 0.
+
+** Reversible and adiabatic process (isentropic process)
+- A reversible process with *no heat transfer*.
+- Some examples include a well insulated system, and a system at the same temperature as its surroundings.
+- An adiabatic process is *not* an isothermal process.
+- A system with no heat transfer can have its temperature changed by other means, like work done.
+
+** Polytropic Process
+A process such that pressure and volume of a gas is given by:
+\[PV^n = C \text{ where } n \ne 1\]
+
+Where:
+- $P$ is the pressure on the system
+- $V$ is the volume of the system
+- $n$ is the polytropic index
+
+When \(n = k = \frac{c_p}{c_v}\), the polytropic process becomes an isentropic or adiabatic process.
+- \(k\) is the specific heat ratio
+- \(c_p\) is the specific heat capacity at constant pressure
+- \(c_v\) is the specific heat capacity at constant volume
+
+\newpage
+
+*** Work done
+\[W_b = \frac{P_2 V_2 - P_1 V_1}{1 - n}\]
+
+Where:
+- $W_b$ is the work done
+- $P_2$ is the *final* pressure on the system
+- $V_2$ is the *final* volume of the system
+- $P_1$ is the *initial* pressure on the system
+- $V_1$ is the *initial* volume on the system
+- $n$ is the power that the $V$ term is raised to, or the polytropic index
+
+If the gas behaves like an *ideal gas*, then the work done will be:
+\[W_b = \frac{m R_m (T_2 - T_1)}{1 - n}\]
+
+Where:
+- $m$ is the mass of the gas
+- $R_m$ is the gas constant in terms of mass
+- $T_2$ is the *final* temperature of the system
+- $T_1$ is the initial temperature of the system
+- $n$ is the power that the $V$ term is raised to, or the polytropic index
+
+** Isenthalpic process (constant enthalpy process)
+A process in which there is no change in enthalpy, i.e. \(\Delta H = H_2 - H_1 = 0\).
+
+\newpage
+
+* Incompressible fluids
+- Applies to solids and most liquids
+- Specific volume $v$ is assumed to be *constant*
+- Specific internal energy $u$ is a function of temperature $T$ only, \(u = u(T)\)
+- Specific heat at constant pressure is equal to the specific heat at constant volume $c_p = c_v$
+- Hence, incompressible fluids only have specific heat $c$, as there is no difference between $c_p$ and $c_v$.
+
+** Internal energy change
+\[\Delta u = u_2 - u_1 \cong c_{avg} \left(T_2 - T_1 \right)\]
+
+Where:
+- $\Delta u$ is the change in internal energy
+- $u_2$ is the *final* specific internal energy
+- $u_1$ is the *initial* specific internal energy
+- $c_{avg}$ is the specific heat capacity of the fluid calculated at an average temperature
+- $T_2$ is the *final* temperature
+- $T_1$ is the *initial* temperature
+
+\newpage
+
+** Enthalpy change
+\[\Delta h = h_2 - h_1 \cong c_{avg} \left(T_2 - T_1 \right) + v \left(P_2 - P_1 \right)\]
+
+Where:
+- $\Delta h$ is the change in enthalpy
+- $h_2$ is the *final* specific enthalpy
+- $h_1$ is the *initial* specific enthalpy
+- $c_{avg}$ is the specific heat capacity of the fluid calculated at an average temperature
+- $T_2$ is the *final* temperature
+- $T_1$ is the *initial* temperature
+- $v$ is the specific volume of the fluid
+- $P_2$ is the *final* pressure
+- $P_1$ is the *initial* pressure
+
+\newpage
+
+* Energy balance for closed systems
+\[\Delta E_{\text{system}} = E_2 - E_1\]
+
+Where:
+- $\Delta E_{\text{system}}$ is the change in energy of the system
+- $E_2$ is the *final* energy of the system
+- $E_1$ is the *initial* energy of the system
+
+For closed systems, the energy transfer is only due to heat or work
+\[E_{in} - E_{out} = (Q_{in} - Q_{out}) + (W_{in} - W_{out})\]
+
+Where:
+- $E_{in}$ is the energy input into the system
+- $E_{out}$ is the energy leaving the system
+- $Q_{in}$ is the heat input into the system
+- $Q_{out}$ is the heat leaving the system
+- $W_{in}$ is the work done on the system
+- $W_{out}$ is the work done by the system
+
+** Sign conventions
+- Heat transferred *to* the system is positive.
+  \[Q = Q_{in} - Q_{out}\]
+
+- Work produced *by* the system is positive.
+  \[W = W_{out} - W_{in}\]
+
+Hence:
+\[\Delta E_{\text{system}} = E_{in} - E_{out} = Q - W\]
+
+Where:
+- $E_{in}$ is the energy input into the system
+- $E_{out}$ is the energy leaving the system
+- $Q$ is the heat *transferred to* the system
+- $W$ is the work done *by* the system
+
+** First law of thermodynamics
+\[E_2 - E_1 = (Q_{in} - Q_{out}) + (W_{in} - W_{out})\]
+\[Q - W = E_2 - E_1\]
+
+Where:
+- $E_2$ is the *final* energy of the system
+- $E_1$ is the *initial* energy of the system
+- $Q_{in}$ is the heat input into the system
+- $Q_{out}$ is the heat leaving the system
+- $W_{in}$ is the work done on the system
+- $W_{out}$ is the work done by the system
+- $Q$ is the *heat transferred* to the system
+- $W$ is the work done *by* the system
+
+*** Stationary system
+\[Q - W = \Delta U = U_2 - U_1\]
+
+Where:
+- $Q$ is the *heat transferred* to the system
+- $W$ is the work done *by* the system
+- $\Delta U$ is the change in internal energy of the system
+- $U_2$ is the *final* internal energy of the system
+- $U_1$ is the *initial* internal energy of the system
+
+
+* Steady flow engineering devices
+Many engineering devices operate under the same conditions over long periods of time, such as in power plants and industrial processes. These include:
+- Nozzles and diffusers
+- Turbines and compressors
+- Throttling valves
+- Mixing chambers
+- Heat exchangers
+- Pipe and duct flow
+
+** Nozzle
+A nozzle is a device to increase the velocity of a fluid.
+- It has a single inlet and exit.
+- There is no work done, i.e. \(\dot{W} = 0\).
+- The change in potential energy is assumed to be zero, i.e. \(\Delta \text{pe} = 0\).
+- The change in kinetic energy is usually small compared to the change in enthalpy and can be assumed to be zero, i.e. \(\text{ke} = 0\).
+
+** Diffuser
+A diffuser is a device for reducing the velocity and increasing the static pressure of a fluid passing through a system.
+- It has a single inlet and exit.
+- The velocity of the fluid at the outlet can be assumed to be \(0\).
+- There is no work done, i.e. \(\dot{W} = 0\).
+- The change in potential energy is assumed to be zero, i.e. \(\Delta \text{pe} = 0\).
+- The change in kinetic energy is usually small compared to the change in enthalpy and can be assumed to be zero, i.e. \(\text{ke} = 0\).
+
+** Turbine
+A turbine is a device to produce work from the flow of a gas through a set of blades attached to a freely rotating shaft.
+- It is used in power generation and jet engines.
+- It has a single inlet and exit.
+- Work is produced by the turbine, which means the work done is positive, i.e. \(\dot{W} > 0\)
+- The change in potential energy is assumed to be zero, i.e. \(\Delta \text{pe} = 0\).
+- The change in kinetic energy is usually small compared to the change in enthalpy and can be assumed to be zero, i.e. \(\text{ke} = 0\).
+- Heat losses are assumed to be small, i.e. \(\dot{Q} = 0\).
+- If there is no cooling or heat losses, i.e. an adiabatic process where \(\dot{Q} = 0\):
+  \[\dot{W} = \dot{m} \left(h_i - h_e \right)\]
+
+  Where:
+  - $\dot{W}$ is the power output of the turbine
+  - $\dot{m}$ is the mass flow rate through the turbine
+  - $h_i$ is the *initial* enthalpy of the fluid
+  - $h_e$ is the *final* enthalpy of the fluid
+
+\newpage
+
+** Compressors, pumps and fans
+Compressors, pumps and fans are devices used to increase pressure of a fluid and requires work input.
+- Compressors compresses gas to high pressures.
+- Pumps handle liquids.
+- Fans move air while increasing the pressure slightly.
+- These devices have a single inlet and exit.
+- Work is needed for these devices, which means the work done is negative, i.e. \(\dot{W} < 0\).
+- The change in potential energy is assumed to be zero, i.e. \(\Delta \text{pe} = 0\).
+- The change in kinetic energy is usually small compared to the change in enthalpy and can be assumed to be zero, i.e. \(\text{ke} = 0\).
+- Compressors often require some cooling that means the heat transferred is negative, i.e. \(\dot{Q} = \dot{m} q_{out} < 0\).
+- If there is no cooling or heat losses, i.e. an adiabatic process where \(\dot{Q} = 0\):
+  \[\dot{W} = \dot{m} \left(h_e - h_i \right)\]
+
+  Where:
+  - $\dot{W}$ is the power output of the turbine
+  - $\dot{m}$ is the mass flow rate through the turbine
+  - $h_e$ is the *final* enthalpy of the fluid
+  - $h_i$ is the *initial* enthalpy of the fluid
+
+\newpage
+
+** Throttling valves
+Throttling valves are flow-restricting devices having significant pressure drop with no work done and minimal heat transfer to the surroundings.
+- There is no work done, i.e. \(\dot{W} = 0\).
+- Heat transfer is assumed to be negligible, i.e. \(\dot{Q} = 0\).
+- The change in potential energy is assumed to be zero, i.e. \(\Delta \text{pe} = 0\).
+- The change in kinetic energy is usually small compared to the change in enthalpy and can be assumed to be zero, i.e. \(\text{ke} = 0\).
+- It usually results in a *temperature drop* if there is phase change, which is the case in refrigeration and air-conditioning applications.
+- It is a constant enthalpy process, which means \(h_i = h_e\).
+- In the case of an ideal gas, the process is isothermal.
+- The enthalpy of the fluid remains constant, but the internal energy and flow energy may be converted into one another:
+  \[u_1 + P_1 v_1 = u_2 + P_2 v_2\]
+
+  Where:
+  - $u_1$ is the initial internal energy
+  - $P_1$ is the initial pressure
+  - $v_1$ is the initial *specific* volume
+  - $u_2$ is the final internal energy
+  - $P_2$ is the final pressure
+  - $v_2$ is the final *specific* volume
+
+\newpage
+
+** Mixing chambers
+Mixing chambers are devices that combine two or more streams at different conditions, to produce a single mixed stream.
+- The mass balance is \(\sum \dot{m}_i = \dot{m}_e\).
+- The heat transferred and work done is assumed to be zero, i.e. \(\dot{Q} = 0\) and \(\dot{W} = 0\).
+- The change in potential energy and kinetic energy is also assumed to be zero, i.e. \(\Delta \text{pe} = 0\) and \(\Delta \text{ke} = 0\).
+- The energy balance is:
+  \[\sum \dot{m}_i h_i = \dot{m}_e h_e\].
+
+** Heat exchangers
+Heat exchangers are devices that transfer energy between moving fluid streams at different temperatures.
+- The change in potential energy and kinetic energy is also assumed to be zero, i.e. \(\Delta \text{pe} = 0\) and \(\Delta \text{ke} = 0\).
+- The work done is assumed to be zero, i.e. \(\dot{W} = 0\).
+
+*** Whole heat exchanger as control volume
+- The heat transferred is zero, i.e. \(\dot{Q} = 0\).
+- The energy balance is:
+  \[\sum \dot{m}_i h_i = \sum \dot{m}_e h_e\]
+
+*** Fluid inside the heat exchanger as control volume
+- There is one inlet and one outlet.
+- The energy balance is:
+  \[\dot{Q}_{fluid} = \dot{m}_{fluid} \left(h_{e_{fluid}} - h_{i_{fluid}} \right)\]
+
+
+* Pressure variation in a fluid
+\[\frac{\partial p}{\partial x} = - \rho a_x\]
+\[\frac{\partial p}{\partial y} = - \rho a_y\]
+\[\frac{\partial p}{\partial z} = - \rho (g + a_z)\]
+
+Where:
+- $\frac{\partial p}{\partial x}, \frac{\partial p}{\partial y}, \frac{\partial p}{\partial z}$ is the partial derivative of pressure with respect to the \(x, y\) and \(z\) directions respectively
+- $\rho$ is the density of the fluid
+- $a_x, a_y, a_y$ is the acceleration of the fluid in the \(x, y\) and \(z\) direction respectively
+- $g$ is the gravitational acceleration
+
+** For the case of no acceleration
+\[a_x = a_y = a_z = 0\]
+
+The above equations simplify to:
+\begin{align*}
+\frac{dp}{dz} &= - \rho g \\
+\int_{p_1}^{p_2} \, dp &= - \int_{z_1}^{z_2} \rho g \, dz \\
+p_2 - p_1 &= - \rho g (z_2 - z_1) \\
+p_2 - p_1 &= \rho g (z_1 - z_2) \\
+\end{align*}
+
+Where:
+- $p_2$ is the final pressure of the fluid
+- $p_1$ is the initial pressure of the fluid
+- $\rho$ is the density of the fluid
+- $g$ is the gravitational acceleration
+- $z_2$ is the final height of the fluid
+- $z_1$ is the initial height of the fluid
+
+*** In terms of depth \(h\)
+Substituting \(p_1 = p_{atm}\), \(h = - z_2\), and \(z_1 = 0\) where $h$ is the depth of the fluid,
+
+\begin{align*}
+p_2 - p_{atm} &= \rho g (0 + h) \\
+p_2 - p_{atm} &= \rho g h
+\end{align*}
+
+Where:
+- $p_2$ is the pressure of the fluid at a point under the fluid surface
+- $p_{atm}$ is the atmospheric pressure
+- $\rho$ is the density of the fluid
+- $g$ is the gravitational acceleration
+- $h$ is the depth of the fluid
+
+
+** Pressure at a neighbouring point
+\[p_1 \approx p_0 + \frac{\partial p}{\partial x} \delta x\]
+
+Where:
+- $p_1$ is the pressure at the neighbouring point
+- $p_0$ is the pressure at the given point
+- $\delta x$ is the change in distance, which can be either positive or negative
+
+\newpage
+
+* Methods to find fluid pressure
+
+** Point of equal pressure method
+1. Find 2 points with equal pressure.
+2. Equate the sum of the pressure due to the fluids above the first point with the sum of the pressure due to the fluids above the second point.
+3. Solve the equation.
+
+** "Travelling" method
+- Start from a specific point with specified pressure and move along the fluid.
+- When there is an *increase* in the *depth* (*decrease* in *height*) of the fluid, *increase* the pressure by the amount required, which is usually \(\rho g h\) of the fluid.
+- When there is a *decrease* in the *depth* (*increase* in *height*) of the fluid, *decrease* the pressure by the amount required, which is usually \(\rho g h\) of the fluid.
+- Equate the above sum to the last point of interest.
+- Solve the equation.
+
+\newpage
+
+* Hydrostatic force on an incline plane
+
+** Resultant force
+\[F_R = \rho g h_c A\]
+
+Where:
+- $F_R$ is the resultant force on the object
+- $\rho$ is the density of the object
+- $g$ is the gravitational acceleration
+- $h_c$ is the depth of the *centroid* of the object under the liquid
+- $A$ is the total area of the object
+
+\newpage
+
+*** Derivation
+\[dF = p \, dA \quad \Rightarrow \quad F_R = \int_A p \, dA\]
+
+Since pressure varies with depth:
+\[p = \rho g h\]
+\[F_R = \rho g \sin \theta \int_A y \, dA\]
+
+Using the first moment of area:
+\[y_c A = \int_A y \, dA\]
+\[F_R = \rho g \sin \theta y_c A\]
+\[F_R = \rho g h_c A\]
+
+Where:
+- $dF$ is the force on an infinitesimal element
+- $dA$ is the infinitesimal area element
+- $p$ is the fluid pressure on the object
+- $F_R$ is the resultant force on the object
+- $\rho$ is the density of the object
+- $g$ is the gravitational acceleration
+- $h$ is the depth of the object under the liquid
+- $\theta$ is the angle of the inclined plane from the horizontal
+- $y$ is the distance of the area element from the point where the incline plane meets the fluid surface
+- $A$ is the total area of the object
+- $y_c$ is the distance of the *centroid* from the point where the incline plane meets the fluid surface
+- $h_c$ is the depth of the *centroid* of the object under the liquid
+
+** Position of resultant force
+\[y_R = \frac{I_{xc}}{y_c A} + y_c\]
+
+Where:
+- $y_R$ is the distance of the position of the resultant force from the point where the incline plane meets the fluid surface
+- $I_{xc}$ is the second moment of area calculated along the x-axis that passes the point where the incline plane meets the fluid surface
+- $y_c$ is the distance of the *centroid* from the point where the incline plane meets the fluid surface
+- $A$ is the total area of the object
+
+*** Right-angled triangle force distribution
+- This equation only works for a vertical surface.
+- You *cannot* use this for an incline plane, use the general equation above instead.
+
+\[y_R = \frac{2}{3} h\]
+
+Where:
+- $y_R$ is the distance of the position of the resultant force from the fluid surface
+- $h$ is the total *depth* of the fluid
+
+\newpage
+
+*** Derivation
+Taking moments about the point where the incline plane meets the fluid surface:
+\[y_R F_R = \int_A y \, dF, dF = p \, dA\]
+\[y_R F_R = \int_A y \rho g y \sin \theta \, dA\]
+
+Since \(F_R = \rho g \sin \theta y_c A\):
+\[y_R = \frac{\int_A y^2 \, dA}{y_c A}\]
+
+Since \(I_x = \int_A y^2 \, dA\):
+\[y_R = \frac{I_{xc} + Ay_c^2}{y_c A}\]
+\[y_R = \frac{I_{xc}}{y_c A} + y_c\]
+
+Where:
+- $F_r$ is the resultant force on the object
+- $y_R$ is the distance of the position of the resultant force from the point where the incline plane meets the fluid surface
+- $dF$ is the infinitesimal force on an area element
+- $p$ is the pressure on the object
+- $dA$ is the infinitesimal area element of the object
+- $\rho$ is the density of the object
+- $g$ is the gravitational acceleration
+- $y$ is the distance of the area element from the point where the incline plane meets the fluid surface
+- $\theta$ is the angle of the inclined plane from the horizontal
+- $I_{xc}$ is the second moment of area calculated along the x-axis that passes the point where the incline plane meets the fluid surface
+- $y_c$ is the distance of the *centroid* from the point where the incline plane meets the fluid surface
+- $A$ is the total area of the object
+
+
+* Hydrostatic force on a curved surface
+
+** Horizontal force
+
+*** Magnitude
+\[F_H = \rho g h_c A_{proj}\]
+
+Where:
+- $F_H$ is the total horizontal force
+- $\rho$ is the density of the fluid
+- $g$ is the gravitational acceleration
+- $h_c$ is the depth of the *centroid* of the object under the liquid
+- $A_{proj}$ is the projected area of the curved surface
+
+*** Position
+\[y_{HR} = \frac{I_{xc}}{y_c A_{proj}} + y_c\]
+
+Where:
+- $y_{HR}$ is the distance of the position of the resultant horizontal force from the point where the incline plane meets the fluid surface
+- $I_{xc}$ is the second moment of area calculated along the x-axis that passes the point where the incline plane meets the fluid surface
+- $y_c$ is the distance of the *centroid* from the point where the incline plane meets the fluid surface
+- $A_{proj}$ is the projected area of the curved surface
+
+** Vertical force
+\[F_V = \rho g V\]
+
+Where:
+- $F_V$ is the total vertical force
+- $\rho$ is the density of the fluid
+- $g$ is the gravitational acceleration
+- $V$ is the volume of the fluid *above* the curved surface
+
+** Total force
+\[F_R = \sqrt{F_H^2 + F_V^2}\]
+
+Where:
+- $F_R$ is the total force
+- $F_V$ is the total vertical force
+- $F_H$ is the total horizontal force
+
+** Derivation
+- Consider a small section (\(ds\)) of the curved surface.
+- Pressure acts perpendicularly to the section.
+
+Force perpendicular to the section:
+\[dF_R = p \, ds = \rho g h \, ds\]
+
+Horizontal force:
+\[dF_R \cos \theta = p \, ds \cos \theta = \rho g h \, ds \cos \theta\]
+
+Hence, the integral of the horizontal force is just the force on a projected vertical plane surface:
+\[F_H = \rho g h_c A_{proj}\]
+\[y_{HR} = \frac{I_{xc}}{y_c A_{proj}} + y_c\]
+
+Vertical force:
+\[dF_R \sin \theta = p \sin \theta \, ds = \rho g h \, ds \sin \theta\]
+
+\(h \sin \theta\) is the volume above segment \(ds\). Hence, the total vertical force is the total weight of the fluid above the surface.
+\[F_V = \rho g V\]
+
+Total force:
+\[F_R = \sqrt{F_H^2 + F_V^2}\]
+
+\newpage
+
+Where:
+- $F_H$ is the total horizontal force
+- $\rho$ is the density of the fluid
+- $g$ is the gravitational acceleration
+- $h_c$ is the depth of the *centroid* of the object under the liquid
+- $A_{proj}$ is the projected area of the curved surface
+- $y_{HR}$ is the distance of the position of the resultant horizontal force from the point where the incline plane meets the fluid surface
+- $I_{xc}$ is the second moment of area calculated along the x-axis that passes the point where the incline plane meets the fluid surface
+- $y_c$ is the distance of the *centroid* from the point where the incline plane meets the fluid surface
+- $F_V$ is the total vertical force
+- $V$ is the volume of the fluid *above* the curved surface
+- $F_R$ is the total hydrostatic force
+
+\newpage
+
+* Stability of floating objects
+
+** Distance from the centre of gravity of the object to the metacentre
+\[\overline{GM} = \frac{I_0}{V} - \overline{CG}\]
+
+Where:
+- $\overline{GM}$ is the distance from the centre of gravity of the object to the metacentre
+- $I_0$ is the second moment of area for the *area resulting from the water cutting through the object* about the z-axis, or the axis out of the paper
+- $V$ is the volume of the displaced fluid
+- $\overline{CG}$ is the distance from the original centre of buoyancy to the centre of gravity of the object
+
+*** Derivation
+\[dV_1 = x \tan \alpha \, dA\]
+\[dV_2 = - x \tan \alpha \, dA\]
+\[dA = w \, dx\]
+
+Locating the centroid of the composite volume:
+\[\bar{x} V = \bar{x}_0 V_0 + \bar{x}_1 V_1 + \bar{x}_2 V_2\]
+\[\bar{x} V = \int_{V_1} x \, dV_1 - \int x \, dV_2\]
+\[\bar{x} V = \tan \alpha \int_A x^2 dA\]
+\[\bar{x} V = \tan \alpha I_0\]
+\[\bar{x} = \tan \alpha I_0\]
+
+Since \(x = \overline{CM} \tan \alpha\):
+\[\overline{CM} V \tan \alpha = \tan \alpha I_0\]
+\[\overline{CM} = \frac{I_0}{V}\]
+\[\overline{GM} = \overline{CM} - \overline{CG} = \frac{I_0}{V} - \overline{CG}\]
+
+\newpage
+
+Hence:
+- When \(\overline{GM} > 0\), the object is stable
+- When \(\overline{GM} < 0\), the object is unstable
+
+\[\]
+
+Where:
+- $V_1$ is the volume *increase* after the object is rotated
+- $V_2$ is the volume *decrease* after the object is rotated
+- $dA$ is the infinitesimal area element
+- $x$ is the distance from the intersection of the line from the new centre of buoyancy to the metacentre, and the water surface.
+- $\alpha$ is the angle between the two lines meeting at the metacentre.
+- $w$ is the width of the object
+- $\bar{x}$ is the distance between the two centre of buoyancies.
+- $V$ is the volume of the displaced fluid
+- $I_0$ is the second moment of the "waterline" area about the z-axis, or the axis out of the paper
+- $\overline{CM}$ is the distance from the original centre of buoyancy to the metacentre
+- $\overline{GM}$ is the distance from the centre of gravity of the object to the metacentre
+- $\overline{CG}$ is the distance from the original centre of buoyancy to the centre of gravity of the object
+
+
+* Fluids in linear body motion
+\[\frac{\partial p}{\partial x} = - \rho a_x\]
+\[\frac{\partial p}{\partial y} = - \rho a_y\]
+\[\frac{\partial p}{\partial z} = - \rho (g + a_z)\]
+\[dp = \frac{\partial p}{\partial x} dx + \frac{\partial p}{\partial y} dy + \frac{\partial p}{\partial z} dz\]
+
+Where:
+- $\frac{\partial p}{\partial x}$ is the pressure change in the x-direction
+- $\frac{\partial p}{\partial y}$ is the pressure change in the y-direction
+- $\frac{\partial p}{\partial z}$ is the pressure change in the z-direction
+- $\rho$ is the density of the fluid
+- $g$ is the gravitational acceleration
+- $a$ is the acceleration in the respective directions
+- $dp$ is the total change in pressure
+
+\newpage
+
+* Fluids in rotational motion
+\[\frac{\partial p}{\partial r} = - \rho a_r = \rho r \omega^2\]
+\[\frac{\partial p}{\partial \theta} = - r\rho a_{\theta} = 0 \quad \because a_{\theta} = 0\]
+\[\frac{\partial p}{\partial z} = - \rho (g + a_z)\]
+\[dp = \frac{\partial p}{\partial r} dr + \frac{\partial p}{\partial \theta} d \theta + \frac{\partial p}{\partial z} dz\]
+
+Where:
+- $\frac{\partial p}{\partial r}$ is the pressure change in the direction of the radius
+- $\frac{\partial p}{\partial \theta}$ is the pressure change in the direction of the circle
+- $\frac{\partial p}{\partial z}$ is the pressure change in the z-direction
+- $\rho$ is the density of the fluid
+- $a_r$ is the centripetal acceleration
+- $r$ is the radius of the container
+- $\omega$ is the angular velocity of the fluid
+- $g$ is the gravitational acceleration
+- $a_{\theta}$ is the angular acceleration, which is 0
+- $a_z$ is the acceleration of the object in the z-direction
+- $dp$ is the total change in pressure
+
+\newpage
+
+** At the water surface (\(dp = 0\))
+\[z = \frac{\omega^2 r^2}{2g} + c\]
+
+Where:
+- $z$ is the height of the water surface above the bottom of the container
+- $\omega$ is the angular velocity of the fluid
+- $r$ is the radius of the container
+- $g$ is the gravitational acceleration
+- $c$ is an arbitrary constant

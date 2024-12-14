@@ -1,0 +1,219 @@
+#+TITLE: Carbohydrates Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+\newpage
+
+* Definitions
+
+** Carbohydrates
+Carbohydrates are *polyhydroxyl aldehydes or ketones* with the general formula $\boldsymbol{(CH_2O)_n}$.
+
+*** Functions of carbohydrates
+- *Cellular fuel*: Metabolism of sugars provide energy to run the cell and carbon atoms for biosynthesis.
+- *Cellular components*: Sugars are components of biomolecules and other cellular structures.
+
+** Monosaccharides
+Monosaccharides, or *simple sugars*, have from 3 to 7 carbon atoms, and one aldehyde or one ketone group. They cannot be broken down into simple sugars under mild conditions.
+
+** Aldose
+Aldose is a sugar molecule that has an *aldehyde* group. The aldehyde group is always at the *end* of the carbon chain.
+
+** Ketose
+Ketose is a sugar molecule that has a *ketone* group. The ketone group is always on the *second carbon* of the chain.
+
+** Oligosaccharides
+Oligosaccharides are made of 2 to 10 simple sugar residues.
+
+** Polysaccharides
+Polysaccharides are polymers of monosaccharides. They contain *acetal and ketal* linkages, which are stable under physiological condition. *Enzymes* are needed to break the *glycosidic bonds* in polysaccharides.
+
+** Disaccharides
+Disaccharides are also polymers of monosaccharides, but they are only made of 2 monosaccharides. They are two monosaccharides linked by a *glycosidic bond*, which is \(O-R\) bond, where the $R$ group comes from the alcohol. The free substituted anomeric carbon is the *reducing* end, which means that *it itself gets oxidised*.
+[[./images/disaccharides.png]]
+
+** Epimer
+Epimers are carbohydrates that differ in the location of the \(-OH\) group in *one* location.
+
+** Tautomer
+Tautomers are structural isomers (constitutional isomers) of chemical compounds that readily interconvert, by relocating a proton (\(H^+\)) in a process called tautomerisation.
+[[./images/tautomers.png]]
+
+** Mutarotation
+Mutarotation is the change in optical rotation of a chiral material due to the interconversion between the alpha (\(\alpha\)) anomeric form of a carbohydrate to its beta (\(\beta\)) anomeric form and vice versa.
+
+** Reducing sugars
+Reducing sugars refer to any sugar that is capable of acting as a reducing agent. This means that
+
+** Carbonyl hydrate
+Carbonyl hydrate is the functional group shown below:
+
+#+ATTR_LATEX: :scale 1.0
+[[./images/carbonyl-hydrate.png]]
+
+The mechanism is shown below:
+[[./images/carbonyl-hydrate-mechanism.png]]
+
+\newpage
+
+** Hemiacetal
+Hemiacetal is the functional group shown below:
+
+#+ATTR_LATEX: :scale 1.0
+[[./images/hemiacetal.png]]
+
+The mechanism is shown below:
+[[./images/hemiacetal-mechanism.png]]
+
+*Hemiketal* is just the hemiacetal functional group with its *hydrogen* replaced with a $\boldsymbol{R}$ group. Both hemiacetal and hemiketal are *unstable* and are usually in rapid equilibrium with carbonyl and alcohol in aqueous solutions at physiological pH (pH 7.4).
+[[./images/hemiacetal-equilibria.png]]
+
+\newpage
+
+** Acetal
+*Acetal* is the functional group shown below:
+
+#+ATTR_LATEX: :scale 1.0
+[[./images/acetal.png]]
+
+*Ketal* is just the acetal functional group with its *hydrogen* replaced with a $\boldsymbol{R}$ group. Both ketal and acetal are usually stable and are not in rapid equilibrium with carbonyl and alcohol in aqueous solutions at physiological pH (pH 7.4).
+
+** Anomers
+Anomers are cyclic monosaccharides that differ from each other in the configuration of the \(C\)-1 or \(C\)-2 carbon. For aldoses, it is the \(C\)-1 carbon, and for ketoses, it is the \(C\)-2 carbon. When the \(-OH\) group is *below* the carbon atom, it is called the \(\alpha\)-anomer, and when the \(-OH\) is *above* the carbon atom, it is called the \(\beta\)-anomer.
+
+** Pyranose
+Pyranose is a cyclic carbohydrate (sugar) with 6 members. The name comes from pyran, which is shown below:
+
+#+ATTR_LATEX: :scale 1.0
+[[./images/pyran.png]]
+
+** Furanose
+Furanose is a cyclic carbohydrate (sugar) with 5 members. The name comes from furan, which is shown below:
+
+#+ATTR_LATEX: :scale 1.0
+[[./images/furan.png]]
+
+** Monosaccharide derivatives
+Monosaccharide derivatives are molecules with functional groups that are derived from monosaccharides.
+
+*** Sugar alcohols
+Sugar alcohols are formed by mild reduction of sugars. Sugar alcohols such as sorbitol, mannitol, and xylitol sweeten many "sugarless" gums and candies.
+[[./images/sugar-alcohols.png]]
+
+\newpage
+
+*** Deoxy sugars
+Deoxy sugars are monosaccharides with one or more hydroxyl (\(-OH\)) groups replaced by hydrogens \(H\). 2-Deoxy-\(D\)-ribose is a constituent of DNA.
+[[./images/deoxy-sugars.png]]
+
+*** Sugar esters
+Sugar esters are phosphate esters. The phosphate esters of glucose, fructose, and other monosaccharides are important metabolic intermediates. The ribose moiety of nucleotides such as ATP and GTP is phosphorylated at the 5' position.
+[[./images/sugar-esters.png]]
+
+*** Amino sugars
+Amino sugars are sugars with an amino group at \(C\)-2. They are found in many oligosaccharides and polysaccharides.
+[[./images/amino-sugars.png]]
+
+\newpage
+
+*** Glycosides
+Glycosides are the product of the dehydration reaction between monosaccharides and alcohols. This reaction retains the \(\alpha\)- or \(\beta\)-configuration at the \(C\)-1 carbon. The new bond is called a *glycosidic bond*.
+
+#+ATTR_LATEX: :scale 0.75
+[[./images/glycosides.png]]
+
+
+* Terminology of carbohydrates
+The /-ose/ ending indicates a carbohydrate, and simple sugars are known by common names like *glucose*, *ribose*, and *fructose* rather than systematic names. The number of carbon atoms in an aldose or ketose is specified by the prefixes /tri-/, /tetra-/, /pent-/, /hex-/, or /hept-/.
+
+
+* Fischer projection forms
+- The stereochemistry at the chiral carbon *furthest away* (highest number) from the functional group (ketone or aldehyde) determines the *D or L* configuration.
+- $-OH$ group on the right \(\rightarrow\) *D-configuration*
+- $-OH$ group on the left \(\rightarrow\) *L-configuration*
+- Most naturally-occurring carbohydrates are in the D-configuration.
+
+** Manipulation of Fischer projections
+
+*** Fischer projections can only be rotated by \(180^{\circ}\)
+[[./images/180-rotation.png]]
+
+*** Rotating \(90^{\circ}\) or \(270^{\circ}\) results in an enantiomer
+[[./images/90-rotation.png]]
+
+*** If one group of the Fischer projection is held steady, the other groups can be rotated either clockwise or counterclockwise
+[[./images/three-group-rotation.png]]
+
+
+* Intramolecular carbonyl addition
+[[./images/intramolecular-carbonyl-addition.png]]
+[[./images/rapidly-equilibriating-symbol-explanation.png]]
+
+
+* Haworth projection form
+[[./images/haworth-projection.png]]
+
+
+* Formation of anomers
+[[./images/formation-of-anomers.png]]
+
+
+* Common sugars in biological chemistry
+
+** Pyranose
+
+*** D-glucose
+
+#+ATTR_LATEX: :scale 1.0
+[[./images/d-glucose.png]]
+
+*** D-mannose
+
+#+ATTR_LATEX: :scale 1.0
+[[./images/d-mannose.png]]
+
+*** D-galactose
+
+#+ATTR_LATEX: :scale 1.0
+[[./images/d-galactose.png]]
+
+\newpage
+
+** Furanose
+
+*** Ribose
+[[./images/ribose.png]]
+
+Ribose is used in adenosine triphosphate (ATP), which is shown below:
+[[./images/atp.png]]
+
+\newpage
+
+** Disaccharides
+
+*** Lactose
+It's also known as galactosyl-beta-1,4-glucose.
+[[./images/lactose.png]]
+
+*** Cellobiose
+It's also known as the glucosyl-beta-1,4-glucose.
+[[./images/cellobiose.png]]
+
+\newpage
+
+*** Maltose
+It's also known as the glucosyl-alpha-1,4-glucose.
+[[./images/maltose.png]]
+
+** Polysaccharides
+
+*** Cellulose
+It is made up of poly-beta-1,4-glucosyl units and is used as a structural polymer in plants.
+[[./images/cellulose.png]]
+
+\newpage
+
+*** Starch or glycogen
+It is made up of poly-alpha-1,4-glucosyl units and is used as an energy storage polymer in plants and animals.
+[[./images/starch.png]]

@@ -1,0 +1,973 @@
+#+TITLE: Healthy Living Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** Diet
+
+*** Noun
+The kinds of food that a person, animal, or community habitually eats.
+
+*** Verb
+A special course of food to which a person restricts themselves, either to lose weight or for medical reasons.
+
+
+** Nutrition
+
+Definitions:
+- The process of providing or obtaining the food necessary for health and growth.
+- Food or nourishment.
+- The branch of science that deals with nutrients and nutrition, particularly in humans.
+
+What is nutrition?
+1. Nutrition is determined by the quality of the food itself
+2. Nutrition consists of vitamins, minerals, phytonutrients, and antioxidants.
+
+
+** Good nutrition
+- Food needs to be consumed daily for our bodies to function optimally.
+- Food needs to be in a balanced quantity and ideally, from the cleanest sources possible for good nutrition.
+- Good nutrition improves the immune system, helps build muscle, assists in weight loss, and enhances vitality.
+- Balanced nutrition is critical at all stages of life.
+  - At a young age, good nutrition is crucial for growth and development.
+  - As a person gets older, nutrition is required for energy, detoxification and anti-ageing.
+
+
+** Substrates
+Substrates are just the fuel for our bodies, so substrates include fats, proteins and carbohydrates.
+
+
+** Adenosine triphosphate (ATP)
+Adenosine triphosphate (ATP) is the molecule that all substrates are converted to provide our cells with energy.
+
+
+** Kilocalories (kcal)
+A kilocalorie is the amount of heat required to raise the temperature of 1 kilogram of water by 1 degree Celsius. The energy in foods is also usually measured in kilocalories.
+
+
+** Macronutrients
+Macronutrients are nutrients that our body need in relatively large amounts to support normal functions and health. Carbohydrates, fats, and proteins are energy-yielding macronutrients.
+
+*** Carbohydrates
+All carbohydrates are:
+- Converted to glucose
+- *4 kcal/g*
+- Primary substrates for the muscles and brain
+
+The extra glucose is stored as glycogen in the liver and muscles and the glycogen is converted back to glucose when it is needed to make more ATP in a process called glycogenolysis. Glycogen stored is limited to about 2,500 kcal and relies on dietary carbohydrates to replenish.
+
+*** Fats
+Fats provide *9 kcal/g* of energy and are hence extremely efficient for storage. It is the energy substrate used when doing prolonged, low intensity exercise. Fats have:
+- High net ATP yield but slow ATP production
+- Must be broken down into free fatty acids (FFAs) and glycerol
+- Only FFAs are used to make ATP
+
+*** Proteins
+Proteins are the energy substrates during starvation. They provide *4.1 kcal/g* of energy and must be converted into glucose through a process called gluconeogenesis. Proteins can also be converted into FFAs through a process called lipogenesis for energy storage and as an energy source for the body's cells.
+
+*** Water
+Water is a macronutrient needed in the highest quantity, making up 60 - 70% of total body weight. It is an excellent solvent, and it plays many roles, including:
+- Temperature regulation
+- Digestion
+- Nutrient absorption
+- Blood formation
+- Waste elimination
+
+The amount of water one needs is dependent on his size and activity.
+
+*** Fibre
+Fibre is a macronutrient that doesn't carry calories and come from fruits and vegetables. They come from carbohydrates, as fruits and vegetables contain mostly carbohydrates.
+
+
+** Micronutrients
+Micronutrients are nutrients needed in relatively small amounts to support normal health and body functions. Vitamins and minerals are micronutrients.
+
+
+** Vitamins
+Vitamins are organic compounds that are required in small amounts for normal metabolic processes and are considered *essential nutrients* as they cannot be synthesised by body cells in adequate amounts.
+
+
+The body can only synthesis Vitamins D, K and niacin (a B vitamin). All other vitamins must be consumed from our diet.
+
+
+Vitamins are classified based on their solubility:
+- Fat-soluble vitamins: A, D, E, and K
+- Water-soluble vitamins: B vitamins and vitamin C
+
+
+*** Roles of vitamins
+- Normal function, growth
+- Maintenance of body tissues
+- Essential links and regulators in metabolic reactions
+
+
+** Minerals (microminerals)
+Minerals are inorganic elements that are *essential* in metabolism. It is usually extracted from the soil by plants and hence are obtained from plant foods or animals that have eaten plants. Minerals serve as constituents of enzymes, hormones, and vitamins and are also known as microminerals.
+
+
+There are two mineral classifications:
+- Seven *major* minerals (required in amounts > 100 mg/dL)
+- Fourteen *trace* minerals (required in amounts < 100 mg/dL)
+
+
+*** Roles of minerals
+- Fluid regulation and energy production
+- Health of our bones and blood
+- Help rid our body of the harmful by-products of metabolism
+- Provide structure in forming bones and teeth
+- Maintain normal bodily function
+- Regulate metabolism by becoming part of enzymes and hormones that modulate cellular activity
+
+
+** Essential nutrients
+Essential nutrients are nutrients that cannot be synthesised by the body but are required by the body.
+
+
+** Insensible water loss
+Insensible water loss is the amount of body fluid loss daily that is not easily measured, such as from the respiratory system, skin and water in the excreted stool.
+
+
+** Healthy diet
+A healthy diet is made up of foods that are nutritious. Foods that make up a healthy diet include:
+- Locally grown foods (nutrient loss reduced from being harvested too soon or loss over time taken to transport the foods)
+- Simple natural ingredients
+- Minimal processing that contain high amounts of vitamins, minerals and antioxidants
+- Optimal cooking methods
+- Organic (optional if cost is an issue)
+
+
+A healthy diet has the following benefits:
+- Improves health
+- Enhances vitality
+- Increase energy
+- Maintains ideal weight
+- Combats many diseases and health issues
+- Protects against certain diseases like Type 2 diabetes, cognitive decline and heart disease
+
+
+** Functionally fit
+Functionally fit just means that you're able to do daily activities.
+
+
+** Non-exercise thermogenesis (NEAT)
+Non-exercise thermogenesis describes the calories burnt from unplanned exercises, such as the movements we make from our daily activities. This does not include sleeping, breathing or eating. It is also called non-exercise physical activity (NEPA).
+
+
+** Health
+The World Health Organisation defines it as a "state of complete physical, psychological and social well-being and not merely the absence of disease or infirmity".
+
+*** Low level of well-being
+- Social
+- Intellectual
+- Environmental
+
+*** Less than optimal well-being
+- Social
+- Intellectual
+- Environmental
+- Physical
+- Emotional
+
+*** Optimal well-being
+- Social
+- Intellectual
+- Environmental
+- Physical
+- Emotional
+- Spiritual
+- Financial
+- Occupational
+
+
+** Acute
+An acute condition is defined as condition that is sudden and lasts for a short period, which is usually less than 6 months. In an acute condition, symptoms appear and change or worsen rapidly, like in a heart attack.
+
+
+** Chronic
+A chronic condition develops slowly and worsens over time, persisting for more than 6 months to years. A chronic condition develops and worsens over an extended period of time, like in atherosclerosis.
+
+
+** Diabetes Mellitus
+
+*** Normal
+Insulin binds to receptors on the surface of a cell and signals special transporters in the cell to transport glucose inside.
+
+
+*** Type 1 diabetes
+The pancreas produces little or no insulin. Thus, no signal is sent instructing the cell to transport glucose, and glucose builds up in the bloodstream.
+
+
+*** Type 2
+The body's cells are resistant to insulin. Some insulin binds to receptors on the cell's surface, but the signal to transport glucose is blocked. Glucose builds up in the bloodstream.
+
+
+*** Complications
+- 2 in 3 individuals with new kidney failure had diabetes
+- 1 in 2 individuals who had a heart attack had diabetes
+- 2 in 5 individuals who had a stroke had diabetes
+- 9 in 10 individuals who had a lower limp amputation had diabetes
+- Half of the disease burden of blindness and vision impairment is due to diabetes
+
+
+** Cancers
+Cancer is a condition characterised by the *uncontrolled growth of cells*. Each time a cell divides, there is a possibility that a *mutation*, an error in DNA replication, will occur and form a tumour. Mutations are random and the risk of mutations is increased by exposure to certain substances like tobacco smoke, radiation, and toxic chemicals. A tumour can either be benign or malignant. A benign tumour is harmless, but a malignant one harms the body.
+
+
+*** Risk factors
+Unchangeable factors:
+- Race and ethnicity
+- Heredity
+- Increasing age
+- Gender
+
+Changeable factors:
+- Exposure to viruses
+- Alcohol intake
+- Nutrition
+- Smoking (tobacco)
+- Exposure to radiation or toxins
+- Physical inactivity
+- Obesity
+
+
+** Legal age
+Legal age is the number of chronological years lived.
+
+
+** Biological age
+Biological age is the relative age or condition of a person's organs or body systems.
+
+
+** Psychological age
+Psychological age is a measure of the person's adaptive capacities.
+
+
+** Social age
+Social age is the age of a person relative to society's expectations.
+
+
+** Functional age
+Functional age is a measure of a person's physical and mental performance.
+
+
+** Life expectancy (LE)
+Life expectancy is the number of years a person at a given age can expect to live. It is calculated by adding healthy years of life to unhealthy years of life.
+
+
+** Years of life lost (YLLs)
+Years of life lost refers to the years of life lost due to premature mortality.
+
+
+** Years lived with disability (YLDs)
+Years lived with disability refers to the years lived in less than perfect health. The years lived with disability take into account both the severity and the length of time lived with a disability, so it can measure the health loss from short-term, acute periods of disability, as well as long-term period of chronic disability.
+
+
+** Disability-adjusted life years (DALYs)
+The disability-adjusted life years refers to the years of life lost to premature death and disability. DALYs are the sum of the years of life lost (YLLs) and the years with disability (YLDs), i.e. DALYs = YLLs + YLDs. The burden of disease is measured by disability-adjusted life years (DALYs).
+
+
+** Health-adjusted life expectancy (HALE)
+Health-adjusted life expectancy refers to the number of years that a person at a given age can expect to live in full health, taking into account mortality and disability. It is essentially the years of wellness.
+
+
+** Infancy
+Infancy is up to 1-year-old.
+
+
+** Early childhood
+1 - 6 years old.
+
+
+** Middle childhood
+7 - 10 years old.
+
+
+** Pre-puberty
+9 - 15 years old for girls, and 12 - 16 years old for boys.
+
+** Adolescence
+Adolescence is the 6 years following puberty.
+
+
+** Early adulthood
+20 - 29 years old.
+
+
+** Middle adulthood
+30 - 44 years old.
+
+
+** Later adulthood
+45 - 64 years old.
+
+
+** Senescence (Elderly)
+65 years old and above.
+
+
+** Chronic overuse injuries
+Chronic overuse injuries are also known as *repetitive stress injuries* and are caused by repeating the same movements over and over again. Examples include:
+- Common work-related injuries
+- Excessive use of phones, computers, and other devices
+- Sports that involve repetitive motion like tennis, swimming and soccer
+
+Examples of *computer-related injuries in the workplace* include:
+- Muscle spasms
+- Strains
+- Sprains
+- Headaches
+- Joint pain
+
+It is common to be affected by a few conditions at the same time.
+
+
+*** Prevention
+- Use an ergonomic desk chair
+- Angle your monitor at a comfortable angle
+- Place your keyboard at a comfortable height
+- Position your mouse in a comfortable manner
+- Do stretches
+- Sit in a postural relief position
+- Clean your monitor
+- Take short breaks from work
+
+
+** Personalised nutrition
+Personalised nutrition has to be figured out by the individual. One will have to test quantitatively, through biological markers such as blood markers, and body biometrics like weight and body composition, as well as qualitatively through sensation and moods.
+
+
+One should use evidence-based research guidelines that are closest to their demographic. They should not be fixated about being exact as the beneficial dose region is a range. In the end, good enough is good enough and moderation is key.
+
+
+** Subcutaneous fats
+Subcutaneous fats are just fats that are underneath the skin
+
+
+** Visceral fats
+Visceral fats are fats in the abdominal area and are also the fats surrounding organs. It is a predictor of mortality.
+
+
+** Suffering equation
+Suffering = Pain x Resistance
+
+
+** Health literacy
+Health literacy shapes how you receive and understand, discern and act on the appropriate health information. Measures of health literacy include health-related knowledge, attitudes, motivation, behavioural intentions, personal skills and self-efficacy.
+
+
+** COM-B model
+The COM-B model posits behaviour as the result of potential influence between components in the model, listed below.
+
+*** Capability
+Capability is defined as our psychological and physical capacity to engage in the activity.
+
+
+*** Opportunity
+Opportunity is defined as all the factors outside the individual that prompt the behaviour.
+
+
+*** Motivation
+Motivation is defined as the brain processes that energise and direct behaviour, not just goals and conscious decision-making. It includes habitual processes, emotional responding, as well as analytical decision-making.
+
+
+** Behaviour change wheel (BCW)
+COM-B lies at the centre of the behaviour change wheel (BCW). The BCW is used as a tool kit for designing behaviour change interventions. For example, the BCW was used to characterise notable behaviour change interventions within the English Department of Health's 2010 tobacco control strategy and the National Institute of Health and Clinical Excellence's guidance on reducing obesity.
+
+
+
+
+* How much nutrition do I need?
+You need to consume enough energy each day to cover your total energy expenditure.
+- Resting metabolic rate (60 - 70%)
+- Thermic effect of physical activity (15 - 30 %)
+- Thermic effect of feeding (10%)
+
+Your resting metabolic rate depends on:
+- Age
+- Gender
+- Body weight
+- Height
+
+
+
+
+* Symptoms of micronutrient deficiencies
+- Pallor, or pale skin
+- Fatigue
+- Weakness
+- Trouble breathing
+- Unusual food cravings
+- Hair loss
+- Periods of light-headedness, feeling faint or fainting
+- Constipation
+- Sleepiness and poor concentration
+- Heart palpitations
+- Depression
+- Tingling and numbness of the joints
+- Menstrual issues, such as missed periods or very heavy cycles
+
+
+
+
+* Macronutrient-based diets
+- Vegetarian or vegan
+- Plant-based diets: Flexitarian, Mediterranean
+- Low-carbohydrate diets: Ketogenic, Paleo
+- Gluten-free
+- Intermittent fasting
+
+*Diets only work if you can sustain them!*
+
+
+
+
+* Benefits of exercise
+
+** Increases
+- Increases blood flow and oxygen levels in the brain
+- Increases mental functioning
+- Increases blood sugar regulation
+- Increases the ability to maintain normal body weight and mass
+- Increases blood vessel functioning
+- Increases muscle and bone strength
+- Increases healthy immune responses
+- Increases overall life expectancy and healthy life expectancy
+- Increases energy, mental alertness and short-term memory
+- Increases endorphin levels and elevates mood
+- Increases muscle mass and calories burned
+- Improves digestion
+- Improves immune functioning and recovery from illness
+- Improves cardiovascular function
+
+
+** Decreases
+- Decreases incidence of depression, anxiety, stress, and insomnia
+- Decreases risk of back injury back pain, bone thinning, and arthritis
+- Decreases risk of cardiovascular diseases, stroke, and heart attack
+- Decreases risk of type 2 diabetes
+- Decreases risk of colon, breast, and other cancers
+- Decreases risk of weight gain and obesity
+- Decreases risk of infections
+- Decreases risk of insomnia and sleeplessness
+
+
+
+
+* Types of fitness
+
+** Health-related
+- Cardiorespiratory fitness
+- Musculoskeletal fitness
+- Body composition
+
+
+** Performance
+- Cardiorespiratory fitness
+- Musculoskeletal fitness
+- Body composition
+- Speed and agility
+- Power
+
+
+** Performance
+- Cardiorespiratory fitness
+- Musculoskeletal fitness
+- Balance and gait
+- Flexibility
+- Motor agility
+- Body composition
+
+
+
+
+* How much activity should we do
+
+** Sedentary activities
+Activities such as watching television, surfing the internet, and talking on a phone should be *limited*.
+
+
+** Strength training
+Activities like bicep curls, push-ups, abdominal curls, bench press, and calf raises should be done *2 - 3 nonconsecutive days per week for all major muscle groups*.
+
+
+** Flexibility training
+Activities like calf stretch, side lunge, step stretch, and hurdler stretch should be done *at least 2 - 3 days a per week, ideally 5 - 7 days per week for all major joints*.
+
+
+** Cardiorespiratory endurance exercise
+Activities like walking, jogging, bicycling, swimming aerobic dancing, in-line skating, cross-country skiing, dancing, and basketball should be done *3 - 5 days per week for 20 - 60 minutes per day*.
+
+
+** Moderate intensity physical activity
+Activities like walking to the store or bank, washing windows or your car, climbing stairs, working in your yard, walking your dog, and cleaning your room should be done *150 - 300 minutes per week.* For weight loss or prevention of weight regain following weight loss, they should be done *60 - 90 minutes per day*.
+
+
+
+
+* Popular exercises
+- Circuit or interval training (HIIT, Metcon, Tabata, HILIT, PHAT, CrossFit)
+- Mind-body exercises (Yoga, Pilates)
+- Dance (Cardio-dance: Zumba, Jazzercise, barre workouts)
+- Aerobics (Step aerobics, body pump, indoor cycling or spin)
+- Martial arts or wrestling (kickboxing, Muay Thai, jujitsu, taekwondo, karate)
+- Obstacle courses and boot camps
+- Races and events
+- Wearable tech and virtual challenges
+
+
+
+
+* Considerations when choosing the right exercise
+- Injury and chronic pain
+- Pregnancy
+- Time and budget
+- Novice
+- Personal taste
+
+
+
+
+* Barriers to participation in sports
+- Lack of time
+- Lack of interest in sports
+- Busy with other non-sport activities
+- Long-term disability
+- Added responsibility at home on top of work
+
+
+
+
+* Problems caused by sitting
+1. Neck problems
+2. Jaw problems
+3. Wrist pain (Carpal Tunnel Syndrome)
+4. Knee problems
+5. Lower extremity problems
+6. Shoulder dysfunction
+7. Poor diaphragm function (breathing)
+8. Lower back pain
+9. Hernias
+10. Pelvic floor dysfunction
+11. Hip dysfunction
+
+The problem is so bad that medical experts now equate sitting with smoking, because prolonged sitting will shorten your life, just like smoking. Sitting as little as 2 hours continuously, increases risk for:
+- Heart disease
+- Diabetes
+- Metabolic syndrome
+- Cancer
+- Back and neck pain
+- All other orthopaedic problems
+
+
+
+
+* Pros and cons of HIIT and steady-state training
+
+** HIIT
+
+*** Pros
+- Better performance
+- Better insulin sensitivity
+- Burns more calories
+- Good for fat loss
+- Better heart health
+- Time efficient with shorter workouts
+- Can be done anywhere
+
+
+*** Cons
+- Discomfort
+- Not suitable for beginners
+- Increased risk of injury
+- Risk of burnout or overstraining
+
+
+** Steady-state training
+
+*** Pros
+- Less stress on the heart and body
+- Increased endurance
+- Better health
+- Faster recovery
+- Improved ability to burn fat
+- Increases slow-twitch muscle fibres
+- Can be more enjoyable
+
+
+*** Cons
+- Time-consuming
+- Risk of overuse injury
+- Can be monotonous
+- Not as efficient in burning calories
+
+
+
+
+* 10 great public health achievements
+1. Vaccination
+2. Motor vehicle safety
+3. Safer workplaces
+4. Control of infectious diseases
+5. Safer and healthier foods
+6. Healthier mothers and babies
+7. Family planning
+8. Fluoridation of drinking water
+9. Recognition of tobacco as a health hazard
+10. Reduced deaths from heart attack and stroke
+
+
+
+
+* Global life expectancy in 2019
+
+** Healthy life expectancy (HALE)
+1. Singapore (73.9)
+2. Japan (73.3)
+3. South Korea (72)
+4. Iceland (71.9)
+5. Switzerland (71.7)
+
+** Life expectancy (ranked in order of HALE)
+1. Singapore (84.9)
+2. Japan (84.8)
+3. South Korea (82.9)
+4. Iceland (84.1)
+5. Switzerland (84)
+
+
+
+
+* Leading causes of death in Singapore
+1. Cancer
+2. Pneumonia
+3. Ischaemic heart diseases
+4. Cerebrovascular diseases
+5. External causes of morbidity and mortality
+6. Nephrite, nephrotic syndrome and nephrosis
+7. Hypertensive diseases
+8. Urinary tract infection
+9. Other heart diseases
+10. Chronic obstructive lung diseases
+
+
+
+
+* Disability-adjusted life years (DALYs)
+The aim in life is to increase the number of healthy years and decrease the number of unhealthy ones.
+
+** Top causes of DALYs
+1. Cardiovascular diseases
+2. Cancers
+3. Musculoskeletal disorders
+4. Mental disorders
+5. Neurological disorders
+6. Unintentional injuries
+7. Other non-communicable diseases
+8. Diabetes and kidney diseases
+9. Respiratory infections and tuberculosis
+10. Sense organ diseases
+
+
+** Issues that affect DALYs
+- Lifestyle behaviours
+- Musculoskeletal injuries
+- Posture and work-related injuries
+- Hearing loss
+- Sleep deprivation
+- Behaviour-related infections
+
+
+
+
+* Causes of premature death among young adults
+- *Injuries* caused just over 60% of years of life lost (YLLs) for those aged 20 - 24.
+- *Self-harm and interpersonal violence* caused 32.9% of total YLLs for those aged 20 - 24.
+- *Transport injuries* among those and their teens and twenties, highest among those aged 15 - 19 at 21.3% of YLLs.
+
+
+
+
+* Cardiovascular diseases
+- Stroke
+- Aortic aneurysm
+- Peripheral arterial disease
+- Thrombosis or pulmonary arterial disease
+- Congenital heart disease
+- Rheumatic heart disease
+- Coronary heart disease
+
+
+** Causes of death
+1. Coronary heart disease (51%)
+2. Stroke (17%)
+3. Other (14%)
+4. Heart failure (7%)
+5. Hypertension (7%)
+6. Disease of the arteries (4%)
+
+
+** Risk factors
+1. Dietary risks
+2. High blood pressure
+3. Tobacco
+4. High cholesterol
+5. Obesity and overweight
+6. High blood sugar
+
+
+
+
+* Top causes for years of life lost (YLLs) in 2017
+1. Cancers
+2. Cardiovascular diseases
+3. Respiratory infections and tuberculosis
+4. Self-harm and interpersonal violence
+5. Neurological disorders
+6. Diabetes and kidney diseases
+7. Digestive diseases
+8. Other non-communicable diseases
+9. Chronic respiratory diseases
+10. Transport injuries
+
+
+
+
+* Why do we age?
+- Wear and tear
+- Cellular
+-  Genetic mutation
+- Autoimmune
+
+
+
+
+* Musculoskeletal injuries
+
+** Acute traumatic injuries
+- Motor vehicle accidents
+- Physical accidents (can be caused by digital distraction)
+
+These injuries can be caused while walking, driving, cycling and other activities.
+
+** Chronic overuse injuries
+- Computer-related musculoskeletal injuries
+- Hearing loss
+
+
+
+
+* Hearing loss
+Noise-induced hearing loss is irreversible.
+
+
+According to the World Health Organisation (WHO), approximately 43 million young people aged 12 - 35 years worldwide face the risk of hearing loss due to unsafe listening practices.
+- Nearly 50% are using personal audio devices at unsafe levels of sound
+- Around 40% face potential hearing damage from sound levels at clubs, discotheques and bars
+
+
+** Prevention
+- Follow the 60%/60-minute rule, which means using headphones at volume levels no more than 60% of the maximum volume and no more than 1 hour a day.
+- Turn the volume down if it's loud enough to prevent normal conversation
+- Turn the volume down if it causes ringing in your ears
+- Turn the volume down if you have trouble hearing for a few hours after listening
+- Turn the volume down if the person next to you can hear the music from your headphones
+
+
+
+
+* Science of sleep
+A person will go through 4 or 5 cycles of non-rapid eye movement (NREM) and rapid eye movement (REM) sleep when sleeping. Each cycle lasts about 90 minutes and the ratio of NREM to REM sleep differs throughout the night.
+
+
+** Consequences of sleep deprivation
+
+*** Short-term
+- Physical manifestations
+- Emotional manifestations
+- Mental health (anxiety, depression, addiction, etc.)
+
+
+*** Long-term
+- Sleep disorders (insomnia, sleep apnea, narcolepsy, restless leg syndrome)
+- Chronic diseases (cardiovascular disease, diabetes, hypertension, obesity)
+- Weakened immunity
+
+
+
+
+* Immune system
+Our body's natural protection against invaders
+
+** Level 1: Barriers
+Skin and cilia prevent invaders from entering.
+
+
+** Level 2: Innate
+Cells and chemicals stop invaders from spreading.
+
+
+** Level 3: Adaptive
+Blood warriors attack invaders.
+
+
+** Immune system parts in our body
+
+*** Nasal passages
+Mucous membrane lining, hair, sneeze reflex.
+
+*** Eyes
+Eyelids, eyelashes, tears.
+
+*** Ears
+Hair, ear wax.
+
+*** Mouth
+Mucous membrane lining, saliva.
+
+*** Lungs
+Mucous membranes, cilia, cough reflex.
+
+*** Whole body
+Skin.
+
+*** Small intestine
+Bile, enzymes.
+
+*** Stomach
+Stomach acid.
+
+*** Large intestine
+Normal flora.
+
+*** Genitals
+Mucous membrane lining, normal flora. The vagina has slightly acidic environment.
+
+
+
+
+* Infectious diseases
+
+** Modes of transmission
+- Person to person
+- Animal to animal
+- Insect bites
+- Food contamination
+
+** Transmissions that are behaviour-related
+- Travel and globalisation
+- Callous sexual behaviour
+
+
+
+
+* Which diets work better?
+Research found there was no significant difference in weight change between a healthy low-fat diet and a healthy low-carbohydrate diet, and neither genotype pattern nor baseline insulin secretion was associated with the dietary effects of weight loss.
+
+
+In the context of these two common weight loss diet approaches, neither of the two hypothesised predisposing factors was helpful in identifying which diet was better for whom.
+
+
+It seems that gut bacteria are linked to obesity, glucose intolerance, and diabetes and research shows that specific microbes did correlate with how much blood sugar rises after a meal. Research also show that the way a meal is metabolised differs from one person to another, even if the meal is exactly the same.
+
+
+
+
+* How to read results from research findings
+1. Linear-no-threshold curves: The greater the does, the greater the effect (e.g. smoking, trans fat, poison)
+2. Threshold response: No increase in effect until a threshold is met, then the effect is increased (e.g. certain toxins, radiation exposure)
+3. Hormetic or J-shaped response: Moderation curve
+4. Saturation curve: Some of it is good but once the optimal level is reached, no further improvement is achieved, like the supplementation of non-accumulative materials (e.g. water-soluble vitamins)
+5. Sigmoid curve: Some improvement at the beginning, and it will accelerate after the inflection point (e.g. specific exercise regime like weight training)
+6. U-shaped or inverted U-shaped: Normal distribution, outliers, responders and non-responders (e.g. caffeine)
+
+
+
+
+* The science behind the common wisdom of "moderation"
+The relationship between a decrease in values and the risk of mortality and morbidity is described by a J-shaped curve. The risk is greater for low and high values and reduces in parallel with a fall in, until a nadir is reached, beyond which further increase or reduction causes an increase in risk. For example, low food and nutrient intake is harmful, while a range of moderate food and nutrient intake is beneficial. Excessive food and nutrient intake becomes harmful.
+
+
+Some research have shown that some substances such as caffeine and wine may also have similar effects. (e.g. some coffee may be better than no coffee for some responders but too much will be detrimental for all coffee drinkers).
+
+
+
+
+* Weight loss versus fat loss
+Both of them change your body composition.
+
+** Weight loss
+- Overall drop in weight from any of the body components, such as water, muscle, fat or more
+- Smaller body appearance
+
+
+** Fat loss
+- Loss of excess fat from the body (which is a more specific and healthful goal)
+- Reduces risk of chronic diseases and mortality
+- Lean and toned body appearance (muscle is a crucial component of your health)
+
+
+
+
+* Relationship between physical activity and health
+
+** Weight sensitive sports
+Achieving a desirable weight causes a change in diet, which causes an impact on health due to nutrient deficiency, which results in a performance and injury risk.
+
+
+** Hydration
+Hydration affects cognition and other mental functions, which affects performance (e.g. slower reaction time).
+
+
+** Excessive body weight
+- Injury risk increases when doing physical activities
+- Might have poorer aerobic fitness which increases risk in certain occupation or sports
+
+** Excessive fat or reduced muscle mass
+Excessive fat or reduced muscle mass increases health related issues.
+
+
+
+
+* Methods of measuring health
+
+** Dual Energy X-ray Absorptiometry (DEXA)
+- Gold standard
+- It is an imaging test with lose does of X-ray passing through the body
+- It measures fat mass, muscle mass and bone density
+- But it is not easily accessible to all due to the high cost
+
+
+** Body Mass Index (BMI)
+- It is not applicable to all populations and those with muscular builds
+- Asians has a lower BMI cut-off compared to Caucasians
+
+Ideal range is 18.5 to 24.9.
+
+
+Formula: Weight in kg / (height in m)²
+
+** Waist-hip ratio
+Reference ratios:
+- Male: 0.9
+- Female: 0.8
+
+Formula: Waist circumference / Hip circumference
+
+
+
+
+* Sleeplessness in Singapore
+- In a 2015 survey of 43 cities, Singapore was the third most sleep-deprived population, after Tokyo and Seoul.
+- In 2021, the Philips global sleep survey, which included 1000 Singaporeans, saw 3 in 10 sleep less each night, averaging 6.8 hours of sleep per night.
+- 27% of the respondents currently experience insomnia as a medical condition.
+
+
+
+
+* How to build healthy habits
+1. Make it obvious
+2. Make it attractive
+3. Make it easy
+4. Make it satisfying

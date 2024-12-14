@@ -1,0 +1,343 @@
+#+TITLE: SP0061 Science & Tech for Humanity Week 7 Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** Intelligence
+The ability to perceive, analyse and react to the surrounding situation.
+
+** Artificial intelligence
+- Artificial intelligence is the *science and engineering* of making intelligent machines, especially intelligent computer programs.
+- The goal is to have a system that can *think and act* rationally.
+
+** Supervised learning
+The datasets fed to the machine learning model are *labelled* by humans.
+
+** Unsupervised learning
+The datasets fed to the machine learning model are *not labelled* by humans.
+
+** Semi-supervised learning
+A small amount of the data in the datasets fed to the machine learning model are labelled by humans, but the rest are not.
+
+** Machine learning
+- Machine learning is a method of *data analysis* that *automates analytical model building*.
+- In the 1990s, work on machine learning gradually shifted from *knowledge-driven* to *data-driven* approaches.
+- Technological companies began to tap into machine learning and start developing algorithms for their applications.
+- Machine learning is aboard topic under AI and comprises many algorithms for various applications.
+
+*** Why is machine learning important?
+- Machine learning is responsible for some of the *most significant advancements* in technology.
+- Algorithms are trained via *statistical methods* to make classifications or predictions.
+- These insights have to *drive decision-making* within application and businesses.
+
+*** What drove machine learning to be as ubiquitous as today?
+- *Cheaper* memory allows the storage of massive amounts of data.
+- Advanced graphics processing units (like those made by NVIDIA) were developed, offering *faster processing power*.
+- Technological companies *fuelled* the expansion of machine learning into various sectors, such as Google's speech recognition and Facebook's DeepFace recognition.
+
+*** Will machine learning ever die down
+- Society's dependence on machine learning is growing because of the convenience it brings.
+- Machine learning is rapidly evolving.
+- New machine learning methods will be developed to power *advanced business analytics* and support key business functions.
+- Adoption of machine learning in businesses will increase *significantly* as development platforms become more affordable and widely available.
+- Leading technology companies like Google, Microsoft and Amazon, are *automating* machine learning for greater impact.
+- Hence, it is highly unlikely that machine learning will be completely irrelevant in the next few decades.
+
+** Synapse
+A synapse is a structure that permits a neuron to pass an electrical or chemical signal to another neuron. Essentially, a synapse is the link connecting two neurons together.
+
+** Neurons
+- Neurons are informational messengers that transmit information via *electrical impulses* and *chemical signals*.
+
+[[./images/neuron.png]]
+
+- In deep learning models, neurons are nodes in which data flow and computations are performed.
+- First, neurons receive one or more input signals.
+- These signals may come from a raw data set or neurons from a previous layer of the entire neural network.
+- Next, the neuron will perform calculations based on simple mathematical operations defined within the neuron.
+- After computation, the output signal will be transmitted to the other neurons deeper in the neural net through a synapse.
+- The lines connecting the nodes are known as links.
+- Hence, a neuron functions by receiving, processing and transmitting signals.
+
+*** Motivation behind using neurons in machine learning
+- The human brain is the *best processor* even though it functions slower than computers.
+- The human brain consists of about 86 billion neurons and an estimated 1000 trillion synapses.
+- Neurons are interconnected to many other neurons to form a network.
+- For example, when a human sees an image, it will process the inputs, decipher and recognise the image.
+- The entire process requires as little as 13 milliseconds.
+
+*** Actual neuron vs artificial neuron
+[[./images/actual-neuron-vs-artificial-neuron.png]]
+
+- The top image shows an actual neuron, while the bottom image shows an artificial neuron.
+- The artificial neuron is also known as the perceptron.
+- The input signals are located in the left-most blue boxes, while the portion where the neuron performs its computation is within the middle red box.
+- The right-most box signifies the output which is generated after the computation is completed.
+
+** Perceptron
+- A perceptron is an *artificial neuron* and is the *simplest model* of a biological neuron in an artificial neuron network.
+- The perceptron algorithm was built for *classification tasks*.
+- A perceptron achieves classification by determining a decision boundary between different clusters.
+- It works by *multiplying and summing* the inputs before adding bias.
+
+[[./images/perceptron.png]]
+
+** Multi-layer perceptron
+- A multi-layer perceptron consists of *more than* one hidden layer.
+- An example is a five-layer network shown below:
+  [[./images/multi-layer-perceptron.png]]
+
+- First we have an input layer denoted by the red boxes. These inputs may consist of numerical values corresponding to text data, images, or even videos.
+- These data will propagate through the different hidden layers, shown in dark blue coloured nodes, before reaching the output layer.
+- In an actual application, the number of hidden layers may be much more complicated and requires higher computational processes.
+- In those applications, advanced methods such as node dropout, may be used to prevent overfitting.
+
+** Learning analytics
+- Learning analytics involves the measurement, collection, analysis and reporting of data about learners and their contexts.
+- Simply put, learning analytics is a set of techniques that analyses learner data for the understanding and optimisation of the learning environment.
+- Specific tasks in learning analytics may include tracking of learning behaviours, detecting performance outlier, predicting dropout and scores, or a recommendation system.
+
+** Explainable AI (XAI)
+- Explainable AI is the set of processes and methods that allow humans to comprehend and trust results generated by AI models.
+- Explainable AI is used to gain insights into a model, like its expected impact and challenge potential biases in the model.
+- It helps to characterise *model accuracy, fairness, transparency* and *outcomes*.
+- The *main purpose* of explainability is to ensure that the black box models that are used, are not making decisions based on data points that are ambiguous.
+
+** Deep learning
+Deep learning is a subset of machine learning that is more specific as it consists of more intricate architecture and more layers to analyse information in depth and perform complex processes.
+
+[[./images/deep-learning-diagram.png]]
+
+* Applications of machine learning
+
+** Banking
+- Credit card fraud detection
+- Money laundering detection
+
+** Retailers
+Price and distribution network optimisation. This allows retailers to set optimal price points and extend its reach to capture a larger and wider market share.
+
+** Smartwatches and fitness trackers
+Health status monitoring and tracking.
+
+** Healthcare
+Predicting the number of intensive care unit (ICU) transfers, especially during a pandemic.
+
+** Airlines
+- Flight prediction
+- Weather condition prediction
+
+** Finance
+Cryptocurrency prediction.
+
+* Training a perceptron for classification
+[[./images/training-a-perceptron-for-classification.png]]
+- Consider six insects (three from each type) that were spotted on a 2-D map with location x_{i, 1} and x_{i, 2}.
+- Here the variable "i" denotes the index of the insects, so "i" equals to 0 to 5 (total of 6 insects).
+- The second subscript denotes the first and second axes on the Cartesian coordinate system.
+- The table on the left summarises the insect locations and the types of insect.
+- For example, the first insect of index "i" equals to 0 is located at location (1, 1).
+- This insect is of insect type A.
+- The graph on the right illustrates the locations where the insects are located.
+- An unknown insect has appeared at location x_{i, 1} = 1, x_{i, 2} = -1. Are we able to determine the type of insect it belongs to?
+- To solve the problem above, we would like the machine to determine a boundary that separates the above data points.
+- Once this is done, if the unknown insect lies below the boundary, it can be classified as Insect B. Conversely, if the unknown insect lies above the boundary, the insect is classified as Insect A.
+- To determine the boundary that separates the data points, we employ the perceptron.
+
+[[./images/perceptron-training-example.png]]
+- The algorithm that is used to train a perceptron is given in the list of equations shown in the table in the bottom left corner of the image above.
+- These equations are simply illustrated in this figure depicting a perceptron.
+- To start training this perceptron, we begin by initialising the weights w_{0}, w_{1} and w_{2}.
+- This initialisation can be done using random values, and as training goes along, these values will converge towards a set of desired values.
+- We then fit the coordinate locations of each insect as inputs to the network.
+- Hence, for the first insect, we shall fit coordinates x_{i, 1} = 1 and x_{i, 2} = 1 as the inputs.
+- These inputs are multiplied with the randomly initialised weights and summed by giving a value denoted by z_{i}.
+- Since there are only two insect types, A and B, we will use the following decision rule.
+- If our output value is larger than 0, it will be assigned a predicted label of 1, denoting insect type A.
+- If the output value is less than 0, it will be assigned a predicted label of -1, denoting insect type B.
+- As with any machine learning algorithms, the weights w_{0}, w_{1}, and w_{2} are trained using ground truth values.
+- Since the first insect is of type A, the first true value is assigned a value 1, in this rightmost column.
+- The error is then computed between the predicted output, y^{^}_{i} and the true insect type y_{i}.
+- The weights of the perceptron are then updated using the last two weight-update equations in the formula box.
+- The Greek variable "eta" is known as the step size and is often an arbitrary chosen small value.
+
+[[./images/perceptron-training-example-with-numerical-values-point-a.png]]
+- Using numerical values to illustrate the above process, we first initialise the three weights using random values given by w_{0} as 0, w_{1} as 1, and w_{2} as 0.5.
+- These weights will define our separation boundary.
+- Since the decision whether the insect is type A or B is made based on whether the output is larger than or less than 0.
+- The output value z_{i} equals to 0.
+- We'll define the boundary given that the output is determined by the sum of the products between the input and the weights.
+
+[[./images/perceptron-training-example-with-numerical-values-graph-point-a.png]]
+- We know that the equation is in the form of y = mx + c, as hence we can plot this line shown above.
+- We are now ready to train the perceptron using the first insect location, shown by the cross, circled in red with an input coordinate of (1, 1).
+- With the weights being (0, 1, 0.5), the output corresponds to 1.5.
+- Since 1.5 is greater than 0, the perceptron generates a classifier output of 1.
+- Given that this first insect is of type A, which we have assigned the value of one, this results in an error value of 0.
+- With an error value of 0, the new weights will be the same as the old weights, which implies that the blue boundary line remains unchanged.
+- The unchanged boundary line is expected given that the predicted value is the same as the ground truth.
+
+[[./images/perceptron-training-example-with-numerical-graph-point-b.png]]
+[[./images/perceptron-training-example-with-numerical-values-point-b.png]]
+- We now move to the next data point at coordinate location (2, -2), shown by dotted circle in red.
+- With the weights being (0, 1, 0.5), the output is now given by z_{1}, being a value of 1.
+- Since this output is larger than 0, the classification output is given by y^{^}_{1} being a value of 1.
+- This implies that the neural network believes that the insect is of type A, which is untrue, as the insect is actually of type B, which as been assigned a value of -1.
+- The error for this data point is given by (-1, 1), giving -2, shown at the top of the figure.
+
+[[./images/perceptron-training-example-with-numerical-values-weight-update-point-b.png]]
+- We next apply the weight update equations with a step size of "eta", which is 0.1 and an error of -2.
+- As a result, the weights are now being updated as (-0.2, 0.6, 0.9).
+- With this new set of weights, we can now determine the new separation line.
+
+* Applications of artificial intelligence
+
+** Audio enhancement
+- Audio enhancement is the task of increasing *sound quality*.
+- *Noise* can be found everywhere.
+- Background noise removal is the ability to *enhance* a noisy speech signal by *suppressing* background noise.
+
+*** Training phase
+[[./images/audio-enhancement-training-phase.png]]
+- The model needs to be trained to get the correct neural network weights that optimises for a clean speech signal.
+- We will need clean speech data along with its corresponding noisy speech.
+- The clean speech serves as a ground truth, which the neural network aims to predict.
+- The noisy speech can be obtained by adding noise to the clean speech.
+- We next pre-process the audio data by extracting features from the noisy speech.
+- Typical features include the Mel-frequency cepstrum (MFC) coefficient, which essentially is a vector of the numbers that describes the frequency content and statistical information of the signal.
+- These features will then be fed into the neural network, which can be a multilayer perceptron to obtain the processed speech.
+- This process, speech can also be thought of as the predicted clean speech.
+- With the actual clean speech, we compute the error by taking the difference between the clean and the processed speech signals.
+- This error is then used to update the weights such that with time, the error is minimised.
+- The set of neural network weights that minimises these errors will be stored in the memory ready for deployment.
+
+*** Deployment phase
+[[./images/audio-enhancement-deployment-phase.png]]
+- A system will pre-process and extract features from a noisy speech similar to what was done during training.
+- The features extracted will be fed to the trained model with the preloaded set of weights to obtain the processed and clean speech.
+- Most of the speech enhancement research follow the above framework, while some research develop features to achieve higher noise suppression.
+- Others develop neural network models that require lower amounts of training data.
+- There are also efforts to deploy models such that they work on a variety of noisy environments.
+
+** Learning analytics
+[[./images/learning-analytics-example.png]]
+- Grade prediction given student education data using multi-layer perceptron.
+- We first identify possible features for the neural network to learn.
+- These features are shown on the left of the figure above and may include past examination grades, other courses that have been taken, class participation rate, attendance, attendance in co-curricular activities.
+- The predicted grades are useful to identify students who may be at risk of failing a course.
+- Pre-emptive intervention strategies can then be administered to prevent dropouts.
+[[./images/learning-analytics-phases.png]]
+
+* Explainable AI (XAI)
+- Imagine a patient completing a series of medical examinations, and she's going to receive results from a certified medical professional.
+- The medical professional informed her that according to the AI model, she has been diagnosed with Type II diabetes.
+- It is highly likely that the patient wants to know on what basis did the AI reach its conclusion.
+- She might also wonder how accurate the model is.
+- While existing neural network models may generate predictions, these models do not provide any explanation as to how and why the predicted values are accurate or for the matter of fact, inaccurate.
+- If the medical professional cannot provide reasons on why the AI model predicts such an outcome, trust between the patient and the medical service will be reduced.
+- This severely undermines the benefits of deploying AI for critical services, such as in the financial, education and medical sectors.
+- One of the most important challenges in AI deployment is the inability of models to justify the prediction outcome.
+- In essence, neural networks, which consists of the sum of product operations are incapable of allowing humans to interpret the results and gain insights into how the outcomes are being derived.
+- This issue gives rise to the following challenges:
+  - How do we know if the output is accurate?
+  - Do we understand how the outcomes are derived?
+  - Can we justify the predicted outcome from the AI model?
+- As much convenience as AI brings to our daily life, machine learning has always been used as a black box by researchers and data scientists.
+- Explainable AI (XAI) is an upcoming research domain where the objective is to make a machine learning model comprehensible to humans.
+- From an input perspective, data privacy and security should always be a concern in AI.
+- Effective and accurate AI models are usually trained on data which may contain personal information, such as socioeconomic status, underlying health conditions, and personal preferences and beliefs.
+- Therefore, privacy preserving machine-learning models are needed to maintain privacy and security.
+- Next, when it comes to fairness in machine learning models, the training data used by the model should be unbiased.
+- This can be a challenge, particularly when the data may not be readily available.
+- For instance, an AI model may not be able to make good recommendations if the model has not seen the product before.
+- Preventing biases that discriminate will require bias testing in development cycle, as well as monitoring and reviewing these models after deployment.
+- Lastly, we should be listening with the fact that use cases are evolving over time.
+- This is due to changes in company or institutional policies, human behaviours, and preferences.
+- Therefore, it is important for AI models to be re-validated to maintain their prediction capability.
+- In the presence of new data, we cannot expect the AI model to achieve good prediction performance without retraining the model.
+
+* Deep learning AI
+
+** Discriminative
+- Discriminative deep learning is more traditional and requires labelled data, and the learning is general supervised in nature.
+- This could be unsupervised sometimes if it is in the context of natural language processing (NLP).
+
+*** Classifying text
+- Classifying news articles into categories
+- Movies into genres
+- Sentiment analysis
+
+*** Classifying images
+- Autonomous driving systems
+- Satellite image analysis
+- Medical imaging
+
+*** Making predictions
+- Search engines predicting the next word
+- Predicting stock prices
+- Predicting housing trends
+- Predicting traffic flow
+
+*** Clustering
+Clustering refers to grouping similar types of data together.
+
+** Generative
+- Generative is more recent, and it involves the creation of new content based on the algorithm observing patterns or trends and the distribution of existing data.
+- The learning is generally semi-supervised in nature with a mix of labelled and unlabelled data.
+- There are many applications in NLP and computer vision, given the input being either text or image data.
+- Below are the various applications that generative AI is used for, and can be categorised based on the output type.
+
+[[./images/generative-ai-applications.png]]
+
+*** Text output
+- Chatbot, where the response is generated for user's input.
+- Translation is used in Google Translate. When a sentence is given in a language, it is able to generate the equivalent word in another language based on a pretrained word embedding vector model.
+- Summarisation is when a long document is condensed to a summary by generating synonyms to make the paragraph concise and is useful in news reporting.
+- Question answering is to generate answers for questions.
+
+*** Image output
+- Super resolution and image completion to refine an image by generating better features.
+- Object recognition is performed to identify an object and also to generate captions for the captured image.
+
+*** Audio and video output
+- Generating animations
+- Converting and decoding text to generate various voices and tonality
+- Generating game assets, or even the next moves in a game.
+
+** Natural language processing (NLP)
+- Generative AI is called Large Language Models (LLM).
+- A large data set is required when compared to traditional machine learning models, which is millions of rows of data.
+- For example, GloVe is a pre-trained word embedding vector model by Stanford, which is trained over billions of words from articles crawled online.
+- Pre-training is performed via an architecture called sequence-to-sequence.
+- This is an end-to-end framework that consists of 2 parts, an encoder and decoder.
+- To make it simple, an encoder encodes information from a given input.
+- This could be text, image, audio or video by converting the data into a numerical representation.
+- Given this vector of numbers, the model called transformers uses a technique called "Attention Mechanism", in which can highlight important aspects of the given input data.
+- From this, it can learn the relevant information and store it.
+- The information vector is then being decoded to a readable format (such as text, image, audio, or video), which is done by the decoder.
+- While this training is being performed, there will be many hyperparameters within the system, such as weight coefficients, which will be fine-tuned to achieve the most accurate performance and obtain the final trained model.
+- This pre-trained model will then run in the backend of a system like ChatGPT.
+- Since the model is being trained on a huge repository of resources, ChatGPT will be able to generate an almost appropriate answer or response to any user input.
+- There are some questions to ponder when it comes to the linguistics application of machine learning, like:
+  - What is language?
+  - How is information being communicated among different types of people speaking different languages?
+  - How is it possible to predict possible answers to various questions that we wish to ask?
+  - How is it possible to mimic linguistic patterns via the user of deep learning techniques?
+- In a previous research on question classification using NLP, they found phrases have a better ability to convey the semantic meaning more effectively than words.
+- Within phrases, verb phrases have more importance over noun phrases for question structures.
+- There is also exploration on how important prepositions, conjunctions and pronouns are for identifying question types and categories.
+- Such fundamentals of language structure greatly aid in algorithmic development.
+- Aspects such as dependency parsing to analyse syntax, or impact of regular expressions to classify sequential patterns of adjectives or adverbs are part of NLP analysis.
+- This shows the interdisciplinary nature of generative AI in text analytics, such that a social science and humanities dimension goes hand in hand with a technological perspective.
+
+*** Machine translation
+[[./images/machine-translation-diagram.png]]
+- One example of LLM is machine translation, where a sentence in one language is being encoded, processed within the neural network transformer sequence-to-sequence architecture, and then decoded to another language.
+- In the diagram above, the encoder below takes in the input information, and then the transformer model determines the importance of each word via the Attention Mechanism.
+- Based on the context, the algorithm is then able to generate the appropriate French word to form the entire sentence with understandable meaning.
+
+*** Chatbot
+[[./images/chat-bot-diagram.png]]
+Given a prompt, the encoder will understand and process the meaning and produce a reply to the user via the decoder.

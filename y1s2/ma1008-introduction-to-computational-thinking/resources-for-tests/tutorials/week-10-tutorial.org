@@ -1,0 +1,1092 @@
+#+TITLE: Intro To Comp Thinking Week 10 Tutorial
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Question 1
+
+** (i)
+- A binary file is a file that consists of 0s and 1s, and it is usually an executable file that runs a program.
+- It contains a mix of data and program instructions for the CPU to run, or for another program to parse, like a PDF file.
+- It usually cannot be parsed by regular text editors and will show up as weird characters in them.
+- It is not human-readable for the most part.
+
+** (ii)
+- A text file is a file that consists of 0s and 1s, but the 0s and 1s are encoded in a text format, like ASCII or UTF-8.
+- This makes texts files human-readable, and text editors can easily open them to display the contents of the file easily.
+- Text files are usually not executable, and require some kind of program to parse or interpret what is written in them to run its contents, if it is code.
+
+** Model answer
+A binary file is a file stored in binary format, and a text file is stored in ASCII characters. Text files are human-readable whereas binary files are not. Binary files tend to be smaller in volume and text files are larger. That's because binary files store numerical values in binary format, whereas text files store them as individual digits. Hence, 10 can be stored in 1 byte in binary but 2 bytes in text.
+
+
+* Question 2
+Python implementation:
+#+begin_src python
+MyFile = open("MyFile.txt")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+let MyFile = std::fs::File::open("MyFile.txt")?;
+#+end_src
+
+
+* Question 3
+Python implementation:
+#+begin_src python
+import os.path
+
+
+def open_file_with_user_input() -> None:
+    "A function to open a file with the user's input"
+
+    # Initialise the is_valid_file variable
+    is_valid_file = False
+
+    # Iterates while the file isn't valid
+    while not is_valid_file:
+
+        # Get the user's input
+        user_input = input("Please enter a file name: ")
+
+        # Set the is_valid_file variable
+        is_valid_file = os.path.isfile(user_input)
+
+        # Open the file if the file is valid
+        if is_valid_file:
+            MyFile = open(user_input)
+#+end_src
+
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// Function to open a file with the user's input
+fn open_file_with_user_input() {
+
+    // Initialise the is_valid_file variable
+    let mut is_valid_file = false;
+
+    // Initialise the string to store the user's input
+    let mut input = String::new();
+
+    // Iterates while the file isn't valid
+    while !is_valid_file {
+
+        // Print the prompt
+        print!("Please enter a file name:");
+
+        // Flush the stdout
+        std::io::stdout().flush().unwrap();
+
+        // Read the user's input to the input variable
+        match std::io::stdin().read_line(&mut input) {
+            Ok(_number_of_bytes) => (),
+            Err(error) => println!("Error: {error}")
+        }
+
+        // Set the is_valid_file variable
+        is_valid_file = std::path::Path::new(&input).exists();
+
+        // If the file is valid, open the file
+        if is_valid_file {
+            let MyFile = std::fs::File::open(input);
+        }
+
+        // Set the input to an empty string
+        input = "".to_string();
+    }
+}
+#+end_src
+
+
+* Question 4
+Python implementation:
+#+begin_src python
+MyFile.close()
+#+end_src
+
+Rust files are closed immediately once the variable holding the file goes out of scope, so there is no need to explicitly close them.
+
+
+* Question 5
+
+** Opening a file for reading
+It can fail when trying to read a file that doesn't exist or reading a file that is too big to be stored in memory.
+
+** Opening a file for writing
+It can fail when trying to open a file that doesn't exist, a file that is too large to be stored in memory, or a read-only or protected file.
+
+
+* Question 6
+
+** Getting the raw stream from the file
+#+begin_src python
+file.detach()
+#+end_src
+
+** Return an ID that represents the stream
+#+begin_src python
+file.fileno()
+#+end_src
+
+** Flush the internal buffer into the raw stream
+#+begin_src python
+file.flush()
+#+end_src
+
+** Check whether the file stream is interactive or not
+#+begin_src python
+file.isatty()
+#+end_src
+
+** Read the file contents
+#+begin_src python
+file.read(size)
+#+end_src
+
+** Check if the file can be read or not
+#+begin_src python
+file.readable()
+#+end_src
+
+** Read the first line from the file
+#+begin_src python
+file.readline(size)
+#+end_src
+
+** Read the lines in the file into a list of lines
+#+begin_src python
+file.readlines(hint)
+#+end_src
+
+** Change the position of the file pointer
+#+begin_src python
+file.seek(offset)
+#+end_src
+
+** Check if position of the file pointer can be changed
+#+begin_src python
+file.seekable()
+#+end_src
+
+** Return the current position of the file pointer
+#+begin_src python
+file.tell()
+#+end_src
+
+** Resize the file to a specific size
+#+begin_src python
+file.truncate(size)
+#+end_src
+
+** Check if a file can be written to
+#+begin_src python
+file.writable()
+#+end_src
+
+** Write a string to the file
+#+begin_src python
+file.write(byte)
+#+end_src
+
+** Write a list of string lines to the file
+#+begin_src python
+file.writelines(list_of_strings)
+#+end_src
+
+
+* Question 7
+
+** (a)
+- An exception is simply an "exceptional" circumstance that the program did not handle.
+- It is usually an error.
+- You can encounter it by doing anything that results in an error, like passing wrong data types to a function, dividing a float or an integer by 0, opening a non-existing file, etc.
+
+** (b)
+- The ~try~-~except~ structure basically gets Python to try a block of code. If any error occurs, Python will look for an exception handler to handle the error.
+- It is another way to write code, where you just let the error happen and then handle the error instead of checking for everything that could go wrong at the start.
+
+** (c)
+An exception is caught by matching the raised exception's type to the exception types given in the except block.
+
+** (d)
+Python will handle the exception, which is usually to raise the exception and stop the program.
+
+
+* Lab
+
+** Question 1
+Python implementation:
+#+begin_src python
+import os.path
+
+
+def copy_text_to_another_file_and_uppercase_it(
+    original_file_name: str,
+    output_file_name: str,
+) -> None:
+    """
+    A function to copy text in a file
+    to another file and uppercase the characters.
+    """
+
+    # If the original file doesn't exist, print that it doesn't exist
+    # and exit the function
+    if not os.path.isfile(original_file_name):
+        return print("The file name given doesn't exist")
+
+    # Otherwise, open the original file in read mode
+    with open(original_file_name, "r") as original_file:
+
+        # Get all the text in the file and uppercase it
+        uppercased_text = original_file.read().upper()
+
+    # Open the output file in write mode
+    with open(output_file_name, "w") as output_file:
+
+        # Write the uppercased text to the output file
+        output_file.write(uppercased_text)
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// A function to copy text in a file
+// to another file and uppercase the characters.
+fn copy_text_to_another_file_and_uppercase_it(
+    original_file_name: &str,
+    output_file_name: &str,
+) {
+
+    // The text variable to store the string in the original file
+    let text;
+
+    // Match the value and error
+    match std::fs::read_to_string(original_file_name) {
+        Ok(value) => text = value,
+        Err(err) => return println!("Error: {err}")
+    }
+
+    // Write to the output file
+    std::fs::write(output_file_name, text.to_uppercase())
+        .expect("Unable to write to file");
+}
+#+end_src
+
+** Question 2
+Python implementation:
+#+begin_src python
+import os.path
+
+
+def copy_text_to_another_file_and_add_line_numbers(
+    original_file_name: str,
+    output_file_name: str
+) -> None:
+    """
+    A function to copy text in one file and prefix every line
+    of the new file with a line number that starts from 1.
+    """
+
+    # If the original file doesn't exist, print that it doesn't exist
+    # and exit the function
+    if not os.path.isfile(original_file_name):
+        return print("The file name given doesn't exist")
+
+    # Otherwise, open the original file in read mode
+    with open(original_file_name, "r") as original_file:
+
+        # Get the lines in the file
+        lines = original_file.readlines()
+
+    # Open the output file in write mode
+    with open(output_file_name, "w") as output_file:
+
+        # Write all the lines prefixed with the line number
+        # to the output file
+        output_file.writelines(
+            f"{i + 1} {line}" for i, line in enumerate(lines)
+        )
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// A function to copy text in one file and prefix every line
+// of the new file with a line number that starts from 1.
+fn copy_text_to_another_file_and_add_line_numbers(
+    original_file_name: &str,
+    output_file_name: &str,
+) {
+
+    // The text variable to store the string in the original file
+    let text;
+
+    // Match the value and error
+    match std::fs::read_to_string(original_file_name) {
+        Ok(value) => text = value,
+        Err(err) => return println!("Error: {err}")
+    }
+
+    // Write to the output file
+    std::fs::write(
+        output_file_name,
+        text.lines().enumerate()
+        .map(|(index, line)| format!("{} {line}", index + 1))
+        .collect::<Vec<String>>().join("\n")
+    )
+    .expect("Unable to write to file");
+}
+#+end_src
+
+** Question 3
+
+*** (1)
+Python implementation:
+#+begin_src python
+def print_reciprocal_of_numbers() -> None:
+    """
+    Function that prints the reciprocal of integers from -10 to 10.
+    Print 'Infinity' if the integer is 0.
+    """
+
+    # Iterates from -10 to 10
+    for i in range(-10, 11):
+
+        # If the number is zero, print "Infinity"
+        if i == 0:
+            print("Infinity")
+
+        # Otherwise, print the reciprocal of the number
+        else:
+            print(1 / i)
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function that print the reciprocal of integers from -10 to 10
+// Print "Infinity" if the integer is 0
+fn print_reciprocal_of_numbers() {
+
+    // Iterates from -10 to 10
+    for i in -10..=10 {
+
+        // If the number is zero, print "Infinity"
+        if i == 0 {
+            println!("Infinity")
+        }
+
+        // Otherwise, print the reciproccal of the number
+        else {
+            println!("{}", 1.0 / i as f32)
+        }
+    }
+}
+#+end_src
+
+*** (2)
+Python implementation:
+#+begin_src python
+def print_reciprocal_of_numbers_using_try_except() -> None:
+    """
+    Function that prints the reciprocal of integers from -10 to 10.
+    Print 'Infinity' if the integer is 0.
+    This function uses the try except block to catch the
+    zero division error.
+    """
+
+    # Iterates from -10 to 10
+    for i in range(-10, 11):
+
+        # Try to print the reciprocal of the nummber
+        try:
+            print(1 / i)
+
+        # Catch the zero division error
+        # and print infinity
+        except ZeroDivisionError:
+            print("Infinity")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function that prints the reciprocal of integers from -10 to 10
+// Print "Infinity" if the integer is 0
+// This function checks for infinity
+fn print_reciprocal_of_numbers_using_check_for_inf() {
+
+    // Iterates from -10 to 10
+    for i in -10..=10 {
+
+        // Gets the reciprocal of the number
+        let reciprocal = 1.0_f32 / i as f32;
+
+        // If the number is infinity
+        if reciprocal.is_infinite() {
+
+            // Print "Infinity"
+            println!("Infinity");
+        }
+
+        // Otherwise
+        else {
+
+            // Print the reciprocal of the number
+            println!("{}", reciprocal);
+        }
+    }
+}
+#+end_src
+
+** Question 4
+Python implementation:
+#+begin_src python
+def write_ascii_table_to_file() -> None:
+    "Function to write the ASCII table to file"
+
+    # The string list containing the table
+    ascii_table: list[str] = []
+
+    # The header of the table
+    header = "| No. | ASCII value | Character |"
+
+    # Adds the header to the ASCII table
+    ascii_table.append(header)
+
+    # Add the separator to the ASCII table
+    ascii_table.append("-" * len(header))
+
+    # Iterates from 32 (the first printable ASCII character, " ") until 255
+    for i in range(32, 256):
+
+        # Gets the index of the row
+        index = i - 31
+
+        # Adds the required information to the table
+        ascii_table.append(f"|{index:^5}|{i:^13}|{chr(i):^11}|")
+
+    # Write the ASCII table to a file called ASCIITable.txt
+    with open("ASCIITable.txt", "w") as file:
+        file.write("\n".join(ascii_table))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to write the ASCII table to file
+fn write_ascii_table_to_file() {
+
+    // THe string list containing the table
+    let mut ascii_table: Vec<String> = vec![];
+
+    // The header of the table
+    let header = "| No. | ASCII value | Character |".to_string();
+
+    // Gets the length of the header
+    let header_length = header.len();
+
+    // Add the header to the list of strings
+    ascii_table.push(header);
+
+    // Add the separator to the list of strings
+    ascii_table.push("-".repeat(header_length));
+
+    // Iterates from 32 (the first printable ASCII character, " ") until 255
+    for i in 32_u8..=255_u8 {
+
+        // Gets the index of the row
+        let index = i - 31;
+
+        // Adds the required information to the table
+        ascii_table.push(format!("|{index:^5}|{i:^13}|{:^11}|", i as char));
+    }
+
+    // Write the ASCII table to a file called ASCIITable.txt
+    std::fs::write("ASCIITable.txt", ascii_table.join("\n"))
+        .expect("Unable to write to file");
+}
+#+end_src
+
+** Question 5
+Python implementation:
+#+begin_src python
+import os.path
+
+
+def pretty_print_car_test_results() -> None:
+    """
+    Function to read a file called CarTest.txt
+    and then print out the result in a nice table form.
+    """
+
+    # The file name of the car test results
+    file_name = "CarTest.txt"
+
+    # If the file doesn't exist, tells the user that it doesn't exist
+    if not os.path.exists(file_name):
+        return print(f"{file_name} doesn't exist!")
+
+    # Otherwise, open the file to read the car test results
+    with open(file_name, "r") as file:
+
+        # Gets the lines in the file
+        lines = file.readlines()
+
+    # The table to display the car test results
+    results_table: list[str] = []
+
+    # The list of headers for the table
+    headers = [
+        "Test number",
+        "Fuel consumed in litres",
+        "Distance travelled in km",
+        "Consumption rate in km/litres"
+    ]
+
+    # The header line
+    header_line = f"| {' | '.join(headers)} |"
+
+    # Add the header line to the results table
+    results_table.append(header_line)
+
+    # Add the separator to the table line
+    results_table.append("-" * len(header_line))
+
+    # Iterate over each of the lines
+    for line in lines:
+
+        # Gets the splitted line
+        splitted_line = line.split()
+
+        # If the length of the splitted line list is not 3,
+        # continue the loop
+        if len(splitted_line) != 3:
+            continue
+
+        # Gets the test results
+        test_num, fuel_consumed, distance_travelled = splitted_line
+
+        # Calculate the consumption rate
+        consumption_rate = float(distance_travelled) / float(fuel_consumed)
+
+        # Add the information to the table
+        results_table.append(
+            f"| {test_num:^11} |"
+            f" {fuel_consumed:^23} |"
+            f" {distance_travelled:^24} |"
+            f" {consumption_rate:^29} |"
+        )
+
+    # Prints the results table
+    print("\n".join(results_table))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to read a file called CarTest.txt
+// and then print out the result in a nice table form.
+fn pretty_print_car_test_results() {
+
+    // The file name of the car test results
+    let file_name = "CarTest.txt";
+
+    // The string containing the text of the file
+    let text;
+
+    // The file name of the car test results
+    match std::fs::read_to_string(file_name) {
+        Ok(value) => text = value,
+        Err(err) => return println!("Error {err}")
+    }
+
+    // The table to display the car test results
+    let mut results_table: Vec<String> = vec![];
+
+    // The list of headers for the table
+    let headers = [
+        "Test number",
+        "Fuel consumed in litres",
+        "Distance travelled in km",
+        "Consumption rate in km/litres"
+    ];
+
+    // The header line
+    let header_line = "| ".to_owned() + &headers.join(" | ") + " |";
+
+    // Get the length of the header line
+    let header_length = header_line.len();
+
+    // Add the header line to the results table
+    results_table.push(header_line);
+
+    // Add the separator to the table line
+    results_table.push("-".repeat(header_length));
+
+    // Iterate over each of the lines
+    for line in text.lines() {
+
+        // Gets the splitted line
+        let splitted_line: Vec<&str> = line.split(" ").collect();
+
+        // If the length of the splitted line list is not 3,
+        // continue the loop
+        if splitted_line.len() != 3 {
+            continue
+        }
+
+        // Gets the test results
+        let test_num = splitted_line[0];
+        let fuel_consumed = splitted_line[1];
+        let distance_travelled = splitted_line[2];
+
+        // Calculate the consumption rate
+        let consumption_rate = distance_travelled.parse::<f32>().unwrap() /
+            fuel_consumed.parse::<f32>().unwrap();
+
+        // Add the information to the table
+        results_table.push(
+            format!(
+                "| {:^11} | {:^23} | {:^24} | {:^29} |",
+                test_num,
+                fuel_consumed,
+                distance_travelled,
+                consumption_rate
+            )
+        )
+    }
+
+    // Prints the results table
+    println!("{}", results_table.join("\n"));
+}
+#+end_src
+
+** Question 6
+
+*** (i)
+Python implementation:
+#+begin_src python
+def convert_integer_to_words(supposed_integer: str) -> str | None:
+    "The function to convert integers to words"
+
+    # Initialise the variable to store the string "negative"
+    # for negative numbers.
+    # This variable will be empty if the number is positive
+    negative_str = ""
+
+    # If the integer given is negative
+    if supposed_integer.startswith("-"):
+
+        # Set the negative_str variable to "negative" with a space behind
+        negative_str = "negative "
+
+        # Remove the dash from the start of the string
+        supposed_integer = supposed_integer.replace("-", "", 1)
+
+    # If the string given is not an integer, return None
+    if not supposed_integer.isdecimal():
+        return None
+
+    # If the integer is 0, then return the word "zero"
+    if supposed_integer == "0":
+        return "zero"
+
+    # Otherwise, convert the given integer to an integer
+    integer = int(supposed_integer)
+
+    # Create the dictionary mapping the numbers to the words
+    number_to_word_dict = {
+        1: "one",
+        2: "two",
+        3: "three",
+        4: "four",
+        5: "five",
+        6: "six",
+        7: "seven",
+        8: "eight",
+        9: "nine",
+        10: "ten",
+        11: "eleven",
+        12: "twelve",
+        13: "thirteen",
+        14: "fourteen",
+        15: "fifteen",
+        16: "sixteen",
+        17: "seventeen",
+        18: "eighteen",
+        19: "nineteen",
+        20: "twenty",
+        30: "thirty",
+        40: "forty",
+        50: "fifty",
+        60: "sixty",
+        70: "seventy",
+        80: "eighty",
+        90: "ninety",
+        100: "hundred and",
+        10 ** 3: "thousand",
+        10 ** 6: "million",
+        10 ** 9: "billion",
+        10 ** 12: "trillion",
+    }
+
+    # The tuple of the powers of 10
+    powers_of_10 = (12, 9, 6, 3, 2, 1)
+
+    # The length of the power of 10 tuple
+    powers_of_10_len = len(powers_of_10)
+
+    def convert_int_to_words(
+        integer: int,
+        power_of_10_index: int
+    ) -> str:
+        "The actual function to convert the integer to words"
+
+        # If the integer given is inside the dictionary, return it immediately
+        if (num_in_words := number_to_word_dict.get(integer)) is not None:
+            return num_in_words if integer < 100 else f"one {num_in_words}"
+
+        # If the index is greater or equal to the length of the
+        # list of powers of 10, then return an empty string
+        elif power_of_10_index >= powers_of_10_len:
+            return ""
+
+        # Get the current power of 10
+        power_of_10 = powers_of_10[power_of_10_index]
+
+        # Get the quotient and the remainder
+        quotient, remainder = divmod(integer, 10 ** power_of_10)
+
+        # Initialise the quotient and remainder strings
+        quotient_str = ""
+        remainder_str = ""
+
+        # If the quotient is greater than 0
+        if quotient > 0:
+
+            # If the power of 10 is 1
+            if power_of_10 == 1:
+
+                # Gets the quotient string
+                quotient_str = number_to_word_dict.get(
+                    quotient * 10 ** power_of_10, ""
+                )
+
+            # Otherwise
+            else:
+
+                # Gets the quotient string and join it with the
+                # string for the power of 10
+                quotient_str = (convert_int_to_words(
+                    quotient, power_of_10_index + 1
+                ) + " " + number_to_word_dict.get(
+                    10 ** power_of_10, ""
+                )).strip()
+
+        # If the remainder is greater than 0
+        if remainder > 0:
+
+            # Gets the remainder string
+            remainder_str = convert_int_to_words(
+                remainder, power_of_10_index + 1
+            )
+
+        # Returns the quotient string and the remainder string
+        # joined with a space
+        return f"{quotient_str} {remainder_str}".strip()
+
+    # Get the result of the convert_int_to_words function
+    result = f"{negative_str}{convert_int_to_words(integer, 0)}"
+
+    # If the result ends with "and" with a space in front, then remove it
+    if result.endswith(" and"):
+        result = result[:-4]
+
+    # Return the result
+    return result
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// The function to convert integers to words
+fn convert_integer_to_words(mut supposed_integer: String) -> Option<String> {
+
+    // Initialise the variable to store the string "negative"
+    // for negative numbers.
+    // This variable will be empty if the number is positive
+    let mut negative_str = "";
+
+    // If the integer given is negative
+    if supposed_integer.starts_with("-") {
+
+        // Set the negative_str variable to "negative" with a space behind
+        negative_str = "negative ";
+
+        // Remove the dash from the start of the string
+        supposed_integer = supposed_integer.replacen("-", "", 1);
+    }
+
+    // If the string given is not an integer, return None
+    if !supposed_integer.chars().all(char::is_numeric) {
+        return None;
+    }
+
+    // If the integer is 0, then return the word "zero"
+    if supposed_integer == "0" {
+        return Some("zero".to_string());
+    }
+
+    // Convert the given integer to an integer type
+    let integer = supposed_integer.parse::<u64>().unwrap();
+
+    // Create the hashmap mapping the numbers to the words
+    let number_to_word_hashmap = std::collections::HashMap::from([
+        (1, "one".to_string()),
+        (2, "two".to_string()),
+        (3, "three".to_string()),
+        (4, "four".to_string()),
+        (5, "five".to_string()),
+        (6, "six".to_string()),
+        (7, "seven".to_string()),
+        (8, "eight".to_string()),
+        (9, "nine".to_string()),
+        (10, "ten".to_string()),
+        (11, "eleven".to_string()),
+        (12, "twelve".to_string()),
+        (13, "thirteen".to_string()),
+        (14, "fourteen".to_string()),
+        (15, "fifteen".to_string()),
+        (16, "sixteen".to_string()),
+        (17, "seventeen".to_string()),
+        (18, "eighteen".to_string()),
+        (19, "nineteen".to_string()),
+        (20, "twenty".to_string()),
+        (30, "thirty".to_string()),
+        (40, "forty".to_string()),
+        (50, "fifty".to_string()),
+        (60, "sixty".to_string()),
+        (70, "seventy".to_string()),
+        (80, "eighty".to_string()),
+        (90, "ninety".to_string()),
+        (100, "hundred and".to_string()),
+        (10_u64.pow(3), "thousand".to_string()),
+        (10_u64.pow(6), "million".to_string()),
+        (10_u64.pow(9), "billion".to_string()),
+        (10_u64.pow(12), "trillion".to_string()),
+    ]);
+
+    // The list of the powers of 10
+    let powers_of_10 = [12, 9, 6, 3, 2, 1];
+
+    // THe length of the power of 10 list
+    let powers_of_10_len = powers_of_10.len();
+
+    // The actual function to convert the integer to words
+    fn convert_int_to_words(
+        integer: u64,
+        power_of_10_index: u8,
+        number_to_word_hashmap: &std::collections::HashMap<u64, String>,
+        powers_of_10: [u32; 6],
+        powers_of_10_len: usize
+    ) -> String {
+
+        // If the integer given is inside the hashmap, return it immediately
+        if let Some(value) = number_to_word_hashmap.get(&integer) {
+            return if integer < 100 { value.to_string() }
+                else { format!("one {}", value.to_string()) }
+        }
+
+        // If the index is greater or equal to the length of the
+        // list of the powers of 10, then return an empty string
+        if power_of_10_index as usize >= powers_of_10_len {
+            return "".to_string();
+        }
+
+        // Get the current power of 10
+        let power_of_10 = powers_of_10[power_of_10_index as usize];
+
+        // Get the actual value of the power of 10
+        let actual_value_power_of_10 = 10_u64.pow(power_of_10);
+
+        // Get the quotient and the remainder
+        let quotient = integer / actual_value_power_of_10;
+        let remainder = integer % actual_value_power_of_10;
+
+        // Initialise the quotient and remainder strings
+        let mut quotient_str = String::new();
+        let mut remainder_str = String::new();
+
+        // If the quotient is greater than 0
+        if quotient > 0 {
+
+            // If the power of 10 is 1
+            if power_of_10 == 1 {
+
+                // Gets the quotient string
+                quotient_str = number_to_word_hashmap.get(
+                    &(quotient * actual_value_power_of_10)
+                ).unwrap_or(&"".to_string()).to_string();
+            }
+
+
+            // Otherwise
+            else {
+
+                // Gets the quotient string and join it with the
+                // string for the power of 10
+                quotient_str = format!(
+                    "{} {}",
+                    convert_int_to_words(
+                        quotient,
+                        power_of_10_index + 1,
+                        number_to_word_hashmap,
+                        powers_of_10,
+                        powers_of_10_len
+                    ),
+                    number_to_word_hashmap.get(
+                        &(actual_value_power_of_10)
+                    ).unwrap_or(&"".to_string())
+                ).trim().to_string();
+            }
+        }
+
+        // If the remainder is greater than 0
+        if remainder > 0 {
+
+            // Gets the remainder string
+            remainder_str = convert_int_to_words(
+                remainder,
+                power_of_10_index + 1,
+                number_to_word_hashmap,
+                powers_of_10,
+                powers_of_10_len
+            ).trim().to_string();
+        }
+
+        // Returns the quotient string and the remainder string
+        // joined with a space
+        format!("{quotient_str} {remainder_str}").trim().to_string()
+    }
+
+    // Get the result of the convert_int_to_words function
+    let mut result = format!(
+        "{} {}",
+        negative_str,
+        convert_int_to_words(
+            integer,
+            0,
+            &number_to_word_hashmap,
+            powers_of_10,
+            powers_of_10_len
+        )
+    ).trim().to_string();
+
+    // If the result ends with "and" with a space in front, then remove it
+    if result.ends_with(" and") {
+        result = (&result[..result.len() - 4]).to_string();
+    }
+
+    // Return the result
+    Some(result.to_string())
+}
+#+end_src
+
+*** (ii)
+Python implementation:
+#+begin_src python
+import os.path
+
+
+def convert_integer_file_to_words() -> None:
+    """
+    Function to convert a file containing integers to have words instead.
+    This function will make a copy of the original file.
+    """
+
+    # The file name of the file containing integers
+    file_name = "integers.txt"
+
+    # If the file doesn't exist, then print an error and exit the function
+    if not os.path.exists(file_name):
+        return print(f"{file_name} doesn't exist")
+
+    # Open the file
+    with open(file_name, "r") as file:
+        lines = file.readlines()
+
+    # The list of strings to write to the new file
+    str_list: list[str] = []
+
+    # Iterate over the lines in the file
+    for line in lines:
+
+        # Strip the line
+        line = line.strip()
+
+        # Convert the integer on the line to a word
+        integer_as_word = convert_integer_to_words(line)
+
+        # If the convert integer to words function failed
+        if integer_as_word is None:
+
+            # Add an error message to the string list
+            str_list.append(f"{line} is not a valid number")
+
+        # Otherwise, add the integer as a word to the string list
+        else:
+            str_list.append(integer_as_word)
+
+    # Write the list of strings to a new file called "integers_as_word.txt"
+    with open("integers_as_word.txt", "w") as file:
+        file.write("\n".join(str_list))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to convert a file containing integers to have words instead.
+// This function will make a copy of the original file.
+fn convert_integer_file_to_words() {
+
+    // The file name of the file containing integers
+    let file_name = "integers.txt";
+
+    // The string containing the text of the file
+    let text;
+
+    // The file name of the car test results
+    match std::fs::read_to_string(file_name) {
+        Ok(value) => text = value,
+        Err(err) => return println!("Error {err}")
+    }
+
+    // The list of strings to write to the new file
+    let mut str_list: Vec<String> = vec![];
+
+    // Iterate over the lines in the file
+    for mut line in text.lines() {
+
+        // Trim the lines
+        line = line.trim();
+
+        // Convert the integer on the line to a word
+        // Match statement to deal with the two cases,
+        // which is when the function succeeds and when it fails
+        match convert_integer_to_words(line.to_string()) {
+            Some(num_in_words) => str_list.push(num_in_words),
+            None => str_list.push(format!("{line} is not a valid number"))
+        }
+    }
+
+    // Write the list of strings to a new file called "integers_as_word.txt"
+    std::fs::write("integers_as_word.txt", str_list.join("\n"))
+        .expect("Unable to write to file")
+}
+#+end_src

@@ -1,0 +1,5683 @@
+% Created 2024-10-11 Fri 20:08
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\usepackage{array}
+\author{Hankertrix}
+\date{\today}
+\title{MA1008 Introduction to Computational Thinking Cheat Sheet}
+\hypersetup{
+ pdfauthor={Hankertrix},
+ pdftitle={MA1008 Introduction to Computational Thinking Cheat Sheet},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.4 (Org mode 9.6.15)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents \clearpage
+\section{Definitions}
+\label{sec:orge2401aa}
+
+\subsection{Programming}
+\label{sec:orgffb1201}
+Programming is the process of:
+\begin{itemize}
+\item Implementing a representation of the solution for the computer to execute
+\item Taking an algorithm and encoding it using certain programming language
+\end{itemize}
+
+\subsection{Programming language}
+\label{sec:orgf601263}
+\begin{itemize}
+\item A medium through which programmer may give instructions to a computer.
+\item It must support certain control constructs and data types needed to implement algorithms.
+\end{itemize}
+
+\subsection{High-level programming languages}
+\label{sec:org223ac54}
+\begin{itemize}
+\item Provide abstraction from the internal operating detail of the computer.
+\item Enable the programmers to focus on solving the problem.
+\item Make the process of developing the algorithm simpler
+\end{itemize}
+
+\subsection{Microprocessor}
+\label{sec:orgfc5d627}
+The microprocessor in a computer is a digital device consisting of electronic components like transistors that operate in two states (either \textbf{on} or \textbf{off}).
+
+\subsubsection{The two states as voltage levels}
+\label{sec:org3d27043}
+\begin{itemize}
+\item Low voltage (0 volt)
+\item High voltage (depends on the power supply used by the microprocessor)
+\end{itemize}
+
+\subsubsection{The two states represented in binary}
+\label{sec:org655a4dc}
+\begin{itemize}
+\item 0 for low voltage
+\item 1 for high voltage
+\end{itemize}
+
+\subsection{Datum}
+\label{sec:org00b6e0e}
+A datum is a number.
+
+\subsection{Byte}
+\label{sec:org29308c1}
+1 byte = 8 bits (2 hex digits)
+
+\subsection{Nibble}
+\label{sec:org3254b8c}
+1 nibble = 4 bits (1 hex digit)
+
+\subsection{Word}
+\label{sec:org398b454}
+1 word = 16 or 32 bits depending on CPU architecture (32 bits is used in this course)
+
+\subsection{DWord}
+\label{sec:org98da38f}
+1 DWord = 64 bits
+
+\subsection{Algorithms}
+\label{sec:orgf3ef1e1}
+\begin{itemize}
+\item Algorithms are the method, procedure, or steps for solving a problem.
+\item They are the step-by-step instructions given to the computer on how to solve a given problem.
+\end{itemize}
+
+\subsubsection{Expressing an algorithm}
+\label{sec:org444cd62}
+\begin{itemize}
+\item Must be unambiguous, every step must be clear and precise
+\item Specify the order of steps precisely (sequence)
+\item Consider all possible decision points (branching and looping)
+\item Must terminate (no matter which representation is used)
+\end{itemize}
+
+ \newpage
+
+\subsection{Flow chart}
+\label{sec:org6e1a9f5}
+A representation of an algorithm using diagrams for effective visualisation.
+
+\begin{center}
+\begin{tabular}{|c|m{22em}|}
+\hline
+\textbf{Name} & \textbf{Use in flowchart}\\[0pt]
+\hline
+Oval & Denotes the beginning or end of a program\\[0pt]
+\hline
+Flow line (an arrow) & Denotes the direction of logic flow in a program\\[0pt]
+\hline
+Parallelogram & Denotes either an input operation (INPUT) or an output operation (PRINT)\\[0pt]
+\hline
+Rectangle & Denotes a process to be carried out, like addition\\[0pt]
+\hline
+Diamond & Denotes a decision or branch to be made; the program should continue along one of two routes\\[0pt]
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Pseudocode}
+\label{sec:org66235ad}
+Directly uses informal English to describe an algorithm step by step with one step per line. It uses the structural conventions of a normal programming language, but is intended for human reading rather than machine reading. Syntax doesn't matter in pseudocode.
+
+\subsubsection{Guidelines}
+\label{sec:org7caa3ec}
+\begin{itemize}
+\item Write one statement per line only
+\item Capitalise the keywords
+\item Indent to show hierarchy
+\item End multi-line structures like loops and if statements
+\item Keep statements programming-language independent
+\end{itemize}
+
+\subsection{Variable}
+\label{sec:org833b71e}
+A variable is like a labelled box that contains a value inside it. Each variable has its name, like \texttt{price\_of\_chicken\_rice} and value, like \texttt{2.8}.
+
+\subsubsection{Why use variables?}
+\label{sec:orgbc7b383}
+\begin{itemize}
+\item Reuse names instead of values, which is helpful in keeping track of useful information without needing to remember a bunch of numbers
+\item Easier to change or refactor the code later
+\end{itemize}
+
+\subsection{Expressions}
+\label{sec:org216e1ed}
+Expressions are anything that produces or returns a value. It usually consists of a combination of values (literals, variables, etc) and operations (operators, functions, etc).
+
+\subsubsection{Examples}
+\label{sec:org1c986d2}
+\begin{itemize}
+\item 3.14
+\item 100 * 15
+\item Result * 100
+\end{itemize}
+
+\subsection{Assignment operator (=)}
+\label{sec:orga0b8121}
+The assignment operator binds variables and values. The "=" sign is the \textbf{assignment operator}, not the equality in mathematics.
+
+\subsubsection{Syntax}
+\label{sec:orgbbfe316}
+Left-Hand Side (LHS) = Right-Hand Side (RHS)
+
+This means:
+\begin{itemize}
+\item Evaluate the expression on the right-hand side
+\item Take the resulting value and assign it to the name (variable) on the left-hand side
+\end{itemize}
+
+\subsection{Arithmetic operators (\texttt{+, -, *, /})}
+\label{sec:org3364782}
+\begin{itemize}
+\item Used in common arithmetic
+\item Each arithmetic operator is a mathematical function that takes one or two operands and performs a calculation on them
+\item Most computer languages contain a set of such operators that can be used within equations to perform a number of types of sequential calculation
+\end{itemize}
+
+\subsection{Identifiers}
+\label{sec:org71c10c6}
+A name given to an entity in a programming language.
+\begin{itemize}
+\item Helps in differentiating one entity from another
+\item Name of the entity must be unique to be identified during the execution of the program
+\end{itemize}
+
+\subsubsection{Attributes of identifiers in Python}
+\label{sec:org179a349}
+\label{org72b2d39}
+\begin{itemize}
+\item Uppercase and lower case letters A through Z
+\item The underscore "\_"
+\item The digits 0 through 9
+\item However, the first character cannot be a digit
+\item Identifiers are case-sensitive
+\end{itemize}
+
+\subsubsection{Naming conventions in Python}
+\label{sec:orgc20bfaa}
+\begin{itemize}
+\item Variables names should be in lowercase, with words separated by underscores as necessary to improve readability (\texttt{snake\_case}).
+\end{itemize}
+
+\subsection{Keywords}
+\label{sec:orge60bf80}
+Keywords are special words that are reserved by a programming language. Programmers should not use keywords to name things.
+
+\subsection{Conditional statement}
+\label{sec:orgb776c67}
+A conditional statement performs different actions depending on whether the condition evaluates to true or false.
+
+\subsection{Conditional expression (Boolean expression)}
+\label{sec:org4d05404}
+A conditional expression may be composed of a combination of the Boolean constants True or False, Boolean-typed variables, Boolean-valued operators, and Boolean-valued functions.
+
+\subsection{Nested \texttt{if} statements}
+\label{sec:orgac317b6}
+A nested \texttt{if} statement is an \texttt{if} statement inside another \texttt{if} statement.
+
+\subsection{Relational operators (\texttt{==, !=, <, <=, >, >=})}
+\label{sec:orgb171448}
+A relational operator compares two numbers (float or int) and returns a Boolean value of either True or False.
+
+\begin{center}
+\begin{tabular}{c|c|c}
+Relational Operator & Meaning & Example\\[0pt]
+\hline
+== & Equal to & a == 1\\[0pt]
+!= & Not equal to & b != 2\\[0pt]
+< & Less than & c < 3\\[0pt]
+<= & Less than or equal to & d <= 4\\[0pt]
+> & Greater than & f > 5.0\\[0pt]
+>= & Greater than or equal to & g >= 6.0\\[0pt]
+\end{tabular}
+\end{center}
+
+\subsection{Program execution and control flow}
+\label{sec:org57ca973}
+\begin{itemize}
+\item Control flow controls which instruction should be executed next.
+\item By default, program instructions are executed one after another.
+\item However, some structures can alter the flow, like selection.
+\item Selection (branching) occurs when an "algorithm" makes a choice to do one of two or more things.
+\item The flow control in a program is, in essence, logic.
+\item When writing or reading a program, ensure that you could understand the flow, i.e., what should be executed next for every step.
+\end{itemize}
+
+\subsection{Logical operators (Boolean operators)}
+\label{sec:orgfa45b64}
+Logical operators connect Boolean values and expressions and \textbf{return} a Boolean value as a result.
+
+\begin{center}
+\begin{tabular}{c|c|c}
+Operator & Example & Meaning\\[0pt]
+\hline
+\textbf{not} & \textbf{not} number < 0 & Change True to False, or vice versa\\[0pt]
+\textbf{and} & (num1 > num2) \textbf{and} (num2 > num3) & Return True only if \textbf{both} are True\\[0pt]
+\textbf{or} & (num1 > num2) \textbf{or} (num2 > num3) & Return True if \textbf{either} one is True\\[0pt]
+\end{tabular}
+\end{center}
+
+ \newpage
+
+\subsection{Looping}
+\label{sec:org5c55f43}
+A computer program can dynamically choose how many times it repeats certain instructions during the program runtime.
+
+\subsubsection{General structure of a loop}
+\label{sec:orge28667d}
+\begin{enumerate}
+\item \textbf{Initialise} the loop control variable.
+\item \textbf{Test}: continue the loop or not?
+\item \textbf{Loop body}: main computation being repeated.
+\item \textbf{Update}: Modify the value of the loop control variable so that next time we test, we may exit the loop.
+\end{enumerate}
+
+Sometimes, a loop may not have all of them, such as an infinite loop, where the test condition is always true.
+
+\subsubsection{Types of loops}
+\label{sec:org73fee0a}
+\begin{enumerate}
+\item Counter-controlled loop
+The number of repetitions can be \textbf{known} before the loop body starts. This loop just repeats the loop on each element in a preset sequence.
+
+\item Sentinel-controlled loop
+The number of repetitions is \textbf{not known} before the loop body starts. Hence, a sentinel value that differs from normal data, like -1, is used to stop the loop.
+\end{enumerate}
+
+\subsection{Iteration}
+\label{sec:org71d0bc1}
+A one-time execution of a loop body is referred to as an iteration of the loop.
+
+\subsection{Nested loop}
+\label{sec:orgbbbf19b}
+A nested loop is a loop inside another loop. An outer loop may enclose an inner loop.
+
+ \newpage
+
+\subsection{Abstraction}
+\label{sec:orgd456fce}
+\begin{itemize}
+\item \textbf{Simplifies} things
+\item Identifies what is \textbf{important} without worrying too much about the details
+\item Allows us to \textbf{manage complexity}.
+\end{itemize}
+
+\subsubsection{Why is abstraction important?}
+\label{sec:org88e1df7}
+\begin{itemize}
+\item A key element of computing is the complexity of the systems we build.
+\item Abstraction provides a means to distil what is essential, giving a manageable approach to create computational solutions.
+\item Abstractions are sometimes represented as \textbf{layers} or \textbf{hierarchies}, allowing us to view things at different degrees of detail.
+\end{itemize}
+
+\subsection{String}
+\label{sec:org306fb60}
+A string is a sequence of characters. The sequence of characters is important and is maintained.
+
+\subsection{ASCII}
+\label{sec:org41e0f23}
+\begin{itemize}
+\item Uses 8 bits to store a character.
+\item 2\textsuperscript{8} = 256 different characters.
+\end{itemize}
+
+\subsection{Unicode}
+\label{sec:org9deb43d}
+\begin{itemize}
+\item An extension of ASCII
+\item Able to include more characters
+\item Uses 16 bits to store a character
+\item 2\textsuperscript{16} = 65,536 characters
+\item The Unicode space is divided into 17 planes.
+\item Each plane contains 65,536 code points (16-bit).
+\item Total of 1,114,112 characters, 96,000 used.
+\end{itemize}
+
+\subsection{Parameters}
+\label{sec:org0a0cf54}
+Parameters are the variables names used in the function definition to hold the function inputs.
+
+\subsection{Arguments}
+\label{sec:org539be3b}
+Arguments are the actual values passed to the function when calling the function.
+
+\subsection{Function}
+\label{sec:org512fc4e}
+\begin{itemize}
+\item A function is a \textbf{piece of code} that performs some operation.
+\item The details are hidden (encapsulated) and only it's interface is exposed.
+\item It is a way to arrange a program to make it easier to understand.
+\item A function has arguments as inputs and may return one output.
+\item A function can have multiple \texttt{return} statements.
+\item The first executed \texttt{return} statement \textbf{ends the function}.
+\item Functions can also be called from other functions, and it works the same as users calling functions.
+\begin{itemize}
+\item There is no limit to the "depth" of multiple function calls.
+\item Deep function calls could make following the flow of a program difficult.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{In mathematics}
+\label{sec:org6132aca}
+A function performs some operation and returns \textbf{one} value or thing.
+
+\subsubsection{In Python}
+\label{sec:org82082f1}
+Python functions "\textbf{encapsulates}" the performance of its particular operation, so they can be used by others.
+\begin{itemize}
+\item A function represents a single operation to be performed.
+\item A function takes zero or more arguments as input.
+\item A function returns one value or object as output.
+\end{itemize}
+
+\subsubsection{Importance of functions}
+\label{sec:org35e04bf}
+\begin{itemize}
+\item Abstraction
+\item Divide-and-conquer problem-solving
+\item Reuse
+\item Sharing
+\item Security
+\item Simplification and readability
+\end{itemize}
+
+\subsubsection{Principles of writing a function}
+\label{sec:org0905ef1}
+\begin{itemize}
+\item A function should only \textbf{do one thing}. If it does too many things, it should be broken down into multiple functions (refactored).
+\item A function should be \textbf{readable}. If you write it, it should be readable. Give comments when necessary.
+\item A function should be \textbf{reusable}. If it does one thing well, then when a similar situation (in another program) occurs, use it there as well.
+\item A function should be \textbf{complete}. A function should check for all the cases where it might be invoked. Check for potential errors.
+\item A function should \textbf{not be too long}. This is kind of synonymous with "\textbf{does one thing}". Use it as a measurement of doing too much.
+\end{itemize}
+
+\subsection{Procedures}
+\label{sec:orgf256550}
+\begin{itemize}
+\item Procedures are functions \textbf{without return statements}.
+\item In other words, they don't have an output.
+\item In Python, procedures will return \texttt{None}.
+\item Procedures are often used to perform some operation, like printing output, store a file, etc.
+\item A return statement is not always required in functions.
+\end{itemize}
+
+\subsection{Method}
+\label{sec:org6023599}
+\begin{itemize}
+\item A method is a variation on a function.
+\item It represents a program and has input arguments and output.
+\item Unlike a function, it is applied in the context of a \textbf{particular object}.
+\item This is indicated by the \textbf{dot notation} invocation.
+\end{itemize}
+
+\subsubsection{Method chaining}
+\label{sec:orgdbff7ca}
+Methods can be chained together. For example:
+\begin{minted}[]{python}
+string = "Python is cool!"
+print(string.upper())
+print(string.upper().find("C"))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+PYTHON IS COOL!
+10
+\end{verbatim}
+
+\subsection{Composite type}
+\label{sec:org249f6d8}
+\begin{itemize}
+\item Composite type is a data type which is constructed (composed) using primitive and other composite types.
+\item A composite type is basically a new data type that is made from existing ones.
+\item Some examples in Python include tuples, lists, dictionaries (hash maps in most other programming languages) and strings.
+\end{itemize}
+
+\subsection{Data structures}
+\label{sec:org25ca229}
+\begin{itemize}
+\item They have particular ways of storing data to make some operations easier or more efficient.
+\begin{itemize}
+\item They are tuned for certain tasks, and they are often associated with algorithms.
+\end{itemize}
+\item Different data structures have different characteristics.
+\begin{itemize}
+\item One suited to solving a \textbf{certain problem} may not be suited for another problem.
+\end{itemize}
+\item A few examples include arrays, linked lists, hash maps and trees.
+\end{itemize}
+
+\subsubsection{Built-in data structures}
+\label{sec:org6e60b8f}
+Data structures that are so common that they are provided by most programming languages by default.
+
+\subsubsection{User-defined data structures}
+\label{sec:org9843ac3}
+Data structures (classes in object-oriented programming) that are designed for a particular task.
+
+\subsection{Mutability}
+\label{sec:org10d3dbc}
+The ability to change.
+
+\subsection{Mutable}
+\label{sec:orgef7038b}
+\begin{itemize}
+\item After creation of the object, the object \textbf{can} be changed.
+\item \textbf{Lists} are mutable as you \textbf{can} change them after creating them.
+\end{itemize}
+
+\subsection{Immutable}
+\label{sec:orgfdb2670}
+\begin{itemize}
+\item After creation of the object, the object \textbf{cannot} be changed.
+\item \textbf{Strings} are immutable as you \textbf{cannot} change them after creating them.
+\end{itemize}
+
+\subsection{Decomposition}
+\label{sec:orgf41490e}
+Decomposition is the process of \textbf{breaking down} a complex problem into smaller manageable parts (sub-problems).
+\begin{itemize}
+\item Each sub-problem can then be examined or solved \textbf{individually}, as they are simpler to work with.
+\item It is a natural way to solve problems.
+\item It is also known as Divide-and-Conquer.
+\end{itemize}
+
+\subsubsection{Importance of decomposition}
+\label{sec:org63fab17}
+\begin{enumerate}
+\item Solve complex problems
+\begin{itemize}
+\item If a complex problem is not decomposed, it is much harder to solve at once. Sub-problems are usually easy to tackle.
+\end{itemize}
+
+\item Enable collaboration and teamwork.
+\begin{itemize}
+\item Each sub-problem can be solved by different parties.
+\end{itemize}
+
+\item Analysis
+\begin{itemize}
+\item Decomposition forces you to analyse your problem from different aspects.
+\end{itemize}
+\end{enumerate}
+
+\subsection{Divide-and-Conquer}
+\label{sec:org57e7adb}
+\begin{enumerate}
+\item Decompose a problem into several sub-problems.
+\item Solve each sub-problem.
+\item Compose the solution to the sub-problems.
+\end{enumerate}
+
+\textbf{Recursion} naturally supports divide-and-conquer.
+
+\subsection{Recursive function}
+\label{sec:org7423c1e}
+A recursive function is a function that invokes itself.
+
+\subsubsection{General form}
+\label{sec:orge83c0e7}
+\begin{itemize}
+\item A recursive function is like a mathematical proof by induction, where you solve the problem for the base case, then solve the problem for the general until it reaches the base case.
+\item Generally, you will have a base case inside an if block where the function will return a value to stop the recursion.
+\item Then you will have the general case where the function will call itself on a new value.
+\item This general case will continue until the function reaches the base case and finally returns a value to stop the recursion.
+\end{itemize}
+
+\subsubsection{Writing a recursive function}
+\label{sec:org95f81ae}
+\begin{enumerate}
+\item Determine the interface (signature) of the function
+\begin{itemize}
+\item How many \textbf{parameters}? What are they?
+\item What is the \textbf{return object}?
+\item What is the \textbf{functionality} of the function?
+\end{itemize}
+
+\item Assume you have finished the implementation of the function
+\item Develop the function body
+\begin{itemize}
+\item Base case (Conquer)
+Solve the primitive case, and then return the result
+\item Recursive step (Divide)
+\begin{itemize}
+\item Decompose the problem into sub-problems (with the same structure)
+\item Call the function to solve each sub-problem
+\item Compose the final result from the sub-problems, and then return it.
+\end{itemize}
+\end{itemize}
+\end{enumerate}
+
+\subsubsection{Performance}
+\label{sec:org1121da7}
+A recursive function may be inefficient as it usually has redundant computation.
+
+\subsection{Binary tree}
+\label{sec:orgf0c20e5}
+\begin{itemize}
+\item A binary tree is a type of data structure that is made of nodes.
+\item It looks like an upside-down or inverted tree.
+\item The first node in the tree is called the root node, and there is only \textbf{one} of them
+\item The nodes that are connected to nodes below them are called \textbf{parent nodes}.
+\item The nodes that are only connected to nodes above them are called \textbf{leaf nodes}. These nodes have nothing after them and hence are like the leaves of an actual tree.
+\item Each node can only be connected to 2 nodes below them, hence the name binary tree.
+\end{itemize}
+
+\subsection{Complete Binary Tree (CBT)}
+\label{sec:org4294fb6}
+A complete binary tree is a binary tree where every parent node has \textbf{exactly two} child nodes.
+
+\subsection{Exceptions (Python-specific concept)}
+\label{sec:org5de83ec}
+\begin{itemize}
+\item Exceptions in Python can be thought of as \textbf{errors}.
+\item It usually means that the Python program has reached an \textbf{"exceptional"} situation that it \textbf{doesn't know} how to handle.
+\end{itemize}
+
+\subsubsection{Why do we need exception handling?}
+\label{sec:org20d3a49}
+\begin{itemize}
+\item Most modern languages provide ways to deal with \textbf{"exceptional situations"}.
+\item Dealing with problems
+\item To try to capture certain situations or failures and deal with them gracefully.
+\end{itemize}
+
+\subsubsection{What counts as an exception?}
+\label{sec:org5993695}
+\begin{enumerate}
+\item Errors
+\begin{itemize}
+\item Indexing past the end of a list
+\item Trying to open a non-existent file
+\item Fetching a non-existent key from a dictionary, etc.
+\end{itemize}
+
+\item Events (not really errors)
+\begin{itemize}
+\item Search algorithm doesn't find a value
+\item Mail message arrives, queue event occurs
+\end{itemize}
+\end{enumerate}
+
+\subsubsection{General idea}
+\label{sec:orgca5f88b}
+\begin{enumerate}
+\item Keep \textbf{watching} a particular section of code.
+\item If we get an exception, look for a catcher that can \textbf{handle} that kind of exception.
+\item If \textbf{found} handle it.
+\item Otherwise, let Python handle it (which usually halts the program).
+\end{enumerate}
+
+\subsection{Pattern}
+\label{sec:org9c0eb3e}
+A pattern is a discernible regularity.
+\begin{itemize}
+\item The elements of a pattern repeat \textbf{predictably}.
+\end{itemize}
+
+In computational thinking, a pattern is the spotted \textbf{similarities} and \textbf{common differences} between problems.
+
+\subsection{Pattern recognition}
+\label{sec:orgcd62ecc}
+Pattern recognition involves finding the similarities or patterns among small, decomposed problems, which can help in solving complex problems more efficiently.
+
+\subsubsection{Importance}
+\label{sec:org791cb68}
+\begin{itemize}
+\item Patterns make problems simpler and easier to solve.
+\item Problems are easier to solve when they share patterns, as we can use the same problem-solving solution wherever the pattern exists.
+\item The more patterns we can find, the easier and quicker out problem-solving will be.
+\end{itemize}
+
+\subsubsection{How to recognise patterns?}
+\label{sec:org508b660}
+\begin{enumerate}
+\item Identifying common elements or features in problems.
+\item Identifying and interpreting common differences between problems.
+\item Identifying individual elements within problems.
+\item Describing patterns that have been identified.
+\item Making predictions based on identified patterns.
+\end{enumerate}
+
+ \newpage
+
+\subsection{Iterative accumulation}
+\label{sec:org5297aa5}
+Iterative accumulation accumulate \textbf{target values} by iterating over them.
+
+\subsubsection{Important elements}
+\label{sec:orge708049}
+\begin{enumerate}
+\item Result variable to store the accumulation result.
+\item A for loop.
+\item A target value in each iteration to add to the result variable.
+\end{enumerate}
+
+\subsection{File}
+\label{sec:orgb51805a}
+\begin{itemize}
+\item A \textbf{collection of data} that is stored on \textbf{secondary storage}, like a disk.
+\item Accessing a file means establishing a \textbf{connection} between the \textbf{file} and the \textbf{program} and moving data between the two.
+\item When \textbf{opening} a file, you create a \textbf{file object} or \textbf{file stream} that is a connection between the file and the program.
+\end{itemize}
+
+\subsubsection{Types of files}
+\label{sec:org94f2733}
+\begin{enumerate}
+\item Text files
+\begin{itemize}
+\item Organised as ASCII or Unicode characters
+\item Generally human-readable, which is useful for certain file types
+\item Text files are inefficient to store as each character takes up a few bits.
+\begin{itemize}
+\item ASCII: 8 bits → 1 byte
+\item Unicode: 32 bits → 4 bytes
+\end{itemize}
+\end{itemize}
+
+\item Binary files
+\begin{itemize}
+\item All the information is based on specific encodings
+\item Not human-readable and contains non-readable information
+\item It is a custom format that has more efficient storage
+\end{itemize}
+\end{enumerate}
+
+\subsubsection{Current file position}
+\label{sec:orgf9423a0}
+\begin{itemize}
+\item Every file maintains a \textbf{current file position}.
+\item It is the \textbf{current position} in the file and indicates what will be read next.
+\item It is set by the file mode.
+\end{itemize}
+
+\subsection{File buffer}
+\label{sec:org28beb17}
+\begin{itemize}
+\item When a file on the disk is opened, the contents of the file are \textbf{copied} into the \textbf{buffer} of the file object.
+\item The file object can be thought of as a very big list.
+\item The \textbf{current file position} is the \textbf{current index} to access the list.
+\end{itemize}
+
+\subsection{Buffering}
+\label{sec:orga0e567d}
+\begin{itemize}
+\item Reading from and writing to a \textbf{disk} is \textbf{very slow}.
+\item Hence, a computer tries to read a lot of data from a file first.
+\begin{itemize}
+\item If the data is needed, it will be "buffered" in the file object.
+\end{itemize}
+\item The file object contains a copy of the information from the file, called a \textbf{cache}.
+\item The \textbf{file buffer} contains the information from the file and provides the information to the program, and it is located in the \textbf{file object}.
+\end{itemize}
+
+\subsection{Sorting algorithms}
+\label{sec:org8f8849a}
+\begin{itemize}
+\item Sorting algorithms are algorithms that put elements in a list of a certain order.
+\item The most frequently used orders are \textbf{numerical} and \textbf{alphabetical orders}.
+\item Efficient sorting is important for optimising the efficiency of other algorithms (such as search and merge algorithms).
+\item Most of the primary sorting algorithms run on different space and time complexity.
+\end{itemize}
+
+\subsubsection{Importance}
+\label{sec:org5803694}
+\begin{itemize}
+\item \textbf{Practical applications}: Sorting people by last name, countries by population, and websites by search engine relevance.
+\item \textbf{Sorting algorithms are fundamental to other algorithms}.
+\end{itemize}
+
+\subsubsection{Trade-offs}
+\label{sec:orgbfee841}
+\begin{itemize}
+\item Different algorithms have different trade-offs.
+\item There is no single "best" sort for all scenarios.
+\item So, knowing just one way to sort is not enough.
+\end{itemize}
+
+\subsection{Time complexity}
+\label{sec:org4dd228c}
+Time complexity is defined to be the time the computer takes to run a program or algorithm.
+
+\subsection{Space complexity}
+\label{sec:org3bfa673}
+Space complexity is defined to be the amount of memory the computer needs to run a program.
+
+\subsection{Bubble sort (Sinking sort)}
+\label{sec:org3a18bf9}
+\begin{itemize}
+\item One of the simplest sorting algorithms.
+\item It repeatedly steps through the list to be sorted, compares each pair of adjacent items, and swaps them if they are in the wrong order.
+\item The pass through the list is repeated until no swaps are needed, which indicates that the list is sorted.
+\item The algorithm, which is a comparison sort, is named for the way smaller or larger elements "bubble" to the top of the list."
+\item It is easier to implement but slower than other sorts.
+\end{itemize}
+
+\subsubsection{Overview}
+\label{sec:org8478333}
+Bubble sort makes multiple passes through a list. For each pass, bubble sort goes through the steps below:
+\begin{enumerate}
+\item Compare the first two items in the list, and if the second item is smaller than the first, then the items are swapped.
+\item Then move to the next item, compare the item and the item after it, and swap the two items if necessary.
+\item Repeat the process.
+\end{enumerate}
+
+\subsubsection{After the first pass}
+\label{sec:orga790e79}
+Each sequence of comparison is called a pass. Once the first pass through the list has completed, the largest number has now been moved to the end of the list.
+
+\subsubsection{Start of the second pass}
+\label{sec:orgd8afbb2}
+At the start of the second pass:
+\begin{itemize}
+\item The largest value is now in place, at the end of the list.
+\item There are (n - 1) items left to sort, which means there will be (n - 2) pairs.
+\end{itemize}
+
+\subsubsection{Repeat the process}
+\label{sec:org7179a25}
+\begin{itemize}
+\item Since each pass places the next largest value in place, the total number of passes necessary will be (n - 1).
+\item After completing the (n - 1) passes, the smallest items must be in the correct position with no further processing required.
+\end{itemize}
+
+ \newpage
+
+\subsection{Merge sort}
+\label{sec:orgc13dc4b}
+\begin{itemize}
+\item Merge sort is an example of a divide-and-conquer style of algorithm.
+\item A problem is repeatedly broken up into sub-problems, often using recursion, until they are small enough to be solved.
+\item The solutions are combined to solve the larger problem.
+\item Merge sort breaks the data into parts that can be sorted trivially, then combine those parts knowing that they are sorted.
+\end{itemize}
+
+\subsubsection{Overview}
+\label{sec:org3ff97c1}
+\begin{enumerate}
+\item Split the list into 2 parts, usually at the middle point.
+\item Compare the first elements of both lists 1 by 1.
+\item Move the smaller element out of the list that it was found in and add this value to the list of "sorted items".
+\item Repeat the process until only a single list remains.
+\item One list should still contain elements, which is sorted. Hence, the contents are moved into the result list.
+\end{enumerate}
+
+\subsection{Timsort}
+\label{sec:org077f1de}
+\begin{itemize}
+\item Timsort is a hybrid sorting algorithm used by Python.
+\item It is derived from merge sort and insertion sort and is designed to perform well on many kinds of real-world data.
+\item It is invented by Tim Peters in 2002 for use in the Python programming language.
+\item It finds subsets of the data that are already ordered, and uses the subsets to sort the data more efficiently. This is done by merging an identified subset, called a run, with existing runs until certain criteria are fulfilled.
+\item Timsort has been Python's standard sorting algorithm since version 2.3.
+\item It is now also used to sort arrays in Java SE 7 and on the Android platform.
+\end{itemize}
+
+\subsection{Searching}
+\label{sec:orgb4cde09}
+\begin{itemize}
+\item Given a list of data, searching is finding the location of a particular value or reporting that the value is not present.
+\item It is one of the fundamental problems in computer science and programming.
+\item Sorting is done to make searching easier.
+\item There are multiple searching algorithms to solve problems.
+\end{itemize}
+
+\subsection{Search key}
+\label{sec:org383fcba}
+Search key is basically the element that needs to be found in a search.
+
+\subsection{Linear search}
+\label{sec:org72e5ec6}
+\begin{itemize}
+\item Linear search iterates over the sequence, one item at a time, until the specific item is found, or all items have been examined.
+\begin{itemize}
+\item The approach is intuitive.
+\item Starts at the first item.
+\item Is it the one I am looking for?
+\item If not, go to the next item.
+\item Repeats until the item is found or all the items are checked.
+\end{itemize}
+
+\item This approach is necessary if items are not sorted.
+\end{itemize}
+
+ \newpage
+
+\subsection{Binary search}
+\label{sec:org17676c3}
+\begin{itemize}
+\item Binary search uses a divide-and-conquer strategy to search for an item, which divides the work in half with each step.
+\item However, the list of items must be sorted, otherwise this method of searching will not work.
+\end{itemize}
+
+\subsubsection{Procedure}
+\label{sec:orgd5d48ba}
+\begin{itemize}
+\item Start at the middle of the list.
+\item Check if the middle item is what we are looking for.
+\item If it is not, check if the middle item is greater or lower than the item we are looking for.
+\item If it is lower, take the lower half of the list and look for the item using the same procedure above.
+\item If it is higher, take the higher half of the list and look for the item using the same procedure above.
+\item Repeat until the item is found, or the sublist is of size 0.
+\end{itemize}
+
+ \newpage
+
+\subsubsection{Binary search vs linear search}
+\label{sec:orgb1a2c7f}
+\begin{center}
+\begin{tabular}{|m{6.5em}|m{5em}|m{7em}|m{6em}|m{6em}|}
+\hline
+\textbf{Algorithm} & \textbf{Best-case time complexity} & \textbf{Average time complexity} & \textbf{Worst-case time complexity} & \textbf{Worst-case space complexity}\\[0pt]
+\hline
+Linear Search & O(1) & O(n) & O(n) & O(1)\\[0pt]
+Binary Search & O(1) & O(log n) & O(log n) & O(1)\\[0pt]
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{|m{17em}|m{17em}|}
+\hline
+\textbf{Linear search} & \textbf{Binary search}\\[0pt]
+\hline
+Checks the item in the sequence until the desired item is found. & Checks the middle item of the list.\\[0pt]
+\hline
+Often used for short lists. & Requires sorted list.\\[0pt]
+\hline
+Inefficient for large sorted lists. & Repeated discarding of half of the list, which contains values that are all definitely larger or smaller than the desired value.\\[0pt]
+\hline
+Simple and easy to implement, but inefficient compared to binary search. & Algorithms for binary search can be implemented in an iterative or recursive manner.\\[0pt]
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Searching algorithms}
+\label{sec:org8c2c371}
+\begin{itemize}
+\item Interpolation search
+\item Grover's algorithm, which requires quantum computers
+\item Indexed searching
+\item Binary search trees
+\item Hash table searching
+\item Best-first
+\end{itemize}
+
+\subsection{Program complexity types}
+\label{sec:orgf9f89b2}
+
+\subsubsection{O(1): Constant complexity}
+\label{sec:orgbc0d5d9}
+The algorithm always uses the same amount of time to execute for all inputs.
+
+\subsubsection{O(n): Linear complexity}
+\label{sec:org0a14894}
+The algorithm's execution time increases linearly in proportion with the size of input date.
+
+\subsubsection{O(n\textsuperscript{k}): Polynomial complexity, where k is a constant}
+\label{sec:orga454d5a}
+Polynomial complexity occurs for algorithm that contains nested loops.
+\begin{itemize}
+\item An example is O(n\textsuperscript{2}): Quadratic complexity, where the execution time is proportional to the square of the input data size.
+\end{itemize}
+
+\subsubsection{O(log n): Logarithmic complexity}
+\label{sec:org9c4c5ea}
+The algorithm's execution time grows as the log size of the input data.
+
+\subsubsection{O(k\textsuperscript{n}): Exponential complexity}
+\label{sec:org966d259}
+Exponential complexity occurs for algorithm that contains recursive call.
+
+\subsection{Mainframe computers}
+\label{sec:org1589926}
+\begin{itemize}
+\item Mainframe computers have one machine to multiple users, and are used for applications that need to process massive amounts of data.
+\item Some examples include the IBM 1401 and the IBM z13.
+\end{itemize}
+
+\subsection{Personal computers}
+\label{sec:orgd8f87c9}
+\begin{itemize}
+\item Personal computers have one machine to one user.
+\item Some examples include the IBM PC, the laptop and the tablet.
+\end{itemize}
+
+\subsection{Mobile devices}
+\label{sec:orgcc2803f}
+\begin{itemize}
+\item Mobile devices are very portable, and each user will likely have multiple devices.
+\item Some examples include a smartphone, a smartwatch, a health tracker and a credit card.
+\end{itemize}
+
+\subsection{Ubiquitous computing}
+\label{sec:org0f765f9}
+\begin{itemize}
+\item Ubiquitous computing is when consumer electronic products and household appliances communicate with each other.
+\item Some examples include household appliances and a dash cam.
+\end{itemize}
+
+\subsection{Internet of Things (IoT)}
+\label{sec:org11939da}
+\begin{itemize}
+\item The internet of things is when machines, devices and sensors are connected to the internet to exchange data, improve efficiency and reduce human error.
+\end{itemize}
+
+\subsection{Cloud computing}
+\label{sec:org34abcae}
+\begin{itemize}
+\item Cloud computing is computing in the massive servers held by big tech companies.
+\item They have remote computer servers accessible through the internet, called data centres.
+\item They provide computing resources such as to store, manage and process data.
+\item It is subscribed as an on-demand sharable service.
+\item It frees the user from maintaining the computer resources.
+\item Some examples include Microsoft Azure and Amazon Web Services (AWS).
+\end{itemize}
+
+\subsection{Data centre}
+\label{sec:orge945f8f}
+\begin{itemize}
+\item A data centre collection of server machines at a premise.
+\item It provides computing resources that deal with big data, like Facebook's and Google's data centres.
+\item It is often used by cloud-service providers to provide cloud computing hosting services.
+\item Multiple data centres can be located at several geographic locations to ensure constant data availability during power outages and data centre failures.
+\item Cloud computing can be used to provide computing resources for IoT devices.
+\item However, this is not suitable for time critical applications due to network latency.
+\end{itemize}
+
+\subsection{Fog computing}
+\label{sec:org55e56b3}
+Fog computing refers to data processing at the network layer near the devices, such as the gateway equipment.
+
+\subsection{Edge computing}
+\label{sec:org4f765bc}
+Edge computing refers to data being performed on the devices itself, or the client side.
+
+\subsection{Augmented reality}
+\label{sec:orgd5c4412}
+Augmented reality augments objects that reside in the real-world with computer-generated perceptual information.
+
+\subsection{Virtual reality.}
+\label{sec:org512f8cb}
+\begin{itemize}
+\item Virtual reality uses the computer technology to create a simulated environment.
+\item The user is immersed within the environment.
+\end{itemize}
+
+\subsection{Artificial intelligence (AI)}
+\label{sec:orgc0fc010}
+\begin{itemize}
+\item Artificial intelligence is to develop machines that can exhibit intelligence like humans.
+\item It trains itself through a machine learning algorithm.
+\item It is used in many applications, such as:
+\begin{itemize}
+\item Face recognitions
+\item Speech recognitions
+\item Recommendation systems
+\item Self-driving vehicles
+\end{itemize}
+\end{itemize}
+
+
+ \newpage
+
+\section{Program translations}
+\label{sec:orgbf686e9}
+
+\subsection{Interpretation approach}
+\label{sec:orgdc6ea74}
+\begin{itemize}
+\item Uses a program known as an interpreter
+\item Reads one high-level code statement at a time
+\begin{itemize}
+\item Immediately translates and executes the statement before processing the next one
+\end{itemize}
+\end{itemize}
+
+\subsubsection{Examples}
+\label{sec:org2b9f911}
+\begin{itemize}
+\item Python
+\item R
+\item JavaScript
+\item TypeScript
+\item Lua
+\item Lisp
+\end{itemize}
+
+\subsubsection{Benefits}
+\label{sec:org76a4d44}
+\begin{itemize}
+\item Very portable across different computing platforms
+\item Produces results almost immediately
+\item Easy to debug
+\item Program executes more slowly
+\item Useful for implementing dynamic, interactive features, such as those used on web pages
+\end{itemize}
+
+ \newpage
+
+\subsection{Compilation approach}
+\label{sec:org0a9645a}
+\begin{itemize}
+\item Uses a program called a compiler
+\item Reads and translates the entire high-level language program (source) code into its equivalent machine-language instructions in an executable file
+\item The resulting machine-language instructions can then be executed directly on the computer when the program is launched
+\end{itemize}
+
+\subsubsection{Examples}
+\label{sec:orgfa0f65b}
+\begin{itemize}
+\item C
+\item C++
+\item Rust
+\item Go
+\item Zig
+\item Nim
+\end{itemize}
+
+\subsubsection{Benefits}
+\label{sec:orgb4cf242}
+\begin{itemize}
+\item Program runs very fast AFTER compilation
+\item Smaller in code size after compilation
+\item Must compile the entire program before execution
+\item Needs to be re-compiled if to be used on different computing platforms
+\item Used in large and sophisticated software applications when speed is of the utmost importance
+\end{itemize}
+
+\subsection{Combination of compilation and interpretation}
+\label{sec:orgf431f12}
+It is also possible to use the combination of both translation techniques.
+
+\subsubsection{Examples}
+\label{sec:orge67f31f}
+\begin{itemize}
+\item Java
+\end{itemize}
+
+
+\section{Computer organisation}
+\label{sec:orgdcfb395}
+
+\subsection{Central processing unit (CPU)}
+\label{sec:orgaa47c1d}
+\begin{itemize}
+\item Processes information
+\item Performs operations based on information given
+\end{itemize}
+
+\subsubsection{Control unit (CU)}
+\label{sec:orgc5ca67e}
+\begin{itemize}
+\item Controls and coordinates the overall operation of the CPU
+\item Consists of decoders and logic circuits
+\item Controls the overall operations of the various units and modules
+\item Driven by a clock signal to ensure that everything happens at the correct instances and in proper sequence
+\end{itemize}
+
+\subsubsection{Arithmetic/Logic Unit (ALU)}
+\label{sec:orgdc45468}
+\begin{itemize}
+\item Performs arithmetic operations as well as Boolean logic functions
+\item Deals with arithmetic operations like addition, subtraction, multiplication and division (if supported)
+\item Also performs logic operations (i.e. Boolean operations) like AND, OR, NOT, XOR etc, and bit shifting/rotation
+\end{itemize}
+
+\subsubsection{Register Array}
+\label{sec:orgfe3a1ef}
+\begin{itemize}
+\item Holds the various information used by CPU operations
+\item A small amount of very high speed internal storage used for frequently accessed data
+\item Enables data to be stored and retrieved quickly
+\item Some of these registers are used for more specific functions, like program counter, instruction register, stack pointer, memory address register, accumulator, etc
+\end{itemize}
+
+\subsubsection{Program counter (PC) (special register)}
+\label{sec:orga3e62ed}
+Tells the control unit where to find the instruction in memory.
+
+\subsubsection{Instruction register (IR) (special register)}
+\label{sec:org17f14f7}
+Holds the copy of the instruction to be decoded and executed by the control unit.
+
+\subsubsection{Data, Address and Control Signals}
+\label{sec:orga804cc0}
+\begin{itemize}
+\item Consists of signalling wires that are grouped into data signals, address signals, and control signals
+\item The signals connect the various internal functional units together
+\item Extend to the external system bus for other modules (memory and I/O) of the microprocessor
+\end{itemize}
+
+\subsection{Memory}
+\label{sec:orgb6aef72}
+\begin{itemize}
+\item Memory is used to store instructions and data for the CPU
+\item Consists of high speed electronics components that store the information in binary bit format
+\item Each location stores an 8-bit (byte) size data
+\item Each location is allocated a unique address
+\item Identified by specifying its binary pattern on the address bus
+\item If data is more than 8 bits in size (e.g. a 32-bit word), consecutive locations are used, and the lowest byte address is used to access the word location
+\end{itemize}
+
+\subsubsection{Memory size}
+\label{sec:orgda5c132}
+It is dependent on the number of bits (n) used in its address bus. Memory size = 2\textsuperscript{n} bytes.
+
+\begin{itemize}
+\item When n = 10, 2\textsuperscript{10} = 1024 bytes or 1 kilobyte (KB)
+\item When n = 20, 2\textsuperscript{20} = 1024 × 1 KB = 1048576 bytes or 1 megabyte (MB)
+\item When n = 30, 2\textsuperscript{30} = 1 KB × 1 KB × 1 KB = 1073741824 bytes or 1 Gigabyte (GB)
+\end{itemize}
+
+\subsection{Input/Output (I/O) Interface}
+\label{sec:org188646a}
+\begin{itemize}
+\item Mechanism for transferring information to and from the outside world, such as to interact with users
+\end{itemize}
+
+\subsection{System Bus}
+\label{sec:orgba4029f}
+\begin{itemize}
+\item The system bus consists of groups of parallel signals that are used to transfer information between the modules in the microprocessor.
+\item The system bus is used to connect external devices, such as memory and I/O devices, to the functional units within the CPU.
+\end{itemize}
+
+\subsubsection{Data Bus}
+\label{sec:orgbf733f3}
+\begin{itemize}
+\item Conveys the information from one module to the other.
+\end{itemize}
+
+\subsubsection{Control Bus}
+\label{sec:org7ea8265}
+\begin{itemize}
+\item Provides the control signals for the modules to work together, such as to determine the direction of data flow, and when each device can access the data bus and address bus.
+\end{itemize}
+
+\subsubsection{Address Bus}
+\label{sec:org79fe214}
+\begin{itemize}
+\item Used to convey the address information. The signals' pattern on the address bus lines determines the location of the source and destination of the data transfer.
+\end{itemize}
+
+
+\section{Information in a computer}
+\label{sec:orgee2e615}
+
+\subsection{Types of information}
+\label{sec:orgaacebaa}
+\begin{itemize}
+\item Instructions
+\item Data
+\end{itemize}
+
+ \newpage
+
+\subsection{Information representation}
+\label{sec:org9119e44}
+
+\subsubsection{Binary format (base-2)}
+\label{sec:org9116a3f}
+\begin{itemize}
+\item General expression: b\textsubscript{n-1} \ldots{} b\textsubscript{k} \ldots{} b\textsubscript{2}b\textsubscript{1}b\textsubscript{0}
+\item Example of an 8-bit binary number: 01001101b
+\item The decimal (base-10) value can be calculated as:
+2\textsuperscript{n-1} × b\textsubscript{n-1} + \ldots{} + 2\textsuperscript{k} × b\textsubscript{k} + \ldots{} + 2\textsuperscript{2} × b\textsubscript{2} + 2\textsuperscript{1} × b\textsubscript{1} + 2\textsuperscript{0} × b\textsubscript{0}
+
+\item The k\textsuperscript{th} bit will have a weightage of 2\textsuperscript{k}.
+\end{itemize}
+
+\subsubsection{Hexadecimal format (base-16)}
+\label{sec:org3cf67af}
+\begin{itemize}
+\item Hexadecimal symbols: 0, 1, 2, \ldots{}, 8, 9, A (10), B (11), C (12), D (13), E (14), F (15)
+\item Each hexadecimal is 4 binary bits
+\item The binary format data is separated into groups of 4 bits:
+1011 0101 0110 1100 = B56C
+\end{itemize}
+
+
+\section{Program execution}
+\label{sec:org7da2e39}
+
+\subsection{Instruction execution}
+\label{sec:org13c7c11}
+\begin{enumerate}
+\item On power up, the program instruction will be typically first loaded into certain default memory locations (together with data).
+\item A clocking signal is also applied to the CPU (as well as to the rest of the microprocessor system).
+\item Based on the rising or falling edges of the clock, the control unit (CU) will retrieve (fetch) the instruction from the default memory location.
+\item The control unit (CU) of a CPU is designed to recognise its own instructions and performs the corresponding operation.
+\end{enumerate}
+
+ \newpage
+
+\subsection{Fetch}
+\label{sec:org2bfb600}
+Fetch the instruction from the memory into the instruction register (IR) using the address indicated by the program counter (PC).
+
+\subsection{Decode}
+\label{sec:org229efab}
+Decode the machine instruction by the control unit, which is now stored in the instruction register (IR).
+
+\subsection{Execute}
+\label{sec:orgf1fb894}
+Execute the instruction. For example, loading the operands into the arithmetic/logic unit (ALU) and get the ALU to operate on them.
+
+ \newpage
+
+\section{Ways to handle errors}
+\label{sec:org0ab7a9d}
+
+\subsection{Look before you leap (LBYL)}
+\label{sec:orgfd7b58f}
+\begin{itemize}
+\item Be very cautious!
+\item Check \textbf{all aspects} before execution
+\begin{itemize}
+\item If a string is required, check that it is a string.
+\item If the values should be positive, check that it is indeed positive.
+\end{itemize}
+\item This can make code quite lengthy, which can reduce readability.
+\end{itemize}
+
+\subsubsection{Example}
+\label{sec:orgb342af2}
+\begin{minted}[]{python}
+if not isinstance(string, str):
+    return None
+elif not string.isdigit():
+    return None
+else:
+    return int(string)
+\end{minted}
+
+\subsection{Easier to Ask for Forgiveness than Permission (EAFP)}
+\label{sec:orgc462c5e}
+\begin{itemize}
+\item Run anything you like!
+\item Be ready to \textbf{clean up} in case of error
+\item The \texttt{try} block reflects what you want to do, and the \texttt{except} block reflects what you want to do on error.
+\item Cleaner separation
+\end{itemize}
+
+\subsubsection{Example}
+\label{sec:org35d28e1}
+\begin{minted}[]{python}
+try:
+    return int(string)
+except (TypeError, ValueError, OverflowError):
+    return None
+\end{minted}
+
+ \newpage
+
+\section{Program complexity evaluation}
+\label{sec:org96c7002}
+\begin{itemize}
+\item There are multiple possible algorithms as well as implementations.
+\item Execution time depends on many factors, like:
+\begin{itemize}
+\item The speed of the computer
+\item The way the algorithm is implemented
+\begin{itemize}
+\item Pre-compute lookup table
+\item Loop unrolling technique
+\item Input data value and input data size
+\end{itemize}
+\end{itemize}
+\end{itemize}
+
+\subsection{Instruction steps}
+\label{sec:orgfe0b0a7}
+\begin{itemize}
+\item Count the number of instructions it takes to execute the algorithm.
+\item It is independent of the computer, and more steps mean longer execution time.
+\item The number of steps may still depend on the data involved in the computation.
+\end{itemize}
+
+\subsection{Asymptotic behaviour}
+\label{sec:org8f1aee1}
+\begin{itemize}
+\item It is more important to consider the worst case scenario, which is when an item is not in a list, as the number of instruction steps will be the most.
+\item As the number of entries in the list increases, the number of steps under the worst case scenario also increases.
+\item Input data size is equivalent to the number of entries in the list.
+\item In time complexity analysis, the growth pattern of the number of steps as input data size increases indefinitely.
+\item The asymptotic behaviour of running time is given by the Big O notation.
+\end{itemize}
+
+\subsection{Big O notation}
+\label{sec:org80a3389}
+\begin{itemize}
+\item It measures and compares the time complexity of algorithms.
+\item It is how the execution time of the algorithm grows as the size of the input data grows.
+\item The execution time is in terms of the number of instruction steps for the worst case scenario.
+\item The Big O notation gives an upper bound on the asymptotic growth of an algorithm.
+\end{itemize}
+
+\subsection{Analysis of a linear search}
+\label{sec:org8ae5e40}
+
+\subsubsection{Assumption}
+\label{sec:orgce78419}
+Each line of code can be executed in one step.
+
+\subsubsection{Worst case}
+\label{sec:org12b82be}
+Item isn't in the list
+
+\subsubsection{Asymptotic behaviour}
+\label{sec:orgf54f55f}
+\begin{itemize}
+\item T(n) increases proportionally with n, i.e., T(n) doubles when n is doubled.
+\item Growth order: f(n) = n
+\end{itemize}
+
+\subsubsection{Complexity using Big O notation [O(f(n)) = O(n)]}
+\label{sec:org96c1c13}
+\begin{itemize}
+\item Linear complexity
+\end{itemize}
+
+\section{Complete Binary Tree (CBT) implementation in Python}
+\label{sec:org0a47f01}
+A complete binary tree can be represented as a list in Python:
+\begin{minted}[]{python}
+complete_binary_tree = [left_subtree, root, right_subtree]
+example = [[[7], 1, [9]], 3, [[8], 2, [4]]]
+\end{minted}
+
+\subsection{Total number of nodes in a complete binary tree}
+\label{sec:orga5f62be}
+\begin{minted}[]{python}
+def num_of_nodes(binary_tree: list) -> int:
+    "A function to return the number of nodes in a complete binary tree"
+
+    # Gets the length of the complete binary tree
+    length = len(binary_tree)
+
+    # If the length of the binary tree is 0 or 1,
+    # return the length of the binary tree
+    if length <= 1:
+        return length
+
+    # Otherwise
+    else:
+
+        # Get the number of nodes in the left subtree
+        # Remember that the left subtree is the first item in the list
+        num_of_nodes_in_left_subtree = num_of_nodes(binary_tree[0])
+
+        # Get the number of nodes in the right subtree
+        # Remember that the right subtree is the last item in the list
+        num_of_nodes_in_right_subtree = num_of_nodes(binary_tree[-1])
+
+        # Add the number of nodes in the left and right subtrees,
+        # adding one because of the middle root node,
+        # and return the value
+        return (num_of_nodes_in_left_subtree + num_of_nodes_in_right_subtree + 1)
+\end{minted}
+
+ \newpage
+
+\subsection{Sum of the node values in a complete binary tree}
+\label{sec:org10100d1}
+\begin{minted}[]{python}
+def sum_of_node_values(binary_tree: list) -> int:
+    "A function to return the sum of node values in a complete binary tree"
+
+    # Gets the length of the complete binary tree
+    length = len(binary_tree)
+
+    # If the length of the binary tree is 0
+    # return zero
+    if length <= 0:
+        return 0
+
+    # Otherwise, if the length of the binary tree is 1
+    # return the value of the root node
+    elif length == 1:
+        return binary_tree[0]
+
+    # Otherwise
+    else:
+
+        # Get the sum of the node values in the left subtree
+        # Remember that the left subtree is the first item in the list
+        sum_of_node_values_in_left_subtree = sum_of_node_values(binary_tree[0])
+
+        # Get the sum of the node values in the right subtree
+        # Remember that the right subtree is the last item in the list
+        sum_of_node_values_in_right_subtree = sum_of_node_values(binary_tree[-1])
+
+        # Add the sum of the node values in the left and right subtrees,
+        # as well as add the value of the root node,
+        # which is the second item in the list
+        # and return the value
+        return (
+            sum_of_node_values_in_left_subtree
+            + sum_of_node_values_in_right_subtree
+            + binary_tree[1]
+        )
+\end{minted}
+
+ \newpage
+
+\subsection{Obtain the highest value found in the complete binary tree}
+\label{sec:org03fed64}
+\begin{minted}[]{python}
+def get_max_value(binary_tree: list) -> int:
+    "A function to return the highest value found in a complete binary tree."
+
+    # Gets the length of the complete binary tree
+    length = len(binary_tree)
+
+    # If the length of the binary tree is 0, return 0
+    if length <= 0:
+        return 0
+
+    # Otherwise, if the length of the binary tree is 1
+    # return the value of the root node
+    elif length == 1:
+        return binary_tree[0]
+
+    # Otherwise
+    else:
+
+        # Get the maximum values of the left and right subtrees
+        max_value_left_subtree = get_max_value(binary_tree[0])
+        max_value_right_subtree = get_max_value(binary_tree[-1])
+
+        # Set the max value to the value of the root node
+        max_value = binary_tree[1]
+
+        # If the left subtree has a greater max value than the root node,
+        # set the max value to the one from the left subtree
+        if max_value_left_subtree > max_value:
+            max_value = max_value_left_subtree
+
+        # If the right subtree has a greater max value than the left subtree
+        # or the root node, set the max value to the one from the right subtree
+        if max_value_left_subtree > max_value:
+            max_value = max_value_right_subtree
+
+        # Return the max value
+        return max_value
+\end{minted}
+
+ \newpage
+
+\subsection{Obtain the lowest value found in the complete binary tree}
+\label{sec:org5e29151}
+\begin{minted}[]{python}
+def get_min_value(binary_tree: list) -> int:
+    "A function to return the lowest value found in a complete binary tree."
+
+    # Gets the length of the complete binary tree
+    length = len(binary_tree)
+
+    # If the length of the binary tree is 0, return 0
+    if length <= 0:
+        return 0
+
+    # Otherwise, if the length of the binary tree is 1
+    # return the value of the root node
+    elif length == 1:
+        return binary_tree[0]
+
+    # Otherwise
+    else:
+
+        # Get the minimum values of the left and right subtrees
+        min_value_left_subtree = get_min_value(binary_tree[0])
+        min_value_right_subtree = get_min_value(binary_tree[-1])
+
+        # Set the minimum value to the value of the root node
+        min_value = binary_tree[1]
+
+        # If the left subtree has a smaller minimum value than the root node,
+        # set the min value to the one from the left subtree
+        if min_value_left_subtree < min_value:
+            min_value = min_value_left_subtree
+
+        # If the right subtree has a smaller minimum value than the left subtree
+        # or the root node, set the minimum value to the one from the right subtree
+        if min_value_left_subtree < min_value:
+            min_value = min_value_right_subtree
+
+        # Return the min value
+        return min_value
+\end{minted}
+
+\subsection{Mirroring a complete binary tree}
+\label{sec:orgf2c0d48}
+\begin{minted}[]{python}
+def mirror_binary_tree(binary_tree: list) -> list:
+    "Function to mirror a complete binary tree"
+
+    # If the length of the binary tree is 0 or 1,
+    # return the binary tree itself
+    if len(binary_tree) <= 1:
+        return binary_tree
+
+    # Otherwise
+    else:
+
+        # Set the parent node to the root node of the binary tree
+        parent_node = binary_tree[1]
+
+        # Gets the mirrored version of the left and right subtrees
+        mirrored_left_subtree = mirror_binary_tree(binary_tree[0])
+        mirrored_right_subtree = mirror_binary_tree(binary_tree[-1])
+
+        # Returns the mirrored binary tree
+        return [mirrored_left_subtree, parent_node, mirrored_right_subtree]
+\end{minted}
+
+ \newpage
+
+\subsection{Printing a complete binary tree}
+\label{sec:org2276a57}
+\begin{minted}[]{python}
+def print_binary_tree(binary_tree: list, depth: int) -> None:
+    """
+    Function to print a complete binary tree.
+
+    The depth represents how deep a node is in the binary tree,
+    and affects how indented the value should be when printed.
+
+    The binary tree is printed with the root node at the leftmost side
+    of the screen, and the left subtree BELOW the root node
+    and the right subtree ABOVE the root node.
+    """
+
+    # If the length of the binary tree is 0
+    # don't print anything and exit the function
+    if len(binary_tree) <= 0:
+        return
+
+    # If the length of the binary tree is 1
+    elif len(binary_tree) == 1:
+
+        # Print 2 spaces x the depth of the node, which is the indent,
+        # before the printing the only value of the binary tree.
+        # There is no need for a separator between the indent and the value
+        print("  " * depth, binary_tree[0], sep="")
+
+    # Otherwise
+    else:
+
+        # Print the right subtree of the binary tree first,
+        # as it is at the top, increasing the depth by 1
+        print_binary_tree(binary_tree[-1], depth + 1)
+
+        # Print the value of the parent node
+        print("  " * depth, binary_tree[0], sep="")
+
+        # Print the left subtree of the binary tree last,
+        # as it is at the bottom, increasing the depth by 1
+        print_binary_tree(binary_tree[0], depth + 1)
+\end{minted}
+
+ \newpage
+
+\section{Sorting algorithm implementation in Python}
+\label{sec:orgb97fb6c}
+
+\subsection{Bubble sort}
+\label{sec:org2233bef}
+This implementation \textbf{modifies} the list and \textbf{does not return} any value.
+\begin{minted}[]{python}
+def bubble_sort(list_of_items: list) -> None:
+    "A function to sort a list of items using bubble sort."
+
+    # Length of the list of items
+    n = len(list_of_items)
+
+    # Iterates from the first item to the second last item of the list
+    for pass_number in range(n - 1):
+
+        # Intialise the swapped variable to False
+        swapped = False
+
+        # Iterates over the items in the shortened list
+        # The items at the back of the list is sorted and the
+        # number of items at that back that are sorted
+        # depends on the number of passes, so this makes the sort more efficient.
+        for i in range(n - pass_number - 1):
+
+            # Get the current item and the next item
+            current_item = list_of_items[i]
+            next_item = list_of_items[i+1]
+
+            # If the current item is greater than the next item
+            if current_item > next_item:
+
+                # Swap the items and set the swapped variable to True
+                list_of_items[i] = next_item
+                list_of_items[i+1] = current_item
+                swapped = True
+
+        # If no swaps have been performed in the inner for loop,
+        # break out of the loop as the entire list is sorted.
+        # This is also to improve the efficiency of the sort.
+        if not swapped:
+            break
+\end{minted}
+
+\subsection{Merge sort}
+\label{sec:orgde06c20}
+This implementation \textbf{returns a sorted list} of the items and \textbf{does not modify} the original list.
+
+\subsubsection{Merge function (used in the merge sort function)}
+\label{sec:org710a326}
+\begin{minted}[]{python}
+def merge(left_list: list, right_list: list) -> list:
+    "A function to merge the left list and the right list for merge sort."
+
+    # Gets the length of the sorted list
+    sorted_list_length = len(left_list) + len(right_list)
+
+    # Initialise a list of Nones with the length of the sorted list
+    sorted_list = [None] * sorted_list_length
+
+    # Initialise the iterating variables
+    left_list_index, right_list_index, sorted_list_index = (0, 0, 0)
+
+    # While there are items in both the left and right lists
+    while left_list_index < len(left_list) and right_list_index < len(right_list):
+
+        # If the value of the left item is less than the right item,
+        # put the value from the left list into the sorted list
+        # and increment the index of the left list by 1
+        if left_list[left_list_index] < right_list[right_list_index]:
+            sorted_list[sorted_list_index] = left_list[left_list_index]
+            left_list_index += 1
+
+        # Otherwise, put the value from the left list into the sorted list
+        # and increment the index of the left list by 1
+        else:
+            sorted_list[sorted_list_index] = right_list[right_list_index]
+            right_list_index += 1
+
+        # Always increment the index of the sorted list by 1
+        sorted_list_index += 1
+
+    # Continued on the next page...
+
+    # The following blocks of code are NOT inside the while loop above.
+    # They are in the main block of the function,
+    # which is the same indentation level
+    # as the "Continued on the next page..." comment
+
+    # If there are still items in the left list
+    while left_list_index < len(left_list):
+
+        # Add the item to the sorted list
+        sorted_list[sorted_list_index] = left_list[left_list_index]
+
+        # Increment the indexes for both lists by 1
+        sorted_list_index += 1
+        left_list_index += 1
+
+    # If there are still items in the right list
+    while right_list_index < len(right_list):
+
+        # Add the item to the sorted list
+        sorted_list[sorted_list_index] = right_list[right_list_index]
+
+        # Increment the indexes for both lists by 1
+        sorted_list_index += 1
+        right_list_index += 1
+
+    # Return the sorted list
+    return sorted_list
+\end{minted}
+
+ \newpage
+
+\subsubsection{Merge sort function (the actual sorting function)}
+\label{sec:org00c0558}
+This is \textbf{the function to use} to sort a list using the merge sort algorithm.
+\begin{minted}[]{python}
+def merge_sort(list_of_items: list) -> list:
+    "A function to sort the list of items using merge sort."
+
+    # Get the length of the list
+    length = len(list_of_items)
+
+    # If the length of the list is less than 2, then return the list of items.
+    # This is the base case.
+    if length < 2:
+        return list_of_items
+
+    # Get the middle of the list.
+    # Use the floor division operator to get an integer for lists of odd length.
+    middle = length // 2
+
+    # Split the list into 2, and get the left and right list.
+    left_list = list_of_items[:middle]
+    right_list = list_of_items[middle:]
+
+    # Recursively sort the left and right list
+    sorted_left_list = merge_sort(left_list)
+    sorted_right_list = merge_sort(right_list)
+
+    # Merge the two lists together and return the sorted list
+    return merge(sorted_left_list, sorted_right_list)
+\end{minted}
+
+ \newpage
+
+\section{Binary search implementation in Python}
+\label{sec:org9ecbaff}
+
+\subsection{Iterative binary search}
+\label{sec:org0c72eb2}
+\begin{minted}[]{python}
+def iterative_binary_search(sorted_items: list | tuple, target) -> bool:
+    "Function to binary search a sorted collection of items using a loop."
+
+    # Get the index of the lowest item and the highest item
+    lowest_item_index = 0
+    highest_item_index = len(sorted_items) - 1
+
+    # Iterate while the lowest item index is less than the highest item index
+    while lowest_item_index < highest_item_index:
+
+        # Get the middle of the list
+        middle_item_index = (lowest_item_index + highest_item_index) // 2
+
+        # Get the middle item of the list
+        middle_item = sorted_items[middle_item_index]
+
+        # If the middle item of the list is the target value, return True
+        if middle_item == target:
+            return True
+
+        # Otherwise, if the target value is less than the middle item,
+        # set the highest item index to the middle item index - 1
+        elif target < middle_item:
+            highest_item_index = middle_item_index - 1
+
+        # Otherwise, if the target value is more than the middle item,
+        # set the lowest item index to the middle item index + 1
+        else:
+            lowest_item_index = middle_item_index + 1
+
+    # If the item is still not found, then return False
+    return False
+\end{minted}
+
+ \newpage
+
+\subsection{Recursive binary search}
+\label{sec:org3719889}
+\begin{minted}[]{python}
+def recursive_binary_search(sorted_items: list | tuple, target) -> bool:
+    "Function to binary search a sorted collection of items using recursion."
+
+    # Get the index of the lowest item and the highest item
+    lowest_item_index = 0
+    highest_item_index = len(sorted_items) - 1
+
+    # If the index of the highest item is less than or equal to
+    # the index of the lowest item, return False
+    if highest_item_index <= lowest_item_index:
+        return False
+
+    # Gets the middle item index
+    middle_item_index = (lowest_item_index + highest_item_index) // 2
+
+    # Gets the middle item
+    middle_item = sorted_items[middle_item_index]
+
+    # If the middle item is the target value, return True
+    if middle_item == target:
+        return True
+
+    # Otherwise, if the target value is less than the middle item,
+    # call the function with the sorted list being truncated to
+    # the list before the middle item and return the result
+    elif target < middle_item:
+        return recursive_binary_search(sorted_items[:middle_item_index], target)
+
+    # Otherwise, if the target value is more than the middle item,
+    # call the function with the sorted list being truncated to
+    # the list after the middle item and return the result
+    else:
+        return recursive_binary_search(sorted_items[middle_item_index + 1:], target)
+\end{minted}
+
+ \newpage
+
+\section{Data types in Python}
+\label{sec:orgd5ac07a}
+Python uses duck-typing to figure out the type of a variable.
+\begin{itemize}
+\item Python does not have variable declaration, like Java or C, to announce or create a variable.
+\item A variable is created by just assigning a value to it and the type of the value defines the type of the variable.
+\item If another value is re-assigned to the variable, its type can change.
+\end{itemize}
+
+\subsection{Why differentiate between data types?}
+\label{sec:org2f6c34b}
+\begin{enumerate}
+\item The underlying representations for different data types are different.
+\item Different data types support different operations, and for these operations to work, we need to supply them with variables of the correct types.
+\item The objects we wish to represent in a computer program are of different types in nature and require different data types.
+\end{enumerate}
+
+\subsection{String (\texttt{str})}
+\label{sec:org70e353d}
+\begin{itemize}
+\item It is a sequence, typically a sequence of characters delimited by single quotes \texttt{'} or double quotes \texttt{"}.
+\item The sequence of characters is important and is maintained.
+\item Use either single or double quotes to create a string.
+\item Do not use both single and double quotes to create a string.
+\item Escape a quote by using the backslash character "$\backslash$".
+\end{itemize}
+
+ \newpage
+
+\subsubsection{Index (\texttt{[]})}
+\label{sec:org066e061}
+\begin{itemize}
+\item Characters in a string are in a sequence
+\item We can identify each character with a unique index (a position in the sequence).
+\item We can index a character from either end of the sequence.
+\begin{itemize}
+\item Non-negative values: counting from left, starting at 0
+\item Negative values: counting from right, starting at -1
+\end{itemize}
+\item The index operator is always at the end of the expression and is preceded by something, either a variable or a sequence.
+\end{itemize}
+
+We can use \texttt{[]} to access particular characters in a string.
+\begin{minted}[]{python}
+string = "Hello World"
+print(string[0])
+print(string[1])
+print(string[-2])
+print(string)
+print("omg wow"[4])
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+H
+e
+l
+Hello World
+w
+\end{verbatim}
+
+
+ \newpage
+
+\subsubsection{Slice (\texttt{[:]})}
+\label{sec:org44dffcd}
+\texttt{[start : end : step]}
+\begin{itemize}
+\item \texttt{start} is the index of the start of the subsequence.
+\item \texttt{end} is the index of the end of a subsequence (not included).
+\item \texttt{step} specifies the step size to jump along the sequence.
+\end{itemize}
+
+\begin{minted}[]{python}
+string = "Hello World"
+print(string[1:4])
+print(string[::2])
+print(string[::-2])
+print(string[0:14:-1])
+print("omg wow"[2:6])
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+ell
+HloWrd
+drWolH
+
+g wo
+\end{verbatim}
+
+\subsubsection{Length (\texttt{len})}
+\label{sec:orgeb07bf1}
+\begin{minted}[]{python}
+string = "Hello World"
+print(len(string))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+11
+\end{verbatim}
+
+\subsubsection{Concatenation (\texttt{+})}
+\label{sec:orge2d523c}
+\begin{minted}[]{python}
+string = "Hello World"
+print(string + "!")
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+Hello World!
+\end{verbatim}
+
+\subsubsection{Repeat (\texttt{*})}
+\label{sec:org1adfbc8}
+\begin{minted}[]{python}
+string = "Hello World"
+print(string * 3)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+Hello WorldHello WorldHello World
+\end{verbatim}
+
+\subsubsection{Comparison}
+\label{sec:org0b11a12}
+The ASCII or Unicode code obtained using the \texttt{ord} function is used to compare strings.
+\begin{minted}[]{python}
+print("a" == "a")
+print("a" < "b")
+print("1" < "9")
+print("a" < "B")
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+True
+True
+False
+\end{verbatim}
+
+\subsubsection{Membership (\texttt{in})}
+\label{sec:org53968d4}
+\texttt{a in b} is True if string \texttt{a} is contained in string \texttt{b}.
+\begin{minted}[]{python}
+string = "abcdef"
+print("c" in string)
+print("cde" in string)
+print("cef" in string)
+print(string in string)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+True
+False
+True
+\end{verbatim}
+
+\subsubsection{Immutability}
+\label{sec:orgc896f77}
+\begin{itemize}
+\item Strings are immutable, which means you cannot change a string after it has been created.
+\begin{minted}[]{python}
+string = "spam"
+string[1] = "l"  # Error
+\end{minted}
+
+\item However, you can use it to make another string:
+\begin{minted}[]{python}
+string = "spam"
+new_string = string[:1] + "l" + string[2:]
+print(new_string)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+slam
+\end{verbatim}
+\end{itemize}
+
+ \newpage
+
+\subsection{Lists (\texttt{list})}
+\label{sec:org204ca7d}
+\begin{itemize}
+\item A list is an \textbf{ordered sequence of items}.
+\item As with all data structures, lists have a \textbf{constructor} that is the same name as the data structure.
+\item Lists are delimited with square brackets (\texttt{[]}).
+\end{itemize}
+
+\subsubsection{Creation}
+\label{sec:org81493eb}
+Constructing a list or initialising a list both mean creating a list.
+
+\begin{itemize}
+\item Creating an empty list
+\begin{minted}[]{python}
+l = list()
+l = []
+\end{minted}
+
+\item Creating a list from an iterable data structure, like a set, a tuple, or a string
+
+\begin{minted}[]{python}
+print("List from tuple: ", list((1, 2, 3, 4)))
+print("List from set: ", list({1, 2, 3, 4}))
+print("List from string: ", list("1234"))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+List from tuple:  [1, 2, 3, 4]
+List from set:  [1, 2, 3, 4]
+List from string:  ['1', '2', '3', '4']
+\end{verbatim}
+
+\item Creating a list with predefined items
+\begin{minted}[]{python}
+l = [1, 2, 3, 4]
+l = [1, 3.14159, "a", True]
+\end{minted}
+\end{itemize}
+
+ \newpage
+
+\subsubsection{Index (\texttt{[]})}
+\label{sec:org3998ac4}
+\begin{itemize}
+\item Items in a list are in a sequence
+\item We can identify each item in the list with a unique index (a position in the sequence).
+\item We can index an item from either end of the sequence.
+\begin{itemize}
+\item Non-negative values: counting from left, starting at 0
+\item Negative values: counting from right, starting at -1
+\end{itemize}
+\item The index operator is always at the end of the expression and is preceded by something, either a variable or a sequence.
+\end{itemize}
+
+We can use \texttt{[]} to access particular items in a list.
+\begin{minted}[]{python}
+l = [1, "omg wow", 420.69, False]
+print(l[0])
+print(l[1])
+print(l[-2])
+print(l)
+print(["hey", 5, True][0])
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+1
+omg wow
+420.69
+[1, 'omg wow', 420.69, False]
+hey
+\end{verbatim}
+
+
+ \newpage
+
+\subsubsection{Slice (\texttt{[:]})}
+\label{sec:org923e11b}
+\texttt{[start : end : step]}
+\begin{itemize}
+\item \texttt{start} is the index of the start of the subsequence.
+\item \texttt{end} is the index of the end of a subsequence (not included).
+\item \texttt{step} specifies the step size to jump along the sequence.
+\end{itemize}
+
+\begin{minted}[]{python}
+l = [1, "omg wow", 420.69, False]
+print(l[1:4])
+print(l[::2])
+print(l[::-2])
+print(l[0:3:-1])
+print(["hey", 5, True, "lovely"][2:4])
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+['omg wow', 420.69, False]
+[1, 420.69]
+[False, 'omg wow']
+[]
+[True, 'lovely']
+\end{verbatim}
+
+\subsubsection{Length (\texttt{len})}
+\label{sec:org187c216}
+\begin{minted}[]{python}
+l = [1, "omg wow", 420.69, False]
+print(len(l))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+4
+\end{verbatim}
+
+\subsubsection{Concatenation (\texttt{+})}
+\label{sec:org1ef33c9}
+\begin{minted}[]{python}
+l_1 = [1, "omg wow", 420.69, False]
+l_2 = ["Finger licking good!", True, "I'm loving it!"]
+print(l_1 + l_2)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[1, 'omg wow', 420.69, False, 'Finger licking good!', True, "I'm loving it!"]
+\end{verbatim}
+
+\subsubsection{Repeat (\texttt{*})}
+\label{sec:orgb41f364}
+\begin{minted}[]{python}
+l = [1, "omg wow", 420.69, False]
+print(l * 2)
+l = [3]
+print(l * 5)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[1, 'omg wow', 420.69, False, 1, 'omg wow', 420.69, False]
+[3, 3, 3, 3, 3]
+\end{verbatim}
+
+\subsubsection{Comparison}
+\label{sec:org091c20e}
+\begin{itemize}
+\item The items of a list are compared starting from the first item.
+\item This means for the greater than, or less than operators, the list that has the higher value at the front of the list is considered to be greater than the list with the same value at the back of the list.
+\item The boolean \texttt{True} is changed into 1 and the boolean \texttt{False} is changed to 0 comparing lists.
+\item For two lists to be equal, all items in both lists must be the same, and have the same order.
+\end{itemize}
+\begin{minted}[]{python}
+print([4, 3, 2, 1] > [1, 2, 3, 4])
+print([4, 3, 2, 1] == [1, 2, 3, 4])
+print([True, 3, 2, 1] >= [1, 2, 3, 4])
+print([False, 2, 3, 4] <= [1, 2, 3, 4])
+print(["a", "list", "of", "strings"] <= ["string", "list"])
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+False
+True
+True
+True
+\end{verbatim}
+
+\subsubsection{Membership (\texttt{in})}
+\label{sec:orge4560ca}
+\texttt{a in b} is True if \texttt{a} is contained in the list \texttt{b}.
+\begin{minted}[]{python}
+l = [1, "omg wow", 420.69, False]
+print(1 in l)
+print(420 in l)
+print("omg wow" in l)
+print("omg" in l)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+False
+True
+False
+\end{verbatim}
+
+\subsubsection{Minimum (\texttt{min})}
+\label{sec:orgffdba75}
+\begin{itemize}
+\item Gets the smallest element in the list.
+\item Only applicable to \textbf{lists containing strings only} or \textbf{lists containing numeric values (\texttt{int} and \texttt{float}) and boolean values}.
+\item The boolean \texttt{True} is changed into 1 and the boolean \texttt{False} is changed to 0 when evaluating the minimum of a list.
+\end{itemize}
+
+\begin{minted}[]{python}
+l_1 = [1, 2, 420.69, 699]
+l_2 = [1, 2, True, False]
+l_3 = ["ooo", "a", "list", "of", "Only", "Strings"]
+print(min(l_1))
+print(min(l_2))
+print(min(l_3))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+1
+False
+Only
+\end{verbatim}
+
+\subsubsection{Maximum (\texttt{max})}
+\label{sec:orgf4ba587}
+\begin{itemize}
+\item Gets the largest element in the list.
+\item Only applicable to \textbf{lists containing strings only} or \textbf{lists containing numeric values (\texttt{int} and \texttt{float}) and boolean values}.
+\item The boolean \texttt{True} is changed into 1 and the boolean \texttt{False} is changed to 0 when evaluating the maximum of a list.
+\end{itemize}
+
+\begin{minted}[]{python}
+l_1 = [1, 2, 420.69, 699]
+l_2 = [1, 2, True, False]
+l_3 = ["ooo", "a", "list", "of", "Only", "Strings"]
+print(max(l_1))
+print(max(l_2))
+print(max(l_3))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+699
+2
+ooo
+\end{verbatim}
+
+\subsubsection{Sum (\texttt{sum})}
+\label{sec:org1213c9c}
+\begin{itemize}
+\item Gets the sum of the elements of the list.
+\item Only applicable to lists containing numeric values (\texttt{int} and \texttt{float}) and boolean values.
+\item The boolean \texttt{True} is changed into 1 and the boolean \texttt{False} is changed to 0 when evaluating the maximum of a list.
+\end{itemize}
+
+\begin{minted}[]{python}
+l_1 = [1, 2, 420.69, 699]
+l_2 = [1, 2, True, False]
+print(sum(l_1))
+print(sum(l_2))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+1122.69
+4
+\end{verbatim}
+
+\subsubsection{Mutability}
+\label{sec:orgdab2ba2}
+Lists are mutable, which means you can change them after you create them.
+\begin{minted}[]{python}
+l = [1, "omg wow", 420.69, False]
+l[1] = "changed the list hehe"
+print(l)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[1, 'changed the list hehe', 420.69, False]
+\end{verbatim}
+
+\subsubsection{List of lists}
+\label{sec:org95aeeee}
+A list can be nested inside another list.
+\begin{minted}[]{python}
+l = [1, [1, "a", "list", True], 420.69, False]
+print(l[1])
+print(l[2])
+print(l[1][2])
+l[1][3] = "hehe changed the inner list"
+print(l)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[1, 'a', 'list', True]
+420.69
+list
+[1, [1, 'a', 'list', 'hehe changed the inner list'], 420.69, False]
+\end{verbatim}
+
+\subsubsection{Differences from strings}
+\label{sec:org9445ad6}
+\begin{itemize}
+\item Lists can contain a \textbf{mixture of Python objects (types)} while strings can only hold characters. (This is not recommended though, your list should only hold items of the same type, otherwise it makes things very difficult to work with.)
+\item Lists are mutable, which means you can change them.
+\item Lists are designated with square brackets (\texttt{[]}), with elements separated by commas (\texttt{,}), while strings use double quotes \texttt{"} or single quotes \texttt{'}.
+\end{itemize}
+
+\subsection{Tuples (\texttt{tuple})}
+\label{sec:org8b4a07d}
+\begin{itemize}
+\item Tuples are immutable lists, or lists that cannot be changed.
+\item They are designated by \textbf{commas (\texttt{,})}, \textbf{NOT} round brackets (\texttt{()}).
+\item Round brackets are often used to make tuples more readable, and used to group the items (like in nested tuples), but they are not what makes a tuple.
+\end{itemize}
+
+\subsubsection{Creation}
+\label{sec:org65b73ea}
+Constructing a tuple or initialising a tuple both mean creating a tuple.
+
+\begin{itemize}
+\item Creating an empty tuple
+\begin{minted}[]{python}
+t = tuple()
+\end{minted}
+
+\item Creating a tuple from an iterable data structure, like a set, a list, or a string
+
+\begin{minted}[]{python}
+print("Tuple from list: ", tuple([1, 2, 3, 4]))
+print("Tuple from set: ", tuple({1, 2, 3, 4}))
+print("Tuple from string: ", tuple("1234"))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+Tuple from list:  (1, 2, 3, 4)
+Tuple from set:  (1, 2, 3, 4)
+Tuple from string:  ('1', '2', '3', '4')
+\end{verbatim}
+
+\item Creating a tuple with predefined items
+\begin{minted}[]{python}
+t = (1, 2, 3, 4)
+t = (1, 3.14159, "a", True)
+t = (1, )
+t = 1,
+\end{minted}
+\end{itemize}
+
+\subsubsection{Index (\texttt{[]})}
+\label{sec:org0009d78}
+\begin{itemize}
+\item Items in a tuple are in a sequence
+\item We can identify each item in the tuple with a unique index (a position in the sequence).
+\item We can index an item from either end of the sequence.
+\begin{itemize}
+\item Non-negative values: counting from left, starting at 0
+\item Negative values: counting from right, starting at -1
+\end{itemize}
+\item The index operator is always at the end of the expression and is preceded by something, either a variable or a sequence.
+\end{itemize}
+
+We can use \texttt{[]} to access particular items in a tuple.
+\begin{minted}[]{python}
+t = (1, "omg wow", 420.69, False)
+print(t[0])
+print(t[1])
+print(t[-2])
+print(t)
+print(("hey", 5, True)[0])
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+1
+omg wow
+420.69
+(1, 'omg wow', 420.69, False)
+hey
+\end{verbatim}
+
+
+ \newpage
+
+\subsubsection{Slice (\texttt{[:]})}
+\label{sec:orgff5a69b}
+\texttt{[start : end : step]}
+\begin{itemize}
+\item \texttt{start} is the index of the start of the subsequence.
+\item \texttt{end} is the index of the end of a subsequence (not included).
+\item \texttt{step} specifies the step size to jump along the sequence.
+\end{itemize}
+
+\begin{minted}[]{python}
+t = (1, "omg wow", 420.69, False)
+print(t[1:4])
+print(t[::2])
+print(t[::-2])
+print(t[0:3:-1])
+print(("hey", 5, True, "lovely")[2:4])
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+('omg wow', 420.69, False)
+(1, 420.69)
+(False, 'omg wow')
+()
+(True, 'lovely')
+\end{verbatim}
+
+\subsubsection{Length (\texttt{len})}
+\label{sec:org2aa1665}
+\begin{minted}[]{python}
+t = (1, "omg wow", 420.69, False)
+print(len(t))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+4
+\end{verbatim}
+
+\subsubsection{Concatenation (\texttt{+})}
+\label{sec:orgceba1c8}
+\begin{minted}[]{python}
+t_1 = (1, "omg wow", 420.69, False)
+t_2 = ("Finger licking good!", True, "I'm loving it!")
+print(t_1 + t_2)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+(1, 'omg wow', 420.69, False, 'Finger licking good!', True, "I'm loving it!")
+\end{verbatim}
+
+\subsubsection{Repeat (\texttt{*})}
+\label{sec:orgbef4861}
+\begin{minted}[]{python}
+t = (1, "omg wow", 420.69, False)
+print(t * 2)
+t = (3,)
+print(t * 5)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+(1, 'omg wow', 420.69, False, 1, 'omg wow', 420.69, False)
+(3, 3, 3, 3, 3)
+\end{verbatim}
+
+\subsubsection{Comparison}
+\label{sec:orgf8eba79}
+\begin{itemize}
+\item The items of a tuple are compared starting from the first item.
+\item This means for the greater than, or less than operators, the tuple that has the higher value at the front of the tuple is considered to be greater than the tuple with the same value at the back of the tuple.
+\item The boolean \texttt{True} is changed into 1 and the boolean \texttt{False} is changed to 0 comparing tuples.
+\item For two tuples to be equal, all items in both tuples must be the same, and have the same order.
+\end{itemize}
+\begin{minted}[]{python}
+print((4, 3, 2, 1) > (1, 2, 3, 4))
+print((4, 3, 2, 1) == (1, 2, 3, 4))
+print((True, 3, 2, 1) >= (1, 2, 3, 4))
+print((False, 2, 3, 4) <= (1, 2, 3, 4))
+print(("a", "tuple", "of", "strings") <= ("string", "tuple"))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+False
+True
+True
+True
+\end{verbatim}
+
+\subsubsection{Membership (\texttt{in})}
+\label{sec:org784b964}
+\texttt{a in b} is True if \texttt{a} is contained in the tuple \texttt{b}.
+\begin{minted}[]{python}
+t = (1, "omg wow", 420.69, False)
+print(1 in t)
+print(420 in t)
+print("omg wow" in t)
+print("omg" in t)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+False
+True
+False
+\end{verbatim}
+
+\subsubsection{Minimum (\texttt{min})}
+\label{sec:orgb6b7a62}
+\begin{itemize}
+\item Gets the smallest element in the tuple.
+\item Only applicable to \textbf{tuples containing strings only} or \textbf{tuples containing numeric values (\texttt{int} and \texttt{float}) and boolean values}.
+\item The boolean \texttt{True} is changed into 1 and the boolean \texttt{False} is changed to 0 when evaluating the minimum of a tuple.
+\end{itemize}
+
+\begin{minted}[]{python}
+t_1 = (1, 2, 420.69, 699)
+t_2 = (1, 2, True, False)
+t_3 = ("ooo", "a", "tuple", "of", "Only", "Strings")
+print(min(t_1))
+print(min(t_2))
+print(min(t_3))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+1
+False
+Only
+\end{verbatim}
+
+\subsubsection{Maximum (\texttt{max})}
+\label{sec:org22f50f9}
+\begin{itemize}
+\item Gets the largest element in the tuple.
+\item Only applicable to \textbf{tuples containing strings only} or \textbf{tuples containing numeric values (\texttt{int} and \texttt{float}) and boolean values}.
+\item The boolean \texttt{True} is changed into 1 and the boolean \texttt{False} is changed to 0 when evaluating the maximum of a tuple.
+\end{itemize}
+
+\begin{minted}[]{python}
+t_1 = (1, 2, 420.69, 699)
+t_2 = (1, 2, True, False)
+t_3 = ("ooo", "a", "tuple", "of", "Only", "Strings")
+print(max(t_1))
+print(max(t_2))
+print(max(t_3))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+699
+2
+tuple
+\end{verbatim}
+
+\subsubsection{Sum (\texttt{sum})}
+\label{sec:orge495dfd}
+\begin{itemize}
+\item Gets the sum of the elements of the tuple.
+\item Only applicable to tuples containing numeric values (\texttt{int} and \texttt{float}) and boolean values.
+\item The boolean \texttt{True} is changed into 1 and the boolean \texttt{False} is changed to 0 when evaluating the maximum of a tuple.
+\end{itemize}
+
+\begin{minted}[]{python}
+t_1 = (1, 2, 420.69, 699)
+t_2 = (1, 2, True, False)
+print(sum(t_1))
+print(sum(t_2))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+1122.69
+4
+\end{verbatim}
+
+\subsubsection{Immutability}
+\label{sec:org6b3da1c}
+\begin{itemize}
+\item Tuples are immutable, which means you cannot change a tuple after it has been created.
+\begin{minted}[]{python}
+t = (1, "omg wow", 420.69, False)
+t[1] = "tuple"  # Error
+\end{minted}
+
+\item However, you can use it to make another tuple:
+\begin{minted}[]{python}
+t = (1, "omg wow", 420.69, False)
+new_tuple = t[:1] + ("tuple",) + t[2:]
+print(new_tuple)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+(1, 'tuple', 420.69, False)
+\end{verbatim}
+\end{itemize}
+
+\subsubsection{Tuple of tuples}
+\label{sec:orga2775af}
+A tuple can be nested inside another tuple.
+\begin{minted}[]{python}
+t = (1, (1, "a", "tuple", True), 420.69, False)
+print(t[1])
+print(t[2])
+print(t[1][2])
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+(1, 'a', 'tuple', True)
+420.69
+tuple
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{Dictionaries (\texttt{dict})}
+\label{sec:orgc12a682}
+\begin{itemize}
+\item A dictionary is an associative array, or associative list, or a map.
+\item You can think of it as a list of pairs.
+\begin{itemize}
+\item The key, which is first element of the pair, is used to retrieve the second element, which is the value.
+\end{itemize}
+\item Hence, we map a key to a value in a dictionary.
+\item The key acts as a "lookup" to find the associated value.
+\item Just like a dictionary, you look up a word by its spelling to find the associated definition.
+\item A dictionary can be searched to locate the value associated with a key.
+\item The key of the dictionary must be immutable, so strings, integers and tuples are allowed, but \textbf{lists are NOT}.
+\item The value can be any Python object.
+\end{itemize}
+
+\subsubsection{Creation}
+\label{sec:org618e13c}
+Constructing a dictionary or initialising a dictionary both mean creating a dictionary.
+
+\begin{itemize}
+\item Creating an empty dictionary
+\begin{minted}[]{python}
+dic = dict()
+dic = {}
+\end{minted}
+
+\item Creating a dictionary with predefined items
+\begin{minted}[]{python}
+dic = {"omg": "lol"}
+dic = {1: "lol"}
+dic = {5: 42069}
+\end{minted}
+\end{itemize}
+
+ \newpage
+
+\subsubsection{Index (\texttt{[]})}
+\label{sec:orgb8b1d03}
+Items in a dictionary can be indexed using its respective key.
+
+We can use \texttt{[]} to access particular values in a dictionary.
+\begin{minted}[]{python}
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+print(dic["bill"])
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+25
+\end{verbatim}
+
+\subsubsection{Adding items (\texttt{[]})}
+\label{sec:org1ba86c3}
+Items can also be added to the dictionary using the indexing operator.
+\begin{minted}[]{python}
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+dic["petrol"] = 10
+print(dic)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+{'bill': 25, 'tax': 3, 'petrol': 10}
+\end{verbatim}
+
+\subsubsection{Removing items (\texttt{del})}
+\label{sec:org5723b2a}
+Items can be removed from the dictionary using \texttt{del} keyword with the indexing operator.
+\begin{minted}[]{python}
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+del dic["tax"]
+print(dic)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+{'bill': 25}
+\end{verbatim}
+
+\subsubsection{Length (\texttt{len})}
+\label{sec:org4bf8592}
+\begin{minted}[]{python}
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+print(len(dic))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+2
+\end{verbatim}
+
+\subsubsection{Membership (\texttt{in})}
+\label{sec:org3f75b23}
+\texttt{a in b} is True if the key \texttt{a} is contained in the dictionary \texttt{b}.
+\begin{minted}[]{python}
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+print("bill" in dic)
+print(25 in dic)
+print("3" in dic)
+print("tax" in dic)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+False
+False
+True
+\end{verbatim}
+
+
+ \newpage
+
+\subsubsection{For loop (\texttt{for})}
+\label{sec:org01a8bdc}
+A \texttt{for} loop iterates over the \textbf{keys} of the dictionary.
+\begin{minted}[]{python}
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+for key in dic:
+    print(key)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+bill
+tax
+\end{verbatim}
+
+\subsection{Integers (\texttt{int})}
+\label{sec:org93a0c4a}
+\begin{itemize}
+\item Integers are like whole numbers, including the negative numbers. They can be negative (-1, -2, -3, etc), positive (1, 2, 3, etc) or zero (0).
+\item The largest n-bit integer is given by 2\textsuperscript{n} - 1. For example, the largest 16-bit integer is 2\textsuperscript{16} - 1 = 65535.
+\end{itemize}
+
+\subsection{Floats (\texttt{float})}
+\label{sec:orgb10581f}
+\begin{itemize}
+\item Floats represent real numbers and have a decimal point, like 2.8, 7.1 and 9.0001.
+\item When writing them down, they \textbf{must always have the decimal point}, so 2 should be represented as 2.0.
+\end{itemize}
+
+\subsection{Boolean (\texttt{bool})}
+\label{sec:orge2ce29d}
+In most computer programming languages, a Boolean data type is a data type with only two possible values, either True or False.
+
+ \newpage
+
+\section{Python syntax}
+\label{sec:orgcb3151b}
+
+\subsection{Statements}
+\label{sec:orgdab9331}
+Each line of code in a Python program is called a \textbf{statement}. Python interprets and runs the statements one by one.
+
+Python is sensitive to the end of line in text files, which marks the end of a statement. In text editors, we press "Enter".
+
+\subsubsection{Continuation of a statement}
+\label{sec:org9adc69a}
+\begin{itemize}
+\item The symbol "$\backslash$" is used to continue a statement with the next line so that the two lines can be joined as one statement.
+\item It improves readability in the text editor.
+\end{itemize}
+
+\subsection{Comments}
+\label{sec:org0076b47}
+\begin{itemize}
+\item The pound sign "\#" in Python indicates a comment.
+\item \textbf{Anything after "\#"} is ignored during interpretation.
+\end{itemize}
+
+ \newpage
+
+\subsection{\texttt{if} statements}
+\label{sec:org42528e8}
+\begin{itemize}
+\item A colon must be used to mark the start of a block
+\item An indentation must be used for the entire block
+\end{itemize}
+
+\subsubsection{Example}
+\label{sec:orge2f0fcb}
+\begin{minted}[]{python}
+a = 5
+b = 1
+if a > b:
+    print("a > b")
+\end{minted}
+
+\subsubsection{\texttt{if}-\texttt{else} statements}
+\label{sec:org9a1437b}
+\begin{minted}[]{python}
+a = 5
+b = 1
+if a > b:
+    print("a > b")
+else:
+    print("b < a")
+\end{minted}
+
+\subsubsection{\texttt{if}-\texttt{elif}-\texttt{else} statements}
+\label{sec:org83c60b8}
+\begin{minted}[]{python}
+a = 5
+b = 10
+if a > b:
+    print("a > b")
+elif a > 4:
+    print("a > 4")
+else:
+    print("b < a")
+\end{minted}
+
+ \newpage
+
+\subsection{\texttt{while} loops}
+\label{sec:orgbf3ec7a}
+\begin{itemize}
+\item The \texttt{while} statement allows repetition of a group of Python code as long as a condition (Boolean expression) is True.
+\item It is structurally similar to an if statement but repeats the block until the condition becomes False.
+\item When the condition becomes False, repetition ends and control moves on to the code following the repetition.
+\end{itemize}
+
+\subsubsection{Syntax}
+\label{sec:org53fa8b2}
+\begin{minted}[]{python}
+count = 0
+while count < 10:
+    count += 1
+\end{minted}
+
+\subsection{\texttt{while}-\texttt{else} loops (avoid using as much as possible)}
+\label{sec:org2238774}
+\begin{itemize}
+\item The \texttt{while} loop can have an associated \texttt{else} statement.
+\item The \texttt{else} block is executed when the loop finishes under normal conditions. It is the last thing the loop does as it exits.
+\item The \texttt{else} block is entered after the \texttt{while} loop's Boolean expression becomes False.
+\item This occurs even when the expression is initially False and the \texttt{while} loop has never run.
+\item It is a handy way to perform some final tasks when the loop ends normally.
+\end{itemize}
+
+\subsubsection{Syntax}
+\label{sec:org56f888b}
+\begin{minted}[]{python}
+count = 0
+while count < 10:
+    count += 1
+else:
+    print("Done looping")
+\end{minted}
+
+\subsection{\texttt{break} statement}
+\label{sec:org4ed2ee9}
+\begin{itemize}
+\item The \texttt{break} statement can be used to \textbf{immediately} exit the execution of the current loop and skip past all the remaining parts of the loop.
+\item Note that "skip past" also means that the \texttt{break} statement also \textbf{skips} the \texttt{else} block as well.
+\item The \texttt{break} statement is useful for stopping computation when the "answer" has been found or when continuing the computation is otherwise useless.
+\end{itemize}
+
+\subsubsection{Syntax}
+\label{sec:org36e9304}
+\begin{minted}[]{python}
+count = 0
+while count < 10:
+    count += 1
+    if count == 8:
+        break
+
+# The else clause is skipped in this case
+# as the loop is broken out of when the count hits 8
+else:
+    print("Done looping")
+\end{minted}
+
+ \newpage
+
+\subsection{\texttt{continue} statement}
+\label{sec:orga9b4c91}
+\begin{itemize}
+\item The \texttt{continue} statement skips some portion of the \texttt{while} block that we are executing and have control flow back to the beginning of the \texttt{while} loop.
+\item Exit early from this iteration of the loop (not the loop itself), and keep executing the \texttt{while} loop.
+\item The \texttt{continue} statement continues with the next iteration of the loop.
+\end{itemize}
+
+\subsubsection{Syntax}
+\label{sec:org98956c4}
+\begin{minted}[]{python}
+count = 0
+while count < 10:
+    count += 1
+    if count == 3:
+        print("It's a three!")
+        continue
+
+    # This print statement is skipped when the count is 3
+    print("count is", count)
+\end{minted}
+
+ \newpage
+
+\subsection{\texttt{for} loops}
+\label{sec:org850de87}
+\begin{itemize}
+\item \texttt{for} loops have the ability to iterate over the items of any sequence, such as a list or a string.
+\item Each item in the sequence is assigned to the iterating variable, which can be any variable.
+\item The \texttt{for} loop completes when the last of the elements has been assigned to the iterating variable, or when the entire sequence is exhausted.
+\end{itemize}
+
+\subsubsection{Syntax}
+\label{sec:org6398dd4}
+\begin{minted}[]{python}
+for i in range(10):
+    print("i is", i)
+
+for char in "Hello World!":
+    print("Current char is", char)
+
+for drink in ("coffee", "tea", "milo"):
+    print("Current drink is", drink)
+\end{minted}
+
+\subsubsection{\texttt{for}-\texttt{else}}
+\label{sec:org7d40a71}
+\begin{minted}[]{python}
+for i in range(10):
+    print("i is", i)
+else:
+    print("Done looping")
+\end{minted}
+
+\subsubsection{\texttt{for}-\texttt{else}-\texttt{break}}
+\label{sec:orgb2c448e}
+\begin{minted}[]{python}
+for i in range(10):
+    if i == 5:
+        break
+    print("i is", i)
+
+# This else statement is skipped as
+# the loop is broken out of when i is 5
+else:
+    print("Done looping")
+\end{minted}
+
+\subsubsection{\texttt{for}-\texttt{else}-\texttt{break}-\texttt{continue}}
+\label{sec:orgd903e5b}
+\begin{minted}[]{python}
+for i in range(10):
+    if i == 5:
+        break
+    if i == 3:
+        print("It's a three!")
+        continue
+
+    # This print statement is skipped when i is 3
+    print("i is", i)
+
+# This else statement is skipped as
+# the loop is broken out of when i is 5
+else:
+    print("Done looping")
+\end{minted}
+
+\subsection{\texttt{pass} statement}
+\label{sec:org4373235}
+\begin{itemize}
+\item The \texttt{pass} statement has no effect (it does nothing) but it helps in indicating an \textbf{empty} statement, suite, or block.
+\item Use the \texttt{pass} statement when you have to put something in a statement (syntactically, you cannot leave it blank or Python will complain), but what you really want is nothing.
+\item Python has the syntactical requirement that code blocks after \texttt{if}, \texttt{for}, \texttt{while}, \texttt{except}, \texttt{def}, \texttt{class}, etc cannot be empty.
+\item It can be used to \textbf{test a statement}, like opening a file or iterating through a collection to see if it works.
+\item You can also use \texttt{pass} as a placeholder.
+\end{itemize}
+
+\subsubsection{Syntax}
+\label{sec:org456f011}
+\begin{minted}[]{python}
+for i in range(10):
+    pass
+\end{minted}
+
+ \newpage
+
+\subsection{List comprehension}
+\label{sec:orgf66ed04}
+\begin{itemize}
+\item List comprehensions are a Python syntactic structure to construct lists concisely.
+\item The first variable before the \texttt{for} is what is placed into the list.
+\item The \texttt{for} loop is just a regular for loop.
+\item Any \texttt{for} loops after the first for loop will be \textbf{nested inside} the for loop before it. If there is a \texttt{if} statement at the end of the previous for loop, the next \texttt{for} loop will be placed inside the \texttt{if} statement. (This is absolutely not recommended as it makes code impossible to read.)
+\item Any \texttt{if} statements after the \texttt{for} loop will determine what will be added to the list. Basically, if the item doesn't meet the condition in the \texttt{if} statement, it's not added to the list.
+\end{itemize}
+
+\subsubsection{Syntax}
+\label{sec:orgabbfb60}
+\begin{minted}[]{python}
+print([i for i in range(11)])
+print([i for i in range(21) if i % 2 == 0])
+print([i for i in range(21) if i % 2 == 0 and i >= 10])
+
+# Please don't do this, just use a regular for loop instead
+print([x + y for x in range(9) if x % 2 == 0 for y in range(9) if y % 2 != 0])
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+[10, 12, 14, 16, 18, 20]
+[1, 3, 5, 7, 3, 5, 7, 9, 5, 7, 9, 11, 7, 9, 11, 13, 9, 11, 13, 15]
+\end{verbatim}
+
+
+ \newpage
+
+\subsubsection{Equivalent code using for loops}
+\label{sec:orgc3f905f}
+\begin{enumerate}
+\item The first list comprehension:
+\begin{minted}[]{python}
+l = []
+for i in range(11):
+    l.append(i)
+print(l)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+\end{verbatim}
+
+\item The second list comprehension:
+\begin{minted}[]{python}
+l = []
+for i in range(21):
+    if i % 2 == 0:
+        l.append(i)
+print(l)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+\end{verbatim}
+
+\item The third list comprehension:
+\begin{minted}[]{python}
+l = []
+for i in range(21):
+    if i % 2 == 0 and i >= 10:
+        l.append(i)
+print(l)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[10, 12, 14, 16, 18, 20]
+\end{verbatim}
+
+
+ \newpage
+
+\item The fourth list comprehension:
+\begin{minted}[]{python}
+l = []
+for x in range(9):
+    if x % 2 == 0:
+        for y in range(9):
+            if y % 2 != 0:
+                l.append(x + y)
+print(l)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[1, 3, 5, 7, 3, 5, 7, 9, 5, 7, 9, 11, 7, 9, 11, 13, 9, 11, 13, 15]
+\end{verbatim}
+\end{enumerate}
+
+\subsection{Functions}
+\label{sec:orgc5a411c}
+
+\subsubsection{Defining a function}
+\label{sec:org3ef9053}
+\begin{itemize}
+\item Functions in Python are defined using the \texttt{def} keyword.
+\item After the \texttt{def} keyword comes the name of the function, which has the same rules as Python identifiers. Refer to the \hyperref[org72b2d39]{section on Python identifiers} for the rules.
+\item After the name of the function, there are parentheses (\texttt{()}) to indicate the function parameters, which are the inputs to be passed to a function.
+\item Each parameter inside the parentheses (\texttt{()}) is separated with a comma (\texttt{,}).
+\item If there are no parameters, an empty pair of parentheses (\texttt{()}) is fine as well.
+\item After the parameter list in parentheses, a colon (\texttt{:}) must be present at the back of the function definition.
+\item The line after the colon (\texttt{:}) must be indented, and is the start of the function body.
+\end{itemize}
+
+\subsubsection{Function definition example}
+\label{sec:org9a65db8}
+\begin{minted}[]{python}
+# Function with parameters
+def function_definition(parameter_1, parameter_2):
+
+    # Function body...
+    print("Just defined a function!")
+    print("Printing arguments...")
+    print("parameter_1: {}".format(parameter_1))
+    print("parameter_2: {}".format(parameter_2))
+
+    # Optional return statement (can be omitted).
+    # When the return statement is omitted,
+    # the function returns None
+    return parameter_1 + parameter_2
+
+# Function without parameters
+def no_args_function():
+
+    # Use pass to skip defining the function
+    # This function will return None
+    pass
+\end{minted}
+
+\subsubsection{Using a function}
+\label{sec:org83803e4}
+\begin{itemize}
+\item Using a function is also called invoking a function or calling a function.
+\item To use a function, type out the function name and put the parentheses (\texttt{()}), as well as the desired arguments behind if there are any.
+\end{itemize}
+
+\begin{minted}[]{python}
+# No arguments
+print()
+
+# With arguments
+print("Hi there!")
+\end{minted}
+
+ \newpage
+
+\subsection{Exception handling (\texttt{try}-\texttt{except} block)}
+\label{sec:orge23df89}
+
+\subsubsection{\texttt{try} block}
+\label{sec:orgeded3c7}
+\begin{itemize}
+\item The \texttt{try} block contains code that \textbf{we want to monitor} for errors during execution.
+\item If an error occurs anywhere in that \texttt{try} block, Python looks for a \textbf{handler} that can deal with the error.
+\item If no specific handler exists, Python handles it.
+\begin{itemize}
+\item The program halts with an error message.
+\end{itemize}
+\end{itemize}
+
+\subsubsection{\texttt{except} block}
+\label{sec:org45be527}
+\begin{itemize}
+\item The \texttt{except} block is associated with a \texttt{try} block.
+\item A \texttt{try} block can have \textbf{multiple} \texttt{except} blocks after it.
+\item Each \texttt{except} block names a type of exception it is monitoring for and can \textbf{handle}.
+\item If the error occurring in the \texttt{try} block matches the type of exception, then the \textbf{first} \texttt{except} block is activated.
+\end{itemize}
+
+\subsubsection{\texttt{try}-\texttt{except} block}
+\label{sec:org49a34ae}
+\begin{itemize}
+\item If no exception is in the \texttt{try} block, skip to the next line of code after the \texttt{try}-\texttt{except} block.
+\item If an error occurs in a \texttt{try} block, look for the correct exception handler in the \texttt{except} blocks.
+\end{itemize}
+
+\subsubsection{Syntax}
+\label{sec:orgff4ebd7}
+\begin{minted}[]{python}
+try:
+    do_something()
+    do_something_else()
+    do_something_with_error()
+except TypeError:
+    handle_type_error()
+except IndexError:
+    handle_index_error()
+\end{minted}
+
+\subsubsection{Example}
+\label{sec:org9ecb7d8}
+\begin{minted}[]{python}
+try:
+    print("Entering the try block")
+    dividend = float(input("Enter the dividend: "))
+    divisor = float(input("Enter the divisor: "))
+    result = dividend / divisor
+    print("The result is ", result)
+
+except ZeroDivisionError:
+    print("Can't divide by 0!")
+
+except ValueError:
+    print("Couldn't convert your input to a float")
+
+print("Continuing with the rest of the program...")
+\end{minted}
+
+\subsubsection{Built-in exceptions}
+\label{sec:orgcd50195}
+\begin{itemize}
+\item Python has a list of exceptions that are built-in.
+\item To find an exception that you're interested in, you can try it in the Python interpreter.
+\item You can also look at the Python documentation on exceptions.
+\end{itemize}
+
+\subsubsection{\texttt{else} block}
+\label{sec:orgafe1686}
+The \texttt{else} block is used to execute code when \textbf{no exception} occurs.
+
+\begin{minted}[]{python}
+try:
+    result = do_something_with_error()
+except IndexError:
+    handle_index_error()
+else:
+    do_something_with_result(result)
+\end{minted}
+
+ \newpage
+
+\subsubsection{\texttt{finally} block}
+\label{sec:orgbe15b37}
+\begin{itemize}
+\item The \texttt{finally} block is used to execute code at the end of a \texttt{try}-\texttt{except} block, regardless of whether an error has occurred.
+\item The \texttt{finally} block must be placed \textbf{after all the other blocks} in the \texttt{try}-\texttt{except} code block.
+\end{itemize}
+
+\begin{minted}[]{python}
+try:
+    do_something_with_error()
+except TypeError:
+    handle_type_error()
+finally:
+    always_do_this_regardless_of_error()
+\end{minted}
+
+\subsubsection{\texttt{try}-\texttt{except}-\texttt{else}-\texttt{finally}}
+\label{sec:orga1c7bd5}
+Note that the \texttt{else} block must always come \textbf{before} the \texttt{finally} block.
+\begin{minted}[]{python}
+try:
+    result = x / y
+except ZeroDivisionError:
+    print("Divide by zero!")
+else:
+    print(result)
+finally:
+    print("Goodbye!")
+\end{minted}
+
+\subsection{Method in general}
+\label{sec:orgca3f910}
+\begin{minted}[]{python}
+object.method()
+\end{minted}
+
+ \noindent We say that \texttt{object} is calling the method \texttt{method}.
+
+
+\subsection{Whitespace}
+\label{sec:org8439d83}
+Python counts the "Tab", "Space bar" and "Enter" as white spaces.
+\begin{itemize}
+\item The purpose of whitespace is to separate words in a statement.
+\item For the most part, you can place white spaces anywhere in your program to make the code more readable.
+\end{itemize}
+
+\subsection{Indentation}
+\label{sec:org5a38bdc}
+An indentation is a leading whitespace at the start of a statement. In Python, a group of indented statements is called a \textbf{suite} or a \textbf{block}. A \textbf{compound statement} is a set of statements being used as a group.
+
+Purpose of indentation:
+\begin{itemize}
+\item Makes the code more readable
+\item For grouping, particularly for control flow such as branching and looping
+\end{itemize}
+
+\subsection{Arithmetic operators}
+\label{sec:orgefe1281}
+
+\begin{center}
+\begin{tabular}{|c|m{32em}|}
+\hline
+Operator & Meaning\\[0pt]
+\hline
+\texttt{+} & Add two operands or unary plus\\[0pt]
+\hline
+\texttt{-} & Subtract the right operand from the left or unary minus\\[0pt]
+\hline
+\texttt{*} & Multiply two operands\\[0pt]
+\hline
+\texttt{/} & Floating point division: divide the left operand by the right one (always results in a \texttt{float})\\[0pt]
+\hline
+\texttt{\%} & Modulus: remainder of the division of the left operand by the right\\[0pt]
+\hline
+\texttt{//} & Floor division (integer division): the resultant value is a whole integer, although the result's type is not necessarily \texttt{int}\\[0pt]
+\hline
+\texttt{**} & Exponent: the left operant is raised to the power of the right operand\\[0pt]
+\hline
+\end{tabular}
+\end{center}
+
+\subsection{Augmented assignment operators}
+\label{sec:org47ea036}
+
+\begin{center}
+\begin{tabular}{c|c}
+Shortcut & Equivalent\\[0pt]
+\hline
+\texttt{x += 2} & \texttt{x = x + 2}\\[0pt]
+\texttt{x -= 2} & \texttt{x = x - 2}\\[0pt]
+\texttt{x /= 2} & \texttt{x = x / 2}\\[0pt]
+\texttt{x *= 2} & \texttt{x = x * 2}\\[0pt]
+\texttt{x \%= 2} & \texttt{x = x \% 2}\\[0pt]
+\end{tabular}
+\end{center}
+
+ \newpage
+
+\subsection{"Truthy" and "falsy" values}
+\label{sec:org757cee3}
+\label{orgf40bd7d}
+A "truthy" value is a value that will satisfy the check performed by \texttt{if} or \texttt{while} statements, while "falsy" values will not. "Truthy" and "falsy" are used to differentiate from the \texttt{bool} values \texttt{True} and \texttt{False}.
+
+ \noindent All values are considered "truthy", except for the following, which are considered "falsy":
+\begin{itemize}
+\item \texttt{None}
+\item \texttt{False}
+\item \texttt{0}
+\item \texttt{0.0}
+\item \texttt{0j}
+\item \texttt{Decimal(0)}
+\item \texttt{Fraction(0, 1)}
+\item \texttt{[]} - an empty \texttt{list}
+\item \texttt{\{\}} - an empty \texttt{dict}
+\item \texttt{tuple()} - an empty \texttt{tuple}
+\item \texttt{''} - an empty \texttt{str}
+\item \texttt{b''} - an empty \texttt{bytes}
+\item \texttt{set()} - an empty \texttt{set}
+\item An empty range, like \texttt{range(0)}
+\item Objects for which:
+\begin{itemize}
+\item \texttt{obj.\_\_bool\_\_()} returns \texttt{False}
+\item \texttt{obj.\_\_len\_\_()} returns \texttt{0}
+\end{itemize}
+\end{itemize}
+
+ \newpage
+
+\subsection{Chained comparisons}
+\label{sec:org30cb554}
+In Python, chained comparisons work just like you would expect in a mathematical expression.
+
+\subsubsection{Examples}
+\label{sec:orgdc5f7e7}
+\begin{itemize}
+\item \texttt{0 <= x <= 5} is the same as \texttt{0 <= x and x <= 5}.
+\item \texttt{0 <= x <= 5 > 10} is the same as \texttt{0 <= x and x <= 5 and x > 10}.
+\end{itemize}
+
+ \newpage
+
+\section{Documentation for Python functions}
+\label{sec:orgcbe5ca7}
+
+\subsection{Floor division operator (\texttt{//})}
+\label{sec:org7055f52}
+\begin{itemize}
+\item The floor division operator takes the floor of the left number divided by the right number. Flooring a number means to round the number down to the integer. For example, flooring 5.987 will result in 5.0, and flooring -3.14 will result in -4.0.
+\item Take note that flooring a floating point number (\texttt{float}), will result in a \textbf{floating point number (\texttt{float})} being returned, \textbf{NOT} an integer (\texttt{int}).
+\item To get an integer type back, use the \texttt{math.floor} function instead, which returns an integer instead of a float when flooring a floating point number.
+\end{itemize}
+
+\subsubsection{Syntax}
+\label{sec:org4cfd3da}
+\texttt{x // y}
+
+\subsection{Modulus operator (remainder operator) (\texttt{\%})}
+\label{sec:orgcccd81a}
+The modulus operator takes the remainder of the left number divided by the right number.
+
+\subsubsection{Syntax}
+\label{sec:org25b461d}
+\texttt{x \% y}
+
+ \noindent The remainder of \texttt{x / y}.
+
+\subsubsection{Formula used to calculate the remainder}
+\label{sec:org1f9b059}
+\texttt{x \% y = x - y * (x // y)}
+
+\subsubsection{Example}
+\label{sec:orga9d9c68}
+\begin{minted}[]{python}
+print(8 % 3)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+2
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{Boolean AND operator (\texttt{and})}
+\label{sec:orgf898fdc}
+Return the first \textbf{"falsy"} value if there are any, else return the \textbf{last} value in the expression. Refer to the \hyperref[orgf40bd7d]{section on "truthy" and "falsy" values} for an explanation of "falsy".
+
+\subsubsection{Syntax}
+\label{sec:org1632c42}
+\begin{minted}[]{python}
+a and b
+\end{minted}
+
+\subsubsection{Example}
+\label{sec:org20dfc11}
+\begin{minted}[]{python}
+a = 1
+b = 5
+print(a > 1 and b < 10)
+print(a == 1 and b > 3)
+print(a and b)
+print(False and "something")
+print(1 and 5 and 6 and 0 and 10 and 9)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+False
+True
+5
+False
+0
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{Boolean OR operator (\texttt{or})}
+\label{sec:org89146a6}
+Return the first \textbf{"truthy"} value if there are any, else return the \textbf{last} value in the expression. Refer to the \hyperref[orgf40bd7d]{section on "truthy" and "falsy" values} for an explanation of "truthy".
+
+\subsubsection{Syntax}
+\label{sec:org9bde34f}
+\begin{minted}[]{python}
+a or b
+\end{minted}
+
+\subsubsection{Example}
+\label{sec:orgca02704}
+\begin{minted}[]{python}
+a = 1
+b = 5
+print(a > 1 or b < 10)
+print(a == 1 or b > 3)
+print(a or b)
+print(False or "something")
+print(1 or 5 or 6 or 0 or 10 or 9)
+print("" or "default value")
+print(False or "" or 0 or [] or "wow")
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+True
+1
+something
+1
+default value
+wow
+\end{verbatim}
+
+
+ \newpage
+
+\subsubsection{In combination with the boolean AND operator (\texttt{and})}
+\label{sec:orgcf84b8e}
+\begin{minted}[]{python}
+a = 5
+b = 10
+print((a == 5 or b > 30) and (a < 2 or b > 5))
+print(a >= 3 and b < 15 or a < 3 and b > 8)
+print(a and b or b or a)
+print(a and b or b and a or a or b or a)
+print(0 and 5 or 100)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+True
+10
+10
+100
+\end{verbatim}
+
+\subsection{\texttt{input}}
+\label{sec:orgc424e1f}
+\texttt{input} is a built-in function in Python to get an input.
+\begin{itemize}
+\item It prints the message string on the screen and waits until the user types anything and presses "Enter".
+\item It returns a \textbf{string} no matter what is given, even a number.
+\end{itemize}
+
+\subsubsection{Usage}
+\label{sec:orga9ff496}
+\begin{minted}[]{python}
+user_input = input("Please enter an input: ")
+\end{minted}
+
+ \noindent \texttt{user\_input} will be a \textbf{string}.
+
+ \newpage
+
+\subsection{\texttt{print}}
+\label{sec:org4577853}
+\texttt{print} is another built-in function in Python that displays related messages and data on the shell screen. It uses a \textbf{comma} to separate the elements.
+
+\begin{minted}[]{python}
+a = 1
+b = 2
+print("a is", a, "and b is", b)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+a is 1 and b is 2
+\end{verbatim}
+
+\subsubsection{\texttt{sep} parameter (optional)}
+\label{sec:org058f510}
+\texttt{sep} takes a \textbf{string} that specifies what \textbf{string} to use to separate the objects passed to the function, if there is more than one. It defaults to a space character, " ".
+
+\begin{minted}[]{python}
+a = 1
+b = 2
+print("a is", a, "and b is", b, sep=" @ ")
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+a is @ 1 @ and b is @ 2
+\end{verbatim}
+
+\subsubsection{\texttt{end} parameter (optional)}
+\label{sec:orgef4f96d}
+\texttt{end} takes a \textbf{string} that specifies what the end of the printed string should be. It defaults to a new line "\texttt{\textbackslash{}n}".
+
+\begin{minted}[]{python}
+print("Hello world!")
+print("My first program.")
+print("Hello world!", end=" ")
+print("My first program.")
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+Hello world!
+My first program.
+Hello world! My first program.
+\end{verbatim}
+
+\subsubsection{\texttt{file} parameter (optional)}
+\label{sec:orgc48bf16}
+\begin{itemize}
+\item \texttt{file} takes a \textbf{file object} as the file to print to.
+\item Nothing will be printed to the screen when this parameter is given.
+\item Instead, the file will be written to with the items given to the \texttt{print} function.
+\end{itemize}
+\begin{minted}[]{python}
+file = open("temp.txt", "w")
+print("First line", file=file)
+print("Second line", file=file)
+print("Third line", file=file)
+file.close()
+\end{minted}
+
+\subsection{\texttt{range}}
+\label{sec:org92b523d}
+\texttt{range([start], end[, step])}
+\begin{itemize}
+\item \texttt{start} is the starting number of the sequence. The default value is 0.
+\item \texttt{end} is the number to generate numbers up to, but not including this number.
+\item \texttt{step} is the difference between each number in the sequence. The default value is 1.
+\end{itemize}
+
+\subsubsection{\texttt{range(end)}}
+\label{sec:orgab96e4e}
+\begin{itemize}
+\item Python sets \texttt{start} to 0 and \texttt{step} to 1.
+\end{itemize}
+
+\begin{minted}[]{python}
+print(list(range(11)))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+\end{verbatim}
+
+\subsubsection{\texttt{range(start, end)}}
+\label{sec:orgb72b473}
+\begin{itemize}
+\item Python sets \texttt{step} to 1.
+\end{itemize}
+
+\begin{minted}[]{python}
+print(list(range(1, 11)))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+\end{verbatim}
+
+\subsubsection{\texttt{range(start, end, step)}}
+\label{sec:orgd8b8a6b}
+
+\begin{minted}[]{python}
+print(list(range(1, 11, 2)))
+print(list(range(11, 2, -2)))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[1, 3, 5, 7, 9]
+[11, 9, 7, 5, 3]
+\end{verbatim}
+
+\subsection{\texttt{ord}}
+\label{sec:org20a4728}
+Takes a character as input and returns the Unicode of the character. For standard symbols, this is the same as in ASCII.
+
+\begin{minted}[]{python}
+print(ord("a"))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+97
+\end{verbatim}
+
+\subsection{\texttt{chr}}
+\label{sec:orgcc0fa40}
+Takes an ASCII or UTF-8 code and returns the corresponding character.
+
+\begin{minted}[]{python}
+print(chr(97))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+a
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{\texttt{sorted}}
+\label{sec:orgc8c9a0f}
+\begin{itemize}
+\item This function takes a collection, like a \textbf{list}, \textbf{tuple}, \textbf{dictionary}, or a \textbf{set}, and returns a \textbf{sorted list} of the items in the collection.
+\item This function does not modify the original collection, and returns a \textbf{new} list.
+\item This function uses a sorting algorithm called \href{https://en.wikipedia.org/wiki/Timsort}{Timsort}.
+\end{itemize}
+
+\begin{minted}[]{python}
+num_list = [10, 6, 3, 1, 9]
+num_tuple = (10, 6, 3, 1, 9)
+num_set = {10, 6, 3, 1, 9}
+num_dict = {
+    10: "ten",
+    6: "six",
+    3: "three",
+    1: "one",
+    9: "nine"
+}
+
+print(sorted(num_list))
+print(sorted(num_tuple))
+print(sorted(num_set))
+print(sorted(num_dict))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[1, 3, 6, 9, 10]
+[1, 3, 6, 9, 10]
+[1, 3, 6, 9, 10]
+[1, 3, 6, 9, 10]
+\end{verbatim}
+
+
+ \newpage
+
+\subsubsection{\texttt{key} parameter (optional)}
+\label{sec:org59bed96}
+\begin{itemize}
+\item \texttt{key} takes a function that acts on the \textbf{items} in the collection that is being sorted.
+\item The sorting algorithm uses the \textbf{result} of that function to sort the values.
+\end{itemize}
+
+\begin{minted}[]{python}
+num_list = [10, 6, 3, 1, 9]
+num_dict = {
+    10: "ten",
+    6: "six",
+    3: "three",
+    1: "one",
+    9: "nine"
+}
+
+def get_dict_value(dict_item: tuple):
+    "Function to get the value from the dictionary when calling dict.items()"
+    return dict_item[1]
+
+def alternate(num: int) -> int:
+    """
+    Function to change the sign of the number based on its value.
+
+    For example, for 10, this function will return:
+    result = 10 * (-1) ** (10 + 1)
+    result = 10 * (-1) ** 11
+    result = 10 * (-1)
+    result = -10
+    """
+    return num * (-1) ** (num + 1)
+
+# Sort based on the dictionary value, which is to sort using alphabetical order
+print(sorted(num_dict.items(), key=get_dict_value))
+
+print(sorted(num_list, key=alternate))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[(9, 'nine'), (1, 'one'), (6, 'six'), (10, 'ten'), (3, 'three')]
+[10, 6, 1, 3, 9]
+\end{verbatim}
+
+\subsubsection{\texttt{reverse} parameter (optional)}
+\label{sec:org70cd256}
+\begin{itemize}
+\item \texttt{reverse} takes a boolean that tells the sorted function to reverse the list.
+\item The value of \texttt{True} will \textbf{reverse} the list.
+\item The value of \texttt{False} will \textbf{not} reverse the list.
+\item The default value is \texttt{False}.
+\end{itemize}
+
+\begin{minted}[]{python}
+num_list = [10, 6, 3, 1, 9]
+
+print(sorted(num_list))
+print(sorted(num_list, reverse=True))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[1, 3, 6, 9, 10]
+[10, 9, 6, 3, 1]
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{String method: \texttt{string.upper}}
+\label{sec:org6bfc975}
+This method will output a new string, which is the same as the string on which it was called, except all letters in the string will now be in uppercase.
+
+\begin{minted}[]{python}
+string = "Shouting!"
+print(string.upper())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+SHOUTING!
+\end{verbatim}
+
+\subsection{String method: \texttt{string.lower}}
+\label{sec:orgd5c3254}
+This method will output a new string, which is the same as the string on which it was called, except all letters in the string will now be in lowercase.
+
+\begin{minted}[]{python}
+string = "WHISPERING"
+print(string.lower())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+whispering
+\end{verbatim}
+
+\subsection{String method: \texttt{string.title}}
+\label{sec:org4b97ef3}
+This method will output a new string, which is the same as the string on which it was called, except that the string will be in title case, which means that every word in the string will be capitalised.
+
+\begin{minted}[]{python}
+string = "john f. kennedy"
+print(string.title())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+John F. Kennedy
+\end{verbatim}
+
+\subsection{String method: \texttt{string.capitalize}}
+\label{sec:orgda86cba}
+\begin{itemize}
+\item This method will output a new string, which is the same as the string on which it was called, except that the first letter of the first word of the string will be capitalised.
+\item Take note that capitalize is using the American spelling with a "z", instead of the British spelling with a "s".
+\end{itemize}
+
+\begin{minted}[]{python}
+string = "this is a sentence."
+print(string.capitalize())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+This is a sentence.
+\end{verbatim}
+
+\subsection{String method: \texttt{string.find}}
+\label{sec:org4c860c2}
+\begin{itemize}
+\item This method takes a single character and outputs the \textbf{index} of the character (first seen from left to right).
+\item If the character is not found, \texttt{-1} is returned.
+\end{itemize}
+
+\begin{minted}[]{python}
+string = "Find me!"
+print(string.find("m"))
+print(string.find("a"))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+5
+-1
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{String method: \texttt{string.index}}
+\label{sec:org0b938b2}
+\begin{itemize}
+\item This method takes a single character and outputs the \textbf{index} of the character (first seen from left to right).
+\item If the character is not found, a \texttt{ValueError} is thrown.
+\item This method is essentially the same as the above \texttt{string.find} method, but it throws an error when the value isn't found.
+\item In a way, it's a worse version of the \texttt{string.find} method.
+\end{itemize}
+
+\begin{minted}[]{python}
+string = "Find me!"
+print(string.index("m"))
+print(string.index("a"))    # Error
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+5
+\end{verbatim}
+
+\subsection{String method: \texttt{string.count}}
+\label{sec:org0c4d757}
+This method counts the number of occurrences of the substring you pass to the method.
+
+\begin{minted}[]{python}
+string = "This is an pretty long sentence."
+print(string.count("i"))
+print(string.count("t"))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+2
+3
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{String method: \texttt{string.join}}
+\label{sec:org769b635}
+This method takes a \textbf{string} to be joined and outputs a new string where the base string joins the target string.
+
+\begin{minted}[]{python}
+string_1 = "1234"
+string_2 = "abcd"
+print(string_1.join(string_2))
+print(string_2.join(string_1))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+a1234b1234c1234d
+1abcd2abcd3abcd4
+\end{verbatim}
+
+\subsection{String method: \texttt{string.split}}
+\label{sec:orgd26e500}
+\begin{itemize}
+\item This method takes a \textbf{string} and generates a list of strings by splitting the string at the given string.
+\item The default character the string splits at is \textbf{whitespace}.
+\item This method returns a list of strings.
+\end{itemize}
+
+\begin{minted}[]{python}
+l = "oooo a list of strings"
+print(l.split())
+print(l.split("o"))
+print(l.split("st"))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+['oooo', 'a', 'list', 'of', 'strings']
+['', '', '', '', ' a list ', 'f strings']
+['oooo a li', ' of ', 'rings']
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{String method: \texttt{string.isalnum}}
+\label{sec:org2f80db9}
+Returns \texttt{True} if all characters in the string are \textbf{alphanumeric}, which means all the letters of the alphabet and the numbers 0 to 9.
+
+\begin{minted}[]{python}
+print("abcdef12345".isalnum())
+print("abcdef12345_".isalnum())
+print("abcdef12345_(*&#)".isalnum())
+print("-1".isalnum())
+print("1.5".isalnum())
+print("-1.5".isalnum())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+False
+False
+False
+False
+False
+\end{verbatim}
+
+\subsection{String method: \texttt{string.isalpha}}
+\label{sec:orgb8a76bd}
+Returns \texttt{True} if all characters in the string are in the \textbf{alphabet}.
+
+\begin{minted}[]{python}
+print("abcdef".isalpha())
+print("abcdef12345".isalpha())
+print("abcdef12345_(*&#)".isalpha())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+False
+False
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{String method: \texttt{string.isascii}}
+\label{sec:orge7b6ba8}
+Returns \texttt{True} if all characters in the string are \textbf{ASCII characters}.
+
+\begin{minted}[]{python}
+print("abcdef".isascii())
+print("abcdef12345".isascii())
+print("abcdef12345_(*&#)".isascii())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+True
+True
+\end{verbatim}
+
+\subsection{String method: \texttt{string.isdecimal}}
+\label{sec:org4f32b34}
+Returns \texttt{True} if all characters in the string are \textbf{decimals (0 to 9)}.
+
+\begin{minted}[]{python}
+print("12392483".isdecimal())
+print("sldkfjd".isdecimal())
+print("abcdef12345".isdecimal())
+print("abcdef12345_(*&#)".isdecimal())
+print("-1".isdecimal())
+print("1.5".isdecimal())
+print("-1.5".isdecimal())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+False
+False
+False
+False
+False
+False
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{String method: \texttt{string.isdigit}}
+\label{sec:org322c0b2}
+\begin{itemize}
+\item Returns \texttt{True} if all characters in the string are \textbf{digits}.
+\item Exponents like the superscript 2 in 1\textsuperscript{2} are also considered digits.
+\item \texttt{"-1"}, \texttt{"1.5"} and \texttt{"-1.5"} are \textbf{not} considered digits as all the characters in the string must be a digit. \texttt{"-"} and \texttt{"."} are not digits.
+\end{itemize}
+
+\begin{minted}[]{python}
+print("12392483".isdigit())
+print("sldkfjd".isdigit())
+print("abcdef12345".isdigit())
+print("abcdef12345_(*&#)".isdigit())
+print("-1".isdigit())
+print("1.5".isdigit())
+print("-1.5".isdigit())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+False
+False
+False
+False
+False
+False
+\end{verbatim}
+
+\subsection{String method: \texttt{string.isidentifier}}
+\label{sec:org7694ff7}
+Returns \texttt{True} if the string is \textbf{a valid Python identifier}. Basically, it checks if the string is a valid Python variable name.
+
+\begin{minted}[]{python}
+print("12392483".isidentifier())
+print("varname".isidentifier())
+print("_private".isidentifier())
+print("string1".isidentifier())
+print("omg!".isidentifier())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+False
+True
+True
+True
+False
+\end{verbatim}
+
+\subsection{String method: \texttt{string.islower}}
+\label{sec:org287c424}
+Returns \texttt{True} if all characters in the string are \textbf{lower case}.
+
+\begin{minted}[]{python}
+print("12093".islower())
+print("whispering...".islower())
+print("SHOUTING!".islower())
+print("39485943wow".islower())
+print("39485943WOW".islower())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+False
+True
+False
+True
+False
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{String method: \texttt{string.isnumeric}}
+\label{sec:org15bee9c}
+\begin{itemize}
+\item Returns \texttt{True} if all characters in the string are \textbf{numeric}.
+\item Exponents like the superscript 2 in 1\textsuperscript{2}, as well as fractions, are also considered numeric.
+\item \texttt{"-1"}, \texttt{"1.5"} and \texttt{"-1.5"} are \textbf{not} considered numeric as all the characters in the string must be numeric. \texttt{"-"} and \texttt{"."} are not numeric characters.
+\end{itemize}
+
+\begin{minted}[]{python}
+print("12392483".isnumeric())
+print("sldkfjd".isnumeric())
+print("abcdef12345".isnumeric())
+print("abcdef12345_(*&#)".isnumeric())
+print("-1".isnumeric())
+print("1.5".isnumeric())
+print("-1.5".isnumeric())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+False
+False
+False
+False
+False
+False
+\end{verbatim}
+
+\subsection{String method: \texttt{string.isprintable}}
+\label{sec:orgcc1c59c}
+Returns \texttt{True} if all characters in the string are \textbf{printable}.
+
+\begin{minted}[]{python}
+print("12392483".isprintable())
+print("sldkfjd".isprintable())
+print("abcdef12345".isprintable())
+print("abcdef12345_(*&#)".isprintable())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+True
+True
+True
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{String method: \texttt{string.isspace}}
+\label{sec:org80df136}
+Returns \texttt{True} if all characters in the string are \textbf{white spaces}.
+
+\begin{minted}[]{python}
+print("      ".isspace())
+print("  alkdfjlas".isspace())
+print("    abc   def   12345    ".isspace())
+print("".isspace())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+False
+False
+False
+\end{verbatim}
+
+\subsection{String method: \texttt{string.istitle}}
+\label{sec:org49e1997}
+Returns \texttt{True} if the string is in \textbf{title case}.
+
+\begin{minted}[]{python}
+print("Wow This Is Cool".istitle())
+print("wow this is cool".istitle())
+print("WOW THIS IS COOL".istitle())
+print("Wow this is cool".istitle())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+True
+False
+False
+False
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{String method: \texttt{string.isupper}}
+\label{sec:orgadf7921}
+Returns \texttt{True} if all characters in the string are \textbf{upper case}.
+
+\begin{minted}[]{python}
+print("12093".isupper())
+print("whispering...".isupper())
+print("SHOUTING!".isupper())
+print("39485943wow".isupper())
+print("39485943WOW".isupper())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+False
+False
+True
+False
+True
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{String method: \texttt{string.format}}
+\label{sec:orge72129f}
+\begin{itemize}
+\item This method takes any number of arguments and keyword arguments which are substituted into the string that the format method is being called on.
+\item The string that calls this method should have placeholders inside curly brackets \{\}.
+\item The placeholders can be either be identified using named indexes \texttt{\{price\}}, or numbered indexes \texttt{\{0\}}, or empty placeholders \texttt{\{\}}.
+\end{itemize}
+
+\begin{minted}[]{python}
+print("{} is a nice number.".format(4200.696969))
+print("{meh:.2f} is a meh number.".format(meh=4200.696969))
+print("{0:.4f} is a meh number.".format(4200.696969))
+print("{:_.6f} is a nice number.".format(4200.696969))
+print("{nice:,.6f} is a nice number.".format(nice=4200.696969))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+4200.696969 is a nice number.
+4200.70 is a meh number.
+4200.6970 is a meh number.
+4_200.696969 is a nice number.
+4,200.696969 is a nice number.
+\end{verbatim}
+
+\subsubsection{\texttt{:<} formatting type}
+\label{sec:org4598715}
+Left aligns the result (within the available space given).
+
+\begin{minted}[]{python}
+print("{:<20} 20 spaces".format(4200.696969))
+print("{:*<15} 15 stars".format(4200.696969))
+print("{:#<10} 10 hashes".format(4200.696969))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+4200.696969          20 spaces
+4200.696969**** 15 stars
+4200.696969 10 hashes
+\end{verbatim}
+
+
+\subsubsection{\texttt{:>} formatting type}
+\label{sec:org729ab52}
+Right aligns the result (within the available space given).
+
+\begin{minted}[]{python}
+print("{:>20} 20 spaces".format(4200.696969))
+print("{:*>15} 15 stars".format(4200.696969))
+print("{:#>10} 10 hashes".format(4200.696969))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+         4200.696969 20 spaces
+****4200.696969 15 stars
+4200.696969 10 hashes
+\end{verbatim}
+
+\subsubsection{\texttt{:\textasciicircum{}} formatting type}
+\label{sec:org1d89a05}
+Centre aligns the result (within the available space given).
+
+\begin{minted}[]{python}
+print("{:^20} 20 spaces".format(4200.696969))
+print("{:*^15} 15 stars".format(4200.696969))
+print("{:#^10} 10 hashes".format(4200.696969))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+    4200.696969      20 spaces
+**4200.696969** 15 stars
+4200.696969 10 hashes
+\end{verbatim}
+
+\subsubsection{\texttt{:=} formatting type}
+\label{sec:orgd775ea4}
+Places the sign to the left most position instead of just left of the number when there is padding.
+
+\begin{minted}[]{python}
+print("{:20} 20 spaces".format(-4200.696969))
+print("{:=20} 20 spaces".format(-4200.696969))
+\end{minted}
+
+\begin{verbatim}
+        -4200.696969 20 spaces
+-        4200.696969 20 spaces
+\end{verbatim}
+
+
+ \noindent Output:
+
+\begin{verbatim}
+4200.696969 positive number
+-4200.696969 negative number
+0 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:+} formatting type}
+\label{sec:org0a3a92e}
+Use a plus sign or a minus sign to indicate if the result is positive or negative respectively.
+
+\begin{minted}[]{python}
+print("{:+} positive number".format(4200.696969))
+print("{:+} negative number".format(-4200.696969))
+print("{:+} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
++4200.696969 positive number
+-4200.696969 negative number
++0 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:-} formatting type}
+\label{sec:orga4ec057}
+\begin{itemize}
+\item Use a minus sign for negative values only.
+\item This is the default behaviour.
+\end{itemize}
+
+\begin{minted}[]{python}
+print("{:-} positive number".format(4200.696969))
+print("{:-} negative number".format(-4200.696969))
+print("{:-} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+4200.696969 positive number
+-4200.696969 negative number
+0 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:<space>} formatting type}
+\label{sec:org101b531}
+\begin{itemize}
+\item Replace the \texttt{<space>} with an actual space character.
+\item Use a space to insert an extra space before positive numbers (and a minus sign before negative numbers).
+\end{itemize}
+
+\begin{minted}[]{python}
+print("{: } positive number".format(4200.696969))
+print("{: } negative number".format(-4200.696969))
+print("{: } zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+ 4200.696969 positive number
+-4200.696969 negative number
+ 0 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:,} formatting type}
+\label{sec:orga317882}
+Use a comma as a thousand separator.
+
+\begin{minted}[]{python}
+print("{:,} positive number".format(4200.696969))
+print("{:,} negative number".format(-4200.696969))
+print("{:,} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+4,200.696969 positive number
+-4,200.696969 negative number
+0 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:\_} formatting type}
+\label{sec:org7633537}
+Use an underscore as a thousand separator.
+
+\begin{minted}[]{python}
+print("{:_} positive number".format(4200.696969))
+print("{:_} negative number".format(-4200.696969))
+print("{:_} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+4_200.696969 positive number
+-4_200.696969 negative number
+0 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:b} formatting type}
+\label{sec:orgaf8c6cf}
+Binary format, only applicable to integers.
+
+\begin{minted}[]{python}
+print("{:b} positive number".format(42069))
+print("{:b} negative number".format(-42069))
+print("{:b} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+1010010001010101 positive number
+-1010010001010101 negative number
+0 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:c} formatting type}
+\label{sec:orgbefe305}
+Converts the value into the corresponding Unicode character. Only applicable to positive integers.
+
+\begin{minted}[]{python}
+print("{:c} Unicode character 100".format(100))
+print("{:c} Unicode character 69".format(69))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+d Unicode character 100
+E Unicode character 69
+\end{verbatim}
+
+\subsubsection{\texttt{:d} formatting type}
+\label{sec:org8d7acb8}
+Decimal format.
+
+\begin{minted}[]{python}
+print("{:d} positive number".format(42069))
+print("{:d} negative number".format(-42069))
+print("{:d} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+42069 positive number
+-42069 negative number
+0 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:e} formatting type}
+\label{sec:orgc0ed33b}
+Scientific format, with a lower case e.
+
+\begin{minted}[]{python}
+print("{:e} positive number".format(4200.696969))
+print("{:.2e} negative number".format(-4200.696969))
+print("{:.4e} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+4.200697e+03 positive number
+-4.20e+03 negative number
+0.0000e+00 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:E} formatting type}
+\label{sec:org364550f}
+Scientific format, with an upper case E.
+
+\begin{minted}[]{python}
+print("{:E} positive number".format(4200.696969))
+print("{:.2E} negative number".format(-4200.696969))
+print("{:.4E} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+4.200697E+03 positive number
+-4.20E+03 negative number
+0.0000E+00 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:f} formatting type}
+\label{sec:org8b594e6}
+Fix point number format.
+
+\begin{minted}[]{python}
+print("{:f} positive number".format(4200.696969))
+print("{:.2f} negative number".format(-4200.696969))
+print("{:.4f} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+4200.696969 positive number
+-4200.70 negative number
+0.0000 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:F} formatting type}
+\label{sec:org7ebd072}
+Fix point number format, in uppercase format (show inf and nan as INF and NAN).
+
+\begin{minted}[]{python}
+print("{:F} positive number".format(4200.696969))
+print("{:.2F} negative number".format(-4200.696969))
+print("{:.4F} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+4200.696969 positive number
+-4200.70 negative number
+0.0000 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:g} formatting type}
+\label{sec:org5e6b83e}
+General format.
+
+\begin{minted}[]{python}
+print("{:g} positive number".format(4200.696969))
+print("{:.2g} negative number".format(-4200.696969))
+print("{:.4g} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+4200.7 positive number
+-4.2e+03 negative number
+0 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:G} formatting type}
+\label{sec:org05d4503}
+General format (using an upper case E for scientific notations).
+
+\begin{minted}[]{python}
+print("{:G} positive number".format(4200.696969))
+print("{:.2G} negative number".format(-4200.696969))
+print("{:.4G} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+4200.7 positive number
+-4.2E+03 negative number
+0 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:o} formatting type}
+\label{sec:org7825d59}
+Octal format, only applicable to integers.
+
+\begin{minted}[]{python}
+print("{:o} positive number".format(42069))
+print("{:o} negative number".format(-42069))
+print("{:o} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+122125 positive number
+-122125 negative number
+0 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:x} formatting type}
+\label{sec:org7033c1d}
+Hex format, lowercase.
+
+\begin{minted}[]{python}
+print("{:x} positive number".format(42069))
+print("{:x} negative number".format(-42069))
+print("{:x} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+a455 positive number
+-a455 negative number
+0 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:X} formatting type}
+\label{sec:org1c5318b}
+Hex format, uppercase.
+
+\begin{minted}[]{python}
+print("{:X} positive number".format(42069))
+print("{:X} negative number".format(-42069))
+print("{:X} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+A455 positive number
+-A455 negative number
+0 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:n} formatting type}
+\label{sec:org55a26a4}
+Number format.
+
+\begin{minted}[]{python}
+print("{:n} positive number".format(4200.696969))
+print("{:n} negative number".format(-4200.696969))
+print("{:n} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+4200.7 positive number
+-4200.7 negative number
+0 zero
+\end{verbatim}
+
+\subsubsection{\texttt{:\%} formatting type}
+\label{sec:org4e7bea6}
+Percentage format.
+
+\begin{minted}[]{python}
+print("{:%} positive number".format(4200.696969))
+print("{:.2%} negative number".format(-4200.696969))
+print("{:.4%} zero".format(0))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+420069.696900% positive number
+-420069.70% negative number
+0.0000% zero
+\end{verbatim}
+
+\subsection{List method: \texttt{list.append}}
+\label{sec:orgc8beaf6}
+\begin{itemize}
+\item This method takes an element, which can be any Python object, and adds it to the end of the list.
+\item Note that this method \textbf{changes the list} in place and does \textbf{not} return any value.
+\end{itemize}
+\begin{minted}[]{python}
+l = [1, "omg wow", 420.69, False]
+l.append("lol")
+print(l)
+l.append(True)
+print(l)
+l.append(69)
+print(l)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[1, 'omg wow', 420.69, False, 'lol']
+[1, 'omg wow', 420.69, False, 'lol', True]
+[1, 'omg wow', 420.69, False, 'lol', True, 69]
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{List method: \texttt{list.extend}}
+\label{sec:org9288b57}
+\begin{itemize}
+\item This method takes a \textbf{list} and adds the elements of the given list to the end of the original list.
+\item This method cannot take an element to add to the back of the original list, use \texttt{list.append} for that.
+\item Using this method to add a string to the list will add all the characters in the string into the list instead of the string as one item.
+\item Note that this method \textbf{changes the list} in place and does \textbf{not} return any value.
+\end{itemize}
+
+\begin{minted}[]{python}
+l_1 = [1, "omg wow", 420.69, False]
+l_2 = ["extended l_1 hehe", "lovely", 6969, True]
+l_1.extend(l_2)
+print(l_1)
+l_1.extend(5)    # Error
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[1, 'omg wow', 420.69, False, 'extended l_1 hehe', 'lovely', 6969, True]
+\end{verbatim}
+
+\subsection{List method: \texttt{list.pop}}
+\label{sec:org90def7f}
+\begin{itemize}
+\item This method takes an index and removes the item corresponding to that index from the list.
+\item Note that this method \textbf{changes the list} in place and does \textbf{not} return any value.
+\end{itemize}
+\begin{minted}[]{python}
+l = [1, "omg wow", 420.69, False]
+l.pop(2)
+print(l)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[1, 'omg wow', False]
+\end{verbatim}
+
+\subsection{List method: \texttt{list.insert}}
+\label{sec:orga9eae27}
+\begin{itemize}
+\item This method takes an index and an element, which can be any Python object, and adds the element at the given index in the list.
+\item The element that was in the given index will be pushed back.
+\item Essentially, the given index will be the same index you can use to get the added element back from the list.
+\item Note that this method \textbf{changes the list} in place and does \textbf{not} return any value.
+\end{itemize}
+
+\begin{minted}[]{python}
+l = [1, "omg wow", 420.69, False]
+l.insert(3, 6969)
+print(l)
+print(l[3])
+l.insert(0, "I'm at the front")
+print(l)
+print(l[0])
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[1, 'omg wow', 420.69, 6969, False]
+6969
+["I'm at the front", 1, 'omg wow', 420.69, 6969, False]
+I'm at the front
+\end{verbatim}
+
+\subsection{List method: \texttt{list.remove}}
+\label{sec:orgf925fdc}
+\begin{itemize}
+\item This method takes an element and removes it from the list.
+\item Note that this method \textbf{changes the list} in place and does \textbf{not} return any value.
+\end{itemize}
+
+\begin{minted}[]{python}
+l = [1, "omg wow", 420.69, False]
+l.remove(420.69)
+print(l)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[1, 'omg wow', False]
+\end{verbatim}
+
+\subsection{List method: \texttt{list.sort}}
+\label{sec:org09fb7f8}
+\begin{itemize}
+\item This method sorts the list lexicographically.
+\item This means that everything is converted to a number if possible and the list can only be either a \textbf{list of strings} or a \textbf{list of numeric (\texttt{int} and \texttt{float}) and boolean values}.
+\item Strings will be compared using their ASCII character code.
+\item The boolean \texttt{True} is changed into 1 and the boolean \texttt{False} is changed to 0 when sorting a list.
+\item Note that this method \textbf{changes the list} in place and does \textbf{not} return any value.
+\end{itemize}
+
+\begin{minted}[]{python}
+l = [1, True, 420.69, False]
+l.sort()
+print(l)
+l = ["ooo", "a", "list", "of", "Only", "Strings"]
+l.sort()
+print(l)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[False, 1, True, 420.69]
+['Only', 'Strings', 'a', 'list', 'of', 'ooo']
+\end{verbatim}
+
+\subsection{List method: \texttt{list.reverse}}
+\label{sec:orge1c63ca}
+\begin{itemize}
+\item This method reverses the list in place.
+\item This means that the method will \textbf{change the list} in place and \textbf{not} return any value.
+\end{itemize}
+\begin{minted}[]{python}
+l = [1, "omg wow", 420.69, False]
+l.reverse()
+print(l)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+[False, 420.69, 'omg wow', 1]
+\end{verbatim}
+
+\subsection{Dictionary method: \texttt{dict.items}}
+\label{sec:orgef251b9}
+This method returns all the key value pairs in a list-like structure called \texttt{dict\_items}, containing the key value pairs as tuples.
+\begin{minted}[]{python}
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+print(dic.items())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+dict_items([('bill', 25), ('tax', 3)])
+\end{verbatim}
+
+\subsection{Dictionary method: \texttt{dict.keys}}
+\label{sec:orgec27571}
+This method returns all the keys of the dictionary in a list-like structure called \texttt{dict\_keys}.
+\begin{minted}[]{python}
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+print(dic.keys())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+dict_keys(['bill', 'tax'])
+\end{verbatim}
+
+\subsection{Dictionary method: \texttt{dict.values}}
+\label{sec:orge4b48f1}
+This method returns all the values of the dictionary in a list-like structure called \texttt{dict\_values}.
+\begin{minted}[]{python}
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+print(dic.values())
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+dict_values([25, 3])
+\end{verbatim}
+
+\subsection{Dictionary method: \texttt{dict.clear}}
+\label{sec:org7db004f}
+\begin{itemize}
+\item This method clears the \textbf{dictionary}, which means the dictionary becomes an empty dictionary again.
+\item This method \textbf{changes} the dictionary in place and \textbf{does not} return any value.
+\end{itemize}
+\begin{minted}[]{python}
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+dic.clear()
+print(dic)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+{}
+\end{verbatim}
+
+\subsection{Dictionary method: \texttt{dict.update}}
+\label{sec:org0d9745d}
+\begin{itemize}
+\item This method takes a dictionary and updates the original dictionary with the keys and values from the new dictionary.
+\item The \textbf{value in the new dictionary} is used if the new dictionary also has keys that are in the original dictionary
+\item This method \textbf{changes} the dictionary in place and \textbf{does not} return any value.
+\end{itemize}
+\begin{minted}[]{python}
+dic = {
+    "bill": 25,
+    "tax": 3
+}
+new_dic = {
+    "bill": 50,
+    "petrol": 20
+}
+dic.update(new_dic)
+print(dic)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+{'bill': 50, 'tax': 3, 'petrol': 20}
+\end{verbatim}
+
+\subsection{\texttt{open}}
+\label{sec:org8aa991e}
+\begin{itemize}
+\item Opens a file located on the disk.
+\item The function takes two strings, the first string contains either the name of the file or the file path.
+\item The second string tells Python what mode to open the file in.
+\item The default mode is read-only mode, or \texttt{"r"}.
+\end{itemize}
+
+ \noindent Opening a file in the \textbf{current program directory} on Windows:
+\begin{minted}[]{python}
+file = open("A_text_file.txt")
+file = open(".\A_text_file.txt")
+\end{minted}
+
+ \noindent Opening a file in the \textbf{parent directory} on Windows:
+\begin{minted}[]{python}
+file = open("..\A_text_file.txt")
+\end{minted}
+
+ \noindent Opening a file using its \textbf{absolute path} on Windows:
+\begin{minted}[]{python}
+file = open("C:\Users\Draykoth\Documents\A_text_file.txt")
+\end{minted}
+
+\subsubsection{File modes}
+\label{sec:orgf77bdac}
+\begin{center}
+\begin{tabular}{|c|c|m{10em}|m{10em}|}
+\hline
+Mode String & Mode & File exists & File doesn't exist\\[0pt]
+\hline
+"r" & Read-only & Opens the file. & Error\\[0pt]
+\hline
+"w" & Write-only & Clears the file contents. & Creates and opens a new file\\[0pt]
+\hline
+"a" & Write-only & The file contents are left intact and new data is appended at the end of the file. & Creates and opens a new file\\[0pt]
+\hline
+"r+" & Read and write & Reads and overwrites from the beginning of the file. & Error\\[0pt]
+\hline
+"w+" & Read and write & Clears the file contents. & Creates and opens a new file\\[0pt]
+\hline
+"a+" & Read and write & The file contents are left intact and reading and writing starts at the end of the file. & Creates and opens a new file\\[0pt]
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection{\texttt{encoding} parameter (optional)}
+\label{sec:org9852085}
+\begin{itemize}
+\item \texttt{encoding} takes a \textbf{string} that specifies the file encoding for reading the file.
+\item The default value is \texttt{"UTF-8"}, which is for text files.
+\item Binary files, depending on language or operating system, will have \textbf{different} encodings, and hence the encoding for binary files needs to be specified explicitly, like the example below.
+\item For more information about encodings, visit \href{http://getpython3.com/diveintopython3/strings.html\#boring-stuff}{this website}.
+\end{itemize}
+\begin{minted}[]{python}
+open("table.csv", "r", encoding="windows-1252")
+\end{minted}
+
+\subsubsection{Reading a file}
+\label{sec:org54e2363}
+\begin{minted}[]{python}
+# Opens the file in read-only mode
+file = open("A_text_file.txt", "r")
+
+# Iterates over the file and prints the lines.
+# No end character as the lines in the file already
+# include the new line character.
+for line in file:
+    print(line, end="")
+
+# Close the file
+file.close()
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+First line: €
+Second line
+Third line
+Fourth line
+Fifth line
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{File method: \texttt{file.close}}
+\label{sec:orgb04e2ba}
+\begin{itemize}
+\item This method closes the file.
+\item It is important to call this method once you're done with the file to save your changes to the disk.
+\item The information in the file buffer is "flushed" out of the buffer and into the file on the disk when this method is called.
+\item If you don't call this method, your changes WILL NOT be saved to the disk.
+\end{itemize}
+\begin{minted}[]{python}
+file.close()
+\end{minted}
+
+\subsubsection{Automatically closing a file}
+\label{sec:orgd207185}
+\begin{itemize}
+\item The file is opened at the \texttt{with} statement.
+\item The file mode is read-only, and the file type is text in the example below.
+\item The file is automatically closed at the end of the \texttt{with} block.
+\end{itemize}
+
+\begin{minted}[]{python}
+with open("A_text_file.txt", "r") as file:
+    for line in file:
+        print(line)
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+First line: €
+
+Second line
+
+Third line
+
+Fourth line
+
+Fifth line
+
+\end{verbatim}
+
+\subsection{File method: \texttt{file.readline}}
+\label{sec:orgf67b39d}
+\begin{itemize}
+\item This method returns the next line as a \textbf{string}.
+\item This method also moves the current file position forward.
+\item When the current file position reaches the end of the file, every read will yield an empty string \texttt{""}.
+\item Using the \texttt{seek} method is required to read the file again.
+\item Closing and reopening the file also works, but is far less efficient.
+\end{itemize}
+
+\begin{minted}[]{python}
+file = open("A_text_file.txt", "r")
+
+# No end character as the lines in the file already
+# include the new line character
+print(file.readline(), end="")
+print(file.readline(), end="")
+print(file.readline(), end="")
+file.close()
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+First line: €
+Second line
+Third line
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{File method: \texttt{file.readlines}}
+\label{sec:orge2dd690}
+\begin{itemize}
+\item This method returns a list of all the lines from the file.
+\item This method also moves the current file position forward.
+\item When the current file position reaches the end of the file, every read will yield an empty string \texttt{""}.
+\item Using the \texttt{seek} method is required to read the file again.
+\item Closing and reopening the file also works, but is far less efficient.
+\end{itemize}
+
+\begin{minted}[]{python}
+file = open("A_text_file.txt", "r")
+print(file.readlines())
+file.close()
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+['First line: €\n', 'Second line\n', 'Third line\n', 'Fourth line\n', 'Fifth line\n']
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{File method: \texttt{file.read}}
+\label{sec:org34d1915}
+\begin{itemize}
+\item This method takes an \textbf{integer}, which represents how many \textbf{characters} is to be read from the file.
+\item If this integer is not given, then the entire file is read and returned as a single string.
+\item This method also moves the current file position forward.
+\item When the current file position reaches the end of the file, every read will yield an empty string \texttt{""}.
+\item Using the \texttt{seek} method is required to read the file again.
+\item Closing and reopening the file also works, but is far less efficient.
+\end{itemize}
+
+\begin{minted}[]{python}
+file = open("A_text_file.txt", "r")
+print(file.read(5))
+file.close()
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+First
+\end{verbatim}
+
+
+\begin{minted}[]{python}
+file = open("A_text_file.txt", "r")
+print(file.read())
+file.close()
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+First line: €
+Second line
+Third line
+Fourth line
+Fifth line
+
+\end{verbatim}
+
+\subsection{File method: \texttt{file.write}}
+\label{sec:org40d4adb}
+This method takes a \textbf{string} and writes it to the file.
+\begin{minted}[]{python}
+file = open("temp.txt", "w")
+file.write("First line\n")
+file.write("Second line\n")
+file.close()
+\end{minted}
+
+\subsection{File method: \texttt{file.writelines}}
+\label{sec:org077863c}
+This method takes a \textbf{list of strings} and writes it to the file.
+\begin{minted}[]{python}
+file = open("temp.txt", "w")
+lines = ["First line\n", "Second line\n"]
+file.writelines(lines)
+file.close()
+\end{minted}
+
+\subsection{File method: \texttt{file.tell}}
+\label{sec:org292bbd9}
+\begin{itemize}
+\item This method tells returns an \textbf{integer} representing the \textbf{current file position}.
+\item The positions are in \textbf{bytes} from the \textbf{beginning} of the file.
+\item This is not necessarily the same as the number of characters, as it depends on encoding.
+\item Some characters may take multiple bytes, like the euro symbol in the example below.
+\end{itemize}
+
+\begin{minted}[]{python}
+file = open("A_text_file.txt", "r")
+print(file.tell())
+print(file.read(11))
+print(file.tell())
+print(file.read(1))
+print(file.tell())
+print(file.read(1))
+print(file.tell())
+file.close()
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+0
+First line:
+11
+ 
+12
+€
+15
+\end{verbatim}
+
+\subsection{File method: \texttt{file.seek}}
+\label{sec:org1cf3f95}
+This method takes an \textbf{integer} representing the offset in \textbf{bytes} from the \textbf{beginning} of the file and updates the current file position that position.
+\begin{minted}[]{python}
+# Seek to the beginning of the file
+file.seek(0)
+
+# Seek to 100 bytes from the beginning of the file
+file.seek(100)
+\end{minted}
+
+\subsubsection{Example}
+\label{sec:org8979809}
+\begin{minted}[]{python}
+file = open("A_text_file.txt", "r")
+print(file.read(12))
+print(file.tell())
+print(file.read(1))
+print(file.tell())
+print(file.seek(6))
+print(file.read(4))
+file.close()
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+First line: 
+12
+€
+15
+6
+line
+\end{verbatim}
+
+
+ \newpage
+
+\subsubsection{\texttt{whence} parameter (optional)}
+\label{sec:org7f9b429}
+\begin{itemize}
+\item \texttt{whence} takes an \textbf{integer}, either \texttt{0}, \texttt{1} or \texttt{2}, and represents file positioning.
+\item This parameter defaults to \texttt{0}, which is to count from the beginning of the file.
+\begin{itemize}
+\item \texttt{0} means to count from the beginning of the file.
+\item \texttt{1} means to count from the current position in the file.
+\item \texttt{2} means to count from the end of the file. This option is usually paired with a negative offset.
+\end{itemize}
+
+\item In text files, only seeks relative to the beginning of the file are allowed.
+\item An exception to this is the seek to the end of the file, like \texttt{file.seek(0, 2)}.
+\end{itemize}
+
+\begin{minted}[]{python}
+
+# Go to 100 bytes before the end of the file
+file.seek(-100, 2)
+
+# Go to 5 bytes from the current file position
+file.seek(5, 1)
+\end{minted}
+
+ \newpage
+
+\subsection{\texttt{math} module method: \texttt{math.floor}}
+\label{sec:org2e584e8}
+\begin{itemize}
+\item This method takes a number and returns an \textbf{integer (\texttt{int})} rounded \textbf{down} to the nearest integer.
+\item It works the same as the floor division operator (\texttt{//}), except that it always returns an \textbf{integer (\texttt{int})}.
+\item The \texttt{math} module must be \textbf{imported before} using this function.
+\end{itemize}
+
+\begin{minted}[]{python}
+import math
+print(math.floor(6))
+print(math.floor(6.9))
+print(math.floor(420.42))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+6
+6
+420
+\end{verbatim}
+
+\subsection{\texttt{math} module method: \texttt{math.sin}}
+\label{sec:org1988756}
+\begin{itemize}
+\item This method takes an angle in \textbf{radians} and returns the sine of the angle.
+\item In general, all trigonometric functions in the \texttt{math} module take an angle in \textbf{radians}.
+\item The \texttt{math} module must be \textbf{imported before} using this function.
+\end{itemize}
+
+\begin{minted}[]{python}
+import math
+print(math.sin(math.pi / 2))
+print(math.sin(0))
+print(math.sin(90))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+1.0
+0.0
+0.8939966636005579
+\end{verbatim}
+
+\subsection{\texttt{math} module method: \texttt{math.cos}}
+\label{sec:org55ccdd3}
+\begin{itemize}
+\item This method takes an angle in \textbf{radians} and returns the cosine of the angle.
+\item In general, all trigonometric functions in the \texttt{math} module take an angle in \textbf{radians}.
+\item The \texttt{math} module must be \textbf{imported before} using this function.
+\end{itemize}
+
+\begin{minted}[]{python}
+import math
+print(math.cos(math.pi / 2))
+print(math.cos(0))
+print(math.cos(90))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+6.123233995736766e-17
+1.0
+-0.4480736161291701
+\end{verbatim}
+
+
+ \newpage
+
+\subsection{\texttt{operator} module method: \texttt{operator.itemgetter}}
+\label{sec:org575fa63}
+\begin{itemize}
+\item This method takes \textbf{indexes} for a list or tuple, or \textbf{keys} for a dictionary and returns a \textbf{function}.
+\item When there is \textbf{only one} index or key given, the \textbf{value} is returned.
+\item When there is \textbf{more than one} index or key given, a \textbf{tuple} of the values is returned.
+\item This method can be used with the \texttt{sorted} function to get the value for sorting.
+\end{itemize}
+
+\begin{minted}[]{python}
+import operator
+
+num_list = [10, 6, 3, 1, 9]
+num_dict = {
+    10: "ten",
+    6: "six",
+    3: "three",
+    1: "one",
+    9: "nine"
+}
+
+# Print the second item of the list
+print(operator.itemgetter(1)(num_list))
+
+# Sort the dictionary based on the values of the dictionary,
+# which is to sort by alphabetical order
+print(sorted(num_dict.items(), key=operator.itemgetter(1)))
+\end{minted}
+
+ \noindent Output:
+
+\begin{verbatim}
+6
+[(9, 'nine'), (1, 'one'), (6, 'six'), (10, 'ten'), (3, 'three')]
+\end{verbatim}
+
+
+ \newpage
+
+\section{Operator precedence}
+\label{sec:orgcc39e3d}
+
+\begin{center}
+\begin{tabular}{c|c|c|c}
+\textbf{Precedence} & \textbf{Associativity} & \textbf{Operator} & \textbf{Description}\\[0pt]
+\hline
+18 & Left-to-right & \texttt{()} & Parentheses (grouping)\\[0pt]
+17 & Left-to-right & \texttt{f(args...)} & Function call\\[0pt]
+16 & Left-to-right & \texttt{x[index:index]} & Slicing\\[0pt]
+15 & Left-to-right & \texttt{x[index]} & Indexing an array\\[0pt]
+14 & Right-to-left & \texttt{**} & Exponentiation\\[0pt]
+13 & Left-to-right & \texttt{\textasciitilde{}x} & Bitwise not\\[0pt]
+12 & Left-to-right & \texttt{+x} & Positive\\[0pt]
+12 & Left-to-right & \texttt{-x} & Negative\\[0pt]
+11 & Left-to-right & \texttt{*} & Multiplication\\[0pt]
+11 & Left-to-right & \texttt{/} & Division\\[0pt]
+11 & Left-to-right & \texttt{\%} & Modulo (Remainder operator)\\[0pt]
+10 & Left-to-right & \texttt{+} & Addition\\[0pt]
+10 & Left-to-right & \texttt{-} & Subtraction\\[0pt]
+9 & Left-to-right & \texttt{<{}<{}} & Bitwise left shift\\[0pt]
+9 & Left-to-right & \texttt{>{}>{}} & Bitwise right shift\\[0pt]
+8 & Left-to-right & \texttt{\&} & Bitwise AND\\[0pt]
+7 & Left-to-right & \texttt{\textasciicircum{}} & Bitwise XOR\\[0pt]
+6 & Left-to-right & \(\vert{}\) & Bitwise OR\\[0pt]
+5 & Left-to-right & \texttt{in}, \texttt{not in}, \texttt{is}, \texttt{is not} & Membership\\[0pt]
+5 & Left-to-right & \texttt{<}, \texttt{<=}, \texttt{>}, \texttt{>=} & Relational\\[0pt]
+5 & Left-to-right & \texttt{<>}, \texttt{==} & Equality\\[0pt]
+5 & Left-to-right & \texttt{!=} & Inequality\\[0pt]
+4 & Left-to-right & \texttt{not x} & Boolean NOT\\[0pt]
+3 & Left-to-right & \texttt{and} & Boolean AND\\[0pt]
+2 & Left-to-right & \texttt{or} & Boolean OR\\[0pt]
+1 & Left-to-right & \texttt{lambda} & Lambda expression\\[0pt]
+\end{tabular}
+\end{center}
+
+ \newpage
+
+\section{ASCII Table}
+\label{sec:org19cbcb3}
+
+\begin{longtable}{rrrrll}
+DEC & OCT & HEX & BIN & Symbol & Description\\[0pt]
+\hline
+\endfirsthead
+\multicolumn{6}{l}{Continued from previous page} \\[0pt]
+\hline
+
+DEC & OCT & HEX & BIN & Symbol & Description \\[0pt]
+
+\hline
+\endhead
+\hline\multicolumn{6}{r}{Continued on next page} \\
+\endfoot
+\endlastfoot
+\hline
+32 & 040 & 20 & 00100000 & SP & Space\\[0pt]
+33 & 041 & 21 & 00100001 & ! & Exclamation mark\\[0pt]
+34 & 042 & 22 & 00100010 & " & Double quotes (or speech marks)\\[0pt]
+35 & 043 & 23 & 00100011 & \# & Number sign\\[0pt]
+36 & 044 & 24 & 00100100 & \$ & Dollar\\[0pt]
+37 & 045 & 25 & 00100101 & \% & Per cent sign\\[0pt]
+38 & 046 & 26 & 00100110 & \& & Ampersand\\[0pt]
+39 & 047 & 27 & 00100111 & ' & Single quote\\[0pt]
+40 & 050 & 28 & 00101000 & ( & Open parenthesis (or open bracket)\\[0pt]
+41 & 051 & 29 & 00101001 & ) & Close parenthesis (or close bracket)\\[0pt]
+42 & 052 & 2A & 00101010 & * & Asterisk\\[0pt]
+43 & 053 & 2B & 00101011 & + & Plus\\[0pt]
+44 & 054 & 2C & 00101100 & , & Comma\\[0pt]
+45 & 055 & 2D & 00101101 & - & Hyphen-minus\\[0pt]
+46 & 056 & 2E & 00101110 & . & Period, dot or full stop\\[0pt]
+47 & 057 & 2F & 00101111 & / & Slash or divide\\[0pt]
+48 & 060 & 30 & 00110000 & 0 & Zero\\[0pt]
+49 & 061 & 31 & 00110001 & 1 & One\\[0pt]
+50 & 062 & 32 & 00110010 & 2 & Two\\[0pt]
+51 & 063 & 33 & 00110011 & 3 & Three\\[0pt]
+52 & 064 & 34 & 00110100 & 4 & Four\\[0pt]
+53 & 065 & 35 & 00110101 & 5 & Five\\[0pt]
+54 & 066 & 36 & 00110110 & 6 & Six\\[0pt]
+55 & 067 & 37 & 00110111 & 7 & Seven\\[0pt]
+56 & 070 & 38 & 00111000 & 8 & Eight\\[0pt]
+57 & 071 & 39 & 00111001 & 9 & Nine\\[0pt]
+58 & 072 & 3A & 00111010 & : & Colon\\[0pt]
+59 & 073 & 3B & 00111011 & ; & Semicolon\\[0pt]
+60 & 074 & 3C & 00111100 & < & Less than (or open angled bracket)\\[0pt]
+61 & 075 & 3D & 00111101 & = & Equals\\[0pt]
+62 & 076 & 3E & 00111110 & > & Greater than (or close angled bracket)\\[0pt]
+63 & 077 & 3F & 00111111 & ? & Question mark\\[0pt]
+64 & 100 & 40 & 01000000 & @ & At sign\\[0pt]
+65 & 101 & 41 & 01000001 & A & Uppercase A\\[0pt]
+66 & 102 & 42 & 01000010 & B & Uppercase B\\[0pt]
+67 & 103 & 43 & 01000011 & C & Uppercase C\\[0pt]
+68 & 104 & 44 & 01000100 & D & Uppercase D\\[0pt]
+69 & 105 & 45 & 01000101 & E & Uppercase E\\[0pt]
+70 & 106 & 46 & 01000110 & F & Uppercase F\\[0pt]
+71 & 107 & 47 & 01000111 & G & Uppercase G\\[0pt]
+72 & 110 & 48 & 01001000 & H & Uppercase H\\[0pt]
+73 & 111 & 49 & 01001001 & I & Uppercase I\\[0pt]
+74 & 112 & 4A & 01001010 & J & Uppercase J\\[0pt]
+75 & 113 & 4B & 01001011 & K & Uppercase K\\[0pt]
+76 & 114 & 4C & 01001100 & L & Uppercase L\\[0pt]
+77 & 115 & 4D & 01001101 & M & Uppercase M\\[0pt]
+78 & 116 & 4E & 01001110 & N & Uppercase N\\[0pt]
+79 & 117 & 4F & 01001111 & O & Uppercase O\\[0pt]
+80 & 120 & 50 & 01010000 & P & Uppercase P\\[0pt]
+81 & 121 & 51 & 01010001 & Q & Uppercase Q\\[0pt]
+82 & 122 & 52 & 01010010 & R & Uppercase R\\[0pt]
+83 & 123 & 53 & 01010011 & S & Uppercase S\\[0pt]
+84 & 124 & 54 & 01010100 & T & Uppercase T\\[0pt]
+85 & 125 & 55 & 01010101 & U & Uppercase U\\[0pt]
+86 & 126 & 56 & 01010110 & V & Uppercase V\\[0pt]
+87 & 127 & 57 & 01010111 & W & Uppercase W\\[0pt]
+88 & 130 & 58 & 01011000 & X & Uppercase X\\[0pt]
+89 & 131 & 59 & 01011001 & Y & Uppercase Y\\[0pt]
+90 & 132 & 5A & 01011010 & Z & Uppercase Z\\[0pt]
+91 & 133 & 5B & 01011011 & [ & Opening bracket\\[0pt]
+92 & 134 & 5C & 01011100 & $\backslash$ & Backslash\\[0pt]
+93 & 135 & 5D & 01011101 & ] & Closing bracket\\[0pt]
+94 & 136 & 5E & 01011110 & \^{} & Caret - circumflex\\[0pt]
+95 & 137 & 5F & 01011111 & \_ & Underscore\\[0pt]
+96 & 140 & 60 & 01100000 & ` & Grave accent\\[0pt]
+97 & 141 & 61 & 01100001 & a & Lowercase a\\[0pt]
+98 & 142 & 62 & 01100010 & b & Lowercase b\\[0pt]
+99 & 143 & 63 & 01100011 & c & Lowercase c\\[0pt]
+100 & 144 & 64 & 01100100 & d & Lowercase d\\[0pt]
+101 & 145 & 65 & 01100101 & e & Lowercase e\\[0pt]
+102 & 146 & 66 & 01100110 & f & Lowercase f\\[0pt]
+103 & 147 & 67 & 01100111 & g & Lowercase g\\[0pt]
+104 & 150 & 68 & 01101000 & h & Lowercase h\\[0pt]
+105 & 151 & 69 & 01101001 & i & Lowercase i\\[0pt]
+106 & 152 & 6A & 01101010 & j & Lowercase j\\[0pt]
+107 & 153 & 6B & 01101011 & k & Lowercase k\\[0pt]
+108 & 154 & 6C & 01101100 & l & Lowercase l\\[0pt]
+109 & 155 & 6D & 01101101 & m & Lowercase m\\[0pt]
+110 & 156 & 6E & 01101110 & n & Lowercase n\\[0pt]
+111 & 157 & 6F & 01101111 & o & Lowercase o\\[0pt]
+112 & 160 & 70 & 01110000 & p & Lowercase p\\[0pt]
+113 & 161 & 71 & 01110001 & q & Lowercase q\\[0pt]
+114 & 162 & 72 & 01110010 & r & Lowercase r\\[0pt]
+115 & 163 & 73 & 01110011 & s & Lowercase s\\[0pt]
+116 & 164 & 74 & 01110100 & t & Lowercase t\\[0pt]
+117 & 165 & 75 & 01110101 & u & Lowercase u\\[0pt]
+118 & 166 & 76 & 01110110 & v & Lowercase v\\[0pt]
+119 & 167 & 77 & 01110111 & w & Lowercase w\\[0pt]
+120 & 170 & 78 & 01111000 & x & Lowercase x\\[0pt]
+121 & 171 & 79 & 01111001 & y & Lowercase y\\[0pt]
+122 & 172 & 7A & 01111010 & z & Lowercase z\\[0pt]
+123 & 173 & 7B & 01111011 & \{ & Opening brace\\[0pt]
+124 & 174 & 7C & 01111100 & \(\vert{}\) & Vertical bar\\[0pt]
+125 & 175 & 7D & 01111101 & \} & Closing brace\\[0pt]
+126 & 176 & 7E & 01111110 & \textasciitilde{} & Equivalency sign - tilde\\[0pt]
+127 & 177 & 7F & 01111111 & DEL & Delete\\[0pt]
+\end{longtable}
+\end{document}

@@ -1,0 +1,242 @@
+#+TITLE: Math Module 2A Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+\newpage
+
+* Definitions
+
+** Diverging to positive infinity
+Suppose $a$ is a limit point of the domain $A$ of $f$. If for every \(M > 0\), there exists a \(\delta > 0\) such that:
+\[0 < |x - a| < \delta, \ \ x \in A \quad \Rightarrow \quad f(x) > M\]
+
+We say that $f(x)$ *diverges to positive infinity as $x$ approaches \(a\)* and write:
+\[\lim_{x \rightarrow a} f(x) = + \infty\]
+
+** Diverging to negative infinity
+Suppose $a$ is a limit point of the domain $A$ of $f$. If for every \(M > 0\), there exists a \(\delta > 0\) such that:
+\[0 < |x - a| < \delta, \ \ x \in A \quad \Rightarrow \quad f(x) < -M\]
+
+We say that $f(x)$ *diverges to negative infinity as $x$ approaches \(a\)* and write:
+\[\lim_{x \rightarrow a} f(x) = - \infty\]
+
+** Limit
+Let $f : A \rightarrow \mathbb{R}$ be a function and let $a$ be a limit point of $A$. If for every \(\varepsilon > 0\), there exists a \(\delta > 0\) such that:
+\[0 < |x - a| < \delta, \ \ x \in A \quad \Rightarrow \quad |f(x) - L| < \varepsilon\]
+
+** The restriction of a function
+Consider $f : A \rightarrow \mathbb{R}$ and suppose \(B \subset A\). The *restriction of $f$ to \(B\)*, denoted by \(f \restriction_B\), is the function with domain $B$ given by:
+\[f \restriction_B (x) = f(x), \text{ for } x \in B\]
+
+** Right-hand limit
+$\indent$ Consider \(f : A \rightarrow \mathbb{R}\). If the limit below exists:
+\[\lim_{x \rightarrow a} f \restriction_{A \cap (a, \infty)}(x)\]
+
+We call it the *right-hand limit* of $f$ at $a$ and denote it using:
+\[\lim_{x \rightarrow a+} f(x)\]
+
+** Left-hand limit
+$\indent$ Consider \(f : A \rightarrow \mathbb{R}\). If the limit below exists:
+\[\lim_{x \rightarrow a} f \restriction_{A \cap (-\infty, a)}(x)\]
+
+We call it the *left-hand limit* of $f$ at $a$ and denote it using:
+\[\lim_{x \rightarrow a-} f(x)\]
+
+** Heaviside function
+\[
+H(x) = \begin{cases}
+0; \quad \text{for } x < 0, \\
+1; \quad \text{for } x \ge 0.
+\end{cases}
+\]
+
+** Relation between limits and one-sided limits
+Suppose that for some \(\delta > 0\), $f(x)$ is defined on \((a - \delta, a) \cup (a, a + \delta)\). Then:
+\[\lim_{x \rightarrow a} f(x) = L \quad \Leftrightarrow \quad \lim_{x \rightarrow a+} f(x) = L = \lim_{x \rightarrow a-} f(x)\]
+
+\newpage
+
+** Continuous functions
+A function \(f : A \rightarrow \mathbb{R}\) is *continuous at \(a \in A\)* if for any \(\varepsilon > 0\) there exists a $\delta > 0$ such that:
+\[|x - a| < \delta, \ \ x \in A \quad \Rightarrow \quad |f(x) - f(a)| < \varepsilon\]
+
+If $B \subset A$ and $f$ is continuous at every $a \in B$, we say that $f$ is *continuous* on $B$.
+\\
+
+We say that $f$ is continuous if $f$ is continuous on $A$.
+
+*** Theorem
+Consider a function \(f : A \rightarrow \mathbb{R}\) and suppose $a \in A$ is also a *limit point of A*. Then $f$ is continuous at $a$ if and only if:
+\[\lim_{x \rightarrow a} f(x) = f(a)\]
+
+Do note that the criterion \(\lim_{x \rightarrow a} f(x) = f(a)\) includes the condition that the limit \(\lim_{x \rightarrow a} f(x)\) exists. If it doesn't, $f$ is not continuous at $a$.
+
+*** Notation
+The set of functions continuous at a point $a$ is denoted by $C(a)$. Hence, $f \in C(a)$ means that $f(x)$ is continuous at the point $a \in \mathbb{R}$. Similarly, $C(B)$ denotes the set of functions continuous on a set \(B \subset \mathbb{R}\). Another example would be:
+\[f \in C([0, 1]) \quad \Leftrightarrow \quad f \text{ is a function that is continuous on } [0, 1]\]
+
+** Composition rule
+Given two functions $f(y)$ and $g(x)$, assume that:
+\[\text{1. } \lim_{x \rightarrow a} g(x) = L\]
+\[\text{2. } f \in C(L)\]
+
+Then, we would have \(\lim_{x \rightarrow a} f(g(x)) = f(L)\).
+\\
+
+In other words, if $f$ is continuous and $f$ is continuous at \(\lim_{x \rightarrow a} g(x)\):
+\[\lim_{x \rightarrow a} f(g(x)) = f(\lim_{x \rightarrow a} g(x))\]
+
+** Elementary functions
+Elementary functions are those functions $f(x)$ obtained from:
+1. Constants and powers of $x$
+2. Exponential, logarithm, trigonometric, inverse trigonometric functions
+
+Through addition, subtraction, multiplication, division, power and composition. An example of composition is $f(g(x))$.
+\\
+
+Any elementary function is *continuous* on its natural domain.
+
+** Intermediate value theorem
+Assume that \(f \in C([a, b]), f(a) \neq f(b) \text{ and } y_0\) is some real number between $f(a)$ and $f(b)$, like:
+\[\text{min}\{f(a), f(b)\} < y_0 < \text{max}\{f(a), f(b)\}\]
+
+Then there exists a $x_0 \in (a, b)$ such that \(f(x_0) = y_0\).
+\\
+
+$f$ must be continuous on the whole *closed* interval $[a, b]$ for the conclusion to hold. For example, with $f : [0, 1] \rightarrow \mathbb{R}$, given by:
+\[
+f(x) = \begin{cases}
+1 \quad \text{for } x = 0, \\
+-1 \quad \text{for } x \in (0, 1]
+\end{cases}
+\]
+
+$f(x)$ is continuous on $(0, 1]$ but not continuous on $[0, 1]$. Since $y = 0$ is between $f(0)$ and $f(1)$, and there is no $x_0 \in (0, 1)$ such that $f(x_0) = 0$, the conclusion fails.
+
+** Max/Min theorem
+Assume that $f \in C([a, b])$. Then there are some points $x_m, x_M \in [a, b]$ such that for any $x \in [a, b]$, we have $f(x_m) \le f(x) \le f(x_M)$.
+\\
+
+The result does not hold if we replace $[a, b]$ with $(a, b)$. The function $f : (0, 1) \rightarrow \mathbb{R}, \ f(x) = x$ is a counterexample.
+
+** One-to-one functions
+Consider a function $f : A \rightarrow \mathbb{R}$. We say that f is *one-to-one* or /injective/ if for \(x_1, x_2 \in A\):
+\[x_1 \neq x_2 \quad \Rightarrow \quad f(x_1) \neq f(x_2)\]
+
+Equivalently, we could say that $f : A \rightarrow \mathbb{R}$ is *one-to-one* if for $x_1, x_2 \in A$,
+\[f(x_1) = f(x_2) \quad \Rightarrow \quad x_1 = x_2\]
+
+Note that if $f : A \rightarrow \mathbb{R}$ is one-to-one, then for every $y \in f(A)$ there exists *exactly one* $x \in A$, such that $f(x) = y$.
+
+** Inverse functions
+Let $f : A \rightarrow \mathbb{R}$ be a one-to-one functions. The *inverse* function $f^{-1} : f(A) \rightarrow \mathbb{R}$ is defined by:
+\[f^{-1} (y) = x \quad \Leftrightarrow \quad f(x) = y, \ \ x \in A\]
+
+This definition is usually expressed with the $x$ and $y$ swapped:
+\[f^{-1} (x) = y \quad \Leftrightarrow \quad f(y) = x, \ \ y \in A\]
+
+Also, note that the $^{-1}$ in $f^{-1}$ is *not* an exponent:
+\[f^{-1} (x) \text{ does } \textbf{not } \text{mean } \frac{1}{f(x)}\]
+
+From the definition it also follows that if $f : A \rightarrow \mathbb{R}$ is one-to-one, then $g = f^{-1}$ if and only if:
+\[\text{1. } g(f(x)) = x, \quad \text{for every } x \in A\]
+\[\text{2. } f(g(y)) = y, \quad \text{for every } y \in f(A)\]
+
+*** Example 1
+The function \(f : [-\frac{\pi}{2}, \frac{\pi}{2}] \rightarrow \mathbb{R}\) is given by \(f(x) = \sin x\) is one-to-one. Its inverse is called $\arcsin$. Hence:
+\[\arcsin y = x \quad \Leftrightarrow \quad y = \sin x \text{ and } x \in \left[-\frac{\pi}{2}, \frac{\pi}{2} \right]\]
+
+*** Example 2
+The function \(f : [0, \pi] \rightarrow \mathbb{R}\) is given by \(f(x) = \cos x\) is one-to-one. Its inverse is called $\arccos$. Hence:
+\[\arccos y = x \quad \Leftrightarrow \quad y = \cos x \text{ and } x \in [0, \pi]\]
+
+*** Example 3
+The function \(f : (-\frac{\pi}{2}, \frac{\pi}{2}) \rightarrow \mathbb{R}\) is given by \(f(x) = \tan x\) is one-to-one. Its inverse is called $\arctan$. Hence:
+\[\arctan y = x \quad \Leftrightarrow \quad y = \tan x \text{ and } x \in \left(-\frac{\pi}{2}, \frac{\pi}{2} \right)\]
+
+*** Comment on the examples
+A lot of textbooks and calculators often use the notation $\sin^{-1}, \ \cos^{-1}, \ \tan^{-1}$ instead of $\arcsin, \ \arccos, \ \arctan$ respectively, but this is somewhat misleading since the 3 trigonometric functions themselves are not one-to-one and do not have an inverse.
+
+** Inverse continuous functions on an interval
+If \(f : I \rightarrow \mathbb{R}\) is continuous and one-to-one, and if $I$ is an interval, then $f^{-1}$ is also continuous.
+
+*** Example
+The function $f : [-\frac{\pi}{2}, \frac{\pi}{2}] \rightarrow \mathbb{R}$ is given by $f(x) = \sin x$, is one-to-one and continuous.
+\\
+
+Since the domain $[-\frac{\pi}{2}, \frac{\pi}{2}]$ is an interval, the inverse function $\arcsin$ (with domain $[-1, 1]$) is also continuous.
+\\
+
+By similar arguments, the $\arccos$ and $\arctan$ functions are also continuous.
+
+\newpage
+
+
+* Linking the limits of functions and sequences
+For $f : A \rightarrow \mathbb{R}$, assume that \(\lim_{x \rightarrow a} = L\). Then for any sequence $(a_n)$ in $A$ *satisfying both conditions:*
+1. For each $n$, we have \(a_n \neq a\)
+2. \(\lim_{n \rightarrow \infty}\)
+
+We have \(\lim_{n \rightarrow \infty} = L\).
+
+** Proof
+Since \(\lim_{x \rightarrow a} f(x) = L\), for any $\varepsilon > 0$, there is a $\delta > 0$ such that:
+\[0 < |x - a| < \delta, \ x \in A \quad \Rightarrow \quad |f(x) - L| < \varepsilon\]
+
+Since \(a_n \rightarrow a, \ a_n \in A, \ a_n \neq a\), we can find $N$ such that:
+\[n > N \quad \Rightarrow \quad 0 < |a_n - a| < \delta \quad \Rightarrow \quad |f(a_n) - L| < \varepsilon\]
+
+The proof is complete.
+
+** Contrapositive statement
+Using the theorem we just proved, let's say that we have a function $f(x)$ and two sequences $(a_n)$ and $(b_n)$, such that:
+\[a_n \neq a, \ b_n \neq a, \ \lim_{n \rightarrow \infty} a_n = \lim_{n \rightarrow \infty} = a, \ \lim_{n \rightarrow \infty} f(a_n) \neq \lim_{n \rightarrow \infty} f(b_n)\]
+
+That means that there does not exist any \(L \in \mathbb{R}\) such that:
+\[\lim_{x \rightarrow a} f(x) = L\]
+
+Hence, the limit \(\lim_{x \rightarrow a} f(x)\) does not exist. Because if it exists, the theorem tells us that \(\lim_{x \rightarrow \infty} f(a_n) = \lim_{x \rightarrow \infty} f(b_n) = L\).
+
+\newpage
+
+*** Example
+Let \(f(x) = \sin \frac{1}{x}\). Note that:
+\[0 = f(x) = \sin \frac{1}{x} \quad \Leftrightarrow \quad \frac{1}{x} = n\pi, \text{ where } n = \pm 1, \pm 2, \pm 3, \ldots\]
+\[1 = f(x) = \sin \frac{1}{x} \quad \Leftrightarrow \quad \frac{1}{x} = \frac{\pi}{2} + 2n\pi, \text{ where } n = 0, \pm 1, \pm 2, \ldots\]
+
+Let \(a_n = \frac{1}{n\pi}\) for n = 1, 2, 3, \(\ldots\). We get \(a_n \neq 0, a_n \rightarrow 0\) as \(n \rightarrow \infty\). Hence:
+\[f(a_n) = \sin \frac{1}{a_n} = \sin n\pi = 0\]
+
+So \(\lim_{n \rightarrow \infty} f(a_n) = 0\).
+\\
+
+Let \(a_n = \frac{1}{\frac{\pi}{2} + 2n\pi}\) for n = 1, 2, 3, \(\ldots\). We get \(b_n \neq 0, b_n \rightarrow 0\) as \(n \rightarrow \infty\). Hence:
+\[f(b_n) = \sin \frac{1}{b_n} = \sin \left( \frac{\pi}{2} + 2n\pi \right) = 1\]
+
+So \(\lim_{n \rightarrow \infty} f(b_n) = 1\).
+\\
+
+Since \(\lim_{n \rightarrow \infty} f(a_n) \neq \lim_{n \rightarrow \infty} f(b_n)\), \(\lim_{x \rightarrow 0} f(x)\) does not exist.
+
+* Reasoning with limit laws
+Suppose \(\lim_{x \rightarrow a} f(x)\) does not exist and \(\lim_{x \rightarrow a} g(x) = L\).
+\\
+
+Does \(\lim_{x \rightarrow a} (f(x) + g(x))\) exist?
+\\
+
+If for some \(l \in \mathbb{R}\),
+\[\lim_{x \rightarrow a} (f(x) + g(x)) = l\]
+
+Then:
+\begin{align*}
+\lim_{x \rightarrow a} f(x) &= \lim_{x \rightarrow a}[f(x) + g(x) - g(x)] \\
+&= l - L \\
+&\neq \text{undefined}
+\end{align*}
+
+Since \(\lim_{x \rightarrow a} f(x)\) does not exist, \(\lim_{x \rightarrow a} f(x)\) cannot be equal to $l - L$, which is a contradiction.
+\\
+
+Hence, \(\lim_{x \rightarrow a} (f(x) + g(x))\) does not exist.

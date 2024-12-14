@@ -1,0 +1,105 @@
+#+TITLE: Momentum, Impulse & Collisions Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{siunitx}
+
+\newpage
+
+* Definitions
+
+** Momentum (vector quantity) (plural: momenta)
+The momentum of a particle is the product of its mass and its velocity and is a *vector* quantity.
+
+\[\vec{p} = m \vec{v}\]
+
+The units of momentum are: \(\unit{kg.m.s^{-1}}\)
+
+** Newton's Second Law
+Newton's second law states that the *net external force* acting on a particle is *equal* to the *rate of change* of the particle's *momentum*.
+\[\sum \vec{F} = \frac{d \vec{p}}{dt}\]
+
+Using Newton's second law in the special case of constant mass:
+
+\begin{align*}
+\vec{F} &= \frac{d(m \vec{v})}{dt} \\
+&= m \frac{d \vec{v}}{dt} \\
+&= m \vec{a}
+\end{align*}
+
+*** Variable mass systems
+Newton's second law for variable mass systems is:
+\[M \frac{d \vec{v}}{dt} = \sum \vec{F}_{ext} + \vec{v}_{rel} \frac{dM}{dt}\]
+
+The left-hand side represents the mass $\times$ the acceleration of the object. The first term on the right-hand side represents the external force acting on the system, such as weight and air resistance. The last term on the right-hand side represents the rate at which momentum is being transferred into or out of the mass $M$ because of the added or removed mass $dM$.
+
+** Impulse
+The impulse of a force is the *product* of the force and the *time interval* during which it acts.
+\begin{align*}
+\vec{J} &= \sum \vec{F} (t_2 - t_2) \\
+&= \sum \vec{F} \Delta t
+\end{align*}
+
+The impulse is the area under the curve of a force $-$ time graph.
+\[\vec{J} = \int_{t_1}^{t_2} \vec{F}_{net} \, dt\]
+
+Hence, if there is *no net force*, then there is *no change* in momentum.
+
+** System
+A system in physics is a collection of bodies and their interactions. The bodies that are included is up to us to define, and it depends on the problem. It becomes useful to think about bodies and interactions as belonging (internal) or not (external) to the system.
+
+** Isolated system
+An isolated system is a system that doesn't experience any external forces and has no exchange of matter with the external world.
+
+** Closed system
+If the system of bodies does not have any exchange of matter with the external world, then it is a closed system. However, it can still exchange energy (i.e. not isolated). An example of a closed system is a closed bottle of coled water on a hot day.
+
+** Conservation of momentum
+The conservation of momentum states that if the net external force on a system is zero, the total momentum of the system is constant.
+\\
+
+The *momentum of a system* is the *vector sum* of the momenta of the bodies comprising the system.
+
+** Elastic collision
+An elastic collision is a collision where the *total kinetic energy* is *conserved*.
+\\
+
+For such collisions, the *relative speed of approach* is equal to the *relative speed of separation*.
+
+\[v_A - v_B = v'_B - v'_A\]
+
+Where $A$ and $B$ are two bodies and $v'$ is the final velocities of the bodies.
+
+** Inelastic collision
+An inelastic collision is a collision where the *total kinetic energy* is *not* conserved.
+
+** Perfectly (completely) inelastic collision
+A perfectly inelastic collision is a collision where there is the *greatest possible loss* of total kinetic energy. This is usually the case if two bodies *stick together* in the case of a two-body collision.
+
+** Coefficient of restitution $e$
+The coefficient of restitution is an empirically determined dimensionless quantity that measures the *loss of kinetic energy*. Its value ranges from 0, which represents a *perfectly inelastic collision*, to 1, which represents an *elastic collision*.
+
+\[v'_B - v'_A = - e(v_B - v_A)\]
+
+Where $A$ and $B$ are two bodies and $v'$ is the final velocities of the bodies.
+
+\newpage
+
+** Centre of mass
+The centre of mass is the average position of the matter in a body or system.
+
+*** Discrete masses
+The centre of mass of a configuration of $n$ discrete *point* masses is the weighted average of their positions:
+
+\begin{align*}
+x_{CM} &= \frac{m_1 x_1 + m_2 x_2 + m_3 x_3 + \ldots + m_n x_n}{m_1 + m_2 + m_3 + \ldots + m_n} \\
+&= \frac{1}{M} \sum_{i = 1}^n m_i x_i
+\end{align*}
+
+For all 3 coordinates:
+\[x_{CM} = \frac{\sum m_i x_i}{M}, \quad y_{CM} = \frac{\sum m_i y_i}{M}, \quad z_{CM} = \frac{\sum m_i z_i}{M}\]
+
+*** Continuous masses
+For an object with a continuous distribution of mass, we consider the object to be made of infinitesimally small masses $dm$, and sum up (integrate) each of their contributions to the weighted average to obtain the centre of mass:
+
+\[x_{CM} = \frac{1}{M} \int x \, dm, \quad y_{CM} = \frac{1}{M} \int y \, dm, \quad z_{CM} = \frac{1}{M} \int z \, dm\]

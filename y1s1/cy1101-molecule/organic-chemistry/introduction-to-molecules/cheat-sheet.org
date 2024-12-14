@@ -1,0 +1,100 @@
+#+TITLE: Introduction To Molecules Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{siunitx, graphicx}
+#+LATEX_HEADER: \graphicspath{ {./images/} }
+
+\newpage
+
+* Definitions
+
+** Chemical bonds
+Chemical bonds are formed between atoms because the resulting compounds are more stable than the separate atoms. Examples of chemical bonds include ionic bonds, which are formed when the atoms gain or lose electrons, and covalent bonds, which are formed when the atoms share electrons.
+
+** Lewis structures
+Lewis structures, also known as electron-dot structures, show the valence electrons of an atom as dots.
+
+** Kekule structures
+Kekule structures, also known as line-bond structures, uses lines to indicate the bonds between atoms. A single line represents a two-electron covalent bond. The number of covalent bonds an atom forms *depends on how many valence electrons it needs to reach a noble-gas configuration*.
+
+** Lone pair electrons
+Lone pair electrons are valence electrons that are not involved in bonding.
+
+** Valence bond theory (orbital hybridisation)
+The valence bond theory is a model of chemical bonding to explain the placement of atoms in a molecule in 3D space.
+
+** Bond polarity
+Covalent bonds that have ionic character are known as polar bonds. This means that the electron distribution between the atoms involved in the covalent bond is not symmetrical and the bonding electrons are more strongly attracted by one atom.
+
+** Electronegativity (EN)
+Electronegativity is the intrinsic ability of an atom to attract the shared electrons in a covalent bond.
+
+** Dipole moment (\(\mu\))
+A dipole moment is the net molecular polarity due to the difference in summed charges.
+
+- \(\mu\) is equal to the magnitude of charge $Q$ at the end of the molecular dipole times the distance $r$ between charges.
+- \(\mu = Q \times r\), in /debyes/ ($D$), \(\qty{1}{\unit{D}} = 3.336 \times 10^{-30} \text{ coulomb meter } (C \cdot m)\)
+
+*** Polar molecules
+- The electronegativity of $O$ and $N$ is greater than that of $H$.
+- Both $O$ and $N$ have lone-pair electrons oriented away from the nuclei, giving rise to a considerable charge separation and a *large dipole moment*.
+
+*** Non-polar molecules
+In symmetrical molecules, the dipole moment of each bond has one in the opposite direction, which cancels each other out, resulting in a net dipole moment of zero.
+
+** Resonance
+Resonance refers to the delocalisation of the $\pi$ bond and lone pair electrons in the molecule.
+
+*** Rules for drawing resonance structures
+1. Individual resonance forms are *imaginary*. The real structure is a hybrid.
+2. Resonance forms differ only in the placement of their $\pi$ or non-bonding electrons.
+3. Different resonance forms of a substance do not have to be equivalent.
+4. Resonance forms obey normal rules of valency, which means the octet rule generally applies.
+5. The resonance hybrid is more stable than any individual resonance form. In general, the larger the number of resonance forms, the more stable a substance is.
+
+** \(sp^3\) hybrid orbitals
+$sp^3$ hybrid orbitals are formed when 1 $s$ orbital and 3 $p$ orbitals combine to form 4 equivalent, unsymmetrical tetrahedral orbitals (\(sppp = sp^3\)).
+
+** \(sp^2\) hybrid orbitals
+$sp^2$ hybrid orbitals are formed when 1 $s$ orbital and 2 $p$ orbitals combine to form 3 orbitals (\(spp = sp^2\)). This results in a double bond (\(- C\)=\(C -\)).
+\\
+
+Electrons in the $\sigma$ bond are centred between the atomic nuclei while the electrons in the $\pi$ bond occupy regions above and below the $\sigma$ bond.
+
+** \(sp\) hybrid orbitals
+$sp$ hybrid orbitals are formed when 1 $s$ orbital and 1 $p$ orbital combine to form 2 orbitals (\(sp = sp\)). This results in a triple bond (\(- C \equiv C -\)).
+
+** Sigma (\(\sigma\)) bonds
+Sigma bonds have a circular cross-section and are formed by head-on interaction.
+
+** Pi (\(\pi\)) bonds
+Pi bonds have a "dumbbell" shape from sideways interaction of $p$ orbitals.
+
+\newpage
+
+* Bond length
+The bond length of $sp^3 > sp^2 > sp$. The bond length is inversely proportional to the bond strength, hence, the shorter the bond length, the stronger the bond. Thus, the bond strength of $sp^3 < sp^2 < sp$.
+
+\[\includegraphics[width = \textwidth]{bond-lengths}\]
+
+
+* General rules of drawing skeletal structures
+1. Carbon atoms aren't usually shown. Instead, a carbon atom is assumed to be at each intersection of two lines (bonds) and at the end of each line.
+2. Hydrogen atoms bonded to carbon aren't shown.
+3. Atoms other than carbon and hydrogen are shown.
+
+\newpage
+
+* Hybridisation in organic molecules
+Carbon atoms use hybrid orbitals to form bonds in organic molecules.
+
+- In single bonds with tetrahedral geometry, carbon has 4 \(\boldsymbol{sp^3}\) *hybrid orbitals*.
+- In double bonds with planar geometry, carbon uses 3 equivalent \(\boldsymbol{sp^2}\) *hybrid orbitals* and 1 unhybridised $p$ orbital.
+- Carbon uses 2 equivalent \(\boldsymbol{sp}\) *hybrid orbitals* to form a triple bond with linear geometry, along with 2 unhybridised $p$ orbitals.
+
+Atoms such as nitrogen and oxygen hybridise to form strong, oriented bonds.
+
+- The nitrogen atom in ammonia and the oxygen atom in water are \(sp^3\)-hybridised.
+
+\[\includegraphics[width = \textwidth]{hybrid-orbitals}\]

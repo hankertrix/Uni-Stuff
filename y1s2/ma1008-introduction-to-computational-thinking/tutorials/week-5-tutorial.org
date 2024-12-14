@@ -1,0 +1,839 @@
+#+TITLE: Intro To Comp Thinking Week 5 Tutorial
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Question 1
+-4, -3, and 10 are in range.
+
+
+* Question 2
+Python implementation:
+#+begin_src python
+def print_numbers(join_string: str = " ") -> None:
+    """
+    Function to print the numbers 1 to 12 on one line
+    and the numbers 13 to 24 on another line.
+    """
+
+    # Initialise the list to print the first line
+    first_line = []
+
+    # Initialise the list to print the second line
+    second_line = []
+
+    # Iterates over all the numbers
+    for number in range(24 + 1):
+
+        # If the number is less than or equal to 12
+        if number <= 12:
+
+            # Adds the number to the first line
+            first_line.append(str(number))
+
+        # Otherwise
+        else:
+
+            # Adds the number to the second line
+            second_line.append(str(number))
+
+    # Prints the first and second line with the numbers
+    # joined by the joining string
+    print(join_string.join(first_line))
+    print(join_string.join(second_line))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to print the numbers 1 to 12 on one line
+// and the numbers 13 to 24 on another line
+fn print_numbers(join_string: &str) {
+
+    // Initialise the list to print the first line
+    let mut first_line: Vec<String> = vec![];
+
+    // Initialise the list to print the second line
+    let mut second_line: Vec<String> = vec![];
+
+    // Iterates over all the number
+    for number in 0..=24 {
+
+        // If the number is less than or equal to 12
+        if number <= 12 {
+
+            // Adds the number to the first line
+            first_line.push(number.to_string());
+        }
+
+        // Otherwise
+        else {
+
+            // Adds the number to the second line
+            second_line.push(number.to_string());
+        }
+    }
+
+    // Prints the first and second line with the numbers
+    // joined by the joining string
+    println!("{}", first_line.join(join_string));
+    println!("{}", second_line.join(join_string));
+}
+#+end_src
+
+
+* Question 3
+#+begin_src python :results output
+i = 1
+j = 0
+while i < 10:
+    i += 1
+    j += 2 * 2
+
+print(i)  # Line 1
+print(j)  # Line 2
+#+end_src
+
+#+RESULTS:
+: 10
+: 36
+
+
+* Question 4
+Python implementation:
+#+begin_src python
+def rewrite_for_loop_as_while_loop(X: int) -> None:
+    """
+    Function that iterates from 1 to the given X value
+    and prints the numbers that X is divisible by.
+    """
+
+    # Initialise i to 0
+    i = 0
+
+    # Iterate over the numbers until X
+    while i < X + 1:
+
+        # Increment i by 1
+        i += 1
+
+        # If X is divisible by the current number
+        if X % i == 0:
+
+            # Prints the current number
+            print(i)
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function that iterates from 1 to the given X value
+// and prints the numbers that X is divisible by.
+fn rewrite_for_loop_as_while_loop(X: i32) {
+
+    // Initialise i as 0
+    let mut i = 0;
+
+    // Iterate over th numbers until X
+    while i < X + 1 {
+
+        // Increment i by 1
+        i += 1;
+
+        // If X is divisible by the current number
+        if X % i == 0 {
+
+            // Prints the current number
+            println!("{i}");
+        }
+    }
+}
+#+end_src
+
+
+* Question 5
+The program sums up all the positive odd numbers given. It stops when a negative number or zero is given.
+
+
+* Question 6
+#+begin_src python :results output
+for x in range(10):
+    y = x
+    while y < 7:
+        print(y, end=" ")
+        y += 2
+        if y > 5:
+            break
+#+end_src
+
+#+RESULTS:
+: 0 2 4 1 3 5 2 4 3 5 4 5 6
+
+
+* Question 7
+
+** (i)
+Python implementation:
+#+begin_src python
+def mathematical_sum_1(n: int) -> float:
+    """
+    Function to calculate the sum of the mathematical expression below:
+    from i = 1 to n, sum (1/i + 1)
+    """
+
+    # Initialise the sum variable to 0
+    sum: float = 0
+
+    # Iterates from 1 to n
+    for i in range(1, n + 1):
+
+        # Adds 1/i + 1 to the sum
+        sum += 1/i + 1
+
+    # Return the sum
+    return sum
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to calculate the sum of the mathematical expression below:
+// from i = 1 to n, sum (1/i + 1)
+fn mathematical_sum_1(n: i32) -> f32 {
+
+    // Initialise the sum variable to 0
+    let mut sum = 0.0;
+
+    // Iterates from 1 to n
+    for i in 1..=n {
+
+        // Adds 1/i + 1 to the sum
+        sum += 1.0/(i as f32) + 1.0;
+    }
+
+    // Return the sum
+    return sum;
+}
+#+end_src
+
+** (ii)
+Python implementation:
+#+begin_src python
+def mathematical_sum_2(n: int) -> int:
+    """
+    Function to calculate the sum of the mathematical expression below:
+    from i = 1 to n, sum (i + (from j = 0 to i, sum j))
+    """
+
+    # Initialise the sum variable to 0
+    sum = 0
+
+    # Iterates from 1 to n
+    for i in range(1, n + 1):
+
+        # Adds the current number to the sum
+        sum += i
+
+        # Iterates from 0 to the current number i
+        for j in range(i + 1):
+
+            # Add the current number j to the sum
+            sum += j
+
+    # Returns the sum
+    return sum
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to calculate the sum of the mathematical expression below:
+// from i = 1 to n, sum (i + (from j = 0 to i, sum j))
+fn mathematical_sum_2(n: i32) -> i32 {
+
+    // Initialise the sum variable to 0
+    let mut sum = 0;
+
+    // Iterates from 1 to n
+    for i in 1..=n {
+
+        // Add the current number to the sum
+        sum += i;
+
+        // Iterates from 0 to the current number i
+        for j in 0..=i {
+
+            // Add the current number j to the sum
+            sum += j;
+        }
+    }
+
+    // Returns the sum
+    return sum;
+}
+#+end_src
+
+
+* Lab
+
+** Question 1
+Python implementation:
+#+begin_src python
+def print_numbers_less_than_1000_divisible_by_29() -> None:
+    """
+    Function to print all the numbers less than 1000
+    that are divisible by 29.
+    """
+
+    # The list of strings to store the numbers to print
+    str_list: list[str] = []
+
+    # Iterates from 0 to 999
+    for number in range(0, 1000):
+
+        # Checks if the number is divisible by 29
+        if number % 29 == 0:
+
+            # Adds the number as a string to the string list
+            str_list.append(str(number))
+
+    # Print the list of numbers
+    print("\n".join(str_list))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to print all the numbers less than 1000
+// that are divisible by 29
+fn print_numbers_less_than_1000_divisible_by_29() {
+
+    // The list of strings to store the numbers to print
+    let mut str_list: Vec<String> = vec![];
+
+    // Iterates from 0 to 999
+    for number in 0..1000 {
+
+        // Checks if the number is divisible by 29
+        if number % 29 == 0 {
+
+            // Adds the number as a string to the string list
+            str_list.push(number.to_string());
+        }
+    }
+
+    // Print the list of numbers
+    println!("{}", str_list.join("\n"));
+}
+#+end_src
+
+** Question 2
+Python implementation:
+#+begin_src python
+import math
+
+
+def calculate_eulers_number(number_of_decimal_places: int = 8) -> float:
+    "Function to calculate euler's number to a given number of decimal places"
+
+    # Initialise euler's number
+    eulers_number: float = 0
+
+    # Initialise the i variable
+    i = 0
+
+    # Starts an infinite loop
+    while True:
+
+        # Gets the current term
+        term = 1 / math.factorial(i)
+
+        # If the value of the current term is less than
+        # 10 to the power of the negative of the number of decimal places
+        if abs(term) < 10 ** (-number_of_decimal_places):
+
+            # Break out of the loop
+            break
+
+        # Otherwise, add the term to euler's number
+        eulers_number += term
+
+        # Increase i by 1
+        i += 1
+
+    # Return euler's number rounded to the number of decimal places needed
+    return round(eulers_number, number_of_decimal_places)
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to calculate euler's number to a given number of decimal places
+fn calculate_eulers_number(number_of_decimal_places: i32) -> f64 {
+
+    // Initialise euler's number
+    let mut eulers_number = 0.0;
+
+    // Initialise the i variable
+    let mut i = 0;
+
+    // Starts an infinite loop
+    loop {
+
+        // Gets the current term
+        let term = 1.0 / (((1..=i).product::<u64>()) as f64);
+
+        // If the value of the current term is less than
+        // 10 to the power of the negative of the number of decimal places
+        if term.abs() < f64::powi(10.0, -number_of_decimal_places) {
+
+            // Break out of the loop
+            break;
+        }
+
+        // Otherwise, add the term to euler's number
+        eulers_number += term;
+
+        // Increase i by 1
+        i += 1;
+    }
+
+    // Return euler's number rounded to the number of decimal places needed
+    return (
+        eulers_number * f64::powi(10.0, number_of_decimal_places)
+    ).round() / f64::powi(10.0, number_of_decimal_places);
+}
+#+end_src
+
+** Question 3
+Python implementation:
+#+begin_src python
+def print_leap_years_between(start_year: int, end_year: int) -> None:
+    "Function to print all the leap years between a start and end year."
+
+    # Initialise the list of strings to print
+    str_list: list[str] = []
+
+    # Iterates over all the years from the start to the end year
+    for year in range(start_year, end_year + 1):
+
+        # Get whether the year is a leap year or not
+        is_leap_year = year % 4 == 0 and not year % 100 == 0 or year % 400 == 0
+
+        # If the year is a leap year
+        if is_leap_year:
+
+            # Add the year to the list as a string
+            str_list.append(str(year))
+
+    # Split the list of strings into groups of 8
+
+    # Gets the length of the list of strings
+    str_list_len = len(str_list)
+
+    # Get the number of groups of 8
+    number_of_groups = str_list_len // 8
+
+    # Iterates over the number of groups
+    for group_number in range(1, number_of_groups + 1):
+
+        # Gets the slice of the string list that is a group of 8
+        str_list_slice = str_list[(group_number - 1)*8:group_number*8]
+
+        # Prints the slice joined with a comma and a space
+        print(", ".join(str_list_slice))
+
+    # Get the remaining years
+    remaining_years = str_list[number_of_groups*8:]
+
+    # Print the remaining years
+    print(", ".join(remaining_years))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to print all the leap years between a start and end year
+fn print_leap_years_between(start_year: i32, end_year: i32) {
+
+    // Initialise the list of strings to print
+    let mut str_list: Vec<String> = vec![];
+
+    // Iterates over all the years from the start to the end year
+    for year in start_year..=end_year {
+
+        // Get whether the year is a leap year or not
+        let is_leap_year = year % 4 == 0 && !(year % 100 == 0) ||
+            year % 400 == 0;
+
+        // If the year is a leap year
+        if is_leap_year {
+
+            // Add the year to the list as a string
+            str_list.push(year.to_string());
+        }
+    }
+
+    // Split the list of strings into groups of 8
+
+    // Gets the length of the list of strings
+    let str_list_len = str_list.len();
+
+    // Get the number of groups of 8
+    let number_of_groups = str_list_len / 8;
+
+    // Iterates over the number of groups
+    for group_number in 1..=number_of_groups {
+
+        // Gets the slice of the string list that is a group of 8
+        let str_list_slice = &str_list[
+            (group_number - 1) * 8 .. group_number * 8
+        ];
+
+        // Prints the slice joined with a comma and a space
+        println!("{}", str_list_slice.join(", "));
+    }
+
+    // Get the remaining years
+    let remaining_years = &str_list[number_of_groups * 8..];
+
+    // Print the remaining years
+    println!("{}", remaining_years.join(", "));
+}
+#+end_src
+
+** Question 4
+Python implementation:
+#+begin_src python
+import re
+
+# The regex to check if a string is a number
+is_number_regex = re.compile(r"^-?\d+(?:\.\d+)?$")
+
+
+def generate_sgd_rm_conversion_tables() -> None:
+    "Function to generate the SGD to RM and RM to SGD conversion tables"
+
+    # The conversion rate
+    SGD_TO_RM_CONVERSION_RATE = 3.03
+
+    # The list to store the user's input
+    data: list[int] = []
+
+    # The list of prompts
+    prompts = ["start", "end", "increment (step)"]
+
+    # Iterates over the prompts
+    for prompt in prompts:
+
+        # The variable representing whether the input is a number or not
+        is_number = False
+
+        # While the input isn't a number
+        while not is_number:
+
+            # Gets the input
+            user_input = input(f"Please enter the {prompt} value: ")
+
+            # Set the is_number variable
+            is_number = bool(is_number_regex.match(user_input))
+
+        # Adds the user's input to the list
+        data.append(int(user_input))
+
+    # Initialise the list of strings to print
+    str_list = ["SGD to RM Table"]
+
+    # Initialise the values to the values given by the user
+    start_value = data[0]
+    end_value = data[1]
+    increment = data[2]
+
+    # Iterates from the start to the end value with an increment,
+    # all of which are given by the user
+    for dollar_amount in range(start_value, end_value + 1, increment):
+
+        # Convert the dollar amount to RM
+        dollar_amount_in_rm = SGD_TO_RM_CONVERSION_RATE * dollar_amount
+
+        # Adds the information to the string list to be printed
+        str_list.append(f"S${dollar_amount} : RM{dollar_amount_in_rm}")
+
+    # Add an empty string to the string list.
+    # This will be a double newline so there's some spacing between
+    # the SGD to RM table and the RM to SGD table
+    str_list.append("")
+
+    # Add the header for the RM to SGD table
+    str_list.append("RM to SGD table")
+
+    # Initialise the RM amount to the start value
+    rm_amount = start_value
+
+    # Iterates while the RM amount is less than the end value
+    while rm_amount <= end_value:
+
+        # Get the dollar amount from the amount in RM
+        rm_amount_in_dollar = rm_amount / SGD_TO_RM_CONVERSION_RATE
+
+        # Adds the information to the string list to be printed
+        str_list.append(f"RM{rm_amount} : S${rm_amount_in_dollar}")
+
+        # Increase the RM amount by the increment
+        rm_amount += increment
+
+    # Prints the list of strings joined with a new line character
+    print("\n".join(str_list))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// Function to generate the SGD to RM and RM to SGD conversion tables
+fn generate_sgd_rm_conversion_tables() {
+
+    // THe conversion rate
+    const SGD_TO_RM_CONVERSION_RATE: f32 = 3.03;
+
+    // The list to store the user's input
+    let mut data: Vec<i32> = vec![];
+
+    // The list of prompts
+    let prompts = ["start", "end", "increment (step)"];
+
+    // Iterates over the prompts
+    for prompt in prompts {
+
+        // Initialise the variable to represent
+        // whether or not the input is numeric
+        let mut is_number = false;
+
+        // Initialise the string to store the user's input
+        let mut input = String::new();
+
+        // While the input is not numeric
+        while !is_number {
+
+            // Prints the prompt
+            print!(
+                "Please enter the {prompt} value: "
+            );
+
+            // Flush the stdout
+            std::io::stdout().flush().unwrap();
+
+            // Read the user's input to the input variable
+            match std::io::stdin().read_line(&mut input) {
+                Ok(_number_of_bytes) => (),
+                Err(error) => println!("Error: {error}")
+            }
+
+            // Match statement to handle errors
+            match input.trim().parse::<i32>() {
+
+                // If there are no errors
+                Ok(value) => {
+
+                    // Adds the user's input to the list
+                    data.push(value);
+
+                    // Set the is_number variable to true
+                    is_number = true;
+                },
+
+                // If there's an error parsing, set is_number is false
+                Err(_) => is_number = false
+            }
+
+            // Make the input an empty string
+            input = "".to_string();
+        }
+    }
+
+    // Initialise the list of strings to print
+    let mut str_list: Vec<String> = vec!["SGD to RM Table".to_string()];
+
+    // Initialise the values to the values given by the user
+    let start_value = data[0];
+    let end_value = data[1];
+    let increment = data[2];
+
+    // Iterates from the start to the end value with an increment,
+    // all of which are given by the user
+    for dollar_amount in
+        (start_value..=end_value).step_by(increment as usize) {
+
+        // Convert the dollar amount to RM
+        let dollar_amount_in_rm =
+            SGD_TO_RM_CONVERSION_RATE * dollar_amount as f32;
+
+        // Adds the information to the string list to be printed
+        str_list.push(
+            format!("S${dollar_amount} : RM{dollar_amount_in_rm}")
+        );
+    }
+
+    // Add an empty string to the string list
+    // This will be a double newline so there's some spacing between
+    // the SGD to RM table and the RM to SGD table
+    str_list.push("".to_string());
+
+    // Add the header for the RM to SGD table
+    str_list.push("RM to SGD table".to_string());
+
+    // Initialise the RM amount to the start value
+    let mut rm_amount = start_value;
+
+    // Iterates while the RM amount is less than the end value
+    while rm_amount <= end_value {
+
+        // Get the dollar amount from the amount in RM
+        let rm_amount_in_dollar = rm_amount as f32 / SGD_TO_RM_CONVERSION_RATE;
+
+        // Adds the information to the string list to be printed
+        str_list.push(format!("RM{rm_amount} : S${rm_amount_in_dollar}"));
+
+        // Increase the RM amount by the increment
+        rm_amount += increment;
+    }
+
+    // Prints the list of strings joined with a new line character
+    println!("{}", str_list.join("\n"));
+}
+#+end_src
+
+** Question 5
+#+begin_src python
+import re
+
+# The regex to check if a string is a number
+is_number_regex = re.compile(r"^-?\d+(?:\.\d+)?$")
+
+
+def print_triangular_pattern_of_lines() -> None:
+    """
+    Function to take a height from a user and print a triangular pattern
+    of AAs and BBs.
+    """
+
+    # The variable representing whether the input is a number or not
+    is_number = False
+
+    # While the input isn't a number
+    while not is_number:
+
+        # Gets the input
+        user_input = input(
+            "Please enter the height of the triangular pattern: "
+        )
+
+        # Set the is_number variable
+        is_number = bool(is_number_regex.match(user_input))
+
+    # Gets the height of the triangle
+    height = int(user_input)
+
+    # The list of strings to print
+    str_list: list[str] = []
+
+    # Iterate until the height given
+    for i in range(1, height + 1):
+
+        # Gets the quotient and remainder
+        # of the number divided by 2
+        quotient, remainder = divmod(i, 2)
+
+        # Gets the string at the start
+        start_string = "AA" if remainder == 1 else ""
+
+        # Creates the string and add it to the list
+        str_list.append(f"{start_string}{'BBAA' * quotient}")
+
+    # Prints the triangular pattern
+    print("\n".join(str_list))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// Function to take a height from a user a print a triangular pattern
+// of AAs and BBs.
+fn print_trianglular_pattern_of_lines() {
+
+    // Initialise the variable to store the height of the triangular pattern
+    let mut height = 0;
+
+    // Initialise the variable to represent
+    // whether or not the input is numeric
+    let mut is_number = false;
+
+    // Initialise the string to store the user's input
+    let mut input = String::new();
+
+    // While the input is not numeric
+    while !is_number {
+
+        // Prints the prompt
+        print!(
+            "Please enter the height of the triangular pattern: "
+        );
+
+        // Flush the stdout
+        std::io::stdout().flush().unwrap();
+
+        // Read the user's input to the input variable
+        match std::io::stdin().read_line(&mut input) {
+            Ok(_number_of_bytes) => (),
+            Err(error) => println!("Error: {error}")
+        }
+
+        // Match statement to handle errors
+        match input.trim().parse::<i32>() {
+
+            // If there are no errors
+            Ok(value) => {
+
+                // Sets the height to the user's input
+                height = value;
+
+                // Set the is_number variable to true
+                is_number = true;
+            },
+
+            // If there's an error parsing, set is_number is false
+            Err(_) => is_number = false
+        }
+
+        // Make the input an empty string
+        input = "".to_string();
+    }
+
+    // The list of strings to print
+    let mut str_list: Vec<String> = vec![];
+
+    // Iterates until the height given
+    for i in 1..=height {
+
+        // Gets the quotient of the number divided by 2
+        let quotient = i / 2;
+
+        // Gets the remainder of the number divided by 2
+        let remainder = i % 2;
+
+        // Gets the string at the start
+        let start_string = if remainder == 1 { "AA" } else { "" };
+
+        // Creates the string and add it to the list
+        str_list.push(
+            format!("{start_string}{}", "BBAA".repeat(quotient as usize))
+        );
+    }
+
+    // Prints the triangular pattern
+    println!("{}", str_list.join("\n"));
+}
+#+end_src

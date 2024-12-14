@@ -1,0 +1,151 @@
+#+TITLE: Thermochemistry Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{siunitx}
+
+\newpage
+
+* Definitions
+
+** Conservation of energy
+Energy cannot be created or destroyed; it can only be converted from one form to another.
+
+** Thermal energy
+Thermal energy refers to the kinetic energy of molecular motion. It is measured by finding the *temperature* of an object.
+
+** Heat
+Heat refers to the amount of thermal energy transferred from one object to another as the result of a *temperature difference* between the two.
+
+** First law of thermodynamics
+The total internal energy $E$ of an isolated system is constant.
+
+\[\Delta E  = E_{final} - E_{initial}\]
+
+** State function
+A state function is a function or property whose value depends only on the present state or condition of the system, not on the path used to arrive at that state.
+
+** Expansion work
+Expansion work is the work done as the result of a volume change in the system.
+
+** Enthalpy
+Enthalpy refers to the total heat content of a system. It is equal to the internal energy of the system plus the work done on the system. It is also a state function.
+
+\[\Delta H = \Delta E + w\]
+\[\Delta H = \Delta E + P \Delta V\]
+
+\newpage
+
+** Thermodynamic standard state
+The thermodynamic standard state is the most stable form of a substance. The conditions are:
+1. Pressure of $\qty{1}{\unit{atm}}$
+2. Temperature of $\qty{25}{\unit{\degreeCelsius}}$
+3. Concentration of $\qty{1}{\unit{M}}$ for all substances in solution
+
+Values at this state are denoted with a superscript circle, like \(\Delta H^\circ, \Delta S^\circ\) and \(\Delta G^\circ\).
+
+** Enthalpy change of fusion (\(\Delta H_{fusion}\))
+The enthalpy change of fusion is the amount of heat required to *melt* a substance *without changing its temperature*.
+
+** Enthalpy change of vaporisation (\(\Delta H_{vap}\))
+The enthalpy change of vaporisation is the amount of heat required to *vaporise* a substance *without changing its temperature*.
+
+** Enthalpy change of sublimation (\(\Delta H_{subl}\))
+The enthalpy change of sublimation is the amount of heat required to convert a substance from a *solid to a gas without going through a liquid phase*.
+\\
+
+At constant temperature:
+\[\Delta H_{subl} = \Delta H_{fusion} + \Delta H_{vap}\]
+
+** Exothermic reaction
+An exothermic reaction is a reaction that releases heat, which means its enthalpy change is negative, i.e. \(\Delta H < 0\).
+
+** Endothermic reaction
+An endothermic reaction is a reaction that absorbs heat, which means its enthalpy change is positive, i.e. \(\Delta H > 0\).
+
+** Heat capacity (\(C\))
+Heat capacity refers to the amount of heat necessary to raise the temperature of an object or substance a given amount.
+
+\[C = \frac{q}{\Delta T}\]
+\[q = C \times \Delta T\]
+
+** Specific heat capacity (\(c\))
+Specific heat capacity refers to the amount of heat required to raise the temperature of $\qty{1}{\unit{g}}$ of a substance by $\qty{1}{\unit{\degreeCelsius}}$.
+
+\[q = mc \Delta T, \ \ \text{where } m \text{ is the mass of the substance in } \unit{g}\]
+
+** Molar heat capacity (\(C_m\))
+Molar heat capacity is the amount of heat necessary to raise the temperature of \(\qty{1}{\unit{mol}}\) of a substance by \(\qty{1}{\unit{\degreeCelsius}}\).
+
+\[q = C_m \times n \times \Delta T, \ \ \text{where } n \text{ is the number of moles of the substance}\]
+
+** Hess's law
+Hess's law states that the overall enthalpy change for a reaction is equal to the sum of the enthalpy changes for the individual steps in the reaction.
+\\
+
+Essentially:
+\[\Delta H_{overall} = \Delta H_{1} + \Delta H_{2} + \Delta H_{3} + \ldots + \Delta H_{n}\]
+
+\newpage
+
+** Haber process
+The Haber process is just the industrial process to create ammonia ($NH_3$) from $H_2$ and $N_2$ to form ammonia ($NH_3$).
+\\
+
+The conditions are:
+1. Pressure of \(\qty{200}{\unit{atm}}\)
+2. Temperature of \(\qty{450}{\unit{\degreeCelsius}}\)
+3. Presence of iron ($Fe$) catalyst
+
+\[3H_2 (g) + N_2 (g) \rightarrow 2NH_3 (g) \qquad \Delta H^\circ = -\qty{92.2}{\unit{kJ}}\]
+
+** Standard enthalpy change of formation (\(\Delta H^\circ_f\)) (Standard heat of formation)
+The standard enthalpy change of formation is the enthalpy change for the formation of $\qty{1}{\unit{mol}}$ of a substance in its *standard state* from its constituent elements in their *standard states*.
+
+** Bond dissociation energies
+Bond dissociation energies is the *standard enthalpy changes* for the corresponding *bond-breaking* reactions.
+\\
+
+Essentially, it is \(\Delta H^\circ_{Bond-breaking}\).
+
+** Spontaneous process
+A spontaneous process is a process that, once started, proceeds on its own *without* a continuous *external influence*.
+
+** Entropy (\(S\))
+Entropy is the amount of molecular randomness in a system.
+
+** Change in Gibbs Free Energy (\(\Delta G\))
+\[\Delta G = \Delta H - T \Delta S\]
+
+- When \(\Delta G < 0\), the reaction is *spontaneous*.
+- When \(\Delta G = 0\), the reaction is at *equilibrium*.
+- When \(\Delta G > 0\), the reaction is *not spontaneous*.
+
+\newpage
+
+* Formulas
+
+** Change in internal energy due to change in pressure or volume
+\[q = \text{Heat transferred}\]
+\[\text{Work done: } w = - P \Delta V\]
+
+\[\Delta E = q + w\]
+\[q = \Delta E + P \Delta V\]
+
+For constant volume ($\Delta V = 0$):
+\[q_v = \Delta E\]
+
+For constant pressure:
+\[q_p = \Delta E + P \Delta V\]
+
+Since enthalpy change (\(\Delta H\)) is equal to the heat transferred:
+\[\Delta H = q_p = \Delta E + P \Delta V\]
+
+Since enthalpy is a state function whose value depends only on the current state of the system:
+\begin{align*}
+\Delta H &= H_{final} - H_{initial} \\
+&= H_{products} - H_{reactants} \\
+&= \Delta (H_f)_{products} - \Delta (H_f)_{reactants} \\
+&= \Delta H_{Bond-breaking} - \Delta H_{Bond-forming}
+\end{align*}
+

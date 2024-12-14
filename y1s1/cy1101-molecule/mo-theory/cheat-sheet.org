@@ -1,0 +1,301 @@
+#+TITLE: Molecular Orbital Theory Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{modiagram, graphicx}
+#+LATEX_HEADER: \graphicspath{ {./images/} }
+
+\newpage
+
+* Definitions
+
+** Constructive interference
+When two wave functions (orbitals) on different atoms *constructively interfere*, they produce a new molecular orbital that *promotes* bonding, given by:
+\[\Psi(1s)_{H(1)} + \Psi(1s)_{H(2)} \rightarrow \Psi_{b(H-H)}\]
+
+This new molecular orbital has a greater amplitude.
+
+** Destructive interference
+When two wave functions (orbitals) on different atoms *destructively interfere*, they produce a new molecular orbital that *decreases* bonding, given by:
+\[\Psi(1s)_{H(1)} - \Psi(1s)_{H(2)} \rightarrow \Psi_{b(H-H)}\]
+
+This new molecular orbital has smaller amplitude.
+
+** Bonding molecular orbitals
+The *addition* of atomic orbitals forms a *bonding* molecular orbital, which has a region of *high* electron density between the nuclei. It is given by the *constructive interference* of two atomic orbitals and expressed by:
+\[\Psi_A + \Psi_B \rightarrow \text{Bonding molecular orbital}\]
+
+** Anti-bonding molecular orbitals
+The *subtraction* of atomic orbitals forms an *anti-bonding* molecular orbital, which has a region of *zero* electron density between the nuclei. It is given by the *destructive interference* of two atomic orbitals and expressed by:
+\[\Psi_A - \Psi_B \rightarrow \text{Anti-bonding molecular orbital}\]
+
+** HOMO
+HOMO is the highest occupied molecular orbital, which refers to the molecular orbital with the *highest energy* that is *occupied* by electrons.
+
+** LUMO
+LUMO is the lowest unoccupied molecular orbital, which refers to the molecular orbital with the *lowest* energy that is *unoccupied* by electrons.
+
+** SUMO
+SUMO is the highest singly occupied molecular orbital, which refers to the molecular orbital with the *highest energy* that is *occupied* by electrons, and is also *singly* filled.
+
+** Gerade (\(\sigma_g\))
+Gerade refers to molecular orbitals that are symmetric to inversion
+
+** Ungerade (\(\sigma_u\))
+Ungerade refers to molecular orbitals that are antisymmetric to inversion.
+
+** Aufbau principle
+Orbitals are filled up in the order of increasing energy.
+
+** Hund's rule
+Orbitals are first singly filled and pairing starts when more electrons are to be accommodated.
+
+** Bond order
+Bond order gives an indication on the number of covalent bonds between the two combining atoms of a molecule. Bond order is given by:
+\[\text{Bond order} = \frac{1}{2}(N_b - N_{ab})\]
+
+\(N_b\) refers to the number of electrons in *bonding* molecular orbitals, while \(N_{ab}\) refers to the number of electrons in *anti-bonding* molecular orbitals.
+
+** Paramagnetism
+Paramagnetism is caused by *unpaired electrons* in the molecule and results in a strong attraction between the magnetic field and the molecule.
+
+** Diamagnetism
+Diamagnetism is caused by having *no unpaired electrons* in the molecule and results in a weak repulsion between the magnetic field and the molecule.
+
+
+* Molecular orbital theory
+Molecule orbital theory is based on the Schr\(\"{o}\)dinger's equation which describe the *wave properties of electrons* in atoms. This means that understanding superposition will be helpful in understanding molecular orbital theory.
+
+
+* Differences in bonding between the 2 theories
+
+** Valence bond theory
+A molecule is viewed as a group of atoms bonded through *localised overlapping* of valence-shell atomic or hybrid orbitals occupied by electrons.
+
+** Molecular orbital theory
+A molecule as a collection of nuclei with orbitals *delocalised over the whole molecule* and occupied by electrons.
+
+
+* Conditions required for bonding
+1. *Orbital symmetry* must be such that regions with same sign (positive and positive or negative and negative) for the wave function of the electrons to overlap.
+2. The *energies* of the atomic orbitals must be similar.
+3. The *distance* between atoms must be short enough to provide good overlap while being long enough to prevent excessive repulsive forces.
+
+\newpage
+
+* Rules of molecular orbital theory
+- Molecular orbitals are constructed by symmetry (orbitals of same sign must be together).
+- Atomic orbitals of similar energy combine more effectively to give molecular orbitals of vastly different energy from the atomic orbitals.
+- Distance between atoms must be short enough to provide good overlap.
+- The number of molecular orbitals must be equal to the total number of atomic orbitals contributed due to the conservation of energy.
+- The bonding molecular orbitals are lower in energy than anti-bonding molecular orbitals. Also, the bonding molecular orbitals are lower in energy and the anti-bonding molecular orbitals are higher in energy than the atomic orbitals that combined to form them.
+- Electrons are assigned to successive higher energy molecular orbitals.
+- The *addition* of two wave functions represents *attraction*.
+- The *subtraction* of two wave functions represents *repulsion*.
+
+\newpage
+
+* Why are bonding molecular orbitals lower in energy than anti-bonding molecular orbitals?
+We have to look at the electronic density of the molecular orbital. The electronic density is given by \(\Psi_A^2\).
+\\
+
+For *bonding* molecular orbitals, the *electronic density* is:
+\begin{align*}
+(\Psi_b)^2 &= (\Psi_A + \Psi_B)^2 \\
+&= \Psi_A^2 + \Psi_B^2 + 2 \Psi_A \Psi_B
+&< \Psi_A^2 + \Psi_B^2
+\end{align*}
+
+This means that the electronic density of the bonding molecular orbitals is *greater* than the *sum* of the electronic densities of the individual atoms A and B \((\Psi_A^2 + \Psi_B^2)\).
+\\
+
+For *anti-bonding* molecular orbitals, the *electronic density* is:
+\begin{align*}
+(\Psi_b)^2 &= (\Psi_A - \Psi_B)^2 \\
+&= \Psi_A^2 + \Psi_B^2 - 2 \Psi_A \Psi_B
+&< \Psi_A^2 + \Psi_B^2
+\end{align*}
+
+This means that the electronic density of the bonding molecular orbitals is *smaller* than the *sum* of the electronic densities of the individual atoms A and B \((\Psi_A^2 + \Psi_B^2)\).
+\\
+
+\[\text{Greater electron density}\]
+\[\downarrow\]
+\[\text{Greater effective overlap of the orbitals}\]
+\[\downarrow\]
+\[\text{Greater stability of the molecule}\]
+\[\downarrow\]
+\[\text{Greater stability means that there is less energy associated with the bond}\]
+
+* Drawing molecular orbital diagrams
+First, draw the atomic orbitals for the two atoms and fill up the electrons for them.
+\\
+
+Next, draw the molecular orbitals that are formed between the two atoms, including both the bonding and anti-bonding molecular orbitals.
+\\
+
+The asterisk (\(\text{*}\)) in \(\sigma^* 1s\) stands for *anti-bonding* molecular orbitals and is usually called a star. The superscript $b$ in \(\sigma^{b} 1s\) stands for *bonding* molecular orbitals.
+\\
+
+Then, fill up the electrons on the molecular orbitals using the Aufbau principle, Hund's rule and Pauli's exclusion principle to fill up the electrons on the molecular orbitals.
+
+\newpage
+
+* Case studies
+
+** \(H_2^+\)
+Since a normal covalent bond has a bond order of 1, \(H_2^+\) has low bond dissociation energy and large bond length compared to a \(H_2\) atom. Hence, this molecule-ion is only found in low-pressure gas form because it is much more reactive than molecular hydrogen, but it does exist.
+
+** Does \(Be_2\) exist?
+Drawing the molecular orbital energy diagram:
+\\
+
+\begin{modiagram}
+\atom{left}{1s, 2s = {;pair}}
+\atom{right}{1s, 2s = {;pair}}
+\molecule{1sMO, 2sMO}
+
+% Labels on the 1s orbitals
+\node[yshift=-0.5em, below] at (1sleft) {$1s$};
+\node[yshift=-0.5em, below] at (1sright) {$1s$};
+\node[yshift=-0.5em, below] at (1sigma*) {$\sigma^* 1s$};
+\node[yshift=-0.5em, below] at (1sigma) {$\sigma^b 1s$};
+
+% Labels on the 2s orbitals
+\node[yshift=-0.5em, below] at (2sleft) {$2s$};
+\node[yshift=-0.5em, below] at (2sright) {$2s$};
+\node[yshift=-0.5em, below] at (2sigma*) {$\sigma^* 2s$};
+\node[yshift=-0.5em, below] at (2sigma) {$\sigma^b 2s$};
+\end{modiagram}
+\\
+
+Finding the bond order:
+\begin{align*}
+\text{Bond order} &= \frac{1}{2}(N_b + N_ab) \\
+&= \frac{1}{2}(4 - 4) \\
+&= 0
+\end{align*}
+
+Since the bond order is 0, this means that molecular $Be$ does not exist as \(Be_2\).
+
+\newpage
+
+* \(2s-2p\) orbital mixing
+Due to the relatively small energy gaps between $2s$ and $2p$ orbitals in $B, C, N$ atoms, the $s-p$ mixing is found in their diatomic molecules. The relatively huge energy gaps between the $2s$ and $2p$ orbitals in $O, F, Ne$ atoms result in *no* $s-p$ mixing in their diatomic molecules.
+\\
+
+When there is \(2s-2p\) orbital mixing, both bonding and anti-bonding $\sigma_{2s}$ orbitals become lower in energy and both bonding and anti-bonding $\sigma_{2p}$ orbitals become higher in energy. The $\sigma_{2p}$ bonding orbitals should have a *higher energy level* than that of the $\pi_{2p}$ bonding orbitals.
+
+\[\includegraphics[width = \textwidth]{2s-2p-orbital-mixing}\]
+
+\newpage
+
+* How to use molecular orbital theory
+1. Count the *total number* of electrons in a molecule
+2. Construct the molecular orbital diagram
+3. Fill up the electrons in the diagram using Aufbau Principle, Hund's Rule and Pauli's Exclusion principle
+4. Count the number of electrons in the bonding and anti-bonding orbitals
+5. Calculate the bond order using \(\frac{1}{2} (N_b - N_{ab})\)
+
+
+* 2s-2p orbital mixing in heteronuclear diatomic molecules
+Examples of heteronuclear diatomic molecules include $CO$, $NO$, $HF$.
+\\
+
+If the difference in electronegativity is *large*, there usually will be orbital mixing. Computer models suggest that $CO$ and $NO$ will involve orbital mixing.
+\\
+
+For other cases, it is usually difficult to predict which cases have and which don't have orbital mixing.
+
+** \(CO\)
+\[\includegraphics[scale=0.25]{co-molecular-orbital-diagram}\]
+
+\begin{align*}
+\text{Bond order} &= \frac{1}{2} (N_b - N_{ab}) \\
+&= \frac{1}{2} (10 - 4) \\
+&= \frac{1}{2} (6) \\
+&= 3
+\end{align*}
+
+** \(NO\)
+\[\includegraphics[scale=0.25]{no-molecular-orbital-diagram}\]
+
+\begin{align*}
+\text{Bond order} &= \frac{1}{2} (N_b - N_{ab}) \\
+&= \frac{1}{2} (10 - 5) \\
+&= \frac{1}{2} (5) \\
+&= 2.5
+\end{align*}
+
+** \(NO^+\)
+\[\includegraphics[scale=0.25]{no+-molecular-orbital-diagram}\]
+
+\begin{align*}
+\text{Bond order} &= \frac{1}{2} (N_b - N_{ab}) \\
+&= \frac{1}{2} (10 - 4) \\
+&= \frac{1}{2} (6) \\
+&= 3
+\end{align*}
+
+\newpage
+
+** Warning
+Heteronuclear diatomic cases are not always simple, as you will see in the later few examples.
+\\
+
+When two atoms of a diatomic molecule are very different, the energy-level diagram for homonuclear molecules can *no longer be used*. A *new* diagram must be devised for each molecule.
+
+\newpage
+
+** \(HF\)
+Orbital energy between $H$ and $F$.
+\[\includegraphics[width = \textwidth]{hf-orbital-energy}\]
+
+The energy difference between the $1s$ and $2s$ of $F$ and $1s$ of $H$ is *too large* for them to interact. Assuming the $2p_z$ orbital to be the one forming the head-on overlap with the $1s$ orbital of $H$, $2p_x$ and $2p_y$ do not have the correct orientation to mix with $1s$ of H. That leaves only $2p_z$ to interact with the $1s$ of H, forming a bonding and an anti-bonding orbital. Hence, the remaining $2p_x$ and $2p_y$ electrons of $F$ remain as *non-bonding molecular orbitals*.
+
+\[\includegraphics[width = \textwidth]{hf-molecular-orbital-diagram}\]
+
+\begin{align*}
+\text{Bond order} &= \frac{1}{2} (N_b - N_{ab}) \\
+&= \frac{1}{2} (2 - 0) \\
+&= \frac{1}{2} (2) \\
+&= 1
+\end{align*}
+
+Since there are no lone electrons in the molecular orbitals of $HF$, $HF$ is *diamagnetic*.
+\\
+
+Since the $2p$ orbital in $F$ is lower in energy that the $1s$ orbital in $H$, the electrons prefer to be closer to the $F$ atom which results in greater electron density close to the $F$ atom.
+
+** \(LiF\)
+Orbital energy between $Li$ and $F$.
+\[\includegraphics[width = \textwidth]{hf-orbital-energy}\]
+
+The $2s$ orbital of $Li$ is higher in energy than both the $1s$ and $2s$ orbitals of $F$. Hence, $Li$ only interacts with $2p_z$ orbital of $F$ and all remaining electrons in $F$ are in *non-bonding molecular orbitals*.
+
+\[\includegraphics[width = \textwidth]{lif-molecular-orbital-diagram}\]
+
+\begin{align*}
+\text{Bond order} &= \frac{1}{2} (N_b - N_{ab}) \\
+&= \frac{1}{2} (2 - 0) \\
+&= \frac{1}{2} (2) \\
+&= 1
+\end{align*}
+
+Since there are no lone electrons in the molecular orbitals of $LiF$, $LiF$ is *diamagnetic*.
+
+\newpage
+
+** \(OH^-\)
+The $1s$ orbital of $O$ is higher in energy than both the $1s$ and $2s$ orbitals of $O$. Hence, $O$ only interacts with the $2p_z$ orbital of $O$ and all remaining electrons in $O$ are in *non-bonding molecular orbitals*.
+
+\[\includegraphics[width = \textwidth]{oh--molecular-orbital-diagram}\]
+
+\begin{align*}
+\text{Bond order} &= \frac{1}{2} (N_b - N_{ab}) \\
+&= \frac{1}{2} (2 - 0) \\
+&= \frac{1}{2} (2) \\
+&= 1
+\end{align*}
+
+Since there are no lone electrons in the molecular orbitals of $OH$, $OH$ is *diamagnetic*.

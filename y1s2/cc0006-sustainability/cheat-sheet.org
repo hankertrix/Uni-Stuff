@@ -1,0 +1,1707 @@
+#+TITLE: CC0006 Sustainability Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** Sustainability
+The ability for something to sustain itself.
+
+** Sustainable development
+- Sustainable development is development that meets the needs of the present without compromising the ability of future generations to meet their own needs.
+- Sustainable development aims for a world in which:
+  - Economic growth is widespread.
+  - Extreme poverty is eradicated.
+  - Community is strengthened through relevant policies that promote social trust and equal opportunities for everyone.
+  - The environment is protected from human-induced degradation.
+
+*** Necessary conditions to achieve sustainable development
+1. We need to know what the needs of the present are.
+2. We need to know the needs and abilities of future generations.
+3. How our actions are affecting the world of the future.
+4. We need to decide on ways to change and implement those changes.
+
+*** Goals
+1. Economic development
+2. Social Inclusion
+3. Environmental sustainability
+
+** Multidisciplinary
+The additive knowledge of different disciplines.
+
+** Interdisciplinarity
+The integration and synthesis of different disciplines.
+
+** Transdisciplinarity
+This refers to approaches that go across, between, and beyond disciplines.
+
+** Circular economy
+The circular economy is based on three principles, namely:
+1. Eliminate waste and pollution
+2. Circulate products and materials
+3. Regenerate nature
+
+Some ideas include having waste build capital (make money) instead of reducing it, such as using safe and compostable materials that can help grow more food. Another is to have a return-and-renew kind of product cycle instead of a buy-and-throw-away one.
+
+The circular economy replaces the concept of end-of-life materials, like food products, with reusing or recycling in both the production and consumption of the products.
+
+** Poverty
+Poverty, in the sustainable development context, not only implies a lack of income and productive resources to ensure sustainable living. It also implies hunger and malnourishment, social discrimination, exclusion, and the lack of participation in decision-making.
+
+** Purchasing Power Parity (PPP)
+Purchasing Power Parity (PPP) is a theoretical exchange rate at which you can buy the same amount of goods and services with another currency. An example is that if a burger in London costs £2 while the same burger costs S$4 in Singapore, it would imply a PPP exchange rate of £1 to S$2.
+
+** Official Development Assistance (ODA)
+Government aid that is mainly donated by *high-income countries* promotes and specifically targets the economic development and welfare of developing countries. It is mainly used for economic development in poor countries like to build capital or capacity. Some examples of this are paving roads, building power grids, clinics and schools, as well as providing training and salaries for teachers and healthcare workers.
+
+Official Development Assistance came into existence around 1970, and the goal was that high-income countries would donate around 1% of their GDP to help lower-income countries. 70% of it was intended to come mainly through government-to-government grants and low-interest loans. The remaining 30% was intended to come through private contributions, such as corporations, foundations and charitable organisations.
+
+An all-time high ODA was mobilised in 2021, about 179 billion US dollars, which was around 4.4% higher than the donations received in 2020. However, the ODA is still significantly less than the intended amount. The actual intended ODA in 2021 was expected to be about $280 billion US dollars.
+
+*** How does it work?
+- Foreign aid cannot be a long-term way of life in developing countries.
+- It is a temporary helping hand to push poor countries on the ladder of economic development so that they can self-sustain their growth for the longer term.
+- Once these countries reach a certain level of economic growth, they will no longer need financial help.
+- China and Korea are examples of this process as they heavily relied on foreign aid in the past, then progressively graduated from aid and have recently significant donor countries themselves.
+
+*** Distributing foreign aid
+- Project-based approaches such as financing a local business, building a well, or providing uniforms so the children can attend school. Public health aid is also widely supported, such as offering vaccinations, or developing cheap and effective drugs to treat malaria and other similar diseases in low-income countries.
+- Observing the development effects of various projects and practices to then decide which ones to adopt and which ones to discard.
+
+*** Effectiveness of ODA
+- ODA has been the most stable external resource for developing countries in the last few decades.
+- It has successfully helped countries control AIDS, malaria and tuberculosis, and lowered the mortality rate of children and mothers during pregnancy.
+
+** Gender pay gap
+The gender pay gap is the average gap between men's and women's wages and salaries, before or after controlling for the type of work, the level of qualification and some other relevant factors.
+
+** Environmental inequality
+Environmental inequality is the uneven exposure to environmental risks and hazards, often coupled with the systematic exclusion of people from environmental decision-making processes.
+
+Environmental inequality is often invisible, and has been all too easy for politicians to ignore.
+
+*** Possible solutions in the context of Singapore
+- Changing mindsets:
+  Changing some policies to accommodate the changing demographics of Singapore or enhancing the existing social structures are insufficient in addressing environmental inequality, we need to fundamentally change our mindset about poverty and inequality.
+
+- Learning from Sweden:
+  The experience of many northern European countries, particularly Scandinavian countries, demonstrates that strong welfare states can see high levels of inclusive growth.
+
+- More public debate:
+  We need to resist the inner urge to define and explain away inequality. We should instead make a conscious effort to move beyond defensiveness and ideology.
+
+** Food security
+Food security exists when all people at all times have physical and economic access to sufficient, safe and nutritious food that meets their dietary needs and food preferences for an active and healthy life.
+
+*** Stability
+Stability refers to a secure population, household or individual access to adequate food at all times, protected from sudden shocks or cyclical events that can threaten the availability of and access to food resources.
+
+*** Utilisation
+Utilisation refers to the utilisation of food in conjunction with adequate diet, clean water, sanitation and healthcare to a state of nutritional well-being, demonstrating the importance of non-food inputs for food security.
+
+*** Food availability
+Food availability refers to the availability of sufficient quantities and appropriate quality of food products that are either locally produced or supplied by imports, including food aid.
+
+*** Food accessibility
+Food accessibility refers to adequate access to food resources for a nutritious diet.
+
+** Global food system
+The global food system is the sum of actors, sectors and interactions along the food value chains, which includes research and development, input supply, production, harvesting, storage, transportation, processing, retailing, wholesaling, preparation, consumption and the disposal of food.
+
+** Economy
+The economy consists of two simple blocks, production and consumption. Minerals and other natural resources from the environment are used for production. The waste material from our consumption is then sent back to the environment. Hence, we are completely dependent on the environment for our survival on Earth.
+
+** Greenhouse effect
+The greenhouse effect is a natural process that makes life possible on Earth. The effect is as follows:
+- Some solar radiation is reflected by the Earth and the atmosphere.
+- Most radiation is absorbed by the Earth's surface and warms it.
+- Some of the infrared radiation passes through the atmosphere, and some is absorbed and re-emitted in all directions by greenhouse gas molecules. The effect of this is to warm the Earth's surface and the lower atmosphere.
+- Infrared radiation is emitted by the Earth's surface.
+
+Generally, the greater the amount of greenhouse gases in the atmosphere, the warmer the planet is.
+
+*** Ramping up the greenhouse effect
+- Burning excessive amounts of fossil fuels adds an excessive amount of carbon dioxide to the air.
+- Greenhouse gases are trapping much more heat than required, which increases the average global temperature.
+
+** Energy poverty
+Energy poverty is the lack of access to sustainable and modern energy services and products.
+
+** Rational agents
+- Rational agents only perform actions that benefit themselves or make financial sense for them.
+- Every decision is driven by some kind of cost-and-benefit analysis.
+- If the benefits are higher than the cost, they will go for it, and not otherwise.
+
+** Pollution
+- The presence of substances and heat in environmental media (air, water, land) whose nature, location, or quantity produces undesirable environmental effects.
+- It is humans that either created, concentrated or made more of the pollutant, be it a hazardous chemical, a greenhouse gas, or fumes from combustion.
+
+** Microplastics
+- Microplastics are tiny plastic particles that are less than 5 millimetres in size.
+- These pieces range from the diameter of a grain of rice to sizes you need a microscope to be able to see.
+- Microplastics are in the range of 1 micrometre to 1 millimetre in size.
+- Every part of the globe has microplastics, no matter how remote, from the Arctic to the Antarctic and everything in between.
+- During an expedition to the Marianas Trench, the world's deepest place, located off the coast of the Philippines, explorers found a few new species of marine animals, a plastic bag and some candy wrappings.
+- There are primary microplastics and secondary microplastics.
+- Primary and secondary microplastics are found in oceans, lakes, waterways, soil, air and even in our food.
+- Once released or broken away from their original product, microplastics can travel through waterways and end up in the ecosystem that serves as homes to a range of marine life including algae, zooplankton, fish, crabs, sea turtles and birds.
+- Microplastics are very easily ingested by living organisms.
+- When a fish or an invertebrate absorbs these microplastics by eating them, these microplastics begin to accumulate in their body or slowly make their way up the food chain.
+- Ecologists have found that microplastics often make their way into drinking water and food like salt, honey and sugar.
+- Some researchers suggest that humans consume more than 100,000 microplastic particles a year.
+- However, there are many unanswered questions about the impacts of microplastics on humans and how the human body responds to the microplastics that we eat, drink or inhale.
+
+*** Primary microplastics
+- Primary microplastics are plastic particles that are specifically designed to be very small to carry out their intended function.
+- For example, plastic microbeads are small spheres in exfoliating face washes and fine plastic powder can be put into toothpaste and sunscreen.
+- They typically wash down the drain, slip through wastewater treatment plants and enter the oceans.
+
+*** Secondary microplastics
+- Secondary microplastics are large plastic materials used in packaging or building materials that just get ground down over time, either through abrasion, wind or sun rays to become microplastics.
+- Plastic bags, bottles, food containers, paints, adhesives, coating and electronics are all examples of materials that can break down and release secondary microplastics.
+- Washing cloth made from synthetic fibres in washing machines, is another common way that households often unknowingly contribute to the microplastics problem.
+
+** Consumerism
+- Consumerism is when you're buying things that you don't necessarily need for the sake of buying them.
+- An economic strategy that stimulated an increase in the production of consumer goods.
+- The word consumerism is heavily linked to excess or excessive consumption activities.
+- A throwaway society full of disposable terms and short-lifetime products.
+- The more adverse use of the term consumerism is directly related to the ever-escalating environmental damage and the contradiction between the claims made by capitalism as instances of economic, social, gender and racial inequalities are found with it.
+
+** Consumption
+- Consumption is the process of using up a resource.
+- It also refers to the purchasing of newly produced goods for current use and is also defined as the consumption of products or resources closely associated with social class, identity, group membership and age.
+- It can also be referred to as a bundle of goods obtained via different provision systems and used for various purposes.
+- There is a world of difference between buying a Ferrari and stepping into the morning shower.
+- Both cost money and involve the use of resources, but in addition to the price, one is a matter of choice and comes with symbolic power, while the other is a daily routine that is so taken for granted.
+
+** Material footprint
+- Material footprint refers to the total amount of raw materials extracted to meet final consumption demands.
+- It is a key indication of the pressures placed on environments to support economic growth and satisfy people's material needs.
+
+** Material economy
+The material economy is when consumers keep buying products that they don't need, only to throw them away when they have too many and repeat the cycle endlessly.
+
+** Production-consumption chain
+1. Extraction
+2. Production
+3. Distribution
+4. Consumption
+5. Disposal
+
+** Urban World
+Urban World means that the proportion of the urban population is growing very quickly.
+
+** Megacities
+Megacities are cities with a population of over 10 million.
+
+** Informal dwellers
+Informal dwellers are dwellers in cities that have low or no access to basic services.
+
+** Planetary boundaries
+Planetary boundaries are the idea that the Earth can only do so much when it comes to recycling, treating pollution or growing food sustainably, and we need to consume within these boundaries.
+
+** Ecosystem services
+- Ecosystem services are services that are provided by the environment to help humans accomplish tasks, such as growing food, supplying water, etc.
+- For example, carbon sequestration provided by forests will help mitigate climate change and pollination provided by insects can help grow out food.
+
+** Urban heat island effect
+- The urban heat island effect is the phenomenon by which a city experiences warmer temperatures than surrounding rural areas.
+- This temperature difference is due to how well the surfaces in each environment absorb and retain heat.
+- The denser the urban environment, there are fewer trees and more concrete, which increases the temperature.
+
+** Sustainable City
+A sustainable city manages all the resources that are dependent on in ways that guarantee the well-being of current and future generations, also ensuring distributional equity.
+
+** Doughnut economics
+- A compass for human prosperity in the 21st century.
+- The doughnut consists of:
+  - A *social foundation*: To ensure that no one is left falling short on life's essentials.
+  - An *ecological ceiling*: To ensure that humanity does not collectively overshoot planetary boundaries.
+- Between these two boundaries lies a doughnut-shaped space that is both ecologically safe and socially just, which is a space in which humanity can thrive.
+
+** Blue and green infrastructure
+- Blue and green infrastructure is an area or a system made of naturally occurring or engineered ecosystems, like forests, green roofs, road trees, etc.
+- They are managed to provide benefits for people and the environment.
+- For example, by using more vegetation, or blue and green infrastructure, careful urban planning can reduce the urban heat island effect.
+
+** Solutionism
+- Solutionism is the phenomenon where people have so much faith in technology that they think that we don't need to worry about changing our behaviour or our institutions.
+- It is particularly prevalent in urban thinking as cities have access to the resources for technology.
+
+** Holocene
+The Holocene is the era before the Anthropocene, from the end of the last Ice Age 10,000 years ago to the 1850s, when the climate was relatively stable.
+
+** Convergence
+Convergence is the process of low-income economies narrowing the gap of GDP or income per capita with rich countries.
+
+
+* The complexity of sustainable development
+- It is a long range of interconnected but unique problems.
+- There are multiple causes, hard to define "the problem".
+- There is no generalisable solution, and there's no definite right or wrong. Instead, there is only better or worse.
+- The solutions tend to ramify throughout the system.
+- The solutions can take a long time to evaluate.
+
+
+* Perspectives of sustainable development
+
+** Society perspective
+- Environmental justice and unequal distribution of climate change effects
+- Understanding human behaviour to implement changes for sustainability
+- Risk of political conflict or humanitarian crises due to climate change or environmental degradation
+
+*** In Singapore
+- Additional 200 hectares of nature parks for citizens and wildlife to enjoy
+- Planting 1 million trees across the island to absorb CO_{2}, provide shade, and reduce temperatures
+- Programmes to reduce human-wildlife conflicts
+
+** Economic perspective
+- Sustainability accountants are needed for sustainable capital investments
+- Integration of financial decision-making and sustainability work
+- Stating potential social and environmental impact on profits
+- Effect on valuation and investment
+
+** Environmental perspective
+- Laws of nature govern processes of climate change and environmental degradation
+- Intrinsic value of nature
+- Human dependence on natural resources
+- Natural climate solutions, such as using mangrove forests to protect against storms and floods
+- Tree planting
+
+*** In Singapore
+- More green spaces
+- Education and appreciation for local wildlife
+- Limit pollution of water
+- Conservation initiatives
+
+
+* Goal of having no poverty
+
+** Extreme poverty
+- In 2015, more than 734 million people lived in extreme poverty (making $1.90 a day or less), which is about 10% of the world's population.
+- More than 160 million children are at risk of continuing to live in extreme poverty.
+- We cannot think about sustainable development when there are still millions of people who are living in extreme poverty in some parts of the world.
+- As such, eradicating poverty everywhere, in all forms, is the first of the 17 Sustainable Development Goals adopted by the United Nations.
+
+** Progress on poverty
+
+*** Positive
+- The number of people living in extreme poverty has been declining gradually in the last three decades.
+- In 1990, about 1.9 billion people were living in extreme poverty, which is about 36% of the world's population back then.
+- In 2010, this number went down to about 1 billion, or about 16% of the world's population.
+- Between 2015 and 2017, there has been a substantial decrease in the poverty rate worldwide.
+- About 10% of the world's population is presently living in poverty.
+
+*** Negative
+- The rate of poverty decline has significantly slowed in recent times.
+- The Covid-19 pandemic has led to the first rise in extreme poverty in three decades.
+- Estimates suggest that the pandemic has pushed an additional 199-124 million people back into extreme poverty in 2020.
+- The pandemic caused income and job losses, and work slowdowns have damaged poor households.
+
+** New target
+The World Bank now targets to have no more than 3% of the world's population living under the poverty line by 2030.
+
+** Measuring poverty
+- Global institutions calculate the poverty line by considering the cost of food, clothing, healthcare and shelter and reach a final amount if you earn less than that amount, then you can't afford basic human needs and are thus considered poor.
+- Professor Jeffrey Sachs, a world-renowned economist, suggests that the ideal definition of poverty should be measured by people's ability to meet a broad range of basic needs that are needed not only for survival but also for human dignity, such as food, clean water, sanitation, shelter, clothing, access to healthcare, basic education, transport, energy and connectivity.
+- To calculate the international poverty line, the World Bank uses the average of the national poverty line in 15 very poor countries, converted to PPP estimates.
+- Every country has *its own* poverty line.
+- The international poverty line is currently US$2.15 a day.
+
+** Profile of the global poor
+
+*** Regions
+- The majority of the global poor are located in Sub-Saharan Africa and South Asia.
+- In South Asia, the poverty rate in 2010 was as high as 30%, but the number has rapidly declined in recent times.
+- However, in Sub-Saharan Africa, the poverty line sometimes grows.
+- The extreme poverty rate in the Middle East and North Africa has increased from about 2.3% in 2013 to about 10% in 2018.
+- East Asia has achieved one of the fastest economic growths, and hence has seen one of the fastest decline in the rates of extreme poverty in any region. Most of this decline came from China.
+- Sub-Saharan Africa and South Asia need a breakthrough, as they house about 76% of the world's extremely poor.
+
+*** Characteristics
+- The poor are predominantly rural, young, and under-educated. Women are over-represented among the poor globally.
+- In 2018, half of the poor were children younger than 15.
+
+** Lifting Sub-Saharan Africa out of poverty
+The way to lift Sub-Saharan Africa out of poverty is to increase overall economic growth.
+
+*** Farm productivity
+- Small farmers in Sub-Saharan Africa achieve an average yield of about half a ton to 1 ton of grain per hectare. This is extremely low as other countries in the developing world can achieve 4 to 5 times it.
+- The reason for this is that the Sub-Saharan African farmers are simply too poor to spend money on soil refilling. They cannot afford to buy the nitrogen, potassium and phosphorus necessary for decent crop yields. This results in a poverty trap where they can't afford to acquire the resources to get decent crop yields and hence remain poor.
+- Hence, a high priority for Sub-Saharan Africa is to roll out government programmes that can help the poorest farmers get the resources that they need for farming. Once they have higher crop yields and hence higher income, they will be able to acquire these resources on their own.
+
+*** Other changes
+- Vital investments are needed to build up critical infrastructure, such as roads, rails, power, ports and communication networks.
+- Mass electrification is needed.
+- A lot of investment is needed in health and education.
+- These investments might not lead to the desired changes if the population of Sub-Saharan Africa keeps growing.
+- As such, lowering the fertility rate should also be another priority.
+
+** Lifting South Asia out of poverty
+
+*** Current problems
+- South Asia has a huge population and hence high population density.
+- South Asia also has the worst levels of human deprivation in the world.
+- India's child malnutrition levels are nearly double that of Sub-Saharan Africa.
+- Extremely low enrollment in primary education, gender disparity and high levels of corruption are some issues that need an immediate fix.
+
+
+* Social inclusion
+Social inclusion is a vision for a discrimination-free society where every individual has equal rights and opportunities, specifically the opportunities to fulfil their economic potential.
+
+All individuals are interconnected within a wider social system with harmoniously maintained relationships. Society has respect for human rights, cultural diversity and democratic governance. Most importantly, there is some degree of social mobility, which means a child born into poverty doesn't have to end up in poverty.
+
+** Factors of social exclusion
+- Income
+- Class
+- Gender
+- Race
+- Ethnicity
+- Religion
+- Sexual orientation
+
+*** Example
+- Massive poverty and exclusion faced by Native Americans in the United States, or the Maoris in New Zealand.
+
+** UN goals
+1. A peaceful and inclusive society for all
+2. Fewer inequalities
+3. Safe, resilient and sustainable cities
+4. Inclusive and equitable education for all
+5. Healthy lives and well-being for all
+6. No gender inequality
+
+** Measuring income inequality
+- The Gini coefficient is a statistical measure of income inequality within a country or social group. The index measures income distribution across a population and varies from 0 to 1, where 0 represents perfect equality while 1 represents perfect inequality.
+- South Africa ranks as the country with the lowest level of income equality in the world. The richest 10% hold 70% of the wealth of the country, while more than half of South Africa live in poverty.
+- The United States and several South American countries have some of the highest levels of income inequality, but Canada is an exception.
+- Western, Central and Eastern Europe enjoy relatively equal income.
+- Some of the world's poorest countries have some of the highest Gini coefficients, like the Central African Republic, which is among the world's poorest countries, has a Gini coefficient of about 0.61.
+- However, the Gini coefficient doesn't tell anything about a country's overall wealth, income, quality of life, or general economic well-being.
+- This means that high-income and low-income countries can have the same Gini coefficient if income is distributed equally within them.
+- For example, the United States and Turkey have the same Gini coefficient of about 0.39, but the US has a GDP per capita of about eight times that of Turkey.
+
+** Forces of income inequality
+- Racial discrimination
+- Social discrimination
+- Ethnic discrimination
+- Gender discrimination
+- Religious discrimination
+- Discrimination based on sexual orientation
+- Skills, education and globalisation
+- Technology and digital revolution
+- Political influence and economic winners
+- Redistribution policies
+
+*** Examples
+- Black workers in the United States earn 30% less than their white counterparts.
+- Women in Singapore earn 6% less than men.
+- A person with a higher level of education often has more advanced skills that few others can offer, which leads to higher wages. The returns on education have increased strikingly in recent times, which leaves the less-educated behind.
+- Competition from emerging economies like China is further reducing prospects for workers without advanced skills in developed countries.
+- The recent digital revolution has led to the increased use of data science, robotics, artificial intelligence and several other information technologies, which creates enormous amounts of wealth for people with such skills, or for the people who use their existing wealth to invest in such technologies and related infrastructure. This also eliminates middle-skill jobs, or jobs requiring repetitive tasks, such as packaging or basic manufacturing.
+- Wealthy people use the power of their wealth to gain political influence to influence policy in their favour, such as tax breaks, subsidies or favourable regulatory changes. With such policies, they earn even more money. There are now more ways in the social media age to gain political influence and eventually gain more wealth.
+- Redistribution policies like progressive taxes and social transfers are used in an attempt to reduce inequality. An example of social transfer is public retirement benefits. However, a lot of advanced countries need to be using these tools more effectively as high-income corporations are enjoying even lower effective tax rates.
+
+** How to reduce income inequality?
+- Customised policies and specific reforms such as policies to establish social mobility can help, so that kids that grow up poor don't become poor adults.
+- Tax on the rich needs to be increased.
+- Review tax breaks and offshore tax havens for wealthy people.
+- Have greater social support for low-income households.
+- Increase training, re-skilling and educational opportunities for the poor.
+- Implement pensions, unemployment child benefits for the needy.
+
+** Gender inequality
+- It has existed for a long time in most societies around the world.
+- Men have been in the paid labour force, while women carried out farm labour or home-based production while also raising the children.
+- Women's participation in paid work has significantly increased, but the inequality remains in the form of a gender pay gap.
+- Gender inequality is the highest in Asia, the Middle East and North Africa. Women in Asia are only employed about 50% of the time and earn 50% - 52% of what their male counterparts earn.
+- Sub-Saharan Africa shows a very high employment ratio of women, but the earning ratio of women is very low.
+- Women do three times as much unpaid care work as men.
+- Increasing automation is also threatening more jobs that women are in due to their nature.
+- Globally, women's jobs are 1.8 times more vulnerable to crises like COVID-19 than men's jobs.
+- Almost 1 in 3 women have been subjected to physical, sexual or non-sexual violence at least one time in their lifetime.
+
+** Measuring gender inequality
+- The Gender Inequality Index (GII) focuses on analysing women's reproductive health, labour market participation and empowerment in the form of women's participation in parliament and higher education.
+- The Gender Development Index (GDI) focuses on life expectancy, education and income to understand if such achievements are distributed evenly between men and women.
+
+** Goals to eradicate gender equality
+- End all forms of discrimination against all women and girls everywhere.
+- Eliminate all forms of violence against all women and girls in the public and private spheres.
+- Eliminate all harmful practices, such as child, early and forced marriage.
+- Recognise and value unpaid care and domestic work through the provision of public services, etc.
+- Ensure women's full and effective participation and equal opportunities for leadership at all levels of decision-making.
+- Ensure universal access to sexual and reproductive health and reproductive rights.
+
+** Possible solutions for gender inequality
+- Legal reforms to give equal rights to women in property matters, ownership of a business, participation in education, politics, and other significant matters and areas.
+
+
+* Food security
+- In 2020, there were 2.37 billion people worldwide who were lacking food or unable to eat a healthy diet regularly.
+- 149.2 million children under 5 are stunted, which makes up 22% of children worldwide.
+- 45.4 million children under 5 suffer from wasting, which makes up 6.7% of children worldwide.
+- 38.9 million children under 5 are overweight, which makes up 5.7% of children worldwide.
+- The number of undernourished people increased from 607 million people in 2014 to 720 - 811 million people in 2020. More than half of the world's undernourished people are found in Asia.
+
+** Conflict
+- In 2020, the World Food Programme was awarded the Nobel Peace Prize for acting as a driving force in efforts to prevent the use of hunger as a weapon of war. War and conflict can cause food insecurity and hunger while food insecurity and hunger can cause latent conflicts to flare up and trigger the use of violence.
+- Conflict is the single greatest challenge to the goal of zero hunger as almost 60% of the world's 811 million hungry people live in areas affected by armed violence.
+
+** Climate change
+- Agriculture contributes about a quarter of total greenhouse gas emissions globally. It comes mainly from changes in land use, like deforestation and the loss of carbon from soils. There's also methane produced from the gas of ruminating animals like cows. Since climate change causes disturbance to the stable conditions that agriculture relies on, the risk of conflict and migration is increased as people's livelihoods are threatened.
+- Sea level rise in low-lying coastal areas is one example of the threat climate change poses to people's livelihoods. Bangladesh and Vietnam are hotspots for such impacts, which result in an increase in salinity levels in agricultural lands.
+- Floods and water-logging caused by cyclones and typhoons as well as prolonged drought periods also affect people's livelihoods and food security.
+- By 2050, the World Bank estimates that salinity issues in Bangladesh will most likely lead to significant shortages of drinking water and irrigation, and increased soil salinity in both coastal and inland areas, which could result in a decline in rice yield by 15.6%.
+- Vietnam is also prone to strong storms, rising temperatures and seasonal variability in rainfall.
+
+** Singapore context
+- Imports 90% of its food currently
+- Less than 1% of land in Singapore is allocated for farming
+- Has 220 farms that currently produce 10% of Singapore's food supply
+- 16kg of leafy vegetables consumed per person in 2019
+- Imported vegetables in Singapore are 10% - 20% cheaper than their local counterparts due to the lack of economies of scale in Singapore
+- Has 77 vegetable farms, with 2 rooftop farms and 25 indoor farms
+- Imported more than 125,000 tonnes of seafood in 2019
+- Local farms currently produce 10% of the fish supply
+- Wants to increase domestic fish production to 15%
+- Has 109 sea-based fish farms across the straits of Johor and in the waters off southern Singapore
+- Has 12 land-based fish farms
+- Consumes about 2 billion eggs per year
+- 26% of the eggs come from local farms and efforts are underway to increase domestic egg production
+- Has 3 local egg farms
+- Imports almost 100% of its fruits
+- Currently diversifying sources of import supply can buffer against disruptions in one important region
+- Currently boosting its local production and the goal is to produce 30% of nutritional needs locally by 2030, called 30 by 30. This is triple the current domestic production of food
+- Leading the development of lab-grown artificial meat
+- The first country in the world to approve the sale of lab-grown meat to consumers in December 2020
+
+*** Where vegetables come from
+- 41% from Malaysia
+- 27% from China
+- 7% from India
+- 5% from Australia
+- 4% locally produced
+- 16% from various other countries
+
+*** Where fishes come from
+- 21% from Indonesia
+- 19% from Vietnam
+- 9% from Norway
+- 7% from Thailand
+- 5% locally produced
+- 24% from various other countries
+
+*** Where eggs come from
+- 72% from Malaysia
+- 26% locally produced
+- 1% from Ukraine
+- 1% from Thailand
+- < 1% from various other countries
+
+*** Where fruits come from
+- 39% from Malaysia
+- 11% from China
+- 8% from South Africa
+- 7% from the Philippines
+- 7% from Australia
+- 28% from various other countries
+
+*** Sustenir agriculture (indoor farm)
+- Founded in 2013
+- Entered the Singapore market in 2015 with kale
+- Don't use pesticides
+- They grow kale, rocket, lettuce and ice plants by germinating them in specially designed foam cubes
+- Invests heavily in automation for their processes
+
+** The agri-food industry
+- World's largest economic sector which employs half of the global workforce, many of which are subsistence farmers and fishermen.
+- Responsible for 25% - 30% of global greenhouse emissions uses 68% of our freshwater and drives degradation of marine and terrestrial ecosystems.
+- Creates economic profit and the expense of the natural environment.
+- Generates social injustices between countries and among actors in the chain from production to consumption and waste.
+- The global population is predicted to hit 10 billion in the 2050s, which means that in less than 30 years, the agri-food industry needs to support about 2 billion more people compared to today.
+- This is in addition to fixing the problem of over 2 billion people worldwide who already go hungry today.
+- Economic growth tends to lead to an increase in food consumption per capita.
+- As people get richer, they consume more food.
+- 50% more food is produced today compared to 1960.
+- As such, the individual consumption and demand for food is likely to increase as incomes increase, alongside the increase in population.
+
+** Meat
+- Higher quality foods like meat are also what people go for when they can afford to.
+- Hence, the richer we are, the more meat we consume.
+- Meat consumption worldwide has been on a steady rise for decades, driven by increasing individual incomes and population growth.
+- Too much consumption of red and processed meat is linked to health problems like cancer.
+- Meat is a major contributor to greenhouse gas emissions and environmental degradation.
+- Meat and dairy also generally have a larger impact on global warming compared to plants due to deforestation and the loss of carbon from the soil. The contribution from the storage and transport of meat is much smaller.
+- One-third of the world's fish stocks are in decline due to overfishing.
+- Countries rely on aquaculture to meet growing long-term demand.
+- The global demand for meat is projected to grow by 78% in 2050.
+- The global market for plant-based meat is expected to be worth over SGD 16 billion by 2025.
+
+** Environmental impacts of agriculture
+- Single largest cause of biodiversity loss
+- Consumptive use of freshwater
+- Loading of nutrients
+- Pollution due to pesticides
+- Soil erosion and degradation
+- Water pollution
+- Depletion of freshwater resources
+
+** Strategies for sustainably producing more food
+- Desirable to increase production with minimal expansion of agricultural land
+- Avoiding degenerative practices on current agricultural land
+- Having more sustainable agricultural practices
+- Shifting diets towards more plant-based food
+- Developing food technology
+- Reducing food waste
+
+** Food waste
+- In 2020, a third of produced food was wasted.
+- This means we can make a lot more food available without increasing production by reducing waste.
+- 70% of produce is wasted before getting it to the end consumer.
+- Researchers at NUS used the larvae of black soldier flies to convert food waste into nutritious compost, which can then be used to grow local food or animal feed.
+- When food waste is converted to compost soil, which is then used to grow new food for consumption, it can be considered a closed food loop within Singapore.
+
+** Global land use
+- 27% of global land area is used for livestock
+- 26% of global land area is forests
+- 19% of global land area is barren
+- 10% of global land area is glaciers
+- 8% of global land area is shrubs
+- 7% of global land area is used for crops
+- 1% of global land area is freshwater
+- 1% of global land area is built-up areas
+
+
+* Water
+
+** Major concerns
+- 17 countries, which are home to one-quarter of the world's population, face high levels of baseline water stress. For example, India's water challenges extend beyond surface water stress. The country has more than 3 times the population of these other 16 extremely highly water-stressed countries combined. In addition to rivers, lakes and streams, its groundwater resources are severely overdrawn, largely to provide water for irrigation.
+- 44 countries face a high level of water stress. Such water stress causes severe threats to human lives, livelihoods and business sustainability.
+- Population growth, socio-economic development and urbanisation will increase water demand.
+- Climate change can make precipitation and demand more unpredictable.
+- Some families reported that available water was unaffordable or inaccessible due to physical or social constraints. For example, those living in semi-arid environments experience persistent water shortages. In Brazil, many households experience problems with water that limited handwashing ability despite the country having abundant water resources.
+- For some, handwashing was forgone due to unexpected shutoffs or contamination. Some households also prioritise consumption over hygiene when the water supply is limited.
+- Two-thirds of the global population had no safe toilets in 2015.
+- A third of the global population had no safe water supply in 2015.
+- Water sources are becoming more polluted.
+- Funding for water and sanitation services is inadequate.
+- Adults are too sick to work and children are too sick to study.
+- Governance and delivery systems are weak.
+- Agriculture and industry are getting thirstier and climate change is taking a heavy toll.
+- 2.2 billion people lack safely managed drinking water in 2017, which is one-third of the global population.
+- 4.2 billion people lack safely managed sanitation in 2017, which is two-fifths of the global population.
+- More than 670 million people still practice open defecation.
+- 2 in 5 healthcare facilities worldwide had no soap and water or alcohol-based hand rub in 2016.
+- 3 billion people worldwide lack basic handwashing facilities at home.
+- Water scarcity could displace 700 million people by 2030.
+- Some countries experience a funding gap of 61% for achieving water and sanitation targets.
+- Climate change-related floods, droughts and other water-related disasters account for 70% of all deaths due to natural disasters worldwide.
+- Agriculture needs to grow by roughly 70% by 2050. Since agriculture is the largest water user, efficient and sustainable irrigation is necessary to achieve global food security goals.
+- There is a shortage of funds, as well as water, to maintain irrigation facilities.
+- The World Bank proposes that water must be treated as an economic good, using financial instruments to encourage water savings and generate revenues to address both issues.
+- Sophisticated economic instruments such as market-driven pricing, volumetric charges, and treatable water rights are a low priority in many developing countries.
+- More than 40% of the residents in cities of the Global South, mainly developing nations, will lack affordable and good quality water daily.
+- Lack of access to piped-in water means that families must buy water from private sources or bottled water, which can cost up to 50 times as much as piped utility water.
+- When water is expensive or inaccessible, households are forced to sacrifice their health and time to provide free but likely unsafe ground and surface water, or sacrifice food, electricity, education, healthcare, or other household needs to buy water.
+- South Africa's Cape Town's water crisis in 2018 got so bad that there were competitions to see who could wash their clothes the least. The city was just 90 days away from having no water at all. They will need significant investment to secure adequate water supplies and safeguard functioning freshwater ecosystems for future generations.
+- Water will be an increasing source of international tensions.
+- Future wars would be over water.
+- The matter of water diversion was a devastating issue of life and death.
+- Lack of communication over natural resources can be a bad sign for cooperation.
+- While most water conflicts are intro-state, transboundary tensions are likely to intensify.
+- Downstream nations fear or resent the effect on their waters due to the action of upstream countries.
+- For example, in Mexico, the river that created the Grand Canyon and fed a vast delta has been almost completely dry for 2 decades.
+- Water basins in South Asia, the Middle East and East Africa are major hotspots with many violent conflicts.
+- The Nile basin has fewer conflicts, which reflects the past negotiations between the basin's ten member states to replace colonial-era water agreements.
+- India and Bangladesh are particularly concerned about China's thirsty north and water diversion plans.
+- In the Mekong Basin, a few Southeast Asian countries are anxious too.
+
+** Water pollution
+- An "invisible crisis" that involves water inequality and gender inequality, that will worsen as the planet warms, causing more damage to health, ecosystems and economics than is commonly understood.
+- Contaminated water kills more people as compared to disasters and conflicts.
+- Globally, deaths from diarrhoea caused by unclean drinking water are estimated at half a million each year, and most of them are young children.
+- More than 300,000 children die every year from diarrhoeal diseases caused by unsafe water and poor sanitation in Africa.
+- Africa is also at a high risk of desertification, which will reduce the availability of fresh water and increase the risk of water inequality in the future.
+- More than 25% of the population in Africa must walk 30 minutes or more to collect water, a burden that falls on women and girls.
+- This trend of women being responsible for water collection spans many developing nations and takes time away from income generation.
+- Water pollution also disproportionately affects the poor and socially discriminated communities.
+- 80% of the world's wastewater is released into the environment without treatment due to poor water infrastructure.
+- Water shortage concerns have overshadowed water pollution.
+- The use of nitrogen as a fertiliser has increased by more than 700% since 1960, with nearly all the growth occurring in Asia.
+- Long-term exposure to non-point source pollution for agriculture during childhood results in lower earnings when the children enter adulthood.
+- Such economic inequality and water pollution will create a vicious cycle and result in intergenerational poverty.
+- Nanoplastics, with an upper size limit of 1 micrometre, are tiny enough to remain and disperse through a water column where organisms, including humans, can easily consume them, instead of them sinking or floating like large microplastics do.
+
+** Water security framework
+
+*** Good governance
+Adequate legal regimes, institutions, infrastructure and capacity are in place.
+
+*** Transboundary cooperation
+Sovereign states discuss and coordinate their actions to meet the varied and sometimes competing interests for mutual benefit.
+
+*** Peace and political stability
+The negative effects of conflicts are avoided, including reduced water quality or quantity, compromised water infrastructure, human resources, related governance, and social or political systems.
+
+*** Financing
+Innovative sources of financing complement funding by the public sector, including investments from the private sector and micro-financing schemes.
+
+*** Drinking water and human well-being
+Populations have access to safe sufficient and affordable water to meet basic needs for drinking sanitation and hygiene to safeguard health and well-being, and to fulfill basic human rights.
+
+*** Economic activities and development
+Adequate water supplies are available for food and energy production, industry, transport and tourism.
+
+*** Water-related hazards and climate change
+Populations are resilient to water-related hazards including floods, droughts and pollution.
+
+*** Ecosystems
+Ecosystems are preserved and can deliver their services, on which both nature and people rely, including the provision of fresh water.
+
+** Singapore's water story
+- More than 5 million consumers use 800 Olympic-sized swimming pools of water every single day, which is about 340 million gallons a day, with homes consuming about 45% and industries taking up the rest.
+- By 2060, Singapore's water demand could almost double, with the industrial sector using about 70%.
+- By 2060, NEWater and desalination will meet up to 85% of Singapore's future water demand.
+- Singapore was ranked 170th of 193 countries for water resources in the 2006 United Nations World Water Development Report.
+- The poor availability was not because we lack rainfall, but because there is a limited land area to catch and store the rain.
+- Even though Singapore's water supply comes mostly from more expensive water sources such as NEWater and desalinated water, these sources are weather-independent sources that will strengthen the resilience of Singapore's water supply against the effects of dry weather caused by climate change.
+- Between 2003 and 2016, households cut their water use per person, per day from 165 litres to 148 litres. The long-term goal is 140 litres by 2030.
+- A study surveyed 400 local households, from 2018 to 2019, found that 66% of the households used running water to wash their toilets instead of a bucket or a pail. 41.5% of households used the same method for pet care, and 50% of households washed food under running taps and washed their laundry using a washing machine when it was not fully loaded. 94% of households washed their dishes under running taps instead of using basins.
+- Under the mandatory water efficiency labelling scheme, suppliers must list the water efficiency of their water fitting and device on display so that consumers can make more informed choices.
+- As Singapore becomes more urbanised and downpours become more frequent and intense, the risk of floods will increase.
+
+*** First National Tap - Rainwater
+- Singapore has 17 reservoirs, including the largest reservoir, the Marina Catchment that has an area of 10,000 hectares.
+- Unprotected catchments in western and northern Singapore where limited residential, and light uses were allowed.
+- Urban catchment areas like stormwater collection systems were designed such that only the cleaner parts of the stormwater are extracted and pumped into the reservoir. The immediate runoff that is the most polluted bypasses the collection facilities.
+- The Marina Barrage was built across the Marina Channel, where the five rivers running through the city centre, including the Singapore River, meet before emptying into the sea.
+- The 16th and 17th reservoirs were formed, creating a dam at the mouth of the Punggol and Serangoon rivers in northeastern Singapore.
+- Catchment areas currently make up two-thirds of Singapore and will occupy 90% of Singapore's land area by 2060.
+- Singapore has more than 8,000 kilometres of waterways, much of it being in urban areas.
+- Singapore is one of the few countries in the world that harvest stormwater on a large scale for its water supply.
+- Rainwater is channelled through an island-wide network of drains, canals and rivers to the reservoirs for storage.
+- Rainwater is then treated at water treatment plants to become potable water for homes and industries.
+
+*** Second National Tap - Imported water from Johor, Malaysia
+- In 1965, water supply sources in Singapore comprised solely of reservoirs in the central catchment inherited from the British and water supply was not sufficient to meet demand.
+- Singapore had to depend on Johor for its water supply and two water agreements were signed in the early 1960s.
+- The 1961 water agreement between the Johor state government and Singapore expired on 31st August 2011.
+- Singapore continues to import water from Johor under the 1962 water agreement, which allows us to draw water from the Johor River until 2061.
+- The Johor River fell to a historic low of 20% of its capacity due to climate change in 2016.
+- Singapore has been importing water from Malaysia for many years.
+- Singapore has been able to reduce its reliance on imported water thanks to the next tap.
+- There have been conflicts between Malaysia and Singapore over how much Singapore should pay for water from Malaysia, and hence the government is looking to minimise the amount of water imported from Johor by 2061.
+
+*** Third National Tap - Recycled water
+- Singapore is one of the few countries in the world that has two separate collection systems, one for rainwater and one for used water.
+- Used water is then sent to treatment plants or water reclamation plants, where it goes through rigorous processing, such as microfiltration, reverse osmosis and ultraviolet disinfection to make the water safe for consumption. This is called NEWater.
+- NEWater is a high-grade reclaimed water produced from treated used water that is further purified using advanced membrane technologies and ultraviolet disinfection, making it ultra clean and safe to drink.
+- Presently, Singapore's 5 NEWater plants can meet up to 50% of the nation's current water needs.
+- However, the use of advanced technologies makes producing NEWater a lot more expensive.
+- Singapore collects used water through the Deep Tunnel Sewerage System (DTSS) and underground sewers for treatment at a water reclamation plant.
+- Treated used water can then be sent to NEWater facilities for further treatment to obtain ultra-clean, high-grade reclaimed water.
+- Sometimes, such water is treated and discharged to the sea.
+- NEWater is mainly used for industries, but it is also used to top up our reservoirs to further enhance our water security.
+
+*** Fourth National Tap - Desalinated water
+- Desalination turns seawater into potable water.
+- The most energy-intensive of the 4 national taps.
+- Singapore currently uses reverse osmosis for its desalination, producing drinking water by pushing seawater through membranes to remove dissolved salts and minerals.
+- The cost of desalinated water is more than twice that of NEWater.
+- Singapore has two desalination plants that can produce up to 25% of its water needs.
+- Singapore will continue investing in research and technology to find better and less expensive ways of desalting seawater.
+
+*** Deep Tunnel Sewerage System (DTSS)
+- By 2050, whenever you flush the toilet, take a shower, or wash the dishes, the used water will flow into the underground network of tunnel sewers and be channelled by gravity to one of the 3 coastal water reclamation plants for treatment.
+- When completed, the DTSS will shrink the land area occupied by used water infrastructure by 50% and collect every drop of used water for treatment and purification.
+
+
+* Energy and greenhouse gas emissions
+- Present global carbon dioxide emissions are about 180 times higher than in 1850.
+- In 2000, 23 to 24 million tons of CO_{2} were emitted. In 2020, this amount has reached 35 million tons, which is an increase of almost 50% within 20 years.
+- All these carbon dioxide emissions are going into the Earth's atmosphere and increasing the atmospheric concentration of CO_{2}. The unit used to measure the concentration of CO_{2} is parts per million or ppm, which is the number of molecules of CO_{2} present in every 1 million molecules of air.
+- The atmospheric concentration of CO_{2} in 2019 was higher than at any other time in the last 2 million years.
+- There are 6 major greenhouse gases, CO_{2}, methane, nitrous oxides and 3 fluorinated gases.
+- There are three main factors in analysing the impact of greenhouse gases, which are:
+  - Concentration, which refers to the amount of gas present in the atmosphere.
+  - Lifetime, which refers to how long the gas stays in the atmosphere. Most greenhouse gases remain in the atmosphere for thousands of years. CO_{2} stays in the atmosphere for much longer as compared to other gases.
+  - Global warming potential, which refers to how capable the gas is of trapping heat. The global warming potential of methane is much higher than CO_{2}.
+
+- When all factors are taken into account, CO_{2} is determined to be the main driver of climate change.
+- 76% of global greenhouse gas emissions are caused by carbon dioxide.
+- Almost 44% of global CO_{2} emissions come from electricity and heat generation. The next major contributor is the transport sector.
+- Fossil fuels, such as coal, oil and gas are predominantly used to generate electricity and heat and power vehicles, which contributes massively to CO_{2} emissions.
+- Most fossil fuels have carbon as their main component. For example, coal is almost fully carbon and we burn it to generate energy. During the combustion process, the carbon in the coal combines with oxygen in the air to form carbon dioxide, which releases energy.
+- The Intergovernmental Panel on Climate Change (IPCC) suggests limiting the global temperature increase to 1.5 degrees centigrade above pre-industrial levels.
+- The present temperature increase is about 1.1 degrees centigrade above pre-industrial levels.
+- Adverse consequences of climate change like extreme weather events and sea-level rise are already being experienced.
+- Some of the major impacts of climate change can be avoided by limiting the temperature increase to 1.5 degrees centigrade.
+- Going above the 1.5-degree limit can result in long-lasting and irreversible damage, such as losing some ecosystems like forests and marine ecosystems for good.
+- Forests act as carbon sinks, which means they act like sponges and soak up carbon emissions.
+- Since 1960, forests have soaked up about 25% of total CO_{2} emissions contributed by fossil fuel burning.
+- The Amazon rainforest is the world's largest tropical rainforest, but deforestation and climate change are affecting the Amazon rainforest's ability to soak up carbon.
+- Significant parts of the Amazon rainforest have started emitting more CO_{2} than they absorbed.
+- Around 700 million people still don't have access to electricity.
+- 10% of the world's population (roughly 734 million people) live in extreme poverty.
+- About 690 million people globally are undernourished and about 14 million children under the age of 5 suffer from severe acute malnutrition.
+- We need to grow in a way such that everyone in the world has access to clean, affordable and sustainable energy so that no one lives in extreme poverty and no child suffers from malnutrition.
+
+** Effects of global warming
+- Global warming leads to climate change. When there is an increase in the concentration of CO_{2} in the atmosphere, the global temperature increases. This leads to adverse effects such as:
+  - Increased frequency and intensity of hot extremes
+  - Marine heatwaves
+  - Heavy precipitation
+  - Reductions in Arctic sea ice and snow cover
+  - Extreme weather
+  - Negatively impacts food production
+  - Negatively impacts water supply
+  - Negatively impacts human health
+
+- Climate-fuelled disasters killed 475,000 people between 2000 and 2019 which resulted in more than $2.50 trillion lost.
+- From 1980 to 1999, more than 4,000 natural disasters were reported resulting in 1.19 million deaths and losses of $1.5 trillion. From 2000 to 2019, these numbers have risen to 7,400 natural disasters resulting in 1.23 million deaths and losses of about $3 trillion.
+- The frequency and intensity of extreme weather events and natural disasters have increased tremendously.
+- Climate change will impact everyone. However, richer countries are more able to deal with the impact of climate change compared to poorer countries as richer countries have more resources, a skilled workforce, a better system in place, a well-functioning government and access to advanced technologies to deal with the impacts of climate change.
+
+
+* Sustainable development goals (SDG)
+- SDG 1: End extreme poverty.
+- SDG 7: Ensure access to affordable, sustainable and modern energy for all, as well as end energy poverty.
+- SDG 8: Decent work and economic growth for all, which means raising incomes per person in poor countries and allowing them to narrow the gap with high-income countries.
+- SDG 11: Make cities and human settlements sustainable through decarbonisation and sustainability.
+- SDG 13: Take urgent action to combat climate change.
+
+
+* Energy
+- In 2010, 1.2 billion people did not have access to electricity, and this number decreased to 771 million in 2020.
+- Electricity, which was invented back in the 19th century, still has not reached millions of people.
+- The Organisation for Economic Co-operation and Development (OECD) countries use much more energy per person than the global average, while people in Africa and Asia still live in the dark.
+
+
+* Possible actions to tackle climate change
+- Advanced technologies, clean energy, and behaviour change are the first steps towards decarbonisation of the economy.
+
+** Mitigation
+Mitigation is essential and is our only shot to deal with climate change. The two methods to mitigate climate change are energy efficiency and low carbon transition.
+
+*** Low carbon transition
+- Low carbon transition means transitioning to an economy, where as little carbon is used as possible.
+- There are two ways to achieve a low-carbon transition
+  1. Decarbonising the energy system, which is to produce and use energy with lower emissions of carbon dioxide.
+  2. Making shifts in sectors of the economy that contribute a lot to greenhouse gas emissions, such as transport. Instead of using diesel or petrol-powered vehicles, electric vehicles or vehicles powered by other clean fuels, such as hydrogen fuel, should be used instead.
+
+- A low-carbon transition cannot happen overnight, as most of the world's energy is still produced by fossil fuels.
+- These plants also generate plenty of employment, so there is no way to shut them down overnight. It will take some time and must happen gradually.
+- Cutting-edge technologies that reduce the carbon footprint of these fossil fuel power generation systems can help a lot. For example, carbon capture and storage can capture CO_{2} on-site and store it in an underground storage site for a longer term.
+- There are still some technical and financial challenges to using these technologies.
+- Innovation will play a crucial role in ensuring our success in emission mitigation.
+
+*** Clean sources of energy
+1. Solar thermal energy: Using direct sunlight to heat water or air and using this fluid for residential or industrial purposes. Some examples include solar-powered water heaters and solar-powered swimming pools.
+2. Concentrated solar thermal energy: Concentrating sunlight at a point to heat fluids, and ultimately high-pressure vapour, which is then used to drive turbines to generate electricity.
+3. Solar photovoltaics (PV): Generate electricity using photovoltaics panels.
+4. Passive solar heating: Use the Sun to naturally heat the buildings.
+5. Onshore wind energy: Land-based wind farms.
+6. Offshore wind energy: Wind farms in bodies of water, where the wind speed is much higher. Offshore wind farms are more expensive than their onshore counterparts, but the cost has decreased substantially in recent years and is projected to decrease even further.
+7. Hybrid system: A system consisting of a combination of solar photovoltaics and wind turbines. Sunlight is available during the day while wind speed is higher at night. Hence, both sources of energy complement each other well.
+8. Run-of-river hydropower
+9. Storage hydropower systems
+10. Pumped storage hydropower systems
+11. Wave energy
+12. Tidal energy
+13. Geothermal energy
+14. Energy from biomass
+15. Nuclear energy
+16. Energy from hydrogen fuel
+
+*** Benefits of renewable energy
+- We have the dual challenge of reducing our emissions and ensuring access to sustainable and modern energy for all.
+- Renewable energy can address both challenges as it doesn't run out, never emits greenhouse gases, saves money in most cases, and has the potential to generate massive employment.
+- The renewable power industry employed 12 million people in 2020. Solar photovoltaics leads the field with about 4 million jobs.
+- This employment number will likely increase as we move towards renewable energy.
+- These jobs are green and they also ensure much-needed access to electricity in remote and energy-poor communities.
+- Renewable power plants can be installed at a much smaller scale and decentralised operation is also possible, which means that the power plants don't have to be connected to a large power grid. This makes it possible to supply electricity to remote locations.
+- Prices of renewable energy are relatively immune to market fluctuations.
+- The recent surge in natural gas prices raised electricity tariffs in many countries, including Singapore. Many retail electricity companies shut down their operations in Singapore due to not being able to supply electricity at previously-promised prices.
+- Using renewable energy might safeguard us from such fluctuations, especially for countries that are heavily dependent on imported fuels for electricity generation, such as Singapore.
+- Some renewable energy systems have already reached grid parity, which means generating electricity through solar photovoltaics costs the same as generating electricity from conventional sources.
+
+*** Challenges of renewable energy
+- Renewable energy sources are intermittent, which means that they are not available all the time.
+- The sun doesn't shine at night and the wind doesn't always blow at the same speed.
+- This creates the need to store energy whenever it is available, which increases the cost of these systems.
+- Renewable energy needs a lot of land area and some countries do not have much free land to spare, such as Singapore. These countries will need to be more innovative in their approach to using renewable sources of energy, such as using rooftop spaces, water bodies and generating electricity in neighbouring countries and transmitting it to their own countries may be some typical solutions.
+- In the beginning, people found wind turbines to be ugly and raised many other objections against renewable energy.
+- However, public awareness and acceptability have improved over time.
+- Massive investment in research and development is needed to help overcome all the technical and financial challenges of renewable energy.
+
+*** Energy efficiency
+- Greater energy output per unit of energy input.
+- Use of technologies, systems or methods that require less energy to perform the same task, eliminating energy waste.
+- Energy appliances convert energy sources into other useful energy services, such as lighting, cooling or heating.
+- During this conversion, some energy is lost, which should be reduced, as reducing this loss would mean that the energy efficiency of the system has improved.
+- Energy-efficient household appliances are now available on the market and consumers have the option to buy an energy-efficient air-con, refrigerator, light bulbs, and other devices.
+- Enormous amounts of energy can be saved in heating, cooling, ventilating, and other applications by using energy-efficient appliances.
+- Energy efficiency helps to reduce greenhouse gas emissions as less energy is used to perform a certain task.
+- When less energy is used, the demand for energy decreases at a country level, which might be a relief for countries, specifically the ones that are heavily on imported energy, like Singapore. Singapore imports almost all the gas it uses to generate electricity.
+- Energy-efficient systems save money in the long term.
+- The upfront cost of energy-efficient systems is relatively higher. For example, an energy-efficient refrigerator will cost more than a conventional refrigerator.
+- However, over the lifetime of the appliance, money is saved due to the reduction in the electricity used.
+- There is a potential to adopt energy-efficient systems in almost every sector of the economy, such as buildings, households, transport, or even electricity generation. Some examples include:
+  - Zero energy buildings: Buildings that have increased energy efficiency and use renewable energy.
+  - Efficient energy generation and distribution.
+  - Efficient vehicles.
+  - Behaviour change: Use less energy, adopt energy-efficient appliances, cut wastage. For example, using the air-con for 4 hours instead of 5 hours, switching off appliances when they are not in use, and taking shorter showers to save water as well as electricity.
+  - Long-distance freight transport, maritime and shipping.
+
+- Technology alone is insufficient to solve the problem of climate change. No matter how many advanced technologies we have, if we don't mitigate emissions by changing our behaviour, adopting clean energy and energy-efficient systems, and making a shift in our consumption, there is a lower likelihood of solving the problem of climate change.
+- Renewable energy adoption remains low, at 29% of our total electricity generation. The remaining 71% is still being produced by fossil fuels.
+- Energy efficiency improvement is much lower than the required number for the sustainable development scenario.
+- Policies that push the adoption of clean energy and energy efficiency a bit faster are needed.
+
+** Adaptation (climate resilience)
+- Adaptation keeps us safe and buys us some time until we implement mitigation measures to slow down climate change and ultimately eliminate it.
+- The objective is to reduce our exposure to climate risks.
+- Some examples include:
+  - Building new flood defences and barriers against storm surge.
+  - Protecting crops from high temperatures and droughts.
+
+** Policies
+- Policy instruments may help to accelerate the adoption of clean energy and the overall decarbonisation of the economy.
+
+*** Institution-based policies
+- Institution-based policies aim to internalise the negative impacts of emissions.
+- An example of this is specifying liabilities. Authorities can specify liabilities, like if the public gets harmed by pollution, they have a right to sue polluters.
+- Another example is the development of social responsibility.
+- In Singapore, there are green ticks on electrical appliances which is part of Singapore's mandatory energy labelling scheme.
+- These green ticks represent how energy-efficient an electrical appliance is.
+- The greater the number of ticks, the more energy-efficient an appliance is.
+- However, the upfront cost of a more energy-efficient appliance is higher, but it will pay off in the longer term and it will contribute to reducing CO_{2} emissions and mitigating climate change.
+- The Singapore government gets the manufacturers to disclose this information so that consumers can make an informed decision.
+
+*** Regulatory policies
+- Regulatory policies are the command and control approach, with direct control over polluters.
+- Governments and regulatory authorities ask polluters to stop polluting, pollute below a limit, or sell something that meets certain performance benchmarks.
+- Singapore's minimum energy performance standards are one example. From 2022 onwards, the minimum energy performance for certain appliances is two ticks and manufacturers or suppliers can no longer sell appliances with one green tick, which are inefficient appliances that use a huge amount of electricity.
+- These methods do work in reducing energy consumption, but climate change is a bigger and more complex problem and hence requires bigger and better instruments.
+
+*** Putting a price on carbon
+- In general, we should put a price on CO_{2} emissions.
+- For example, polluters should pay, as businesses don't have any incentive to reduce CO_{2} emissions apart from their moral and ethical responsibilities.
+- CO_{2} emissions are a byproduct of the processing of doing business and producing goods and services, and a lot of CO_{2} emissions are just a part of this process.
+- Oil and gas companies, would not bother about CO_{2} emissions as their job is to sell oil and gas and hence will not reduce CO_{2} emissions as it will cost them a lot of money.
+- Things cannot be left to the ethical and moral integrity of businesses.
+- The first thing to do is to make sure polluting is not free, but we need to do it flexibly to not harm the economy in the process.
+- We still need to grow, and let low-income countries grow their income per capita and narrow the income gap with wealthier countries.
+- The reduction of CO_{2} emissions is not free either as businesses will need to implement certain technologies that will change their production process as well as plenty of other things, all of which come with a cost.
+- As such, we need to reduce our emissions efficiently, which means reducing them at the lowest cost possible.
+- In short, governments should make polluting have a cost and let businesses decide what to do about the increased cost.
+- If businesses don't reduce their emissions, they must pay fines in the form of emission taxes.
+- They can also reduce their emissions by investing in clean and new technologies and using clean energy instead of fossil fuels.
+- They can also offset their emissions by funding other clean energy projects.
+
+*** Cap and trade schemes
+- Cap and trade schemes allow businesses to reduce emissions at the lowest cost possible.
+- For example, if a government puts a cap of 10,000 of CO_{2} emissions on the power sector, which means that all companies in the power sector, combined, can only emit 10,000 tones of CO_{2} in a year.
+- If there are 2 companies in the power sector, company A and company B, the cap is divided between the 2 companies, which means each company gets 5,000 tonnes of CO_{2} emissions.
+- If company A only emitted 3,000 tonnes of CO_{2}, they have unused permits of 2,000 tonnes of CO_{2}.
+- If company B emitted 7,000 tonnes of CO_{2}, that means they have exceeded the limit by 2,000 tonnes and must do something about it.
+- The cap and trade scheme allows companies A and B to trade their permits in a market.
+- Hence, company B can buy up company A's unused permits to meet their emissions mandate.
+- This means that company B is punished by paying more for their additional carbon emissions and company A is rewarded by being able to earn more from selling their carbon permits.
+- The power sector also managed to meet its cap of 10,000 tonnes at the lowest cost possible.
+- Instead of forcing company B to reduce their emissions at a much higher cost, cap and trade allows company A to reduce more, and let company B buy from company A.
+
+*** Carbon tax
+- Singapore has recently introduced a carbon tax.
+- Any industrial facility in Singapore that emits 25 kilotonnes of CO_{2} or more in a year must pay a carbon tax, which is set at $5 per tonne for a certain period.
+- The government first puts a price on carbon, which is $5 per tonne in Singapore.
+- Businesses can now either choose to pay the tax or reduce emissions.
+- Reducing emissions would take some time and hence they would most likely pay the tax, which increases their cost of production.
+- This increase in the cost of production will likely be passed on to consumers, which can be anyone, like individuals, institutions, shopping malls, schools, and shops.
+- These consumers must now pay a higher price for the same product.
+- Consumers will usually stop using a product if it isn't necessary or switch to another product if possible.
+- This may not be an option for necessities like electricity.
+- But in the case of electricity, consumers can save electricity so that they pay less or switch to a different electricity provider.
+- Consumers would likely change to a cheaper electricity provider that generates electricity from clean sources as electricity providers using fossil fuels will have to increase their prices due to the carbon tax.
+- Institutions like schools and shopping malls can invest in ways of generating electricity on their own, such as using solar photovoltaics.
+- When consumers switch to clean power, this will increase the demand in the market and make clean energy investments more profitable.
+- It will create incentives for carbon-heavy industries to shift towards clean alternatives, which will result in emissions falling.
+- Governments will generate a lot of revenue from carbon taxes and can use it to compensate low-income families for the increased cost of electricity and other services or invest in climate protection projects or other public projects such as healthcare for all.
+- The carbon tax can achieve three goals at once.
+- First, emissions will go down due to putting a price on carbon and making polluters pay.
+- Second, there is a financial incentive to switch to clean energy.
+- Lastly, the government generates revenue that can be used for climate protection programmes.
+
+** Economics of climate change
+- Governments act as rational agents when making decisions for public projects.
+- However, things are more complex when it comes to climate change.
+- Climate action by governments is funded by tax revenues, which is asking the public to pay to eliminate the risk of climate change over the next few decades.
+- Most people are not patient or willing enough to pay for something so distant in the future.
+- Climate change is an intergenerational issue, which means the actions taken today are for the betterment of future generations and leaving future generations with a habitable Earth to live in.
+- The costs and benefits of climate change actions cannot be calculated with the usual methods as estimating the benefits and costs of climate change action is difficult and uncertain.
+- Climate change has long-term impacts, so the costs and benefits are based on future projections.
+- Most of these future impacts and costs are not entirely known and hence we don't have methods to quantify them.
+- It involves a lot of human tragedy which makes it unsuitable for quantification.
+- Millions of people may suffer from hunger, water shortages and coastal flooding as the world warms.
+- There's no way to put a price on the extreme pain and suffering.
+- There are also a lot of low and high-probability outcomes involved.
+- For example, if the global temperatures rise by 3 degrees Celsius, the impact will be devastating, but it is difficult to calculate its exact impact on human well-being and the economy.
+- The actual impact may be much lower or higher than our estimation, which will compromise our cost-benefit calculations.
+- Climate modelling is difficult and is filled with uncertainties, but this is not a justification for inaction.
+- The cost is much lower when we act now, which is about 1% of the global GDP per year.
+- But if we delay climate action, the cost may go up to 5% of the global GDP per year and there might be no recovery at all.
+- Climate change is a problem that involves all countries, but every country feels that they aren't responsible for solving the problem unless other countries are acting as well.
+- Low-income and developing countries think rich countries have created this mess and they should be responsible for cleaning it up, which is correct to some extent.
+- Most of the emissions are coming from North America, some parts of Europe, China and India.
+- Africa, some parts of Latin America and Asia are generating a very small fraction of total emissions.
+- China, the United States, India, Russia and Japan are the biggest emitters of CO_{2}.
+- India and China are manufacturing most of the products that rich countries use, which means their emissions are due to consumers in rich countries buying products.
+- The world average CO_{2} emissions per capita in 2018 was around 4.4 tonnes.
+- China emitted about 7.35 tonnes per capita.
+- India emitted about 1.79 tonnes per capita, much lower than the world average.
+- Several European countries are one of the biggest per capita emitters.
+- Next in line are Australia, the USA, Canada, European countries, Japan and South Africa.
+- India and China emissions are growing because they are developing now, and are aiming to increase their income per capita so that they can attain a living standard that developed countries attained decades ago.
+- Rich countries have polluted enormously in the past and originated the climate crisis, but are now shifting the blame to low-income countries.
+- Public opinion on climate change is still divided.
+- The powerful fossil fuel industry has the biggest business interest involved, so they have every reason to sway climate change policies.
+- In the US, the Democrats are pro-climate change actions while the Republicans are not.
+- Every country has to implement measures to mitigate climate change as there is no time.
+- The poor countries are the most affected by climate change impacts as they will suffer the earliest and the worst.
+- Even though developing countries have contributed the least to the causes of climate change, they must take significant climate change actions in their own interest.
+- Tackling climate change is a pro-growth strategy in the longer term as we need to grow sustainably.
+- Poor countries will need help, so rich countries will need to step up to help.
+- Rich countries need to take responsibility for significant cuts in their emissions and help finance low-carbon development in low-income countries.
+- If everyone commits to climate action in a global treaty, there is hope.
+- It is not enough for individual countries to act on their own.
+- Individual economies will still be vulnerable to climate change threats until the world economy has averted the climate crisis.
+- If a small country whose economy is entirely dependent on manufacturing and exporting goods to a rich country like the United States, has done the necessary climate action to safeguard the country against the climate crisis, an economic collapse in the United States due to climate change impacts will likely result in economic collapse in the small country as well.
+- Hence, no one is safe until everyone is safe.
+- There is also a free-rider problem, where some countries take advantage of other countries' efforts. For example, if 194 countries take climate action and one country doesn't, there will likely be no consequences.
+- This one country will benefit from other countries' efforts to reduce CO_{2} emissions and will likely be able to continue without serious impacts.
+- However, if every country starts thinking like that, everyone will end up taking no action at all.
+- Hence, the solution to all these problems is global cooperation.
+
+** International collaboration
+- Efforts to establish a global agreement to limit greenhouse gas emissions started as early as the 1980s.
+- In 1992, the United Nations Framework Convention on Climate Change (UNFCCC) was signed with 195 nations on board.
+- The world adopted its first global emissions reduction treaty in 1998 called the Kyoto Protocol.
+- Most developed countries agreed to take legally binding targets to reduce their emissions.
+- The first commitment period of the Kyoto Protocol ended in 2012.
+- The Paris Agreement in 2015 was ratified by most countries in 2016 and agreed to limit global warming to well below 2 degrees centigrade.
+- They also agreed to provide financial and technical support in low-income countries.
+- The United States withdrew from the agreement in 2020 and joined again in 2021.
+- The commitment to phase out fossil fuels was changed to the commitment to reduce fossil fuels in a last-minute change.
+- Many developed countries are planning to achieve net zero greenhouse gas emissions by 2050.
+- Most experts say that the current action is insufficient and is moving too slowly.
+- The effects of these climate pledges are not visible on the ground and emissions are still rising rapidly.
+- Climate pledges are not enough and countries are not on track to meet their emission reduction targets.
+- Climate-fuelled disasters killed 375,000 people between 2000 and 2019 which resulted in more than $1 trillion in financial losses.
+
+** Tools to combat climate change
+
+*** Technology
+- Advanced technologies
+- Low carbon and clean electricity
+- Switching to clean fuel
+- Energy efficiency
+
+*** Social
+- Financial and technical assistance to low-income countries to meet their emission reduction goals and be part of sustainable development.
+- Behaviour change in every individual, as every individual has a part to play.
+- Participation in civil society, research institutes, non-profits, etc.
+
+*** Political
+- Large-scale research and development plan to tackle the technical challenges of the low-carbon future.
+- Policies to accelerate the decarbonisation of the economy.
+- Market tools for efficient reduction of greenhouse gas emissions.
+
+
+* Pollution
+
+** Air pollution
+- Respiratory illnesses such as chronic obstructive lung diseases are on the list of top 10 causes of death in Singapore and worldwide.
+- Air pollution was reported as early as the 17th century.
+- In 1661, the diarist and gardener, John Evelyn, wrote an essay on London's air pollution to King Charles II and the parliament.
+- He paints a vivid picture of air pollution at that time in the letter.
+- He wrote, "The smoke was so thick that the rooms, galleries and palaces were completely filled with it, and people could hardly see each other or the crowd. Indeed, they struggled to even stand up."
+- At the time, London had undergone an energy revolution and the deforestation of the areas around London led to shortages of wood fuel, so the city switched to charcoal burning and coal brought in by sea.
+- Smog and fog become a defining part of London's character for centuries.
+- They feature in the Sherlock Holmes books, those by Charles Dickens and many other classical authors.
+- The colour of the fog was very different from normal fog, not least because of its colour, which has been described as yellow, brown, and orange, giving rise to the term pea-souper.
+- The smog was disruptive and people needed to be guided by flaming torches or get lost right after emerging from their front doors.
+- The smog presented a huge opportunity for pickpockets and thieves.
+- Rapid growth in coal use in developing cities during the Industrial Revolution of the late 18th century substantially increased the emission of smoke, sulfur dioxide, nitrogen dioxide and ammonia gas.
+- Air pollution was, until the 1950s, accepted mainly because of industrial activity, with the perceived willingness to tolerate the degraded visibility, erosion, blackening of valued buildings and the effects on human health, agriculture and natural ecosystems.
+- The Great Smog of London was a severe air pollution event that affected London in December 1952.
+- A period of frigid weather led Londoners to burn much more coal than usual to keep themselves warm.
+- While better-quality coal tended to be exported to pay off World War II debts, domestic coal tended to be a relatively low-grade sulfurous variety, which increased the amount of sulfur dioxide in this smoke.
+- According to the UK's metrological office, one of the coal-fired stations, Battersea Power Station, was emitting pollutants equivalent to 160 tonnes of sulfuric acid each day during the smoggy period.
+- Combined with windless conditions, collected airborne pollutants formed a thick layer of smog over the city.
+- The 1952 London smog was a landmark event that resulted in large premature mortality of approximately 12,000 people.
+- The public and political reaction led to the introduction of the Clean Air Act in 1956, 3 years after the event.
+- Human health has been the primary focus for controlling air pollution since the 1990s.
+- In Europe, North America, Japan and other developed countries, clean air legislation has targeted ambient levels and emission sources.
+- Emissions of the most primary pollutants have declined since then, with the most remarkable progress in sulfur dioxide.
+- By contrast, from 1990 to 2010, emissions have increased in East and South Asia and other developing countries.
+- Air quality in Asian mega-cities shows values in episode conditions that are similar to the highly polluted air of London in the smog episode of 1952.
+- The infamous Beijing haze event in January 2012 is one example.
+- In 2018, figures from the World Health Organisation showed that 9 out of 10 people worldwide breathe polluted air, but the poor are disproportionately affected.
+- Up to 7 million people, the vast majority in developing countries, die prematurely every year because of air pollution.
+- Around 600,000 children under the age of 15 years breathe air that is so polluted that it puts their health and development at serious risk.
+- When pregnant women are exposed to polluted air, they are more likely to give birth prematurely and have small, low birth weight children.
+- Air pollution also impacts neurological development and cognitive ability, and can trigger asthma and childhood cancer.
+- Children exposed to high levels of air pollution may be at greater risk of chronic diseases, such as cardiovascular disease later in life.
+- For adults, the fine particles in polluted air penetrate deep into the lungs and cardiovascular systems, resulting in various diseases including stroke, heart disease and lung cancer.
+- Though some rich nations have succeeded in improving air quality, the situation is getting worse in poorer countries.
+- Out of the 7 million deaths that are caused by exposure to air pollution, 4.2 million are caused by outdoor air pollution, and 3.8 million are caused by cooking with polluting fuels, such as kerosene, animal dung, crop waste and coal.
+- Despite rising crop yields, air pollution's toll on crops appears in the long run through reduced growth, injury or outright premature crop death.
+- Air pollution is also significantly responsible for up to 40% of global warming, causing temperatures to rise and wreak havoc on crops worldwide.
+- According to the United Nations Food and Agriculture Organisation, crop yields of staples like rice, maize and wheat, will decrease by 10% per degree Celsius of global warming.
+- Air pollution also disrupts food access.
+- In areas like the tropics and subtropics, not only will the productivity of food crops decline, but subsistence farmers and outdoor labourers will face reduced workdays as breathability worsens and daily heat rises, limiting their income and increasing the price of food worldwide.
+- The subject of air quality is highlighted in 3 Sustainable Development Goals, attributing to health and environmental sustainability.
+- One of the targets of goal 3, to ensure healthy lives and promote well-being for all at all ages, is to reduce the number of deaths and illnesses from hazardous chemicals and pollution by 2030.
+- In goal 11, sustainable cities and communities, special attention was given to air quality. By 2030, we should reduce cities' adverse per capita environmental impact, particularly, the mean level of particulate matter classified as PM2.5 and PM10.
+- Goal 12, responsible consumption and production, also requires us to achieve environmentally sound management of chemicals throughout their life cycle, according to agreed international frameworks, and significantly reduce their release into the air to minimise their adverse impacts on human health and the environment.
+- On 22/09/2021, the World Health Organisation (WHO), updated its global air guidelines to reflect the clear evidence of the damage air pollution inflicts on human health, even at lower concentrations than is previously understood.
+- The WHO adjusted its standards for six pollutants, particulate matter, ozone, nitrogen dioxide, sulfur dioxide and carbon monoxide.
+- Although the guidelines are not legally binding, they are the game changer for policymaking.
+- It is up to decision-makers to listen to the science and take steps to reflect these new standards in law.
+- Some obvious solutions are to make transport systems more sustainable, including encouraging people to walk and cycle more, investing in energy-efficient power production, and changing the way we manage waste.
+- One of the key measures to tackle indoor pollution is to give everyone access to clean fuels and cooking facilities.
+- For example, a scheme in India provides free liquefied petroleum gas connection to 37 million women living below the poverty line.
+- The scheme aims to protect women and children from smoke emitted when cooking with firewood.
+
+** Plastic pollution
+- White pollution is a term that has stemmed from the problem of people discarding white plastic bags or single-use plastic tableware into our environment.
+- Since 1964, plastic production has increased 20-fold, reaching 311 million metric tons in 2014.
+- Between 1950 to 2015, more than 6,700 million metric tons of plastic were produced.
+- Plastic packaging, which accounted for 26% of all plastics used, can help food stay fresh longer and can, because of its low weight, lead to fuel saving during transport compared to other types of packaging.
+- However, the packaging is only used once, and often for a duration that can be measured in weeks and months, while the plastic packaging itself can continue to exist for centuries.
+- Since plastic can last for centuries, some of the plastic exists somewhere as functional products, but also in landfills or littering the natural environment.
+- Many of such plastic packaging and products end up in the ocean.
+- The Great Pacific Garbage Patch is a collection of marine debris in the North Pacific Ocean.
+- It spans waters from the west coast of North America to Japan.
+- The entire patch is bounded by the North Pacific subtropical gyre, which is a large system of swirling ocean currents.
+- It also refers to the garbage patch as a vortex of plastic waste and debris, broken down into smaller particles in the ocean.
+- The gyre is formed by 4 currents rotating clockwise around 20 million square kilometres.
+- The debris in the Great Pacific Garbage Patch accumulates because much of it is not biodegradable.
+- Many plastics do not wear down. They break into tinier pieces.
+- The idea of a Garbage Patch conjures up images of an island of trash floating on the ocean.
+- In reality, these patches are almost entirely made up of tiny bits of plastics called microplastics.
+- Even satellite imagery doesn't show a visible giant patch of garbage.
+- These microplastics make the water look like a cloudy soup.
+- 80% of the plastics in the ocean are estimated to come from land-based sources, with the remaining 20% coming from boats and other marine sources.
+- A 2018 study found that synthetic fishing nets made up nearly half the mass of the giant patch, due mostly to ocean current dynamics and increased fishing activity in the Pacific Ocean.
+- Besides the three primary forms of plastic that contribute to plastic pollution, macroplastics, mesoplastics and microplastics, the emergence of nanoplastics has attracted considerable interest in the past few years.
+- Currently, there is no official definition of the term nanoplastics as it does not consist of a uniform material or composition.
+- The scientific community is using the following size categories for the classification of the different plastic particle groups.
+- Nanoplastics are in the range of 1 nanometre to 1 micrometre.
+- Microplastics are in the range of 1 micrometre to 1 millimetre.
+- Mesoplastics are in the range of 1 millimetre to 1 centimetre.
+- Macroplastics are in the range of 1 centimetre to 100 centimetres.
+- The issue of marine plastics is being addressed internationally by the United Nations.
+- It has been recognised in the United Nations' Sustainable Development Goals, under Goal 14, to conserve and sustainably use the oceans, seas and marine resources for sustainable development.
+- Specifically, we wish to prevent and significantly reduce marine pollution of all kinds, in particular, from land-based activities, including marine debris.
+- There is currently no standardisation in approaches or an internationally agreed protocol to measure this indicator.
+- The United Nations Environment Program (UNEP), the custodian agency for this indicator, is currently developing a methodology that uses citizen science data as the primary source of information for measuring marine plastics on beaches and shorelines.
+- Although citizen scientists are encouraged to help quantify and monitor trends for this goal, the threat from plastic pollution is still not legally recognised by most countries and corporate organisations.
+- Solving the plastic pollution crisis requires focusing on not only the usual three R's but also focusing on another R, which is responsibility.
+- Despite all the evidence that recycling is not the answer, multinational corporations are still pushing recyclability as their priority and ducking their responsibility to tackle plastic pollution.
+- Tackling plastic pollution requires dramatic reductions in quantities of single-use packaging, focusing on product design and changing business models to increase reuse.
+- Companies skipping straight to recycling as the solution are ignoring proven waste reduction strategies in favour of less sustainable strategies.
+- Major multinational corporations have played a significant role in creating this white pollution crisis as they chased market expansion and profit maximisation with single-use plastics as the go-to solution.
+- In most developing countries, a sachet economy is created, where small sachets of soap, coffee and instant noodles are the most extensive plastic pollution.
+- In 2019, over 8 million tetra packs were sold in Vietnam, but only a tiny portion was recycled as the recycling infrastructure has been overwhelmed by growth.
+- In Singapore, the recycling rate for plastics is 4% as of 2021, the lowest among different streams such as metal and paper.
+- Avoiding single-use plastics such as drinking straws, plastic cups and cutlery, taking a reusable cloth bag, replacing plastic Tupperware with glass or steel containers, avoiding cosmetics that use microplastics, wearing natural fabrics, choosing to reuse and give some of the packaging a new purpose are all ways that the individual can help to reduce plastic pollution.
+
+*** Nanoplastics
+- Currently, there is no official definition of the term nanoplastics as it does not consist of a uniform material or composition.
+- Nanoplastics are in the range of 1 nanometre to 1 micrometre.
+- The primary nanoplastics are intentionally manufactured and are added to products like cosmetics or are used in research or diagnostics.
+- The continuous process of unintentional fragmentation of mismanaged plastic waste leads to secondary nanoplastics.
+- Measuring the concentration of nanoplastic particles is quite challenging for our current analytical methods.
+- The amount of nano plastic and microplastic particles in the environment will increase due to the enormous amount of large plastic compartments in the environment.
+- Nanoplastics also undergo environmental transformation processes, such as agglomeration with other particles, thus accumulating in the different environmental compartments.
+- For the time being, researchers can only use the data that exists on microplastics to make educated guesses on what might also be happening in the human body.
+- We have seen in marine environments how microplastics disrupt reproductive systems, stunt growth, diminish appetite, and cause tissue inflammation and liver damage.
+- So far, we have no concrete evidence of the effects on humans.
+- It's likely that ingesting nanoplastics, as we all do, could expose us further to some of the chemicals such as plasticisers that are found in plastics and known to be harmful.
+
+** Noise pollution
+- In Singapore, there are reportedly 218 workplace noise-induced deafness cases per year.
+- The Housing and Development Board received about 15,000 noise-related complaints in 2020, a threefold increase compared to the same period in 2019.
+- Most of the noise-related complaints people make tend to be about furniture being dragged in the unit upstairs, the sound of running feet, the playing of loud music or musical instruments, renovation noise, construction, or even early morning bird calls.
+- With so many people working from home, a drop in noise-related cases is not expected.
+- However, most of the cases did not break the law of 90 decibels as an average of over five minutes at residential buildings.
+- Most of the outdoor noise levels around Singapore can be higher than the prescribed limit.
+- A recent study found that the average outdoor sound level measured throughout the day was 69.4 decibels compared to the National Environment Agency's recommended limit of 67 decibels averaged over an hour.
+- Residential areas higher on the list of noisiest neighbourhoods comprised mainly mature estates, as these have higher road density than other areas.
+- How an estate is designed, such as where the buildings and overhead bridges are placed, contributes to the acoustic environment.
+- The sound usually dissipates in an open area, while enclosed spaces such as sheltered linkways in the estate can help trap the sound, and they can reach an average noise level of 78 decibels, which is way above the safe pressure of 55 decibels prescribed by the World Health Organisation.
+- After prolonged exposure to city noise, like from aeroplanes, construction and buses, the associated long-term health problems include general stress, insomnia, and even cardiovascular diseases.
+- The 2021 study also suggested that most of the Singapore population is potentially at risk of adverse non-auditory health effects. These include metabolic effects, cognitive impairment, and mental health impacts in the long term. The risk of hypertension may also increase.
+- Another kind of noise that can pose danger is sound loud enough to cause physical damage to the inner ear.
+- Examples include loud music at enclosed places like nightclubs, fitness classes, dance studios, or even when you're on the MRT listening to music that is loud enough and long enough.
+- A tremendous amount of energy passes across space and that energy is what can go into our ear canal.
+- In a young and healthy inner ear, a structure called the cochlea has thousands of hair cells.
+- Once damaged by loud noise due to strong vibration, these delicate cells cannot regenerate and cause permanent hearing loss.
+- Tinnitus, the ringing in the ear, is often a sign of damage to the inner ear and a hearing test is usually advised.
+- Scientists from NTU's Electrical and Electronic Engineering have developed a device to reduce noise pollution entering buildings through open windows.
+- This prototype is called an anti-noise control window and promises to cut noise levels by at least 10 decibels.
+- Designed to be mounted onto window grilles, the device emits a counter sound or anti-noise that has the same waveform characteristics as the invading noise coming from nearby environments, such as busy roads, train tracks or construction activities.
+- The window can be left open for fresh air without disturbance from external noise pollution, and reducing the need for air conditioning to keep the interiors of buildings and homes cool.
+- However, the speakers obstruct the view from the window, and they need to be a lot bigger to reduce noise in a space like an apartment.
+- We may need 5 to 10 years before the technology is improved and viable for commercial and residential applications.
+- Most animals have specially adapted to the natural noises in their environment and are aware of them, understand them, and know how to use and interpret them.
+- When humans start to add artificial, unfamiliar noises to natural soundscapes, it alters the acoustic environment.
+- The population and diversity of some bird populations have been shown to decline or change when exposed to continuous noise generated by urban environments such as roads cities and industrial sites.
+- Such artificial noise affects birds' ability to hear or makes it difficult to find food, locate mates and avoid predators.
+- Noise pollution can also impair some land species' navigation, communication, reproduction, and participation in everyday behaviours.
+- Australian Pobblebonk frogs can usually hear each other up to 800 metres away, but this can be reduced to just 14 metres in noisy areas.
+- In North America, noise from highway traffic makes it hard for Prairie dogs to find food, hear predators and communicate.
+- For marine species, the noise made by humans is increasingly disrupting life below the surface, with many marine animals being affected.
+- Rising levels of intense underwater sound are being produced by a range of sources.
+- Shipping traffic, industrial noise from oil and gas exploration, seismic surveys, military sonar and others.
+- This cacophony can cause hearing loss in cetaceans like dolphins, porpoises and whales as sound travels faster in the water and high-intensity sonar can emit sounds that can travel thousands of kilometres in the deep ocean.
+- They can interfere with cetaceans' sonar and navigation systems and their ability to communicate and find food.
+- We need to establish quiet areas in the ocean and develop quieter ships and machinery.
+- We must also develop quieter cars, reduce traffic speed limits, and build noise reduction barriers around major traffic areas.
+- Other strategies include undertaking detailed environmental assessments before construction on houses and industrial sites is permitted, with follow-up assessments after construction is completed.
+
+** Light pollution
+- Lighting up public areas has many benefits such as safety, as the incidence of accidents and injuries is cut down.
+- Crime in well-lit areas is also reduced and people feel safer and the areas are perceived as more accessible.
+- Human illumination of the planet is growing in range and intensity by about 2% a year, according to a team of scientists from the UK. That is 20% in 10 years.
+- All living beings have what's called a diurnal rhythm, which is what makes us feel sleepy or awake.
+- Light is one of several factors that control this rhythm, like how jet lag disrupts your natural rhythm of day and night.
+- Animal behaviours have evolved under historically consistent spatial and temporal light cycles.
+- Nocturnal species like the colugo, pangolin, some fruit bats and owl species have evolved to be active in the protection of the darkness of night.
+- Light pollution is usually correlated with other threats to wildlife, like urbanisation, adding to a sum of environmental stress that interferes with animal behaviours, reproductive success, and ultimately survival.
+- Insects are drawn to light in the dark, and as such, light pollution adds other environmental stresses for the insects, which in turn can become a threat to the things that insects are good for, like pollination and as a food source for other animals like birds.
+- Turtles lay their eggs in the sand on a breach.
+- When the eggs hatch, the little hatchlings instinctively follow the moonlight towards the sea.
+- However, when the Moon has competition from multiple other light sources, it can get confusing for the hatchlings.
+- In December 2021, about 1000 turtle hatchlings wandered onto the park connector at Changi instead of heading for the sea.
+- Fortunately, people stopped and facilitated their crossing, so only a few were crushed by passing cyclists.
+
+** There is hope
+- There's reason to be hopeful because pollution and its effects tend to decline swiftly once the sources are removed.
+- For example, during lockdowns due to the COVID-19 pandemic, many cities experienced vast improvements in air quality due to lower traffic.
+- This is in sharp contrast to persistent organic pollutants or carbon dioxide in the atmosphere, which take much longer to do something about.
+
+
+* Waste management
+- Consumption is a mirror of the human condition.
+- Our understanding of how people consume has always reflected our views about how they ought to live.
+- There are 5 periods of development of modern consumerism.
+- The dreams of access for all are the closest to being realised now.
+- In Singapore, the amount of waste disposed has increased sevenfold over the past 40 years.
+- In 2017, about 7.7 million tons of waste was generated, and the amount would fill 15,000 Olympic-sized swimming pools.
+
+** Brief history of modern consumerism
+
+*** First stage: 1500s - 1800s
+- This first stage is associated with new, exotic and luxury goods, including tea, coffee, spices, silks, cotton, ceramics, plants, drugs, etc.
+- We can trace the development back to the first European attempts to gain access to the East, for spices, silks, jewels and other luxuries by sea or by land.
+- This early first phase of the developing consumerist society was mainly restricted to the urban elites who could afford them, even if some of these goods such as cotton cloth, coffee and tea, would soon be within reach of many ordinary people.
+
+*** Second stage: 1800s - 1880s
+- The second stage is associated with industrialisation and the rise of a large urban middle class.
+- In this larger society of consumers, the economic terms, consumption and consumer will be used to talk about the spread and use of manufactured goods.
+- As cities became more prominent and the number of consumers increased, the consumers' needs attained a more significant economic and political importance.
+- On the other hand, the political defence of the consumers' interests was later retroactively termed consumerism.
+- Today, the word consumerism is expressed in derogative terms in association with a throw-away lifestyle, but it was initially a more positive phenomenon.
+
+*** Third stage: 1880s - 1930s
+- Consumerism during this time refers to the economic strategy that stimulated an increase in the production of consumer goods.
+- Economists believed that the surge in the circulation of goods would help improve the nation's living standards, which was an idea that became especially attractive during the Great Depression.
+
+*** Fourth stage: 1930s - 1970s
+- The fourth stage is marked by the widespread acceptance of the idea that a modern democratic society requires an economy based mainly on the production and distribution of consumer goods.
+- Economists believe it could improve living standards, avoid social conflict and increase prosperity for all.
+- An article published in the Journal of Retailing in 1955 states, "Our enormously productive economy demands that we make consumption our way of life, that we convert the buying and use of goods into rituals, that we seek our spiritual satisfaction, our ego satisfaction, in consumption... We need things consumed, burned up, worn out, replaced, and discarded at an ever-increasing pace."
+- With a massive increase in oil production and a decline in its price relative to that of other goods and services, the post-war economics was accompanied by the expansion of new industries, such as large-scale car manufacturing, chemicals, plastics and electronics, which are all heavy emitters in their own right.
+- Individual choices in consumption became opportunities for revealing and remaking identity, a way for expressing your dedication, for example, to peace and social equality, or to saving the environment.
+
+*** Fifth stage: 1970s - Present
+- The fifth stage was accompanied by the exponential increase in consumption associated with globalisation and digitalisation, starting from the capitalism of the Cold War.
+- Economics and political survival now seem to depend on expensive consumerism, which resulted in the environmental crisis that we see around us.
+- In this more recent period, the individual consumers' goals and values have been progressively reset to the market's terms and rhythms, and it's driven by the engine of demand created by global consumerism.
+- Nowadays, the public has come to refer to consumption and consumerism in a free and casual manner as if they're all self-evident.
+
+** Consumerism and over-consumption
+- Consumerism has been accompanied by environmental degradation that is endangering the very systems on which our future development depends.
+- Globally, we continue to use ever-increasing amounts of natural resources to support our economic activities.
+- The global material footprint rose from 43 billion metric tonnes in 1990 to 73 billion in 2010 and 86 billion in 2017, which is a 100% increase since 1990.
+- The material footprint per capita has also increased at an alarming rate.
+- In 1990, about 8 metric tons of natural resources were used to satisfy an individual's needs.
+- In 2017, that rose to 12 metric tonnes, an increase of 50%.
+- Another example is electronic products, which help us improve living standards, safety, health, and many other aspects of our daily lives.
+- The demand, however, is outpacing our capacity to recycle or dispose of the discarded devices safely.
+- Phones, toys, and laptops that are powered by battery supply are likely to join the growing mountain of e-waste after use.
+- From 2010 to 2019, there was a 38% growth in electronic waste but less than 20% is recycled.
+- By 2030, the global total will likely double the annual amount of new e-waste in 20 years.
+- The world's faster-growing domestic waste stream is fueled by people buying electronic products with shorter life cycles and few options for repair.
+- Without a reliable waste management system, toxic substances contained in e-waste, such as mercury and chlorofluorocarbons (CFCs), are more likely to be released into the environment.
+- Mercury is mainly found in computer monitors and fluorescent light bulbs.
+- The metal can be easily emitted into the air and eventually settle into water or onto land, where it can be washed into water.
+- Most human exposure to mercury is through ingestion of seafood contaminated with methylmercury, its most toxic and bio-accumulative form.
+- People who are working in mining, electrical equipment manufacturing, waste management industries, and e-waste dumping sites have a higher risk of exposure to elemental or inorganic mercury through inhalation of the vapour.
+- E-waste also contributes directly to global warming as temperature exchange equipment found in fridges and air conditioners can slowly release greenhouse gases, such as CFCs.
+- While adding to destroy UV-shielding ozone, CFCs also add to trap heat in the low atmosphere, causing the earth to warm and climate and weather to change.
+- Wealthy countries' industrial rise depended on the extraction of natural resources in the Global South during the colonial era.
+- Imperial powers had withdrawn most of their flags and armies from the South, but over the following decades, economists and historians argue that there is a marked hemispheric difference between the North and the South.
+- There are underlying patterns of colonial appropriations that remain in place today and they continue to define the global economy and extraction of resources.
+- The rich countries in the North continue to rely on tens of billions of tonnes of raw materials and hundreds of billions of hours of human labour per year, which is not only embodied in primary industrial activities but also in high-tech industrial goods like smartphones, laptops, computer chips and cars, which have come to be overwhelmingly produced in the South over the past few decades.
+- Furthermore, the global South is a dumping ground for the world's e-waste, either illegally or underground.
+- At the same time, the lack of facilities for e-waste processing and uniform protocol for handling the waste have put workers in extreme danger.
+- Consumerism or overconsumption drives and reinforces the problems with geographic inequality and environmental pollution.
+- We have too much to buy and then we have too many of these products and throw them away as waste, and we repeat.
+- This whole process is called material economy.
+- Any product must move through a system from extraction to production, to distribution, to consumption, to disposal.
+- This system is starting to backfire on human health, natural resources, the economy and economic prospects.
+- It is a linear system and the planet we live on is finite.
+- We cannot use a linear system on a finite planet indefinitely as it will impact societies, economies and environments along the way.
+- There are some deeply contradictory issues here as there is an invisible among people who love shopping and ownership, and a desire to do right by the planet and the people in it. They would like to end poverty, get rid of pollution and cut greenhouse gas emissions, but want to dress in the nicest clothes, drive a good car, talk on the latest mobile phones and watch their favourite drama series in the comfort of their new big house.
+- The competition between manufacturers is also often based on price, substitution and imitation, which can lure consumers into buying more.
+- In turn, it intensifies and accelerates the cycle of manufacture purchase, uses and discard, and compounds its environmental or social effects across the global logistic chains from production site to store.
+- Retaining something cheap is not worth it when you can simply buy a new item, especially in the latest style for the same price or even at a lower price.
+- When the rate of purchase and discard speeds up, the manufacturer will respond by further reducing the lifespan of what is being produced.
+- This practice is now widespread across many product lines, particularly electronic goods.
+- Most manufacturers will not insure consumers' phones after their warranty expires.
+- Fear of phone failures becomes an incentive to upgrade with a positive feedback effect.
+- Buying something new in a way also becomes a lever to retain our loyalty.
+- The constant increase in the volume of cheap and really good or nearly all imitations of others pushes us to consider purchasing what is new, sooner and faster, but not necessarily better.
+- Nowadays, we feel increasing pressure to purchase and spend ever more money on a bigger house, premium car, a better vacation, or another enhanced comfort. These are our definitions of success.
+- It means something not only to ourselves but also to our families as they make our parents proud.
+- The correlation between consumption and human well-being reduces beyond a certain point.
+- As societies in the past 50 years have become more affluent and healthier, we have not become happier.
+- Income strongly impacts happiness until it satisfies basic needs.
+- However, once the basic needs have been satisfied, the eventual effect of additional income on happiness becomes negligible.
+- Therefore, the consumption paradox points out that you can't buy happiness.
+- Studies suggest that social participation and community relations essential for social and psychological well-being become eroded as society grows more affluent.
+- It does not take more than a simple act of insight to realise that the infinite growth of material consumption in a finite world is an impossible action.
+
+** Major factors that influence consumption
+
+*** Economic
+- Income is the most important driving force that determines a person's power to consume.
+- As income rises or falls, consumption spending also rises and falls.
+- Large-scale increases in consumption can be linked to rising incomes, like in the growing middle class in China.
+
+*** Social
+- Humans are social beings and hence live around many people who influence our buying behaviour.
+- Humans try to imitate other humans and wish to be socially accepted.
+- Hence their buying behaviour is often influenced by other people, such as family members, reference groups, role models and celebrities.
+
+*** Demographic
+- Larger families spend more than smaller families.
+- Families with children of college-going age have a different spending behaviour to single-person households.
+
+*** Cultural
+- Cultural facts include the fundamental values, needs, wants preferences, perceptions and behaviours observed and learned by consumers from their family members and other important people around them.
+- For example, many of us consume more during religious or cultural holidays.
+
+*** Psychological
+- Psychological facts are not easy to measure, but it's powerful enough to influence a buying decision, based on the consumer's attitude towards a product and its brand image.
+- Companies attempt various ways to design their marketing campaigns to influence buying decisions psychologically.
+- Buying things that you did not plan to buy may suggest that you were influenced by sales psychology, where the placement of products in the supermarkets improves the chances of goods going into your shopping basket.
+- For example, a live planogram of neatly arranged shelves places complementary goods together, eye level is the buying level, and candy is placed near the waiting line area.
+- These strategies go a long way towards maximising your consumption.
+
+** Responsible consumption and production
+- According to the United Nations Environmental Program, one of the most significant global challenges is integrating environmental sustainability with economic growth and welfare by decoupling environmental degradation and economic growth and doing more with less.
+- Resource decoupling and impact decoupling are needed to promote sustainable consumption and production patterns and transition towards a greener and more socially inclusive global economy.
+- Goal 12 of the United Nations' Sustainable Development Goals, responsible consumption and production, refers to the use of services and later products, which respond to basic needs while minimising the use of natural resources and toxic materials, and the emissions of waste and pollutants over the lifecycle of the service or product to not jeopardise the needs of future generations.
+- Goal 12 is fully aligned with a circular economic approach, which builds upon value retention loops.
+- There are 3 significant gains from reducing the waste of food, energy, and water.
+- If it can be integrated into the circular economy, reducing food waste and various steps from farm to shop, it will increase food availability, without increasing food production or agricultural land area.
+- Increasing the food system's efficiency, and improving food security and nutrition, all contribute towards environmental sustainability.
+- To reduce energy consumption in your home, you don't necessarily need to go out and purchase all the energy-efficient products.
+- Energy conservation can be as simple as turning off lights, or appliances when you do not need them.
+- To achieve the environmentally sound management of the water supply, we must significantly reduce the release of chemicals and all waste to water sources to minimise the adverse impact on human health and the environment.
+- Clothes and hygiene products made from synthetic fibre release chemicals and microplastic particles into water.
+- We can apply the sustainable economy model in which products and materials are designed to be reused, remanufactured, recycled, or recovered, and thus maintained in the economy for as long as possible.
+- The generation of waste, especially hazardous waste, should be avoided or minimised and greenhouse gas emissions must be prevented or reduced.
+- NTU has recently announced its 15-year sustainability plan and aims to half the campus' carbon emissions, as well as waste and energy and water use compared to the baseline level in 2011 by March 2026.
+- In 2019, the waste-to-energy research facility, jointly developed by the National Environment Agency and NTU, the waste to energy research facility was built to turn domestic waste from the NTU campus into electricity and other useful resources.
+- In addition, plastic bags will not be given out for free on the NTU campus from October 2018, a move that could save nearly a million plastic bags a year.
+- Sustainable Development Goal 12 ensures sustainable consumption and production practices until the respective biophysical boundaries of the planet are respected and the current global consumption rate fits with the biophysical capacity to produce ecosystem services and benefits.
+
+*** Reduce by design
+- As an overall principle applied in the early stage, reducing by design leads to the design of products and services using fewer materials per unit of production during their use.
+- Reducing by design leads to the design of products and services using fewer materials per unit of production and during their use.
+- Hence, reduction by design influences all stages of the life cycle of a product or a service and reduces the raw material extracted.
+- The production has been designed to use less material.
+- Consumption patterns and end-of-life of such products and services lead to less impact and less waste.
+- Other retention processes include refuse, reduce, reuse, repair, refurbish, remanufacture, repurpose, and recycle.
+
+*** Singapore's zero waste master plan
+- In 2019, Singapore mapped out a zero-waste master plan to build a sustainable, resource-efficient, and climate-resilient nation.
+- We should adopt a circular economy approach to waste and resource management practices and shift towards more sustainable production and consumption.
+- The National Environmental Agency introduced mandatory packaging reporting in 2020 for producers of packaged products and supermarkets, and targets implementing a framework for managing packing waste, including plastics no later than 2025.
+- More packaging-free grocery stores will encourage customers to bring their containers and buy what they need instead of a prepackaged amount.
+- These stores also offer more competitive prices as going without packaging reduces the cost of its products by an estimated 10%, allowing customers to save both the environment and money.
+- Moreover, finding recycling convenient and developing a habit of recycling is a vital factor in boosting household recycling.
+- As recycling grows, we need to move beyond household recycling and grow the recycling industry in tandem.
+- Together these efforts will help to close the loop on more waste streams as we adopt a circular economy approach.
+
+*** Environmental benefits
+- Reducing various types of pollution while better managing hazardous materials.
+- Reducing the overuse of natural resources while optimising water and energy usage.
+
+*** Social benefits
+- Improve awareness of environmental issues and enhance social welfare and well-being both in consumer and producer countries.
+- Eliminate waste making and consumerism.
+
+*** Economic benefits
+- Reduce or eliminate the risk by replacing hazardous or toxic substances with environmentally friendly products.
+- Reduce the ever-rising cost of waste management by avoiding waste, reusing and recycling waste.
+- Reduce the unit costs of energy, water, and raw materials through better processing efficiency.
+
+
+* Sustainable cities
+- Former UN Secretary-General Ban Ki-moon says, "Our struggle for global sustainability will be won or lost in cities."
+- Over 50% of the world's population live in cities, including ourselves and our lifestyles drive many unsustainable practices, both cultural and economic.
+- Many cities are vulnerable to environmental changes such as extreme weather, warming and the lack of freshwater.
+- It is also in cities that sustainability agendas for the future are formed.
+- Sustainable Development Goal 11, which aims to make cities and human settlements inclusive, safe resilient and sustainable.
+- This goal is connected to the rest of the other Sustainable Development Goals, such as Goal 1, of eradicating poverty.
+- Since the world is becoming urban, poverty is also becoming increasingly urban, which is often represented by the rise of informal dwellers, sometimes called slum dwellers, who lack access to basic services and adequate housing.
+- Goal 2 of ending hunger and achieving food security is also related because of the trade-offs between agricultural land use and urban land use.
+
+** Urban World
+- An urban world means that the proportion of the urban population is growing very fast.
+- In 2018, an estimated 55.3% of the world's population lived in urban settlements.
+- This is estimated to rise to 60% by 2030, and 68% by 2050.
+- In the Asia Pacific region, this urban population growth is estimated to add 1.2 billion people by 2050, which is about twice as many urban dwellers as today.
+- About 1.2 million square kilometres of new built-up areas are projected to be added by 2050, which is about twice the size of Thailand.
+- Cities occupy about 1% of the land globally, which means that the environmental impacts of cities are very disproportional compared to the amount of space cities take up.
+- There are also more and more large cities.
+- In 2018, 1 in 5 people lived in cities with at least 0.5 million inhabitants.
+- In 2030, it is projected that there will be more than 1 in 3 people living in these large cities.
+- This also means that the number of megacities, defined as cities with a population over 10 million, is growing.
+- The number is projected to increase from 33 today to 43 in 2030.
+- These megacities are concentrated in Asia and Africa.
+- Conversely, some cities are shrinking, and this is mostly in the US and Europe.
+- There are also a few cities in Asia where the population is declining, such as Japan.
+- Singapore has more control over its growth, given that it is both a city and a nation where national-scale immigration can be adjusted to reach specific urban growth targets.
+- Cities are mainly characterised by a different lifestyle.
+- Cities tend to have higher living standards, like greater electricity access, improved drinking water and sanitation, or access to clean fuels for cooking and heating.
+- These modern comforts explain the rural to urban migrations in many countries.
+- Access to these services is highly unequal, in particular for informal dwellers, who live in areas with low access to basic services.
+- There are 1 in 3 people informal dwellers in urban areas globally.
+- Higher living standards result in a lifestyle change, which results in more consumption.
+- There is something about urban lifestyle that correlates with higher economic growth and production.
+- It is useful to reconsider the framework of doughnut economics, which was developed to move beyond simple GDP metrics that economists use traditionally.
+
+** Doughnut economics
+- The doughnut is defined as a compass for human prosperity in the 21st century.
+- Given that the 21st century is very urban, the doughnut is very applicable.
+- The doughnut consists of two concentric rings, one of which is a social foundation, which essentially maps the Sustainable Development Goals, like sufficient food, sufficient income, good health, etc.
+- These are the minimum needs that we as a society want to meet for every person on the planet.
+- The outer ring is called the ecological ceiling, which is to ensure that we don't overexploit the resources on our planet.
+- It's based on planetary boundaries, which is the idea that the Earth can only do so much when it comes to recycling, treating pollution, or growing food sustainably and we need to consume within these boundaries.
+
+*** Cities' direct impacts on the environment
+- Urban growth results in the loss of other land use, like forest or agricultural land.
+- In Singapore, Orchard Road was named after the fruit and plantation lining it.
+- There are also pollution impacts like unmanaged waste, which is increasing with increasing consumption.
+- This pollutes our land, rivers and oceans due to wastewater, which is generated in highly concentrated ways in cities.
+- Air pollution is also critical due to so many cars and industries in and around cities.
+- This would impact the environment, which in turn will affect people's health and the health of ecosystems, like the plants and animals living around us.
+- This also has a direct impact on us as we depend on these healthy ecosystems to grow our food, supply our water, and provide several other benefits, which are known as ecosystem services.
+- These ecosystem services would be the less visible ways that humans benefit from natural ecosystems.
+- For example, carbon sequestration provided by forests will help mitigate climate change and pollination provided by insects can help grow out food.
+- Many other cultural aspects are fundamental to our well-being and our humanity.
+
+*** Cities and climate change
+- Energy consumption is very high in cities, up to 80% of total energy consumption because the urban lifestyle is energy-intensive.
+- This creates a lot of carbon emissions, about 70% of global emissions.
+- The key objectives of reducing carbon emissions can be easily achieved by reducing carbon emissions in cities, which relates to our lifestyle and behaviour in cities.
+- Cities are also very vulnerable to climate change as people and infrastructure are more concentrated in cities.
+The urban heat island effect is the phenomenon by which a city experiences warmer temperatures than surrounding rural areas.
+- This temperature difference is due to how well the surfaces in each environment absorb and retain heat.
+- The denser the urban environment, there are fewer trees and more concrete, which increases the temperature.
+- This may have important public health implications during heat waves, and for everyday lives and the economy.
+- In Singapore, with every single degree difference, our energy consumption will increase due to air conditioning.
+- So the more we can reduce the heat island effect, the less energy we will have to consume.
+- Flooding is often exacerbated by urbanisation due to rainwater not being able to infiltrate or be stored in built-up areas and hence has nowhere to go, which results in flooding in some parts of the cities.
+- Increase in rainfall intensity, which is expected in many regions due to climate change, may increase flooding.
+- Investments in drainage systems are expensive and hence, careful urban planning to reduce the built-up areas will help the need for these investments in the first place.
+- In Singapore, PUB is expecting climate change to bring about more frequent and intense rainfall, potentially putting a strain on the island's drainage capacity.
+- Singapore has invested in a new fleet of flood response vehicles capable of operating in water as deep as 17 centimetres and is also stepping up forecasting and monitoring technology.
+- Most of these challenges relate to the ecological ceiling and the social foundation of the doughnut economic model.
+- Other social needs are important for cities, such as providing infrastructure for access to basic needs, housing, education, health or basic income, essentially, all the needs that are in the doughnut economic model.
+- Inequality is rising in cities in both developed and developing countries.
+- At extreme levels of poverty, about 1 billion people are living in informal settlements globally.
+- Conflicts in many countries are poverty in rural areas contributing a migration, which may exacerbate the challenges of urban poverty.
+- These are not easy challenges to solve and many of them are interlinked.
+- The urban population is growing fast, and this impacts the environment which is in turn problematic because we depend so much on the environment itself.
+- Other social challenges need to be solved in an urban context because so many of us live in cities.
+
+** Creating a sustainable city
+- Many organisations collect case studies and best practices from cities around the world, which can serve other cities to replicate or adapt solutions.
+- This is the case for WWF, which collates information on different themes.
+- Vancouver has developed a green city plan and reduced greenhouse gas emissions by 7% and also met its objectives regarding sustainable transportation systems.
+- These can serve as useful guidelines for urban practitioners all around the world to find their own solutions in their cities.
+- The International Standard Organisation, has developed the standard that consulting companies may want to use as a general guide.
+- The Standard guides sustainable development in communities, which also reflects various dimensions along the three pillars, attractiveness, environment, resilience, resource use, social cohesion and well-being.
+- Singapore's Sustainability Blueprint has specific indicators about green and blue spaces, which will help with environmental dimensions, social dimensions, like as keeping the population healthy, and economic dimensions.
+- More green space will help reduce temperatures and therefore reduce the energy we use to cool out the environment.
+- There are also indicators related to buildings, like indicators relating to their energy efficiency.
+- Target 6 of Sustainable Development Goal 11 says that by 2030, we need to reduce the adverse per capita environmental impact of cities, including by paying special attention to air quality and municipal and other waste management.
+- Target 7 focuses on access to safe, inclusive and accessible green and public spaces, in particular for women and children, older persons and persons with disabilities.
+- Target 11a focuses on the links between a city and its surroundings. In particular, it will help address the challenge of cities encroaching upon agricultural or forested land by helping to understand the impacts and dependencies between cities and their immediate surroundings.
+- The targets also have quantitative metrics to assess progress towards a particular target.
+- Target 11.3 metrics are the proportion of solid waste collected and managed in control facilities first, and then the annual mean levels of particulate matter, like PM2.5 and PM10, weighted by population.
+- This not only helps cities know what to measure but also for global tracking of goals.
+- It's also useful to understand the progress towards achieving the Sustainable Development Goals.
+- The indicators typically do not point to actual solutions, which is the way to achieve these goals.
+- However, there are some common solutions that cities can rely on.
+
+*** Common solutions
+- Decision-makers can promote sound urban planning, which means that they can provide incentives or implement regulations that will increase the number of sustainable buildings.
+- In Singapore, the Building and Construction Authority has the Green Mark certification programme.
+- The Urban Redevelopment Authority can then decide to enforce more or less strict rules for any new building in an area.
+- This can also be done by investing in a good public transportation system to reduce the amount of trips that citizens take using private vehicles.
+- Singapore is investing in new MRT lines, which is an implementation of this strategy.
+- A city can also reduce its emissions and waste.
+- The city can invest in renewable energy at a large scale by working with the energy authority to source less carbon-intensive energy, through incentives or regulations for some industries, like by encouraging them to add solar panels on their rooftops.
+- That's also part of the Green Mark certification for non-residential buildings.
+- Waste management is also a service that falls under the agenda of a city.
+- Singapore promotes diverse recycling initiatives through the National Environment Agency.
+- Sustainability is linked to resilience, meaning a city and urban dwellers should be able to continue to thrive even in the face of a disaster.
+- A sound disaster risk management plan will help with achieving these goals.
+- Singapore is fortunate to have low hazard levels for most of the natural hazards that threaten Southeast Asia, like tsunamis, cyclones, etc.
+- Sea level rise is one of the hazards that's currently getting a lot of attention in the redevelopment of our coast, like the East Coast.
+
+*** Nature-based solutions
+- A group of the solutions are called nature-based solutions, which are also referred to as blue and green infrastructure.
+- Blue and green infrastructure is an area or a system made of naturally occurring or engineered ecosystems, like forests, green roofs, road trees, etc.
+- They are managed to provide benefits for people and the environment.
+- For example, by using more vegetation, or blue and green infrastructure, careful urban planning can reduce the urban heat island effect.
+- More vegetation in the city means that urban areas will respond more similarly to rural areas, meaning that they're not retaining so much heat during the day.
+- In Singapore with our tropical temperatures, this is an important part of the greening strategy that is in the Singapore Green Plan.
+- Singapore has the "Active, Beautiful, Clean Waters" program or "ABC Waters" programme developed by PUB.
+- This achieves multiple benefits through the use of blue and green infrastructure.
+- The benefits related to water are to reduce the quantity of runoff produced when it rains which reduces the chances of flooding.
+- This will also improve the quality of the runoff, which will eventually reach our reservoirs.
+- There are also aesthetic and recreational benefits on top of the water benefits.
+- There are multiple ways that a city can become more sustainable, with actions being taken on the city level as well as the individual level.
+- Choosing to take public transport when it is possible is an example of an individual-level action.
+- Cities are not just an abstract concept, it's a system where citizens also play a huge role.
+- It is useful to consider the four perspectives, local, global, social and ecological.
+- Within each of these perspectives, different targets can be created either from existing plans, such as the Green Plan, or the different ambitions of political leaders or citizens.
+- In Amsterdam, everything is connected, as the housing policy affects many other aspects of the city.
+- Technology is part of these dimensions, like the dimension of solar panels, but is far from being the only part.
+- Things are rarely that simple as to be solved by technology.
+- There are also multiple workshops and discussions in Amsterdam to derive these strategies, which take time and energy.
+- There is hence no single recipe for sustainable cities.
+- Cities are complex systems made of people institutions, processes, and fluxes and each of them is unique.
+- The same solution will not apply to all of them.
+- Cities can help change individual behaviours, like improving public transportation systems can encourage more people to adopt sustainable behaviours by using fewer cars.
+- This is important as the environmental impact of cities is mainly how individuals behave and how we live in cities.
+- Cities can benefit from economies of scale.
+- Denser environments are often easier to cool down or heat up through centralised systems.
+- Shorter distance to access services also means that less energy is used for moving goods or people.
+- Cities are innovation and creativity hubs, where most universities, research institutions and innovation ecosystems thrive, including the funding to support this innovation.
+- Encouraging all of these actors to focus on sustainability issues is a major role that cities can play.
+- We live on an urban planet and 56% of us live in cities, and this number is growing.
+- Urban lifestyle impacts the environment and increases our dependency on natural ecosystems.
+- A sustainable city manages all resources it is dependent on, in ways that guarantee the well-being of current and future generations, ensuring distributional equity.
+- There is no one recipe for sustainability, but there are some general principles to apply.
+- At the city level, urban decision-makers can promote sound urban planning, green buildings, invest in renewable energy, etc.
+- At the individual level, we can all adopt more sustainable lifestyles, since the environmental and social impacts of our cities are driven by our behaviours.
+
+
+* Environmental feedback loop
+- It is difficult to know where to draw the line between our needs and the needs of future generations, for us as individuals in our daily lives, as well as for policymakers with many different interests to consider.
+
+** Climate tipping points
+- There are climate tipping points which are irreversible, that are either approaching or may have already been triggered.
+- Earth has its regulatory mechanisms for climate.
+- When these mechanisms are in place, seasons are regular, the monsoon rains come when they're supposed to, the rivers flood when expected and extreme weather is rare.
+- The predictability of regular weather patterns is something we have long counted on, notably in agriculture, but also in societies in general, like whether houses are equipped with air conditioners or heating systems, depending on the prevailing climate.
+- Humans have interfered with nature in various ways throughout history.
+- But since the middle of last century, the effects of human activities on the environment have intensified and accelerated, notably through altering the composition of gases in the atmosphere.
+- By adding more greenhouse gases, we have caused a global warming effect, but it doesn't end there, which is what climate tipping points are about.
+- Global warming sets off a domino effect that further increases warming in a vicious cycle that if it goes too far over the tipping point, it is more or less out of our control.
+
+*** Polar ice caps and glaciers
+- The polar ice caps and glaciers have very high albedo, meaning that they efficiently reflect the sun's rays into space, cooling down the Earth.
+- Though glaciers change in size between summer and winter, the net annual change in size is small when the climate is stable.
+- This is an example of a negative feedback loop.
+- The Earth's temperature is kept from increasing too much by the stabilising effect of the large ice-covered areas around the poles.
+- This is the part where the consequences of human actions interfere with the Earth's natural cooling mechanism.
+- Human-induced global warming is causing glaciers to shrink in size.
+- There is a net loss of ice mass over several years.
+- The shrinking of glaciers makes it one of the most obvious displays of the effects of global warming.
+- Less ice and snow, in turn, means less high-albedo ice surface to reflect solar radiation and cool down the planet.
+- It also means the darker, low-albedo surface of exposed land and ocean absorbs the sun's rays, further exacerbating global warming, causing more of the glaciers to melt, more heat to be absorbed, and so on in a positive feedback loop that sets the climate system on a new trajectory towards a warmer future.
+- The accelerating cycle of global warming and melting ice sheets at the poles and Greenland also result in sea level rise, which is a concern here in Singapore, despite being so far away from the poles.
+- The concept of climate tipping points was introduced by the Intergovernmental Panel on Climate Change (IPCC), two decades ago.
+- The idea is that a strong enough trigger factor, such as global warming, interferes with the natural system for climate regulation, shifting the climate system to a new trajectory in a self-perpetuating positive feedback process.
+- This could happen either as a continuous response or after a certain tipping point.
+- An example of a tipping point could be a certain temperature increase like 1.5 or 2 degrees above pre-industrial levels.
+- However, the exact point that would trigger an irreversible change is very hard to predict, and there's often a gradual change occurring first.
+- During the Holocene, the Earth's climate was stable despite various triggers trying to destabilise it.
+- Climate scientists are now warning that human impact on the climate is strong enough to destabilise the Earth's system into accelerating global warming and self-reinforcing feedback loops.
+- We know it can happen as climate records show that equally drastic changes in climate and sea level have happened before in Earth's history, triggering glacial-interglacial transitions and mass extinctions.
+- The best way of preventing or mitigating this scenario is to limit greenhouse gas emissions and thereby climate change as fast as possible.
+- The uncertainty of the climate model predictions of climate tipping points can make them feel less probable to us.
+- However, they usually happen gradually and there are examples around us of such gradual change going on right now.
+
+*** Amazon rainforest
+- The Amazon rainforest in South America used to be called the lungs of the Earth.
+- The enormous area of lush rainforests was a big carbon sink, mitigating climate change by absorbing CO_{2} from the atmosphere while also releasing oxygen.
+- However, in recent years, the extensive conversion of rainforest for agricultural production and large forest fires have reduced the extent of the forest significantly.
+- This change also impacts the climate of the region.
+- Rainforest trees create lower temperatures on the ground through shading and produce rain by evaporating vast quantities of water into the atmosphere.
+- When deforestation leads to a drying regional climate, it increases the risk of more fire in the remaining forest.
+- It's natural that carbon bound up in vegetation and soil is released to the atmosphere in fires.
+- But research has shown that deforestation alone also accelerates the loss of carbon from the system.
+- As the fires become more frequent in the area due to the drier climate, the vegetation will shift from rainforest trees towards more fire-tolerant species, such as grasses, small vines and shrubs, which are also more flammable.
+- The Amazon forest could go from a rainforest ecosystem, retaining large quantities of water and carbon, to a Savannah-like system with a drier climate, frequent fires, and a much lower capacity to hold water and carbon.
+
+*** Coral reefs
+- Coral reefs have a higher biodiversity than any other marine environment and they're important for fishing and tourism.
+- They also provide foundation and sediment for coastlines, buffer wave action and prevent erosion on shorelines.
+- It has been estimated that the goods and services that coral reefs provide are worth $275 billion annually.
+- Global climate change and ocean acidification are two of the many threats to coral reefs.
+- Others include overpopulation, unsustainable fisheries, sea level rise and coastal development.
+- Warming waters cause coral bleaching and mass death of corals as they are pushed out of their temperature tolerance range.
+- Acidification makes it more difficult for corals to calcify and sea level rise will limit available light for photosynthesis.
+- As coral reefs die, the structure and water depth will change, modulating wave energy regimes and increasing coastal wave exposure as ecological degradation limits vertical reef growth.
+- Coastal communities depend on coral reefs to create natural buffers to hurricanes, storm surges and coastal erosion, not to mention the livelihoods, culture and local traditions tied to coral reefs.
+
+
+* Socioeconomic challenges of sustainable development
+
+** Economic growth
+- With increased production and consumption, our economy is growing rapidly.
+- But if we keep consuming and producing at this rate, we are taking the risk of expanding at the expense of environmental destruction and crossing our planetary boundaries.
+- We do not want economies to stop growing especially in low-income economies that still have a lot of growing to do.
+- They have made tremendous progress in the last 3 to 4 decades and have narrowed the GDP gap with rich economies.
+- Convergence is the process of low-income economies narrowing the gap of GDP or income per capita with rich countries.
+- In 1970, China was a $0.232 trillion economy.
+- In 2020, they have reached $14.63 trillion, which is still far behind the United States, but they are rapidly closing the gap.
+- Not all low-income countries are moving on this path.
+- Some countries are still stuck in the poverty trap which is the biggest hindrance to sustainable development around the globe.
+- According to a recently released United Nations report, global poverty is increasingly concentrated among a group of 48 countries, most of them situated in Sub-Saharan Africa and Asia.
+- But the most worrying part is that they are on the paths of divergent economic development.
+- Instead of convergence or closing the income gap with rich countries, they are falling further behind.
+- In 1992, the income per capita of Nepal and Zambia was higher than that of China.
+- Not that Nepal and Zambia are presently two of the least-developed countries, though Nepal recently graduated from this category and is now under the group of developing countries.
+- In 1990, the GDP of Nepal and Zambia was higher than China's.
+- In 2020, China has reached a GDP of more than $16,000 per person.
+- Nepal and Zambia, rather than growing, have even sunken down.
+- Such countries can only break free of the vicious cycle of poverty with international support, and help with finances, trade and technology.
+- The category of the least-developed countries was created for the same purpose, to target such support for these countries.
+- Growth is very important, especially when there is so much difference between the income per capita of different countries.
+- We desperately need economic growth in low-income countries, but we don't want this growth to be based on population growth.
+- There is economic growth and GDP increases, but if your population grows at the same rate, you are ideally at the same level.
+- We must be watchful that our future growth doesn't come entirely from population growth.
+- When we have more than 7 billion people on Earth, population growth is one of the major impediments to our goal of sustainable development.
+- Earth's population is projected to increase to 9.7 billion by 2050, and about 11.2 billion by the end of the century.
+- With this many people, our pursuit of sustainable development, and our desperate need for economic growth in low-income countries look to be in peril.
+- Back in the 1970s, the population started growing rapidly, which concerned many scientists and scholars.
+- "The Limit to Growth" was the first published report highlighting the issues of exponential economic and population growth.
+- The simulation model in the report was based on the work of MIT scientists, and the report was commissioned by the Club of Rome.
+- The findings warned about the danger of a rapidly growing population.
+- They concluded that if there is no change in resource consumption and we keep going at the same rate, the most probable results will be a sudden and uncontrollable decline in both population and industrial capacity.
+- Gratefully, humanity did not meet the fate predicted by this report and can thank technological advancements and innovation, with the help of which we were able to produce food for a rapidly growing population.
+- We started producing and using mineral resources more efficiently.
+- The report did not foresee the development of clean fuel alternatives, that people would have fewer children in the days to come, and that women would be more educated and work actively in the workforce.
+- We cannot solve our environmental problems and aim for sustainable development if we keep adding more and more people to our planet.
+- An additional point to note is that attaining sustainable development will be much more difficult for some countries than others due to so many competing factors.
+- Climate change is going to impact every country alike, but low-income countries and populations are going to suffer the earliest and the most.
+- The challenge of sustainable development would be much more gruelling for some countries than others, because of extraordinary environmental challenges, unfavourable geographical locations, and so many other socio-economic challenges to overcome.
+
+** Rapid population growth
+- If we go by present projections, the future population growth is going to be concentrated in low-income regions.
+- The population in Europe is predicted to decline and the population will stagnate in most other continents.
+- But there is going to be high population growth in Africa and Asia, where around half of the population growth is going to come from 9 - 10 countries, most of which are situated in Africa.
+- There will be a threefold increase in the population of Nigeria and the populations of India and China are going to grow rapidly too.
+- With this kind of population growth, it would be almost impossible to attain economic growth in low-income countries, especially the kind of growth that is socially inclusive and within the limits of planetary boundaries.
+
+*** Fertility rate
+- The first factor that determines population growth is the fertility rate, as a higher fertility rate means more children.
+- This creates a vicious cycle where with more children comes more poverty.
+- Because of the increased poverty, you have more children.
+- People in low-income countries tend to have more children, and thanks to this vicious cycle of poverty and fertility, most households end up staying poor forever.
+- More children means fewer natural resources per person, which are already limited.
+- If we have 100 people in our country, we will be sharing land, water and other natural resources among these 100 people, and everyone is getting 1/100.
+- The moment the number of people goes up to 200, the share per person goes down to 1/200.
+- Similarly, more children means a household has less money to spend on health, education and other needs of children.
+- Some countries are too poor to implement safe pregnancy and family planning programmes, which leads to even more unplanned pregnancies and more children, and we are back to that vicious cycle again.
+- What may help these countries is to stay at the replacement fertility rate, which means each mother has two children, one daughter, and one son.
+- Each mother is replacing herself with a daughter who will become the mother of the next generation, which keeps the population stable in the longer term.
+- In general, the replacement fertility rate is a bit higher than 2, to consider the mortality of some children.
+- Not every child survives to adulthood and becomes part of the population.
+- Some regions are already going below the replacement rate, like Europe and North America.
+- The good news is that Africa's fertility rate is also projected to decline in the years to come, but it will still be much higher than other regions.
+- If these countries want to ease their fertility rate, they will need to implement the right policy measures to manage the factors that determine fertility.
+- The very first point to consider is the age of marriage.
+- When girls leave school and marry at a very young age, they start having children early too.
+- In some traditional societies, they marry as early as 12 years old, and that is problematic.
+
+*** Access to family planning services and modern contraception
+- The second factor, is access to family planning services and modern contraception.
+- Another important aspect is female participation in the labour force as when women are working in a paying job, the opportunity cost of having children goes up.
+- Imagine you have a paying job that pays you $5,000 a month.
+- You decide to have a child that forces you to go on extended leave or perhaps stop working entirely.
+- All the money which you were earning before is lost and you will not be earning anything anymore.
+- That is the opportunity cost of having children for a working woman which is one of the reasons that women in developed countries are opting to have fewer children.
+
+*** Rural versus urban divide
+- In rural areas, most of the population is dependent on agriculture-based activities to earn their livelihoods.
+- They grow crops, are livestock farmers or do other rural activities.
+- In these settings, the more children, the better.
+- Rural families may want to have more children so they have more labour available at home.
+- They don't have to hire people to do work for them.
+- In cities, raising a child is expensive, and that helps to keep the fertility rate in check.
+
+*** Child mortality
+- Child mortality creates the same kind of vicious cycle
+- Due to the absence of proper medical facilities, poor hygiene and sanitation conditions, and no access to safe water and food, child mortality is high in most low-income countries.
+- A significant proportion of children do not survive to adulthood, which will scare parents, and result in them wanting to have more and more children to ensure that at least a few of them survive to their adulthood.
+- When your population keeps growing, you never have enough funds to work on these basic health and sanitation services that can help keep child mortality low.
+
+*** Summary
+- Working on these factors will not only better low-income countries' chances for sustainable development, but it will also help them to stimulate a higher quality of life, eradicate poverty, and increase income per capita.
+
+** Pace of urbanisation
+- Presently, around 4 billion people, which is more than half of the world's population, live in urban areas.
+- There has been a mass migration of populations from rural to urban areas which results in the rapid expansion of cities.
+- Cities in some countries are expanding much faster than others, such as in China and India.
+- The rapid expansion of urban areas brings a lot of challenges, but it also presents some opportunities for sustainable development.
+- As cities expand further in the future, it would be challenging to meet the needs for housing, employment and infrastructure.
+- While cities consume more than two-thirds of global energy and produce more than 70% of carbon dioxide emissions, most of this energy consumption comes from the production of goods that are consumed elsewhere.
+
+** International migration
+- Although international migration has increased a bit in recent years, in terms of the total world population, it has remained mostly stable over the last 550 years.
+- International migration usually happens from low-income and developing countries to high-income and developed countries.
+- The flow of money from migrants abroad to their home countries is a significant source of finance for development in low-income countries.
+- UN estimates suggest that remittance is much higher than the amount of official aid that these countries receive from the rich world.
+- Additionally, many people have started migrating to reduce their vulnerability to both environmental and non-environmental risks in their home countries.
+- This number may grow and the situation becomes worse due to severe climate change risks for poor populations.
+
+** Other factors
+- There are also other social and political forces to consider.
+- Most of these factors stem from extreme poverty, dependence on natural resources and poor governance like the heavy reliance on agriculture and other natural resources for livelihoods.
+- Having an abundance of oil and gas resources in a country with no adaptation plan in place will make it harder to decarbonise their economies.
+- There are various other dynamics like livability, workability, food systems, physical assets, infrastructure and natural capital which climate change will impact negatively.
+- The impacts of climate change will be felt by some countries more severely than others due to their socioeconomic conditions.
+- A case study conducted by McKinsey and Company concluded that as heat and humidity increase in India, and with no adaptation plan in place, by 2030, around 160 to 200 million people would live in regions with extreme risk of lethal heat waves.
+- Auto labour productivity, which accounts for about half of India's GDP today, will be critically impacted.
+- Around 60% of the global food production occurs in five countries: China, the United States, India, Brazil and Argentina.
+- Extreme weather events in these countries may affect a large portion of global production, and the populations that rely the most on imported grains might be severely impacted.
+- Even though there is no magic key that will take away all these problems, if we choose the right technologies, implement pertinent policy and market measures, strive for better governance, and are willing to take climate actions, attaining sustainable development is possible.
+- A socially inclusive economic growth that provides opportunities for all and is within planetary boundaries.

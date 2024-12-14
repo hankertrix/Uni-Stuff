@@ -1,0 +1,241 @@
+#+TITLE: SP0061 Science & Tech for Humanity Week 6 Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Introduction
+- The development of medicine hygiene, food security and other factors rapidly increased overall life expectancy of humankind during the past decades.
+- In 1965, the average life expectancy in the *world* was 55 years, whereas in 2020, it was 72 years.
+- In Singapore, in 1965, the life expectancy was 67 years and increased to 84 years in 2020.
+- By 2030, 1 in 4 Singapore residents will be aged 65 and above, with a population ageing at one of the highest rates globally.
+- Ageing is very complex, as we have seen from considering the perspectives of life sciences and humanities, psychology and social sciences, economy and healthcare.
+- This complexity presents many challenges, but also possibilities and potentials behind this challenge.
+- Ageing Asia is an independent business network with a vision to bring together businesses, governments, and community leaders in Asia Pacific to address the opportunities for the ageing population.
+- Prudential has been a forerunner in progressive employment practices with its diversity and inclusion efforts including mature employees.
+- It also commissioned a white paper titled "Skilled for 100 - Leveraging on an older workforce in Singapore", which explores the work-related challenges and opportunities that lie ahead for Singapore's residents, employers, and government, as all of us live and work for a longer period of time.
+- Prudential Singapore removed its retirement age in 2018 and extended the group medical coverage to age 100 for its employees.
+- DLE specialises in mechanical and electrical related projects across a broad spectrum of industries supported by over 300 staff of various age groups.
+
+* Balazs' (Professor) views on ageing
+- Ageing is both a major challenge and an opportunity.
+- Challenges that come with ageing include cognitive and bodily function decline and high healthcare costs.
+- "Our father told us, there were five children, told us children the following: 'I want to die young, but as late as possible.'" - George Bush Sr. at the funeral ceremony of his father.
+- It is possible to reach an old age in good physical and cognitive conditions.
+- So the major challenge of ageing is to have quality life for as long as possible with the help of technologies, but also with the help of healthy life-related conscious actions.
+- Such actions include physical activities, cognitive activities, family and social life, stress reduction, healthy diet, and so on.
+- Productive longevity requires both a mindset shift for businesses, students and upcoming entrepreneurs to bring to market this diverse and exciting range of products and solutions.
+
+* Janice's (Ageing Asia) views on the core values of a silvering economy
+- Ageing is a social and economic opportunity.
+- Ageing overlaps every sector and every industry.
+- In Asia, we have these values of filial piety, which changes with each generation.
+- In the past, filial piety, pronounced as "Xiao Xin", meaning that we want to look after our parents.
+- So we have 3-generation homes of 4-generation homes, and our parents are living with us.
+- However, just because they are living with us, doesn't mean they're enjoying the best quality of life.
+- Their quality of life depends on whether we have time to spend with them and whether they engage in meaningful activities and purposeful.
+- Sometimes, our work schedules disallow us from spending all the time we want with our loved ones, so everyone has developed very independent life trajectories.
+- In the future, the same pronunciation of "Xiao" is the same as laughter in Mandarin.
+- Ideally, we would want older people to age with laughter, to be happier and to be more independent as they age, healthier as they age, stronger as they age, and have a more dignified ageing journey.
+- This underlies how we can build up the silver economy.
+- The silver economy by 2025 is projected at 72 billion US dollars for Singapore.
+- The bulk of this value comes from spending power of older people, and of all generations, as the Baby Boomers are the biggest savers.
+- We need to create opportunities for them to enjoy that meaningful healthy ageing life.
+- This 72 billion dollars is not all just healthcare, but rather represents the spending power of a person aged over 60.
+- The things an older person might spend on is housing, transportation, tourism, retail, services, and of all these areas, housing is always one of the biggest areas.
+- A challenge today is to make homes that age forever with an older person, which we have smart homes and age-friendly barrier-free homes.
+- However, just the hardware alone for these homes is insufficient, as the services that these homes can provide to an older person within 1-kilometre radius of where they live are vital as well.
+- They need a connected community and a second family with people around that 1-kilometre radius, as your neighbours will likely come to you faster than your child who lives in the next town or the next country. They are more likely to be there in times of need.
+- We should think about technologies that can make an older person lead a healthier life at home and be more independent as that is the goal today.
+- Seniors today want to have a more enabled life, and many seniors don't actually want to live with their children.
+- They want to lead an independent life and have the key to their own life.
+- The Silver Economy presents a variety of opportunities that involve creativity and innovation, not just in healthcare, but in other areas as well.
+- We need to think about what makes an older person happier, stronger and healthier as they age.
+- The opportunity is to bring together innovation, enterprise and the right way to deploy technology as an enabler, both in terms of hardware, with infrastructure and the support, and heartware, with our hearts, because seniors can live to a joyful and meaningful age, and they can be connected to society.
+
+* Sarah's (DLE) views on mature employees
+- Businesses and corporates are a very strong force of change and a force of good.
+- DLE is a mechanical and electrical engineering firm with over 300 people and 73 are locals while 60% are migrant workers.
+- Out of these 73, there are about one-third who are above 55 years old.
+- Construction is a very traditional industry and isn't as appealing as other industries, so we are wanting our staff to work as long as possible, if they are happy and willing to.
+- 11% of our locals are site supervisors, which is a tedious role whereby they have to walk around and monitor site installations and also manage the workers. They also possess a lot of electrical knowledge and years of experience on site installations, which cannot be studied from textbooks.
+- With the younger generation coming in, DLE does a mentorship program where the junior, be it the foreman or the technicians, is attached to the senior site supervisor, where they learn on the job and look at how installations are done.
+- Soft skills are taught through life experiences and so these juniors are modelled.
+- Senior site supervisors are able to teach the young ones to manage the workers and the client relationships on-site.
+- The mentorship between our more senior workers and the younger ones is an important aspect of DLE.
+- DLE implements a series of age-friendly practices, as we have raised the retirement age to 75, in-sync with our insurance maximum coverage age.
+- This is above the statutory age and with longer working life, this may not even be enough.
+- DLE also does performance management, which ensures that our senior workers are assessed on a similar performance evaluation criteria as the younger workers.
+- This means older workers that are not at their maximum of their salary range will be given increments if their work performance is good. They are also given promotions.
+- For example, we recruited a Senior Project Engineer when he was 62, and now he's 70 years old, and for the past years he has been given increments as well.
+- The rewards and incentives are given fairly to older workers.
+- DLE also does job redesign. For example, a site foreman, who has to inspect around the site, had a foot issue, so we re-deployed him to our production area in the warehouse.
+- He gets to sit down at the production area and just do the punching using the machine in 2-hour brackets, which doesn't need him to walk around or quit his job, and hence has been in that role for a number of years.
+- Our senior workers do not need to consider quitting as there are other ways which we can deploy them.
+- The construction sector involves long hours and their working environment may not be as conducive, so we do need to maximise our talent pool and our manpower as much as possible.
+- DLE also has medical benefits, which is important for our senior workers.
+- We have the usual outpatient benefits, but for longer serving staff who've been with us for more than 20 years, we provide them with specialist outpatient, because medical conditions doesn't always require hospitalisation or surgery, so this specialist outpatient benefits are provided for our staff.
+- Sometimes, they might need to do a heart checkup and similar checkups, which the specialist outpatient benefits cover, giving them more medical support.
+- Singapore National Employers Federation (SNEF) has just launched a structured career planning guidebook which can be used by industries and the employers.
+- It has a structured career planning talk with staff starting form the age of 45, which covers retirement planning, which can be a very sensitive topic.
+- This guidebook has helped employees with guidelines and it also checklists on how employers do the planning with their staff.
+- We have found a middle ground to continue tapping into the mature workers and allowing them to contribute their value and experiences.
+
+* Sheela's (Prudential) views on mature employees
+- The Singapore Business Federation has raised the retirement age to 75.
+- A survey was done at Prudential in collaboration with the Economic Intelligence Unit back in 2018 to understand the feedback from citizens who are active contributors to the workforce.
+- One of the questions was whether they were equipped and ready to retire at 62.
+- The findings of the survey were not surprising, as people want to be active citizens and contributors to the economy at large.
+- There is no right age to retire, and there is no fixed age for any individual to retire.
+- Recognising that every individual in the workforce is an active contributor and have walked through the door every day to add value regardless of age, Prudential has removed the retirement age in 2018 to provide that dignity to their employees and to treat them as equals.
+- Performance was a very strong theme in ensuring ongoing employment, but that holds true regardless of age.
+- Insurance is an entrenched and complex business, so the experience that our senior workforce brings to the table is extremely helpful.
+- Seniors bring allow for mentorships and on-the-job training, and they have a lot of passion for their work.
+- Noreen is a poster girl for the senior workers at Prudential, who is in her mid-60s.
+- She is a lead policy writer, which is a very specialised and niche area of work.
+- When Prudential removed the retirement age, she was happy about the removal and thanked me for the change.
+- She wanted to continue to contribute more to the company and show that her skills can continue to improve as she ages.
+- The benefits brought about by removing the retirement age have not just been to the organisation, but have also reached the younger workforce at Prudential, as learning from someone who is of a different generation, can bring a different perspective, which has also enabled our workforce appreciate our customer base and the demographics of Singapore, to then be able to come up with right solutions for our customers.
+- Prudential stretched itself a little bit more and equalised the CPF for all our employees aged 55 and above in 2019.
+- Prudential treats their older workers as equals, as they do the same jobs as their younger colleagues, so they shouldn't be paid less in terms of CPF, when they are prepared to contribute to the company.
+- There is an opportunity for all employers to do more, as in the study we did, "Skilled for 100", we surveyed about 200 HR professionals and only 16% thinks that employers are ready and equipped to employ individuals above the retirement age, which is now up to 63.
+- That is an issue in terms of addressing mindsets, as we need to start shifting the mindsets of employers to see the value in the silver workforce, when there is a war for talent.
+- Employers currently do not war over the workers in the silver workforce.
+- The conversation in the lead-up and the run-up to retirement is a very complex topic.
+- It is also sensitive with a lot of assumptions and anxieties.
+- However, there are always win-win approaches for both the company and the worker to be contributing meaningfully to the economy, and to feel that they are productive, and that their experience is rich and can continue to be tapped.
+- There is a challenge and opportunity for businesses to find ways to harmonise and to synergise the rich experience of the older workers across the intergeneration workforce.
+
+* Balazs' (Professor) views on mature employees
+- NTU, with the University of Cambridge and the help of the National Research Foundation, has a huge research program entitled the Centre for Lifelong Learning and Individualised Cognition (CLIC), which is one of the major research programs at NTU focusing on understanding the learning capacity and learning strategies of young people, young adults, older adults and the elderly.
+- Learning is possible at any age, and it is not the privilege of younger people, or of children or adolescents.
+- Better understanding of how the younger generations, mid-generations and elderly learn new skills is needed to design better strategies and develop interventional approaches to improve this learning capacity.
+- This is so that the elderly can learn new skills and use them in more intense form in different sectors of the industry.
+- NTU is very keen on understanding the situation in Singapore and in developing new approaches to mobilise this fantastic learning capacity of our brain across the different age groups.
+- With the help of this new knowledge, we can empower people, the elderly, but also younger people, to utilise their skills, their learning skills and their experiences in different ages, and combine them across the age groups for the benefit of society.
+- Scientific knowledge and scientific approaches can help us understand how we learn, how we acquire new skills and empower us to improve this learning process and to develop new strategies for more effective learning.
+- This research will likely bear fruits in the future and will help Singapore in mobilising the forces among the younger generation, the mid-generation and the older generation to build a more understanding workforce and use the talents and the skills of the older generation across the age spectrum.
+
+* Sarah's (DLE) views on mature employee's career aspirations
+- Many senior workers do not want to retire, they want to continue working for as long as possible, as long as their health can take it.
+- They are happy to work for as long as the company wants them.
+- We want to make sure that they feel a welcoming environment and that the company does not want them to leave as we value their contributions and this would align our objectives.
+- They want to work, so DLE provides the employment for them.
+- However, we need to ensure that we don't hold assumptions that are not true, as everyone has their own priorities and objectives, so one person may want to work, but another might want to do something else.
+- It is important to have open communication with employees, like through the career talk mentioned above, to know what employees are looking for.
+- Even though the majority of people want to work, there may also be some who just want to work part-time, so open communication is key.
+
+* Sheela's (Prudential) views on mature employee's career aspirations
+- Learning is not owned by the youth, which has been a premise of looking at Prudential's workforce and identifying the similarities and differences.
+- When Prudential says that our value proposition to our employees is regardless of age, our commitment is that we will help you connect and be part of an organisation that is inclusive, allows you to collaborate and work with people across hierarchies, grades and divisions, and be innovative in the process.
+- Prudential is committed to employee's growth, which is our second proposition, again regardless of age.
+- We are there to support you in your career journey that you so choose to walk the path and finally succeed.
+- It is never too late to be successful in something you choose to do, which is Prudential's value proposition to our employees.
+- We have an open invitation for everyone to come to our office, as we have an inclusive view of our workforce.
+- The office is open concept, so the CEO does not have a workstation, and you sit next to anyone of any age, any gender, any division, and you work collaboratively towards a desired goal and outcome for our customers.
+- Post_COVID, we've now extended our workplace to PRUAnywhere, so you can actually work from anywhere.
+- An external provider allows our teams and individuals to meet their colleagues for meetings, discussions, engagements, which can be at their neighbourhood, one where it allows and enables our workforce not just to work and be productive, but also attend to everything else that matters in their life.
+- If a senior worker needs to go for a medical appointment, and there happens to be a PRUAnywhere, as their younger colleagues, please go and use them.
+- The employees at Prudential are happy with this arrangement.
+- Prudential has also been working extensively with the Institute of Banking and Finance over the last couple of years to look at how we redesign jobs to be future-ready against skills that are important.
+- A fifth of Prudential is going through a chartered learning path which enables them to be ready for the new world and be ready to embrace new skills and take on new roles.
+- We are committed to all of our employees regardless of age.
+- Your job may disappear, but you don't have to disappear.
+- Within the one-fifth of our organisation, there is about 26 people we call "Silver Surfers" who have signed up to be part of this journey, which is phenomenal.
+- There were some challenges with certain segments, but being able to engage them in conversations and understanding their pain points, and addressing their concerns and accompanying them in their journey is part of our growth commitment.
+- Taking on those accountabilities and being able to add value and contribute in what matters is to succeed in this matter.
+- Our Silver Surfers are invited to policy discussions because it's quite important that they are seen, and they feel like they are advocates and representatives of their population and their colleagues.
+- By including them in key policy decisions, a lot of them will be with us for many years to come.
+
+* Janice's (Ageing Asia) view on how businesses can tap into the silver economy
+- The new silver economy presents a lot of opportunities and new roles that people will play in this new economy.
+- Companies are like second family for these older workers, ever more than before.
+- We went through a period of economic growth where a lot of younger people would think that they need to job hop every few years to get ahead.
+- However, the conversation is now changing back to staying in 1 organisation that helps me look after my whole life as being more important.
+- Building that community within that organisation which spans multiple generations, including both the young and old.
+- An innovation we need is to increase the opportunities for community engagement within companies.
+- We also need to help people in the organisation to see that the cheapest way to look after your health as you grow older is prevention.
+- Exercise is medicine, and you'll save money for both the company and yourself.
+- But creating this culture is difficult, as we need to build that professional workforce while encouraging them to stay healthy, be engaged with the community like a family.
+- We would also need to engage people across generations.
+- Many companies today view the ageing population with different innovations and ideas.
+- Instead of getting feedback from a research company or an ageing innovation lab, getting feedback from the older people in the workforce to look at ideas is better.
+- This creates a vibrant ecosystem across generations and across different departments, which supports a new population change, a new mindset where you can age in this new environment to be healthier and stronger.
+
+* Sheela's (Prudential) view on how businesses can tap into the silver economy
+- We need figure out how to engage people through this lifecycle.
+- It's not just about a single role or job, it's about what could be next.
+- It could be what you can do as an extension to the community, to your customers, etc.
+- Prudential has a very vibrant internal mobility culture. Every year 10% of our workforce take on a new job.
+- This is done by keeping people in the organisation while giving them a new role.
+- This can continue through the life cycle of the individual as well.
+- However, it requires deliberate thinking and planning regarding facilitating this internal mobility, and having internal conversations about thinking longer-term than short-term.
+- The right tone from the top is important in making this happen.
+- As Prudential is about corporates and what we do for the community, we also need to think about influencing fellow corporates in terms of thinking through this longevity agenda, which is an important consideration.
+
+* Sarah's (DLE) view on how businesses can tap into the silver economy
+- Business always boils down to dollars and cents.
+- In Budget 2022, there is an increase in CPF rates for senior workers that will happen from 1st January 2023
+- The government has provided the CPF transition offset that would help with the increase in the CPF contributions from the company.
+- Companies do appreciate what the government has provided, but it is something that companies will have to get used to, which would be an increase in manpower costs.
+- Companies need to realise that in a tight labour market we will have to be used to the increase in labour costs and be ready to accept it.
+- As such, companies should focus on increasing productivity.
+- It is always about limited resources and limited budget, so we are always looking out for grants.
+- There's a Senior Worker Early Adopter Grant that we took up and applied for, and that helps progressive companies to actually raise the retirement age and re-employment age, which is something companies can look at.
+- Companies should also have a lot of health programs, but for small and medium enterprises (SME), they have a limited budget, so they need to always be looking out for collaborations.
+- We partner with insurance companies, so they provide the complimentary health screenings.
+- We also partner with banks who want to have their credit card roadshows.
+- So we invite them to our company to provide food or health talks.
+- Previously, we have applied for the Health Promotion Board grant where we implemented and rolled out a series of exercise programs and also included Tai Chi.
+- For older folks, they may not want to do rock climbing or cycling, but they can do Tai Chi.
+- However, a manager in her late 50s managed to climb all the way to the top of the rock wall, so we cannot be presumptuous as some older folks are healthier than the younger ones.
+- There are people in their 30s with high blood cholesterol.
+- Having older workforce in a good health condition can inspire the younger people.
+- Companies should be looking out for how they can actually partner with others to create even more programs.
+- We are currently looking at a Total Workplace Safety and Health grant, which is rolled out be WSH council, and it integrates safety, occupational health, and also the physical health and mental health of the worker.
+- It is a holistic approach that we hope will benefit our staff.
+
+* Commentary on how businesses can tap into the silver economy
+- There are always new roles emerging.
+- There needs to be intentionality in the leadership setting, the tone, in the corporate being the unit of change to institutionalise certain arrangements that will bring the workers on board.
+- Policy needs to be designed with ways to incentivise companies to do well and do good.
+- There is a rich diversity and ample opportunities for everyone in different professions and different fields to play a part to advance this longevity agenda.
+- It could be the policy designers and makers who are thinking about innovative approaches. Instead of looking at it as a limitation on our factor of production, the silver economy should be looked at as the next phase that will propel Singapore's growth.
+- It could be the product designers and interior designers.
+- I hope you'll be able to take these ideas 2 -5 steps ahead to think about the new products.
+- There is a fantastic possibility here to design new policy documents, new guidelines and new concepts for the government, for society, for companies about the silver economy's potential.
+- We can even create new spin-offs and new companies.
+- ASPIRE55 is a wellness community that mimics life in a retirement village but offered in a virtual environment where there's virtually no walls, so it doesn't limit you to be online or offline.
+- You create spaces in the community, existing spaces, and you then help people create social connections and communities.
+- There are a lot of ideas in the ageing space, and if you just look around you, look around the people you're with, because all of us have someone older that is ageing, and the best test bed to look at what products we need for the ageing population is to look around your own family members. Innovation comes from there.
+- Think about how you want to change the future.
+- We should think about the contributions to GDP from the silver economy, that is, the economy of people aged over 60.
+- We also need to help older people to look at their future as an age of golden opportunity for both engaging their current companies, help them to become silver entrepreneurs or having silver entrepreneurs' venture funds.
+- Using technology, we can also enable people to work longer in their jobs.
+- There will be a job redesign, but there's also going to be a lot of creation of innovative technological products.
+- These products might help a person who is getting older, having some physical weakness, to continue to lift heavy things.
+- In Japan, there are a lot of robotic technologies that are helping to support the workforce, not just for their internal workforce, but also for export internationally.
+
+* Addressing the students watching the video
+- You hopefully will be inspired to think creatively about how you want to change the way people are living in the future.
+- As students, we are in an era where we study, work and then retire, but that is being challenged today as we are going through life.
+- The silver workforce isn't actually not that different from students, as they also want to be active contributors, active decision makers and ideators in itself.
+- Hence, when we do anything, we should look for similarities in the first instance, but where there are differences, like differences in terms of learning patterns and maybe priorities, we will need to find a way to draw people from a traditional mode of thinking through those 3 life stages and then be able to come to the same outcome that we could if they were our age as well.
+- We students need to break that mould and find solutions that actually tickle us as it will tickle the senior workforce, and will create inclusivity and reduce unconscious biases.
+- We need to keep preconceived notions out of the way, as there may be older workers who are more adventurous, and we will never know until we actually speak to them.
+- Having an open and honest environment for communication is key, and that can start with speaking to our family members who are in that age bracket to understand their aspirations, what they work like to do, and what would actually help them to work longer.
+- All these start with just having conversations and transparency.
+
+* Final comment by Albert (Singapore Business Federation)
+- The Singapore Business Federation is privileged to have progressive corporates who will be supporting our transition to this silvering economy and workforce.
+- As Singapore's apex business chamber, we also want to work very closely with businesses, academic institutions and research institutions to find ways to get these innovative research products and solutions to the market.
+- On one hand, is to help companies size new growth opportunities, and on the other is to keep our silvering workforce happy, engaged and together.
+- There are a lot of opportunities for people to come together and work together in small country like Singapore.
+
+* Concluding and addressing the students watching the video
+- With the silvering economy of Singapore being a major issue in the coming years, you should not regard it as something sad and something that we cannot do anything about.
+- It is instead a great opportunity for the whole society, but also for you to come up with creative ideas which can be translated from the ideal level to the implementation level.
+- You can translate a concept, an idea, a scientific thought, a technical development, into a product, into a company, into a spin-off, a guideline, a recommendation for the government, or for users including the elderly.
+- You will be provided with the contact information of the Singapore Business Federation, DLE, Prudential and Ageing Asia, so do contact them.
+- Furthermore, you should try to come up with ideas and find a partner to discuss these ideas with to create great ideas which can be realised in the near future.
+- While you are a university student, you can also be a spin-off company owner.
+- The goal of this course is to have you create something which will sooner or later become a reality.
