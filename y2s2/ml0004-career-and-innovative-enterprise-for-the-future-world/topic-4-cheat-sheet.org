@@ -217,6 +217,38 @@ Attend networking events where you will have the opportunity to meet and speak w
 11. Don't bring up salary or benefits unless the interviewer does first.
 12. Be confident, relax and smile throughout the interview to create a positive impression.
 
+** Things to keep in mind before the interview
+
+*** Company fit
+Express your enthusiasm for the company's culture, mission, or products and how you see yourself contributing positively to the team and its goals.
+
+*** Top strengths
+Pick strengths that are most relevant to the job and provide examples from your work history that demonstrate how these strengths have contributed to your effectiveness.
+
+*** Problem-solving
+Outline your approach to problem-solving, focusing on a particularly challenging issue you faced, how you addressed it, and the results of your actions.
+
+*** Juggling tasks
+Discuss your method for managing multiple tasks or projects, emphasising your ability to organise, prioritise, and deliver results under pressure.
+
+*** Moving on
+Communicate your desire for new challenges and growth opportunities that the prospective role offers, while expressing gratitude for your current or previous role's experiences.
+
+*** Achievements
+Identify key achievements in your career, especially those that demonstrate skills and abilities relevant to the job you're applying for, underscoring your potential value to the employer.
+
+*** Weakness
+Talk about a weakness you've had, how you've addressed it, and what you've learned. Frame it as journey of professional growth.
+
+*** Standing out
+Highlight strengths that directly match the job's needs by discussing specific instances where these strengths played a key role in your past successes.
+
+*** Missed targets
+Describe a situation where you missed a target, how you handled the aftermath, and the strategies you implemented to ensure it doesn't happen again.
+
+*** Handling errors
+Share an example of an error you made, the steps you took to correct it, and the insights gained to avoid similar issues in the future.
+
 ** What employers are looking for
 - Humility
 
@@ -282,6 +314,72 @@ Attend networking events where you will have the opportunity to meet and speak w
 - The interviewer would like to know your career plans and whether you have a realistic view of career progression while balancing this with a certain drive or passion.
 - Reflect on you career plans and share, for example, you may be interested in pursuing a leadership position or a more specialised role to deepen your skills in a particular technical field.
 
+*** Other possible questions
+- What do you know about our company, and why do you want to work here?
+- What skills or experiences do you have that make you a good fit for this role?
+- Can you describe a challenging project or situation you faced during your studies or internships?
+- How do you handle working under pressure or tight deadlines?
+- Can you give an example of a time when you demonstrated leadership or initiative?
+- Describe a situation where you had to work in a team. What was your role, and how did you contribute to the team's success?
+- What do you consider your greatest strengths and weaknesses?
+- How do you handle receiving feedback or criticism on your work?
+- Where do you see yourself in the next 5 years, both professionally and personally?
+
+** What not to do during an interview?
+1. Be arrogant.
+2. Avoid eye contact.
+3. Be late.
+4. Be too early.
+
+   Avoid arriving more than 10 minutes early, as too early of an arrival could be inconvenient for the interviewer, causing them to rush through a prior commitment and come into the interview frustrated. Instead, if you arrive more than 10 minutes early, wait in your car or outside the building and review your interview documents. When appropriate, go inside and introduce yourself at the reception desk.
+5. Lie.
+6. Fidget.
+7. Show a lack of accountability by blaming others for your mistakes.
+8. Check the time.
+9. Answer the phone.
+10. Act desperate.
+11. Appear angry.
+12. Cross your arms.
+13. Be defensive.
+14. Come unprepared.
+15. Look bored.
+16. Be rude.
+17. Eat.
+
+** What do interviewers look for?
+1. Your body language.
+2. Likeability.
+3. Openness to new approaches.
+4. Preparation.
+5. Soft skills in action.
+6. Leadership.
+7. Confidence.
+8. Passion.
+9. Success stories.
+10. Curiosity.
+
+    You can ask things like:
+    - Why is this position needed?
+    - How will you know that you hired the right person?
+    - How does this role fuel the company's overall success?
+    - What immediate challenges and opportunities await the person who fills this role?
+    - What are the three key things you're looking for in the person who will have this job?
+11. Personality.
+12. Thoughtfulness.
+13. Self-direction.
+14. Expectations.
+15. Self-awareness.
+16. Motivation.
+17. Willingness.
+18. Understanding of the company.
+    - History
+    - Business model
+    - Mission
+    - Values
+    - Goals
+19. Understanding of the role.
+20. Understanding your potential in the role.
+
 ** End-of-interview questions
 Interviewers tend to ask "Do you have any questions for us?" at the end of the interview. It is to:
 - Ensure that the candidates have all their questions and doubts answered over the course of the interview.
@@ -300,6 +398,12 @@ Do not say you do not have any questions as this may be interpreted as a lack of
 - What must a new hire in this position achieve in the first 100 days?
 - What are some challenges facing the company right now, and how does this role contribute to addressing them?
 - What is the next step in the hiring process, and when can I expect to hear back from you?
+- What are your expectations of an ideal intern?
+- What are the qualities that would make someone unsuccessful in this internship?
+- What have you liked most about working here?
+- What are the day-to-day responsibilities I will be assigned to?
+- I would love to work for you. Can you share what are my next steps?
+- How long will it take to make a decision about me and is there anything I can do to help you make it?
 
 ** Types of interview
 
@@ -333,6 +437,18 @@ Another common type of digital interview is the recorded interview where candida
    - Print out your resume and the job description.
 8. Have a contingency plan.
    - If the connection fails, request or give your mobile number for a callback.
+
+**** How to prepare?
+- Preparation is key.
+- Test your technology.
+- Set the scene and minimise distractions.
+- Sit down prepared.
+- Practice, don't memorise.
+- Monitor your body language.
+- Dress the part.
+- Make a connection.
+- Be yourself.
+- Immediately follow up.
 
 *** Video interview
 Organisations from industries like consulting, banking, healthcare, engineering and fast-moving consumer goods (FMCGs) are adopting video interviews in their screening process.
@@ -393,10 +509,16 @@ There will almost definitely be some kind of group assessment carried out on the
 4. Do note that there are other different roles you can play during the group activities, such as timekeeper, mediator, scribe, etc.
 
 ** Post-interview follow up
-- Always send a thank-you email to all your interviewers and the person who has helped to schedule the interview within 24 hours.
+- Always send a thank-you email expressing your gratitude to all your interviewers and the person who has helped to schedule the interview within 24 hours.
 - In that email, reiterate your interest in the role, bring up pertinent achievements that you shared during the interview, and express your interest in joining the team and say that you look forward to their reply.
 - If you do not get the job, treat the interview as a learning experience so that you can do better in the next interview.
 - Cherish every interview as not every job application will get you an interview.
+- Evaluate your own interview performance, like the questions you have answered well, not too well, and areas to improve on for future interviews.
+- Tabulate things to remember to prepare yourself for the second interview, such as the name of interviewers, reporting structure, etc.
+- Email any supporting documents, like references for example, swiftly if required.
+- Notify your references about potential interviewers who might be contacting them for character reference about your interview.
+- Enlarge your network with friendly interviewers via LinkedIn at your discretion.
+- Be patient for the prospective organisation to contact you.
 
 ** Learning points
 1. Not every job application will result in an interview.
