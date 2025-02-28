@@ -252,10 +252,13 @@ def linear_regression_pipeline(
             variable_training_data, dependent_variable_training_data
         )
 
+        # Get the model coefficient
+        linear_regression_model_coefficient = linear_regression_model.coef_[0][0]
+
         # Print the coefficient of the linear regression model
         print(
             f"Linear regression coefficient for {dependent_variable} vs {variable}:",
-            linear_regression_model.coef_
+            linear_regression_model_coefficient
         )
 
         # Create the formula for the linear regression model
@@ -318,15 +321,15 @@ linear_regression_pipeline("SalePrice", independent_variables, house_data)
 :RESULTS:
 #+begin_example
 Correlation between SalePrice and LotArea: 0.2638433538714062
-Linear regression coefficient for SalePrice vs LotArea: [[1.91881242]]
+Linear regression coefficient for SalePrice vs LotArea: 1.9188124184063218
 Explained variance for training set for SalePrice vs LotArea: 0.06996047063721689
 Explained variance for testing set for SalePrice vs LotArea: 0.06617868448896169
 Correlation between SalePrice and TotalBsmtSF: 0.6135805515591944
-Linear regression coefficient for SalePrice vs TotalBsmtSF: [[120.19979559]]
+Linear regression coefficient for SalePrice vs TotalBsmtSF: 120.1997955853062
 Explained variance for training set for SalePrice vs TotalBsmtSF: 0.4096515413342241
 Explained variance for testing set for SalePrice vs TotalBsmtSF: 0.2630537869934424
 Correlation between SalePrice and GarageArea: 0.6234314389183598
-Linear regression coefficient for SalePrice vs GarageArea: [[241.42776434]]
+Linear regression coefficient for SalePrice vs GarageArea: 241.42776434282948
 Explained variance for training set for SalePrice vs GarageArea: 0.4052658994757937
 Explained variance for testing set for SalePrice vs GarageArea: 0.3341589488914384
 #+end_example
