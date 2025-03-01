@@ -114,11 +114,13 @@ centre_str_list: list[str] = [
 # Iterate over the cluster centres
 for index, centre in enumerate(model.cluster_centers_):
 
-    # Get the total and the speed of the centre
-    total, speed = centre
+    # Get the GrLivArea and the GarageArea of the centre
+    gr_liv_area, garage_area = centre
 
     # Add the cluster number with the data to the list of strings
-    centre_str_list.append(f"Cluster {index + 1}:\t{total:.2f}\t{speed:.2f}")
+    centre_str_list.append(
+        f"Cluster {index + 1}:\t{gr_liv_area:.2f}\t{garage_area:.2f}"
+    )
 
 # Join the list of strings with a new line and print the result
 print("\n".join(centre_str_list))
@@ -127,10 +129,10 @@ print("\n".join(centre_str_list))
 #+RESULTS:
 : Features	GrLivArea	GarageArea
 :
-: Cluster 1:	1508.20	475.18
-: Cluster 2:	1012.02	353.54
-: Cluster 3:	2839.64	715.02
-: Cluster 4:	1998.87	600.03
+: Cluster 1:	1516.04	478.45
+: Cluster 2:	2011.48	600.58
+: Cluster 3:	1015.82	355.10
+: Cluster 4:	2850.62	711.64
 
 Predict the labels for the data using the mode.
 #+begin_src jupyter-python :results none
@@ -148,9 +150,9 @@ print(labelled_data.head())
 :    GrLivArea  GarageArea Cluster
 : 0       1710         548       0
 : 1       1262         460       0
-: 2       1786         608       3
+: 2       1786         608       1
 : 3       1717         642       0
-: 4       2198         836       3
+: 4       2198         836       1
 
 Plot the count plot of the data based on the labels.
 #+begin_src jupyter-python
@@ -159,7 +161,7 @@ sb.countplot(labelled_data["Cluster"])
 #+end_src
 
 #+RESULTS:
-[[file:./.ob-jupyter/99d87ff02dc105006f07f38b6a15423129480b46.png]]
+[[file:./.ob-jupyter/95bbd3651bf3a6d8d7d6d681596bdc706b7e02d3.png]]
 
 Visualise the clusters in the data using a scatter plot.
 #+begin_src jupyter-python
@@ -168,7 +170,7 @@ plt.scatter(x="GrLivArea", y="GarageArea", c="Cluster", cmap="viridis", data=lab
 #+end_src
 
 #+RESULTS:
-[[file:./.ob-jupyter/8dc06803083315fc2eb2a0af5f197b845318c0dd.png]]
+[[file:./.ob-jupyter/164cab64e8c8c77fe6adcf2bb4ee10ca439e5841.png]]
 
 ** Problem 2
 

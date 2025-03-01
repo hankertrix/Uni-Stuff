@@ -193,10 +193,10 @@ for variable in numeric_variables[:-1]:
 
 #+RESULTS:
 :RESULTS:
-[[file:./.ob-jupyter/7886f52b45c68d308b4848123c83944995656ac8.png]]
-[[file:./.ob-jupyter/2d136699de32352a3b54219e5f0a72de2f1aac98.png]]
-[[file:./.ob-jupyter/15c5ce9ebcfd82cd53bf8a5d71b0bf6e2d6a0108.png]]
-[[file:./.ob-jupyter/46c9a33a9a144cc620428b1f8de4cbf30c4e2faa.png]]
+[[file:./.ob-jupyter/539b275321380fbe5348c12b7ae08195cd108d3a.png]]
+[[file:./.ob-jupyter/d68df3ce8f44463d9faee9c5b022fddd9dd59c21.png]]
+[[file:./.ob-jupyter/5e1aa262298404720b6044bfca25037828e2fb72.png]]
+[[file:./.ob-jupyter/58c7bbb666bcb201ec6106f7307487bbf0f1f1cc.png]]
 :END:
 
 Plot the pair plot of all the variables.
@@ -280,7 +280,7 @@ for category in categorical_variables:
 [[file:./.ob-jupyter/63cc991a7929684936ff833cc4d9782fede22c12.png]]
 :END:
 
-*** COMMENT (c)
+*** (c)
 Print the joint heatmap for "OverallQual" against all variables except for "OverallQual".
 #+begin_src jupyter-python
 # Exclude the "OverallQual" variable with [:-1]
