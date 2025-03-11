@@ -13,11 +13,14 @@ The Arduino used for this project is the
    and type "powershell" without the double quotes into the text box
    and press <kbd>Enter</kbd> to open Windows PowerShell.
 3. Copy and paste the command below to install [Scoop](https://scoop.sh/).
+
    ```powershell
    Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Needed to run a remote script the first time
    irm get.scoop.sh | iex
    ```
+
 4. Run the commands below to install `avr-gcc` and `avrdude`.
+
    ```powershell
    scoop install avr-gcc
    scoop install avrdude
@@ -26,17 +29,22 @@ The Arduino used for this project is the
 ### macOS
 
 1. Open up the terminal and run the command below to install rustup.
+
    ```sh
    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
    ```
+
 2. Install [Homebrew](https://brew.sh/) using the command below:
+
    ```sh
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
+
 3. Set up the [`homebrew-avr`](https://github.com/osx-cross/homebrew-avr)
    tap by running the commands below:
+
    ```sh
-   xcode-select --install  # for the fist time
+   xcode-select --install  # for the first time
    brew tap osx-cross/avr
    brew install avr-binutils avr-gcc avrdude
    ```
@@ -75,6 +83,7 @@ The Arduino used for this project is the
    ```
 
 ## Getting the source files
+
 You can download the source files as a `.zip` file from this
 [link](https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fhankertrix%2FUni-Stuff%2Ftree%2Fmain%2Fy1-special-term%2Fps5888-making-and-tinkering%2Farduino-cone-layer).
 You should rename the file to something shorter and more readable,
@@ -85,6 +94,7 @@ navigate into the directory you want to clone the repository to and
 run either of the commands below:
 
 To clone the repository from GitHub:
+
 ```sh
 git clone --depth 1 https://github.com/hankertrix/Uni-Stuff arduino-cone-layer
 cd arduino-cone-layer
@@ -92,6 +102,7 @@ FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-f
 ```
 
 To clone the repository from Codeberg:
+
 ```sh
 git clone --depth 1 https://codeberg.org/Hanker/Uni-Stuff arduino-cone-layer
 cd arduino-cone-layer
@@ -99,9 +110,11 @@ FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-f
 ```
 
 ## Building the project
+
 Run `cargo build` to build the firmware for the Arduino.
 
 ## Loading the project into an Arduino
+
 With the Arduino Mega 2560 Rev 3 connected to your computer,
 run the `cargo run` command to flash the firmware to the
 Arduino.
