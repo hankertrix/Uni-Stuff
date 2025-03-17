@@ -246,6 +246,24 @@ Finally, the parties can work together to find a mutually acceptable solution to
 - This approach is effective when the other party is the expert with a better solution.
 - It can also be effective for preserving future relations.
 
+** Assertive, Aggressive and Submissive
+| Type   | Assertive        | Aggressive                       | Submissive                                      |
+|--------+------------------+----------------------------------+-------------------------------------------------|
+| Verbal | Direct and clear | Sarcastic or abusive             | Apologetic and rambling                         |
+| Tone   | Calm and sincere | Loud and abrupt                  | Quiet, muffled, tails off at the end            |
+| Facial | Good eye contact | Glaring and tense                | Does not maintain eye contact, apologetic smile |
+| Body   | Relaxed and open | Strong gestures, finger pointing | Nervous movements, closed                       |
+
+** DESC model of assertiveness
+1. Describe the situation
+   State the cause of the conflict in objective terms. For example, "I notice you have been interrupting me when I am presenting my ideas."
+2. Express your feelings
+   For example, "I feel frustrated when you don't allow me the chance to elaborate on my ideas."
+3. Specify what you want
+   For example, "I would appreciate it if you could allow me to finish explaining my idea before you judge."
+4. Consequences
+   For example, "If you were to do that, it would help me a lot as I will feel supported when I share my ideas."
+
 ** Critical thinking
 Critical thinking is a way of approaching a question that allows you to carefully deconstruct a situation, reveal its hidden issues, such as bias and manipulation, to make the best decisions.
 
