@@ -1,0 +1,465 @@
+#+TITLE: MA0218 Beat The Clock Exercises
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+STARTUP: inlineimages
+#+OPTIONS: toc:2
+#+PROPERTY: header-args :session py :kernel python3 :results output
+
+Import all the needed libraries.
+#+begin_src jupyter-python :results none
+import os
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sb
+
+# Set the theme for seaborn
+sb.set_theme()
+#+end_src
+
+The constants used in the program.
+#+begin_src jupyter-python :results none
+FOLDER_PATH: str = "./data/"
+DATASET_E_FILE_PATH: str = os.path.join(FOLDER_PATH, "quizData_Set_E.csv")
+DATASET_F_FILE_PATH: str = os.path.join(FOLDER_PATH, "quizData_Set_F.csv")
+#+end_src
+
+* Preparation 1
+Load the data set.
+#+begin_src jupyter-python
+dataset_e = pd.read_csv(DATASET_E_FILE_PATH)
+print(dataset_e.head())
+#+end_src
+
+#+RESULTS:
+:    FixedAcidity  VolatileAcidity  CitricAcid  pHindex
+: 0          10.4             0.61        0.49     3.16
+: 1          10.0             0.38        0.38     3.15
+: 2           7.9             0.24        0.40     3.32
+: 3           9.9             0.50        0.50     3.16
+: 4          11.6             0.58        0.66     3.25
+
+Print the statistical description of the data.
+#+begin_src jupyter-python
+print(dataset_e.describe())
+#+end_src
+
+#+RESULTS:
+:        FixedAcidity  VolatileAcidity   CitricAcid      pHindex
+: count   1000.000000      1000.000000  1000.000000  1000.000000
+: mean       8.326000         0.528665     0.272160     3.309680
+: std        1.756442         0.181278     0.194516     0.156725
+: min        4.600000         0.120000     0.000000     2.740000
+: 25%        7.100000         0.390000     0.097500     3.200000
+: 50%        7.900000         0.520000     0.250000     3.300000
+: 75%        9.300000         0.640000     0.420000     3.400000
+: max       15.900000         1.330000     1.000000     4.010000
+
+Plot the box plot of the variables.
+#+begin_src jupyter-python
+sb.boxplot(dataset_e, orient="h")
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/7f2daf438181328beb12bdae8501766592b2d36e.png]]
+
+Plot the kernel density plot of the variables.
+#+begin_src jupyter-python
+sb.kdeplot(dataset_e)
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/ab7ed5bd329602bba6bb7563b6f8c8b703e62b10.png]]
+
+From the graphs above, it seems that ~FixedAcidity~ has the most "Normal" looking distribution.
+
+Printing the skew of each variable.
+#+begin_src jupyter-python
+print(dataset_e.skew())
+#+end_src
+
+#+RESULTS:
+: FixedAcidity       0.994536
+: VolatileAcidity    0.562535
+: CitricAcid         0.324123
+: pHindex            0.189697
+: dtype: float64
+
+From the skew data above, it seems that ~FixedAcidity~ has the most number of outliers compared to the rest of the variables.
+
+* Preparation 2
+Get the correlation matrix.
+#+begin_src jupyter-python
+correlation_matrix = dataset_e.corr()
+print(correlation_matrix)
+#+end_src
+
+#+RESULTS:
+:                  FixedAcidity  VolatileAcidity  CitricAcid   pHindex
+: FixedAcidity         1.000000        -0.232366    0.663409 -0.673898
+: VolatileAcidity     -0.232366         1.000000   -0.539493  0.211425
+: CitricAcid           0.663409        -0.539493    1.000000 -0.549747
+: pHindex             -0.673898         0.211425   -0.549747  1.000000
+
+Plot the correlation heatmap of the variables.
+#+begin_src jupyter-python
+sb.heatmap(correlation_matrix, annot=True)
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/cc24c63a4a912211bb2ef241cb74825fb2fbf323.png]]
+
+From the correlation matrix above, it seems that ~FixedAcidity~ has the highest absolute correlation with ~pHindex~ of ~0.67~. Such a correlation is helpful in predicting ~pHindex~ as acidity directly affects the pH of a substance.
+
+* Preparation 3
+Pull out the variables that aren't ~pHindex~.
+#+begin_src jupyter-python
+other_variables = [variable for variable in dataset_e.columns if variable != "pHindex"]
+print(other_variables)
+#+end_src
+
+#+RESULTS:
+: ['FixedAcidity', 'VolatileAcidity', 'CitricAcid']
+
+Iterate over all the variables and plot the joint plots between them and ~pHindex~.
+#+begin_src jupyter-python
+for variable in other_variables:
+    sb.jointplot(
+        y="pHindex",
+        x=variable,
+        data=dataset_e,
+
+        # Add a linear regression line to the plot
+        kind="reg"
+    )
+#+end_src
+
+#+RESULTS:
+:RESULTS:
+[[file:./.ob-jupyter/09cdd84fef7d04e0084ba874facb103602d5020d.png]]
+[[file:./.ob-jupyter/97dc501073763659a924b2bb0b2da428248377a0.png]]
+[[file:./.ob-jupyter/68e09276d8c2ca25376f4853a7b638c6633e754a.png]]
+:END:
+
+Plot the pair plot of all the variables against ~pHindex~.
+#+begin_src jupyter-python
+sb.pairplot(data=dataset_e, diag_kind="kde", kind="reg")
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/d573d0abbc272714a988438f6affd43ae65a47ea.png]]
+
+From the graphs above, it seems that ~FixedAcidity~ has the strongest linear relation with ~pHindex~. It is useful in predicting ~pHindex~ as acidity is inversely proportional to pH.
+
+* Preparation 4
+Import the train test split function.
+#+begin_src jupyter-python :results none
+from sklearn.model_selection import train_test_split
+#+end_src
+
+Split the data into training and testing data sets, with 65% for training, and 35% for testing.
+#+begin_src jupyter-python
+training_data, testing_data = train_test_split(dataset_e, test_size=0.35)
+print(training_data[:10])
+print()
+print(testing_data[:10])
+#+end_src
+
+#+RESULTS:
+#+begin_example
+     FixedAcidity  VolatileAcidity  CitricAcid  pHindex
+709           8.3            0.845        0.01     3.32
+765           9.8            0.880        0.25     3.41
+149           8.7            0.690        0.00     3.36
+867           8.5            0.370        0.32     3.38
+221           6.0            0.500        0.00     3.36
+187           6.9            0.540        0.04     3.69
+731           9.5            0.460        0.49     3.21
+292           8.4            0.745        0.11     3.19
+39            7.8            0.480        0.68     3.09
+132           7.1            0.340        0.28     3.45
+
+     FixedAcidity  VolatileAcidity  CitricAcid  pHindex
+20            8.1            0.545        0.18     3.30
+377           7.5            0.630        0.27     3.26
+954           8.4            0.250        0.39     3.27
+129           8.1            0.380        0.48     3.30
+704          12.9            0.500        0.55     3.09
+391           6.6            0.500        0.01     3.40
+958           6.6            0.580        0.02     3.38
+432          11.6            0.410        0.54     3.02
+771           8.0            0.580        0.16     3.22
+329           6.7            0.480        0.02     3.10
+#+end_example
+
+Import the linear regression model.
+#+begin_src jupyter-python :results none
+from sklearn.linear_model import LinearRegression
+#+end_src
+
+Iterate over all the variables and fit a linear regression model for all the variables to predict ~pHindex~.
+#+begin_src jupyter-python
+# Get the training data of the pHindex
+ph_index_data = pd.DataFrame(training_data["pHindex"])
+
+# Iterate over all the other variables
+for variable in other_variables:
+
+    # Create a linear regression model
+    model = LinearRegression()
+
+    # Get the training data of the variable
+    variable_training_data = pd.DataFrame(training_data[variable])
+
+    # Train the linear regression model
+    # on the training data
+    model.fit(variable_training_data, ph_index_data)
+
+    # Pull out the model coefficient
+    model_coefficient = model.coef_[0][0]
+
+    # Print the coefficients of the fitted model
+    print(model_coefficient)
+
+    # Create the formula to plot the line
+    linear_regression_x = training_data[variable]
+    linear_regression_y = model_coefficient * linear_regression_x + model.intercept_
+
+    # Plot the data on a scatter plot with the regression line
+    _ = plt.figure(figsize=(16, 8))
+    plt.scatter(y=ph_index_data, x=variable_training_data)
+    plt.plot(linear_regression_x, linear_regression_y, "r-", linewidth=3)
+#+end_src
+
+#+RESULTS:
+:RESULTS:
+: -0.061893618123146844
+: 0.2009681217538847
+: -0.45183180198073547
+[[file:./.ob-jupyter/f28a3cc3463165b15faca21b539b4804b631c53e.png]]
+[[file:./.ob-jupyter/5eebbe5e4edc03ef6e1f818fe874e94842d74be1.png]]
+[[file:./.ob-jupyter/320f31bbd9101542b097e747ce4fd1ebb6a769e8.png]]
+:END:
+
+* Preparation 5
+Load the data set.
+#+begin_src jupyter-python
+dataset_f = pd.read_csv(DATASET_F_FILE_PATH)
+print(dataset_f.head())
+#+end_src
+
+#+RESULTS:
+:    CitricAcid  Chlorides  Sulphates Alcohol
+: 0        0.49      0.200       0.63     Low
+: 1        0.38      0.169       0.65     Low
+: 2        0.40      0.056       0.87     Low
+: 3        0.50      0.205       0.75     Low
+: 4        0.66      0.074       0.57     Low
+
+Partition the data into 70% for training and 30% for testing.
+#+begin_src jupyter-python
+training_data, testing_data = train_test_split(dataset_f, test_size=0.3)
+print(training_data)
+print(testing_data)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+     CitricAcid  Chlorides  Sulphates Alcohol
+775        0.63      0.084       0.74    High
+272        0.39      0.074       0.59     Low
+279        0.49      0.070       0.57     Low
+285        0.17      0.084       0.54     Low
+256        0.26      0.083       0.58     Low
+..          ...        ...        ...     ...
+379        0.12      0.178       0.87     Low
+941        0.37      0.063       0.80    High
+75         0.23      0.092       0.56     Low
+168        0.24      0.070       0.48     Low
+875        0.51      0.071       0.76    High
+
+[700 rows x 4 columns]
+     CitricAcid  Chlorides  Sulphates Alcohol
+360        0.04      0.092       0.65     Low
+721        0.00      0.072       0.63    High
+813        0.11      0.043       0.65    High
+365        0.13      0.076       0.64     Low
+253        0.55      0.084       0.71     Low
+..          ...        ...        ...     ...
+820        0.39      0.066       0.55    High
+852        0.24      0.095       0.57    High
+436        0.27      0.088       0.47     Low
+761        0.57      0.087       0.72    High
+743        0.32      0.090       0.79    High
+
+[300 rows x 4 columns]
+#+end_example
+
+Import the decision tree model.
+#+begin_src jupyter-python :results none
+from sklearn.tree import DecisionTreeClassifier
+#+end_src
+
+Get the 3 numeric variables.
+#+begin_src jupyter-python
+numeric_variables = dataset_f.select_dtypes(include="number")
+print(numeric_variables)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+     CitricAcid  Chlorides  Sulphates
+0          0.49      0.200       0.63
+1          0.38      0.169       0.65
+2          0.40      0.056       0.87
+3          0.50      0.205       0.75
+4          0.66      0.074       0.57
+..          ...        ...        ...
+995        0.11      0.048       0.88
+996        0.01      0.048       0.75
+997        0.00      0.050       0.79
+998        0.00      0.048       0.74
+999        0.65      0.096       0.84
+
+[1000 rows x 3 columns]
+#+end_example
+
+Import the ~metrics~ module from ~scikit-learn~.
+#+begin_src jupyter-python :results none
+import sklearn.metrics as metrics
+#+end_src
+
+Create the function to calculate the precision and recall scores.
+#+begin_src jupyter-python
+def calculate_precision_and_recall(
+    confusion_matrix,
+) -> tuple[float, float]:
+    """
+    Function to calculate the precision,
+    which is defined as tp / (tp + fp),
+    where tp is the number of true positives,
+    and fp is the number of false positives,
+    and recall, which is defined as tp / (tp + fn),
+    where fn is the number of false negatives.
+    """
+
+    # Pull out all the required data from the confusion matrix
+    (
+        true_negative_amount,
+        false_positive_amount,
+        false_negative_amount,
+        true_positive_amount
+    ) = confusion_matrix.ravel()
+
+    # Get the precision score
+    precision_score = true_positive_amount / (
+        true_positive_amount + false_positive_amount
+    )
+
+    # Get the recall score
+    recall_score = true_positive_amount / (
+        true_positive_amount + false_negative_amount
+    )
+
+    # Return the precision and recall scores
+    return (precision_score, recall_score)
+#+end_src
+
+#+RESULTS:
+
+Iterate over all the numeric variables and fit decision tree against them.
+#+begin_src jupyter-python
+# Get the training data for alcohol
+alcohol_training_data = pd.DataFrame(training_data["Alcohol"])
+
+# Get the testing data for alcohol
+alcohol_testing_data = pd.DataFrame(testing_data["Alcohol"])
+
+# Iterate over all the numeric variables
+for variable in numeric_variables:
+
+    # Get the training data of the variable
+    variable_training_data = pd.DataFrame(training_data[variable])
+
+    # Get the testing data of the variable
+    variable_testing_data = pd.DataFrame(testing_data[variable])
+
+    # Create the decision tree model with a maximum depth of 2
+    model = DecisionTreeClassifier(max_depth=2)
+
+    # Fit the model using the training data
+    model.fit(variable_training_data, alcohol_training_data)
+
+    # Print the classification accuracy of the model
+    # for the training data set
+    print(f"Training accuracy: {model.score(variable_training_data, alcohol_training_data)}")
+
+    # Predict a value using the training data
+    training_prediction = model.predict(variable_training_data)
+
+    # Get the confusion matrix
+    training_confusion_matrix = metrics.confusion_matrix(
+        alcohol_training_data,
+        training_prediction
+    )
+
+    # Get the precision and recall scores
+    training_precision, training_recall = calculate_precision_and_recall(
+        training_confusion_matrix
+    )
+
+    # Print the precision and recall scores
+    print(f"Training precision: {training_precision}")
+    print(f"Training recall: {training_recall}")
+    print()
+
+    # Print the classification accuracy of the model
+    # for the testing data set
+    print(f"Testing accuracy: {model.score(variable_testing_data, alcohol_testing_data)}")
+
+    # Predict a value using the testing data
+    testing_prediction = model.predict(variable_testing_data)
+
+    # Get the confusion matrix
+    testing_confusion_matrix = metrics.confusion_matrix(
+        alcohol_testing_data,
+        testing_prediction
+    )
+
+    # Get the precision and recall scores
+    testing_precision, testing_recall = calculate_precision_and_recall(
+        testing_confusion_matrix
+    )
+
+    # Print the precision and recall scores
+    print(f"Testing precision: {testing_precision}")
+    print(f"Testing recall: {testing_recall}")
+    print("\n\n\n")
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Training accuracy: 0.6114285714285714
+Training precision: 0.6756756756756757
+Training recall: 0.37091988130563797
+
+Testing accuracy: 0.5833333333333334
+Testing precision: 0.6024096385542169
+Testing recall: 0.352112676056338
+
+Training accuracy: 0.6
+Training precision: 0.5528756957328386
+Training recall: 0.884272997032641
+
+Testing accuracy: 0.6166666666666667
+Testing precision: 0.5555555555555556
+Testing recall: 0.9507042253521126
+
+Training accuracy: 0.6257142857142857
+Training precision: 0.6016260162601627
+Training recall: 0.658753709198813
+
+Testing accuracy: 0.6033333333333334
+Testing precision: 0.5680473372781065
+Testing recall: 0.676056338028169
+#+end_example
