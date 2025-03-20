@@ -12,3 +12,6 @@ target/
 
 # Ignore the files for LL5001 Singapore Sign Language Level 1
 */ll5001-singapore-sign-language-level-1/
+
+# Ignore all ipynb checkpoints
+*/.ipynb_checkpoints/
