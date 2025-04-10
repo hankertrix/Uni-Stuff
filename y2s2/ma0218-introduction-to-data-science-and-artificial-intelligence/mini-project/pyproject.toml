@@ -1,0 +1,32 @@
+[project]
+name = "ma0218-mini-project"
+version = "0.0.1"
+description = "MA0218 Mini Project: The Climate Forum"
+authors = [
+    { name = "hankertrix", email = "91734413+hankertrix@users.noreply.github.com" },
+]
+dependencies = [
+    "marimo>=0.12.0",
+    "numpy>=2.2.4",
+    "pandas>=2.2.3",
+    "matplotlib>=3.10.1",
+    "scikit-learn>=1.6.1",
+    "seaborn>=0.13.2",
+]
+requires-python = ">=3.11"
+readme = "README.md"
+license = "AGPL-3.0-or-later"
+
+[tool.ruff]
+line-length = 80
+indent-width = 4
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
+docstring-code-format = true
+
+[tool.pdm]
+distribution = false

@@ -1,0 +1,529 @@
+#+TITLE: MA0218 Learning via AI Exercises
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+STARTUP: inlineimages
+#+OPTIONS: toc:2
+#+PROPERTY: header-args :session py :kernel python3 :results output
+
+Import the required libraries.
+#+begin_src jupyter-python :results none
+import pandas as pd
+#+end_src
+
+* Missing values in data set
+
+** How many missing data points are in the data set?
+Load the data set.
+#+begin_src jupyter-python
+data = pd.read_csv("./data/Building_Permits.csv")
+print(data.head())
+#+end_src
+
+#+RESULTS:
+#+begin_example
+  Permit Number  Permit Type            Permit Type Definition  \
+0  201505065519            4                      sign - erect
+1  201604195146            4                      sign - erect
+2  201605278609            3  additions alterations or repairs
+3  201611072166            8            otc alterations permit
+4  201611283529            6                       demolitions
+
+  Permit Creation Date Block  Lot  Street Number Street Number Suffix  \
+0           05/06/2015  0326  023            140                  NaN
+1           04/19/2016  0306  007            440                  NaN
+2           05/27/2016  0595  203           1647                  NaN
+3           11/07/2016  0156  011           1230                  NaN
+4           11/28/2016  0342  001            950                  NaN
+
+  Street Name Street Suffix  ...  Existing Construction Type  \
+0       Ellis            St  ...                         3.0
+1       Geary            St  ...                         3.0
+2     Pacific            Av  ...                         1.0
+3     Pacific            Av  ...                         5.0
+4      Market            St  ...                         3.0
+
+  Existing Construction Type Description Proposed Construction Type  \
+0                          constr type 3                        NaN
+1                          constr type 3                        NaN
+2                          constr type 1                        1.0
+3                         wood frame (5)                        5.0
+4                          constr type 3                        NaN
+
+  Proposed Construction Type Description Site Permit Supervisor District  \
+0                                    NaN         NaN                 3.0
+1                                    NaN         NaN                 3.0
+2                          constr type 1         NaN                 3.0
+3                         wood frame (5)         NaN                 3.0
+4                                    NaN         NaN                 6.0
+
+  Neighborhoods - Analysis Boundaries  Zipcode  \
+0                          Tenderloin  94102.0
+1                          Tenderloin  94102.0
+2                        Russian Hill  94109.0
+3                            Nob Hill  94109.0
+4                          Tenderloin  94102.0
+
+                                    Location      Record ID
+0  (37.785719256680785, -122.40852313194863)  1380611233945
+1   (37.78733980600732, -122.41063199757738)  1420164406718
+2    (37.7946573324287, -122.42232562979227)  1424856504716
+3   (37.79595867909168, -122.41557405519474)  1443574295566
+4   (37.78315261897309, -122.40950883997789)   144548169992
+
+[5 rows x 43 columns]
+/tmp/ipykernel_447430/4209880954.py:1: DtypeWarning: Columns (22,32) have mixed types. Specify dtype option on import or set low_memory=False.
+  data = pd.read_csv("./data/Building_Permits.csv")
+#+end_example
+
+Print out the fields which have empty values.
+#+begin_src jupyter-python
+has_missing_data = data.isnull()
+print(has_missing_data.head())
+#+end_src
+
+#+RESULTS:
+#+begin_example
+   Permit Number  Permit Type  Permit Type Definition  Permit Creation Date  \
+0          False        False                   False                 False
+1          False        False                   False                 False
+2          False        False                   False                 False
+3          False        False                   False                 False
+4          False        False                   False                 False
+
+   Block    Lot  Street Number  Street Number Suffix  Street Name  \
+0  False  False          False                  True        False
+1  False  False          False                  True        False
+2  False  False          False                  True        False
+3  False  False          False                  True        False
+4  False  False          False                  True        False
+
+   Street Suffix  ...  Existing Construction Type  \
+0          False  ...                       False
+1          False  ...                       False
+2          False  ...                       False
+3          False  ...                       False
+4          False  ...                       False
+
+   Existing Construction Type Description  Proposed Construction Type  \
+0                                   False                        True
+1                                   False                        True
+2                                   False                       False
+3                                   False                       False
+4                                   False                        True
+
+   Proposed Construction Type Description  Site Permit  Supervisor District  \
+0                                    True         True                False
+1                                    True         True                False
+2                                   False         True                False
+3                                   False         True                False
+4                                    True         True                False
+
+   Neighborhoods - Analysis Boundaries  Zipcode  Location  Record ID
+0                                False    False     False      False
+1                                False    False     False      False
+2                                False    False     False      False
+3                                False    False     False      False
+4                                False    False     False      False
+
+[5 rows x 43 columns]
+#+end_example
+
+Count the values in the data representing whether a value is missing or not.
+#+begin_src jupyter-python
+number_of_missing_values = has_missing_data.values.sum()
+print(f"{number_of_missing_values = :.0f}")
+#+end_src
+
+#+RESULTS:
+: number_of_missing_values = 2245941
+
+** If you removed all the rows with missing values, how many rows would remain?
+Drop all rows which have at least a missing value.
+#+begin_src jupyter-python
+rows_without_missing_values = data.dropna(how="any", axis=0)
+print(f"Number of remaining rows: {len(rows_without_missing_values)}")
+#+end_src
+
+#+RESULTS:
+: Number of remaining rows: 0
+
+** Create a new DataFrame with all columns that contain missing values removed
+Drop all columns that contain missing values.
+#+begin_src jupyter-python
+columns_without_missing_values = pd.DataFrame(data.dropna(how="any", axis=1))
+print(columns_without_missing_values.head())
+#+end_src
+
+#+RESULTS:
+#+begin_example
+  Permit Number  Permit Type            Permit Type Definition  \
+0  201505065519            4                      sign - erect
+1  201604195146            4                      sign - erect
+2  201605278609            3  additions alterations or repairs
+3  201611072166            8            otc alterations permit
+4  201611283529            6                       demolitions
+
+  Permit Creation Date Block  Lot  Street Number Street Name Current Status  \
+0           05/06/2015  0326  023            140       Ellis        expired
+1           04/19/2016  0306  007            440       Geary         issued
+2           05/27/2016  0595  203           1647     Pacific      withdrawn
+3           11/07/2016  0156  011           1230     Pacific       complete
+4           11/28/2016  0342  001            950      Market         issued
+
+  Current Status Date  Filed Date      Record ID
+0          12/21/2017  05/06/2015  1380611233945
+1          08/03/2017  04/19/2016  1420164406718
+2          09/26/2017  05/27/2016  1424856504716
+3          07/24/2017  11/07/2016  1443574295566
+4          12/01/2017  11/28/2016   144548169992
+#+end_example
+
+* Inconsistent data entry
+Load the data.
+#+begin_src jupyter-python
+data = pd.read_csv("./data/pakistan_intellectual_capital.csv")
+print(data.head())
+#+end_src
+
+#+RESULTS:
+#+begin_example
+   Unnamed: 0  S#         Teacher Name  \
+0           2   3      Dr. Abdul Basit
+1           4   5      Dr. Waheed Noor
+2           5   6     Dr. Junaid Baber
+3           6   7  Dr. Maheen Bakhtyar
+4          24  25          Samina Azim
+
+            University Currently Teaching             Department  \
+0               University of Balochistan  Computer Science & IT
+1               University of Balochistan  Computer Science & IT
+2               University of Balochistan  Computer Science & IT
+3               University of Balochistan  Computer Science & IT
+4  Sardar Bahadur Khan Women's University       Computer Science
+
+  Province University Located          Designation Terminal Degree  \
+0                 Balochistan  Assistant Professor             PhD
+1                 Balochistan  Assistant Professor             PhD
+2                 Balochistan  Assistant Professor             PhD
+3                 Balochistan  Assistant Professor             PhD
+4                 Balochistan             Lecturer              BS
+
+                                      Graduated from   Country    Year  \
+0                      Asian Institute of Technology  Thailand     NaN
+1                      Asian Institute of Technology  Thailand     NaN
+2                      Asian Institute of Technology  Thailand     NaN
+3                      Asian Institute of Technology  Thailand     NaN
+4  Balochistan University of Information Technolo...  Pakistan  2005.0
+
+           Area of Specialization/Research Interests Other Information
+0                        Software Engineering & DBMS               NaN
+1                                               DBMS               NaN
+2          Information processing, Multimedia mining               NaN
+3  NLP, Information Retrieval, Question Answering...               NaN
+4                      VLSI Electronics DLD Database               NaN
+#+end_example
+
+** Retrieve all the unique values in the "Country" column. What inconsistencies do you notice? Pay attention to unnecessary white spaces as well.
+Get all unique values in the country column.
+#+begin_src jupyter-python
+unique_countries = data["Country"].unique()
+print(unique_countries)
+#+end_src
+
+#+RESULTS:
+: ['Thailand' 'Pakistan' 'germany' 'Austria' 'Australia' 'UK' 'China'
+:  'France' 'USofA' 'SouthKorea' 'Malaysia' 'Sweden' 'Italy' 'Canada'
+:  'Norway' 'Ireland' 'New Zealand' 'Urbana' 'Portugal' 'Russian Federation'
+:  'USA' 'Finland' ' USA' 'Netherland' ' Germany' ' Sweden' ' New Zealand'
+:  'Greece' 'Turkey' 'South Korea' 'Macau' 'Singapore' 'Spain' 'Japan'
+:  'HongKong' 'Saudi Arabia' 'Mauritius' 'Scotland']
+
+The country names have inconsistent capitalisation and spacing. Some are all in lower case, some have spaces between the words, some have extraneous whitespace.
+
+** Convert all country names to lowercase
+Change all country names to lowercase.
+#+begin_src jupyter-python
+lowercased_data = data
+lowercased_data["Country"] = data["Country"].str.lower()
+print(lowercased_data.head())
+#+end_src
+
+#+RESULTS:
+#+begin_example
+   Unnamed: 0  S#         Teacher Name  \
+0           2   3      Dr. Abdul Basit
+1           4   5      Dr. Waheed Noor
+2           5   6     Dr. Junaid Baber
+3           6   7  Dr. Maheen Bakhtyar
+4          24  25          Samina Azim
+
+            University Currently Teaching             Department  \
+0               University of Balochistan  Computer Science & IT
+1               University of Balochistan  Computer Science & IT
+2               University of Balochistan  Computer Science & IT
+3               University of Balochistan  Computer Science & IT
+4  Sardar Bahadur Khan Women's University       Computer Science
+
+  Province University Located          Designation Terminal Degree  \
+0                 Balochistan  Assistant Professor             PhD
+1                 Balochistan  Assistant Professor             PhD
+2                 Balochistan  Assistant Professor             PhD
+3                 Balochistan  Assistant Professor             PhD
+4                 Balochistan             Lecturer              BS
+
+                                      Graduated from   Country    Year  \
+0                      Asian Institute of Technology  thailand     NaN
+1                      Asian Institute of Technology  thailand     NaN
+2                      Asian Institute of Technology  thailand     NaN
+3                      Asian Institute of Technology  thailand     NaN
+4  Balochistan University of Information Technolo...  pakistan  2005.0
+
+           Area of Specialization/Research Interests Other Information
+0                        Software Engineering & DBMS               NaN
+1                                               DBMS               NaN
+2          Information processing, Multimedia mining               NaN
+3  NLP, Information Retrieval, Question Answering...               NaN
+4                      VLSI Electronics DLD Database               NaN
+#+end_example
+
+Print out the unique country names.
+#+begin_src jupyter-python
+print(lowercased_data["Country"].unique())
+#+end_src
+
+#+RESULTS:
+: ['thailand' 'pakistan' 'germany' 'austria' 'australia' 'uk' 'china'
+:  'france' 'usofa' 'southkorea' 'malaysia' 'sweden' 'italy' 'canada'
+:  'norway' 'ireland' 'new zealand' 'urbana' 'portugal' 'russian federation'
+:  'usa' 'finland' ' usa' 'netherland' ' germany' ' sweden' ' new zealand'
+:  'greece' 'turkey' 'south korea' 'macau' 'singapore' 'spain' 'japan'
+:  'hongkong' 'saudi arabia' 'mauritius' 'scotland']
+
+** Remove any trailing or leading whitespace in the country names, such as "USA"
+Remove all trailing and leading whitespace in the country names.
+#+begin_src jupyter-python
+lowercased_data["Country"] = lowercased_data["Country"].str.strip()
+print(lowercased_data.head())
+#+end_src
+
+#+RESULTS:
+#+begin_example
+   Unnamed: 0  S#         Teacher Name  \
+0           2   3      Dr. Abdul Basit
+1           4   5      Dr. Waheed Noor
+2           5   6     Dr. Junaid Baber
+3           6   7  Dr. Maheen Bakhtyar
+4          24  25          Samina Azim
+
+            University Currently Teaching             Department  \
+0               University of Balochistan  Computer Science & IT
+1               University of Balochistan  Computer Science & IT
+2               University of Balochistan  Computer Science & IT
+3               University of Balochistan  Computer Science & IT
+4  Sardar Bahadur Khan Women's University       Computer Science
+
+  Province University Located          Designation Terminal Degree  \
+0                 Balochistan  Assistant Professor             PhD
+1                 Balochistan  Assistant Professor             PhD
+2                 Balochistan  Assistant Professor             PhD
+3                 Balochistan  Assistant Professor             PhD
+4                 Balochistan             Lecturer              BS
+
+                                      Graduated from   Country    Year  \
+0                      Asian Institute of Technology  thailand     NaN
+1                      Asian Institute of Technology  thailand     NaN
+2                      Asian Institute of Technology  thailand     NaN
+3                      Asian Institute of Technology  thailand     NaN
+4  Balochistan University of Information Technolo...  pakistan  2005.0
+
+           Area of Specialization/Research Interests Other Information
+0                        Software Engineering & DBMS               NaN
+1                                               DBMS               NaN
+2          Information processing, Multimedia mining               NaN
+3  NLP, Information Retrieval, Question Answering...               NaN
+4                      VLSI Electronics DLD Database               NaN
+#+end_example
+
+Print out the unique country names.
+#+begin_src jupyter-python
+print(lowercased_data["Country"].unique())
+#+end_src
+
+#+RESULTS:
+: ['thailand' 'pakistan' 'germany' 'austria' 'australia' 'uk' 'china'
+:  'france' 'usofa' 'southkorea' 'malaysia' 'sweden' 'italy' 'canada'
+:  'norway' 'ireland' 'new zealand' 'urbana' 'portugal' 'russian federation'
+:  'usa' 'finland' 'netherland' 'greece' 'turkey' 'south korea' 'macau'
+:  'singapore' 'spain' 'japan' 'hongkong' 'saudi arabia' 'mauritius'
+:  'scotland']
+
+** 'southkorea' and 'south korea' should refer to the same entry. Standardize these entries to match the same country name.
+Standardise the entries.
+#+begin_src jupyter-python
+standardised_data = lowercased_data
+standardised_data["Country"] = standardised_data["Country"].str.replace(" ", "")
+print(standardised_data.head())
+#+end_src
+
+#+RESULTS:
+#+begin_example
+   Unnamed: 0  S#         Teacher Name  \
+0           2   3      Dr. Abdul Basit
+1           4   5      Dr. Waheed Noor
+2           5   6     Dr. Junaid Baber
+3           6   7  Dr. Maheen Bakhtyar
+4          24  25          Samina Azim
+
+            University Currently Teaching             Department  \
+0               University of Balochistan  Computer Science & IT
+1               University of Balochistan  Computer Science & IT
+2               University of Balochistan  Computer Science & IT
+3               University of Balochistan  Computer Science & IT
+4  Sardar Bahadur Khan Women's University       Computer Science
+
+  Province University Located          Designation Terminal Degree  \
+0                 Balochistan  Assistant Professor             PhD
+1                 Balochistan  Assistant Professor             PhD
+2                 Balochistan  Assistant Professor             PhD
+3                 Balochistan  Assistant Professor             PhD
+4                 Balochistan             Lecturer              BS
+
+                                      Graduated from   Country    Year  \
+0                      Asian Institute of Technology  thailand     NaN
+1                      Asian Institute of Technology  thailand     NaN
+2                      Asian Institute of Technology  thailand     NaN
+3                      Asian Institute of Technology  thailand     NaN
+4  Balochistan University of Information Technolo...  pakistan  2005.0
+
+           Area of Specialization/Research Interests Other Information
+0                        Software Engineering & DBMS               NaN
+1                                               DBMS               NaN
+2          Information processing, Multimedia mining               NaN
+3  NLP, Information Retrieval, Question Answering...               NaN
+4                      VLSI Electronics DLD Database               NaN
+#+end_example
+
+Print out the unique country names.
+#+begin_src jupyter-python
+print(standardised_data["Country"].unique())
+#+end_src
+
+#+RESULTS:
+: ['thailand' 'pakistan' 'germany' 'austria' 'australia' 'uk' 'china'
+:  'france' 'usofa' 'southkorea' 'malaysia' 'sweden' 'italy' 'canada'
+:  'norway' 'ireland' 'newzealand' 'urbana' 'portugal' 'russianfederation'
+:  'usa' 'finland' 'netherland' 'greece' 'turkey' 'macau' 'singapore'
+:  'spain' 'japan' 'hongkong' 'saudiarabia' 'mauritius' 'scotland']
+
+* Removing inconsistencies
+Load the data.
+#+begin_src jupyter-python
+data = pd.read_csv("./data/pokemonData_edited.csv")
+print(data.head())
+#+end_src
+
+#+RESULTS:
+#+begin_example
+   #                   Name Type 1  Type 2  Total  HP Attack Defense  Sp. Atk  \
+0  1              Bulbasaur  Grass  Poison    318  45     49  Monkey       65
+1  2                Ivysaur  Grass  Poison    405  60     62      63       80
+2  3               Venusaur  Grass  Poison    525  80     82      83      100
+3  3  VenusaurMega Venusaur  Grass  Poison    625  80    100     123      122
+4  4             Charmander   Fire     NaN    309  39     52      43       60
+
+  Sp. Def   Speed  Generation Legendary
+0      65      45           1     FALSE
+1      80      60           1     FALSE
+2     100      80           1     FALSE
+3     120      80           1     FALSE
+4      50  Monkey           1     FALSE
+#+end_example
+
+** Identify the continuous and categorical features in the dataset
+The continuous features are:
+#+begin_src jupyter-python :results none
+continuous_features = [
+    "Total",
+    "HP",
+    "Attack",
+    "Defense",
+    "Sp. Atk",
+    "Sp. Def",
+    "Speed",
+]
+#+end_src
+
+The categorical features are:
+#+begin_src jupyter-python :results none
+categorical_features = [
+    "Type 1",
+    "Type 2",
+    "Generation",
+    "Legendary",
+]
+#+end_src
+
+** Remove the entries that do not belong in certain columns of the dataset
+Create the dictionary of types for the columns.
+#+begin_src jupyter-python :results none
+types = {
+    "Type 1": "string",
+    "Type 2": "string",
+    "Total": "numeric",
+    "HP": "numeric",
+    "Attack": "numeric",
+    "Defense": "numeric",
+    "Sp. Atk": "numeric",
+    "Sp. Def": "numeric",
+    "Speed": "numeric",
+    "Generation": "numeric",
+    "Legendary": "boolean",
+}
+#+end_src
+
+Create the converters for the types.
+#+begin_src jupyter-python
+converter = {
+    "string": lambda s: s,
+    "numeric": lambda elem: pd.to_numeric(elem, errors="coerce"),
+    "boolean": lambda elem: elem.str.upper().map({"TRUE": True, "FALSE": False})
+}
+#+end_src
+
+#+RESULTS:
+
+Create a cleaned version of the data.
+#+begin_src jupyter-python :results none
+cleaned_data = pd.DataFrame(data)
+#+end_src
+
+Iterate over the types in the data.
+#+begin_src jupyter-python :results none
+for column, data_type in types.items():
+
+    # Set the column to the converted one
+    cleaned_data[column] = converter[data_type](data[column])
+#+end_src
+
+Drop all the rows containing NaN values.
+#+begin_src jupyter-python
+cleaned_data = cleaned_data.dropna(axis=0)
+print(cleaned_data.head())
+#+end_src
+
+#+RESULTS:
+#+begin_example
+     #                       Name Type 1  Type 2  Total    HP  Attack  \
+1    2                    Ivysaur  Grass  Poison    405  60.0    62.0
+2    3                   Venusaur  Grass  Poison    525  80.0    82.0
+3    3      VenusaurMega Venusaur  Grass  Poison    625  80.0   100.0
+8    6  CharizardMega Charizard Y   Fire  Flying    634  78.0   104.0
+15  12                 Butterfree    Bug  Flying    395  60.0    45.0
+
+    Defense  Sp. Atk  Sp. Def  Speed  Generation Legendary
+1      63.0       80     80.0   60.0           1     False
+2      83.0      100    100.0   80.0           1     False
+3     123.0      122    120.0   80.0           1     False
+8      78.0      159    115.0  100.0           1     False
+15     50.0       90     80.0   70.0           1     False
+#+end_example
