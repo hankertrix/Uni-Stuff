@@ -18,14 +18,12 @@ as the slides makes use of the data for its visualisations.
 
 ** Marimo
 To install [[https://marimo.io/][Marimo]] using ~pip~, run the command below:
-
 #+begin_src shell
 pip install marimo
 #+end_src
 
 If you are using [[https://www.anaconda.com/][Anaconda]],
 run the command below to install [[https://marimo.io/][Marimo]]:
-
 #+begin_src shell
 conda install conda-forge::marimo
 #+end_src
@@ -48,25 +46,21 @@ you can run the commands below to automatically install
 the required packages.
 
 - For ~pip~:
-
   #+begin_src shell
   pip install -r requirements.txt
   #+end_src
 
 - For ~poetry~:
-
   #+begin_src shell
   poetry install
   #+end_src
 
 - For ~pdm~:
-
   #+begin_src shell
   pdm install
   #+end_src
 
 - For ~uv~:
-
   #+begin_src shell
   uv install
   #+end_src
