@@ -1,10 +1,8 @@
-#+TITLE: NMR Lecture Notes
+#+TITLE: NMR Notes
 #+AUTHOR: Hankertrix
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
 #+LATEX_HEADER: \usepackage{chemfig, siunitx}
-
-\newpage
 
 * NMR theory
 A nucleus with an odd number of protons or neutrons will have an intrinsic nuclear spin. A few examples include Hydrogen and Fluorine and Carbon 13. For this module, we will only be looking at one-dimensional Hydrogen (or proton) NMR.

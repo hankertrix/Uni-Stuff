@@ -1,0 +1,345 @@
+% Created 2025-04-29 Tue 19:48
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\author{Hankertrix}
+\date{\today}
+\title{Math Module 6B Notes}
+\hypersetup{
+ pdfauthor={Hankertrix},
+ pdftitle={Math Module 6B Notes},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 30.1 (Org mode 9.7.11)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents \clearpage\section{Definitions}
+\label{sec:orgf221bac}
+
+\subsection{Riemann sum}
+\label{sec:orga08c251}
+For a function \(f : [a, b] \rightarrow \mathbb{R}\), a Riemann sum is a sum:
+\[\sum_{i = 1}^n f(x_i^*) \Delta x_i, \quad \Delta x_i = a_i - a_{i - 1}\]
+
+Points \(a = a_0 < a_1 < \cdots < a_n = b\) form a \textbf{partition} of the interval \([a, b]\), and \(x_i^* \in [a_{i - 1}, a_i]\) are \textbf{sample points}. Further, let \(\Delta x = \text{max} \{\Delta x_i : i = 1, \ldots, n\}\). Suppose the limit of the Riemann sums exists and is independent of our choice of partitions or sample points. Then we say that \(f\) is integrable on \([a, b]\) and the limit below is the \textbf{Riemann integral} of \(f\) from \(a\) to \(b\).
+\[\lim_{\Delta x \rightarrow 0} \sum_{i = 1}^n f(x_i^*) \Delta x_i = \int_a^b f(x) \, dx\]
+
+If \(f(x) \ge 0\) on \([a, b]\), the Riemann sums approximate the area below the graph \(y = f(x)\). The approximation improves as we take finer partitions of \([a, b]\).
+\subsection{Riemann integral}
+\label{sec:org98dcb64}
+For a function \(f : [a, b] \rightarrow \mathbb{R}\), a Riemann integral is the integral:
+\[\lim_{\Delta x \rightarrow 0} \sum_{i = 1}^n f(x_i^*) \Delta x_i = \int_a^b f(x) \, dx\]
+
+\newpage
+\subsection{Riemann sums in two variables}
+\label{sec:org2939ed0}
+Now consider \(f : R \rightarrow \mathbb{R}\), where \(R\) is a rectangle in \(\mathbb{R}^2\), i.e.
+\[R = [a, b] \times [c, d] = \{(x, y) : x \in [a, b], y \in [c, d]\}\]
+
+By partitioning both \([a, b]\) and \([c, d]\):
+\[a = x_0 < x_1 < \ldots < x_n = b\]
+\[c = y_0 < y_1 < \ldots < y_n = d\]
+
+We get a partition of \(R\) into smaller subrectangles:
+\[R_{j, k} = [x_{j - 1}, x_j] \times [y_{k - 1}, y_k]\]
+
+Each of the subrectangles has an area of:
+\[\Delta A_{j, k} = \Delta x_j \Delta y_k = (x_j - x_{j - 1})(y_k - y_{k - 1})\]
+
+In each subrectangle, choose a sample point \((x_j^*, y_k^*)\) and form the \textbf{Riemann sum}:
+\[\sum_{j = 1}^n \sum_{k = 1}^m f(x_j^*, y_k^*) \Delta x_j \Delta y_k\]
+
+Where:
+\begin{itemize}
+\item \(\text{Area } A_{j, k} = \Delta x_j \Delta y_k\)
+\item \(f(x_j^*, y_k^*) \Delta x_j \Delta y_k\) is the volume of a cuboid with base \(R_{j, k}\) and height \(f(x_i^*, y_k^*)\).
+\end{itemize}
+\subsection{Double integral}
+\label{sec:org867dacc}
+Let:
+\[\Delta x = \max_{j = 1, \ldots, n} \Delta x_j, \quad \Delta y = \max_{k = 1, \ldots, m} \Delta y_j\]
+
+If the Riemann sums have a limit that is independent of our choice of sample points and partition, we say that \(f(x, y)\) is integrable on \(R\) and the limit below is the double integral of \(f\) over \(R\).
+\[\iint_R f(x, y) \, dx dy\]
+\subsection{Double integral and volumes}
+\label{sec:org68b518b}
+If \(f(x, y) \ge 0\) for all \((x, y) \in \mathbb{R}\), then the Riemann sums below approximate the volume below the graph \(z = f(x, y)\) above the \(xy\)-plane:
+\[\sum_{j = 1}^n \sum_{k = 1}^m f(x_j^*, y_k^*) \Delta x_j \Delta y_k\]
+
+As \((\Delta x, \Delta y) \rightarrow (0, 0)\), these approximations converge to the actual volume, i.e.
+\[\iint_R f(x, y) \, dx dy = \text{"volume below the graph } z = f(x, y) \text{ but above the } xy \text{-plane."}\]
+\subsubsection{Example}
+\label{sec:org315b7de}
+Let \(f : [-2, 2] \times [-2, 2] \rightarrow \mathbb{R}\) be given by:
+\[f(x, y) = x^2 + y^2\]
+
+Consider the volume between the surface \(z = f(x, y)\) and the \(xy\)-plane. Taking finer partitions, the Riemann sums converge to the volume below the graph, i.e.
+\[\text{Volume} = \iint_{[-2, 2] \times [-2, 2]} f(x, y) \, dx dy\]
+\subsection{Double integrals over non-rectangular regions}
+\label{sec:orgc5a91b0}
+For \(\iint_A f(x, y) \, dx dy\) where \(A\) is not rectangular:
+\begin{enumerate}
+\item Take a rectangle \(R\) that contains \(A\).
+\item Let:
+\end{enumerate}
+\[
+g(x, y) = \begin{cases}
+f(x, y) & \text{for } (x, y) \in A \\
+0 & \text{for } (x, y) \notin A
+\end{cases}
+\]
+\begin{enumerate}
+\item Let:
+\end{enumerate}
+\[\iint_A f(x, y) \, dx dy = \iint_R g(x, y) \, dx dy\]
+\subsection{Fubini's theorem}
+\label{sec:org59a8019}
+If for some continuous \(g, h\):
+\[A = \{(x, y) : a \le x \le b, \quad g(x) \le y \le h(x)\}\]
+
+Then for \(f(x, y)\) continuous on \(A\):
+\[\iint_A f(x, y) \, dx dy = \int_{x = a}^b \left( \int_{y = g(x)}^{h(x)} f(x, y) \, dy \right) \, dx\]
+
+If for some continuous \(g, h\):
+\[A = \{(x, y) : c \le x \le d, \quad g(y) \le x \le h(y)\}\]
+
+Then for \(f(x, y)\) continuous on \(A\):
+\[\iint_A f(x, y) \, dx dy = \int_{y = c}^d \left( \int_{x = g(y)}^{h(y)} f(x, y) \, dy \right) \, dx\]
+\subsubsection{Example}
+\label{sec:org3df784b}
+Let:
+\[D = \{(x, y) : 0 \le x \le 1, \quad 0 \le y \le \sqrt{1 - x}\}\]
+
+Evaluate:
+\[\iint_D x \, dx dy\]
+
+\begin{align*}
+\iint_D x \, dx dy &= \int_{x = 0}^1 \left( \int_{y = 0}^{\sqrt{1 - x}} x \, dy \right) \, dx \\
+&= \int_0^1 x \sqrt{1 - x} \, dx \\
+&= - \left. \frac{2}{3} (1 - x)^{\frac{3}{2}} \cdot x \right|_0^1 + \frac{2}{3} \int_0^1 (1 - x)^{\frac{3}{2}} \, dx \\
+&= - \left. \frac{2}{3} \cdot \frac{2}{5} (1 - x)^{\frac{5}{2}} \right|_0^1 \\
+&= \frac{4}{15}
+\end{align*}
+
+Changing the order of integration:
+\begin{align*}
+\iint_D x \, dx dy &= \int_0^1 \left( \int_{x = 0}^{1 - y^2} x \, dx \right) \,, dy \\
+&= \int_0^1 \left[\frac{x^2}{2} \right]_{x = 0}^{1 - y^2} \, dy \\
+&= \frac{1}{2} \int_0^1 (1 - y^2)^2 \, dy \\
+&= \frac{1}{2} \int_0^1 (1 - 2y^2 + y^4) \, dy \\
+&= \frac{1}{2} \left[y - \frac{2y^3}{3} + \frac{y^5}{5} \right]_0^1 \\
+&= \frac{1}{2} \left(1 - \frac{2}{3} + \frac{1}{5} \right) \\
+&= \frac{1}{2} \cdot \frac{15 - 2 \cdot 5 + 1 \cdot 3}{15} \\
+&= \frac{4}{15}
+\end{align*}
+\subsection{Triple integrals}
+\label{sec:org4897094}
+For a three variable function \(f(x, y, z)\) and a region \(Q \subset \mathbb{R}^3\), the triple integral below is defined and can be calculated using similar principles:
+\[\iiint_Q f(x, y, z) \, dx dy dz\]
+\subsubsection{Example 1}
+\label{sec:org3620207}
+Evaluate:
+\[\iiint_Q 6xy \, dx dy dz\]
+
+Where \(Q\) is the tetrahedron bounded by the planes \(x = 0, y = 0, z= 0\) and \(2x + y + z = 4\).
+
+\begin{align*}
+\iiint_Q 6xy \, dx dy dz &= \int_{x = 0}^2 \left( \int_{y = 0}^{4 - 2x} \left( \int_{z = 0}^{4 - 2x - y} \, dz \right) \, dy \right) \, dx \\
+&= \int_0^2 \left( \int_0^{4 - 2x} 6xy(4 - 2x - y) \, dy \right) \, dx \\
+&= \int_0^2 \left( \int_0^{4 - 2x} (24xy - 12x^2 - y - 6xy^2) \, dy \right) \, dx \\
+&= \int_0^2 \left[12xy^2 - 6x^2y^2 - 2xy^3 \right]_{y = 0}^{4 - 2x} \, dx \\
+&= \int_0^2 \left(12x(4 - 2x)^2 - 6x^2(4 - 2x)^2 - 2x(4 - 2x)^3 \right) \, dx \\
+&= \int_0^2 \left(12x(4 - 2x)^2 - 6x^2(4 - 2x)^2 - 2x(4 - 2x)(4 - 2x)^2 \right) \, dx \\
+&= \int_0^2 \left(12x(4 - 2x)^2 - 6x^2(4 - 2x)^2 - (8x - 4x^2)(4 - 2x)^2 \right) \, dx \\
+&= \int_0^2 \left((12x - 6x^2 - 8x + 4x^2)(4 - 2x)^2 \right) \, dx \\
+&= \int_0^2 \left((4x - 2x^2)(4 - 2x)^2 \right) \, dx \\
+&= \int_0^2 \left(x(4 - 2x)(4 - 2x)^2 \right) \, dx \\
+&= \int_0^2 \left(x(4 - 2x)^3 \right) \, dx \\
+&= \int_0^2 \left(8x(2 - x)^3 \right) \, dx \\
+&= \left[8x \frac{-(2 - x)^4}{4} \right]_0^2 + \int_0^2 \frac{-2(2 - x)^4}{4} \cdot 8 \, dx \\
+&= \left[-2 \cdot \frac{(2 - x)^5}{5} \right]_0^2 \\
+&= \left[0 - \left(- 2 \cdot \frac{(2 - 0)^5}{5} \right) \right] \\
+&= \frac{64}{5}
+\end{align*}
+\subsubsection{Example 2}
+\label{sec:orgb93da78}
+Evaluate:
+\[\iiint_Q \, dx dy dz\]
+
+Where \(Q\) is given by:
+\[x^2 + y^2 \le z \le 1, \quad x \ge 0\]
+
+\begin{align*}
+\iiint_Q \, dx dy dz &= \int_{y = -1}^1 \left( \int_{x = 0}^{\sqrt{1 - y^2}} \left( \int_{z = x^2 + y^2} \, dz \right) \, dx \right) \, dy \\
+&= \int_{-1}^{1} \left( \int_{0}^{\sqrt{1 - y^2}} (1 - (x^2 + y^2)) \, dx \right) \, dy \\
+&= \int_{-1}^1 \left[x - \frac{x^3}{3} - y^2 x \right]_{x = 0}^{\sqrt{1 - y^2}} \, dy \\
+&= \int_{-1}^1 \left(\sqrt{1 - y^2} - \frac{(1 - y^2)^{\frac{3}{2}}}{3} - y^2 \sqrt{1 - y^2} \right) \, dy \\
+&= \int_{-1}^1 \left( \sqrt{1 - y^2} (1- y^2) - \frac{(1- y^2)^{\frac{3}{2}}}{3} \right) \, dy \\
+&= 2 \int_0^1 \frac{2}{3} (1 - y^2)^{\frac{3}{2}} \, dy
+\end{align*}
+
+\[y = \sin \theta\]
+\[\sqrt{1 - y^2} = \cos \theta\]
+\[dy = \cos \theta \, d \theta\]
+\[y = -1 \quad \Leftrightarrow \quad \theta = - \frac{\pi}{2}\]
+\[y = 1 \quad \Leftrightarrow \quad \theta = \frac{\pi}{2}\]
+
+Substituting the above equations:
+\begin{align*}
+2 \int_0^1 \frac{2}{3} (1 - y^2)^{\frac{3}{2}} \, dy &= \frac{2}{3} \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cos^4 \theta \, d \theta \\
+&= \frac{4}{3} \int_{0}^{\frac{\pi}{2}} \cos^4 \theta \, d \theta \\
+&= \frac{4}{3} \int_{0}^{\frac{\pi}{2}} \left(\frac{1 + \cos 2 \theta}{2} \right)^2 \, d \theta \\
+&= \frac{4}{3} \int_{0}^{\frac{\pi}{2}} \left(\frac{1}{4} + \cos 2 \theta + \frac{\cos^2 2 \theta}{4} \right) \, d \theta \\
+&= \frac{4}{3} \left(\frac{\pi}{8} + \frac{1}{4} \int_0^{\frac{\pi}{2}} \cos^2 2 \theta \, d \theta \right) \\
+&= \frac{\pi}{6} + \frac{1}{3} \int_0^{\frac{\pi}{2}} \frac{1}{2} (1 + \cos 4 \theta) \, d \theta \\
+&= \frac{\pi}{6} + \frac{1}{3} \cdot \frac{\pi}{4} \\
+&= \frac{\pi}{4}
+\end{align*}
+\subsection{Size of a region}
+\label{sec:org9cc4b3e}
+Integrating the function \textbf{1}, always gives you the size of the region of integration:
+\[\int_a^b 1 \, dx = b - a = \text{length of } [a, b]\]
+\[\iint_R 1 \, dx dy = \iint_R \, dA = \text{area of } R\]
+\[\iiint_Q 1 \, dx dy dz = \iiint_Q \, dV = \text{volume of } Q\]
+
+Likewise, integrating a constant \(C\) gives you \(C\) times the size of the region.
+
+\newpage
+\subsection{Polar coordinates}
+\label{sec:orga9c1019}
+A point \((x, y) \in \mathbb{R}^2\) can be represented by its \textbf{polar coordinates} \((r, \theta)\), where:
+\[x = r \cos \theta, \quad y = r \sin \theta, \quad r \ge 0, \theta \in [0, 2 \pi)\]
+\[r^2 = \sqrt{x^2 + y^2}\]
+\subsubsection{Area element}
+\label{sec:org1d37f11}
+In polar coordinates, the area element \(dA = dx dy\) becomes \(dA = r \, dr d \theta\).
+\subsubsection{Example}
+\label{sec:orgcd6b9f2}
+Calculate:
+\[\iint_D (x^2 + y^2) \, dx dy\]
+
+Where:
+\[D = \{(x, y) : x^2 + y^2 \le 4, y \ge 0\}\]
+
+\begin{align*}
+\iint_D (x^2 + y^2) \, dx dy &= \int_0^x \left( \int_0^2 r^3 \, dr \right) \, d \theta \\
+&= \int_0^\pi \left. \frac{r^4}{4} \right|_{r = 0}^2 \, d \theta \\
+&= \int_0^\pi 4 \, d \theta \\
+&= 4 \pi
+\end{align*}
+
+\newpage
+\subsection{Cylindrical coordinates}
+\label{sec:org3b8ed45}
+A point \((x, y, z) \in \mathbb{R}^3\) can be represented by its cylindrical coordinates \((r, \theta, z)\), where:
+\[x = r \cos \theta, \quad y = r \sin \theta, \quad z = z, \quad r \ge 0, \theta \in [0, 2\pi)\]
+\subsubsection{Volume element}
+\label{sec:orgad17310}
+In cylindrical coordinates, the volume element \(dV = dx dy dz\) becomes \(dV = r \, dr d\theta dz\), where \(r\) is the scaling factor.
+\subsubsection{Example}
+\label{sec:org5816e01}
+Evaluate
+\[\iiint_Q dx dy dz\]
+Where the solid region \(Q\), given by:
+\[x^2 + y^2 \le z \le 1, x \ge 0\]
+
+\[x = r \cos \theta\]
+\[y = r \sin \theta\]
+\[z = z\]
+\[x^2 + y^2 = r^2\]
+\[dV = dx dy dz = r \, dr d \theta dz\]
+
+\begin{align*}
+\iiint_Q \, dx dy dz &= \int_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \left( \int_0^1 \left( \int_{r^2}^1 r \, dz \right) \, dr \right) \, d \theta \\
+&= \pi \int_0^1 \left(\int_{r^2}^1 r \, dz \right) \, dr \\
+&= \pi \int_0^1 (r - r^3) \, dr \\
+&= \pi \left[\frac{r^2}{2} - \frac{r^4}{4} \right]_0^1 \\
+&= \pi \left(\frac{1}{2} - \frac{1}{4} \right) \\
+&= \frac{\pi}{4}
+\end{align*}
+
+\newpage
+\subsection{Spherical coordinates}
+\label{sec:orga4c8c56}
+A point \((x, y, z) \in \mathbb{R}^3\) can be represented by its spherical coordinates \((\rho, \varphi, \theta)\), where:
+\[x = \rho \sin \varphi \cos \theta, \quad y = \rho \sin \varphi \cos \theta, \quad z = \rho \sin \varphi, \quad \rho \ge 0, \varphi \in [0, \pi], \theta \in [0, 2\pi)\]
+
+Keeping \(\rho\) fixed while varying \(\varphi\) and \(\theta\) gives us points on a sphere with radius \(\rho\).
+\[\varphi = \text{"latitude"}\]
+\[\theta = \text{"longitude"}\]
+
+In spherical coordinates, the volume element \(dV = dx dy dz\) becomes \(dV = \rho^2 \sin \varphi \, d \rho d \varphi d \theta\), where \(\rho^2 \sin \varphi\) is the scaling factor.
+\subsubsection{Example}
+\label{sec:org400942c}
+Calculate the volume of a ball with radius \(R\).
+\begin{align*}
+\text{Volume} &= \iiint_Q \, dV \\
+&= \int_0^{2 \pi} \left( \int_0^\pi \left(\int_0^R \rho^2 \sin \varphi \, d \rho \right) \, d \varphi \right) \, d \theta \\
+&= 2 \pi \int_0^{\pi} \left( \sin \varphi \int_0^R \rho^2 \, d \rho \right) \, d \varphi \\
+&= 2 \pi \frac{R^3}{3} \int_0^{\pi} \sin \varphi \, d \varphi \\
+&= \frac{4 \pi R^3}{3}
+\end{align*}
+
+\newpage
+\section{Calculating a double integral}
+\label{sec:orgd95cc00}
+Consider a continuous \(f : A \rightarrow \mathbb{R}\) where the region \(A \subset \mathbb{R}^2\) has the form:
+\[A = \{(x, y) : a \le x \le b, \quad g(x) \le y \le h(x)\}\]
+
+Let's calculate:
+\[\iint_A f(x, y) \, dx dy\]
+
+For simplicity, suppose \(f(x, y) \ge 0\) on \(A\), so we can interpret \(\iint_A f(x, y) \, dx dy\) as a volume:
+\[A(x) = \int_{y = g(x)}^{h(x)} f(x, y) \, dy\]
+
+\begin{align*}
+\iint_A f(x, y) \, dx dy &= \text{Volume} \\
+&= \int_{\alpha = a}^b \, dV \\
+&= \int_a^b A(x) \, dx \\
+&= \int_a^b \left( \int_{y = g(x)}^{h(x)} f(x, y) \, dy \right) \, dx
+\end{align*}
+
+Our usual approach leads us to the formula:
+\[\iint_A f(x, y) \, dx dy = \int_{x = a}^b \left( \int_{y = g(x)}^{h(x)} f(x, y) \, dy \right) \, dx\]
+
+The assumption \(f(x, y) \ge 0\) is not necessary for the above to hold, it just made the illustration easier.
+
+
+If the roles of \(x\) and \(y\) are reversed, we get an analogous result.
+
+\newpage
+\section{Double integrals heuristically}
+\label{sec:orgdc5f6af}
+\begin{align*}
+\iint_R \, dV &= \iint_R f(x, y) \, dA \\
+&= \iint_R f(x, y) \, dx dy
+\end{align*}
+
+\[\text{Volume element} = dV = f(x, y) \, dA\]
+\[\text{Area element} = dA = dx dy\]
+\section{Triple integrals heuristically}
+\label{sec:org87f3265}
+Let density\(= \rho (x, y, z)\)
+\begin{align*}
+\text{mass of Q} &= \iiint_Q \, dm \\
+&= \iiint_Q \rho (x, y, z) \, dV \\
+&= \iiint_Q \rho (x, y, z) \, dx dy dz
+\end{align*}
+
+\[\text{Mass element} = dm = \rho (x, y, z) \, dV\]
+\[\text{Volume element} = dV = dx dy dz\]
+\end{document}

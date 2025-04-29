@@ -1,0 +1,247 @@
+% Created 2025-04-29 Tue 19:43
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\usepackage{siunitx}
+\author{Hankertrix}
+\date{\today}
+\title{Work, Energy, Power Notes}
+\hypersetup{
+ pdfauthor={Hankertrix},
+ pdftitle={Work, Energy, Power Notes},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 30.1 (Org mode 9.7.11)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents \clearpage\section{Definitions}
+\label{sec:org60015fd}
+
+\subsection{Work done by a constant force}
+\label{sec:org75aa7fe}
+Work done by a constant force is a scalar quantity that is equal to the force multiplied by the displacement in the direction of the force.
+\[W = \vec{F} \cdot \vec{s}\]
+\subsection{Work done by a variable force in 1D}
+\label{sec:org8c7125d}
+The work done by a variable force is the \textbf{area} under the curve of the \(F-x\) graph from the initial position \(x_1\) to the final position \(x_2\).
+\[W = \int_{x_1}^{x_2} F_x \, dx\]
+\subsection{Work done by a variable force in 2D \& 3D}
+\label{sec:org1929723}
+The work done by a variable force in 2D and 3D is given by a line integral:
+\[W = \lim_{\Delta l_i \rightarrow 0} \sum F_i \cos \theta_i \Delta l_i = \int_a^b \vec{F} \cdot d \vec{l}\]
+\subsection{Work-energy theorem}
+\label{sec:org99ac45a}
+The work-energy theorem states that the work done by the \textbf{net force} on a particle equals the \textbf{change} in the particle's kinetic energy.
+\[W = KE_{f} - KE_{i}\]
+\[W = \frac{1}{2} mv_f^2 - \frac{1}{2}mv_i^2\]
+\subsection{Kinetic energy}
+\label{sec:orgc2ad0dc}
+Kinetic energy is a form of energy that a body possesses due to its motion.
+\[KE = \frac{1}{2}mv^2\]
+
+Where \(m\) is the mass of the object and \(v\) is the velocity of the object.
+\subsection{Conservative force}
+\label{sec:orgd7c7f86}
+A force is \textbf{conservative} if the work done by the force on an object moving from one point to another \textbf{depends only on the initial and final positions} of the object, and is \textbf{independent of the particular path} taken.
+
+
+A force is \textbf{conservative} if the net work done around \textbf{any closed path} is \textbf{zero}.
+
+
+The work done between two points by any conservative force:
+\begin{itemize}
+\item can be expressed in terms of a \textbf{potential energy function}
+\item is \textbf{reversible}
+\item is \textbf{independent of the path} between the two points
+\item is \textbf{zero} if the starting and ending points are the \textbf{same}
+\end{itemize}
+\subsection{Non-conservative or dissipative force}
+\label{sec:orgcba07a9}
+A non-conservative or dissipative force is just a force that is not conservative. Examples of such forces include friction and air resistance.
+\subsection{Gravitational potential energy}
+\label{sec:orgdafecbf}
+The \textbf{change} in gravitational potential energy of an object is the work done by an \textbf{external force in moving the object}.
+\[\Delta U = W_{ext} = \int \vec{F}_{ext} \cdot d \vec{l}\]
+
+Equivalently, the \textbf{change} in gravitational potential energy of an object is the \textbf{negative} of the \textbf{work done by the gravitational force}.
+\[\Delta U = -W_{grav} = -\int \vec{F}_{grav} \cdot d \vec{l}\]
+\subsection{Mechanical energy}
+\label{sec:org7a4906d}
+Mechanical energy is defined as the \textbf{sum} of the \textbf{kinetic} and \textbf{potential} energy. If only conservative forces are doing work, the total mechanical energy of a system is constant.
+\subsection{Principle of conservation of energy}
+\label{sec:org4ed550b}
+The law of conservation of energy states that energy is \textbf{never created or destroyed}; it only changes form.
+
+
+Non-conservative forces do not store potential energy, but they do change the \textbf{internal energy} of a system.
+
+
+Hence, the law of conservation of energy can be expressed as:
+\[\Delta K + \Delta U + \Delta U_{int} = 0\]
+
+Or equivalently:
+\[\Delta K + \Delta U + \text{ (change in all other forms of energy)} = 0\]
+\subsection{Hooke's Law}
+\label{sec:org606cf02}
+Hooke's law states that the deformation of an elastic object is proportional to the stress applied to it, up to a limit.
+\[\vec{F}_{spring} = - k \vec{x}\]
+
+Where \(k\) is the spring constant (the bigger the \(k\), the stiffer the spring) and \(\vec{x}\) is the extension from the unextended length.
+\subsection{Power (SI Unit: \(\qty{1}{\unit{W}} = \qty{1}{\unit{J.s^{-1}}} = \qty{1}{\unit{kg.m^2.s^{-3}}}\))}
+\label{sec:orgfa5fee7}
+Power is the \textbf{rate} at which work is done.
+\subsection{Average power}
+\label{sec:org2c7ab8a}
+Average power is the work done during the time interval divided by the duration of the time interval:
+\[P_{av} = \frac{\Delta W}{\Delta t}\]
+\subsection{Instantaneous Power}
+\label{sec:org07629e8}
+Instantaneous power is the average power over an infinitesimally short time interval, or the \textbf{gradient} of the \textbf{work done versus time} graph.
+\[P = \lim_{\Delta t \rightarrow 0} \frac{\Delta W}{\Delta t} = \frac{dW}{dt}\]
+\subsection{Mechanical Power}
+\label{sec:org9ee2e8e}
+Mechanical power is the force acting on the particle multiplied by the velocity of the particle, and it is a form of instantaneous power.
+\[P = \vec{F} \cdot \vec{v}\]
+\section{Formulas}
+\label{sec:org9d031a3}
+
+\subsection{Potential energy}
+\label{sec:org1f8ff70}
+\[\Delta U = - \int \vec{F} \cdot d \vec{l}\]
+\subsection{Gravitational potential energy}
+\label{sec:org8571df4}
+\[GPE = mgh\]
+\[U_{g} = mgh\]
+
+Where \(m\) is the mass of the object, \(g\) is the acceleration due to gravity and \(h\) is the height of the object.
+\subsection{Elastic potential energy}
+\label{sec:org1f28b17}
+\[EPE = \frac{1}{2}kx^2\]
+\[U_{el} = \frac{1}{2}kx^2\]
+
+Where \(k\) is the spring constant and \(x\) is the extension or compression of the spring.
+\subsubsection{Derivation}
+\label{sec:orga2ac338}
+\begin{align*}
+U_{el} &= - \int_0^x \vec{F}_{spring} \cdot d \vec{x} \\
+&= \int_0^x kx \, dx \ \ (\because d \vec{x} \equiv \hat{x} \, dx ) \\
+&= \frac{1}{2}kx^2
+\end{align*}
+\section{Force and potential energy in 1D}
+\label{sec:org41d78fe}
+\[F_x(x) = - \frac{dU(x)}{dx}\]
+
+Which means that the \textbf{force from potential energy} in \textbf{one-dimensional} motion (the value of a conservative force at point \(x\)) is the \textbf{negative of the derivative} at \(x\) of the associated potential-energy functions.
+
+Implications:
+\begin{itemize}
+\item In regions where \(U(x)\) changes most rapidly with \(x\), this corresponds to a large force.
+\item When \(F_x(x)\) is in the positive \(x\)-direction, \(U(x)\) decreases with increasing \(x\).
+\item A conservative force always acts to push the system towards lower potential energy.
+\end{itemize}
+
+\newpage
+\section{Force and potential energy in 3D}
+\label{sec:orge6e0e94}
+\[F_x = -\frac{\partial U}{\partial x} \quad F_y = -\frac{\partial U}{\partial y} \quad F_z = -\frac{\partial U}{\partial z}\]
+
+In \textbf{three-dimensional} motion, the value at a given point of each component of a conservative force is the \textbf{negative} of the \textbf{partial derivative} at that point of the associated potential-energy function.
+
+
+When we take the partial derivative of \(U\) with respect to each coordinate and multiply them by the corresponding unit vector, and then take the vector sum, this is called the \textbf{gradient} of \(U\), which is a \textbf{vector} quantity.
+\[\vec{F} = - \left( \frac{\partial U}{\partial x} \hat{i} + \frac{\partial U}{\partial y} \hat{j} + \frac{\partial U}{\partial z} \hat{k} \right) = - \vec{\boldsymbol{\nabla}} U\]
+
+This means that the \textbf{vector value} of a \textbf{conservative force} at a given point is the \textbf{negative of the gradient} at that point of the associated potential-energy function.
+\subsection{The del operator (not very important)}
+\label{sec:org00a49f7}
+The del operator is defined in Cartesian coordinates as:
+\[\nabla \equiv \hat{x} \frac{\partial}{\partial x} + \hat{y} \frac{\partial}{\partial y} + \hat{z} \frac{\partial}{\partial z}\]
+
+The del operator needs a function on the right to operate on, so it is meaningless when written on its own.
+
+
+A point in 3D in the spherical coordinate system is specified by \((r, \theta, \phi)\). The unit vectors \(\hat{r}, \hat{\theta}, \hat{\phi}\) move with the point.
+
+
+In a curvilinear coordinate system, such as the spherical coordinate system above, the del operator can be derived via a coordinate transformation to be:
+\[\nabla \equiv \hat{r} \frac{\partial}{\partial r} + \hat{\theta} \frac{1}{r} \frac{\partial}{\partial \theta} + \hat{\phi} \frac{1}{r \sin \theta} \frac{\partial}{\partial \phi}\]
+
+This is useful for systems with spherical symmetry, such as gravitational forces on a planetary scale.
+\section{Derivations (not very important)}
+\label{sec:org93db96f}
+
+\subsection{Derivation of the work done by a variable force in 2D \& 3D}
+\label{sec:org6c7f85f}
+Consider a variable force applied to a particle, which moves in 2D space from point \(a\) to point \(b\). The path can be divided into small intervals (\(\Delta l_i\)) such that in each short interval, the force acting on the particle during each \(\Delta l_i\) is approximately constant.
+
+
+For each finite interval, the force does an amount of work:
+\[\Delta W \approx \sum F_1 \cos \theta_1 \Delta l_1 \]
+
+The work done over all the finite intervals from \(a\) to \(b\) is:
+\[W \approx \sum F_i \cos \theta_i \Delta l_i\]
+
+In the limit of infinitesimally short intervals, the force during each interval is constant. The work done by the force is then given by:
+\[W = \lim_{\Delta l_i \rightarrow 0} \sum F_i \cos \theta_i \Delta l_i = \int_a^b \vec{F} \cdot d \vec{l}\]
+
+\newpage
+\subsection{Derivation of the work-energy theorem}
+\label{sec:org09d0ab4}
+Consider a net force \(F\) on a particle moving from point \(a\) to point \(b\). The net work done by the force is given by:
+\[W_{net} = \int \vec{F}_{net} \cdot d \vec{l} = \int F_{net} \cos \theta \, dl = \int F_{||} \, dl\]
+
+The subscript || represents the component of the force parallel to each infinitesimally small displacement.
+
+
+Since \(F = ma\):
+\[F_{||} = ma_{||} = m \frac{dv_{||}}{dt} = m \frac{dv}{dt}\]
+
+The subscript || represents the component tangent to the curve.
+
+
+Because the particle is moving along the curve, the velocity has only a component tangent to the curve, \(\vec{v} = \vec{v}_{||}\), hence \(\frac{dv_{||}}{dt} = \frac{dv}{dt}\).
+
+
+Therefore, the work done by \(F\) is:
+\begin{align*}
+W_{net} &= \int_i^f F_{||} \, dl \\
+&= \int_i^f m \frac{dv}{dt} \, dl \\
+&= \int_i^f m \frac{dv}{dl} \frac{dl}{dt} \, dl \text{ (using chain rule)} \\
+&= \int_i^f mv \frac{dv}{dl} \, dl \\
+&= \int_i^f mv \, dv \\
+&= \frac{1}{2}mv_f^2 - \frac{1}{2}mv_i^2
+\end{align*}
+
+\newpage
+\subsection{Derivation of gravitational potential energy}
+\label{sec:org594a449}
+Consider a system comprising the Earth and an object of mass \(m\). The object is lifted vertically by a displacement \(\vec{s}\). In order for this to happen, an external force needs to be applied by an agent that does not belong the system of Earth and the object.
+
+
+This external force needs to be equal and opposite to the weight of the object:
+\[\vec{F}_{ext} = -m \vec{g}\]
+
+The work done by the external force is given by:
+\begin{align*}
+W_{ext} &= \int_{y_1}^{y_2} \vec{F}_{ext} \cdot d \vec{y} \\
+&= \int_{y_1}^{y_2} mg \hat{y} \cdot \hat{y} \, dy \\
+&= \int_{y_1}^{y_2} mg \, dy \\
+&= mg(y_2 - y_1)
+\end{align*}
+
+Once at this new height, this work or energy input can be recovered, and the object has the ability to do work. We can say that the work done in lifting the object has been stored as gravitational potential energy.
+\end{document}

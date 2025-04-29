@@ -20,9 +20,12 @@ Finally, inside those folders, you will find my notes and tutorials.
 
 ## What's the difference between a `cheat-sheet` and `notes`?
 
-A `cheat-sheet` refers to the reference material that is brought to
+A cheat sheet refers to the reference material that is brought to
 a final exam, usually a double-sided A4 cheat sheet that contains
 formulas and important points for the exam.
+
+Some older cheat sheets, like those in the `y1s1` folder
+are summaries or truncated versions of the notes.
 
 Notes are mostly compilations of the content within the lectures,
 and usually can be studied as a standalone material.

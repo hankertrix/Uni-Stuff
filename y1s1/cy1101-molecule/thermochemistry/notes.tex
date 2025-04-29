@@ -1,0 +1,182 @@
+% Created 2025-04-29 Tue 19:35
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\usepackage{siunitx}
+\author{Hankertrix}
+\date{\today}
+\title{Thermochemistry Notes}
+\hypersetup{
+ pdfauthor={Hankertrix},
+ pdftitle={Thermochemistry Notes},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 30.1 (Org mode 9.7.11)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents \clearpage\section{Definitions}
+\label{sec:org2f662b7}
+
+\subsection{Conservation of energy}
+\label{sec:org13781ec}
+Energy cannot be created or destroyed; it can only be converted from one form to another.
+\subsection{Thermal energy}
+\label{sec:orge04b557}
+Thermal energy refers to the kinetic energy of molecular motion. It is measured by finding the \textbf{temperature} of an object.
+\subsection{Heat}
+\label{sec:org0fdb4c6}
+Heat refers to the amount of thermal energy transferred from one object to another as the result of a \textbf{temperature difference} between the two.
+\subsection{First law of thermodynamics}
+\label{sec:org923707a}
+The total internal energy \(E\) of an isolated system is constant.
+
+\[\Delta E  = E_{final} - E_{initial}\]
+\subsection{State function}
+\label{sec:org6cda6b6}
+A state function is a function or property whose value depends only on the present state or condition of the system, not on the path used to arrive at that state.
+\subsection{Expansion work}
+\label{sec:orgbde60a4}
+Expansion work is the work done as the result of a volume change in the system.
+\subsection{Enthalpy}
+\label{sec:org034bc9a}
+Enthalpy refers to the total heat content of a system. It is equal to the internal energy of the system plus the work done on the system. It is also a state function.
+
+\[\Delta H = \Delta E + w\]
+\[\Delta H = \Delta E + P \Delta V\]
+
+\newpage
+\subsection{Thermodynamic standard state}
+\label{sec:orgecce289}
+The thermodynamic standard state is the most stable form of a substance. The conditions are:
+\begin{enumerate}
+\item Pressure of \(\qty{1}{\unit{atm}}\)
+\item Temperature of \(\qty{25}{\unit{\degreeCelsius}}\)
+\item Concentration of \(\qty{1}{\unit{M}}\) for all substances in solution
+\end{enumerate}
+
+Values at this state are denoted with a superscript circle, like \(\Delta H^\circ, \Delta S^\circ\) and \(\Delta G^\circ\).
+\subsection{Enthalpy change of fusion (\(\Delta H_{fusion}\))}
+\label{sec:orgb9e19fd}
+The enthalpy change of fusion is the amount of heat required to \textbf{melt} a substance \textbf{without changing its temperature}.
+\subsection{Enthalpy change of vaporisation (\(\Delta H_{vap}\))}
+\label{sec:orgd11fa51}
+The enthalpy change of vaporisation is the amount of heat required to \textbf{vaporise} a substance \textbf{without changing its temperature}.
+\subsection{Enthalpy change of sublimation (\(\Delta H_{subl}\))}
+\label{sec:org5fe4b40}
+The enthalpy change of sublimation is the amount of heat required to convert a substance from a \textbf{solid to a gas without going through a liquid phase}.
+
+
+At constant temperature:
+\[\Delta H_{subl} = \Delta H_{fusion} + \Delta H_{vap}\]
+\subsection{Exothermic reaction}
+\label{sec:org5d9e7dd}
+An exothermic reaction is a reaction that releases heat, which means its enthalpy change is negative, i.e. \(\Delta H < 0\).
+\subsection{Endothermic reaction}
+\label{sec:orge4ca923}
+An endothermic reaction is a reaction that absorbs heat, which means its enthalpy change is positive, i.e. \(\Delta H > 0\).
+\subsection{Heat capacity (\(C\))}
+\label{sec:org72199df}
+Heat capacity refers to the amount of heat necessary to raise the temperature of an object or substance a given amount.
+
+\[C = \frac{q}{\Delta T}\]
+\[q = C \times \Delta T\]
+\subsection{Specific heat capacity (\(c\))}
+\label{sec:orgda875fd}
+Specific heat capacity refers to the amount of heat required to raise the temperature of \(\qty{1}{\unit{g}}\) of a substance by \(\qty{1}{\unit{\degreeCelsius}}\).
+
+\[q = mc \Delta T, \ \ \text{where } m \text{ is the mass of the substance in } \unit{g}\]
+\subsection{Molar heat capacity (\(C_m\))}
+\label{sec:org9f0b039}
+Molar heat capacity is the amount of heat necessary to raise the temperature of \(\qty{1}{\unit{mol}}\) of a substance by \(\qty{1}{\unit{\degreeCelsius}}\).
+
+\[q = C_m \times n \times \Delta T, \ \ \text{where } n \text{ is the number of moles of the substance}\]
+\subsection{Hess's law}
+\label{sec:org8344d06}
+Hess's law states that the overall enthalpy change for a reaction is equal to the sum of the enthalpy changes for the individual steps in the reaction.
+
+
+Essentially:
+\[\Delta H_{overall} = \Delta H_{1} + \Delta H_{2} + \Delta H_{3} + \ldots + \Delta H_{n}\]
+
+\newpage
+\subsection{Haber process}
+\label{sec:org54a1641}
+The Haber process is just the industrial process to create ammonia (\(NH_3\)) from \(H_2\) and \(N_2\) to form ammonia (\(NH_3\)).
+
+
+The conditions are:
+\begin{enumerate}
+\item Pressure of \(\qty{200}{\unit{atm}}\)
+\item Temperature of \(\qty{450}{\unit{\degreeCelsius}}\)
+\item Presence of iron (\(Fe\)) catalyst
+\end{enumerate}
+
+\[3H_2 (g) + N_2 (g) \rightarrow 2NH_3 (g) \qquad \Delta H^\circ = -\qty{92.2}{\unit{kJ}}\]
+\subsection{Standard enthalpy change of formation (\(\Delta H^\circ_f\)) (Standard heat of formation)}
+\label{sec:org360a510}
+The standard enthalpy change of formation is the enthalpy change for the formation of \(\qty{1}{\unit{mol}}\) of a substance in its \textbf{standard state} from its constituent elements in their \textbf{standard states}.
+\subsection{Bond dissociation energies}
+\label{sec:orgb158c4e}
+Bond dissociation energies is the \textbf{standard enthalpy changes} for the corresponding \textbf{bond-breaking} reactions.
+
+
+Essentially, it is \(\Delta H^\circ_{Bond-breaking}\).
+\subsection{Spontaneous process}
+\label{sec:org67f1942}
+A spontaneous process is a process that, once started, proceeds on its own \textbf{without} a continuous \textbf{external influence}.
+\subsection{Entropy (\(S\))}
+\label{sec:org852f98a}
+Entropy is the amount of molecular randomness in a system.
+\subsection{Change in Gibbs Free Energy (\(\Delta G\))}
+\label{sec:orgd04d0e5}
+\[\Delta G = \Delta H - T \Delta S\]
+
+\begin{itemize}
+\item When \(\Delta G < 0\), the reaction is \textbf{spontaneous}.
+\item When \(\Delta G = 0\), the reaction is at \textbf{equilibrium}.
+\item When \(\Delta G > 0\), the reaction is \textbf{not spontaneous}.
+\end{itemize}
+
+\newpage
+\section{Formulas}
+\label{sec:org46305d1}
+
+\subsection{Change in internal energy due to change in pressure or volume}
+\label{sec:orgf0d8d97}
+\[q = \text{Heat transferred}\]
+\[\text{Work done: } w = - P \Delta V\]
+
+\[\Delta E = q + w\]
+\[q = \Delta E + P \Delta V\]
+
+For constant volume (\(\Delta V = 0\)):
+\[q_v = \Delta E\]
+
+For constant pressure:
+\[q_p = \Delta E + P \Delta V\]
+
+Since enthalpy change (\(\Delta H\)) is equal to the heat transferred:
+\[\Delta H = q_p = \Delta E + P \Delta V\]
+
+Since enthalpy is a state function whose value depends only on the current state of the system:
+\begin{align*}
+\Delta H &= H_{final} - H_{initial} \\
+&= H_{products} - H_{reactants} \\
+&= \Delta (H_f)_{products} - \Delta (H_f)_{reactants} \\
+&= \Delta H_{Bond-breaking} - \Delta H_{Bond-forming}
+\end{align*}
+\end{document}

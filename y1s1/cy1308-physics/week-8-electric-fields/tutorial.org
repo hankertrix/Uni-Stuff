@@ -1,11 +1,9 @@
-#+TITLE: Physics Electric Fields Tutorial
+#+TITLE: Electric Fields Tutorial
 #+AUTHOR: Hankertrix
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
 #+LATEX_HEADER: \usepackage{graphicx}
 #+LATEX_HEADER: \graphicspath{ {./images/} }
-
-\newpage
 
 * Question 1
 

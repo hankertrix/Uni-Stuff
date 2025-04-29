@@ -1,4 +1,4 @@
-% Created 2023-11-02 Thu 22:13
+% Created 2025-04-29 Tue 19:41
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -12,27 +12,24 @@
 \usepackage{amssymb}
 \usepackage{capt-of}
 \usepackage{hyperref}
+\usepackage{minted}
 \usepackage{siunitx}
 \author{Hankertrix}
 \date{\today}
-\title{Physics Capacitance \& DC Circuits Tutorial}
+\title{Capacitance \& DC Circuits Tutorial}
 \hypersetup{
  pdfauthor={Hankertrix},
- pdftitle={Physics Capacitance \& DC Circuits Tutorial},
+ pdftitle={Capacitance \& DC Circuits Tutorial},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 29.1 (Org mode 9.6.6)}, 
+ pdfcreator={Emacs 30.1 (Org mode 9.7.11)}, 
  pdflang={English}}
 \begin{document}
 
 \maketitle
 \setcounter{tocdepth}{2}
-\tableofcontents
-
-\newpage
-
-\section{Question 1}
-\label{sec:org6ed617b}
+\tableofcontents \clearpage\section{Question 1}
+\label{sec:orgd346228}
 Finding the potential at the surface of the smaller conducting sphere:
 \[V_a = \frac{q}{4 \pi \varepsilon_0 r}\]
 \[V_a = \frac{Q}{4 \pi \varepsilon_0 a}\]
@@ -51,13 +48,11 @@ Finding the potential difference between the two surfaces:
 Finding the capacitance of the spherical capacitor:
 \[C = \frac{Q}{\frac{Q(b - a)}{4 \pi \varepsilon_0 ab}}\]
 \[C = \frac{4 \pi \varepsilon_0 ab}{(b - a)}\]
-
-
 \section{Question 2}
-\label{sec:org96d5baf}
+\label{sec:org90db684}
 
 \subsection{(a)}
-\label{sec:org14d081f}
+\label{sec:orgde4c480}
 Using Gauss' law:
 \begin{align*}
 \oint \vec{E} \cdot d \vec{A} &= \frac{Q_{encl}}{\varepsilon_0} \\
@@ -93,9 +88,8 @@ C &= \frac{Q}{V_{ab}} \\
 \end{align*}
 
 \newpage
-
 \subsection{(b)}
-\label{sec:orgd85fb44}
+\label{sec:orgbe98ea0}
 \[1.0 \times 10^{-12} \ge C \ge 1000 \times 10^{-12}\]
 \[1.0 \times 10^{-12} \ge \frac{\varepsilon_0 A}{d} \ge 1000 \times 10^{-12}\]
 \[1.0 \times 10^{-12} \ge \frac{8.85 \times 10^{-12} \cdot 25 \times 10^{-6}}{d} \ge 1000 \times 10^{-12}\]
@@ -106,9 +100,8 @@ C &= \frac{Q}{V_{ab}} \\
 \[2.2125 \times 10^{-7} \le d \le 2.2125 \times 10^{-4}\]
 \[\qty{0.22125}{\unit{\micro\metre}} \le d \le \qty{221.25}{\unit{\micro\metre}}\]
 \[\qty{0.22}{\unit{\micro\metre}} \le d \le \qty{220}{\unit{\micro\metre}} \text{ (3 s.f)}\]
-
 \subsection{(c)}
-\label{sec:orgfe0698f}
+\label{sec:orgc462299}
 \[C = \frac{\varepsilon_0 A}{d}\]
 \[d = \frac{\varepsilon_0 A}{C}\]
 
@@ -123,9 +116,8 @@ Differentiating the distance equation gives the approximate uncertainty in dista
 
 The absolute uncertainty would be:
 \[\Delta d = \frac{d^2 \Delta C}{\varepsilon_0 A}\]
-
 \subsection{(d)}
-\label{sec:org812aa1c}
+\label{sec:orgc266cf4}
 \begin{align*}
 \Delta d_{min} &= \frac{d^2 \Delta C}{\varepsilon_0 A} \\
 &= \frac{(0.22125 \times 10^{-6})^2 \cdot 0.1 \times 10^{-12}}{8.85 \times 10^{-12} \cdot 25 \times 10^{-6}} \\
@@ -149,9 +141,8 @@ The absolute uncertainty would be:
 \end{align*}
 
 \newpage
-
 \section{Question 3}
-\label{sec:org5eb2077}
+\label{sec:org2d404bb}
 An uncharged capacitor acts like a regular wire with no resistance, so the total resistance of the circuit is:
 \begin{align*}
 R_{total} &= R + \frac{1}{\frac{1}{R} + \frac{1}{R}} \\
@@ -193,13 +184,11 @@ I_2 &= \frac{\mathcal{E}}{R} \cdot \frac{R}{2R} \\
 \end{align*}
 
 \[I_3 = 0\]
-
-
 \section{Question 4}
-\label{sec:org5310d47}
+\label{sec:orgf8e35b3}
 
 \subsection{(a)}
-\label{sec:org7dc4083}
+\label{sec:orgd73e969}
 \begin{align*}
 C_{equiv} &= \left( \frac{1}{\left(\frac{1}{15} + \frac{1}{3} \right)^{-1} + 6.00} + \frac{1}{20.0} \right)^{-1} \\
 &= \frac{340}{57} \\
@@ -207,9 +196,8 @@ C_{equiv} &= \left( \frac{1}{\left(\frac{1}{15} + \frac{1}{3} \right)^{-1} + 6.0
 \end{align*}
 
 \newpage
-
 \subsection{(b)}
-\label{sec:orgdf56f83}
+\label{sec:orgdf9d9c4}
 For the initial case:
 \[V_{C_1} = \qty{100}{\unit{V}}\]
 \[C_1 = \frac{Q_{C_1}}{V}\]
@@ -252,15 +240,13 @@ Since \(V_1 = V_2\):
 \[V_{C_1} = \frac{\frac{9}{14000}}{15 \times 10^{-6}}\]
 \[V_{C_1} = \frac{300}{7}\]
 \[V_{C_1} = \qty{42.9}{\unit{V}}\]
-
-
 \section{Question 5}
-\label{sec:org19bdea3}
+\label{sec:orgf2a6e3e}
 
 \subsection{(a)}
-\label{sec:org2affb1b}
+\label{sec:orge0b3a15}
 When the capacitor is fully charged, it acts as a break in the circuit.
-\\[0pt]
+
 
 Finding the current passing through the \(\qty{1}{\unit{\ohm}}\) resistor:
 \[I_1 = \frac{V}{R}\]
@@ -292,9 +278,8 @@ Finding the charge of the capacitor:
 \[2.2 \times 10^{-6} = \frac{Q}{6.8}\]
 \[Q = 1.496 \times 10^{-5} \ \unit{C}\]
 \[Q \approx \qty{15}{\unit{\micro C}}\]
-
 \subsection{(b)}
-\label{sec:orgdfb8208}
+\label{sec:org70c1b8f}
 Finding the effective resistance of the circuit:
 \begin{align*}
 R_{equiv} &= \left( \frac{1}{1 + 10} + \frac{1}{9 + 5} \right)^{-1} \\
@@ -308,22 +293,19 @@ Using the equation for discharging of a capacitor:
 \[\ln \left( \frac{3}{100} \right) = - \frac{t}{1.3552 \times 10^{-5}}\]
 \[t = 4.752087262 \times 10^{-5} \ \unit{s}\]
 \[t \approx \qty{48}{\unit{\micro s}}\]
-
-
 \section{Question 6}
-\label{sec:org678a327}
+\label{sec:org35272a2}
 
 \subsection{(a)}
-\label{sec:orgaa54b0c}
+\label{sec:orgf17fa7e}
 At \(t = 0\), the capacitor acts like a regular metal wire, so the potential difference across the resistor \(R_1\) is equivalent to the e.m.f of the battery.
 \[V_1 = \qty{15.0}{\unit{V}}\]
 
 Potential difference across the capacitor and the other resistor will hence be 0:
 \[V_2 = \qty{0}{\unit{V}}\]
 \[V_c = \qty{0}{\unit{V}}\]
-
 \subsection{(b)}
-\label{sec:orgc17ec15}
+\label{sec:orgc3616f5}
 After the switch is closed for a long time, the capacitor is fully charged, and hence acts like a break in the circuit. The total resistance of the circuit is:
 \begin{align*}
 R_{total} &= 5.00 + 8.00 \\
@@ -341,7 +323,7 @@ Hence:
 \[I_1 = I_2 = \approx \qty{1.15}{\unit{V}}\]
 
 Since the capacitor is fully charged, no current runs through the capacitor. Thus, \(I_c = 0\).
-\\[0pt]
+
 
 Finding the potential difference across \(R_1\):
 \[V_1 = IR\]
@@ -357,9 +339,8 @@ Finding the potential difference across \(R_2\):
 
 The potential difference across the capacitor is equal to the potential difference across \(R_2\):
 \[V_c = V_2 \approx \qty{9.23}{\unit{V}}\]
-
 \subsection{(c)}
-\label{sec:org5285330}
+\label{sec:orgd54f4dc}
 \[I = I_1 + I_2 \tag{1}\]
 \[\mathcal{E} = IR_1 + V_c \tag{2}\]
 \[\mathcal{E} = IR_1 + I_2R_2 \tag{3}\]
@@ -422,13 +403,11 @@ Where:
 \item \(I_0 = \frac{E}{R_1}\)
 \item \(R_{eq} = \frac{R_1 R_2}{R_1 + R_2}\)
 \end{itemize}
-
-
 \section{Question 7}
-\label{sec:org2086fe8}
+\label{sec:orgd81437c}
 
 \subsection{(a)}
-\label{sec:orga9f64ef}
+\label{sec:org0faec0a}
 Finding the equivalent capacitance of the capacitors:
 \begin{align*}
 C_{eq} &= \left( \frac{1}{3200} + \frac{1}{1800} \right)^{-1} \\
@@ -442,9 +421,8 @@ U &= \frac{1}{2} C_{eq} V^2 \\
 &= 8.2944 \times 10^{-8} \ \unit{J} \\
 &\approx \qty{82.9}{\unit{nJ}}
 \end{align*}
-
 \subsection{(b)}
-\label{sec:org3a4860d}
+\label{sec:orgee9cadd}
 Finding the equation for the potential difference across the capacitor:
 \[C = \frac{Q}{V}\]
 \[Q = VC\]
@@ -471,10 +449,8 @@ From \((1)\):
 \[Q_1 = \frac{16}{9} \cdot 9.95328 \times 10^{-9}\]
 \[Q_1 = 1.769472 \times 10^{-8}\]
 \[Q_1 \approx \qty{0.18}{\unit{\micro F}}\]
-
-
 \section{Question 8}
-\label{sec:org0eb4ee3}
+\label{sec:org4a22574}
 Finding the current in the circuit:
 \[I = \frac{V}{R}\]
 \[I = \frac{E}{r + R}\]
@@ -518,14 +494,13 @@ Finding the second derivative of \(P\):
 Since the second derivative of \(P\) is always negative, \(R = r\) must be a maximum point. Hence, when \(R = r\), there is maximum power transfer \textbf{(shown)}.
 
 \newpage
-
 \section{Question 9}
-\label{sec:org85dd1ed}
+\label{sec:org681464e}
 
 \subsection{(a)}
-\label{sec:org996b5b9}
+\label{sec:org4098cc1}
 Let \(I_1\) be the current running through battery \(A\) and \(I_2\) be the current running through battery \(B\).
-\\[0pt]
+
 
 Using Kirchhoff's voltage law on the loop on the left, with the current starting at \(P\) and moving in the clockwise direction:
 \[20 - V_4 - V_{R_A} - 12 - V_{4} = 0\]
@@ -579,16 +554,15 @@ Finding \(I_2\) from \((3)\):
 \[I_2 = \frac{28}{30 + 40}\]
 \[I_2 = \frac{28}{70}\]
 \[I_2 = \qty{0.4}{\unit{A}}\]
-
 \subsection{(b)}
-\label{sec:orgbde642c}
+\label{sec:orga604868}
 Finding the potential difference across the internal resistance of battery \(B\):
 \[V_{B} = I_2 R\]
 \[V_{B} = 0.4 \cdot 40\]
 \[V_{B} = 16\]
 
 Since the potential difference across the internal resistance of battery \(B\) is the same as the potential difference between the \(\qty{0}{\unit{V}}\) point and the point between battery \(B\) and its internal resistance, the point between battery \(B\) and its internal resistance will hence be at a potential of \(\qty{16}{\unit{V}}\). This will be the reference point to calculate the rest of the potentials.
-\\[0pt]
+
 
 Walking backwards through the circuit and using the assignments for the components in the part \((a)\), we subtract the potential difference across battery \(B\), then we add the potential difference across the \(\qty{30}{\unit{\ohm}}\) resistor. Hence, the potential at \(Q\) is:
 \begin{align*}
@@ -601,12 +575,11 @@ Continuing to walk backwards through the circuit from point \(Q\), we add the po
 V_P &= 16 + 0.5 \cdot 4 - 20 \\
 &= \qty{-2}{\unit{V}}
 \end{align*}
-
 \section{Question 10}
-\label{sec:orgdf65356}
+\label{sec:org5aa10ee}
 
 \subsection{(a)}
-\label{sec:orgc574c1b}
+\label{sec:orga14d9dc}
 Let \(I_1\) be the current pointing from \(X\) to \(A\), \(I_2\) be the current pointing straight down from \(X\), \(I_3\) be the current pointing from \(X\) to \(Y\), \(I_4\) be the current pointing from \(Y\) to \(X\), \(I_5\) be the current pointing straight up from point \(Y\), and \(I_6\) be the current pointing from \(Y\) to \(B\).
 \[I_1 + I_2 + I_3 = 0\]
 \[\frac{V_X - V_A}{1000} + \frac{V_X - V_B}{3000} + \frac{V_X - V_Y}{100} = 0\]
@@ -641,9 +614,8 @@ Finding \(V_Y\):
 \[V_Y = \frac{10}{11} \frac{24}{37} + \frac{1}{22}\]
 \[V_Y = \frac{47}{74}\]
 \[V_Y \approx \qty{0.63}{\unit{V}}\]
-
 \subsection{(b)}
-\label{sec:orgf3134c8}
+\label{sec:org222e7e8}
 Finding the current from point \(A\) to point \(X\):
 \begin{align*}
 I_{AX} &= \frac{V_A - V_X}{1000} \\
@@ -674,12 +646,11 @@ R_{T} &= \frac{V}{I} \\
 \end{align*}
 
 \newpage
-
 \section{Question 11}
-\label{sec:orgf498840}
+\label{sec:org49fb1a7}
 
 \subsection{(a)}
-\label{sec:orgc6fd42d}
+\label{sec:org25f3517}
 For the arrangement on the right, it can be treated as 2 capacitors in parallel.
 \begin{align*}
 C_1 &= \frac{K_1 \varepsilon_0 \frac{A}{2}}{d} \\

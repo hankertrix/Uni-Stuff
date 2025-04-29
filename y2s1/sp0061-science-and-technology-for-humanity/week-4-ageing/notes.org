@@ -1,0 +1,246 @@
+#+TITLE: SP0061 Science & Tech for Humanity Week 4 Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+Death is the only constant in life filled with uncertainties.
+
+* Definitions
+
+** Senility
+Senility is the quality or state of being senile, which means to have diminished cognitive function, like memory impairments.
+
+** Diphtheria
+Diphtheria is a serious bacteria infection that usually affects the nose and throat, with a mortality rate that approaches 10%.
+
+** Epidemiology
+Epidemiology is study of the patterns, causes, and effects of health and disease conditions.
+
+** Advance medical directive (AMD)
+An advance medical directive legal document that states a person's wishes about receiving medical care if that person is no longer able to make medical decisions because of a serious illness or injury. An advance medical directive may also give a person (such as a spouse, relative, or friend) the authority to make medical decisions for another person when that person can no longer make decisions. There are different types of advance directives, including a living will, durable power of attorney (DPA) for health care, and do not resuscitate (DNR) orders. In the United States, the laws for advance directives may be different for each state, and each state may allow only certain types of advance directives.
+
+** Advance care planning (ACP)
+Advance care planning is a process that enables individuals with decisional mental capacity (of sound mind) to make plans about their future health care. It provides direction to healthcare professionals when a person is not in a position to make or communicate their own healthcare choices, and is applicable to adults at all stages of life.
+
+** Alzheimer's disease (AD)
+The Alzheimer's disease or AD continuum can be classified broadly into 3 phases, the preclinical AD phase, the phase with mild cognitive impairment due to AD, and dementia.
+[[./images/alzheimers-disease-continuum.png]]
+
+*** Cost of Alzheimer's disease
+From 1995 to 2023, an estimated 42.5 billion USD has been spent on research and development of a biological therapeutic for Alzheimer's disease.
+[[./images/cost-of-alzheimers-disease.png]]
+
+*** Limited success in stemming the tide of AD-related mortality
+This is emphasised when comparing Alzheimer's disease to other diseases such as heart disease, stroke, and especially HIV.
+[[./images/percentage-changes-in-selected-causes-of-death.png]]
+
+* Changes from 1900s to present times
+
+** Mortality
+| Context                      | 1900                                    | 2020                                             |
+|------------------------------+-----------------------------------------+--------------------------------------------------|
+| Age of death                 | 47 years                                | 83 years                                         |
+| Usual place of death         | Home                                    | Hospitals                                        |
+| Coverage of medical expenses | Family                                  | Public fund, insurance, or out-of-pocket savings |
+| Disability before death      | Usually not much                        | 2 - 3 years on average                           |
+| Support before death         | Family, friends neighbours, communities | Usually not much                                 |
+
+** Leading causes of death around the world
+| Rank | 1900               | 2000 (High income countries)            | 2019 (High income countries)            |
+|------+--------------------+-----------------------------------------+-----------------------------------------|
+|    1 | Pneumonia          | Ischaemic heart disease                 | Ischaemic heart disease                 |
+|    2 | Tuberculosis       | Stroke                                  | Alzheimer's disease and other dementias |
+|    3 | Diarrhoeal disease | Trachea, bronchus, lung cancers         | Stroke                                  |
+|    4 | Heart disease      | Chronic obstructive pulmonary disease   | Trachea, bronchus, lung cancers         |
+|    5 | Liver disease      | Lower respiratory infections            | Chronic obstructive pulmonary disease   |
+|    6 | Injuries           | Colon and rectum cancer                 | Lower respiratory infections            |
+|    7 | Stroke             | Alzheimer's disease and other dementias | Colon and rectum cancer                 |
+|    8 | Cancer             | Kidney diseases                         | Kidney diseases                         |
+|    9 | Senility           | Diabetes mellitus                       | Hypertensive heart disease              |
+|   10 | Diphtheria         | Hypertensive heart disease              | Diabetes mellitus                       |
+
+** Epidemiologic transition
+- Redistribution of deaths from the young to the old
+- Risk of dying from infectious diseases at young age decreased
+- Most people survive into older ages but suffer from chronic life-limiting illnesses
+- All together with low fertility rates and medical advances result in an ageing population.
+
+*** Ageing population projection
+[[./images/ageing-population-graphic.png]]
+
+* Typical illness trajectories for people with progressive chronic illness
+
+** Short period of evident decline
+[[./images/short-period-of-evident-decline-trajectory.png]]
+
+** Long term limitations with intermittent serious episodes
+[[./images/long-term-limitations-trajectory.png]]
+
+** Prolonged dwindling
+[[./images/prolonged-dwindling-trajectory.png]]
+
+* Dealing with death
+
+** Death is a difficult journey for patient and families
+- The dying process is demanding on the patient, family members, as well as health care professionals.
+- It involves physical symptoms, pain, fatigue, suffering and dependency.
+- It also involves a strong sense of emotional frustration and inadequacy.
+- Uncertainties and fears of the journey of death are common.
+- There is also the feelings of powerlessness and hopelessness.
+- Yet, many decisions need to be made amidst the existential chaos of mortality.
+
+** End-of-life decisions
+When decisions arise concerning the treatment of dying patients, these options present complex ethical dilemmas. These decisions, regarding their own care or the care of a dying loved one, confront people from all walks of life.
+
+- Withholding or withdrawing medical treatment
+- Medical futility
+- Advance medical directive
+- Advance care planning
+- Terminal sedation
+- Euthanasia and physician-assisted suicide
+
+** Beginning of Advance Medical Directive (AMD)
+- "Every human being of adult years and sound mind has a right to determine what shall be done with his own body; and a surgeon who performs an operation without his patient's consent commits an assault, for which he is liable." - Schloendorff v. Society of the New York Hospital, 1914
+- "The law provides that a patient may not be subjected to treatment without his consent... a living will ... a declaration determining the termination of life." - Kunter, 1969
+- "The Directive allows you to instruct your doctor not to use artificial methods to extend the natural process of dying" - Natural Death Act, 1976; In re Quilan v. State of New Jersey, 1976
+
+** Patient self-determination
+- In the United States, the *Patient Self-Determination Act (PSDA, 1990)* encourages everyone to decide now about the types and extent of medical care they want to accept of refuse if they become unable to make those decisions due to illness.
+- Advance medical directive aspires to:
+  - Protect patients' autonomy and respect their wishes and preferences in care
+  - Help patients plan for the end of life through making informed care decisions before becoming incapacitated
+  - Designate a dual power of attorney to help patient make care decisions when he or she becomes incapacitated
+  - Avoid unnecessary and futile treatments which would cause more harm than good
+  - Permit peace of mind
+
+** Advance medical directive and quality palliative care
+- Advance medical directive is a cornerstone to quality palliative care:
+  - Establishes a personalised end-of-life care plan
+  - Integrates the psychosocial and spiritual aspects of care
+  - Reduces hospital admissions and likelihood to die in a hospital
+  - Maintains and enhances patient's quality of life
+- However, in most research that examined the effectiveness of advanced medical directive, quality of life is measure solely with quality metrics or performance metrics such as hospital admission, hospice enrolment, usage and deaths.
+  - This can potentially create a checkbox exercise that undermines the real needs and concerns of patients.
+  - More research is needed to assess holistic care outcomes such as quality of life and quality of death.
+
+** From advance directives to advance care planning (ACP)
+- ACP is the process of planning for future healthcare options through a series of voluntary, non-legally binding conversations with one's family and doctors.
+- In an ACP discussion, patients are guided to understand, reflect upon, and discuss their goals, values and beliefs, then led to indicate their preferences with regard to future healthcare treatments.
+- ACP also involves nominating a "substitute decision-maker" who can make decisions on the patient's behalf. The documented discussion provides guidance for the medical team in making decisions when crisis strikes, and the patient is no longer able to communicate.
+
+** Key decisions of ACP
+- Cardiopulmonary resuscitation (CPR)
+- Do not resuscitate (DNR) order
+- Artificial nutrition and hydration
+- Do no intubate (DNI) order
+- Preferred place of care
+- Preferred place of death
+- Durable power of attorney for healthcare
+
+** National advance care planning programme
+Singapore's Ministry of Health (MOH) and the Agency for Integrated Care (AIC) had launched a National Advance Care Planning programme in 2011, namely "Living Matters", to empower all members of the public with greater autonomy and self-determination in navigating the complexities of mortality, especially those facing the end of life.
+
+However, take-up rate remains low despite numerous public campaigns and advocacy efforts.
+
+** Beyond ACP: What do people want as they approach the end of life
+- What type of care do people want?
+- What are their worries, concerns and fears?
+- What do they want to accomplish before they die?
+- What type of legacy do they want to leave behind?
+- What are important to them at the end of life?
+- What are important to their family members?
+- How can we make use of technology, virtual company, online platforms and mobile apps to enhance people's acceptance of and willingness to take up ACP?
+
+* Risk factors for dementia
+
+** 2020
+[[./images/risk-factors-of-dementia-2020.png]]
+
+** 2024
+[[./images/risk-factors-of-dementia-2024.png]]
+
+** Relationship between depression and dementia incidence
+Research has found that the presence of depression almost doubles (1.97 times more likely) the incidence of dementia.
+
+** Relationship between social life and cognition
+Research has found that having more social activities and a larger social network correlated with better cognition.
+
+** Relationship between purpose and meaning in life and dementia incidence
+Research has also found that having purpose and meaning in life is correlated with a lower risk of dementia incidence.
+
+* Communication with the elderly
+
+** How to communicate?
+- Know your audience.
+- Make the purpose of your message clear.
+- Choose the right platform to deliver the message.
+
+** Challenges in communication
+
+*** Seniors are not a homogeneous group
+- In Singapore, more so than in other countries, communication challenges involving the elderly include divergent factors such as race, languages spoken, educational levels, work experiences, and cultural differences.
+- In 2014, the Pioneer Generation Office had to reach out to Singaporeans 65 years and older with a message of thanks for their part in nation-building and offering a slew of concessions and benefits. Its first task was to figure out how to get the news to the Pioneers.
+  - A press conference followed by coverage in the traditional media would only work for those who read newspapers and watch television
+  - Letters in the mail to inform recipients of the benefits would be limited to those who could read the 4 official languages and would understand the information included.
+  - So the Pioneer Generation Office set out to train volunteers who would deliver the information door-to-door to seniors.
+  - This team had to include speakers of the official languages and the Chinese dialects, and a script was prepared with volunteers prepped to answer possible queries to be effective.
+  - It was generally well received, but there were some negative feedback, such as:
+    - Seniors being suspicious of the many questions volunteers asked about the seniors' well-being.
+    - Seniors being offended by questions about their children and how often they visited.
+    - Seniors asking why there were so many questions.
+    - Seniors questioning why the government suddenly wanted to give out benefits to them now and what the government wanted in return.
+    - Seniors that read the newspapers regularly complained that the volunteers talked down to them as they had already known the benefits.
+    - Some seniors thought the volunteers were part off a scam.
+  - Thus, the one-size-fits-all script did not go down well for some seniors.
+
+*** Shifting lines of communication
+- When the pandemic hit, it was important to be able to pass on good information from the government taskforce, disease experts and frontline agencies to the public.
+- While these announcements were significant for our day-to-day living, the messages were not always easy not understand.
+- Medical experts were present to explain the reasons behind the steps and their explanations regularly included jargon, which are special words or terms used by a particular professional group.
+- During the pandemic, this included words such as mRNA, ventilator, asymptomatic, endemic, epidemiology, incubation, immunocompromised, anaphylaxis, self-isolation and so on.
+- This was difficult for the public to understand, let alone for seniors.
+- Those not reading newspapers or watching TV relied on others to tell them what was happening.
+- The volunteers who were still in touch with many older Singaporeans had to stop home visits in the lockdown, and considered getting on Zoom calls or just phone calls to update seniors about the latest restrictions or explain what was happening, but found that many seniors did not have the devices for such calls.
+- This resulted in further isolation for many seniors who were getting increasingly fearful and a significant number started to believe rumours and half-truths about vaccines and side effects.
+- The fake news being circulated among the senior group was significant enough for the government to take steps to curb it.
+- After decades of discouraging the use of Chinese dialects, the Ministry of Communication and Information started investing in dialect programs on Channel 8.
+- The Ministry commissioned programs such as "Have You Eaten?" and "How Are You?", which included messages in various dialects about health assistance schemes, the Silver Support scheme, and active ageing in the storylines.
+- The Ministry also tapped on a senior-favourite, Getai, which is a usually a stage performance at HDB estates during the Hungry Ghost Festival or Chinese New Year.
+- With the COVID restrictions, the Getai performers moved their acts onto Facebook and YouTube, and while the programs still focused on singing, the host now weaved in messages about staying home, exercising at home, and staying safe.
+
+*** Devices are not smart enough
+- Seniors here now have no choice but to embrace some for of technology in their everyday lives.
+- We have smartphones and smart TVs, and seniors need to learn how to use these devices for their entertainment, to stay in touch with family members, to make appointments at hospitals, to pay bills, to read menus, and until recently, to get into shopping malls and supermarkets.
+- A church in Singapore decided to forego hymnals and prayer books in a bid to reduce the risk of infection, so the churchgoers were expected to scan a QR code for the words of the hymns to be sung.
+- The result was a very quiet church, probably because the congregation, many of whom are older adults, are not inclined to whip out their phones in church and read hymn lyrics in a tiny font.
+- Recommendations are now being considered for user guides to be more senior-friendly.
+- They include typeface, type size, the use of colour and backgrounds to make reading instructions easier.
+- Clear writing or animation could also help, and navigation on a website could be made easier with consistent layouts, menu and hyperlinks.
+- There are also devices in the works such as communication devices that recognise speech and turn it into text, low vision magnifiers, electronic page turners and talking books and illustrations.
+- GPS systems will soon not only inform older people on how to get somewhere, but also remind them where they are going.
+- Seniors with hand phones however, have become the target of scams, and they have lost large sums, including their life savings, to tricksters pretending to be from banks and government agencies.
+- More communication is needed to educate seniors about the dangers lurking in their devices.
+
+**** Why do seniors have so much trouble with technological devices?
+- The devices have traditionally been designed by young engineers targeting young users and seniors have been forced to adapt or lose out.
+- The accompanying manuals or user guides are not helpful because of the small text font, the small pictures in black and white with tiny captions.
+- Seniors don't have the same baseline level as younger people for learning about computers, smartphones, websites, and apps. Often, those who try to teach older adults how to use technology end up being frustrated and wonder why do these older adults not get it.
+- The devices can be difficult for those with age-related disabilities, such as hearing loss, word retrieval problems, and slowing of cognitive function.
+
+*** Keeping seniors in the loop
+- Seniors in Singapore are now healthier and living longer, and they are also more educated and want to live active lives, travel, and be useful to society.
+- Seniors are noticeably absent from social media.
+- A lot of seniors spend hours online, but do not see people like themselves on videos or on Instagram.
+- In the US, an older group of people have been making TikTok videos of themselves, and newspapers have called them "Granfluencers".
+- During the lockdown, there were several stories of older people who were found breaking the rules, eating in hawker centres or not using the TraceTogether app.
+- The media appears to go for the extreme, featuring either a lonely 80-year-old staring blankly out a window or a fit older TV actor showing off his abs, when in fact, most in this group lie somewhere in-between.
+- The focus for the climate crisis appears to be on the younger generation and steps they can take to stop rising temperatures.
+- However, seniors, who make up 1/4 of the population in Singapore also have a role to play.
+- In a lift in Bishan, there is a poster to encourage recycling, and it showed what items should and should not go into the recycling bins.
+- The entire poster was in pictures with green ticks and red crosses, so there is no need for text in English, Chinese, Malay and Tamil.
+
+*** Summary
+- No one platform can reach all sections of the senior group.
+- Solutions for outreach may overturn current thinking.
+- Technology can be enhanced to improve the lives of seniors.
+- Everyone gains when seniors are engaged.

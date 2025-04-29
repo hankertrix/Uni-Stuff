@@ -1,0 +1,466 @@
+#+TITLE: Macromolecules Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{gensymb, siunitx}
+
+\newpage
+
+* Definitions
+
+** Monosaccharides
+Monosaccharides are made up of 3 to 8 carbon atoms and have either an aldehyde \((CHO)\) or ketone \((C=O)\) functional group. The hydroxyl \((OH)\) functional groups are distributed across the carbon backbone.
+
+** Trioses
+Trioses are monosaccharides which consists of 3 carbon atoms. An example of a triose is glyceraldehyde, which plays a significant role in many metabolic pathways.
+
+** Pentoses
+Pentoses are monosaccharides which consists of 5 carbon atoms. There are two pentoses called ribose and deoxyribose that are commonly found in biological systems. Ribose has a hydroxyl group on the $2^{nd}$ carbon atom while deoxyribose has only hydrogen.
+
+** Hexoses
+Hexoses are monosaccharides which consists of 6 carbon atoms. Hexoses are the most common monosaccharide. An example of a hexose is glucose.
+
+** Disaccharides
+Disaccharides are dimers of 2 monosaccharides that are linked through a covalent bond. A few examples include maltose, which is found in beer, lactose, which is found in milk, and sucrose, which is table sugar.
+\\
+
+The most common covalent bond is found between carbon-1 of one monosaccharide unit and the carbon-4 of another. The bond is referred to as a glycosidic bond. The position of the linked carbon on the second monosaccharide may differ, but the most common is carbon-4.
+\\
+
+Making and breaking of glycosidic bonds involved the release of one water molecule, so it is a condensation reaction.
+
+** Maltose
+When two molecules of glucose come together through the formation of an \(\alpha\)(1-4) glycosidic bond, the product is the disaccharide maltose. The linkage is called an \(\alpha\)(1-4) glycosidic bond, because it is formed between the carbon-1 of the first glucose and the carbon-4 of the second glucose, when the first glucose unit is in its $\alpha$ form. Thereafter, the formation of the glycosidic bond results in the first glucose unit being locked in the $\alpha$ form.
+
+** Lactose
+The disaccharide lactose is found in abundance in milk. When \(\beta\)-galactose is linked with glucose by a (1-4) glycosidic linkage, lactose is formed. The linkage is called \(\beta\)(1-4) glycosidic linkage because it is formed when the galactose unit is locked in its $\beta$ form.
+
+** Sucrose
+The disaccharide sucrose, the glucose molecule in its $\alpha$ form is joined to a \(\beta\)-fructose molecule by a less common \((\alpha 1 \text{ - } \beta 2)\) glycosidic linkage, rather than the "1-4" type of linkage that we see with lactose or maltose.
+
+** Polysaccharides
+Polysaccharides are formed when several monosaccharides are connected covalently to form a polymer. Starch, cellulose, glycogen and chitin are a few naturally occurring polysaccharides. Starch and cellulose are both polymers of glucose. Polysaccharides do not have a defined 3D structure and are insoluble in water.
+
+** Plant starch
+Plant starch exists in two forms, amylose and amylopectin. When glucose units are joined by an \(\alpha\)(1-4) glycosidic linkage, it gives rise to a long linear polysaccharide called amylose. The polysaccharides can also form branches, and one of the common branches in polysaccharides is formed by an \(\alpha\)(1-6) glycosidic linkage. Since polysaccharides are insoluble in water, starch is found as granules within the cell. Amylopectin in particular has 24 to 30 glucose subunits that separate branch points along the amylopectin chains.
+
+** Animal starch
+Animal starch is called glycogen, and it is stored in liver cells (hepatocytes) and muscles. It is converted into glucose when energy is required.
+
+** Glycogen
+Glycogen is a multi-branched polymer of glucose that has more densely branched polysaccharide chains and is packaged together with a protein, glycogenin, in its core. Glycogen is better than both amylose and amylopectin and is hence insoluble in water which means that it exists as granules in animal cells.
+\\
+
+Polysaccharide chains in glycogen are formed by glucose subunits and are joined \(\alpha\)(1-4) glycosidic bonds, and branched points are mediated by \(\alpha\)(1-6) glycosidic bonds. 7 to 11 glucose subunits in glycogen separate branch points along the glycogen chains.
+
+** Cellulose
+Cellulose is found in plant cells and is a major component of plant cell walls. Cellulose is a long unbranched polymer of glucose linked by \(\beta\)(1-4) glycosidic bonds, which allows it to form strong and long-lasting fibres as most organisms do not have the enzyme to break the \(\beta\)(1-4) bonds of cellulose. Some herbivorous animals have the enzymes to break the \(\beta\)(1-4) bonds of cellulose and hence are able to use cellulose as an energy-rich food source.
+
+** Chitin
+Chitin is a special type of polysaccharide that is found in the cell walls of fungi and the exoskeletons of insects, crustaceans, and molluscs. Chitin is polymer of N-acetylglucosamine, which is a glucose derivative, with \(\beta\)(1-4) glycosidic linkages. Glucosamine is similar to \(\beta\)-glucose, but amino group replaces the hydroxyl group at carbon-2. In N-acetylglucosamine, the amino group of glucosamine is bonded to an acetyl group.
+\\
+
+Although chitin is similar to cellulose, chitin is stronger due to the increased number of hydrogen bonding between chains. Chitin is also often complexed with other components, such as a protein or calcium carbonate, which would change the physical properties of the resulting molecule.
+
+** Deoxyribonucleic acid (DNA)
+Deoxyribonucleic acid (DNA) is the genetic blueprints of all free-living organisms and play major roles in heredity by encoding genes that define the characteristics and activities of an organism. DNA is a linear polymer made up of building blocks called nucleotides, and it exists as a double-stranded molecule. There are 4 types of nucleotides that make up DNA, which are A, G, C, and T. DNA contains the sugar deoxyribose.
+
+** Ribonucleic acids (RNA)
+Ribonucleic acids (RNA) serve as the messenger units which transfer information from the master DNA blueprint to make proteins during gene expression. RNA is a linear polymer made up of building blocks called nucleotides, and it exists as a single-stranded molecule. There are 4 types of nucleotides that make up RNA, which are A, G, C, and U. RNA contains the sugar ribose. RNA often exists as a single-stranded molecule, although it forms some double-stranded regions in its secondary structure.
+
+** Nucleotides
+The monomeric units of nucleic acids are known as nucleotides, which have 3 components:
+- Nitrogen-containing base
+- Sugar (pentose)
+- At least one phosphate
+
+** Nucleoside
+Nucleoside is the base bonded to ribose or deoxyribose. The ribose derivative is called adenosine while the deoxyribose derivative is called deoxyadenosine.
+
+** Nucleotide
+Nucleotide is the base bonded to ribose or deoxyribose and phosphate(s). The ribose derivative is called adenosine monophosphate while the deoxyribose derivative is called deoxyadenosine monophosphate.
+
+** mRNA
+Messenger RNA (mRNA) copies and carries information from DNA to the ribosome.
+
+** rRNA
+Ribosomal RNA (rRNA) has complex secondary structures with multiple double-stranded regions formed within a single rRNA chain. rRNA combines with proteins to form the structure of ribosome and some rRNA also catalyses biochemical reactions.
+
+** tRNA
+Transfer RNA (tRNA) carries specific amino acids to the ribosome and matches it to the information on mRNA so that a "correct" protein can be assembled.
+
+** Viral RNA
+Viruses have either DNA or RNA as their genetic material. Some viruses, including human viruses such as the Human Immunodeficiency Virus (HIV), influenza viruses, and SARS viruses, have RNA genomes.
+
+** Ribozyme
+RNA can act as an enzyme, which is a biological catalyst. Most naturally occurring RNA catalysts participate in reactions of RNA metabolism. For example, rRNA catalyses the formation of peptide bonds during protein synthesis. Another example is the Hammerhead ribozyme which catalyses the replication of certain RNAs.
+
+\newpage
+
+** Amino acids
+Amino acids are the building blocks of proteins. An amino acid consists of a central carbon atom called the \(\alpha\)-carbon, that is linked to four chemical groups. They are:
+- An amino group. \((-NH_2)\)
+- A carboxyl group. \((-COOH)\)
+- A hydrogen atom. \((H)\)
+- An R group, which is unique for all amino acids, and also called residues.
+
+Amino acids also do not exist in an uncharged form in solution, as the carboxyl group and amino groups will be in their protonated states (with \(H^+\)), or their deprotonated states (\(H^+\) removed) depending on the pH of the solution and the $pK_a$ values of the two groups. The uncharged amino acid reflects the amino group in the deprotonated state and the carboxyl group in the protonated state. The amino acid will be charged when the amino group is protonated and the carboxyl group is deprotonated. This charged state is called a "zwitterion" and it happens at a pH of 7.
+\\
+
+A specific amino acid is recognised based on its unique R group structure. The names of amino acids can be abbreviated as 3-letters or as a single letter. For example, Glycine is abbreviated as Gly or G. Only *22* amino acids are known to be incorporated into proteins in living things.
+
+** Polypeptide
+A polypeptide is a linear chain of many amino acids with peptide bonds between consecutive amino acids. When the number of amino acids in the chain is below 10, the chain can be called a "peptide chain" or oligopeptide. A polypeptide may have tens to thousands of amino acid residues. A peptide chain with 6 amino acids is called a hexapeptide.
+
+\newpage
+
+** Proteins
+Proteins are molecules that carry out most of the activities of a living thing. They carry out functions such as:
+- Transporting material: Haemoglobin transports oxygen and carbon dioxide in our blood.
+- Immune response: Antibodies help fight diseases when we are sick.
+- Digestion: Digestive enzymes break down the food we have ingested.
+
+They are linear polymers of amino acids, which are formed when two amino acids undergo a condensation reaction between the carboxyl group of one amino acid and the amino group of another amino acid. The resulting bond is called a peptide bond and the resulting compound from the reaction is a dipeptide. The free carboxyl and amino groups of the dipeptide can be used to form more peptide bonds with other amino acids.
+\\
+
+Essentially, they are polypeptides which have been folded properly into its functional form. Sometimes, more than one chain of polypeptide is required to form a functional protein, so a protein may be composed of a single polypeptide or several polypeptides.
+
+** Haemoglobin
+Haemoglobin is a carrier of oxygen found in the blood, and it has four polypeptides giving rise to 4 subunits - two $\alpha$ and two $\beta$ subunits. The $\alpha$ and $\beta$ subunits are similar but not identical to each other. All the subunits have the same fold with 8 \(\alpha\)-helices, each containing a haeme group with an iron atom at its centre.
+
+\newpage
+
+** Lipids
+Lipids comprises a large group of diverse biological molecules in terms of structure and function. Examples include:
+- Fats
+- Oils
+- Vitamins
+- Hormones
+- Cholesterol
+
+Lipids are all insoluble in water due to having high levels of the hydrophobic atoms, carbon and hydrogen, in their structure while having low levels of polar atoms such as oxygen and nitrogen.
+
+** Triglyceride
+Triglycerides are the most common form of lipids. They are the most abundant lipids in animals and are also the major dietary lipids we ingest from animals and plants. Fats and oils are triglycerides. A triglyceride is also called triacylglycerol or triacylglyceride (TAG). A triglyceride has two parts, a glycerol molecule whose hydroxyl groups are linked through ester bonds with the carboxyl groups of three fatty acids which may be the same, or different.
+\\
+
+Triglycerides are insoluble in aqueous medium and hence they aggregate into fat droplets within the aqueous environment of animal cells. Cells carrying such fat aggregates are called adipocytes or adipose cells. The fatty acids of triglycerides in animals serve as a major and efficient form of energy storage, because of the high number of \(C - H\) bonds. Fats therefore serve well as a form of energy storage, as an alternative to carbohydrates.
+
+** Fatty acid
+Fatty acid consists of a linear hydrocarbon chain with an acidic group at one end. This acidic group is a carboxyl group. The length of the hydrocarbon chain is variable. There are over 100 fatty acids known to occur naturally and the most common ones in biological systems have an even number ranging from 14 to 20 carbon atoms.
+
+** Saturated fatty acids
+Saturated fatty acids just means that the carbon atoms of the chain are linked to the maximum number of hydrogen atoms possible, which means all the bonds between the carbons atoms will be single bonds. Palmitic acid is an example of a saturated fatty acid.
+
+** Unsaturated fatty acids
+Unsaturated fatty acids just means that there is still room to attach more hydrogen atoms to the carbon backbone, which means that some of the carbon atoms are linked with double bonds. \(\alpha\)-linolenic acid is an example of an unsaturated fatty acid.
+
+** Phospholipids
+Phospholipids are also called glycerophospholipids are formed when two of the hydroxyl groups of glycerol are linked to fatty acids through ester bonds and the third hydroxyl group is linked to a phosphate group through a phospho-ester bond, modifying the glycerol backbone to glycerol 3-phosphate. This backbone further binds with a head group substituent "X". The simplest form of "X" is a hydrogen atom. This form the most basic phospholipid, phosphatidic acid.
+\\
+
+The other members of the glyverophospholipid family are formed when $H$ is replaced by other polar groups like choline. The head group is then referred to as phosphocholine and the lipid is called phosphatidylcholine. Phosphatidylcholine is one of the most common phospholipids. Two other common phospholipids are phosphatidylserine and phosphatidylinositol, where the X is replaced with serine and inositol respectively. In phosphatidylserine and phosphatidylinositol, the 2 fatty acyl-chain like structures are abbreviated as $R1$ and $R2$. It is a standard convention unless specified.
+
+** Cardiolipin
+Cardiolipin contains two phosphatidic acid molecules and does not have a typical phospholipid structure. Cardiolipin has a glycerol backbone which has the first and third carbons each attaching to a phosphatidic acid component. Cardiolipin is found in the inner membrane of mitochondria in both animals and plants. It is called cardiolipin because it was first discovered in the heart.
+
+** Sphingolipids
+Sphingolipids refers to lipids with the sphingosine structure as their backbone. When the C1 of the sphingosine backbone is linked with a head group substituent X, and the amino group is linked to a fatty acid, a sphingolipid is formed. Ceramide is the simplest form of sphingolipid with the head group of H. Sphingomyelin is formed when X is replaced with phosphocholine, and it is an important lipid found in the myelin sheath of nerve cells.
+
+** Glycolipids
+Glycolipids are lipids that contain sugar groups, and many sphingolipids can also be classified as glycolipids based on this definition. Glycolipid is formed when one or more sugar molecules are connected to C3 of the glycerol backbone and constitue the polar head group. Digalactosyl-Diacylglycerol (DGDG), a major lipid of plant membranes, has two galactose molecules connected to the glycerol backbone at C3 of diacylglycerol.
+
+** Cholesterol
+Cholesterol does not carry any derivatives of glycerol as backbone, and it is found in all animal cell membranes and plays an important role in the regulation of membrane fluidity. Cholesterol has a polar head group which can interact with polar regions, as well as a hydrophobic tail consisting of a series of rings. Cholesterol is also the precursor (starting material) for the synthesis of some steroid hormones, including testosterone and estrogen.
+
+** Amphipathic
+Amphipathic refers to a molecule containing both non-polar hydrophobic groups and polar hydrophilic groups.
+
+** Liposome
+Liposome is a simple spherical structure with enclosed compartment formed out of a lipid bilayer, allowing the aqueous medium to be present both inside and outside the liposome.
+
+* Macromolecules of life
+The macromolecules of life, carbohydrates, nucleic acids, proteins and lipids are all carbon-based molecules that also contain hydrogen and oxygen, and may sometimes contain nitrogen, phosphate or sulfur.
+\\
+
+Carbohydrates, nucleic acids and proteins are formed by linking large numbers of subunits called monomers together. Hence, these macromolecules are polymers of specific types of monomers.
+
+** Carbohydrates
+Carbohydrates, which include sugars, starch and cellulose, play important roles as sources of energy and as structural components in most cells and organisms. The general formula of carbohydrates is \((CH_2O)_n\), where $n$ is the number of carbon atoms. Do note that the specific formula may differ from the general formula.
+
+*** Monomers
+The monomers of carbohydrates are monosaccharides like glucose. The word monosaccharide is derived from the words "mono" (in Greek) meaning single and "saccharum" (in Latin) meaning sugar.
+
+*** Functional role
+Carbohydrates are the major energy source for driving the metabolism of living organisms.
+
+*** Structural role
+Carbohydrates play important structural roles in forming the cell wall of plants and the exoskeleton of insects.
+
+** Nucleic acids
+Nucleic acids are biomolecules that are important for their roles in storage, transfer, and expression of genetic information. There are 2 kinds of nucleic acid, deoxyribonucleic acid (DNA) and ribonucleic acid (RNA). The genetic material of the cell is made of DNA and the information stored in DNA is transmitted via RNA.
+
+*** Monomers
+The monomers of nucleic acids are nucleotides like adenosine monophosphate.
+
+*** Functional role
+Both DNA and RNA has been found to play important regulatory roles in many cellular functions.
+
+*** Structural role
+Nuclei acids rarely serve a structural role at cellular level, but they serve a few important structural roles at organelle level. For example, ribosomal RNA plays a structural role in the ribosome and DNA is an important structural component of nucleosomes and the chromosome.
+
+** Proteins
+
+*** Monomers
+The monomers of proteins are amino acids like alanine.
+
+*** Functional role
+Proteins have many functional roles. A few examples include:
+- Haemoglobin transporting oxygen and carbon dioxide in our circulatory system.
+- Antibodies helping to fight diseases, providing immunity.
+- Enzymes acting as catalysts in biochemical reactions.
+- Hormones helping in homeostasis, which is the regulation of our internal environment.
+
+*** Structural role
+Proteins also have many structural roles. A few examples include:
+- Collagen found in ligaments, bones, tendons and cartilages help facilitate motion.
+- Actin and myosin filaments found in the muscles of animals help form structural support in cells.
+
+** Lipids
+
+*** Components of a lipid
+Lipids are not polymers, but most of them are large molecules made up of a number of simpler molecules with common structures. Two components of lipids are glycerol and fatty acids.
+
+*** Functional role
+Lipids in adipose cells (fat) act as energy storage while lipids in the brain act as chemical messengers. Many lipids also act as hormones to help in homeostasis and regulation of various biological functions.
+
+*** Structural role
+Lipids such as phospholipids are the main structural components of biological membranes.
+
+* Glucose
+The glucose ring exists in two forms, $\alpha$ and $\beta$, depending on the position of the hydroxyl group linked to carbon-1. These conformations are labile and hence glucose continuously flips between the $\alpha$ and $\beta$ forms. A solution of glucose is therefore the mixture of the $\alpha$ and $\beta$ forms.
+
+** Isomers of glucose
+The two most common isomers of glucose is galactose and fructose. They all have the same molecular formula, but have different structures.
+
+*** Galactose
+Galactose and glucose are stereoisomers. The groups on their respective carbone-4 atoms occupy different positions in space.
+
+\newpage
+
+*** Fructose
+Glucose and fructose are structural isomers. Unlike the 6-membered ring for glucose, fructose has a 5-membered ring, forming a different structure.
+\\
+
+Fructose also exists in $\alpha$ and $\beta$ forms at the carbon-2 position and the conformations are also labile and continuously flip.
+
+
+* Deoxyribose and ribose
+The carbon atoms of the sugar units in deoxyribose and ribose are given the suffix "prime" (represented as '), after the number, to distinguish the numbers given to carbon atoms of the sugar unit from nitrogenous base in a nucleotide structure. So the carbon atoms of deoxyribose and ribose will be denoted as 1', 2', 3', 4', and 5'.
+
+** Difference
+Ribose contains a hydroxyl ($OH$) group at the 2' position of the sugar ring while deoxyribose is missing that hydroxyl group.
+
+* Structure of a nucleotide
+In a nucleotide, the ribose or deoxyribose unit is linked to:
+- A phosphate group through the carbon at the 5' position
+- A nitrogenous base through the carbon at the 1' position.
+
+* Nitrogenous bases in nucleic acids
+
+** Purines
+Purines have *two* rings in their structures and come in two types, adenine (A), and guanine (G). They are found in both DNA and RNA.
+
+** Pyrimidines
+Pyrimidines have a *single* ring in their structures. There are three types of pyrimidines, cytosine (C), which is found in both DNA and RNA, thymine (T), which is only found in DNA, and uracil (U), which only found in RNA.
+
+\newpage
+
+* The bases and their derivatives
+The nucleotide derivatives other than the adenosine derivatives all participate in energy metabolism and are important in biosynthetic processes such as the synthesis of nucleic acids.
+\\
+
+Nucleotides such as GTP, cyclic AMP and cyclic GMP are involved in cellular communication.
+
+** Adenine (A)
+
+*** Nucleosides
+- Adenosine
+- Deoxyadenosine
+
+*** Nucleotides
+- Adenosine monophosphate (AMP)
+- Adenosine diphosphate (ADP)
+- Adenosine triphosphate (ATP)
+- Deoxyadenosine monophosphate (dAMP)
+- Deoxyadenosine diphosphate (dADP)
+- Deoxyadenosine triphosphate (dATP)
+
+Adenosine triphosphate (ATP) is a major energy currency of living organisms, while adenosine diphosphate (ADP) and adenosine monophosphate (AMP) are equally important nucleotides that work along with ATP as principal carries of chemical energy in the cell.
+
+\newpage
+
+** Guanine (G)
+
+*** Nucleosides
+- Guanosine
+- Deoxyguanosine
+
+*** Nucleotides
+- Guanosine monophosphate (GMP)
+- Guanosine diphosphate (GDP)
+- Guanosine triphosphate (GDP)
+- Deoxyguanosine monophosphate (dGMP)
+- Deoxyguanosine diphosphate (dGDP)
+- Deoxyguanosine triphosphate (dGDP)
+
+** Cytosine (C)
+
+*** Nucleosides
+- Cytidine
+- Deoxycytidine
+
+*** Nucleotides
+- Cytidine monophosphate (CMP)
+- Cytidine diphosphate (CDP)
+- Cytidine triphosphate (CDP)
+- Deoxycytidine monophosphate (dCMP)
+- Deoxycytidine diphosphate (dCDP)
+- Deoxycytidine triphosphate (dCDP)
+
+  \newpage
+
+** Thymine (T)
+
+*** Nucleosides
+- Thymidine or deoxythymidine
+
+*** Nucleotides
+- Thymidine monophosphate (TMP) or Deoxythymidine monophosphate (dTMP)
+- Thymidine diphosphate (TDP) or Deoxythymidine diphosphate (dTDP)
+- Thymidine triphosphate (TDP) or Deoxythymidine triphosphate (dTDP)
+
+Thymidine is only found in DNA. Also, the thymidine derivatives are mentioned without the deoxy- prefix in most text as they only occur in nature in association with deoxyribose, e.g. dTMP as TMP.
+
+** Uracil (U)
+
+*** Nucleosides
+- Uridine
+- Deoxyuridine
+
+*** Nucleotides
+- Uridine monophosphate (UMP)
+- Uridine diphosphate (UDP)
+- Uridine triphosphate (UDP)
+- Deoxyuridine monophosphate (dUMP)
+- Deoxyuridine diphosphate (dUDP)
+- Deoxyuridine triphosphate (dUDP)
+
+Uridine is only found in RNA. Also, the deoxy- uracil derivatives do not participate in nucleic acid production but are important metabolites.
+
+\newpage
+
+* Phosphodiester bond of nucleic acids
+To form nucleic acids, nucleotides are connected one by one through their phosphate groups. Specifically, the 5'-phosphate group of one nucleotide is covalently linked to the 3'\(-OH\) group of the next nucleotide. This bond is called the 3', 5'-phosphodiester bond. Hence, the covalent backbone of DNA (and RNA) consists of alternative deoxyribose (or ribose) and phosphate groups. This is an unchanging feature that runs through the nucleic acid molecule like a backbone, so it is often referred to as the "sugar-phosphate backbone".
+\\
+
+DNA and RNA chains are synthesised by enzymes called DNA polymerase and RNA polymerase respectively. The energy required to form a diester bond comes from the energy stored in the bond between the $\alpha$ and $\beta$ phosphates of nucleotide triphosphates. DNA or RNA polymerases catalyse the reaction that joins the $\alpha$ phosphate to the free 3' hydroxyl group at the end of a growing chain.
+
+* Directionality of nucleic acid
+in a chain of DNA or RNA, the linkage between one nucleotide and the next is asymmetric, since a phosphate joins the 3' carbon of the sugar in one nucleotide to the 5' carbon of the sugar in the next nucleotide. This allows us to discern the direction of a DNA or RNA chain, which "runs in the 5' to 3' direction". It means that the "first" nucleotide in the nucleic acid chain is the one that has a free 5' carbon, and the "last" nucleotide is the one that has a free 3' carbon. Free in this case refers to the situation whereby the $-OH$ group of that carbon has not been used to form a phosphodiester bond.
+\\
+
+The sequence of the four bases (A, G, C and T/U) should be read by following the 5' $\rightarrow$ 3' direction of nucleic acids. We refer to this sequence as the primary structure of nucleic acid.
+
+* Complementary pairing between bases
+The bases adenine and thymine (or adenine and uracil in the case of RNA) can pair up opposite each other via two hydrogen bonds. Cytosine and guanine can do likewise via three hydrogen bonds. This is known as complementary pairing.
+
+** Double-stranded DNA
+If DNA or RNA are complementary, a double-stranded region can form. DNA is typically double-stranded, with two complementary strands of DNA are paired in opposite directions by the hydrogen bonds between base A of one strand and base T of the other strand, and likewise between bases C and G.
+\\
+
+The two strands of double-stranded DNA are in an antiparallel orientation. In other words, the two strands are oriented in opposite directions. Thus, we can find the 5' end of one strand and the 3' end of the other in each piece of double-stranded DNA.
+\\
+
+Double-stranded DNA is most commonly found as a right-handed helix, which is called the "B-form". This form makes one complete turn of 360\(\degree\) every 10.5 base pairs, or every 3.5\(\si{nm}\). In this helical state, DNA presents a wider major groove, and a narrower minor groove. Many proteins can interact with specific DNA sequences by accessing the base-pairs through the major or minor grooves.
+\\
+
+Since double-stranded DNA is held together by relatively weak hydrogen bonds, we can separate double-stranded DNA into single strands to varying degrees by varying the level of heating. This process is called "DNA-melting". The regions that are rich in A-T will melt first as the A-T base pairs have only two hydrogen bonds and thus are weaker than G-C base pairs which have three.
+
+\newpage
+
+* Amino acid classification
+We can classify amino acids based on their properties, which are all different thanks to their various R groups. These properties include:
+- Bulkiness
+- Polarity
+- Hydrophobicity
+- Acidity and basicity
+- Ability to cross-link
+- Ability to form hydrogen bonds
+- Aromaticity
+- Ionizability
+
+* Parts of a polypeptide
+1. Amino (N) terminus
+2. Carboxyl (C) terminus
+3. Amino acid side groups
+4. Peptide backbone
+
+* Protein structure
+
+** Primary structure
+The primary structure of a protein is the sequence of amino acids that makes up the polypeptide chain and it is a linear molecule. Since proteins are synthesised from the N to C terminus, the sequences are conventionally written from the N to C terminus. This convention is similar to that of nucleic acid sequences which are read form the 5' to the 3' end according to the direction of sythesis.
+
+** Secondary structures
+The linear molecule of the primary structure twists and folds to form secondary structures.
+
+*** \(\alpha\)-helix
+The \(\alpha\)-helix is a type of secondary structure which is stabilised by hydrogen bonds between atoms of the backbone of the polypeptide. The amino acid units located 4 amino acids apart are held by hydrogen bonds formed between the \(N-H\) and \(C=O\) groups on the peptide backbone. The \(\alpha\)-helix is represented as a helical ribbon in protein structural diagrams.
+
+*** \(\beta\)-pleated sheet (\(\beta\)-sheet)
+The \(\beta\)-pleated sheet is formed by the hydrogen bonds between the \(N-H\) and \(C=O\) groups on the peptide backbone. The hydrogen bonds occur between segments of strands lined side by side. A \(\beta\)-pleated sheet can have multiple strands arranged in both parallel and antiparallel fashions. They are often represented as ribbons with arrow heads to indicate the direction of the strands.
+
+** Tertiary structures
+The tertiary structure of a protein refers the 3D geometric shape adopted by a single polypeptide chain. We cannot associate regular patterns to units in tertiary structures, so the units are loosely referred to as domains, motifs or modules. Each unit is a clustering of secondary structures in 3D space.
+
+** Quaternary structure
+The quaternary structure of a protein refers to the arrangement of multiple polypeptides which give rise to a functional protein complex. Each polypeptide in this case is called a subunit. The subunits can either be identical, or different.
+
+\newpage
+
+* Comparing saturated and unsaturated fatty acids
+
+** Degree of saturation
+Saturated fats refer to triglycerides that have only saturated fatty acid chains incorporated while unsaturated fats refer to triglycerides that have varying degrees of unsaturated fatty acid chains incorporated. As long as even one fatty acid chain is unsaturated, it will be classified as an unsaturated fat.
+
+** Molecular structure
+Saturated fats are linear as the chains are aligned in a straight manner while unsaturated fats have kinks at the double bonds, which cause the chain to "bend".
+
+** Molecular packing
+The linear structure of saturated fats allow the molecules to be regularly and tightly packed while the structure of unsaturated fats makes the packing of molecules irregular and less tight.
+
+** Melting point
+The melting point of saturated fats is high due to the compact molecular packing. So fats like butter and lard, which consists of saturated fatty acids, remain solid. However, the melting point of unsaturated fats is low due to the loose molecular packing and hence fats like olive oil, mustard oil, and other vegetable oils which consists of unsaturated fatty acids are often liquids at room temperature.
+
+** Origin
+Fats of animal origin are mostly solid or semi-solid due to the high content of saturated fatty acids, while plant oils are often liquid as they contain a high proportion of unsaturated fatty acids. However, palm oil and coconut oil are the two exceptions to plant oils as they contain mostly saturated fatty acids.
+
+* Other lipids
+There are many other biological molecules that can be classified under lipids, such as some vitamins such as vitamin A and vitamin D, the plant pigments such as chlorophyll and the carotenoids like \(\beta\)-carotene. These molecules and their variants have many different functions, such as cell-to-cell signalling, biosynthesis and energy processing.
+
+\newpage
+
+* Lipids with amphipathic properties
+Although lipids are not soluble, some lipids such as phospholipids, sphingolipids and glycolipids are amphipathic in nature. This means that they contain both non-polar hydrophobic groups and the polar hydrophilic groups. The hydrophobic end tends to stay away from aqueous environments whereas the hydrophilic end tends to seek aqueous environments. This property of amphipathic lipids has made them ideal components to build biological membranes in the aqueous environment of living systems.
+\\
+
+To understand the significance of amphipathic molecules, consider soaps and detergents, which are artificially produced amphipathic compounds which are able to emulsify water and oil. The function of emulsification is possible because of the presence of polar hydrophilic groups and non-polar hydrophobic groups on the molecules of soap and detergents. In living systems, however, the function of forming a biological membrane is brought about by the behaviour of amphipathic molecules when they encounter an aqueous environment.
+\\
+
+When amphipathic lipids are introduced into the aqueous medium, they form a layer on the water surface and the hydrophilic head groups will interact with water while their hydrophobic fatty acid chains will be sticking up in the air. Hence, if we stir the phospholipids into water, they will organise themselves to form structures with the hydrophilic head groups facing the water medium while the hydrophobic fatty acid chains point away from the water but towards each other. Two common structures that can form spontaneously based on the above conditions are micelles and bilayered spherical compartments or liposomes. This unique property makes amphipathic lipids ideal candidates to build cell membranes which are organised into lipid bi-layer.
+\\
+
+The major components used to build the cell membrane are phospholipids, and one can think of the cell to be a greatly extended liposome. We often refer to the biological membrane as the phospholipid-bilayer. Unlike a liposome, a cell membrane does not just consist of amphipathic lipids. It is also embedded with various proteins. In the case of nerve cells, in addition to phospholipids, there is a high concentration of sphingolipids in their membranes.
+
+* Cell membrane and its permeability
+The permeability of lipid bilayers to various molecules varies widely from almost impermeable to highly permeable, depending on the charge state, polarity, and size of the molecules. This natural discriminatory property of lipid bilayers has been exploited by nature to regulate the movement of metabolites from one compartment to another, across cell membranes.

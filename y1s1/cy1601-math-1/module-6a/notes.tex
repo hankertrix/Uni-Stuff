@@ -1,0 +1,378 @@
+% Created 2025-04-29 Tue 19:48
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{forest}
+\author{Hankertrix}
+\date{\today}
+\title{Math Module 6A Notes}
+\hypersetup{
+ pdfauthor={Hankertrix},
+ pdftitle={Math Module 6A Notes},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 30.1 (Org mode 9.7.11)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents \clearpage\section{Definitions}
+\label{sec:orga5f4149}
+
+\subsection{Differentiability of a one variable function}
+\label{sec:orgee56e35}
+\(f(x)\) is \textbf{differentiable} at \(a\) if and only if the derivative
+\[f'(a) = \lim_{h \rightarrow 0} \frac{f(a + h) - f(a)}{h} \text{ exists}\]
+
+Furthermore, in this case the graph \(y = f(x)\) has a \textbf{tangent line} at \(x = a\) given by the equation:
+\[y = f(a) + f'(a) (x - a)\]
+\subsection{Tangents of a surface}
+\label{sec:org43dc3d6}
+Consider a function \(f(x, y)\). If the below partial derivatives exist, it means that the one variable functions \(g(x) = f(x, b)\) and \(h(y) = f(a, y)\) have tangent lines at \(x = a, y = b\).
+\[f_x(a, b) = \frac{d}{dx}f(x, b)|_{x = a}\]
+\[f_y(a, b) = \frac{d}{dx}f(a, y)|_{x = b}\]
+\subsection{Tangent plane to a surface}
+\label{sec:org9f82b5f}
+A \textbf{tangent plane} should contain both tangent lines. The equation for the tangent plane, \textbf{if such a plane exists}, is:
+\[z = f(a, b) + f_x (a, b)(x - a) + f_y(a, b)(y - b)\]
+
+However, there is a tricky difference between the one variable case and several variables.
+\begin{itemize}
+\item In one variable, if the derivative \(f'(a)\) exists, then the graph \(z = f(x)\) has a tangent line at \(x = a\) and it's given by:
+\[y = f(a) + f'(a) (x - a)\]
+\item In two variables, even if \(f_x(a, b), f_y(a, b)\) both exist, the graph \(z = f(x, y)\) \textbf{might still not have a tangent plane} at \((x, y) = (a, b)\). \(f\) might even fail to be continuous there.
+\end{itemize}
+\subsubsection{Example}
+\label{sec:org6e40bd7}
+Let \(f : \mathbb{R}^2 \rightarrow \mathbb{R}\) be given by:
+\[
+f(x, y) = \begin{cases}
+\frac{2xy}{x^2 + y^2} & \text{for } (x, y) \ne (0, 0) \\
+0 & \text{for } (x, y) = (0, 0)
+\end{cases}
+\]
+
+\[
+f(x, 0) = \begin{cases}
+\frac{2x \cdot 0}{x^2 + 0^2} = 0 & \text{when } x \ne 0 \\
+0 & \text{when } x = 0
+\end{cases}
+\quad = 0 \text{ for all } x \tag{1}
+\]
+
+\begin{align*}
+f_x(0, 0) &= \frac{d}{dx} f(x, 0)|_{x = 0} \\
+&= \frac{d}{dx} 0|_{x = 0} \quad \because (1) \\
+&= 0
+\end{align*}
+
+\[
+f(0, y) = \begin{cases}
+\frac{2 \cdot 0 \cdot y}{0^2 + y^2} = 0 & \text{when } y \ne 0 \\
+0 & \text{when } y = 0
+\end{cases}
+\quad = 0 \text{ for all } y \tag{2}
+\]
+
+\begin{align*}
+f_y(0, 0) &= \frac{d}{dy} f(0, y)|_{y = 0} \\
+&= \frac{d}{dy} 0|_{y = 0} \quad \because (2) \\
+&= 0
+\end{align*}
+
+\[
+z = f(x, y) = \begin{cases}
+\frac{2xy}{x^2 + y^2} & \text{for } (x, y) \ne (0, 0) \\
+0 & \text{for } (x, y) = (0, 0)
+\end{cases}
+\]
+
+At \((0, 0)\):
+\[z = f(0, 0) + f_x(0, 0)x + f_y(0, 0)y = 0\]
+\subsection{Differentiability of a two variable function}
+\label{sec:org62a4ab2}
+Consider a function \(f(x, y)\). Saying \(f\) is differentiable at \((a, b)\), means the same as:
+\[\frac{|f(x, y) - f(a, b) - f_x(a, b) (x - a) - f_y(a, b) (y - b)|}{||(x, y) - (a, b)||} \rightarrow 0, \text{ as } (x, y) \rightarrow (a, b)\]
+
+If \(f(x, y)\) is differentiable at \((a, b)\), the graph \(z = f(x, y)\) has a tangent plane at \((x, y) = (a, b)\), given by:
+\[z = f(a, b) + f_x (a, b) (x - a) + f_y (a, b) (x - b)\]
+\subsubsection{Example}
+\label{sec:org6c666e7}
+Consider the function:
+\[
+f(x, y) = \begin{cases}
+\frac{x^3}{x^2 + y^2} & \text{for } (x, y) \ne (0, 0) \\
+0 & \text{for } (x, y) = (0, 0)
+\end{cases}
+\]
+
+Is \(f\) differentiable at \((0, 0)\)? If so, what is the tangent plane at that point?
+\begin{align*}
+&\lim_{(x, y) \rightarrow (0, 0)} \frac{|f(x, y) - f(0, 0) - f_x(0, 0) (x - 0) - f_y(0, 0) (y - 0)|}{||(x, y) - (0, 0)||} \\
+&= \lim_{(x, y) \rightarrow (0, 0)} \frac{|f(x, y) - 0 - 1 (x - 0) - 0 (y - 0)|}{||(x, y) - (0, 0)||} \\
+&= \lim_{(x, y) \rightarrow (0, 0)} \frac{\left|\frac{x^3}{x^2 + y^2} - x \right|}{\sqrt{x^2 + y^2}} \\
+\end{align*}
+
+Approaching \((0, 0)\) along \(y = x\) gives us:
+\begin{align*}
+\lim_{(x, y) \rightarrow (0, 0)} \frac{\left|\frac{x^3}{x^2 + y^2} - x \right|}{\sqrt{x^2 + y^2}} &= \frac{\left| \frac{x^3}{2x^2} - x \right|}{\sqrt{2x^2}} \\
+&= \frac{\frac{1}{2}}{\sqrt{2} |x|} \\
+&= \frac{1}{2\sqrt{2}} \neq 0
+\end{align*}
+
+So, indeed, we do not have:
+\[\lim_{(x, y) \rightarrow (0, 0)} \frac{|f(x, y) - f(0, 0) - f_x(0, 0) (x - 0) - f_y(0, 0) (y - 0)|}{||(x, y) - (0, 0)||} = 0\]
+
+I.e. \(f(x ,y)\) is \textbf{not} differentiable at \((0, 0)\).
+\subsection{The gradient vector}
+\label{sec:org810efce}
+Consider \(f : A \rightarrow \mathbb{R}, A \subset \mathbb{R}^n\), a point \(\boldsymbol{a} \in A\), and suppose all partial derivatives \(f_{x_k}(\boldsymbol{a}), k = 1, \ldots, n\) exist. The \textbf{gradient vector} \((\text{grad } f)(\boldsymbol{a})\) of \(f\) at \(\boldsymbol{a}\) is the vector:
+\[(\text{grad } f)(\boldsymbol{a}) = f_{x_1}(\boldsymbol{a}), f_{x_2}(\boldsymbol{a}), \ldots, f_{x_n}(\boldsymbol{a}) \in \mathbb{R}^n\]
+\subsubsection{Example}
+\label{sec:org69ff591}
+With \(f : \mathbb{R}^3 \rightarrow \mathbb{R}\) given by:
+\[f(x, y, z) = xy + yz + zx\]
+
+We have:
+\[(\text{grad } f)(x, y, z) =(f_x(x, y, z), f_y(x, y, z), f_z(x, y, z)) = (y + z, x + z, y + x)\]
+
+So, for example:
+\[(\text{grad } f)(1, 2, 3) = (5, 4, 3)\]
+\subsubsection{Note}
+\label{sec:org0f36c14}
+For \(f : A \rightarrow \mathbb{R}, A \subset \mathbb{R}^n\), such that all partial derivatives exist on \(A\), the gradient \((\text{grad } f)(\boldsymbol{x}) = (f_{x_1}(\boldsymbol{x}),f_{x_2}(\boldsymbol{x}), \ldots, f_{x_n}(\boldsymbol{x}))\) is a vector valued function on \(A\), i.e. \(\text{grad } f : A \rightarrow \mathbb{R}^n\). Such functions are also known as \textbf{vector fields}.
+\subsubsection{Rewriting the differentiability condition}
+\label{sec:org0692ae6}
+With \(\boldsymbol{a} = (a, b), \boldsymbol{x} = (x, y)\), we have:
+\begin{align*}
+f_x(a, b)(x - a) + f_y (a, b) (y - b) &= (f_x(a, b), f_y(a, b)) \cdot (x - a, y - b)
+&= (\text{grad } f (\boldsymbol{a}) (\boldsymbol{x} - \boldsymbol{a}))
+\end{align*}
+
+Hence, the differentiability condition:
+\[\lim_{(x, y) \rightarrow (a, b)} \frac{|f(x, y) - f(a, b) - f_x(a, b) (x - a) - f_y (a, b) (y - b)|}{||(x, y) -(a, b)||} = 0\]
+
+Can be rewritten as:
+\[\lim_{\boldsymbol{x} \rightarrow \boldsymbol{a}} \frac{|f(\boldsymbol{x}) - f(\boldsymbol{a}) - (\text{grad } f)(\boldsymbol{a}) (\boldsymbol{x} - \boldsymbol{a})}{||\boldsymbol{x} - \boldsymbol{a}||} = 0\]
+
+This expression also makes sense for a function \(f\) of \(n\) variables, regardless of \(n\).
+\subsection{Vector field}
+\label{sec:orgda1a329}
+For \(A \subset \mathbb{R}^n\), a function \(\boldsymbol{F} : A \rightarrow \mathbb{R}^n\) is called a \textbf{vector field} in \(\mathbb{R}^n\).
+\subsubsection{Example}
+\label{sec:org9bcc191}
+Let \(f : \mathbb{R}^2 \rightarrow \mathbb{R}\) be given by:
+\[f(x, y) = x^2 + y^2\]
+
+Then \((\text{grad } f) : \mathbb{R}^2 \rightarrow \mathbb{R}^2\) is given by:
+\[F(x, y) = (\text{grad } f)(x, y) = (2x, 2y)\]
+\[F(0, 0) = (0, 0)\]
+\[F(1, 0) = (2, 0)\]
+\[F(-1, -1) = (-2, -2)\]
+\subsection{Differentiability in \(n\) variables}
+\label{sec:org247d7f0}
+For \(f : A \rightarrow \mathbb{R}, A \subset \mathbb{R}^n\), saying that \(f\) is \textbf{differentiable} at \(\boldsymbol{a} \in A\) means the same as:
+\[\lim_{\boldsymbol{x} \rightarrow \boldsymbol{a}} \frac{|f(\boldsymbol{x}) - f(\boldsymbol{a}) - (\text{grad } f)(\boldsymbol{a})(\boldsymbol{x} - \boldsymbol{a})}{||\boldsymbol{x} - \boldsymbol{a}||} = 0\]
+\subsubsection{Differentiability implies continuity}
+\label{sec:org7677972}
+Consider \(f : A \rightarrow \mathbb{R}, A \subset \mathbb{R}^n\), If \(f\) is differentiable at \(\boldsymbol{a} \in A\), then \(f\) is continuous at \(\boldsymbol{a}\).
+\subsubsection{A sufficient condition for differentiability}
+\label{sec:org8db3091}
+Consider \(f : A \rightarrow \mathbb{R}, A \subset \mathbb{R}^n\). If there exists \(\delta > 0\) such that all partial derivatives of \(f\) are continuous on \(\{x \in \mathbb{R}^n: ||\boldsymbol{x} - \boldsymbol{a} < \delta\}\), then \(f\) is differentiable at \(\boldsymbol{a}\).
+\subsection{Tangents in \(n\) variables}
+\label{sec:org01ad9a0}
+For a function \(f : A \rightarrow \mathbb{R}, A \subset \mathbb{R}^n\), differentiable at \(\boldsymbol{a} \in A\), its \textbf{tangent space} at \(\boldsymbol{x} = \boldsymbol{a}\) is the graph of the function:
+\[T(\boldsymbol{x}) = f(\boldsymbol{a}) + (\text{grad } f)(\boldsymbol{a}) \cdot (\boldsymbol{x} - \boldsymbol{a})\]
+\subsection{Chain rule}
+\label{sec:orgbe65322}
+Consider \(\boldsymbol{g} : A \rightarrow \mathbb{R}^n, A \subset \mathbb{R}, f : B \rightarrow \mathbb{R}, B \subset \mathbb{R}^n\). Suppose \(\boldsymbol{g}\) is differentiable at \(a \in A\) and suppose \(f\) is differentiable at \(\boldsymbol{g}(a)\). Then:
+\[\frac{d}{dt} f(\boldsymbol{g}(t))|_{t = a} = (\text{grad } f)(\boldsymbol{g}(a)) \cdot \boldsymbol{g}'(a)\]
+
+Let's say \(n = 2\), so with:
+\[(x, y) = \boldsymbol{g}(t), \quad \text{and } z = f(x, y) = f(\boldsymbol{g}(t))\]
+
+The theorem tells us that:
+\begin{align*}
+\frac{dz}{dt} &= \frac{d}{dt}f(\boldsymbol{g}(t)) \\
+&= (\text{grad } f)(\boldsymbol{g}(t)) \cdot \boldsymbol{g}'(t) \\
+&= \left(\frac{\partial z}{\partial x}, \frac{\partial z}{\partial y} \right) \cdot \left( \frac{dx}{dt}, \frac{dy}{dt} \right) \\
+&= \frac{\partial z}{\partial x} \frac{dx}{dt} + \frac{\partial z}{\partial y} \frac{dy}{dt}
+\end{align*}
+\subsubsection{Example}
+\label{sec:org39aec18}
+Let:
+\[z = f(x, y) = x^2 y, \quad (x, y) = \boldsymbol{g}(t) = (\sin t, t^2)\]
+
+By the chain rule:
+\begin{align*}
+\frac{dz}{dt} &= \frac{\partial z}{\partial x} \frac{dx}{dt} + \frac{\partial z}{\partial y} \frac{dy}{dt} \\
+&= 2xy \cdot \cos t + x^2 \\
+&= 2t^2 \sin t \cos t + 2t \sin^2 t
+\end{align*}
+
+\newpage
+\subsubsection{Chain rule as a procedure}
+\label{sec:org453e9e8}
+Let:
+\[w = f(x, y, z), \quad (x, y, z) = \boldsymbol{g}(t)\]
+
+By the chain rule:
+\[\frac{dw}{dt} = \textcolor{red}{\frac{\partial w}{\partial x} \frac{dx}{dt}} + \textcolor{blue}{\frac{\partial w}{\partial y} \frac{dy}{dt}} + \textcolor{ForestGreen}{\frac{\partial w}{\partial z} \frac{dz}{dt}}\]
+
+We can look at each term as a path in the tree below:
+
+\begin{center}
+\begin{forest}
+[w
+[x, edge = red, color = red
+[t, edge = red, color = red]]
+[y, edge = blue, color = blue
+[t, edge = blue, color = blue]]
+[z, edge = ForestGreen, color = ForestGreen
+[t, edge = ForestGreen, color = ForestGreen]]]
+\end{forest}
+\end{center}
+\subsection{Laplace equation}
+\label{sec:orgc226f37}
+Consider a function \(f(x, y)\). The Laplace equation is:
+\[f_{xx} + f_{yy} = 0\]
+
+Or for a 3 variable function \(f(x, y, z)\):
+\[f_{xx} + f_{yy} + f_{zz} = 0\]
+
+A function satisfying the Laplace equation is said to be \textbf{harmonic}.
+
+\newpage
+\subsection{Rate of change}
+\label{sec:orgac313f5}
+For a real valued function \(f(x, y)\):
+\[f_x(a, b) = \frac{d}{dx} (x, b)|_{x = a} \text{ measures the rate of change of } f \text{ as } x \text{ increases}\]
+\[f_y(a, b) = \frac{d}{dx} (a, y)|_{y = b} \text{ measures the rate of change of } f \text{ as } y \text{ increases}\]
+
+We can rewrite the above as:
+\begin{align*}
+f_x(a, b) &= \frac{d}{dx} (x, b)|_{x = a} \\
+&= \frac{d}{dt} f(a + t, b)|_{t = 0} \\
+&= \frac{d}{dt} f((a, b) + t(1, 0))|_{t = 0}
+\end{align*}
+
+\begin{align*}
+f_y(a, b) &= \frac{d}{dy} (a, y)|_{y = b} \\
+&= \frac{d}{dt} f(a, b + t)|_{y = b} \\
+&= \frac{d}{dt} f((a, b) + t(0, 1))|_{t = 0}
+\end{align*}
+
+\newpage
+\subsection{Directional derivative}
+\label{sec:org03a83dc}
+Consider \(f : A \rightarrow \mathbb{R}, A \subset \mathbb{R}^n\), a point \(\boldsymbol{a} \in A\), and a \textbf{unit vector} \(\boldsymbol{u} \in \mathbb{R}^n\). The \textbf{directional derivative} \(D_{\boldsymbol{u}} f(\boldsymbol{a})\) of \(f\) at \(\boldsymbol{a}\) in the direction \(\boldsymbol{u}\), provided the derivative exists, is defined as:
+\[D_{\boldsymbol{u}} f(\boldsymbol{a}) = \frac{d}{dt} f(\boldsymbol{a} + t\boldsymbol{u})|_{t = 0}\]
+\subsubsection{Example}
+\label{sec:orgd7cf43c}
+For \(f(x, y) = x^2 y\), find the directional derivative of \(f\) at \((2, 1)\) in the direction of \((1, 1)\).
+
+
+A unit vector in the direction of \((1, 1)\) is:
+\[\frac{1}{||(1, 1)||} (1, 1) = \left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \right) = \boldsymbol{u}\]
+
+\begin{align*}
+D_{\boldsymbol{u}} f(2, 1) &= \frac{d}{dt} f((2, 1) + t \left. \left(\frac{1}{\sqrt{2}}), \frac{1}{\sqrt{2}} \right) \right|_{t = 0} \\
+&= \frac{d}{dt} f \left. \left(2 + \frac{t}{\sqrt{2}}, 1 + \frac{t}{\sqrt{2}} \right) \right|_{t = 0} \\
+&= \frac{d}{dt} \left. \left(2 + \frac{t}{\sqrt{2}} \right)^2 \left(1 + \frac{t}{\sqrt{2}} \right) \right|_{t = 0} \\
+&= \frac{d}{dt} \left. \left(2 \left(2 + \frac{t}{\sqrt{2}} \right) \cdot \frac{1}{\sqrt{2}} \left( 1 + \frac{t}{\sqrt{2}} \right) + \left( 2 + \frac{t}{\sqrt{2}} \right)^2 \cdot \frac{1}{\sqrt{2}} \right) \right|_{t = 0} \\
+&= 2 \cdot 2 \cdot \frac{1}{\sqrt{2}} \cdot 1 + 2^2 \cdot \frac{1}{\sqrt{2}} \\
+&= \frac{8}{\sqrt{2}} \\
+&= 4 \sqrt{2}
+\end{align*}
+\subsection{Directional derivatives of differentiable functions}
+\label{sec:org8c86e50}
+Consider \(f : A \rightarrow \mathbb{R}, A \subset \mathbb{R}^n, \boldsymbol{a} \in A\), and a unit vector \(\boldsymbol{u} \in \mathbb{R}^n\). If f is \textbf{differentiable} at \(\boldsymbol{a}\), then:
+\[D_{\boldsymbol{u}} f(\boldsymbol{a}) = (\text{grad } f) (\boldsymbol{a}) \cdot \boldsymbol{u}\]
+\subsubsection{Example}
+\label{sec:org54d5b43}
+For \(f(x, y) = x^2 y\), find the directional derivative of \(f\) at \((2, 1)\) in the direction of \((1, 1)\).
+
+
+Unit vector in the direction of \((1, 1)\) is \(\boldsymbol{u} = (\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}})\).
+
+\[f_x(x, y) = 2xy, \quad f_y(x, y) = x^2 \text{ are both continuous.}\]
+
+Hence, \(f\) is differentiable.
+\begin{align*}
+D_{\boldsymbol{u}} f(2, 1) &= (\text{grad } f)(2, 1) \cdot \boldsymbol{u} \\
+&= (4, 4) \cdot \left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \right) \\
+&= \frac{8}{\sqrt{2}} \\
+&= 4 \sqrt{2}
+\end{align*}
+\subsection{Maximum/minimum and zero directional derivative}
+\label{sec:org523e9d8}
+Suppose \(f(x_1, \ldots, x_m)\) be differentiable at \(\boldsymbol{a} \in \mathbb{R}^n\), and suppose \((\text{grad } f)(\boldsymbol{a}) \ne \boldsymbol{0}\). Consider the directional derivative \(D_{\boldsymbol{u}} f(\boldsymbol{a})\) for different unit vector \(\boldsymbol{u}\).
+
+\begin{enumerate}
+\item The maximum value of \(D_{\boldsymbol{u}}f(\boldsymbol{a})\) is \(||\text{grad } f(\boldsymbol{a})||\) and is attained when \(\boldsymbol{u}\) points in the direction of \(\text{grad } f(\boldsymbol{a})\).
+\item The minimum value of \(D_{\boldsymbol{u}} f(\boldsymbol{a})\) is \(||- \text{grad } f(\boldsymbol{a})||\) and is attained when \(\boldsymbol{u}\) points in the opposite direction of \(\text{grad } f(\boldsymbol{a})\).
+\item \(D_{\boldsymbol{u}}f(\boldsymbol{a}) = 0\) if and only if \(\boldsymbol{u}\) is orthogonal to \(\text{grad } f(\boldsymbol{a})\).
+\end{enumerate}
+\subsection{Tangent space}
+\label{sec:org02d4ede}
+Suppose \(f : A \rightarrow \mathbb{R}, A \subset \mathbb{R}^n\) is a differentiable at \(\boldsymbol{a}\) and with \((\text{grad } f)(\boldsymbol{a}) \ne \boldsymbol{0}\). Let \(c = f(\boldsymbol{a})\) and let \(S\) be the level set:
+\[S = \{\boldsymbol{x} \in A : f(\boldsymbol{x}) = c\}\]
+
+With the \textbf{tangent space} of \(S\) at \(\boldsymbol{a}\), we mean the set:
+\[T = \{\boldsymbol{x} \in \mathbb{R}^n : (\text{grad } f)(\boldsymbol{a})(\boldsymbol{x} - \boldsymbol{a}) = 0\}\]
+\subsubsection{Example}
+\label{sec:orgabbff82}
+Let \(S\) be the surface given by the equation:
+\[x^3 + y^2 - z^2 = 0\]
+
+And let \(\boldsymbol{a} = (2, 1, 3)\). Note that \(\boldsymbol{a} \in S\). What is the tangent space for \(S\) at \(\boldsymbol{a}\)?
+
+
+Let:
+\[f(x, y, z) = x^3 + y^2 - z^2\]
+
+\(S\) is a level surface of \(f\):
+\[S: f(x, y, z) = 0\]
+
+Hence, a normal vector for \(S\) at \(\boldsymbol{a}\) is \((\text{grad } f)(\boldsymbol{a})\):
+\[(\text{grad } f)(x, y, z) = (3x^2, 2y, -2z)\]
+
+So \((\text{grad} f)(2, 1, 3) = (12, 2, -6)\). An equation for the tangent space (tangent plane) at \(\boldsymbol{a}\) is:
+\begin{align*}
+12(x - 2) + 2(y - 1) - 6(z - 3) &= 0 \\
+6x + y - 3z &= 4
+\end{align*}
+\section{Property of tangents in one variable}
+\label{sec:org2b9ac7d}
+In \textbf{one variable}, let's look at the size of the \textbf{absolute error} compared to \(|x - a|\) when we approximate \(y = f(x)\) with its tangent line:
+\[y = f(a) + f'(a)(x - a)\]
+
+We get:
+\begin{align*}
+\frac{\text{absolute error}}{|x - a|} &= \frac{|f(x) - f(a) - f'(a) (x - a)|}{|x - a|} \\
+&= \left| \frac{f(x) - f(a)}{x - a} - f'(a) \right| \rightarrow 0, \text{ as } x \rightarrow a
+\end{align*}
+\subsection{Generalising to two variables}
+\label{sec:org5e3458b}
+Consider a function \(f(x, y)\) of \textbf{two} variables. We approximate it near \((x, y) = (a, b)\) with the plane:
+\[z = f(a, b) + f_x(a, b) (x - a) + f_y (a, b) (y - b)\]
+
+For this plane to really be a \textbf{tangent plane}, we need the same behaviour:
+\[\frac{\text{absolute error}}{||(x, y) - (a, b)||} \rightarrow 0, \text{ as } (x, y) \rightarrow (a, b)\]
+
+I.e.
+\[\frac{|f(x, y) - f(a, b) - f_x(a, b) (x - a) - f_y(a, b) (y - b)|}{||(x, y) - (a, b)||} \rightarrow 0, \text{ as } (x, y) \rightarrow (a, b)\]
+\end{document}

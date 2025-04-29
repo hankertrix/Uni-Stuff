@@ -1,11 +1,9 @@
-#+TITLE: Kinematics Lecture Notes
+#+TITLE: Kinematics Notes
 #+AUTHOR: Hankertrix
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
 #+LATEX_HEADER: \usepackage{siunitx, array, tikz}
 #+LATEX_HEADER: \usetikzlibrary{angles, calc, quotes}
-
-\newpage
 
 * $\text{Syst\`eme}$ Internationale (SI) $\text{d'unit\'es}$ (not very important)
 

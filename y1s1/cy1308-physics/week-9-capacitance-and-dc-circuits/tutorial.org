@@ -1,10 +1,8 @@
-#+TITLE: Physics Capacitance & DC Circuits Tutorial
+#+TITLE: Capacitance & DC Circuits Tutorial
 #+AUTHOR: Hankertrix
 #+STARTUP: showeverything
 #+OPTIONS: toc:2
 #+LATEX_HEADER: \usepackage{siunitx}
-
-\newpage
 
 * Question 1
 Finding the potential at the surface of the smaller conducting sphere:

@@ -4,8 +4,6 @@
 #+OPTIONS: toc:2
 #+LATEX_HEADER: \usepackage{chemfig, siunitx}
 
-\newpage
-
 * Definitions
 
 ** NMR spectroscopy

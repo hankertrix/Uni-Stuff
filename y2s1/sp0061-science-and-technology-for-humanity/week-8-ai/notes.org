@@ -1,0 +1,240 @@
+#+TITLE: SP0061 Science & Tech for Humanity Week 8 Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** Recommendation systems
+Recommendation systems recommend content or information that users will be the most likely to watch.
+
+*** Person-to-person collaborative filtering
+- Collaborative filtering is an algorithm that leverages the historical data of various users.
+- Users who share similar profiles would likely share similar preferences and recommendations.
+
+*** Data collection
+- Primary data includes asking the user to:
+  - Search for items
+  - Rank a collection of items
+  - Rate items
+  - Select one out of two items as being favoured
+  - Create a list of items that are favoured
+- Secondary data includes:
+  - Analysing users' social network
+  - Analysing users' viewing items
+  - Keeping records of purchased items
+  - Tracking users' browsing history
+  - Tracking users' social networks' browsing history
+
+*** Challenges
+- Cold start, which refers to new users who are *unmapped* to existing databases. A few attempts to obtain data about new users are necessary before the recommendation system can become effective and provide relevant recommendations.
+- Sparsity and scalability. With a continually growing number of items, inevitably, most of them will only have a few ratings.
+
+*** Item-to-item collaborative filtering
+- The algorithm's online component looks up similar items that a user has purchased, and *scales independently* of the number of customers or number of items in the catalogue.
+- Item-to-item collaborative filtering works remarkably well even with *limited users and items*.
+
+** Maintenance types
+
+*** Reactive
+Reactive maintenance fixes the problem after a breakdown occurs.
+
+*** Preventive
+Preventive maintenance carries out maintenance well in advance of the item breaking down.
+
+*** Predictive
+Predictive maintenance carries out maintenance optimally, based on data.
+
+
+* Applications of AI
+- Almost every industry has an application for AI.
+- Steven Hawking said that AI may one-day end humanity.
+- However, almost every company today is looking at AI and thinking about how they can leverage it.
+- They are also thinking about how they can enable it for applications which allow them to become more efficient and effective.
+- Big tech companies like Google, YouTube, Netflix and Amazon have simplified our lives and allowed us access to information which we never had before.
+- We can buy anything we desire on Amazon, watch any kind of show we want (well not really any more) on Netflix, find something on Google, and kill some time by watching YouTube videos.
+- Amazon lists as many as 350 million items, with 12 million of them owned by Amazon and the remaining from Amazon Marketplace sellers, but we can still find what we are looking for (this is a whole lot of corporate sucking up to big tech ah).
+- Netflix carries about 17 - 18 thousand titles, and Netflix users spend 18 minutes browsing before selecting their shows.
+- Google serves 8.5 billion searches every day, and it has the difficult task of showing the user something which is the most relevant out of everything on the entire internet.
+
+** Recommendation systems
+- Recommendation systems are one of the biggest applications of artificial intelligence.
+- Without recommendation systems, it would be impossible, or extremely difficult to find the shows that we like on Netflix (NOT! There's a search button for God's sake).
+- The same applies to Amazon as well.
+- The recommendation system uses an algorithm called collaborative filtering.
+- If we have to recommend something to a user, like a show in the case of Netflix, we take a look at its database, find all the people who are similar to the user, and then look at what they liked.
+- If they like something, it is likely that the user would also like something as they are similar in terms of their profile.
+- Collaborative filtering just means filtering a database to find people who are similar to a target user, and then recommending to the target user what these people like.
+- The secret sauce of this algorithm is the data that is collected about users.
+- Primary data refers to asking the users directly to do something that reveals their preferences, like searching for an item or rating a particular item.
+- Secondary data refers to data coming from external sources, like social networks and browsing history.
+- Combining all of this data allows companies to build a comprehensive profile of individuals, and the more comprehensive the profile, the better the matching and hence the recommendations are better.
+- Netflix's recommendation system was called Cinematch which uses "straightforward statistical linear models with a lot of data conditioning" and scores with a root mean squared error (RMSE) of 0.9514.
+- In comparison, a trivial algorithm that predicts an average grade for each movie, which is learned from its training data, produces a root mean squared error (RMSE) of 1.0540.
+- A Netflix viewer usually loses interest after 60 - 90 seconds of scrolling through 10 - 20 titles.
+- They either find something useful, or there is a risk that they eventually abandon the service.
+- A 2015 study reported that the personalised recommendation system for Netflix allowed it to save $1 billion annually despite all its limitations.
+- Netflix does it by recording if people find what they are interested in, as these people won't be frustrated and are more likely to stay with Netflix.
+- It also does this by knowing what particular shows people might like.
+- This way, Netflix can have the most efficient number of movies in its database and not have to pay for too many licences, which allows them to save on the cost of movies.
+- Netflix today has 210 million subscribers and wanted to improve its recommendation system, so they sponsored a competition from 2006 to 2009, with a grand prize of $1 million for a team that could take a dataset of 100 million movie ratings and significantly beat Netflix's exiting Cinematch recommendation system.
+- If sparked intense research in building recommendation systems and the prize was won by BellKor's Pragmatic Chaos on 21st September 2009.
+- However, Netflix never implemented Pragmatic Chaos as the technology had changed by that time, but it still showed that Netflix was willing to improve.
+- Collaborative filtering has a few challenges, such as when a user is new.
+- The recommendation system doesn't know enough about the user, and cannot create a full profile, which prevents it from finding other similar users.
+- This problem is called the cold start problem.
+- The other challenge is due to users not indicating their preferences, as even if the target user has a similar profile to these other groups of users, without this group of users indicating their preferences, the recommendation system still cannot push relevant recommendations to the target user.
+- Amazon's recommendation system uses item-to-item collaborative filtering, which means that the system will find items that you have bought before and search for similar items to recommend to you.
+- Collaborative filtering can be based on people, or can be based on items, the latter being more robust than the former.
+- Nowadays, both Netflix and Amazon do item-to-item collaborative filtering as well as person-to-person collaborative filtering.
+- This way of doing collaborative filtering has a couple of advantages, as it doesn't depend on the customers and uses items in the database, which are easy to profile.
+- It also works with limited users and items as it works independently of the number of users.
+- The digital world is all about having too much stuff.
+
+** Solving infrastructure challenges
+- In Singapore, there are a lot of delays, crowds and trains breaking down with its MRT system.
+- SMRT spent $425 million on maintenance and repairs, which accounted for 71% of revenue from fares, up from just 45% in 2016.
+- With mature and ageing rail systems, the maintenance costs inevitably pile up.
+- According to the International Air Transport Association (IATA) in 2020, global maintenance, repair and overhaul costs were valued at $50 billion, which is 10.5% of airline operating costs.
+- Singapore Airlines Engineering Company (SIAEC) recently signed a 10-year maintenance deal with Rolls-Royce, which is the aircraft service provider for maintenance, repair and overhaul.
+- Infrastructure requires regular maintenance work, which involves repairs, part replacements and functionality testing.
+- In the past, experienced engineers and technicians monitored and recorded when parts tend to wear off, and when critical upkeep needs to be carried out.
+- For such critical functionalities, businesses and governments cannot afford to act only *after* a breakdown occurs.
+- Thus, for such critical functionalities, they are inspected and serviced well in advance.
+- However, costs are involved, as unnecessarily frequent replacements of hardware may become wasteful, and hence a balance is needed.
+- There are three types of maintenance, the first being reactive, which is to fix the problem after the breakdown occurs.
+- For example, my TV breaks down, so I call a technician to fix it, but that also means I can't watch TV for the next two days.
+- Preventive maintenance is maintenance done in advance that may or may not be necessary.
+- Predictive maintenance is to carry out maintenance when it is needed, by looking at data.
+- An example is maintaining a car, which has a rule of thumb where you should be servicing a car every 10,000 miles or every 6 months, whichever comes earlier.
+- However, we can instead just service the car when it actually needs services by collecting data about the car and processing it through an algorithm.
+- With the abundance of data, several AI methods have been implemented to better predict when critical parts of an infrastructure or industrial machinery require replacements or repair.
+- In the air travel industry, 3 billion people travel annually by planes, with this figure projected to triple by 2030.
+- A grounded aircraft can cost approximately $10k an hour, and hence predictive maintenance is a key area in which airlines and associated companies invest heavily to ensure that such wastage is minimised.
+- Recently, Singapore Airlines has formed a collaboration with A*STAR in this area.
+- The collaboration aims to develop AI solutions to enhance engineering productivity, customer experience, and cost-effectiveness of airline operations using predictive analytics.
+- It is a 3-year project and is presently in the development phase.
+- With the vast data available to them, state-of-the-art deep learning can predict and therefore *reduce flight delays*.
+- A key cause of delays is aircraft component failures, which is where predictive maintenance can help.
+- The Smart Automated Aircraft Visual Inspection System (SAAVIS) program by A*STAR organises and synergises expertise from computer vision, AI and robotics, to develop new algorithms.
+
+** Image recognition
+- Advances in AI have tremendously boosted the accuracy of image recognition.
+- A 2015 deep convolutional neural network (CNN) architecture won first place in the ImageNet Large Scale Visual Recognition Challenge (ILSVRC) with an error rate of 3.57%.
+- In contrast, humans have an error rate of 5.1% on the same task.
+- In the past, machines struggled to recognise images, as the input given to them were arrays of numbers from 0 to 255, representing the intensities of *pixels*.
+- In contrast, our human brains can identify features of perceived images, like *edges, shapes, shades, and shadows*, which can allow us to easily identify them.
+- The CNN deep neural network architecture has this basic idea of *feature identification*.
+- In image recognition, the input is made up of pixels, which are an array of numbers denoting the intensity of red, green and blue.
+- These inputs are processed to identify images using a deep learning architecture that is based on convolutional neural networks (CNN).
+
+*** Uses of image recognition
+- Object identification
+- Recognition of handwritten texts
+- Facial recognition
+- Photo enhancements
+- Autonomous vehicles
+- Robotics
+- Drone technology
+
+*** Iris and facial biometrics for immigration clearance at all checkpoints in Singapore
+- Fingerprint verification has been implemented in Singapore since 2006.
+- With improved image recognition, iris scanning started to roll out in 2017. This alleviated fingerprint issues due to ageing, scarring or dryness.
+- Iris scanning uses 250 feature points for matching, compared to around 100 for fingerprints.
+- Human iris patterns are more distinctive, with a greater degree of variation, making them more robust for identification.
+- Iris matching has an accuracy of 90% - 99%. In live iris scanning, eyeball movements are detected, eliminating possible fooling of scanning using a picture of the eye. This also makes it impossible to scan a dead person's iris, as after death, the pupil expands and the iris area is too narrow for scanning.
+- This significantly speeds up immigration clearing processes and reduces manual labour.
+
+*** Airpoly vision
+- A "visionary" app that assists the *visually impaired, colour-blind, or blind individuals*.
+- It is capable of identifying texts, food, plants, animals, etc, including *facial identification* of known identities.
+- After the object is identified, the app then displays or reads out the object's identity.
+
+*** Agriculture
+- Livestock farming, fish farming, and fruit and vegetable yields have benefitted greatly from the use of computer vision.
+- These live trackers allow for the management of livestock to ensure animal welfare, monitor animal behaviour, tackle diseases, as well as promote better facility design.
+- In fish farms, computer vision tracking provides automated mechanisms for feeding and fish count.
+- For fruits and vegetables, yield estimates via image recognition allow pre-harvest planning by farmers.
+- Overall, computer vision permits better agricultural yield predictions which minimises wastage.
+
+*** Defect detection
+- In a production line, image recognition technology has proliferated in quality control and defect detection.
+- Large-scale manufacturing plants require massive checks on their products. Without the use of AI to do this, a large equivalent human workforce would be necessary.
+- An example of this is a raft of defect detection applications by Foldsolutions, that inspect cookies, bakery products, meat, seafood, dairy products, and agro products.
+
+*** Image generation
+- AI can also be used to generate realistic photos of non-existent humans.
+- It can even generate non-existent videos with audio, which is of course, excellent for creating deep fakes.
+
+** AI in healthcare
+
+*** Overview
+- AI technologies allow streamlining *both administrative* and *clinical healthcare processes*.
+- The scope of applications of AI healthcare is wide, including diagnostics, operational technologies, and wellness.
+
+*** AI-assisted robotic surgery
+- In surgery, AI-assisted robotics can analyse data from pre-operation medical records, to physically *guide* the surgeon's instruments in an operation.
+- Additionally, using data from actual surgeries, AI can help to *formulate* new surgical techniques.
+- A study found that AI-assisted robotic technique allowed a 5-fold reduction in surgical complications.
+
+*** Automated imaging diagnosis
+- AI can undertake medical imaging diagnosis.
+- NYU Langone Health researchers illustrated that automated analysis would find and match lung nodules from CT images around *62% to 97% faster than a regular panel of radiologists*.
+- It is estimated that such AI-generated efficiencies in image analysis may save $3 billion annually by *freeing up radiologists to focus on reviews requiring greater judgement*.
+
+*** Dosage error reduction
+- Drug dosage determination has traditionally been challenging.
+- Dosing errors lead to 37% of preventable medical errors.
+- A landmark paper presented a mathematical formula using AI to accurately dictate the optimal dosage of immunosuppressant drugs for organ patients.
+- Such estimations using AI could produce $16 billion in annual savings.
+
+*** Other applications in healthcare
+- Virtual nursing assistants that help address the shortage in medical labour.
+- Connected machines that provide connectivity amongst various medical equipment used in tandem.
+- Clinical trial participation, which integrates a plethora of clinical trial data to accelerate data and outcome-based approaches.
+- Preliminary diagnosis, which improves the interpretability of data to enhance the accuracy of medical diagnoses.
+- Cybersecurity, by protecting confidential healthcare data.
+
+* Generative adversarial networks (GANs)
+A generative adversarial network consists of two neural networks, a generator and a discriminator.
+
+** Generator
+- The generator aims to produce a realistic output.
+- This generated output is evaluated by the discriminator, so it strives to fool the discriminator by trying to produce realistic output.
+
+** Discriminator
+The discriminator's job is to discern whether a given sample is real or fake (generated by the generator).
+
+** Generator competes with the discriminator (hence adversarial)
+- These two networks compete to outsmart one another.
+- Generator gets better at producing realistic output.
+- Discriminator gets better at discerning between real and fake (generated) output.
+
+** The trained generator
+Ultimately, we have a *trained generator* that is capable of generating highly realistic output.
+
+** Applications
+
+*** Image customisation
+GANs allow for subtle customisation of images based on certain desired features.
+
+*** Rectify corrupted or damaged photos
+GANs can rectify corrupted or damaged photos very well.
+
+*** Domain adaptation
+GANs can very easily adapt an image from one art style to another.
+
+*** Super-resolution images
+GANs are very effective at upscaling low-resolution images to high-resolution images without artefacts introduced by traditional methods.
+
+*** Denoising
+GANs can remove statistical noise from data, like in medical imaging.
+
+*** Use in healthcare
+- In healthcare, the ability to generate super-resolution images of medical imaging as well as denoising is highly useful.
+- Scans like X-ray and CT scans would expose patients to radiation.
+- Being able to reduce radiation exposure but still obtaining critical information, without distorting the original scans would be valuable.
+
+*** GAN as a commercial service
+- Some companies are providing access to their infrastructure for data handling, and model training with GAN as a service.
+- For example, [[https://runwayml.com][Runway AI]].
