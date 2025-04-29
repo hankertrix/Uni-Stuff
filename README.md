@@ -20,23 +20,12 @@ Finally, inside those folders, you will find my notes and tutorials.
 
 ## What's the difference between a `cheat-sheet` and `notes`?
 
-A cheat sheet is basically just a compilation of all the things
-I find important inside the lecture slides for a topic.
-So things like definitions and important formulas
-will be included in the cheat sheet,
-as well as a few explanations and examples that
-I find important for my understanding of something.
-Notes are far more comprehensive as they include everything
-that is in the lecture slides for a topic,
-which means all the examples and explanations are included,
-and you can use the notes to study instead of watching the lecture
-or reading the lecture slides.
-You can't really do that with a cheat sheet
-since it only contains a few explanations and examples.
+A `cheat-sheet` refers to the reference material that is brought to
+a final exam, usually a double-sided A4 cheat sheet that contains
+formulas and important points for the exam.
 
-After the notes for maths module 1B is uploaded,
-I will no longer be doing notes as it takes far too much time.
-Instead, I will be doing cheat sheets for all topics after maths module 1B.
+Notes are mostly compilations of the content within the lectures,
+and usually can be studied as a standalone material.
 
 ## There are multiple different files with the same name, which file should I be viewing?
 
