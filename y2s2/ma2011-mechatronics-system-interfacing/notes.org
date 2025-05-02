@@ -1,0 +1,3810 @@
+#+TITLE: MA2011 Mechatronics System Interfacing Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{siunitx}
+#+LATEX_HEADER: \usepackage{tabularx}
+#+LATEX_HEADER: \usepackage{cancel}
+#+LATEX_HEADER: \setlength{\parindent}{0em}
+
+* Definitions
+
+** Measurement system
+A measurement system consists of 3 components, a transducer, a signal processor and a recorder.
+
+*** Transducer
+A transducer is a device that usually converts a physical quality into a time-varying voltage, called an analogue signal.
+
+*** Signal processor
+A signal processor is a device that can modify the analogue signal.
+
+*** Recorder
+A recorder is a device that displays or records the signal.
+
+*** Input
+The input in a measurement system is the physical quantity to be measured.
+
+*** Output
+The output in a measurement system is usually the output of the transducer transforming the input into a form compatible with the processor to be processed.
+
+*** Difference
+The difference in a measurement system is usually the difference in the input from the output.
+
+*** Characterisation
+A good measurement system is characterised by:
+- Phase linearity
+- Amplitude linearity
+- Adequate bandwidth
+
+** Amplitude linearity
+Amplitude linearity refers to the output always being changed by the same factor multiplied by the change in the input, i.e.
+\[V_{out} (t) - V_{out} (0) = \alpha (V_{in} (t) - V_{in} (0))\]
+
+Where:
+- $V_{out} (t)$ is the voltage output at time \(t\)
+- $V_{out} (0)$ is the initial voltage output
+- $V_{in} (t)$ is the voltage input at time \(t\)
+- $V_{in} (0)$ is the initial voltage input
+- $\alpha$ is the constant of proportionality, or the scaling factor
+
+*** Remarks
+- It is difficult to interpret the output if there is no amplitude linearity.
+- A measurement system usually satisfies amplitude linearity over a limited range of input amplitudes, like a spring.
+- Linear response of a measurement system usually holds for a limited range of the input rate.
+- An ideal measurement system exhibits amplitude linearity for any input amplitude and input rate.
+
+@@latex: \newpage@@
+
+*** Examples
+#+ATTR_LATEX: :height 15em
+[[./images/amplitude-linearity-stepwise-function.png]]
+
+#+ATTR_LATEX: :height 15em
+[[./images/amplitude-nonlinearity-curve.png]]
+
+#+ATTR_LATEX: :height 15em
+[[./images/amplitude-nonlinearity-pulse.png]]
+
+** Period and frequency
+$T$ is the period in *seconds*, which is the inverse of frequency (\(f\) in \(\unit{Hz}\)).
+
+[[./images/period-and-frequency-images.png]]
+
+** Time and frequency domain
+Below are the time-domain and frequency-domain plots of a sine wave.
+
+[[./images/time-domain-and-frequency-domain-images.png]]
+
+** Magnitude ratio (\(M\))
+Magnitude ratio, which can be considered as the attenuation, is always less than 1, and is given by:
+\[M(\omega) = \frac{1}{\sqrt{1 + (\omega \tau)^2}}\]
+
+Where:
+- $M$ is the magnitude ratio
+- $\omega$ is the angular frequency
+- $\tau$ is the time constant
+
+** Dynamic error (\(\delta\))
+A dynamic error for a first order system is always less than 1, and is given by:
+\[\delta(\omega) = 1 - M(\omega)\]
+
+Where:
+- $\delta$ is the dynamic error
+- $M$ is magnitude ratio
+
+** Radicand
+Radicand is the quantity inside the square root sign. For example, the radicand of \(\sqrt{3}\) is 3, and the radicand of \(\sqrt{x^2 + 2bx + b^2}\) is \(x^2 + 2bx + b^2\).
+
+** Cut-off frequency (\(f_c\))
+\[f_c = \frac{1}{2 \pi RC}\]
+
+Where:
+- $f_c$ is the cut-off frequency
+- $R$ is the resistance of the resistor (\(\unit{\ohm}\))
+- $C$ is the capacitance of the capacitor (\(\unit{F}\))
+
+*** Time constant estimate (\(\tau\))
+\[\tau \approx \frac{1}{f_c}\]
+
+Where:
+- $\tau$ is the time constant
+- $f_c$ is the cut-off frequency
+
+** Frequency response of a filter (\(M\))
+\[M(\omega) = \frac{1}{\sqrt{1 + \left(\frac{f}{f_c} \right)^2}}\]
+
+Where:
+- $M$ is the frequency response
+- $f$ is the target frequency
+- $f_c$ is the cut-off frequency of the filter
+
+** Common mode rejection ratio (CMRR)
+- Common mode rejection ratio (CMRR) is the ratio of the different mode gain to the common mode gain.
+- The difference mode gain is the amplification factor for the difference between the input signals.
+- The common mode gain is the amplification factor for the average of the input signals.
+- For an ideal difference amplifier, the common mode gain is 0, implying an infinite common mode rejection ratio.
+- It is desirable to minimise the common mode gain to suppress signals such as noise that are common to both inputs.
+
+** Analogue-to-digital (A/D) conversion
+- An electronic integrated circuit which transforms a signal from analogue (continuous) to digital (discrete) form.
+- Analogue signals are directly measurable quantities.
+- Digital signals only have two states. For the digital computer, we refer to the binary states: 0 and 1.
+
+** Dithering
+Dithering is a form of noise that is intentionally applied to randomise quantisation error.
+
+** Transducers
+Transducers convert one form of energy into another, and it is not necessary to perform a measurement.
+
+** Sensors
+Sensors produce an output signal, which is typically electrical, for the purpose of sensing a physical phenomenon.
+
+** Sensor classification
+- Analogue vs digital
+  - Light on and off switch vs light dimmer.
+- Passive vs active
+  - Passive sensors do not require external an external power supply, and they draw energy from the input signal itself.
+- Null versus deflection type
+  - Null type sensors counteract any deflection due to the measured quantity using an opposing calibrated force.
+- Subject of measurement
+  - Mechanical, optical, thermal, etc.
+
+** Instrumentation systems
+- Sensing module, which can be mechanical, thermal, optical, pyrolytic, piezoelectric, etc.
+- Conversion module to convert from analogue to digital.
+- Pre-processing, which is a module that manipulates the variables.
+- Data transmission, which can be wired or wireless, transferred over the internet, etc.
+- Presentation or storage to the user.
+
+** Input
+Input is the stimulus. Some examples include temperature, pressure, and strain.
+
+** Output
+The output is usually an electrical signal, which is defined using voltage, current, frequency, phase, etc.
+
+** Sensitivity (\(S\))
+The sensitivity is defined as:
+\[S = \frac{\text{Output variation}}{\text{Input variation}}\]
+
+It is also the slope of the graph of the output (\(f(x)\)) against the input (\(x\)).
+\[S = \frac{df}{dx}\]
+
+** Resolution
+The resolution is the minimum change of the input that can be reliably detected. It is limited by noise, bit-conversion, and many other things.
+
+** Accuracy
+The accuracy is the difference of the measurement from the true value.
+
+@@latex: \newpage@@
+
+** Repeatability
+Repeatability is how well a system or device can reproduce an outcome in unchanged conditions.
+
+[[./images/repeatability-and-accuracy.png]]
+
+** Types of instrument errors
+
+*** Nonlinearity
+[[./images/instrument-error-nonlinearity.png]]
+
+*** Hysteresis
+[[./images/instrument-error-hysteresis.png]]
+
+*** Sensitivity error
+[[./images/instrument-error-sensitivity-error.png]]
+
+*** Zero-shift error
+[[./images/instrument-error-zero-shift-error.png]]
+
+** Lorentz's law
+#+ATTR_LATEX: :height 12em
+[[./images/lorentz-law-diagram.png]]
+
+\[\vec{F} = (\vec{i} \times \vec{B}) L\]
+\[F = || \vec{F} || BiL \sin \theta\]
+
+Where:
+- $\vec{F}$ is the magnetic force
+- $\vec{i}$ is the current
+- $\vec{B}$ is the magnetic field
+- $L$ is the length of the wire
+
+** Faraday's law
+#+ATTR_LATEX: :height 20em
+[[./images/faradays-law-diagram.png]]
+
+\[emf = E = -\frac{d \Phi}{dt}\]
+\[\Phi \triangleq \int_{\Sigma} \vec{B} \, d \vec{\Sigma}\]
+
+Where:
+- $emf$ is the electromotive force
+- $\Phi$ is the magnetic flux
+- $\Sigma$ is the surface whose boundary coincides with the coil
+  - It is not *uniquely defined* but \(\text{div } B = 0\), which means the integral only depends on the boundary.
+
+@@latex: \newpage@@
+
+* Fourier series representation of signals
+- Any periodic signal can be represented by a combination of an infinite number of sinusoid terms.
+- Easy and standardised way to deal with any periodic signals (simple or complicated) using sine and cosine terms.
+- In addition to time domain analysis, frequency domain analysis helps to gain insights of the signals which are fundamental to signal processing, and other mechatronics applications.
+- To study bandwidth and phase linearity, which are applied to frequency components of an input signal, it is necessary to review the Fourier series representation of a signal.
+- Any periodical waveform can be represented as an infinite series of sine and cosine waveforms of different amplitudes and frequencies.
+- Summing up this infinite series gives the original periodical waveform.
+- Practically, a finite number of the sine and cosine waveforms can adequately represent a periodical waveform.
+
+** Fundamental frequency
+Let \(\omega_0\) be the fundamental of first (lowest) harmonic frequency defined as:
+\[\omega_0 = \frac{2\pi}{T} = 2 \pi f_0\]
+
+Where:
+- $\omega_0$ is the fundamental angular frequency
+- $T$ is the period
+- $f_0$ is the fundamental frequency in \(\unit{Hz}\)
+
+The other sine and cosine waveforms have frequencies of integer multiples of \(\omega_0\).
+
+@@latex: \newpage@@
+
+** Fourier series representation of a periodical waveform
+The Fourier series representation of a periodical waveform \(f(t)\) is:
+\[F(t) = C_0 + \sum_{n = 1}^{\infty} A_n \cos (n \omega_0 t) + \sum_{n = 1}^{\infty} B_n \sin (n \omega_0 t)\]
+
+Where:
+- $C_0$ is the DC component of the signal, i.e. the non-periodical part of the waveform, given by:
+  \[C_0 = \frac{1}{T} \int_0^T f(t) \, dt = \frac{A_0}{2}\]
+
+  Where:
+  - $T$ is the period
+  - $f(t)$ is the periodical waveform
+  - $t$ is the time
+  - $A_0$ is the initial amplitude of the waveform
+
+- $A_n$ is given by:
+  \[A_n = \frac{2}{T} \int_0^T f(t) \cos (n \omega_0 t) \, dt\]
+
+  Where:
+  - $T$ is the period
+  - $\omega_0$ is the fundamental angular frequency
+  - $t$ is the time
+  - $n$ is just a number
+
+- $B_n$ is given by:
+  \[B_n = \frac{2}{T} \int_0^T f(t) \sin (n \omega_0 t) \, dt\]
+
+  Where:
+  - $T$ is the period
+  - $\omega_0$ is the fundamental angular frequency
+  - $t$ is the time
+  - $n$ is just a number
+
+Note that \(C_0\) is the average value of the waveform over its period.
+
+*** In general
+Given:
+\[C_n = \sqrt{A_n^2 + B_n^2}\]
+\[\phi_n = - \arctan \left(\frac{B_n}{A_n} \right)\]
+
+Then:
+\begin{align*}
+F(t) &= C_0 + \sum_{n = 1}^{\infty} \left(A_n \cos (n \omega_0 t) + B_n (\sin n \omega_0 t) \right) \\
+&= C_0 + \sum_{n = 1}^{\infty} \sqrt{A_n^2 + B_n^2} \left(\frac{A_n}{\sqrt{A_n^2 + B_n^2}} \cos (n \omega_0 t) + \frac{B_n}{\sqrt{A_n^2 + B_n^2}} \sin (n \omega_0 t) \right) \\
+&= C_0 + \sum_{n = 1}^{\infty} C_n \left(\cos (\phi_n) \cos(n \omega_0 t) - \sin(\phi_n) \sin(n \omega_0 t) \right) \\
+&= C_0 + \sum_{n = 1}^{\infty} C_n \cos (n \omega_0 t + \phi_n)
+\end{align*}
+
+\[\phi_n = - \arctan \left(\frac{B_n}{A_n} \right)\]
+\[\cos (\phi_n) = \frac{A_n}{\sqrt{A_n^2 + B_n^2}}\]
+\[\sin (\phi_n) = - \frac{B_n}{\sqrt{A_n^2 + B_n^2}}\]
+
+@@latex: \newpage@@
+
+*** Sine form
+Given:
+\[C_n = \sqrt{A_n^2 + B_n^2}\]
+\[\phi_n^* = \arctan \left(\frac{A_n}{B_n} \right)\]
+
+Then:
+\begin{align*}
+F(t) &= C_0 + \sum_{n = 1}^{\infty} \left(A_n \cos (n \omega_0 t) + B_n (\sin n \omega_0 t) \right) \\
+&= C_0 + \sum_{n = 1}^{\infty} \sqrt{A_n^2 + B_n^2} \left(\frac{A_n}{\sqrt{A_n^2 + B_n^2}} \cos (n \omega_0 t) + \frac{B_n}{\sqrt{A_n^2 + B_n^2}} \sin (n \omega_0 t) \right) \\
+&= C_0 + \sum_{n = 1}^{\infty} C_n \left(\sin (\phi_n^*) \cos (n \omega_0 t) + \cos (\phi_n^*) \sin (n \omega_0 t) \right) \\
+&= C_0 + \sum_{n = 1}^{\infty} C_n \sin (n \omega_0 t + \phi_n^*)
+\end{align*}
+
+\[\phi_n^* = \arctan \left(\frac{A_n}{B_n} \right)\]
+\[\sin (\phi_n^*) = \frac{A_n}{\sqrt{A_n^2 + B_n^2}}\]
+\[\cos (\phi_n^*) = \frac{B_n}{\sqrt{A_n^2 + B_n^2}}\]
+
+@@latex: \newpage@@
+
+*** Example: Square waveform with period T
+The square waveform is defined as:
+\begin{displaymath}
+f(t) = \begin{cases}
+1 & 0 \le t \le \frac{T}{2} \\
+-1 & \frac{T}{2} \le t \le T \\
+\end{cases}
+\end{displaymath}
+
+Then:
+\[A_n = 0\]
+\begin{align*}
+B_n &= \frac{2}{T} \left(\int_0^{\frac{T}{2}} \sin (n \omega_0 t) \, dt - \int_{\frac{T}{2}}^T \sin (n \omega_0 t) \, dt \right) \\
+&= \frac{2}{T} \left(- \left.\frac{1}{n \omega_0} \cos (n \omega_0 t) \right|_0^{\frac{T}{2}} + \left. \frac{1}{n \omega_0} \cos (n \omega_0 t) \right|_{\frac{T}{2}}^T \right) \\
+&= \frac{2}{n \pi} (1 - \cos (n \pi)) \\
+&= \begin{cases}
+\frac{4}{n \pi} & \textit{if } n \textit{ is odd} \\
+0 & \textit{if } n \textit{ is even} \\
+\end{cases}
+\end{align*}
+
+Therefore:
+\begin{align*}
+F(t) &= \frac{4}{\pi} \sin(\omega_0 t) + \frac{4}{3 \pi} \sin(3 \omega_0 t) + \frac{4}{5 \pi} \sin (5 \omega_0 t) + \cdots \\
+&= \sum_{n = 1}^{\infty} \frac{4}{(2n - 1) \pi} \sin ((2n - 1) \omega_0 t)
+\end{align*}
+
+*** Representation of a square wave
+[[./images/square-wave-fourier-series-representation.png]]
+
+@@latex: \newpage@@
+
+*** Plotting the frequency spectrum of a waveform
+When plotting the frequency spectrum for a signal represented by a Fourier series, use the signal amplitude generated from the equation below:
+\[F(t) = C_0 + \sum_{n = 1}^{\infty} C_n \cos (n \omega_0 t + \phi_n)\]
+
+[[./images/square-wave-signal.png]]
+
+For the square wave above:
+\[F(t) = \frac{4}{\pi} \sin(\omega_0 t) + \frac{4}{3 \pi} \sin (3 \omega_0 t) + \frac{4}{5 \pi} \sin (5 \omega_0 t) + \cdots\]
+
+[[./images/square-wave-signal-frequency-spectrum.png]]
+
+*** Time domain analysis
+[[./images/time-domain-analysis.png]]
+
+*** Frequency response analysis
+[[./images/frequency-spectrum-analysis.png]]
+
+@@latex: \newpage@@
+
+** Even functions
+Even functions can solely be represented by cosine waves, i.e.
+\[B_n = 0\]
+
+Because \(\sin (n \omega_0 t)\) is an odd function, \(f(t) \cdot \sin(n \omega_0 t)\) is an odd function, hence:
+\[B_n = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \sin (n \omega_0 t) \, dt = 0\]
+
+\[A_n = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cos (n \omega_0 t) \, dt = \frac{4}{T} \int_0^{\frac{T}{2}} f(t) \cos (n \omega_0 t) \, dt\]
+\[F(t) = C_0 + A_1 \cos (1 \omega_0 t) + A_2 \cos (2 \omega_0 t) + A_3 \cos (2 \omega_0 t) + \ldots\]
+
+[[./images/even-function-fourier-series-representation.png]]
+
+@@latex: \newpage@@
+
+** Odd functions
+Even functions can solely be represented by sine waves, i.e.
+\[C_0 = 0, \text{ and all } A_n = 0\]
+
+Because \(\cos (n \omega_0 t)\) is an even function, \(f(t) \cdot \cos (n \omega_0 t)\) is an even function, hence:
+\[A_n = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cos (n \omega_0 t) \, dt = 0\]
+  \[C_0 = \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \, dt = 0\]
+
+\[B_n = \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \sin (n \omega_0 t) \, dt = \frac{4}{T} \int_0^{\frac{T}{2}} f(t) \sin (n \omega_0 t) \, dt\]
+\[F(t) = C_0 + B_1 \sin (1 \omega_0 t) + B_2 \sin (2 \omega_0 t) + B_3 \sin (3 \omega_0 t) + \ldots\]
+
+[[./images/odd-function-fourier-series-representation.png]]
+
+@@latex: \newpage@@
+
+** Calculation of the Fourier coefficients
+Find the Fourier series for the following periodic waveform:
+[[./images/even-square-wave-function.png]]
+
+Function:
+\begin{displaymath}
+f(t) = \begin{cases}
+1, & t \in [-\frac{T}{4}, \frac{T}{4}] \\
+0, & t \in [\frac{T}{4}, \frac{3T}{4}] \\
+\end{cases}
+\end{displaymath}
+
+Periodic:
+\[f(t + T) = f(t)\]
+\[\text{Period} = T\]
+
+Symmetry: Even-function
+\[f(-t) = f(t)\]
+
+The function is an even function, hence:
+\[B_n = 0\]
+\[C_0 = \frac{1}{T} \int_{-\frac{T}{4}}^{\frac{3T}{4}} f(t) \, dt = \frac{1}{T} \int_{-\frac{T}{4}}^{\frac{T}{4}} 1 \, dt = \frac{1}{2}\]
+\begin{align*}
+A_n &= \frac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cos (n \omega_0 t) \, dt \\
+&= \frac{4}{T} \int_0^{\frac{T}{2}} f(t) \cos (n \omega_0 t) \, dt \\
+&= \frac{4}{T} \int_0^{\frac{T}{4}} 1 \cos (n \omega_0 t) \, dt \\
+&= \frac{4}{n \pi \omega_0 T} \int_0^{\frac{T}{4}} \, d(\sin (n \omega_0 t)) \\
+&= \frac{4}{n \pi \omega_0 t} \left(\sin (n \omega_0 \frac{T}{4} - 0) \right) \\
+&= \frac{2}{n \pi} \sin \left(\frac{n \pi}{2} \right)
+\end{align*}
+
+The corresponding Fourier series is:
+\[F(t) = \frac{1}{2} + \frac{2}{\pi} \cos \left(1 \cdot \frac{2 \pi}{T} \cdot t \right) - \frac{2}{3 \pi} \cos \left( 3 \cdot \frac{2 \pi}{T} \cdot t \right) + \frac{2}{5 \pi} \cos \left( 5 \cdot \frac{2 \pi}{T} \cdot t \right) - \frac{2}{7 \pi} \cos \left( 7 \cdot \frac{2 \pi}{T} \cdot t \right) + \ldots\]
+
+[[./images/caculation-of-the-fourier-series-frequency-spectrum-result.png]]
+
+@@latex: \newpage@@
+
+** Square wave decomposition
+
+*** Half square wave decomposition
+[[./images/half-square-wave-decomposition.png]]
+
+\[F(t) = \frac{1}{2} + \frac{2}{\pi} \cos \left(1 \cdot \frac{2 \pi}{T} \cdot t \right) - \frac{2}{3 \pi} \cos \left( 3 \cdot \frac{2 \pi}{T} \cdot t \right) + \frac{2}{5 \pi} \cos \left( 5 \cdot \frac{2 \pi}{T} \cdot t \right) - \frac{2}{7 \pi} \cos \left( 7 \cdot \frac{2 \pi}{T} \cdot t \right) + \ldots\]
+
+*** Full square wave decomposition
+[[./images/full-square-wave-decomposition.png]]
+
+\[F(t) = \frac{4}{\pi} \sin(\omega_0 t) + \frac{4}{3 \pi} \sin (3 \omega_0 t) + \frac{4}{5 \pi} \sin (5 \omega_0 t) + \cdots\]
+
+@@latex: \newpage@@
+
+** Complex form of the Fourier series
+The standard Fourier series representation is given as:
+\[F(t) = C_0 + \sum_{n = 1}^{\infty} (A_n \cos (n \omega_0 t) + B_n \sin (n \omega_0 t))\]
+
+Using Euler's formulae:
+\[\cos (n \omega_0 t) = \frac{e^{jn \omega_0 t} + e^{-jn \omega_0 t}}{2}\]
+\[\sin (n \omega_0 t) = \frac{e^{jn \omega_0 t} + e^{-jn \omega_0 t}}{2j}\]
+
+So:
+\[e^{jn \omega_0 t} = \cos(n \omega_0 t) + j \sin{(n \omega_0 t)}\]
+\[e^{-jn \omega_0 t} = \cos(n \omega_0 t) - j \sin{(n \omega_0 t)}\]
+
+The \(n\)-th harmonic component can be expressed as:
+\begin{align*}
+&A_n \cos (n \omega_0 t) + B_n \sin(n \omega_0 t) \\
+&= A_n \frac{e^{jn \omega_0 t} + e^{-jn \omega_0 t}}{2} + B_n \frac{e^{jn \omega_0 t} - e^{-jn \omega_0 t}}{2j} \\
+&= A_n \frac{e^{jn \omega_0 t} + e^{-jn \omega_0 t}{2}} + -j B_n \frac{e^{jn \omega_0 t} - e^{-jn \omega_0 t}}{2} \\
+&= \frac{A_n - j B_n}{2} e^{jn \omega_0 t} + \frac{A_n + j}{2} e^{-jn \omega_0 t}
+\end{align*}
+
+Denoting:
+\[D_n = \frac{A_n - j B_n}{2}, \quad D_{-n} = \frac{A_n + j B_n}{2}\]
+\[D_0 = \frac{A_0}{2}\]
+
+\[A_n \cos (n \omega_0 t) + B_n \sin (n \omega_0 t) = D_n e^{jn \omega_0 t} + D_{-n} e^{-jn \omega_0 t}\]
+
+Therefore, the Fourier series can be expressed as:
+\[F(t) = D_0 + \sum_{n = 1}^{\infty} (D_n e^{jn \omega_0 t} + D_{-n} e^{-jn \omega_0 t}) = \sum_{n = -\infty}^{\infty} D_n e^{jn \omega_0 t}\]
+
+*** Coefficients
+The coefficients \(D_n\) can be evaluated in the following manner:
+\begin{align*}
+D_n &= \frac{(A_n - j B_n)}{2} \\
+&= \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cos (n \omega_0 t) \, dt - \frac{j}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \sin(n \omega_0 t) \, dt \\
+&= \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) (\cos (n \omega_0 t) - j \sin (n \omega_0 t)) \, dt \\
+&= \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) e^{-jn \omega_0 t} \, dt
+\end{align*}
+
+The coefficients \(D_{-n}\) can be evaluated in the following manner:
+\begin{align*}
+D_{-n} &= \frac{(A_n + j B_n)}{2} \\
+&= \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \cos (n \omega_0 t) \, dt + \frac{j}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \sin(n \omega_0 t) \, dt \\
+&= \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) (\cos (n \omega_0 t) + j \sin (n \omega_0 t)) \, dt \\
+&= \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) e^{jn \omega_0 t} \, dt
+\end{align*}
+
+Note that \(D_{-n}\) is the complex conjugate of \(D_n\):
+\[D_n = \frac{(A_n - j B_n)}{2}\]
+\[D_{-n} = \frac{(A_n + j B_n)}{2}\]
+
+So the Fourier series decomposition has the \(D_n\) in complex form:
+\[D_n = \frac{1}{T} \int_{- \frac{T}{2}}^{\frac{T}{2}} f(t) e^{-jn \omega_0 t} \, dt \quad n = 0, \pm 1, \pm 2, \ldots\]
+
+We have the complex form of the Fourier series:
+\[F(t) = \sum_{n = - \infty}^{\infty} D_n e^{jn \omega_0 t}\]
+
+** Regular form vs complex form
+
+*** Regular form
+\[A_n = \frac{2}{T} \int_0^T f(t) \cos (n \omega_0 t) \, dt \quad n = 1, 2, 3, \ldots\]
+\[B_n = \frac{2}{T} \int_0^T f(t) \sin (n \omega_0 t) \, dt \quad n = 1, 2, 3, \ldots\]
+\[F(t) = C_0 + \sum_{n = 1}^{\infty} A_n \cos (n \omega_0 t) + B_n \sin(n \omega_0 t)\]
+
+*** Complex form
+\[D_n = \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) e^{-jn \omega_0 t} \, dt\]
+\[n = 0, \pm 1, \pm 2, \ldots\]
+\[F(t) = \sum_{n = - \infty}^{\infty} D_n e^{jn \omega_0 t}\]
+
+** Cosine-only form vs complex form
+
+*** Cosine-only form
+\[C_n = \sqrt{A_n^2 + B_n^2}\]
+\[\phi_n = - \arctan \left(\frac{B_n}{A_n} \right)\]
+\[F(t) = C_0 + \sum_{n = 1}^{\infty} C_n \cos (n \omega_0 t + \phi_n)\]
+
+\[A_{-n} = \frac{2}{T} \int_0^t f(t) \cos (-n \omega_0 t) \, dt = A_n\]
+\[B_{-n} = \frac{2}{T} \int_0^t f(t) \sin (-n \omega_0 t) \, dt = -B_n\]
+\[C_n = \sqrt{A_{-n}^2 + B_{-n}^2} = \sqrt{A_n^2 + B_n^2} = C_n\]
+\[\phi_{-n} = \arctan \left(\frac{B_{-n}}{A_{-n}} \right) = \arctan \frac{B_{n}}{A_n} = - \phi_n\]
+\[F(t) = C_0 + \frac{1}{2} \sum_{n = -\infty, n \ne 0}^{\infty} C_n \cos(n \omega_0 t + \phi_n)\]
+
+*** Complex form
+\[D_n = \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) e^{-jn \omega_0 t} \, dt\]
+\[n = 0, \pm 1, \pm 2, \ldots\]
+\[F(t) = \sum_{n = - \infty}^{\infty} D_n e^{jn \omega_0 t}\]
+
+** Complex Fourier series decomposition
+[[./images/even-square-wave-function.png]]
+
+Using \(nw \omega_0 = m\):
+\begin{align*}
+D_n &= \frac{1}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) e^{-jn \omega_0 t} \, dt \\
+&= \frac{1}{T} \int_{-\frac{T}{4}}^{\frac{T}{4}} 1 e^{-mt} \, dt \\
+&= \left. \frac{1}{-mT} e^{-mt} \right|_{-\frac{T}{4}}^{\frac{T}{4}} \\
+&= - \frac{1}{mT} \left(e^{\frac{-mT}{4}} - e^{\frac{mT}{4}} \right)
+\end{align*}
+
+Using Euler's formulae:
+\[\cos (n \omega_0 t) = \frac{e^{jn \omega_0 t} + e^{-jn \omega_0 t}}{2}\]
+\[\sin (n \omega_0 t) = \frac{e^{jn \omega_0 t} + e^{-jn \omega_0 t}}{2j}\]
+
+We have:
+\begin{align*}
+D_n &= \frac{1}{-in 2 \pi} \left(e^{\frac{in \pi}{2}} - e^{\frac{in}{2}} \right) \\
+&= \frac{e^{\frac{in \pi}{2}} - e^{\frac{in \pi}{2}}}{2j} \frac{1}{\pi} \\
+&= \frac{\sin \left(\frac{n \pi}{2} \right)}{n \pi} \\
+D_{-n} &= \frac{\sin \left(\frac{- n \pi}{2} \right)}{- n \pi} \\
+&= D_n
+\end{align*}
+
+To find \(D_0\):
+\[D_0 = \frac{1}{T} \int_{-\frac{T}{4}}^{\frac{T}{4}} 1 \, dt = \frac{1}{2}\]
+
+The square signal can be decomposed in complex form:
+\begin{align*}
+F(t) &= \sum_{n = -\infty}^{\infty} D_n e^{jn \omega_0 t} \\
+&= D_0 + \sum_{n = 1}^{\infty} D_n (e^{jn \omega_0 t} + e^{-jn \omega_0 t}) \\
+&= D_0 + \sum_{n = 1}^{\infty} 2 D_n \frac{e^{jn \omega_0 t} + e^{-jn \omega_0 t}}{2} \\
+&= \frac{1}{2} + \sum_{n = 1}^{\infty} 2 \frac{\sin \left(\frac{n \pi}{2} \right)}{n \pi} \cos (n \omega_0 t)
+\end{align*}
+
+Setting \(\omega_0 = \frac{2 \pi}{T}\), the result is the same as the decomposition using the regular Fourier series:
+\[F(t) = \frac{1}{2} + \frac{2}{\pi} \cos \left(1 \cdot \frac{2 \pi}{T} \cdot t \right) - \frac{2}{3 \pi} \cos \left( 3 \cdot \frac{2 \pi}{T} \cdot t \right) + \frac{2}{5 \pi} \cos \left( 5 \cdot \frac{2 \pi}{T} \cdot t \right) - \frac{2}{7 \pi} \cos \left( 7 \cdot \frac{2 \pi}{T} \cdot t \right) + \ldots\]
+
+@@latex: \newpage@@
+
+** Signal reconstruction
+Given:
+- DC \(C_0\)
+- The all harmonic amplitude: \(A_n \text{ and } B_n, n = 1, 2, \ldots, N\)
+- The fundamental frequency \(\omega_0\)
+
+We can reconstruct the signal by using either one of the following:
+\[F(t) = C_0 + \sum_{n = 1}^{\infty} (A_n \cos (n \omega_0 t) + B_n \sin (n \omega_0 t))\]
+\[F(t) = \sum_{n = - \infty}^{\infty} D_n e^{jn \omega_0 t}\]
+
+** Signal approximation
+Given:
+- DC \(C_0\)
+- The all harmonic amplitude: \(A_n \text{ and } B_n, n = 1, 2, \ldots, N\)
+- The fundamental frequency \(\omega_0\)
+
+We can approximate the signal by \(S_N (t)\):
+\[F(t) = \sum_{n = - N}^{N} D_n e^{jn \omega_0 t}\]
+
+@@latex: \newpage@@
+
+*** Approximation error
+A practical calculation of the Fourier series requires that we truncate the series to a finite number of terms.
+\[f(t) \approxeq \sum_{n = - N}^{N} D_n e^{jn \omega_0 t} = S_N (t)\]
+
+The error for \(N\) terms is:
+\[\varepsilon (t) = f(t) - S_N (t)\]
+
+The use the mean-square error (MSE) defined as:
+\[\text{MSE} = \frac{1}{T} \int_0^T \varepsilon^2 (t) \, dt\]
+
+MSE is minimum when \(D_n\) is equal to the Fourier series' coefficients.
+[[./images/approximation-error-graph.png]]
+
+@@latex: \newpage@@
+
+** Amplitude and phase
+Based on the cosine form of the Fourier series:
+\[F(t) = C_0 + \sum_{n = 1}^{\infty} A_n \cos (n \omega_0 t + \phi_n)\]
+
+A periodic waveform can be represented by an infinite series of cosine of *single amplitude* and *phase*.
+
+\[\text{Single amplitude: } C_n = \sqrt{A_n^2 +B_n^2}\]
+\[\text{Phase (angle): } \phi_n = - \arctan \left(\frac{B_n}{A_n} \right)\]
+
+** Fourier spectrum
+
+*** Amplitude spectrum
+[[./images/amplitude-spectrum.png]]
+
+*** Phase spectrum
+[[./images/phase-spectrum.png]]
+
+*** Amplitude, frequency and phase
+- *DC*: \(C_0\) is the average value of \(f(t)\)
+- The \(n^{th}\) *harmonic amplitude*: \(C_n\)
+- The *fundamental frequency*: \(\omega_0\)
+- The \(n^{th}\) *fundamental frequency*: \(n \omega_0\)
+- The \(n^{th}\) *phase angle*: \(\phi_n = - \arctan \left(\frac{B_n}{A_n} \right)\)
+- The *fundamental term*: For \(n = 1\), the corresponding sinusoid is \(C_1 \cos (\omega_0 t + \phi_1)\)
+- The \(n^{th}\) *harmonic term*: The \(n^{th}\) corresponding sinusoid is \(C_n \cos (n \omega_0 t + \phi_n)\)
+
+** Circuits and Fourier series
+It is often desired to determine the response of a circuit excited by a periodic signal \(v_s (t)\).
+
+Assume:
+\[R = \qty{1}{\ohm}, \quad C = \qty{2}{F}, \quad T = \pi \ \unit{\sec}\]
+
+And an RC circuit excited by a periodic voltage \(v_s (t)\), as shown below:
+[[./images/rc-circuit-diagram.png]]
+
+The square signal exciting the RC circuit:
+[[./images/even-square-wave-function.png]]
+
+@@latex: \newpage@@
+
+*** Equivalent circuit
+In the equivalent circuit below, each voltage source is a term of the Fourier series of the input voltage \(v_s (t)\).
+#+ATTR_LATEX: :height 18em
+[[./images/rc-equivalent-circuit-diagram.png]]
+
+*** Steady state response of the circuit
+Since each input is a sinusoid, we want to find the steady state responses to the sinusoid.
+#+ATTR_LATEX: :height 18em
+[[./images/rc-circuit-steady-state-response.png]]
+
+*** Making use of the Fourier series
+The Fourier series representation of the square waveform:
+\[F(t) = \frac{1}{2} + \frac{2}{\pi} \cos \left(1 \cdot \frac{2 \pi}{T} \cdot t \right) - \frac{2}{3 \pi} \cos \left( 3 \cdot \frac{2 \pi}{T} \cdot t \right) + \frac{2}{5 \pi} \cos \left( 5 \cdot \frac{2 \pi}{T} \cdot t \right) - \frac{2}{7 \pi} \cos \left( 7 \cdot \frac{2 \pi}{T} \cdot t \right) + \ldots\]
+
+Since \(T = \pi\), the first 4 terms of \(v_s (t)\) are:
+\[v_s(t) \approx \underbrace{\frac{1}{2}}_{v_{s0} (t)} + \underbrace{\frac{2}{\pi} \cos 2t}_{v_{s1} (t)} - \underbrace{\frac{2}{3 \pi} \cos 6t}_{v_{s3 (t)}} + \underbrace{\frac{2}{5 \pi} \cos 10t}_{v_{s5} (t)}\]
+
+The steady state response \(v_0 (t)\) can be found using superposition:
+\[v_o (t) = v_{o0} (t) + v_{o1} (t) + v_{o3} (t) + v_{o5} (t)\]
+
+*** Getting the impedance of the capacitor
+The impedance of the capacitor is:
+\[Z_c = \frac{1}{jn \omega_0 C}, \text{ for } n = 0, 1, 3, 5, \ldots\]
+
+Because:
+\[T = \pi, \quad \omega_0 = \frac{2 \pi}{T} = \qty{2}{\sec}\]
+
+Since:
+\[R = \qty{1}{\ohm}, \quad C = \qty{2}{F}, \quad T = \pi \ \unit{\sec}\]
+
+We can find:
+\begin{align*}
+V_{on} &= \frac{\frac{1}{jn \omega_0 C}}{R + \frac{1}{jn \omega_0 C}} V_{sn} \\
+&= \frac{V_{sn}}{1 + jn \omega_0 CR} \\
+&= \frac{V_{sn}}{1 + j4n} \\
+&= \frac{(1 - j4n) V_{sn}}{(1 - j4n)(1 + j4n)} \\
+&= \frac{(1 - j4n) V_{sn}}{(1 + 16n^2)} \\
+&= \frac{1}{\sqrt{1 + 16n^2}} \left(\frac{1}{\sqrt{1 + 16n^2}} - j \frac{4n}{\sqrt{1 + 16n^2}} \right) V_{sn}
+\end{align*}
+
+Let \(\theta_n = - \arctan (4n)\):
+\begin{align*}
+V_{on} &= \frac{1}{\sqrt{1 + 16n^2}} (\cos \theta_n + j \sin \theta_n) V_{sn} \\
+&= \frac{1}{\sqrt{1 + 16n^2}} e^{i \theta n} V_{sn}, \quad n = 0, 1, 3, 5, \ldots
+\end{align*}
+
+Since \(V_{sn} = |V_{sn}| e^{jn \omega_0 t} = \frac{2}{n \pi} e^{i2nt}\):
+\begin{align*}
+V_{on} &= \frac{1}{\sqrt{1 + 16n^2}} e^{i \theta n} V_{sn} \\
+&= \frac{2}{n \pi \sqrt{1 + 16n^2}} e^{2nt + \theta_n}
+\end{align*}
+
+When \(n = 0\):
+\[V_{o0} = \frac{1}{2}\]
+
+When \(n = 1\):
+\[\theta_1 = - \arctan (4 \times 1) = \qty{-75.96}{\degree}\]
+\[V_{o1} = \frac{2}{1 \pi \sqrt{1 + 16 \times 1^2}} e^{i 2 \times 1t (-75.96)} = 0.1544e^{i(2t - \qty{75.96}{\degree})}\]
+
+When \(n = 3\):
+\[\theta_3 = - \arctan (4 \times 3) = \qty{-85.24}{\degree}\]
+\[V_{o3} = \frac{2}{3 \pi \sqrt{1 + 16 \times 3^2}} e^{i 2 \times 3t (-85.24)} = 0.0176e^{i(6t - \qty{85.24}{\degree})}\]
+
+When \(n = 5\):
+\[\theta_5 = - \arctan (4 \times 5) = \qty{-87.14}{\degree}\]
+\[V_{o5} = \frac{2}{5 \pi \sqrt{1 + 16 \times 5^2}} e^{i 2 \times 5t (-87.14)} = 0.0063e^{i(10t - \qty{87.14}{\degree})}\]
+
+Therefore:
+\[v_o (t) = 0.5 + 0.1544 \cos (2t - \qty{75.96}{\degree}) + 0.0176 \cos (6t - \qty{85.24}{\degree}) + 0.0063 \cos (10t - \qty{87.14}{\degree})\]
+
+@@latex: \newpage@@
+
+** Conditions for the Fourier series
+To be described by the Fourier series, the waveform \(f(t)\) must satisfy the following mathematical properties:
+- \(f(t)\) is a *single-value* function, except at possibly a finite number of points.
+- For any \(t_0\), the integral \(\int_{t_0}^{t_0 + T} |f(t)| \, dt < \infty\).
+- \(f(t))\) has a finite number of *discontinuities* within the period \(T\).
+- \(f(t)\) has a finite number of *maxima* and *minima* within the period \(T\).
+
+In practice, \(f(t)\) is usually an amplitude function, so the above 4 conditions are always satisfied.
+
+** Insights
+
+*** Frequency response methods
+Giving a different kind of insight into a system with insights of unexpected results.
+
+*** Frequency spectrum
+Focusing on how signals of different frequencies are represented in a signal thus with insights in terms of the spectrum of the signal.
+
+*** Computer processing
+Often, it is easier and more cost-effective to characterise the frequency content of a noise signal than to give a time description of the noise.
+
+*** Applications
+Different treatment of different parts of the electromagnetic spectrum means that you can separate the different radio, television and cell phone signals.
+
+@@latex: \newpage@@
+
+* Bandwidth and frequency response
+- It is important to estimate the spectrum of a signal when choosing a *measurement* system.
+- Ideal *measurement* systems replicates all frequency components of an input signal.
+- Practical *measurement* systems have limitations in reproducing all frequencies.
+
+** Decibel scale
+The common scale used to *measure* fidelity of a measurement system's reproduction at different frequencies is the decibel scale:
+\[dB = 20 \log_{10} \left(\frac{A_{out}}{A_{in}} \right)\]
+
+Where:
+- $A_{in}$ is the input amplitude of a harmonic
+- $A_{out}$ is the output amplitude of a harmonic
+
+** Frequency response curve (Bode plot)
+A frequency response curve or a Bode plot plots \(\frac{A_{out}}{A_{in}}\) versus input frequency.
+
+[[./images/frequency-response-curve.png]]
+
+** Bandwidth
+Bandwidth is the range of the frequencies where the input is not attenuated, i.e. the amplitude is not reduced, or the volume is not reduced, by more than \(\qty{-3}{\dB}\), i.e.
+\[\text{Bandwidth} = \omega_L \text{ to } \omega_h\]
+
+Where:
+- $\omega_L$ is the low cut-off or corner frequency
+- $\omega_L$ is the high cut-off or corner frequency
+
+@@latex: \newpage@@
+
+*** Why \(\qty{-3}{dB}\)?
+The value comes from half of the output power over the input power, i.e.
+
+\begin{align*}
+\frac{1}{2} &= \frac{P_{out}}{P_{in}} = \left(\frac{A_{out}}{A_{in}} \right)^2 \\
+& \Rightarrow \frac{A_{out}}{A_{in}} = \sqrt{\frac{1}{2}} \\
+& \Rightarrow \unit{dB} = 20 \log_{10} \sqrt{\frac{1}{2}} \\
+& \approx \qty{-3}{dB}
+\end{align*}
+
+*** Example
+Calculating output amplitude \(A'_i\) given a *measurement* frequency response curve, with the input signal spectrum as:
+\[V_{in} (t) = A_1 \sin (\omega_0 t) + A_2 \sin (2 \omega_0 t) + A_3 \sin (3 \omega_0 t) + \cdots\]
+
+[[./images/bandwidth-example-input-signal-spectrum.png]]
+
+The output amplitude \(A'_i\) is calculated as:
+\[A'_i = \left( \frac{A_{out}}{A_{in}} \right) A_i\]
+
+[[./images/bandwidth-example-measurement-system-frequency-response-and-output-signal-spectrum.png]]
+
+* Periodic functions
+
+** Definition
+A periodic function is any function of time that satisfies the following:
+\[f(t + T) = f(t)\]
+
+Where:
+- $T$ is a constant called the *period* of the function
+
+** Even-function symmetry
+Any function of time \(f(t)\) that satisfies the below condition is called an *even function*.
+\[f(-t) = f(t)\]
+
+[[./images/even-function-symmetry.png]]
+
+@@latex: \newpage@@
+
+** Odd-function symmetry
+Any function of time \(f(t)\) that satisfies the below condition is called an *odd function*.
+\[f(-t) = - f(t)\]
+
+[[./images/odd-function-symmetry.png]]
+
+** Properties of symmetric functions
+Let \(f(t)\) be a periodic function with period \(T\).
+
+| \(f(t)\) | \(\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \, dt\)                                     |
+|----------+--------------------------------------------------------------------------------------|
+| /        | <                                                                                    |
+| Even     | \(\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \, dt = 2 \int_0^{\frac{T}{2}} f(t) \, dt\) |
+| Odd      | \(\int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \, dt = 0\)                                 |
+
+** Conversion from non-periodic to periodic
+
+*** Original pattern
+[[./images/original-pattern.png]]
+A non-periodic function \(f(t)\) defined over \((0, t)\) can be expanded into a Fourier series which is defined only in the interval \((0, t)\). Note that the original pattern may not necessarily pass the origin.
+
+*** Without considering symmetry
+[[./images/non-symmetric-repeated-pattern.png]]
+One simple technique that can be applied is to offset the original pattern along the time axis by a distance of \(nT (\tau < T), n = \pm 1, \pm 2, \pm 3, \ldots\)
+
+@@latex: \newpage@@
+
+*** Expansion into even-function symmetry
+[[./images/even-function-symmetry-repeated-pattern.png]]
+A second pattern can be created by mirroring the original pattern against an axis \(t = \tau\).
+
+An even-function symmetric periodic waveform can be generated by offsetting the two patterns merged along the time axis by a distance \(nT (T = 2 \tau), n = \pm 1, \pm 2, \pm 3, \ldots\)
+
+*** Expansion into odd-function symmetry
+[[./images/odd-function-symmetry-repeated-pattern.png]]
+A third pattern can be created by mirroring the original pattern against the time axis and then the axis \(t = \tau\).
+
+An odd-function periodic waveform can be generated by offsetting the two patterns merged along the time axis by a distance \(nT (T = 2 \tau), n = \pm 1, \pm 2, \pm 3, \ldots\)
+
+** Examples
+
+*** Square signal
+[[./images/square-signal.png]]
+
+*** Triangular signal
+[[./images/trianglular-signal.png]]
+
+*** Sawtooth signal
+[[./images/sawtooth-signal.png]]
+
+*** Pulse signal
+[[./images/pulse-signal.png]]
+
+*** Rectified signal
+[[./images/rectified-signal.png]]
+
+*** General periodic signal
+[[./images/general-periodic-signal.png]]
+
+@@latex: \newpage@@
+
+* Dynamic systems
+
+** Example 1
+A linear potentiometer used as a position sensor.
+[[./images/linear-potentiometer-used-as-position-sensor.png]]
+
+The system behaviour is:
+\[V_{out} = \frac{R_x}{R_p} V_s = \frac{V_s}{L} X_{in}\]
+
+Where:
+- $X_{in}$ is the wiper displacement with the potentiometer
+- $R_p$ is the maximum resistance of the potentiometer
+- $R_x$ is the resistance between the potentiometer leads
+- $L$ is the maximum amount of wiper travel
+
+@@latex: \newpage@@
+
+** Example 2
+A resistor-capacitor circuit.
+[[./images/resistor-capacitor-circuit.png]]
+
+In this system, applying Kirchhoff's Laws and the voltage-current relations for a resistor and capacitor produces a first order linear differential equation relating the output voltage to the input voltage.
+
+The system behaviour is:
+\[RC = \frac{dV_{out}}{dt} + V_{out} = V_{in}\]
+
+Where:
+- $R$ is the resistance of the resistor
+- $C$ is the capacitance of the capacitor
+- $V_{out}$ is the output voltage
+- $V_{in}$ is the input voltage
+
+@@latex: \newpage@@
+
+** Example 3 (second-order system)
+A spring damping system.
+[[./images/spring-damping-system.png]]
+
+The system behaviour is:
+\[m \frac{d^2 x}{dt^2} + b \frac{dx}{dt} + kx = F_{ext} (t)\]
+
+Where:
+- $m$ is the mass of the block
+- $b$ is the damping coefficient
+- $k$ is the spring constant
+- $x$ is the displacement of the mass from the equilibrium (rest) position of the mass
+- $F_{ext} (t)$ is the external force along the \(x\)-direction
+
+** Measurement system: Ordinary differential equations
+[[./images/dynamic-systems-measurement-system.png]]
+
+*** Why ordinary differential equations?
+- Ordinary differential equations have time as the only variable.
+- Ordinary differential equations can be used to explain the behaviour of a dynamic system.
+- At steady state, there is no change, which means there is no need to use ordinary differential equations in steady state.
+
+@@latex: \newpage@@
+
+* Linear systems
+- Linear systems are of the form:
+  \begin{align*}
+  &A_n \frac{d^N X_{out}}{dt^N} + A_{N - 1} \frac{d^{N - 1} X_{out}}{dt^{N - 1}} + \cdots A_1 \frac{d X_{out}}{dt} + A_0 X_{out} \\
+  &= B_M \frac{d^M X_{in}}{dt^M} + B_{M - 1} \frac{d^{M - 1} X_{in}}{dt^{M - 1}} + \cdots + B_1 \frac{dX_{in}}{dt} + B_0 X_{in}
+  \end{align*}
+- Alternatively:
+  \[\sum_{n = 0}^N A_n \frac{d^n X_{out}}{dt^n} = \sum_{m = 0}^M B_m \frac{d^m X_{in}}{dt^m}\]
+- The word "linear" comes from the coefficients:
+  \[A_n (n = 0, \ldots, N) \text{ and } B_m (m = 0, \ldots, M)\]
+
+Where:
+- $X_{in}$ and $X_{out}$ are input and output variables
+- $A_n$ and $B_m$ are coefficients
+- $N$ is the order of the system
+
+** Homogeneous equation of a linear system
+\[\sum_{n = 0}^N A_n \frac{d^n X_{out}}{dt^n} = 0\]
+
+Where:
+- $X_{out}$ is the output variables
+- $A_n$ is a coefficient
+- $N$ is the order of the system
+
+** Characteristic equation of a homogeneous equation
+\[\sum_{n = 0}^N A_n s^n = 0\]
+
+Where:
+- $A_n$ and $s$ are coefficients
+- $N$ is the order of the system
+
+*** Primary (\(N = 1\))
+\[A_1 s + A_0 = 0\]
+\[s = \frac{A_0}{A_1}, \text{ if } A_0 \ne 0\]
+
+*** Quadratic (\(N = 2\))
+\[A_2 s^2 + A_1 s + A_0 = 0\]
+\[s = \frac{- A_1 \pm \sqrt{A_1^2 - 4 A_0 A_2}}{2 A_2}, \text{ if } A_2 \ne 0\]
+
+** Roots of the characteristic equation
+\[\sum_{n = 0}^N A_n s^n = 0, A_N \ne 0\]
+
+*** When \(N = 1\)
+Single real root:
+\[s_1 = r\]
+
+Where:
+- $s_1$ is the coefficient of the characteristic equation
+- $r$ is the root
+
+*** When \(N = 2\)
+- Double real roots:
+  \[s_1 = s_2 = r\]
+- Two different real roots:
+  \[s_1 \ne s_2\]
+- Two conjugate roots:
+  \[s_1 = a + bi, \quad s_2 = a - bi\]
+
+*** When \(N = k\)
+Multiple k-fold real roots:
+\[s_1 = \ldots = s_k = r\]
+
+** Solving the homogeneous equation
+
+*** When \(N = 1\)
+- Single real root: \(s_1 = r\)
+- General solution for the homogeneous equation:
+  \[C_0 e^{rt}\]
+
+*** When \(N = 2\)
+1. Two conjugate roots:
+   \[s_1 = a + bi, \quad s_2 = a - bi\]
+
+   General solution for the homogeneous equation:
+   \[(C_1 \sin (bt) + C_2 \cos (bt)) e^{at}\]
+
+2. Two different real roots:
+   \[s_1 \ne s_2\]
+
+   General solution for the homogeneous equation:
+   \[C_1 e^{s_1 t} + C_2 e^{s_2 t}\]
+
+3. Double real roots:
+   \[s_1 = s_2 = r\]
+
+   General solution for the homogeneous equation:
+   \[(C_1 + C_2 t) e^{rt}\]
+
+*** When \(N = k\)
+- Multiple k-fold real roots:
+  \[s_1 = s_2 = \ldots = s_k = r\]
+- General solution for the homogeneous equation:
+  \[(C_0 + C_1 t + C_2 t^2 + \ldots + C_{k - 1} t^{k - 1}) e^{rt}\]
+
+** Input functions in a linear system
+- Step input
+- Sinusoidal input
+- Pulse input
+- Square input
+
+** Special cases of linear systems
+
+*** Zero-order system
+- \(M = 0\)
+- \(N = 0\)
+
+\[A_0 X_{out} = B_0 X_{in}\]
+
+Where:
+- $A_0$ and $B_0$ are coefficients
+- $X_{out}$ and $X_{in}$ are output and input variables
+
+*** First-order system
+- \(M = 0\)
+- \(N = 1\)
+
+\[A_1 \frac{dX_{out}}{dt} + A_0 X_{out} = B_0 X_{in}\]
+
+Where:
+- $A_1$, $A_0$ and $B_0$ are coefficients
+- $X_{out}$ and $X_{in}$ are output and input variables
+
+*** Second-order system
+- \(M = 0\)
+- \(N = 2\)
+
+\[A_2 \frac{d^2 X_{out}}{dt^2} + A_1 \frac{d X_{out}}{dt} + A_0 X_{out} = B_0 X_{in}\]
+
+Where:
+- $A_1$, $A_2$, $A_0$ and $B_0$ are coefficients
+- $X_{out}$ and $X_{in}$ are output and input variables
+
+** Zero-order system
+
+*** Example
+[[./images/linear-potentiometer-used-as-position-sensor.png]]
+
+Where:
+- $X_{in}$ is the wiper displacement with the potentiometer
+- $R_p$ is the maximum resistance of the potentiometer
+- $R_x$ is the resistance between the potentiometer leads
+- $L$ is the maximum amount of wiper travel
+
+System behaviour:
+\[V_{out} = \frac{R_x}{R_p} V_s = \frac{V_s}{L} X_{in}\]
+
+Zero-order system:
+\[A_0 X_{out} = B_0 X_{in}\]
+
+*** General zero-order system
+\[A_0 X_{out} = B_0 X_{in}\]
+\[X_{out} = \frac{B_0}{A_0} X_{in}\]
+\[X_{out} = K X_{in}\]
+
+Where:
+- $X_{out}$ and $X_{in}$ are output and input variables
+- $K$ is a constant called *gain* or *sensitivity*
+
+*** Remarks
+A zero-order system follows the input exactly without any time delay or distortion.
+\[\text{Input Signal } X_{in} \rightarrow \text{Degenerated differential equations} \rightarrow \text{Output signal } X_{out}\]
+
+The input signals can be of any periodic waveform.
+
+** First-order system
+
+*** Example
+#+ATTR_LATEX: :height 15em
+[[./images/resistor-capacitor-circuit.png]]
+
+In this system, applying Kirchhoff's Laws and the voltage-current relations for a resistor and capacitor produces a first order linear differential equation relating the output voltage to the input voltage.
+
+System behaviour:
+\[RC = \frac{dV_{out}}{dt} + V_{out} = V_{in}\]
+
+*** General first-order system
+When \(N = 1\) and \(M = 0\):
+\begin{align*}
+&A_1 \frac{dX_{out}}{dt} + A_0 X_{out} = B_0 X_{in} \\
+&\rightarrow \tau \frac{dX_{out}}{dt} + X_{out} \\
+&= KX_{in}
+\end{align*}
+
+Where:
+- $K = \frac{B_0}{A_0}$ is the static sensitivity
+- $\tau = \frac{A_1}{A_0}$ is the time constant
+
+Hence, the first-order system equation can be written as:
+\[\tau \frac{dX_{out}}{dt} + X_{out} = KX_{in}\]
+
+Note that in this standard form, the coefficient of the \(X_{out}\) term must be 1, hence:
+\[A_0 \ne 0\]
+
+*** Step response of first-order systems
+The step input changes instantaneously from 0 to a constant value \(A_{in}\) and is stated mathematically as:
+\begin{align*}
+X_{in} = \begin{cases}
+0 & t < 0 \\
+A_{in} & t \ge 0
+\end{cases}
+\end{align*}
+
+The output of the system in response to this input is called the step response of the system. For a first-order system, we can find the step response by solving the first-order ordinary differential equation below:
+\[\tau \frac{dX_{out}}{dt} + X_{out} = KX_{in}\]
+
+Initial condition:
+\[X_{out} (0) = 0\]
+
+Characteristic equation:
+\[\tau s + 1 = 0\]
+
+Roots of the characteristic equation:
+\[s = - \frac{1}{\tau}\]
+
+*** Solving the homogeneous equation
+- Linear system:
+  \[\tau \frac{dX_{out}}{dt} + X_{out} = KX_{in}\]
+- Homogeneous equation:
+  \[\tau s + 1 = 0\]
+- Root:
+  \[r = - \frac{1}{\tau}\]
+- General solution for the homogeneous equation:
+  \[X_{out_h} = C_0 e^{- \frac{t}{\tau}}\]
+
+  Where:
+  - $C_0$ is a constant determined later by applying initial conditions
+
+- A particular or steady state solution resulting form the step input \(X_{in} = A_{in}\):
+  \[X_{out_p} = KA_{in}\]
+- General solutions for the linear system:
+  \[X_{out} = X_{out_h} + X_{out_p} = C_0 e^{- \frac{t}{\tau}} + KA_{in}\]
+
+*** Determining the step response of the first-order system
+Determining the constant by initial conditions:
+\[\tau \frac{dX_{out}}{dt} + X_{out} = KX_{in}\]
+\[X_{out} = X_{out_h} + X_{out_p} = C e^{- \frac{t}{\tau}} + KA_{in}\]
+
+Applying the initial condition \(\left.X_{out} \right|_{t = 0} = X_{out} (0)\) to this equation gives:
+\[X_{out} (0) = C + KA_{in}\]
+
+Thus:
+\[C = X_{out} (0) - KA_{in}\]
+
+So, the resulting step response is:
+\[X_{out} = X_{out} (0) e^{- \frac{t}{\tau}} + KA_{in} (1 - e^{- \frac{t}{\tau}})\]
+
+If \(X_{out} (0) = 0\):
+\[X_{out} = KA_{in} (1 - e^{- \frac{t}{\tau}})\]
+
+*** Graph of the step response of the first-order system
+\begin{align*}
+&\tau \frac{dX_{out}}{dt} + X_{out} = KX_{in} \\
+&\rightarrow X_{out} = KA_{in} (1 - e^{- \frac{t}{\tau}})
+\end{align*}
+\begin{align*}
+&X_{out} = X_{out_h} + X_{out_p} = C e^{- \frac{t}{\tau}} + KA_{in} \\
+&\rightarrow X_{out} (0) = 0
+\end{align*}
+
+[[./images/step-response-of-first-order-system-graph.png]]
+
+- The graph above represents an exponential rise in the output toward an asymptotic value of \(KA_{in}\).
+- The rate of rise depends only on the time constant \(\tau\).
+- The response is faster for a smaller time constant.
+- After one time constant, the output reaches 63.2% of its final value:
+  \[X_{out} (t = \tau) = KA_{in} (1 - e^{- \frac{t}{\tau}} = 0.632 KA_{in})\]
+- After four time constants, the step response is:
+  \[X_{out} (t = 4 \tau) = KA_{in} (1 - e^{- \frac{4t}{\tau}}) = 0.982 KA_{in}\]
+- Since this value is more than 98% of the steady state value \(KA_{in}\), we usually assume that a first-order system has reached its steady state value within four time constants.
+- When designing a first-order measurement system, look at quantities that affect \(\tau\) and try to reduce them if possible.
+- The larger \(\tau\) is, the longer the measurement system takes to respond to an input.
+
+** Second-order system
+\[A_2 \frac{d^2 X_{out}}{dt^2} + A_1 \frac{dX_{out}}{dt} + A_0 X_{out} = B_0 X_{in}\]
+
+*** Example
+[[./images/spring-damping-system.png]]
+
+Where:
+- $m$ is the mass of the block
+- $b$ is the damping coefficient
+- $k$ is the spring constant
+- $x$ is the displacement of the mass from the equilibrium (rest) position of the mass
+- $F_{ext} (t)$ is the external force along the \(x\)-direction
+
+System behaviour:
+\[m \frac{d^2 x}{dt^2} + b \frac{dx}{dt} + kx = F_{ext} (t)\]
+
+@@latex: \newpage@@
+
+*** Equations
+- \(M = 0, N = 2\)
+- Homogeneous equation:
+  \[A_2 \frac{d^2 X_{out}}{dt^2} + A_1 \frac{dX_{out}}{dt} + A_0 X_{out} = 0\]
+- Characteristic equation:
+  \[A_2 s^2 + A_1 s + A_0, \quad A_2 \ne 0\]
+- Roots of the characteristic equation:
+  \[A_2 s^2 A_1 s + A_0 = 0, \quad A_2 \ne 0\]
+  \[s = \frac{- A_1 \pm \sqrt{A_1^2 - 4 A_0 A_2}}{2 A_2}, \text{ if } A_2 \ne 0\]
+
+@@latex: \newpage@@
+
+*** Solving the homogeneous equation
+- Homogeneous equation:
+  \[\sum_{n = 0}^N A_n \frac{d^n X_{out}}{dt^n} = 0\]
+- Characteristic equation:
+  \[\sum_{n = 0}^N A_n s^n = 0, \quad A_N \ne 0\]
+- Two conjugate roots:
+  \[s_1 = a + bi, \quad s_2 = a - bi\]
+
+  General solution for the homogeneous equation:
+  \[(C_1 \sin (bt) + C_2 \cos (bt)) e^{at}\]
+
+- Two different real roots:
+  \[s_1 \ne s_2\]
+
+  General solution for the homogeneous equation:
+  \[C_1 e^{s_1 t} + C_2 e^{s_2 t}\]
+
+- Double real roots:
+  \[s_1 = s_2 = r\]
+
+  General solution for the homogeneous equation:
+  \[(C_1 + C_2 t) e^{rt}\]
+
+@@latex: \newpage@@
+
+*** Unforced response of a second-order system
+\[m \frac{d^2 x}{dt^2} + b \frac{dx}{dt} + kx = 0\]
+
+Characteristic equation of the second-order system:
+\[ms^2 + bs + k = 0\]
+
+Roots of the characteristic equation:
+\[s_1 = - \frac{b}{2m} + \sqrt{\left(\frac{b}{2m} \right)^2 - \frac{k}{m}}\]
+\[s_2 = - \frac{b}{2m} - \sqrt{\left(\frac{b}{2m} \right)^2 - \frac{k}{m}}\]
+
+*** Unforced response without damping, with \(b = 0\)
+\[m \frac{d^2 x}{dt^2} + b \frac{dx}{dt} + kx = 0, \quad ms^2 + k = 0\]
+
+Roots of the second order system:
+\[s_1 = i \sqrt{k}{m}, \quad s_2 = - i \sqrt{k}{m}\]
+
+Homogeneous solution:
+\[x_h (t) = A \cos \left(\sqrt{\frac{k}{m}} \right) + B \sin \left(\sqrt{\frac{k}{m}} t \right)\]
+
+Coefficients \(A\) and \(B\) could be determined by the initial conditions:
+\[x(t = 0), \quad \left. \frac{dx (t)}{dx} \right|_{t = 0}\]
+
+Natural frequency of undamped oscillatory motion with radian frequency:
+\[\omega_n = \sqrt{\frac{k}{m}}\]
+
+Under this frequency, the undamped system would naturally oscillate if the spring were stretched and the mass is released and allowed to move without any external force (\(F_{ext} = 0\))
+
+*** Unforced response without damping, with \(b \ne 0\)
+\[m \frac{d^2 x}{dt^2} + b \frac{dx}{dt} + kx = 0, \quad ms^2 + bs + k = 0\]
+
+If the \(\text{Radicand} = 0\), the roots of the second-order system are:
+\[\text{Radicand} = \sqrt{b^2 - 4mk} = 0 \rightarrow b^2 = 4mk\]
+\[s_1 = s_2 = - \frac{b}{2m} = - \sqrt{\frac{4mk}{4m^2}} = - \sqrt{\frac{k}{m}}\]
+
+Homogeneous solution:
+\[x_h (t) = (A + Bt) e^{- \omega_n t} A = \pi r \omega_n^2 = \sqrt{\frac{k}{m}}\]
+
+Coefficients \(A\) and \(B\) could be determined by the initial conditions:
+\[x (t = 0), \quad \left. \frac{dx (t)}{dt} \right|_{x = 0}\]
+
+Solution:
+\[x_h (t) = (A + Bt) e^{- \omega_n t}\]
+
+This represents an exponential decaying motion.
+
+For critical damping, if the \(\text{radicand} = 0\), the critical damping constant is:
+\[b_c = 2 \sqrt{mk} = 2m \sqrt{\frac{k}{m}} = 2 m \omega_n\]
+
+For non-critical damping, if the \(\text{radicand} \ne 0\), the damping ratio is:
+\[\zeta = \frac{b}{b_c} = \frac{b}{2 \sqrt{mk}}\]
+
+Note:
+1. Damping ratio is a measure of the proximity to critical damping.
+2. A critically damped system has a damping ratio of 1.
+
+*** Properties
+- Homogeneous equation:
+  \[m \frac{d^2 x}{dt^2} + b \frac{dx}{dt} + kx = 0\]
+- Characteristic equation:
+  \[ms^2 + bs + k = 0\]
+- Roots of the second-order system
+  \[s = \frac{-b \pm \sqrt{b^2 - 4mk}}{2m}\]
+
+  Because:
+  \[b_c = 2 \sqrt{mk} = 2m \sqrt{\frac{k}{m}} = 2 m \omega_n\]
+  \[\zeta = \frac{b}{b_c} = \frac{b}{2 \sqrt{mk}}\]
+
+- 2 different real roots of the second-order system:
+  \begin{align*}
+  s &= \frac{-b \pm \sqrt{b^2 - 4mk}}{2m} \\
+  &= \frac{- \frac{b}{b_c} \pm \sqrt{\frac{b^2}{b_c^2}} - \frac{4mk}{b_c^2}}{2 \cdot \frac{m}{b_c}} \\
+  &= \frac{- \zeta \pm \sqrt{\zeta^2 - 1}}{\frac{1}{\omega_n}} \\
+  &= -\zeta \omega_n \pm \omega_n \sqrt{\zeta^2 - 1}
+  \end{align*}
+
+  Where:
+  - $\zeta$ is the damping ratio
+  - $\omega_n$ is the natural frequency
+
+*** Under damped system (\(\zeta < 1\), with 2 complex conjugate roots)
+- Roots
+  \[s_1 = - \zeta_{\omega_n} + j \omega_n \sqrt{1 - \zeta^2}\]
+  \[s_2 = - \zeta_{\omega_n} - j \omega_n \sqrt{1 - \zeta^2}\]
+- Homogeneous solution:
+  \[x_h(t) = e^{-\zeta \omega_n t} \left[A \cos \left(\omega_n \sqrt{1 - \zeta^2 t} \right) + B \sin \left(\omega_n \sqrt{1 - \zeta^2 t} \right) \right]\]
+- This motion represents damped oscillation consisting of sinusoidal motion with exponentially decaying amplitude.
+  \[\omega_d = \omega_n \sqrt{1 - \zeta^2}\]
+- The frequency of oscillation is called the damped natural frequency.
+
+*** Overdamped system (\(\zeta > 1\), with 2 real roots)
+- Roots:
+  \[s_1 = -\zeta \omega_n + \omega_n + \sqrt{\zeta^2 - 1}\]
+  \[s_2 = -\zeta \omega_n - \omega_n + \sqrt{\zeta^2 - 1}\]
+- Homogeneous solution:
+  \[x_h (t) = Ae^{\left(- \zeta + \sqrt{\zeta^2 - 1} \right) \omega_n t} + Be^{\left( -\zeta - \sqrt{- \zeta^2 - 1} \right) \omega_n t}\]
+- This motion represents an exponential decaying output.
+
+@@latex: \newpage@@
+
+*** Graphs of unforced responses
+With initial conditions:
+\[x(0) = 1, \quad \left. \frac{dx (t)}{dt} \right|_{t = 0} = 0\]
+
+[[./images/graph-of-unforced-responses.png]]
+
+@@latex: \newpage@@
+
+*** Summary
+Let's define:
+\[\text{Natural frequency, } \omega_n = \sqrt{\frac{k}{m}}\]
+\[\text{Damping ratio, } \zeta = \frac{b}{2 \sqrt{km}}\]
+
+We have:
+\[m \frac{d^2 x}{dt^2} + b \frac{dx}{dt} + kx = 0\]
+\[\frac{d^2 x}{dt^2} + 2 \zeta \omega_n \frac{dx}{dt} + \omega_n^2 x = 0\]
+
+The characteristic equation is:
+\[s^2 + 2 \zeta \omega_n s + \omega_n^2 = 0\]
+
+Whose roots are:
+\[s_1 = -\zeta \omega_n + \omega_n + \sqrt{\zeta^2 - 1}\]
+\[s_2 = -\zeta \omega_n - \omega_n + \sqrt{\zeta^2 - 1}\]
+
+As \(F_{ext} = 0\) (unforced). @@latex: \\@@
+
+When \(\zeta = 0\) (undamped):
+\[x_h (t) = a \cos (\omega_n t) + B \sin(\omega_n t)\]
+
+When \(\zeta < 1\) (under damped):
+\[x_h(t) = e^{-\zeta \omega_n t} \left[A \cos \left(\omega_n \sqrt{1 - \zeta^2 t} \right) + B \sin \left(\omega_n \sqrt{1 - \zeta^2 t} \right) \right]\]
+
+When \(\zeta > 1\) (overdamped):
+\[x_h (t) = Ae^{\left(- \zeta + \sqrt{\zeta^2 - 1} \right) \omega_n t} + Be^{\left( -\zeta - \sqrt{- \zeta^2 - 1} \right) \omega_n t}\]
+
+Where the coefficients \(A\) and $B$ are determined from the initial conditions.
+
+*** Forced response of a second-order system
+A second-order system will have forced response when \(F_{ext} (t) \ne 0\). For the second-order system:
+\[m \frac{d^2 x}{dt^2} + b \frac{dx}{dt} + kx = F_{ext} (t)\]
+
+Its solution can be obtained by combining a general solution (\(x_h (t)\)) of its homogeneous equation, and a particular solution (\(x_p (t)\)) of the second-order system.
+\[x(t) = x_h (t) + x_p (t)\]
+
+When the external force has step input:
+\begin{displaymath}
+F_{ext} = \begin{cases}
+0 & t < 0 \\
+F_i & t \ge 0
+\end{cases}
+\end{displaymath}
+
+[[./images/forced-response-step-input-graph.png]]
+
+It is easy to see that the second-order system \(m \frac{d^2 x}{dt^2} + b \frac{dx}{dt} + kx = F_{ext} (t)\) has a particular solution:
+\[x_p (t) = \frac{F_i}{k}\]
+
+Because:
+\[\frac{k F_i}{k} = F_i\]
+
+*** Solving the homogeneous equation of the forced response of a second-order system
+The homogeneous equation can be solved using the same technique developed for the unforced response of the second-order system. @@latex: \\@@
+
+As \(F_{ext} = 0\) (unforced response). @@latex: \\@@
+
+When \(\zeta = 0\) (undamped):
+\[x_h (t) = A \cos(\omega_n t) + B \sin(\omega_n t)\]
+
+When \(\zeta = 1\) (critically damped):
+\[x_h (t) = (A + Bt) e^{- \omega_n t}\]
+
+When \(\zeta < 1\) (under damped):
+\[x_h(t) = e^{-\zeta \omega_n t} \left[A \cos \left(\omega_n \sqrt{1 - \zeta^2 t} \right) + B \sin \left(\omega_n \sqrt{1 - \zeta^2 t} \right) \right]\]
+
+When \(\zeta > 1\) (overdamped):
+\[x_h (t) = Ae^{\left(- \zeta + \sqrt{\zeta^2 - 1} \right) \omega_n t} + Be^{\left( -\zeta - \sqrt{- \zeta^2 - 1} \right) \omega_n t}\]
+
+*** Graphs of forced responses
+[[./images/forced-response-damping-graph.png]]
+
+Initial conditions:
+\[x (t = 0) = 0, \quad \left. \frac{dx(t)}{dt} \right|_{t = 0} = 0\]
+
+*** Characteristics of a graph of forced response
+[[./images/forced-response-graph-characteristics.png]]
+
+Where:
+- "Steady state value" refers to the value where the system reaches after all transients have dissipated.
+- "Rise time" refers to the time required for the system to go form 10% to 90% of the steady state value.
+- "Over-shoot" is a measure of the amount the output exceeds the steady state value.
+- "Settling time" refers to the time required for the system to settle to within an amplitude band whose width is a specific \(\pm 10\%\) of the steady state value.
+
+*** Forced response amplitude ratio vs frequency ratio graph
+[[./images/forced-response-amplitude-vs-frequency-graph.png]]
+
+Note that \(\zeta = \frac{1}{\sqrt{2}} \approx 0.707\) provides the best amplitude linearity over the largest bandwidth.
+
+* System modelling and analogies
+
+** System models
+[[./images/system-models.png]]
+
+The systems on the right-hand side of the image are the system that are analogous to the models on the left-hand side.
+
+@@latex: \newpage@@
+
+** Second-order modelling analogies
+#+ATTR_LATEX: :environment tabularx :width 1.2\textwidth :align | >{\centering\arraybackslash}X| >{\centering\arraybackslash}X| >{\centering\arraybackslash}X| >{\centering\arraybackslash}X| >{\centering\arraybackslash}X|
+|---------------------------------------+--------------------------------------+----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------|
+| Generic quantity                      | Mechanical translation               | Mechanical rotation                          | Electrical                                            | Hydraulic                                             |
+|---------------------------------------+--------------------------------------+----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------|
+| Effort (\(E\))                        | Force (\(F\))                        | Torque (\(T\))                               | Voltage (\(V\))                                       | Pressure (\(P\))                                      |
+|---------------------------------------+--------------------------------------+----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------|
+| Flow (\(F\))                          | Speed (\(v\))                        | Angular speed (\(\omega\))                        | Current (\(i\))                                       | Volumetric flow rate (\(Q\))                          |
+|---------------------------------------+--------------------------------------+----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------|
+| Displacement (\(q\))                  | Displacement (\(x\))                 | Angular displacement (\(\theta\))                 | Charge (\(q\))                                        | Volume (\(V\))                                        |
+|---------------------------------------+--------------------------------------+----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------|
+| Momentum (\(p\))                      | Linear momentum (\(p = mv\))         | Angular momentum (\(h = J \omega\))               | Flux linkage (\(I = N \Phi = Li\))                       | \(\frac{\text{Momentum}}{\text{Area}}\) (\(\Gamma = IQ\))  |
+|---------------------------------------+--------------------------------------+----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------|
+| Resistor (\(R\))                      | Damper (\(b\))                       | Rotatory damper (\(B\))                      | Resistor (\(R\))                                      | Resistor (\(R\))                                      |
+|---------------------------------------+--------------------------------------+----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------|
+| Capacitor (\(C\))                     | Spring \(\left(\frac{1}{k} \right)\) | Torsion spring \(\left(\frac{1}{k} \right)\) | Capacitor (\(C\))                                     | Tank (\(C\))                                          |
+|---------------------------------------+--------------------------------------+----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------|
+| Inertia (\(I\))                       | Mass (\(m\))                         | Moment of inertia (\(J\))                    | Inductor (\(L\))                                      | Inertance (\(I\))                                     |
+|---------------------------------------+--------------------------------------+----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------|
+| Inertia energy storage (special case) | \(F = \dot{p}\) (\(F = ma\))         | \(T = \dot{h}\) (\(T = J \alpha\))                | \(V = \dot{\lambda}\) \(\left(V = L \frac{di}{dt} \right)\) | \(P = \dot{\Gamma}\) \(\left(P = I \frac{dQ}{dt} \right)\) |
+|---------------------------------------+--------------------------------------+----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------|
+| Capacitor energy storage              | \(F = kx\)                           | \(T = k \theta\)                                  | \(V = \frac{1}{C} q\)                                 | \(P = \frac{1}{C} V\)                                 |
+|---------------------------------------+--------------------------------------+----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------|
+| Dissipative                           | \(F = bv\)                           | \(T = B \omega\)                                  | \(V = Ri\)                                            | \(P = RQ\)                                            |
+|---------------------------------------+--------------------------------------+----------------------------------------------+-------------------------------------------------------+-------------------------------------------------------|
+
+@@latex: \newpage@@
+
+** Similarities and differences
+
+*** Similarities
+- Mathematical representation
+- Mathematical solution
+- Mathematical properties
+
+*** Differences
+- Constants (coefficients, or parameters)
+- Physical meanings of these parameters of the system
+
+*** Analogies
+- For those parameters among the different system types: Resistors, valves, mass, inertia, ...
+- System terms: Effort, flow, displacement, momentum, resistance, capacitance, ...
+
+* Sampling
+
+** Sampling rate
+- Higher sampling rates allow the waveform to be more accurately represented.
+- Low sampling rates may lead the waveform to be less accurately represented.
+
+[[./images/sampling-rate-comparison-graphs.png]]
+
+** Analogue vs digital signals
+| Analogue signal                | Digital signal              |
+|--------------------------------+-----------------------------|
+| /                              | <                           |
+| Continuous                     | Discrete                    |
+| Generated via analogue devices | Sampled in a fixed interval |
+| Not coded                      | Coded value                 |
+| Original signal                | Sequential data array       |
+
+** Shannon & Nyquist theorem
+The best explanation for the Shannon & Nyquist sampling theorem is [[https://www.youtube.com/watch?v=Jv5FU8oUWEY][this YouTube video]].
+
+*** Sampling \(\qty{1}{Hz}\) sine wave at \(\qty{2}{Hz}\)
+[[./images/sampling-1hz-sine-wave-at-2hz.png]]
+
+There are sufficient samples to capture each peak and trough of the signal.
+
+*** Sampling \(\qty{1}{Hz}\) sine wave at \(\qty{3}{Hz}\)
+[[./images/sampling-1hz-sine-wave-at-3hz.png]]
+
+There are more than enough samples to capture the variations in the signal.
+
+@@latex: \newpage@@
+
+*** Sampling \(\qty{1}{Hz}\) sine wave at \(\qty{1.5}{Hz}\)
+[[./images/sampling-1hz-sine-wave-at-1.5hz.png]]
+
+There isn't enough samples to capture all the peaks and troughs in the signal, which results in information being lost.
+
+The signal may also be misinterpreted as a \(\qty{0.5}{Hz}\) signal, as shown below:
+[[./images/sampling-0.5hz-sine-wave.png]]
+
+** Why don't we sample as fast as possible?
+- Sampling as fast as possible results in huge amounts of data.
+- It also requires high speed software.
+- A lot of storage is needed to store the data.
+
+** Logic behind the minimum sampling rate
+- We need to sample a digital signal at a rate more than 2 times the *maximum frequency* \((f_{max})\) *component* in the signal to retain all frequency components.
+- To faithfully represent the analogue signal, the digital samples must be taken at a frequency \(f_s\), such that:
+  \[f_s > 2 f_{max}\]
+
+  Where:
+  - \(f_s\) is the *sampling rate* (not sampling frequency)
+  - \(f_{max}\) is the maximum frequency in the signal, also known as the *Nyquist frequency*
+
+- If we approximate a signal by a truncated Fourier series (\(N\) terms), the maximum frequency component is the *highest harmonic frequency*. Hence, the time interval between the digital samples is:
+  \[\Delta t = \frac{1}{f_s}\]
+
+** Theorem
+\[F(t) = \sum_{n = 0}^N C_n \cos (n \omega_0 t + \phi_n)\]
+\[f(t) = \sum_{n = -N}^{N} D_n e^{jn \omega_0 t}\]
+
+Where:
+- $N$ is the maximum frequency component of the signal
+- $f_s$ is the sampling rate
+- $f_{max}$ is the Nyquist frequency
+
+*** Shannon-Nyquist Theorem
+\[f_s > 2f_{max}\]
+
+Where:
+- $f_s$ is the sampling rate
+- $f_{max}$ is the Nyquist frequency
+
+*** Time interval between the digital samples (\(\Delta t\))
+\[\Delta t = \frac{1}{f_s}\]
+
+Where:
+- $\Delta t$ is the time interval between the digital samples
+- $f_s$ is the sampling rate
+
+*** Sampling \(\qty{1}{Hz}\) sine wave at \(\qty{2}{Hz}\)
+[[./images/sampling-1hz-sine-wave-at-2hz.png]]
+
+- Maximum frequency component: \(N = 1\)
+- Nyquist frequency: \(f_{max} = \qty{1}{Hz}\)
+- Sampling rate: \(f_s = \qty{2}{Hz}\)
+- Time interval between digital samples: \(\Delta t = \frac{1}{2} \ \unit{sec}\)
+
+*** Sampling \(\qty{1}{Hz}\) sine wave at \(\qty{1.5}{Hz}\)
+[[./images/sampling-1hz-sine-wave-at-1.5hz.png]]
+
+- Maximum frequency component: \(N = 1\)
+- Nyquist frequency: \(f_{max} = \qty{1}{Hz}\)
+- Sampling rate: \(f_s = \qty{1.5}{Hz}\)
+- Time interval between digital samples: \(\Delta t = \frac{1}{1.5} = \frac{2}{3} \ \unit{sec}\)
+
+*** Sampling a sine wave with multiple frequencies at \(\qty{6}{Hz}\)
+[[./images/sampling-sine-wave-with-muliple-frequencies-at-6hz.png]]
+
+- Maximum frequency component: \(N = 3\)
+- Nyquist frequency: \(f_{max} = \qty{3}{Hz}\)
+- Sampling rate: \(f_s = \qty{6}{Hz}\)
+- Time interval between digital samples: \(\Delta t = \frac{1}{6} \ \unit{sec}\)
+
+** Aliasing
+
+*** Sampling of a clock with only one hand
+- Sampling a clock at double the Nyquist frequency:
+  [[./images/sampling-clock-at-double-nyquist-frequency.png]]
+
+  - Sampling rate: \(f_s = \frac{1}{30} \ \unit{Hz}\)
+  - Nyquist frequency: \(f_{max} = \frac{1}{60} \ \unit{Hz}\)
+  - Double Nyquist frequency: \(f_{max} = \frac{1}{30} \ \unit{Hz}\)
+  - Aliasing occurs as the receiver cannot tell if the clock is moving forward or backwards.
+
+- Sampling of a clock above double the Nyquist frequency:
+  [[./images/sampling-clock-above-double-nyquist-frequency.png]]
+
+  - Sampling rate: \(f_s = \frac{1}{15} \ \unit{Hz}\)
+  - Nyquist frequency: \(f_{max} = \frac{1}{60} \ \unit{Hz}\)
+  - Double Nyquist frequency: \(f_{max} = \frac{1}{30} \ \unit{Hz}\)
+  - No aliasing occurs as the receiver can tell that the clock is moving forward.
+
+@@latex: \newpage@@
+
+- Sampling of a clock under double the Nyquist frequency:
+  [[./images/sampling-clock-under-double-nyquist-frequency.png]]
+
+  - Sampling rate: \(f_s = \frac{1}{45} \ \unit{Hz}\)
+  - Nyquist frequency: \(f_{max} = \frac{1}{60} \ \unit{Hz}\)
+  - Double Nyquist frequency: \(f_{max} = \frac{1}{30} \ \unit{Hz}\)
+  - Aliasing occurs as the receiver thinks that the clock is moving backwards instead of forward.
+
+@@latex: \newpage@@
+
+*** Undersampled signal
+Below is a signal with a frequency of \(\qty{8}{Hz}\) sampled at a rate of \(\qty{8.5}{Hz}\)
+[[./images/sampling-undersampled-signal.png]]
+
+An undersampled signal can confuse you about its frequency when reconstructed as the sampling rate is too low.
+
+*** Reconstruction of a sampled sine wave
+[[./images/sampling-reconstruction-of-sampled-sine-wave.png]]
+
+*** Frequency of aliased signal (\(f_a\))
+The frequency of an aliased signal (\(f_a\)) is given as:
+\[f_a = \left|f_s \cdot i - f_n \right|\]
+
+Where:
+- $f_a$ is the frequency of the aliased signal
+- $f_s$ is the sampling rate
+- $i$ is the closest integer multiple of the sampling rate to the signal being aliased
+- $f_n$ is the frequency of the signal being aliased
+
+For example, if the signal is \(f_n = \qty{21}{Hz}\) and is sampled with \(f_s = \qty{10}{Hz}\), then the aliased frequency would be \(\left| i \cdot f_s - f_n \right| = | 2 \cdot 10 - 21 | = \qty{1}{Hz}\)
+
+*** Capturing the shape of the waveform
+Even though sampling at twice the *Nyquist frequency* will ensure that you measure the correct frequency of your signal, it will not be sufficient to capture the shape of the waveform.
+
+If the shape of the waveform is desired, you should sample at a rate approximately *10 times* the *Nyquist frequency*.
+
+** Applications
+
+*** Recording audio
+- The range of human hearing is \(20 - 20,000 \ \unit{Hz}\).
+- We lose high frequency response with age.
+- Women generally have better response than men.
+- To reproduce an audio signal of \(\qty{20}{kHz}\) requires a sampling rate of at least \(\qty{40}{kHz}\).
+- *Below* the sampling rate of \(\qty{40}{kHz}\), aliasing will occur, according the Shannon-Nyquist Theorem.
+
+*** Digital voice telephone transmission
+- Voice data for telephone purposes is limited to frequencies less than \(\qty{4}{kHz}\).
+- According to the Shannon-Nyquist Theorem, it would take 8,000 samples \(2 \cdot 4,000\) to capture a \(4,000 \ \unit{Hz}\) signal perfectly.
+- Generally, one byte is recorded per sample (256 levels). One byte is eight bits of binary data.
+- \(\qty{8}{bits} \cdot 8,000 \text{ samples per second } = \qty{64}{kbps}\) over a circuit.
+
+@@latex: \newpage@@
+
+* Quantisation and encoding
+
+** Digitising
+[[./images/digitising-sound.png]]
+
+[[./images/playing-back-the-digital-sound-file.png]]
+
+** Pulse code modulation (PCM)
+- Pulse code modulation consists of three steps to digitise an analogue signal:
+  1. Sampling
+  2. Quantisation
+  3. Binary encoding
+- Before we sample, we have to filter the signal to limit the maximum frequency of the signal as it affects the sampling rate.
+- Filtering should ensure that we do not distort the signal by removing high frequency components that affect the signal shape.
+
+*** Components of a PCM encoder
+[[./images/components-of-a-pcm-encoder.png]]
+
+*** Sampling methods and pulse amplitude modulation (PAM)
+- The analogue signal is sampled every \(T_s \ \unit{secs}\).
+- \(T_s\) is known as the sampling interval.
+- \(f_s = \frac{1}{T_s}\) is called the sampling rate or sampling frequency.
+- There are 3 sampling methods:
+  1. Ideal, which is an instant pulse at each sampling instant.
+  2. Natural, which is a pulse of short width with varying amplitude.
+  3. Flat top, which is to sample and hold the value. It is similar to the natural sampling method, but with a constant amplitude value.
+- This process is known as pulse amplitude modulation (PAM) and the outcome is a signal with analogue (non-integer) values.
+
+*** Images of the sampling methods
+#+ATTR_LATEX: :height 15em
+[[./images/ideal-sampling.png]]
+
+#+ATTR_LATEX: :height 15em
+[[./images/natural-sampling.png]]
+
+#+ATTR_LATEX: :height 15em
+[[./images/flat-top-sampling.png]]
+
+** Quantisation
+- Sampling results in a series of pulses of varying amplitude values ranging between two limits: a minimum and a maximum value.
+- The amplitude values are finite between the two limits.
+- We need to map the finite amplitude values onto a finite set of known values.
+- This is achieved by dividing the distance between the minimum and maximum into \(L\) zones, each of height \(\Delta\)
+  \[\Delta = \frac{max - min}{L}\]
+
+@@latex: \newpage@@
+
+*** Analogue quantisation size (code width) (\(Q\))
+\[Q = \frac{V_{max} - V_{min}}{N}\]
+
+Where:
+- $Q$ is the analogue quantisation size
+- $V_{max}$ is the maximum voltage value
+- $V_{min}$ is the minimum voltage value
+- $N$ is the number of zones
+
+Example:
+- Given \(N = 8, V_{max} = \qty{10}{V}, V_{min} = \qty{0}{V}\).
+- Analogue quantisation size of code width: \(Q = \frac{V_{max} - V_{min}}{N} = \frac{10 - 0}{8} = \qty{1.25}{V}\)
+- This means that the amplitude of the digitised signal has an error of at most \(\qty{1.25}{V}\).
+- Therefore, the A/D converter can only resolve a voltage within \(\qty{1.25}{V}\) of the exact analogue voltage.
+
+@@latex: \newpage@@
+
+*** Quantisation vs encoding
+- Quantisation is the transformation of a continuous analogue input into a set of discrete output states.
+- Encoding is the assignment of a digital code word or number to each output state.
+
+[[./images/analogue-quantisation-size-graph.png]]
+
+- Each output state covers a subrange of the overall voltage range.
+- The step-stair signal represents the states of a digital signal generated by sampling a linear ramp of an analogue signal occurring over the voltage range.
+- The figure shows how a continuous voltage range is divided into discrete output states, each of which is assigned a unique code.
+
+@@latex: \newpage@@
+
+*** Analogue-to-digital (A/D) converter
+- An analogue-to-digital converter is an electronic device that converts an analogue voltage to a digital code.
+- The output of the analogue-to-digital converter can be directly interfaced to a digital device, like a microcontroller of a computer.
+- The resolution of an analogue-to-digital converter is the number of bits used to digitally approximate the analogue value of the input.
+- The number of possible states \(N\) is equal to the number of bit combinations that can be produced from the converter:
+  \[N = 2^n\]
+
+  Where:
+  - $N$ is the number of possible states
+  - $n$ is the number of bits
+
+- Most commercial analogue-to-digital converters are an 8, 10 or 12-bit device, with 256 (2^8), 1024 (2^{10}), or 4096 (2^{12}) states respectively.
+
+*** Mid-points
+- The midpoint of each zone is assigned a value from 0 to \(L - 1\), resulting in \(L\) values.
+- Each sampling falling in a zone is then approximated to the value of the midpoint.
+
+@@latex: \newpage@@
+
+*** Quantising zones and mid-points
+- Assume a voltage signal with amplitudes \(V_{min} = \qty{-20}{V}\) and \(V_{max} = \qty{+20}{V}\).
+- Using \(L = 8\) quantisation levels.
+- Zone width: \(\Delta = \frac{20 - (- 20)}{8} = 5\)
+- The 8 zones are:
+  - -20 to -15
+  - -15 to -10
+  - -10 to -5
+  - -5 to 0
+  - 0 to +5
+  - +5 to +10
+  - +10 to +15
+  - +15 to +20
+- The mid-points are:
+  - -17.5
+  - -12.5
+  - -7.5
+  - -2.5
+  - 2.5
+  - 7.5
+  - 12.5
+  - 17.5
+
+@@latex: \newpage@@
+
+*** Assigning codes to zones
+- Each zone is then assigned a binary code.
+- The number of bits required to encode the zones, or the number of bits per sample, is obtained as follows:
+  \[n_b = log_2 L\]
+
+  Where:
+  - $n_b$ is the number of bits to encode the zone.
+  - $L$ is the number of zones
+- In the example above, \(n_b = 3\).
+- The 8 zone codes are therefore:
+  - 000
+  - 001
+  - 010
+  - 011
+  - 100
+  - 101
+  - 110
+  - 111
+- Assigning codes to the zones:
+  - 000 will refer to zone -20 to -15
+  - 001 will refer to zone -15 to -10
+  - 010 will refer to zone -10 to -5
+  - 011 will refer to zone -5 to 0
+  - 100 will refer to zone 0 to +5
+  - 101 will refer to zone +5 to +10
+  - 110 will refer to zone +10 to +15
+  - 111 will refer to zone +15 to +20
+
+*** Quantisation and encoding of a sampled signal
+[[./images/quantisation-and-encoding-result-of-a-sampled-signal.png]]
+
+@@latex: \newpage@@
+
+*** Quantisation error
+- When a signal is quantised, an error is introduced as the encoded signal is an approximation of the actual amplitude value.
+- The difference between the actual and encoded value (mid-point) is known as the quantisation error.
+- The greater the number of zones, the smaller the width of the zone (\(\Delta\)), which results in smaller errors.
+- However, increasing the number of zones will also increase the number of bits required to encode the samples, which will increase the bit rate.
+
+[[./images/quantisation-error.png]]
+
+[[./images/quantisation-error-waveform-equation.png]]
+
+@@latex: \newpage@@
+
+* Amplifiers
+An amplifier increases the amplitude of a signal without affecting the phase of the different components of the signal. This means the voltage gain should be constant for all frequencies.
+
+** Relationship between output and input
+#+ATTR_LATEX: :height 20em
+[[./images/amplifier-circuit.png]]
+
+\[V_{out} = A_v V_{in}\]
+
+Where:
+- $A_v$ is the gain. Ideally, $A_v$ is constant for all frequencies, but there is a bandwidth associated with cut-off frequencies.
+
+** Filtering and amplifier linearity
+- Amplifiers are designed for certain frequencies instead of all frequencies.
+- Output characteristics are governed by the amplifier's bandwidth.
+- There are associated cut-off frequencies (thresholds) for amplifiers.
+
+** Characteristics of amplifiers
+- Size
+- Cost
+- Power consumption
+- Input impedance
+- Output impedance
+- Gain
+- Bandwidth
+
+*** Input impedance (\(Z_{in}\))
+Most amplifiers are designed to have:
+- Large input impedance
+- As little current as possible is drawn from the input
+
+The input impedance \(Z_{in}\) is given by:
+\[Z_{in} = \frac{V_{in}}{I_{in}}\]
+
+Where:
+- $Z_{in}$ is the input impedance
+- $V_{in}$ is the input voltage
+- $I_{in}$ is the input current
+
+The input impedance should be large to have little current drawn from the input.
+
+@@latex: \newpage@@
+
+*** Output impedance (\(Z_{out}\))
+- The voltage drop \(\Delta V_{out}\) is a measure of how much the output voltage drops with the output current.
+- Most of the amplifiers are designed to have a very small output impedance, so the output voltage will not change much as the output current changes.
+
+Output impedance \(Z_{out}\) is:
+\[Z_{out} = \frac{\Delta V_{out}}{I_{in}}\]
+
+Where:
+- $\Delta V_{out}$ is the voltage drop measured relative to the output voltage with no current. The output impedance should be small to have little change when the output current changes.
+
+** Operational amplifiers
+
+*** Characteristics
+1. Low-cost.
+2. Versatile integrated circuits.
+3. Single chip consisting of internal transistors, resistors, and capacitors.
+4. Combined with external discrete components to create a wide variety of signal processing circuits.
+
+*** Basic block of amplifiers
+| Amplifiers     | Integrators              | Summers         |
+|----------------+--------------------------+-----------------|
+| /              | <                        | <               |
+| A/D converters | D/A converters           | Differentiators |
+| Active filters | Sample & hold amplifiers | Comparators     |
+
+@@latex: \newpage@@
+
+*** Functions
+- Inverting amplifiers
+- Non-inverting amplifiers
+- Summer amplifiers
+- Difference amplifiers
+- Integrator amplifiers
+- Differentiator amplifiers
+
+*** Schematic and nomenclature
+[[./images/parts-of-an-operational-amplifier.png]]
+
+- A differential input
+  - The inverting input (\(-\))
+  - The non-inverting input (\(+\))
+- Single output
+- Infinite gain (\(\infty\))
+- The voltages are all referenced to a common ground.
+
+*** Output voltage
+[[./images/operational-amplifier-diagram.png]]
+
+\[V_{out} = A_v V_{in}\]
+\[V_3 = A(V_2 - V_1)\]
+
+The output voltage is proportional to the difference between the two inputs of the amplifier.
+
+*** How to control the gain?
+#+ATTR_LATEX: :height 15em
+[[./images/operational-amplifier-feedback-loop-diagram.png]]
+
+The feedback loop is connected from the output to the inverting input (\(-\)).
+
+*** Closed loop vs open loop configuration
+| Closed loop configuration       | Open loop configuration                       |
+|---------------------------------+-----------------------------------------------|
+| /                               | <                                             |
+| When feedback is present        | When feedback is absent                       |
+| Stabilisation of the amplifiers | Considerable instability due to the high gain |
+| Control of the gain             | Seldom used                                   |
+
+*** Ideal model for operational amplifiers
+[[./images/operational-amplifier-equivalent-circuit.png]]
+
+Infinite impedance at both inputs.
+- No current is drawn from the input circuits.
+- Therefore, \(I_+ = I_- = 0\).
+
+Infinite gain, assuming no current flow between the short of the two inputs.
+- The difference between the input voltages must be 0, otherwise the output would be infinite.
+- Therefore, \(V_+ = V_-\).
+
+Zero output impedance.
+- The output voltage does not depend on the output current.
+
+Note that \(V_{out}, V_+ \text{ and } V_-\) are all referenced to the same ground, and there must be feedback between the output and the inverting input for stable linear behaviour.
+
+*** Summary of the ideal operational amplifier
+- The ideal operational amplifier has infinite impedance at both inputs, so no current is draw from the input circuit: \(I_+ = I_- = 0\).
+- It has infinite gain, so the difference between input voltages is zero: \(V_+ = V_-\).
+- It has zero output impedance, so the output voltage does not depend on output current.
+- The open-loop gain is a very large, and can be considered as infinite.
+- The input impedances of the two terminals are very large, and can be considered as infinite.
+- The output impedance is very small, and can be considered as zero.
+
+*** Real operational amplifier
+#+begin_center
+#+ATTR_LATEX: :height 0.4\textwidth :center
+[[./images/real-operational-amplifier-side-view.png]]
+#+ATTR_LATEX: :height 0.4\textwidth :center
+[[./images/real-operational-amplifier-top-view.png]]
+#+end_center
+
+Packaging
+- Eight pins and dual inline package (DIP) integrated circuit or a chip.
+- 741 is the designation of a general purpose operational amplifier by many manufacturers.
+
+*** Pin configuration (pin-out)
+[[./images/operational-amplifier-metal-can-package.png]]
+[[./images/operational-amplifier-dual-inline-package.png]]
+- One indentation or spot
+- The pins are numbered counterclockwise
+- Pin 2: Inverting input (\(-\))
+- Pin 3: Non-inverting input (\(+\))
+- Pin 4: External power supply (\(\qty{-15}{V}\))
+- Pin 7: External power supply (\(\qty{+15}{V}\))
+- Pin 6: The operational amplifier output
+- Pins 1, 5 and 8: Not normally used, no connections are required
+
+** Inverting amplifier
+[[./images/inverting-amplifier-diagram.png]]
+
+An inverting amplifier inverts and amplifies the input voltage.
+- It is constructed by connecting two external resistors to an operational amplifier.
+- This circuit inverts and amplifies the input voltage.
+- The resistor \(R_F\) forms the feedback loop.
+  - The loop always goes from the output to the inverting input of the operational amplifier, so the feedback loop is negative.
+
+@@latex: \newpage@@
+
+*** Equivalent circuit
+#+ATTR_LATEX: :height 10em
+[[./images/inverting-amplifier-circuit.png]]
+
+At node C:
+\[I_{in} = - I_{out}, \quad V_c = 0\]
+
+Where:
+- $I_{in}$ is the input current
+- $I_{out}$ is the output current
+- $V_c$ is the voltage at node \(C\)
+
+Since no current flow into inputs of the operational amplifier, voltage across the resistor \(R\) is \(V_{in} - V_c = V_{in}\), from Ohm's law:
+\[V_{in} = I_{in} R\]
+
+Where:
+- $V_{in}$ is the input voltage
+- $I_{in}$ is the input current
+- $R$ is the resistance of the resistor \(R\)
+
+Voltage across the resistor \(R_F\) is \(V_{out} - V_c = V_{out}\), from Ohm's law:
+\[V_{out} = I_{out} R_F = - I_{in} R_F\]
+\[\frac{V_{out}}{V_{in}} = - \frac{R_F}{R}\]
+
+Where:
+- $V_{out}$ is the output voltage
+- $V_{in}$ is the input voltage
+- $R_F$ is the resistance of resistor \(R_F\)
+- $R$ is the resistance of resistor \(R\)
+
+*** Characteristics
+- The voltage gain of the amplifier is determined simply by the external resistors \(R_F\) and \(R\).
+- The voltage gain of the amplifier is always negative.
+- An example of an inverting (\(-\)) amplifier:
+  [[./images/inverting-amplifier-input-voltage.png]]
+  [[./images/inverting-amplifier-output-voltage.png]]
+
+** Non-inverting amplifier
+A non-inverting amplifier amplifies the input voltage without inverting the signal.
+
+*** Equivalent circuit
+[[./images/non-inverting-amplifier-circuit.png]]
+
+At node \(C\):
+\[V_c = V_{in}, \qquad V_{in} = - I_{in} R, \qquad I_{in} + I_{out} = 0\]
+
+Voltage across \(R_F\):
+\begin{align*}
+V_{out} &= I_{out} R_F + V_{in} \\
+\therefore \frac{V_{out}}{V_{in}} &= \frac{I_{out} R_F + V_{in}}{-I_{in} R} \\
+&= \frac{I_{out} R_F - I_{in} R}{- I_{in} R} \\
+&= \frac{- I_{in} R_F - I_{in} R}{- I_{in} R} \\
+&= 1 + \frac{R_F}{R}
+\end{align*}
+
+*** Summary
+- A non-inverting amplifier amplifies the input without inverting the signal.
+- It has a positive gain greater than or equal to 1.
+
+** Summer amplifier
+#+ATTR_LATEX: :height 10em
+[[./images/summer-amplifier-adder-circuit.png]]
+
+\[V_{outN} = - \frac{R_F}{R_N} V_N\]
+\[V_{out1} = - \frac{R_F}{R_1} V_1\]
+\[V_{out2} = - \frac{R_F}{R_2} V_2\]
+\[V_{out} = - \left(\frac{R_F}{R_1} V_1 + \frac{R_F}{R_2} V_2 + \frac{R_F}{R_N} V_N \right)\]
+
+*** Equivalent circuit
+[[./images/summer-amplifier-equivalent-circuit.png]]
+
+\[\frac{V_1}{R_1} + \frac{V_2}{R_2} = - \frac{V_{out}}{R_F}\]
+
+- The summer amplifier is also known as the adder.
+- It adds another analogue signal.
+- The output is the negative sum of the inputs.
+
+** Difference amplifier
+A difference amplifier circuit is used to subtract analogue signals.
+
+[[./images/difference-amplifier-circuit.png]]
+
+\[V_1 - I_1 R_1 = V_2 - I_2 R_2 = I_2 R_F\]
+\[V_{out} = - I_1 R_F - I_1 R_1 + V_1\]
+
+Hence:
+\[I_2 = \frac{V_2}{R_F + R_2} \quad \rightarrow \quad I_1 = \frac{V_1}{R_1} - \frac{V_2}{R_F + R_2} \frac{R_F}{R_1}\]
+
+So:
+\[V_{out} = V_1 - (R_F + R_1) \left(\frac{V_1}{R_1} - \frac{V_2}{R_F + R_2} \frac{R_F}{R_1} \right)\]
+
+If \(R_1 = R_2 = R\),
+\[V_{out} = \frac{R_F}{R_1} (V_2 - V_1)\]
+
+@@latex: \newpage@@
+
+** Integrator
+The integrator circuit is created by replacing the feedback resistor of the inverting operation amplifier circuit with a capacitor.
+
+#+ATTR_LATEX: :height 10em
+[[./images/integrator-circuit.png]]
+
+\[\frac{dV_{out}}{dt} = \frac{I_{out}}{C} = -\frac{I_{in}}{C} = - \frac{V_{in}}{RC}\]
+
+So:
+\[V_{out} (t) = - \frac{1}{RC} \int_0^t V_{in} (\tau) \, d \tau\]
+
+*** Practical integrator
+#+ATTR_LATEX: :height 10em
+[[./images/practical-integrator-circuit.png]]
+
+\[C \frac{dV_{out}}{dt} + \frac{V_{out}}{R_s} = I_{out} = - I_{in} = - \frac{V_{in}}{R_1}\]
+
+So:
+\[\frac{dV_{out}}{dt} + \frac{1}{CR_s} V_{out} = \frac{1}{R_1 C} V_{in}\]
+
+Should choose:
+\[R_s > 10 R_1, \qquad R_2 = - \frac{R_1 R_s}{R_1 + R_s}\]
+
+The reason is \(R_2\) is an approximation of the parallel combination of \(R_1\) and \(R_s\) to minimise the DC offset due to the input current bias.
+
+** Differentiator
+The input resistor of the inverting operational amplifier circuit is replaced by a capacitor to form a differentiator circuit.
+[[./images/differentiator-circuit.png]]
+
+\[\frac{dV_{in}}{dt} = \frac{I_{in}}{C} = -\frac{I_{out}}{C} = - \frac{V_{out}}{RC}\]
+
+So:
+\[V_{out} = - RC \frac{dV_{in}}{dt}\]
+
+@@latex: \newpage@@
+
+** Sample and hold circuit
+1. It is extensively used in analogue-to-digital conversion.
+2. Its signal value must be stabilised while it is converted to a digital representation.
+3. It consists of voltage-holding capacitor and a voltage follower.
+4. It works while the switch is closed.
+
+[[./images/sample-and-hold-circuit.png]]
+
+When switch \(S\) is closed:
+\[V_{out} (t) = V_{in} (t)\]
+\[V_{out} (t - t_{sampled}) = V_{in} (t_{sampled})\]
+
+The capacitor \(C\) should be one with low leakage.
+
+@@latex: \newpage@@
+
+** Comparator
+- A comparator is used to determine whether one signal is greater than another.
+- The comparator is an example of an operational amplifier circuit where there is no negative feedback and the circuit exhibits infinite gain.
+- The result is that the operational amplifier saturates.
+- Saturation means that the output remains at its most positive or most negative output value.
+
+[[./images/comparator-circuit.png]]
+
+\begin{displaymath}
+V_{out} = \begin{cases}
++V_{sat}, & V_{in} > V_{ref} \\
+-V_{sat}, & V_{in} < V_{ref} \\
+\end{cases}
+\end{displaymath}
+
+Where:
+- $V_{sat}$ is the saturation voltage of the comparator. Most comparators are specially built.
+
+@@latex: \newpage@@
+
+** Instrumentation amplifier
+- An instrumentation amplifier is used for subtracting analogue signals.
+- It does not invert the signal, like a non-inverting amplifier.
+
+[[./images/instrumentation-amplifier-circuit.png]]
+
+The left side:
+\[V_3 - V_1 = I_1 R_2\]
+\[V_2 - V_4 = I_1 R_2\]
+\[V_1 - V_2 = I_1 R_1\]
+
+The right side:
+\[V_3 - I_3 R_3 = V_4 - I_4 R_3 = I_4 R_5\]
+\[V_{out} = -I_3 R_4 - I_3 R_3 + V_3\]
+
+Where:
+- $I_3$ is the current through \(R_3\)
+- $I_4$ is the current through \(R_4\)
+
+@@latex: \newpage@@
+
+So:
+\[V_3 = \left(\frac{R_2}{R_1} + 1 \right) V_1 - \frac{R_2}{R_1} V_2\]
+\[V_4 = \left(\frac{R_2}{R_1} + 1 \right) V_2 - \frac{R_2}{R_1} V_1\]
+\[V_{out} = \frac{R_5 (R_3 + R_4)}{R_3 (R_3 + R_5)} V_4 - \frac{R_4}{R_3} V_3\]
+
+If \(R_4 = R_4\), then:
+\[V_{out} \left[\frac{R_4}{R_3} \left(1 + 2 \cdot \frac{R_2}{R_1} \right) \right] (V_2 - V_1)\]
+
+So if \(V_1 = V_2\), then \(V_{out} = 0\). In practice, we need a variable resistor \(R_2\) to tune such that \(R_4 = R_5\).
+
+*** Why use instrumentation amplifiers?
+- A difference amplifier may be satisfactory for low-impedance source, but its input impedance is too low for high-output impedance source.
+- If the levels of the input signals are very low and the signals include noise, the difference amplifier is unable to extract a satisfactory difference signal.
+- The instrumentation amplifier is a solution for this problem.
+
+@@latex: \newpage@@
+
+*** Characteristics
+- The instrumentation amplifier has very high input impedance.
+- Large common mode rejection ratio (CMRR), which is the ratio of the difference mode gain to the common mode gain.
+- The difference mode gain is the amplification factor for the difference between the input signals.
+- The common mode gain is the amplification factor for the average of the input signals.
+- For an ideal difference amplifier, the common mode gain is 0, implying an infinite common mode rejection ratio.
+- It is desirable to minimise the common mode gain to suppress signals such as noise that are common to both inputs.
+- The instrumentation amplifier also has the capability to amplify low-level signals in a noisy environment, which is often a requirement in applications with differential output and signal conditioning.
+- It also has a consistent bandwidth over a large range of gains.
+
+* Analogue-to-digital (A/D) conversion
+
+** Data acquisition (DAQ) devices
+[[./images/data-acquisition-flow-chart.png]]
+
+@@latex: \newpage@@
+
+*** Flow chart
+#+begin_center
+Sensor
+\[\downarrow\]
+DAQ device
+\[\downarrow\]
+Computer bus
+\[\downarrow\]
+Computer
+\[\downarrow\]
+Driver software
+\[\downarrow\]
+Application software
+\[\downarrow\]
+Data storage format
+\[\downarrow\]
+Analysis tools
+\[\downarrow\]
+Visualisation tools
+\[\downarrow\]
+Reporting tools
+#+end_center
+
+*** Examples
+| Sensor                                | Phenomenon                |
+|---------------------------------------+---------------------------|
+| /                                     | <                         |
+| Thermocouple, thermistor              | Temperature               |
+| Photo sensor                          | Light                     |
+| Microphone                            | Sound                     |
+| Strain gage, piezoelectric transducer | Force and pressure        |
+| Potentiometer, optical encoder        | Position and displacement |
+| Accelerometer                         | Acceleration              |
+| pH electrode                          | pH                        |
+
+** A/D conversion
+[[./images/a-d-conversion-flow-chart.png]]
+
+1. Buffer amplifier
+   - Isolates the output from the input.
+   - Provides a signal in a range close to but not exceeding the full input voltage range of the A/D converter.
+2. Low pass filter
+   - Necessary to remove any undesirable high-frequency components in the signal that could produce aliasing.
+   - The cut-off frequency of the low-pass filter is less than half of the sampling rate.
+3. Sample and hold amplifier
+   - This amplifier maintains a fixed input value from an instantaneous sample during the short conversion time of the A/D converter.
+4. A/D converter
+   - The converter should have a resolution and analogue quantisation size appropriate for the system and the signal.
+5. Computer and memory
+   - The computer must properly interface with the A/D converter system to store and process the data.
+   - It also needs to have sufficient memory and storage to store the data.
+
+*** Definition
+- An electronic integrated circuit which transforms a signal from analogue (continuous) to digital (discrete) form.
+- Analogue signals are directly measurable quantities.
+- Digital signals only have two states. For the digital computer, we refer to the binary states: 0 and 1.
+
+*** Why do we need analogue-to-digital conversion?
+- Microprocessors can only perform complex processing on digitised signals.
+- When signals are in digital form, they are less susceptible to the deleterious effects of additive noise.
+- A/D conversion provides a link between the analogue world of transducers and the digital world of signal processing and data handling.
+
+** A/D conversion process
+[[./images/a-d-conversion-process.png]]
+
+1. Sampling and holding (S/H)
+2. Quantising and encoding (Q/E)
+
+*** Sampling and holding
+[[./images/sampling-and-holding-signal-transformation.png]]
+
+- Holding the signal benefits the accuracy of the A/D conversion.
+- The minimum sampling rate should be at least twice the highest data frequency of the analogue signal.
+
+*** Resolution
+- The resolution is the smallest change in the analogue signal that will result in a change to the digital output.
+
+  \[\Delta V = \frac{V_{ref}}{2^n}\]
+
+  Where:
+  - $\Delta V$ is the resolution
+  - $n$ is the number of bits in the digital output
+  - $2^n$ is the number of states
+  - $V_{ref}$ is the reference voltage range
+
+- The resolution represents the quantisation error inherent in the conversion of the signal to digital form.
+
+@@latex: \newpage@@
+
+*** Quantising and encoding
+- Quantising refers to partitioning the reference signal range into a number of discrete quanta, then matching the input signal to the correct quantum.
+- Encoding refers to assigning a unique digital code to each quantum, then allocating the digital code to the input signal.
+
+[[./images/analogue-signal-after-quantisation-and-encoding.png]]
+
+@@latex: \newpage@@
+
+*** Ways to improve the accuracy of the A/D conversion
+1. Increase the resolution, which improves the accuracy in measuring the amplitude of the analogue signal.
+2. Increasing the sampling rate, which increases the maximum frequency that can be measured.
+
+[[./images/accuracy-comparison-of-a-d-conversion-after-improvements.png]]
+
+*** Advantages of A/D conversion
+- A digital signal is superior to an analogue signal, as it is more robust to noise and can easily be recovered, corrected and amplified.
+- For this reason, most analogue signals will be changed to their digital forms.
+
+*** Applications of A/D conversion
+- Analogue-to-digital converters are used virtually everywhere where an analogue signal has to be processed, stored, or transported in digital form.
+- Some examples include:
+  - Cell phones
+  - Thermocouples
+  - Digital oscilloscopes
+  - Digital voltmeters
+
+*** Time taken for the A/D conversion
+- The setting time depends on:
+  - The design of the converter.
+  - The method used for conversion.
+  - The speed of the components used in the electronic design.
+- Because the analogue signal changes continuously, the uncertainty when the conversion occurs (in the sample time window), causes the corresponding uncertainty in the digital value.
+- This is of particular concern if there is no sample and hold amplifier on the analogue-to-digital input.
+
+*** Aperture time
+- The aperture time refers to the duration of the time between each reading of the analogue-to-digital converter.
+- It is associated with any error in the digital output due to changes in the input during this time.
+- The relationship between the aperture time and the uncertainty in the input amplitude is shown below:
+
+[[./images/aperture-time-illustration.png]]
+
+During the aperture time, the input signal changes by \(\Delta V (t)\), where:
+
+\[\Delta V (t) = \frac{dV (t)}{dt} \Delta T_a\]
+
+** A/D converters
+Design principles of A/D converters
+1. Successive approximation.
+2. Flash or parallel encoding.
+3. Single-slope and dual-slope integration.
+4. Switched capacitor.
+5. Delta sigma.
+
+Other principles include:
+- Voltage-to-frequency.
+- Staircase ramp or single slope.
+- Charge balancing or redistribution.
+- Tracking, synchronising or resolving.
+
+Note that design principles 1 (successive approximation) and 2 (flash or parallel encoding) occurs the most often.
+
+*** Successive approximation
+1. A/D converters designed based on successive approximation is very widely used as it is relatively fast and cheap.
+2. A successive approximation A/D converter uses a digital-to-analogue (D/A) converter in a feedback loop.
+3. When the start signal is sent, the sample and hold (S & H) amplifier latches the analogue input.
+4. The control unit begins an iterative process, where the digital value is approximated, converted to an analogue value with the D/A converter, and compared to the analogue input with the comparator.
+5. When the D/A output equals the analogue input, the end signal is set by the control unit and the correct digital output is available at the output.
+
+*** Successive approximation A/D converter circuit
+- The circuit uses an n-bit digital-to-analogue converter to compare the results from the digital-to-analogue converter and the original analogue results.
+- It uses a successive approximation register (SAR) to supply an approximate digital code to the digital-to-analogue converter of \(V_{in}\).
+- It compares the change in digital output to bring it closer to the input value.
+- The circuit uses closed-loop feedback conversion.
+
+#+ATTR_LATEX: :height 15em
+[[./images/successive-approximation-adc-circuit.png]]
+
+Output:
+[[./images/successive-approximation-output.png]]
+
+*** Successive approximation pros and cons
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align |X|X|
+|------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------|
+| Pros                                                                   | Cons                                                                                          |
+|------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------|
+| High speed and good reliability                                        | For higher resolution successive approximation, analogue-to-digital converters will be slower |
+|------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------|
+| Medium accuracy compared to other analogue-to-digital converter types. | Speed limited to about 5 milliseconds per sample.                                             |
+|------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------|
+| Good tradeoff between speed and cost.                                  |                                                                                               |
+|------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------|
+| Capable of yielding the binary number in a serial format (one bit at a time). |                                                                                               |
+|------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------|
+*** Successive approximation flow chart
+[[./images/successive-approximation-flow-chart.png]]
+
+*** A/D converter flow chart
+[[./images/a-d-converter-flow-chart.png]]
+
+*** Example of a 4-bits A/D converter
+[[./images/4-bits-a-d-converter-example.png]]
+
+The digital result 0110. A higher resolution will produce more accurate results.
+
+@@latex: \newpage@@
+
+*** Conversion time
+- An n-bit successive approximation A/D converter has a conversion time of \(n \Delta T\), where \(\Delta T\) is the cycle time of the digital-to-analogue converter and the control unit.
+- The typical conversion time for 8, 10, or 12-bit successive approximation A/D converters ranges from 1 to \(\qty{100}{\micro s}\)
+
+*** Example of a 10-bit A/D converter
+- Number of bits: \(n = 10\)
+- Voltage input: \(V_{in} = \qty{0.6}{V}\)
+- Reference voltage: \(V_{ref} = \qty{1}{V}\)
+
+| Bit |      Voltage |
+|-----+--------------|
+|   9 |          0.5 |
+|   8 |         0.25 |
+|   7 |        0.125 |
+|   6 |       0.0625 |
+|   5 |      0.03125 |
+|   4 |     0.015625 |
+|   3 |    0.0078125 |
+|   2 |   0.00390625 |
+|   1 |  0.001952125 |
+|   0 | 0.0009765625 |
+
+\[\text{Number of possible states: } N = 2^n = 1024\]
+\begin{align*}
+\text{Resolution: } \Delta V &= \frac{V_{max} - V_{min}}{N} \\
+&= \frac{\qty{1}{V}}{1024} \\
+&= 0.0009765625 \times V_{ref}
+\end{align*}
+
+@@latex: \newpage@@
+
+*** Process of calculating the most significant bit (bit 9)
+1. Divide \(V_{ref}\) by 2, \(V = \frac{V_{ref}}{2} = 0.5\).
+2. Compare $V$ with \(V_{in}\).
+3. If \(V_{in}\) is greater than \(V\), turn the most significant bit (MSB) on (set to 1).
+4. If \(V_{in}\) is less than \(V\), turn the most significant bit off (set to 0).
+5. \(V_{in} = \qty{0.6}{V}\) and \(V = 0.5\).
+6. Since \(V_{in} > V\), \(MSB = 1\)
+
+[[./images/a-d-converter-msb-calculation-process.png]]
+
+*** Process of calculating the most significant bit - 1 (bit 8)
+1. \(V = \frac{V_{ref}}{2} + \frac{V_{ref}}{4} = 0.5 + 0.25 = \qty{0.75}{V}\).
+2. Compare \(V_{in}\) to \(V\).
+3. Since \(0.6 < 0.75\), the current most significant bit is turned off (set to 0).
+
+[[./images/a-d-converter-msb-1-calculation-process.png]]
+
+@@latex: \newpage@@
+
+*** Process of calculating the most significant bit - 2 (bit 7)
+1. Go back to the last voltage that caused it to be turned on (bit 9) and add it to \(\frac{V_{ref}}{8}\).
+2. Hence, \(V = \frac{V_{ref}}{2} + \frac{V_{ref}}{8} = 0.5 + 0.125 = \qty{0.625}{V}\)
+3. Since \(0.6 < 0.625\), the current most significant bit is turned off (set to 0).
+
+[[./images/a-d-converter-msb-2-calculation-process.png]]
+
+*** Process of calculating the most significant bit - 3 (bit 6)
+1. Go back to the last voltage that caused it to be turned on (bit 9) and add it to \(\frac{V_{ref}}{16}\).
+2. Hence, \(V = \frac{V_{ref}}{2} + \frac{V_{ref}}{16} = 0.5 + 0.0625 \qty{0.5625}{V}\)
+3. Since \(0.6 > 0.5625\), the current most significant bit is turned on (set to 1).
+
+[[./images/a-d-converter-msb-3-calculation-process.png]]
+
+This process continues for all the remaining bits:
+[[./images/a-d-converter-calculation-process-result.png]]
+
+Results:
+\[\frac{1}{2} + \frac{1}{16} + \frac{1}{32} + \frac{1}{256} + \frac{1}{512} = \qty{0.599609375}{V}\]
+
+** Flash A/D converters
+- Has \(N - 1\) comparators.
+- Has \(N\) resistors.
+
+[[./images/flash-a-d-converter-circuit-diagram.png]]
+
+*** How does it work?
+- It uses the \(N\) resistors to form a ladder voltage divider, which divides the reference voltage into \(N\) equal intervals.
+- It uses the \(N - 1\) comparators to determine in which of these \(N\) voltage intervals the input voltage \(V_{in}\) lies.
+- The combination logic then translates the information provided by the output of the comparators.
+- This analogue-to-digital converter does not require a clock, so the conversion time is set by the settling time of the comparators and the propagation time of the combinational logic.
+
+*** Pros and cons of flash A/D converters
+#+ATTR_LATEX: :environment tabularx :width \textwidth :align |X|X|
+|-----------------------------------------------------------------+-------------------------------------------------------------------|
+| Pros                                                            | Cons                                                              |
+|-----------------------------------------------------------------+-------------------------------------------------------------------|
+| Very fast.                                                      | Expensive.                                                        |
+|-----------------------------------------------------------------+-------------------------------------------------------------------|
+| Very simple operational theory.                                 | Prone to produce glitches in the output.                          |
+|-----------------------------------------------------------------+-------------------------------------------------------------------|
+| Speed is only limited by gate and comparator propagation delay. | Each additional bit of resolution requires twice the comparators. |
+|-----------------------------------------------------------------+-------------------------------------------------------------------|
+*** Characteristics
+- The fastest type of analogue-to-digital converter.
+- It consists of a bank of input comparators acting in parallel to identify the signal level.
+- The figure below shows a 2-bit converter with a resolution for output states.
+- The output of the latches is in a coded form, which is easily converted to the required binary output with combinational logic.
+
+#+ATTR_LATEX: :height 20em
+[[./images/2-bit-flash-converter-diagram.png]]
+
+*** Output of a 2-bit flash converter
+[[./images/2-bit-flash-converter-diagram.png]]
+
+| State | Code (G_2 G_1 G_0) | Binary (B_1 B_0) | Voltage Range |
+|-------+--------------------+------------------+---------------|
+|     / |                  < |                < | <             |
+|     0 |                000 |               00 | 0 - 1         |
+|     1 |                001 |               01 | 1 - 2         |
+|     2 |                011 |               10 | 2 - 3         |
+|     3 |                111 |               11 | 3 - 4         |
+
+This assumes:
+- An input voltage range of 0 to \(\qty{4}{V}\).
+- The voltage rage is set by the \(V_{min}\) and \(V_{max}\).
+- The code converter is a simple combinational logic circuit.
+- For a 2-bit converter, the relationship between the code bit \(G_i\) and the binary bits \(B_i\) are:
+  \[V_0 = G_0 \cdot \overline{G_1} + G_2\]
+  \[B_1 = G_1\]
+
+** Dual slope converters
+Components:
+- Integrator
+- Electronically controlled switches
+- Counter
+- Clock
+- Control logic
+- Comparators
+- Resistor
+- Capacitor
+
+[[./images/dual-slope-converters.png]]
+
+** Sigma-delta A/D converters
+Components:
+- Resistors
+- Capacitor
+- Comparators
+- Control logic
+- Digital-to-analogue converter
+
+#+ATTR_LATEX: :height 15em
+[[./images/sigma-delta-a-d-converters.png]]
+
+*** How does it work?
+- The input is over sampled and goes to the integrator.
+- The integration is then compared to the ground.
+- It then iterates and produces a serial bit stream.
+- The output is a serial bit stream with the number of 1's proportional the \(V_{in}\).
+- With this arrangement, the sigma-delta modulator automatically adjusts its output to ensure that the average error at the quantiser output is zero.
+- The integrator value is the sum of all past values of the error. Hence, whenever there is a non-zero error value, the integrator value just keeps building until the error is once again forced to zero.
+
+*** Pros and cons of sigma-delta A/D converters
+| Pros                             | Cons                        |
+|----------------------------------+-----------------------------|
+| /                                | <                          |
+| High resolution                  | Slow due to over sampling   |
+| No need for precision components | Only good for low bandwidth |
+
+** Comparison of different types of A/D converters
+[[./images/adc-converter-comparison-graph.png]]
+
+| Type                     | Speed (Relative) | Cost (relative) |
+|--------------------------+------------------+-----------------|
+| /                        | <                | <               |
+| Dual-slope               | Slow             | Medium          |
+| Flash                    | Very fast        | High            |
+| Successive approximation | Medium fast      | Low             |
+| Sigma-delta              | Slow             | Low             |
+
+- Adding more resolution is a simple matter of adding more resistors, comparators and latches.
+- The combinational logic code converter would also be different.
+- Unlike with the successive approximation converter, adding resolution does not increase the time required for a conversion.
+
+** Digital-to-analogue (D/A) conversion
+- It is to reverse the process of A/D conversion by changing a digital value to an analogue voltage.
+- Digital-to-analogue conversion allows a computer to interface with external analogue circuits and devices.
+
+*** Example of a D/A converter
+[[./images/playing-back-the-digital-sound-file.png]]
+
+[[./images/digital-to-analogue-converter-diagram.png]]
+
+*** Problems with D/A conversion
+- Finite word length.
+  - Most systems today do 16-bit digitising.
+  - Hence, there are 65536 different levels.
+- The loudest sounds need room, so the normal sounds don't make use of the entire range.
+  - Problems occur at low levels where sounds are represented by only one or two bits, which results in a lot of distortion.
+- Dithering adds low level broadband noise.
+
+@@latex: \newpage@@
+
+** D/A conversions
+
+*** How to do D/A conversions?
+The simplest type of D/A converter is a resistor ladder network connected to an inverting summer operational amplitude circuit. Below is a 4-bit \(R-2R\) resistor ladder network which requires only two precision resistance values \(R\) and \(2R\).
+
+Note:
+- The digital input to the digital-to-analogue converter is a 4-bit binary number represented by bits \(B_0, B_1, B_2\), and \(B_3\).
+- \(B_0\) is the least significant bit and \(B_3\) is the most significant bit.
+- Each bit in the circuit controls a switch between the ground and the inverting input of the operational amplifier.
+
+[[./images/d-a-converter-circuit-diagram.png]]
+
+@@latex: \newpage@@
+
+*** When \(B_0\) of the D/A converter is 0001
+\(B_0\) is the least significant bit. If the bit number is 0001, then the \(B_0\) switch connects to the operational amplifier, while the others are grounded.
+
+[[./images/d-a-converter-bit-0001-circuit.png]]
+
+Since the inverting operational amplifier is grounded, we have:
+\[V_{out_0} = - \frac{1}{2} V_0\]
+\[V_0 = \frac{1}{2} V_1, \qquad V_1 = \frac{1}{2} V_2, \qquad V_2 = \frac{1}{2} V_3 = \frac{1}{2} V_s\]
+
+So:
+\[V_{out_0} = - \frac{1}{16} V_s\]
+\[V_{out_1} = - \frac{1}{8} V_s, \qquad V_{out_2} = - \frac{1}{4} V_s, \qquad V_{out_3} = - \frac{1}{2} V_s \]
+
+Total output:
+\[V_{out} = \sum_{i = 0}^{n - 1} B_i V_{out_i}\]
+
+@@latex: \newpage@@
+
+* 1st order systems
+In general, the time response of a first order system is:
+\[x(t) = a + b e^{-\frac{t}{\tau}}\]
+
+Where:
+- $x$ is the response of the system
+- $t$ is the time
+- $a$ and $b$ are arbitrary constants to be determined
+- $\tau$ is the time constant
+
+@@latex: \newpage@@
+
+** Example
+#+ATTR_LATEX: :height 15em
+[[./images/first-order-system-example-diagram.png]]
+
+Thermal measurements:
+- Heat:
+  \[q = \frac{T_b - T_s}{R}\]
+
+  Where:
+  - $R$ is the thermal resistance
+- Change in heat:
+  \[\frac{dT_s}{dt} = \frac{q}{C}\]
+
+  Where:
+  - $q$ is the heat
+  - $C$ is the thermal capacitance
+
+- If \(\frac{dT_b}{dt} = 0\):
+  \[T_s (t) = T_{s0} + (T_b - T_{s0}) (1 - e^{- \frac{t}{RC}})\]
+
+#+ATTR_LATEX: :height 10em
+[[./images/first-order-system-example-graph.png]]
+
+** General (forced) equation
+\[\frac{dx (t)}{dt} + \frac{x(t)}{\tau} = f(t)\]
+\[x(0) = x_0\]
+
+Where:
+- $\tau$ is the time constant
+- $f(t)$ is the forced input
+- $x_0$ is the initial condition
+
+** Natural (unforced) equation
+\[\frac{dx_N (t)}{dt} + \frac{x_N (t)}{\tau} = 0\]
+\[x(0) = x_0\]
+\[x_N (t) = x_0 e^{-\frac{t}{\tau}}\]
+
+Satisfying the initial conditions:
+\[x_N (t) = Ke^{- \frac{t}{\tau}}\]
+\[x_N (0) = K = x_0\]
+
+Where:
+- $\tau$ is the time constant
+- $f(t)$ is the forced input
+- $x_0$ is the initial condition
+
+** Time constant
+#+ATTR_LATEX: :height 15em
+[[./images/time-constant-graph.png]]
+
+*** RC circuits
+#+ATTR_LATEX: :height 10em
+[[./images/rc-circuit-diagram.png]]
+\[RC = \frac{V}{I} \cdot \frac{Q}{V} = \frac{Q}{\frac{Q}{t}} = t\]
+
+Where:
+- $R$ is the resistance of the resistor
+- $C$ is the capacitance of the capacitor
+- $V$ is the voltage
+- $I$ is the current
+- $Q$ is the total charge
+- $t$ is the time
+
+*** RL circuits
+#+ATTR_LATEX: :height 10em
+[[./images/rl-circuit-diagram.png]]
+\[\frac{L}{R} = \frac{V}{\frac{I}{t}} \cdot \frac{I}{V} = t\]
+
+Where:
+- $R$ is the resistance of the resistor
+- $L$ is the inductance of the inductor
+- $V$ is the voltage
+- $I$ is the current
+- $t$ is the time
+
+@@latex: \newpage@@
+
+** Response to DC forcing inputs
+Given:
+\[\frac{dx (t)}{dt} + \frac{x(t)}{\tau} = F_0\]
+\[x(0) = x_0\]
+
+Where:
+\[f(t) = F_0\]
+
+Looking for a particular (forced) solution \(x_F (t)\), and considering a *DC* steady-state solution:
+\[\cancel{\frac{dx_{SS}}{dt}} + \frac{x_{SS}}{\tau} = F_0\]
+\[\frac{x_{SS}}{\tau} = F_0\]
+\[x_{SS} = F_0 \tau = x_{\infty}\]
+
+Determining a general solution:
+- Including the natural solution:
+  \[x(t) = x_N (t) + x_{SS} (t) = Ke^{- \frac{t}{\tau}} + x_{\infty}\]
+- Satisfying the initial condition:
+  \[x(0) = K + x_{\infty} = x_0\]
+
+Hence, the general solution is:
+\[x(t) = (x_0 - x_{\infty}) e^{-\frac{t}{\tau}} + x_{\infty}\]
+
+** 2nd order systems
+[[./images/second-order-systems-diagram.png]]
+We can indirectly estimate the force from a displacement measurement:
+- Dynamic equations:
+  \[F = m \ddot{x} + b \dot{x} + kx\]
+- Frequency response:
+  \[\frac{X}{F} = \frac{k^{-1}}{- \frac{\omega^2}{\omega_0^2} + \frac{j \omega}{Q \omega_0} + 1}\]
+
+*** Frequency response
+[[./images/second-order-systems-frequency-response-graph.png]]
+\[\frac{X}{F} = \frac{k^{-1}}{- \frac{\omega^2}{\omega_0^2} + \frac{j \omega}{Q \omega_0} + 1}\]
+- Resonance:
+  \[\omega_0^2 = \frac{k}{m}\]
+- Mechanical \(Q\):
+  \[Q^2 = \frac{km}{b}\]
+
+  When \(Q = 0.5\), the system is critically damped.
+
+*** Time response
+[[./images/second-order-systems-time-response-graph.png]]
+- Rise time
+- Settling time
+- Overshoot
+
+@@latex: \newpage@@
+
+* Measuring temperature
+
+** Temperature scales
+\[C = K - 273.15\]
+\[F = 1.8 \cdot C + 32\]
+
+Where:
+- $C$ is the temperature in degree Celsius
+- $K$ is the temperature in Kelvin
+- $F$ is the temperature in degree Fahrenheit
+
+These temperature scales are based on:
+- Fixed-points, such as the temperatures at phase transitions, triple points, etc.
+- Size of the degree, such as \(\frac{1}{100}\) of the difference between icy and boiling water.
+- Interpolation in between fixed points, like does \(\qty{50}{\degreeCelsius}\) correspond to the level of mercury which is halfway between the \(\qty{0}{\degreeCelsius}\) and \(\qty{100}{\degreeCelsius}\) levels?
+
+Temperature scales are standardised using the ITS-90 standard.
+
+@@latex: \newpage@@
+
+** Bimetallic thermometers
+- Makes use of differential thermal expansion of different metals.
+  - Metal A and B bonded at temperature T1.
+  - Bending occurs at different temperatures.
+
+  #+ATTR_LATEX: :height 15em
+  [[./images/bimetallic-thermometer-working-principle.png]]
+
+- Furnace thermostat, which makes uses of a switch to control the temperature.
+  #+ATTR_LATEX: :height 15em
+  [[./images/furnace-thermostat-working-principle.png]]
+
+@@latex: \newpage@@
+
+** Resistance temperature detectors (RTD)
+- Resistance temperature detectors are based on changes of resistance with temperature.
+  - Usually, they are a *metal wire* on insulating support, which eliminates mechanical strain.
+  - They are also encased, to minimise the influence from the environment, such as corrosion.
+
+[[./images/resistance-temperature-detectors.png]]
+
+*** Linearity range
+- For a given material, a linear relationship can be assumed for a *limited range*.
+  \[\frac{R}{R_0} = 1 + \alpha (T - T_0)\]
+
+  Where:
+  - $R$ is the resistance at temperature \(T\)
+  - $R_0$ is the resistance at temperature \(T_0\)
+  - $\alpha$ is the temperature coefficient
+
+- For platinum:
+  - \(\pm 0.3\%\) over the range \(0 - \qty{200}{\degreeCelsius}\)
+  - \(\pm 1.2\%\) over the range \(200 - \qty{800}{\degreeCelsius}\)
+
+[[./images/resistance-vs-temperature-graph.png]]
+
+*** Wheatstone bridge
+[[./images/wheatstone-bridge-circuit-diagram.png]]
+- Bridge equations:
+  \[\frac{V+}{V_i} = \frac{R_2}{R_1 + R_2}\]
+  \[\frac{V-}{V_i} = \frac{R_4}{R_3 + R_4}\]
+  \[\frac{V_o}{V_i} = \frac{R_2}{R_1 + R_2} - \frac{R_4}{R_3 + R_4}\]
+- Bridge balance condition:
+  \[V_o = 0 \quad \Leftrightarrow \quad R_1 R_4 = R_2 R_3\]
+
+*** Numerical example
+[[./images/rtd-and-wheatstone-bridge-example.png]]
+- An RTD forms one arm of an equal-arm Wheatstone bridge:
+  \[R_0 = R_0 = \qty{25}{\ohm}\]
+
+  At \(\qty{0}{\degreeCelsius}\), \(RTD = \qty{25}{\ohm}\) and \(\alpha = \qty{0.003925}{\degreeCelsius^{-1}}\)
+- If the \(R_3\) required to balance the bridge is \(\qty{37.36}{\ohm}\), find the temperature of the RTD.
+- Solution using the bridge-balance condition:
+  \[\cancel{R_0} * RTD = R_1 * \cancel{R_0}\]
+  \[RTD = R_1 = \qty{37.36}{\ohm}\]
+
+  For \(\frac{R_{RTD}}{R_0} = 1 + \alpha (T - T_0)\):
+  \[\frac{\qty{37.36}{\ohm}}{\qty{25}{\ohm}} = 1 + 0.003925 (T - 0)\]
+  \[T = \qty{126}{\degreeCelsius}\]
+
+*** Measurements
+- Wheatstone bridge has *low resistance* (conductors) and is subject to *self-heating*.
+- Lead-wire effects:
+  - 2-wires:
+    [[./images/2-wire-wheatstone-bridge-diagram.png]]
+    Long wires are also subject to temperature-resistance changes:
+    \[RTD + 2 \cdot r_0 = R_1\]
+  - 3-wires:
+    [[./images/3-wire-wheatstone-bridge-diagram.png]]
+    \[RTD + r_0 = R_1 + R_0 \rightarrow RTD = R_1\]
+  - 4-wires:
+    [[./images/4-wire-wheatstone-bridge-diagram.png]]
+
+@@latex: \newpage@@
+
+** Thermistors
+Thermistors are thermally sensitive resistors.
+- They are made of ceramic-like *semiconductors*.
+  - \(R_0\) is much larger than \(RTD\).
+- The resistance decreases rapidly with temperature.
+  - High-sensitivity
+  - Ruggedness
+  - Fast time-response
+
+\[R = R_0 e^{\beta \left(\frac{1}{T} - \frac{1}{T_0} \right)}\]
+
+Where:
+- $R$ is the current resistance
+- $R_0$ is the initial resistance
+- $\beta$ is the material constant
+- $T$ is the current temperature in Kelvin (\(\unit{K}\))
+- $T_0$ is the initial temperature in Kelvin (\(\unit{K}\))
+
+#+ATTR_LATEX: :height 15em
+[[./images/thermistor-resistance-response-graph.png]]
+
+*** Examples
+
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/thermistors-in-ceramic-like-semiconductor.png]]
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/thermistor-in-probe-housing.png]]
+#+end_center
+
+@@latex: \newpage@@
+
+* Measuring displacement (resistive sensors)
+
+** Resistive sensors
+- Potentiometer, also known as a "pot".
+  - *3-terminal* electromechanical device based on a conductive *wiper* sliding against a fixed, resistive element.
+  - Many varieties of varying qualities and for different functions. Some examples include rheostats, trimmers, volume control, etc.
+    [[./images/types-of-potentiometers.png]]
+  - Precision potentiometers, which are manually or *digitally* tunable.
+
+#+begin_center
+#+ATTR_LATEX: :width 0.29\textwidth :center
+[[./images/potentiometer-diagrams.png]]
+#+ATTR_LATEX: :width 0.7\textwidth :center
+[[./images/potentiometer-use-in-circuits.png]]
+#+end_center
+
+@@latex: \newpage@@
+
+*** Using potentiometers in electrical circuits
+- Voltage divider
+  [[./images/voltage-divider-circuit-and-graph.png]]
+- Variable resistance
+  #+begin_center
+  #+ATTR_LATEX: :width 0.32\textwidth :center
+  [[./images/tunable-filter-diagram.png]]
+  #+ATTR_LATEX: :width 0.49\textwidth :center
+  [[./images/variable-gain-amplifier-diagram.png]]
+  #+end_center
+
+  #+ATTR_LATEX: :height 15em
+  [[./images/wheatstone-bridge-with-adjustable-offset-diagram.png]]
+
+* Measuring forces through displacement
+Force sensors.
+
+** Strain gauges
+Force measurements are always made indirectly via deformations.
+
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/strain-gauge-working-principle.png]]
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/strain-gauge-resistance-measurement.png]]
+#+end_center
+
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/half-bridge-strain-gauge-circuit.png]]
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/phidgets-micro-load-cell.png]]
+#+end_center
+
+** Piezo-resistive force sensor
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/honeywell-fs01-piezoresistive-force-sensor.png]]
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/piezoresistive-force-sensor-working-principle.png]]
+#+end_center
+
+[[./images/piezoresistive-force-sensor-calibration-curve.png]]
+
+@@latex: \newpage@@
+
+* Measuring displacement (inductive sensors)
+
+** Linear variable differential transformer (LVDT)
+A linear variable differential transformer is a type of electrical transformer that measures *linear* displacement.
+- It has variable coupling via sliding ferromagnetic core.
+  - One primary coil driven by AC, usually in \(\unit{kHz}\).
+  - Two secondary coils
+- Differential voltage:
+  \[V_{out} = \Delta V = V_2 - V_1 \simeq x(t) V_0\]
+
+[[./images/linear-variable-differential-transformer-working-principle.png]]
+
+[[./images/linear-variable-differential-transformer-images-and-graph.png]]
+
+*** Amplitude modulation
+The amplitude of the output voltage is modulated by the physical displacement:
+\[\Delta V \approx V_0 x(t) = \sin (\omega_0 t) \sin (\omega_x t)\]
+
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/amplitude-modulation-initial-state.png]]
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/amplitude-modulation-modulated-state.png]]
+#+end_center
+
+#+CAPTION: \(V_0 = \sin (\omega_0 t)\)
+#+ATTR_LATEX: :height 7em
+[[./images/amplitude-modulation-carrier-waveform.png]]
+
+#+CAPTION: \(x(t) = \sin (\omega_x t)\)
+#+ATTR_LATEX: :height 7em
+[[./images/amplitude-modulation-modulating-wave.png]]
+
+#+CAPTION: \(\Delta V = \sin (\omega_0 t) \sin (\omega_x t)\)
+#+ATTR_LATEX: :height 7em
+[[./images/amplitude-modulation-modulated-result.png]]
+
+*** Amplitude demodulation
+#+ATTR_LATEX: :height 20em
+[[./images/amplitude-demodulation-diagram-and-graph.png]]
+\[V_0 = \sin (\omega_0 t)\]
+\[x (t) = \sin (\omega_x t)\]
+
+[[./images/amplitude-demodulation-first-step.png]]
+\[\Downarrow\]
+\[\sin(\omega_x t) \sin^2 (\omega_0 t)\]
+\[\Downarrow\]
+\[\sin(\omega_x t) \frac{1 - \cos(2 \omega_0 t)}{2}\]
+\[\Downarrow\]
+\[\underbrace{\frac{1}{2} \sin(\omega_x t)}_{\text{Low frequency}} + \underbrace{\frac{\sin (t(2 \omega_0 t + \omega_x)) - \sin (t(2 \omega_0 - \omega_x))}{4}}_{\text{Unwanted high frequency, to be filtered out}}\]
+
+*** Amplitude modulation and demodulation
+[[./images/amplitude-modulation-and-demodulation-process.png]]
+
+@@latex: \newpage@@
+
+* Measuring displacement (capacitive sensors)
+
+** Principle
+- Capacitance definition:
+  \[C = \frac{Q}{V}\]
+- In the ideal case, we have infinite parallel plates.
+- Used for proximity sensing.
+
+Gauss' Law:
+[[./images/gauss-law-diagram.png]]
+\[Q = \iint_{\sum} \epsilon_0 \epsilon_r \boldsymbol{E} \, dS\]
+
+[[./images/infinite-parallel-plates-diagram.png]]
+\[C = \frac{Q}{V} = \frac{\epsilon_0 \epsilon_r ES}{Ed} = \frac{\epsilon_0 \epsilon_r S}{d}\]
+
+*** Types of plate movement
+#+begin_center
+#+ATTR_LATEX: :width 0.35\textwidth :center
+[[./images/plates-moving-closer-together.png]]
+#+ATTR_LATEX: :width 0.45\textwidth :center
+[[./images/plates-moving-closer-together-graph.png]]
+#+end_center
+
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/plates-moving-past-each-other.png]]
+#+ATTR_LATEX: :width 0.45\textwidth :center
+[[./images/plates-moving-past-each-other-graph.png]]
+#+end_center
+
+** Guard electrode
+The guard electrode limits field-fringing effects.
+[[./images/guard-electrode.png]]
+
+** Interfacing with capacitive sensors using AC
+- AC bridge:
+  #+ATTR_LATEX: :height 10em
+  [[./images/ac-bridge-circuit-diagram.png]]
+- AC driver circuit:
+  #+ATTR_LATEX: :height 10em
+  [[./images/ac-driver-circuit-diagram.png]]
+- Envelope demodulator, which is the simplest kind of demodulation for non-negative signals.
+  #+ATTR_LATEX: :height 15em
+  [[./images/envelope-demodulator.png]]
+
+* Proximity sensors
+
+** Hall effect
+The Lorentz force is defined as:
+\[\vec{F} = q \vec{v} \times \vec{B}\]
+
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/hall-effect-diagram.png]]
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/hall-effect-circuit-diagram.png]]
+#+end_center
+
+[[./images/hall-effect-voltage-against-magnetic-field-graph.png]]
+
+@@latex: \newpage@@
+
+** Hall effect sensors
+
+*** Proximity sensor
+Hall effect proximity sensors have a contactless switch.
+
+#+ATTR_LATEX: :height 20em
+[[./images/hall-effect-proximity-sensor.png]]
+
+*** Current sensor
+#+ATTR_LATEX: :height 20em
+[[./images/hall-effect-current-sensor.png]]
+
+** Light detectors
+
+*** Photo-resistors
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/photo-resistor-circuit-and-image.png]]
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/photo-resistor-graphs.png]]
+#+end_center
+
+@@latex: \newpage@@
+
+*** Photo-diodes
+- Load resistance
+  #+begin_center
+  #+ATTR_LATEX: :width 0.45\textwidth :center
+  [[./images/photo-diode-load-resistance-circuit.png]]
+  #+ATTR_LATEX: :width 0.45\textwidth :center
+  [[./images/photo-diode-load-resistance-graph.png]]
+  #+end_center
+- Operational amplifier circuit
+  [[./images/photo-diode-op-amp-circuit.png]]
+
+@@latex: \newpage@@
+
+*** Photo-transistors
+#+ATTR_LATEX: :height 20em
+[[./images/photo-transistor-graphs-and-image.png]]
+- Transmissive type:
+  - Photo-interrupter
+    #+ATTR_LATEX: :height 5em
+    [[./images/photo-interrupter.png]]
+- Reflective type:
+  - Resistive load
+    #+ATTR_LATEX: :height 5em
+    [[./images/reflective-resistive-load-circuit.png]]
+  - Current-voltage operational amplifier
+    #+ATTR_LATEX: :height 5em
+    [[./images/current-voltage-op-amp-circuit.png]]
+
+* Digital encoders
+- Digital encoders convert either linear or rotary motion into a sequence of digital pulses.
+- They are made using optical transmitter and receiver pairs, with a glass or plastic material photographically patterned.
+  #+begin_center
+  #+ATTR_LATEX: :width 0.45\textwidth :center
+  [[./images/linear-encoder-using-light.png]]
+  #+ATTR_LATEX: :width 0.45\textwidth :center
+  [[./images/rotary-encoder-using-light.png]]
+  #+end_center
+
+- Alternatively, they can also make use of hall effect sensors that are coupled with magnetic rings and bars.
+  #+begin_center
+  #+ATTR_LATEX: :width 0.45\textwidth :center
+  [[./images/linear-encoder-using-magnets.png]]
+  #+ATTR_LATEX: :width 0.45\textwidth :center
+  [[./images/rotary-encoder-using-magnets.png]]
+  #+end_center
+
+** Absolute encoders
+#+ATTR_LATEX: :height 20em
+[[./images/absolute-angular-n-bit-encoder.png]]
+- There are \(n\) TX and RX pairs for coding \(2^n\) sectors.
+- Angular n-bits encoders have a resolution of \(\frac{\qty{360}{\degree}}{2^n}\).
+- They are more expensive, as they require $n$ TX and RX pairs.
+- Spurious states may arise from contemporary transitions.
+  [[./images/absolute-angular-n-bit-spurious-states.png]]
+- Gray code can be used instead of natural binary code to ensure that there are no contemporary transitions.
+  #+ATTR_LATEX: :height 9em
+  [[./images/gray-code-image.png]]
+
+** Incremental encoders
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/incremental-encoder-diagram.png]]
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/incremental-encoder-led-diagram.png]]
+#+end_center
+- Incremental encoders have a simpler design.
+  - A single pair of TX and RX is insufficient to encode the direction.
+  - Hence, 2 TX and RX pairs plus a "reset" position are required.
+- The signals are quadrature, which means the signals are \(\frac{1}{4}\) cycle out-of-phase.
+
+[[./images/incremental-encoder-signal.png]]
+
+* DC Motors
+
+** Structure and fields
+[[./images/dc-motor-structure.png]]
+
+- Stator is the external magnet, which is fixed.
+- Rotor is the internal magnet, which rotates.
+- The stator field and the rotor fields are always orthogonal to produce the maximum torque.
+
+@@latex: \newpage@@
+
+** Commutation
+When torque \(T = 0\), the motor is in equilibrium.
+
+*** With commutation
+#+ATTR_LATEX: :height 15em
+[[./images/dc-motor-structure.png]]
+
+[[./images/dc-motor-with-commutation-graph.png]]
+
+*** Without commutation
+#+ATTR_LATEX: :height 15em
+[[./images/dc-motor-without-commutation-diagram.png]]
+
+[[./images/dc-motor-without-commutation-graph.png]]
+
+** Generated torque
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/dc-motor-rotation-diagram.png]]
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/dc-motor-components.png]]
+#+end_center
+
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/dc-motor-generated-torque-graph.png]]
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/dc-motor-torque-graph-with-increasing-number-of-poles.png]]
+#+end_center
+
+The larger the number of poles, the more constant the torque, which means the torque produced by the motor is more independent of the rotor position.
+
+** 3-pole DC motor
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/3-pole-dc-motor-diagram.png]]
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/3-pole-dc-motor-magnetic-poles.png]]
+#+end_center
+
+[[./images/3-pole-dc-motor-oscilloscope.png]]
+
+@@latex: \newpage@@
+
+** Equations
+[[./images/dc-motor-equations-diagram.png]]
+- Armature equation
+  \[V = R_i + L \frac{di}{dt} + e\]
+
+- Mechanical equation
+  \[J \dot{\omega} + b \omega = T_e - T_L\]
+
+- Electro-mechanical coupling
+  \[T_e = K_t i\]
+  \[e = K_e \omega\]
+  \[T_e \omega = e i \quad \Leftrightarrow \quad K_e = k_t \triangleq K_a\]
+
+Where:
+- $V$ is the voltage
+- $R$ is the resistance
+- $L$ is the inductance of the circuit
+- $e$ is the electromotive force
+- $J$ is the radius of the motor
+- $\omega$ is the angular velocity
+- $T_e$ is the load torque
+- $T_L$ is the electromagnetic torque
+- $K_a$ is the armature constant
+
+** DC motor equivalent electrical circuit
+- Let:
+  - Voltage be an analogue of torque.
+  - Current be an analogue of speed.
+- Then:
+  - Inductance is an analogue of inertia.
+  - Resistance is an analogue of damping.
+  - Capacitance is an analogue of compliance.
+  - Electrical power \(VI\) is an analogue of mechanical power \(T \omega\).
+- Note that a *mechanical parallel* is an analogue of the *electrical series*.
+
+#+CAPTION: DC motor equivalent electromechanical model.
+[[./images/dc-motor-electromechanical-model.png]]
+
+@@latex: \newpage@@
+
+** Steady state speed torque curve
+\[V = Ri + \cancel{L \frac{di}{dt}} + K_a \omega\]
+\[\cancel{J \frac{d \omega}{dt}} + b \omega + T_L = K_a i\]
+
+\[V - K_a \omega = R_i\]
+\[i = \frac{1}{K_a} b \omega + T_L\]
+
+\[K_a V - K_a^2 \omega = Rb \omega + R T_L\]
+\[\omega = \frac{K_aV}{RT_L}{Rb + K_a^2}\]
+
+[[./images/dc-motor-steady-state-speed-torque-curve-graph.png]]
+
+@@latex: \newpage@@
+
+*** Load lines
+Loads can be of various kinds, such as:
+- Friction: \(T_L = b_L \omega\)
+- Constant torque: \(T_L = \text{const}\)
+- Inertial: \(T_L = I = \frac{d \omega}{dt} = 0 \ @ \ \text{Steady state}\)
+- Nonlinear: \(T_L = f(\omega)\)
+
+OP is the operating point in the diagram below.
+[[./images/dc-motor-speed-torque-curve-load-lines.png]]
+
+@@latex: \newpage@@
+
+** Common types of load
+1. Constant torque:
+   \[T_L^{(1)} = mgr\]
+   #+ATTR_LATEX: :height 15em
+   [[./images/dc-motor-constant-torque-load-diagram.png]]
+2. Constant torque with friction:
+   \[T_L^{(2)} = mgr \cos \theta + b_L v\]
+   \[T_L^{(2)} = mgr \cos \theta + b_L \omega r\]
+   #+ATTR_LATEX: :height 15em
+   [[./images/dc-motor-constant-torque-with-friction-load-diagram.png]]
+
+@@latex: \newpage@@
+
+Graph of the common types of loads:
+[[./images/dc-motor-load-types-graph.png]]
+
+@@latex: \newpage@@
+
+** Maximum output power
+At nominal voltage \(V\):
+\[P_{out} = \omega T_L\]
+
+The power output is the *area* in the speed-torque graph. Using a friction load:
+\[T_L = b_L \omega_L\]
+
+OP is the operating point in the diagram below.
+
+[[./images/dc-motor-maximum-output-power-graph.png]]
+
+Hence, the maximum output power is:
+\[P_{out}^{max} = \frac{1}{4} \omega_0 T_s\]
+
+@@latex: \newpage@@
+
+** Maximum efficiency
+At nominal voltage \(V\):
+\[\eta = \frac{\text{power in}}{\text{power out}} = \frac{\omega T_L}{VI}\]
+
+[[./images/dc-motor-maximum-efficiency-graph.png]]
+
+@@latex: \newpage@@
+
+** DC motor load matching
+1. Figure out the mechanical load of the motor. For a friction load:
+   \[T_L = b_L \omega_l\]
+2. Figure out the gear ratio \(N\):
+   \[T_L = NT_m\]
+   \[\omega_m = N \omega_L\]
+3. Use the torque and angular speed to turn it into voltage (\(V\)) and current (\(I\)).
+
+You can either design for maximum power or maximum efficiency.
+[[./images/dc-motor-load-matching-graph.png]]
+
+*** Types of gears
+#+ATTR_LATEX: :height 15em
+[[./images/dc-motor-types-of-gears.png]]
+
+- (a) Spur gears mesh pairs of gears with different numbers of teeth to achieve speed reduction.
+- (b) Planetary gears have several gears meshed in an outer ring for a large speed reduction.
+- (c) Worm gears produce rotary motion at right angles to the shaft.
+- (d) A lead screw and nut can create linear motion, as can (e) a rack-and-pinion system, and (f) belt-and-pulley-drives.
+
+** Driving DC motors
+- Using power amplifiers to drive DC motors is possible but is typically avoided.
+- This is due to *large power dissipation* and *over-heating of the amplifier*.
+- It is preferable to continuously switch the motor on and off using pulse width modulation (PWM).
+  [[./images/pulse-width-modulation-graph.png]]
+
+** Pulse width modulation operating principle
+The DC motor is in fact a 2nd order low pass filter.
+\[\omega = \frac{K_a V - (R + L_s) T_L}{(L_s + R) (J s + b) + K_a^2}\]
+
+[[./images/pulse-width-modulation-operating-principle-diagram.png]]
+
+Frequency analysis:
+[[./images/pulse-width-modulation-frequency-analysis-graph.png]]
+
+@@latex: \newpage@@
+
+** Inductive kickback
+- There is voltage across the inductor:
+  \[V = L \frac{di}{dt}\]
+- If the current starts decreasing, the voltage \(v = v_B - v_A\) quickly decreases.
+- Hence, voltage \(v_A\) quickly increases.
+
+#+ATTR_LATEX: :height 25em
+[[./images/inductive-kickback-diagram.png]]
+
+- (a) The steady-state current through an inductor \(I_{on}\), cannot immediately go to 0 at \(A\) when the switch is opened. The changing current induces a voltage across the inductor, making the potential at $A$ greater than at $B$, causing the switch or relay to arc over.
+- (b) Flyback diodes protect switches from blowing up.
+- (c) Transistor switches must be protected in the same manner.
+
+** Pulse width modulation circuit
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/pulse-width-modulation-circuit-diagram.png]]
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/h-bridge-circuit-diagram.png]]
+#+end_center
+
+For the diagrams above, the diagram on the left is a circuit for bidirectional current flow through a DC motor, and the diagram on the right is a typical H-bridge circuit, including kickback diodes to protect against inductive kickback.
+
+[[./images/h-bridge-circuit-possible-current-flows.png]]
+
+** Brushless DC motors
+- A brushless DC motor is similar to a brushed DC motor, but has its insides out.
+- The stator field is rotating instead of remaining static.
+- The rotor field is given by a permanent magnet and stays in place.
+
+[[./images/brushless-dc-motor-components.png]]
+
+*** Driving strategy
+To maximise the output torque, try to keep the rotor and the stator field orthogonal as much as possible.
+
+[[./images/brushless-dc-motor-driving-strategy.png]]
+
+@@latex: \newpage@@
+
+*** Trapezoidal brushless DC motors
+- \(T_j\) is the torque due to the \(j\)-th coils.
+- These motors always drive two coils at a time with opposite currents \(+I\) and \(-I\).
+- The total torque \(T_i - T_j\) always has a constant zone.
+  - Use torque \(T_1 - T_2\) when \(\theta = \frac{\pi}{3} \pm \frac{\pi}{6}\).
+  - You will need to know the *angular position of the rotor*.
+
+[[./images/trapezoidal-brushless-dc-motor-graphs.png]]
+
+*** Getting a desired torque
+- Detect the rotor position via encoders, typically Hall effect sensors.
+- Select the appropriate switches to determine the desired \(T_i - T_j\) torque.
+
+#+ATTR_LATEX: :height 15em
+[[./images/brushless-dc-motor-hall-effect-sensor.png]]
+
+#+ATTR_LATEX: :height 15em
+[[./images/brushless-dc-motor-circuit-diagram.png]]
+
+@@latex: \newpage@@
+
+* Strain gauges
+
+** Stress or strain measurements
+- Strain measurements are important to determine safe loading conditions of mechanical structures.
+- The stress or force measurements are typically derived indirectly from strain and displacement measurements.
+- Electrical resistance strain gauges have the following characteristics:
+  - Thin metal foil, typically constantan.
+  - The thin metal foil is patterned onto plastic backing material.
+  - This backing is then bonded onto mechanical structures, and the stress is inferred from solid mechanics principles.
+
+[[./images/electrical-resistance-strain-gauge-diagram.png]]
+
+@@latex: \newpage@@
+
+** Strain
+- Strain quantifies the amount of deformation of a body, and it is given by:
+  \[S = \frac{dL}{L}\]
+- It is non-dimensional, as it is defined as a relative change (\(\frac{dL}{L}\)).
+- Typical material undergo "micro strains" from \(10^{-6} \ (\unit{ppm})\) up to a few %.
+- Strain can either be positive (tensile strain) or negative (compressive strain).
+
+#+ATTR_LATEX: :height 20em
+[[./images/strain-illustration.png]]
+
+*** Poisson's ratio (\(\nu\))
+Poisson's ratio is typically from 0.3 (steel) to 0.5 (rubber). It is defined as follows:
+\[\nu = \frac{\text{lateral strain}}{\text{axial strain}}\]
+
+@@latex: \newpage@@
+
+*** Resistance of a rectangular conductor
+\[r = \rho \frac{L}{A}, \qquad A = \omega h\]
+\[\frac{dR}{R} = \frac{d \rho}{\rho} + \frac{dL}{L} - \frac{dA}{A}\]
+\[\frac{dR}{R} = \frac{d \rho}{\rho} + \frac{dL}{L} - \left(\frac{dw}{w} + \frac{dh}{h} \right)\]
+
+- Axial strain:
+  \[S = \frac{dL}{L}\]
+- Lateral strain:
+  \[\frac{dw}{w} = \frac{dh}{h} = - \nu \frac{dL}{L} = - \nu S\]
+
+\begin{align*}
+\frac{dR}{R} &= \frac{d \rho}{\rho} + \frac{dL}{L} - \left(\frac{dw}{w} + \frac{dh}{h} \right) \\
+&= \frac{d \rho}{\rho} + (1 + 2 \nu) S \\
+&= \left(\underbrace{\frac{d \rho}{\rho} \frac{1}{S}}_{\text{piezoresistivity}} + 1 + 2 \nu \right) S \\
+&= \mathcal{G} S
+\end{align*}
+
+@@latex: \newpage@@
+
+*** Gauge factor (\(\mathcal{G}\)):
+\[\mathcal{G} = \frac{dR}{R} \frac{1}{S} = \frac{1}{R} \frac{\partial R}{\partial S} = \frac{d \rho}{\rho} \frac{1}{S} + 1 + 2 \nu\]
+\[dR = dR^S = \frac{\partial R}{\partial S} S\]
+
+Note that we are only considering changes of resistance due to strain \(dR = dR^S\). @@latex: \\@@
+
+Gauge factor of various materials:
+| Material   | Gauge factor |
+|------------+--------------|
+| /          |            < |
+| Nickel     |        -12.6 |
+| Manganese  |        +0.07 |
+| Nichrome   |         +2.0 |
+| Constantan |         +2.1 |
+| Soft Iron  |         +4.2 |
+| Carbon     |          +20 |
+| Platinum   |         +4.8 |
+
+@@latex: \newpage@@
+
+** Transverse sensitivity
+\[dR = R_0 \mathcal{G} S\]
+- The larger \(R_0\) is, the larger \(dR\) is.
+- Long and thin wires allow for larger \(R_0\), given that the wires are aligned with axial strain (\(S^a\)).
+- Practically, long wires are assembled in the form of a serpentine.
+- The end-loops of these wires are aligned with the transverse axis, and are made thicker to reduce sensitivity to transverse strain (\(S^t\)).
+
+#+ATTR_LATEX: :height 25em
+[[./images/transverse-versus-axial-strain-diagram.png]]
+
+@@latex: \newpage@@
+
+** Materials
+- The best materials to use constantan and ferry alloys.
+- Typical strain ranges are:
+  \[S = 1 - 10^4 \unit{\micro S}\]
+  Which is from \(\qty{1}{ppm}\) to 1%.
+- \(\mathcal{G}\) is roughly 2.
+  - \(\frac{dR}{R}\) is in the same order of magnitude as \(S\).
+  - However, there is a challenge in detecting small resistance changes.
+
+[[./images/strain-gauge-materials-diagram.png]]
+
+@@latex: \newpage@@
+
+*** Numerical example
+\[dR = R = \mathcal{G} S\]
+- \(\mathcal{G}\) is roughly 2
+- \(R_0\) is roughly \(100 - 1,000 \ \unit{\ohm}\)
+- Strain is in the order of \(10 - 10^4 \ \unit{\micro S}\) (micro strain)
+- Strain is non-dimensional, and \(\qty{1}{\micro S} = 10^{-6} \ (\text{e.g. } \qty{1}{\micro m.m^{-1}})\)
+
+\[dR = (\qty{100}{\ohm}) \times 2 \times (\qty{100}{\micro S} = \qty{0.02}{\ohm})\]
+- Transverse sensitivity is in the order of 1%.
+- How do we sense such small changes?
+
+@@latex: \newpage@@
+
+** Wheatstone bridge
+- Bridge equations:
+  \[\frac{V^+}{V_i} = \frac{R_2}{R_1 + R_2}\]
+  \[\frac{V^-}{V_i} = \frac{R_4}{R_3 + R_4}\]
+  \[\frac{V_o}{V_i} = \frac{R_2}{R_1 + R_2} - \frac{R_4}{R_3 + R_4}\]
+- Bridge balance condition:
+  \[V_o = 0 \qquad \Leftrightarrow \qquad R_1 R_4 = R_2 R_3\]
+
+#+ATTR_LATEX: :height 20em
+[[./images/strain-gauges-wheatstone-bridge-circuit-diagram.png]]
+
+*** 1st order approximation
+- When \(R_1 = R_2\) and \(R_3 = R_4\), it implies balance.
+- The first order approximation is acceptable up to a few percent \(\unit{S}\). Note that 1% \(\unit{S} = 10^4 \unit{\micro S}\).
+
+\[\frac{dV_o}{V_i} = \frac{1}{4} \left(\frac{dR_2}{R_2} - \frac{dR_1}{R_1} + \frac{dR_3}{R_3} - \frac{dR_4}{R_4} \right)\]
+
+*** Quarter bridge
+#+ATTR_LATEX: :height 10em
+[[./images/quarter-bridge-circuit-diagram.png]]
+Consider:
+\[R_1 = R_3 = R_4 = R_0\]
+\[R_G = R_0 + dR\]
+
+The bridge output is:
+\[\frac{dV_o}{V_i} = \frac{R_0 + dR}{2 R_0 + dR} - \frac{1}{2}\]
+
+The Taylor expansion:
+\[\frac{dV_o}{V_i} = \frac{1}{4} \frac{dR}{R_0} - \frac{1}{4} \frac{dR^2}{R_0^2} + \cdots\]
+
+Hence:
+\[\frac{dV_o}{V_i} \simeq \frac{1}{4} \frac{dR}{4R_0} = \frac{1}{4} \mathcal{G} S\]
+
+#+ATTR_LATEX: :height 15em
+[[./images/quarter-bridge-graph.png]]
+
+*** Quarter bridge connection types
+- 2-wire connection
+  - \(R_w\) is the long wires' resistance, which has the following characteristics:
+    - It is as high as a few ohms.
+    - The resistance is temperature dependent.
+    - There is unbalancing effects.
+- 3-wire connection
+  - No current in the 3rd wire.
+  - The bridge is balanced.
+  - There is an attenuated gauge factor.
+
+\[\frac{V_o}{V_i} = \frac{1}{4} \frac{dR}{R_0 + R_w} = \frac{1}{4} \frac{R_0}{R_0 + R_w} \frac{dR}{R_0} = \frac{1}{4} \mathcal{G}^* S\]
+\[\mathcal{G}^* = \mathcal{G} \frac{R_0}{R_0 + R_w} \le \mathcal{G}\]
+
+#+ATTR_LATEX: :height 20em
+[[./images/quarter-bridge-connection-types-circuit-diagrams.png]]
+
+** Temperature compensation
+[[./images/temperature-compensation-circuit-diagram.png]]
+
+*** Dummy gauges
+#+ATTR_LATEX: :height 8em
+[[./images/dummy-gauge-diagram.png]]
+- Dummy gauges are mounted in close thermal contact but *not bonded*.
+- Strain gauge: \(R_1 = R_0 + dR_1\)
+- Dummy gauge: \(R_2 = R_0 + dR_2\)
+\[dR_1 = \frac{\partial R_1}{\partial S} S + \frac{\partial R_1}{\partial T} dT\]
+\[dR_2 = \frac{\partial R_2}{\partial T} dT\]
+
+Because the strain gauge are dummy gauge are technologically similar gauges in thermal contact:
+\[\frac{\partial R_1}{\partial T} dT = \frac{\partial R_2}{\partial T} dT\]
+
+Hence:
+\[\frac{dV_o}{V_i} = \frac{1}{4} \left(\frac{dR_1}{R_0} - \frac{dR_2}{R_0} \right) = \frac{1}{4R_0} \left(\frac{\partial R_1}{\partial S} S + \frac{\partial R_1}{\partial T} dT - \frac{\partial R_2}{\partial T} dT \right)\]
+\[\frac{dV_o}{V_i} = \frac{1}{4 R_0} \left(\frac{\partial R_1}{\partial S} S \right) = \frac{1}{4} \mathcal{G} S\]
+
+*** Poisson gauges
+#+ATTR_LATEX: :height 8em
+[[./images/poisson-gauge-diagram.png]]
+- Poisson gauges are mounted in close thermal contact and bonded.
+- Strain gauge: \(R_1 = R_0 + dR_1\)
+- Poisson gauge: \(R_2 = R_0 + dR_2\)
+\[dR_1 = \frac{\partial R_1}{\partial S} S + \frac{\partial R_1}{\partial T} dT\]
+\[dR_2 = -\nu \frac{\partial R_2}{\partial S} dS + \frac{\partial R_2}{\partial T} dT\]
+
+Because the strain gauge are Poisson gauge are technologically similar gauges bonded together in thermal contact:
+\[\frac{\partial R_1}{\partial T} dT = \frac{\partial R_2}{\partial T} dT\]
+\[\frac{\partial R_1}{\partial S} = \frac{\partial R_2}{\partial S}\]
+
+Hence:
+\[\frac{dV_o}{V_i} = \frac{1}{4} \left(\frac{dR_1}{R_0} - \frac{dR_2}{R_0} \right) = \frac{1}{4R_0} \left(\frac{\partial R_1}{\partial S} S + \frac{\partial R_1}{\partial T} dT + \nu \frac{\partial R_2}{\partial S} S - \frac{\partial R_2}{\partial T} dT \right)\]
+\[\frac{dV_o}{V_i} = \frac{1}{4 R_0} \left(\frac{\partial R_1}{\partial S} (1 + \nu) S \right) = \frac{1}{4} \mathcal{G} (1 + \nu) S\]
+
+** Half bridge
+Half bridges have two active strain gauges which enhances the sensitivity of the bridge.
+\[\frac{dV_o}{V_i} = \frac{1}{4} \left(\frac{dR_2}{R_2} - \frac{dR_1}{R_1} + \frac{dR_3}{R_3} - \frac{dR_4}{R_4} \right)\]
+
+*** Bending
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/half-bridge-bending-circuit-diagram.png]]
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/half-bridge-bending-diagram.png]]
+#+end_center
+
+\[\frac{dV_o}{V_i} = \frac{1}{4} \left(\frac{dR_3}{R_3} - \frac{dR_4}{R_4} \right) = \frac{1}{2} \mathcal{G} S^b\]
+
+*** Axial loading
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/half-bridge-axial-loading-circuit-diagram.png]]
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/half-bridge-axial-loading-diagram.png]]
+#+end_center
+
+\[\frac{dV_o}{V_i} = \frac{1}{4} \left(\frac{dR_2}{R_2} + \frac{dR_3}{R_3} \right) = \frac{1}{2} \mathcal{G} S^a\]
+
+@@latex: \newpage@@
+
+** Apparent strain
+- Apparent strain is manifested as any change in gauge resistance which is not due to the strain being measured.
+- For example, combinations of different mechanical loading, like:
+  \[S_1 = S^a + S^b\]
+  \[S_2 = S^a - S^b\]
+
+[[./images/apparent-strain-loading-condition-diagram.png]]
+
+*** Thermal effects
+- Resistance changes might be due to a combination of strain and temperature.
+  \[dR = \frac{\partial R}{\partial S} S + \frac{\partial R}{\partial T} dT = \frac{\partial R}{\partial S} \left(S + \underbrace{\left(\frac{\partial R}{\partial S} \right)^{-1} \frac{\partial R}{\partial T} dT}_{\text{apparent strain } S^T} \right)\]
+- Apparent strain due to temperature. \(dR^T\) is the resistance change solely due to temperature in the equation below:
+  \[S^T = \left(\frac{\partial R}{\partial S} \right)^{-1} \frac{\partial R}{\partial T} dT = \frac{1}{\mathcal{G}} \frac{1}{R} \frac{\partial R}{\partial T} dT = \frac{1}{\mathcal{G}} \frac{dR^T}{R}\]
+
+#+ATTR_LATEX: :height 10em
+[[./images/apparent-strain-thermal-effects-graph.png]]
+
+*** Half bridge example
+Ultimately, sensitivity to loading condition and temperature is determined by the electrical configuration.
+
+1. Configuration 1:
+   [[./images/apparent-strain-half-bridge-configuration-1.png]]
+   \[\frac{dV_o}{V_i} = \frac{1}{4} \mathcal{G} (S_{G1} + S_{G2}) = \frac{1}{2} \mathcal{G} (S^a + S^T)\]
+
+   - The configuration is sensitive to axial strain.
+   - It can compensate for bending but not temperature.
+
+2. Configuration 2:
+   [[./images/apparent-strain-half-bridge-configuration-2.png]]
+   \[\frac{dV_o}{V_i} = \frac{1}{4} \mathcal{G} (-S_{G1} + S_{G2}) = \frac{1}{2} \mathcal{G} S^b\]
+
+   - The configuration is sensitive to bending strain.
+   - It can compensate for axial strain and temperature.
+
+*** Full bridge example
+1. Configuration 1:
+   #+begin_center
+   #+ATTR_LATEX: :width 0.45\textwidth :center
+   [[./images/apparent-strain-full-bridge-configuration-1-diagram.png]]
+   #+ATTR_LATEX: :width 0.45\textwidth :center
+   [[./images/apparent-strain-full-bridge-configuration-1-circuit-diagram.png]]
+   #+end_center
+
+   \[S_{G1} = S^a + S^b + S^T\]
+   \[S_{G2} = S^a - S^b + S^T\]
+   \[S_{d1} = S^{d2} = S^T\]
+   \[\frac{dV_o}{V_i} = \frac{1}{4} \mathcal{G} (S_{G1} - S_{d1} + S_{G2} - S_{d2}) = \frac{1}{2} G S^a\]
+
+   - The configuration above can sense axial strain.
+   - It also can compensate for temperature and bending.
+
+2. Configuration 2:
+   [[./images/apparent-strain-full-bridge-configuration-2-diagram.png]]
+
+   \[\frac{dV_o}{V_i} = \frac{1}{4} \mathcal{G} (S_{G1} - S_{G2} + S_{G3} - S_{G4}) = G S^b\]
+
+   - The configuration above can sense bending strain, with maximum bridge sensitivity.
+   - It also can compensate for temperature and axial strain.
+
+*** Cantilever beams example
+Cantilever beams have longitudinal strain due to:
+- Axial loading (\(F_a\)):
+  #+ATTR_LATEX: :height 10em
+  [[./images/axial-loaded-cantilever-beam.png]]
+  \[S_a = \frac{F_a}{EA}\]
+
+  Where:
+  - \(L\): Length
+  - \(t\): Thickness
+  - \(A\): Cross-sectional area
+  - \(E\): Young's modulus
+
+- Bending (\(M, F_t\)):
+  #+ATTR_LATEX: :height 10em
+  [[./images/bent-cantilever-beam.png]]
+  \[S_b = - \frac{M + F_t (L - x)}{EI} \frac{t}{2}\]
+
+@@latex: \newpage@@
+
+*** Area moment of inertia (\(I\))
+#+ATTR_LATEX: :height 15em
+[[./images/area-moment-of-inertia.png]]
+\[I = \frac{ab^3}{12}\]
+\[I = \frac{\pi r^4}{4}\]
+\[I = \frac{\pi (r_{max}^4 - r_{min}^4)}{4}\]
+
+** Measuring forces
+- You are given 2 identical strain-gauges, where:
+  \[\frac{dR}{R} = \mathcal{G} S, \quad \text{where } \mathcal{G} = 2\]
+- Where and how would you place them, along the beam, to measure the weight of a mass $m$ and maximise sensitivity as well as compensate for temperature changes?
+
+[[./images/measuring-forces-possible-configurations.png]]
+
+** Bridge balancing
+In reality, the bridge is never balanced when stress is applied, hence there is a need to re-establish balance by modifying arm resistors:
+\[R_1 R_3 = R_2 R_4\]
+
+#+begin_center
+#+ATTR_LATEX: :width 0.40\textwidth :center
+[[./images/bridge-balancing-series-circuit-diagram.png]]
+#+ATTR_LATEX: :width 0.40\textwidth :center
+[[./images/bridge-balancing-potentiometric-circuit-diagram.png]]
+#+end_center
+
+The above two circuits require:
+- Very low resistance resistors, which is not practical.
+- In-series switches or contacts, which results in unreliable extra resistance being added.
+
+#+begin_center
+#+ATTR_LATEX: :width 0.40\textwidth :center
+[[./images/bridge-balancing-shunt-circuit-diagram.png]]
+#+ATTR_LATEX: :width 0.40\textwidth :center
+[[./images/bridge-balancing-general-circuit-diagram.png]]
+#+end_center
+
+The above two circuits are the most suitable, as:
+- Much larger resistors can be used.
+- The structure of the bridge is not modified, which allows for parallel insertion.
+- (d) is more general as it balances both sides.
