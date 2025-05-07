@@ -1,0 +1,3007 @@
+#+TITLE: MA2002 Theory of Mechanism Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{siunitx}
+#+LATEX_HEADER: \usepackage{tabularx}
+#+LATEX_HEADER: \setlength{\parindent}{0em}
+
+* Definitions
+
+** Machine
+A machine is a combination of interrelated parts having *definite motions* and capable of performing useful work.
+
+Machines may range from:
+- Transportation machine
+  - Automotives
+  - Motorbikes
+  - Aeroplanes
+  - Space shuttle
+- Construction machinery
+- Industry machinery
+- Daily life devices
+  - Umbrella
+  - Exercise machines
+  - Toys
+  - Micro or nano world devices
+
+[[./images/machine-flow-chart.png]]
+
+** Mechanism
+A mechanism is a component of a machine consisting of two or more solid members (moving elements) connected together by joints.
+
+[[./images/mechanism-flow-chart.png]]
+
+** Kinematics
+Study of motions, (position, velocity and acceleration of points and angular position, velocity, and acceleration of rigid bodies) in mechanism without references to forces.
+
+** Dynamics
+Study of motions in mechanisms with exerted forces and torques.
+
+** Kinematic analysis
+Kinematic analysis is determining position, velocity, and acceleration of points in members of specific mechanisms.
+
+You can use kinematic analysis to evaluate performance.
+
+** Kinematic synthesis
+Kinematic synthesis is determining geometry or dimensions of a mechanism to produce a desired set of position, velocity and acceleration.
+
+You use kinematic synthesis to design something to meet requirements.
+
+** Link
+Link refers to one of the *rigid bodies* or members joined together to form a kinematic chain (linkage).
+
+@@latex: \newpage@@
+
+*** Degrees of freedom
+The number of independent parameters specifies the *location and configuration* of a rigid link (body).
+
+3 degrees of freedom for a plane:
+[[./images/links-plane-degrees-of-freedom-image.png]]
+
+6 degrees of freedom for a space:
+[[./images/links-space-degrees-of-freedom-image.png]]
+
+** Joint
+Joint refers to the connections between links that permit relative movement.
+
+*** Classification of joints
+1. Motion (degree of freedom) between connected links:
+   - Revolute joints: Revolution, measured by angles, 1 degree of freedom.
+     [[./images/revolute-joint-image.png]]
+
+   - Prismatic joints: Linear, measured by distance, 1 degree of freedom.
+     [[./images/prismatic-joint-image.png]]
+
+   Table:
+   [[./images/types-of-joints-table.png]]
+
+@@latex: \newpage@@
+
+2. Nature of contact
+   - Lower pairs: Surface contact between two links.
+     #+ATTR_LATEX: :height 15em
+     [[./images/lower-pair-joints-image.png]]
+
+   - Higher pairs: Point or line contact between two links.
+     [[./images/point-and-line-contact-image.png]]
+     [[./images/higher-pair-joints-image.png]]
+
+** Fixed link / Stationing link
+- A fixed link or stationing link are links between two joints connected to a fixed point.
+- All joints connected to a fixed point are connected to each other through a fixed link.
+
+** Frame
+A frame is a fixed or stationing link in a mechanism.
+
+** Kinematic chains / linkages
+An assembly of links and joints. It is also known as linkages.
+
+*** Open loop linkages
+For open loop linkages, the motion of the tip has no constraint. An example is a robot arm.
+
+#+ATTR_LATEX: :height 15em
+[[./images/open-loop-linkage-image.png]]
+
+@@latex: \newpage@@
+
+*** Closed loop linkages
+For closed loop linkages, the motion of the links are constrained by the loop.
+
+#+ATTR_LATEX: :height 15em
+[[./images/closed-loop-linkage-image.png]]
+
+** Planar linkages
+Planar linkages are linkages where the motion of all members are along parallel planes (different layers of planes).
+
+#+ATTR_LATEX: :height 20em
+[[./images/planar-linkages-image.png]]
+
+*** Revolute joints
+The axes of rotation of revolute joints are normal to the plan.
+
+*** Prismatic joint
+The direction of sliding is parallel to the plane.
+
+** Kinematic diagrams
+A kinematic diagram is a simplified drawing or sketch of a mechanism showing:
+- Types of links
+- Types of joints
+- Arrangement of links and joints
+- Dimensions of links
+
+It is the "skeleton" of the mechanism.
+
+*** Types of links
+[[./images/kinematic-diagram-types-of-links.png]]
+
+*** Types of joints
+[[./images/kinematic-diagram-types-of-joints.png]]
+
+@@latex: \newpage@@
+
+*** Examples
+- Vice-grip pliers
+  #+ATTR_LATEX: :height 14em
+  [[./images/vice-grip-pliers-kinematic-diagram.png]]
+- V-engine
+  #+ATTR_LATEX: :height 14em
+  [[./images/v-engine-kinematic-diagram.png]]
+- Door hinge mechanism
+  [[./images/door-hinge-kinematic-diagram.png]]
+
+** Multiple joints
+Multiple joints refer to joints that join 3 or more links. These joints need to be counted once more for every link after the second link.
+
+*** Actual number of joints
+The actual number of joints is given by the equation below:
+\[\text{Actual number of joints} = \text{Number of links connected to joints } - 1\]
+
+** Degrees of freedom (DoF) of linkages
+- The degrees of freedom of linkages refers to the number of *independent* coordinates or parameters needed to specify the position of every link relative to the frame.
+- Motion of connected links are constrained by the number and types of joints in the overall system.
+- The degrees of freedom are always less than the number of joints.
+- The degrees of freedom are *equal to the number of inputs* (motors, drivers, actuators) to control the mechanism.
+
+[[./images/degrees-of-freedom-diagram.png]]
+
+@@latex: \newpage@@
+
+*** 2 DoF example
+Pin-in-slot joints and fork joints have 2 degrees of freedom, 1 for rotation and 1 for rotation.
+
+#+ATTR_LATEX: :height 20em
+[[./images/pin-in-slot-joint.png]]
+
+#+ATTR_LATEX: :height 20em
+[[./images/fork-joint.png]]
+
+@@latex: \newpage@@
+
+*** Equation
+\[DF = 3(n_L - 1) - 2n'_J - n''_J\]
+
+Where:
+- $n_L$ is the number of links
+- $n'_J$ is the number of 1-DoF joints (revolute and prismatic)
+- $n''_J$ is the number of 2-DoF joints (round pin in a slot)
+
+| $DF > 0$ | Mechanism (movable)         |
+| /        | <                           |
+| $DF = 0$ | Structure (no moving parts) |
+| $DF < 0$ | Over-constrained structure  |
+
+*** 4-bar linkage
+Four-bar linkage mechanisms are the most frequently used (with either R-joint or P-joint).
+
+[[./images/4-bar-linkage-example.png]]
+
+\[n_L = 4 \quad n'_J = 4 \quad n''_J = 0\]
+
+\begin{align*}
+DF &= 3 (n_L - 1) - 2n'_J - n''_J \\
+&= 3 (4 - 1) - 2 \times 4 \\
+&= 1
+\end{align*}
+
+@@latex: \newpage@@
+
+*** Multiple joints
+\[DF = 3(n_L - 1) - 2n'_J - n''_J\]
+
+[[./images/multiple-joints-image.png]]
+
+** Naming convention
+Naming conventions are based on input and output relations. A 4-bar linkage has 1 degree of freedom, thus there is one input and one output.
+
+[[./images/naming-convention.png]]
+
+@@latex: \newpage@@
+
+** Kinematic inversion
+Choosing different links in a mechanism to be the fixed link or reference frame will result in different motion characteristics.
+
+[[./images/kinematic-inversion-diagram.png]]
+
+** Crank
+A crank is a link that rotates continuously.
+
+** Condition to form a 4-bar linkage
+\[L_{max} \le L_{min} + L_a + L_b\]
+
+Where:
+- $L_{max}$ is the length of the longest link
+- $L_{min}$ is the length of the shortest link
+- $L_a, L_b$ are the lengths of the other two links
+
+@@latex: \newpage@@
+
+** Grashof condition
+[[./images/grashof-condition-linkage-image.png]]
+
+For a planar 4-bar linkage, if the dimensions of links satisfy the below condition, it is called a *Grashof* linkage.
+\[L_{max} + L_{min} \le L_a + L_b\]
+
+Where:
+- $L_{max}$ is the length of the longest link
+- $L_{min}$ is the length of the shortest link
+- $L_a, L_b$ are the lengths of the other two links @@latex: \\@@
+
+Grashof linkages also have at least one link can rotate \(\qty{360}{\degree}\). @@latex: \\@@
+
+If the linkage doesn't satisfy the condition above, the linkage is called a *non-Grashof* linkage.
+
+@@latex: \newpage@@
+
+*** Types of linkages
+1. Crank-rocker linkage.
+   - The shortest link is *next to the fixed link*.
+   - The shortest link rotates \(\qty{360}{\degree}\).
+
+   #+ATTR_LATEX: :scale 1
+   [[./images/crank-rocker-linkage-image.png]]
+
+2. Drag-link linkage, also known double-crank linkage.
+   - The shortest link is the *fixed link*.
+   - Both input and output links rotate \(\qty{360}{\degree}\).
+
+   #+ATTR_LATEX: :scale 1
+   [[./images/drag-link-linkage-image.png]]
+
+   @@latex: \newpage@@
+
+3. Double rocker linkage.
+   - Shortest link is opposite the fixed link.
+   - The coupler rotates \(\qty{360}{\degree}\).
+
+   #+ATTR_LATEX: :scale 1
+   [[./images/double-rocker-linkage-image.png]]
+
+4. Change-point linkage, also known as crossover-position linkage.
+   - All links can be collinear.
+
+   #+ATTR_LATEX: :scale 1
+   [[./images/change-point-linkage-image.png]]
+
+5. Triple rocker, which is a non-Grashof linkage.
+   - None of the links makes a \(\qty{360}{\degree}\) rotation.
+
+@@latex: \newpage@@
+
+** Transmission angle (\(\phi\))
+- The transmission angle is the angle between the coupler centreline and the output rocker centreline.
+
+  #+ATTR_LATEX: :height 15em
+  [[./images/transmission-angle-image.png]]
+- A small transmission angle results in very small output torque on rocker but high bearing force at \(O_3\).
+  [[./images/small-transmission-angle-image.png]]
+- The usual range of transmission angles is \(\qty{40}{\degree} \le \phi \le \qty{140}{\degree}\).
+- The optimal transmission angle is \(\qty{90}{\degree}\).
+- The minimum and maximum transmission angle occur when the crank aligns with the fixed link.
+  [[./images/minimum-and-maximum-transmission-angle.png]]
+
+** Limiting position
+- The limiting position occurs when the input link aligns with the coupler.
+- It defines the range of motion of the output link geometrically.
+
+[[./images/limiting-position-image.png]]
+
+@@latex: \newpage@@
+
+** Two external friction wheels
+[[./images/two-external-friction-wheels.png]]
+- Wheels are in perfect contact (no slip), instantaneous velocities at contact point, \(P\), should be the same for both wheels.
+- We have:
+  \[V_p = r_1 \omega_1 = r_2 \omega_2\]
+- Hence:
+  \[V_r = \frac{\omega_2}{\omega_1} = \frac{r_1}{r_2} \tag{1}\]
+
+Where:
+- $V_p$ is the velocity of the point of contact of both gears
+- $r_1$ is the radius of one circle
+- $\omega_1$ is the angular velocity of the circle
+- $r_2$ is the radius of the other circle
+- $\omega_2$ is the angular velocity of the other circle
+
+** Two internal friction wheels
+#+ATTR_LATEX: :height 20em
+[[./images/two-internal-friction-wheels.png]]
+- For two internal wheels, equation (\(1\)) above still holds except that two wheels rotate in the same direction.
+
+\[V_r = \frac{\omega_2}{\omega_1} = \frac{r_1}{r_2} \tag{1}\]
+
+Where:
+- $V_p$ is the velocity of the point of contact of both gears
+- $r_1$ is the radius of one circle
+- $\omega_1$ is the angular velocity of the circle
+- $r_2$ is the radius of the other circle
+- $\omega_2$ is the angular velocity of the other circle
+
+** Gears
+Gears are used to transmit power and displacement between shafts.
+
+** Laws of gearing
+[[./images/common-normal-at-point-of-contact.png]]
+- To maintain constant angular velocity ratio, the shape (profile) of teeth of a gear requires that *a common normal* at the point of contact between two teeth always passes through a fixed point on the line of centres of the gears.
+- This point is called the *pitch* point.
+- When the fundamental law is satisfied, gears in mesh are said to produce *conjugate action*.
+- The involute tooth profile provides this constant velocity ratio.
+
+** Spur gear terminology
+[[./images/spur-gear-terminology.png]]
+
+*** Pitch circle
+The pitch circle is the circle on a gear that corresponds to the contact point of a friction wheel.
+
+*** Addendum circle
+The addendum circle is the circle drawn through the top of the gear tooth, and its centre is at the gear centre.
+
+*** Dedendum circle
+The dedendum circle is the circle drawn through the bottom of the gear tooth, and its centre is at the gear centre.
+
+@@latex: \newpage@@
+
+*** Circular pitch
+The circular pitch is the arc distance along the pitch circle from a point on one tooth to the corresponding point on the adjacent tooth of the gear.
+
+\[p_c = \frac{\pi d_p}{N} = \pi m\]
+
+Where:
+- $p_c$ is the circular pitch
+- $d_p$ is the pitch diameter of the gear, which is the diameter of the pitch circle on the gear
+- $N$ is the number of teeth on the gear
+- $m$ is the module of the gear
+
+** Module (\(m\))
+Module \(m\) in SI units is used to express the gear tooth size rather than the diametral pitch \(P\) used in US units.
+
+\[m = \frac{d_p}{N}\]
+
+Where:
+- $m$ is the module of the gear, or the gear tooth size in millimetres (\(\unit{mm}\))
+- $d_p$ is the pitch diameter of the gear, which is the diameter of the pitch circle on the gear
+- $N$ is the number of teeth on the gear
+
+*** Converting to diametral pitch (\(P\))
+\[\frac{m}{25.4} = \frac{1}{P}\]
+
+Where:
+- $m$ is the module of the gear, or the gear tooth size in millimetres (\(\unit{mm}\))
+- $P$ is the diametral pitch of the gear
+
+** Radius in terms of module (\(r\))
+\[r = \frac{mN}{2}\]
+
+Where:
+- $r$ is the radius of the pitch circle of the gear
+- $m$ is the module of the gear
+- $N$ is the number of teeth on the gear
+
+** Tooth thickness in terms of module (\(t\))
+\[t = \frac{\pi}{2} m\]
+
+Where:
+- $t$ is the tooth thickness
+- $m$ is the module
+
+@@latex: \newpage@@
+
+** Base circle
+[[./images/base-circle-diagram.png]]
+
+*** Addendum (\(a\))
+The addendum is the length of the top half of the gear tooth. It should be equal to the dedendum. It is equal to the module of the gear, i.e.
+
+\[a = m\]
+
+Where:
+- $a$ is the addendum of the gear
+- $m$ is the module of the gear
+
+*** Dedendum
+The dedendum is the length of the bottom half of the gear tooth. It should be equal to the addendum.
+
+@@latex: \newpage@@
+
+** Velocity ratio
+- The velocity ratio is equal to the angular speed (\(\omega\)) of the follower or driven gear (\(\omega_2\)) divided by the angular speed of the driving gear (\(\omega_1\)), i.e.
+  \[r_v = \frac{\omega_2}{\omega_1}\]
+  Where:
+  - $r_v$ is the velocity ratio
+  - $\omega_2$ is the angular velocity of the follower or driven gear
+  - $\omega_1$ is the angular velocity of the driving gear
+
+- It can also be expressed in terms of the ratio of rounds per minutes (RPM), the pitch radii, and the number of gear teeth:
+  \[r_v = \frac{\omega_2}{\omega_1} = \frac{RPM_2}{RPM_1} = \frac{r_1}{r_2} = \frac{N_1}{N_2}\]
+
+** Centre distance
+#+ATTR_LATEX: :height 15em
+[[./images/centre-distance-image.png]]
+- The centre distance is the distance \(c\) shown in the image above.
+- This distance represents the spacing between the centres of the shafts upon which the gears are mounted.
+
+*** In terms of pitch diameter (\(d_p\))
+\[c = \frac{d_{p1} + d_{p2}}{2}\]
+
+Where:
+- $c$ is the centre distance
+- $d_{p1}$ is the pitch diameter of the first gear
+- $d_{p2}$ is the pitch diameter of the second gear
+
+*** In terms of module in SI units (\(m\))
+\[c = \frac{m (N_1 + N_2)}{2}\]
+
+Where:
+- $c$ is the centre distance
+- $m$ is the module of the gears
+- $N_1$ is the number of teeth on the first gear
+- $N_2$ is the number of teeth on the second gear
+
+*** In terms of diametral pitch in English units (\(P_d\))
+\[c = \frac{N_1 + N_2}{2 P_d}\]
+
+Where:
+- $N_1$ is the number of teeth on the first gear
+- $N_2$ is the number of teeth on the second gear
+
+@@latex: \newpage@@
+
+** Line of action
+[[./images/gear-contact-geometry-diagram.png]]
+- The red line in the image above is called the line of action because the contact points of two gears in mesh must lie along it.
+- The force that one gear tooth exerts on the tooth of the meshing gear acts along the common normal, which is also the red line in the image above.
+- Therefore, another name commonly given to the line of action is the pressure line.
+
+** Pressure angle (\(\phi\))
+[[./images/gear-contact-geometry-diagram.png]]
+- The angle \(\phi\) between the line of action and the common tangent to the pitch circles of both gears is called the pressure angle.
+- Most gears have a \(\qty{20}{\degree}\) or \(\qty{25}{\degree}\) pressure angle.
+- Gears are designated by their pressure angles, but one has to be careful.
+- Changes in the centre distance will result in changes in the pressure angle.
+
+*** Relationship between base-circle radius and pitch-circle radius
+#+ATTR_LATEX: :height 25em
+[[./images/relationship-between-base-circle-radius-and-pitch-circle-radius-diagram.png]]
+
+One of the properties of an involute tooth profile is that the normal to the involute at any point of the curve is tangent to the base circle.
+
+\[r_{b1} = r_1 \cos \phi\]
+\[r_{b2} = r_2 \cos \phi\]
+
+Where:
+- $r_{b1}$ is the radius of the base circle for the first gear
+- $r_1$ is the radius of pitch circle for the first gear
+- $\phi$ is the pressure angle between the two gears
+- $r_{b2}$ is the radius of the base circle for the second gear
+- $r_2$ is the radius of pitch circle for the second gear
+
+** Meshing conditions
+For two gears to mesh, the following conditions are required:
+- Pressure angle must be the same.
+- Modules \(m\) (or diametral pitches \(P_d\)) must be the same.
+- Gears must have the same addendum and dedendum.
+- Tooth thickness must be equal to one-half the circular pitch.
+- Gears must have the same circular pitch.
+
+** Pinion
+A pinion is the *smaller* gear in a pair of meshing gears, and is the driver gear.
+
+** Base pitch
+[[./images/base-pitch-diagram.png]]
+
+The base pitch is the arc distance along the *base circle* from a point on one tooth to the corresponding point on the adjacent tooth of the gear.
+
+*** In terms of module in SI units (\(m\))
+\[p_b = m \pi \cos \phi\]
+
+Where:
+- $p_b$ is the base pitch of the gears
+- $m$ is the module of the gears
+- $\phi$ is the pressure angle between the two gears
+
+@@latex: \newpage@@
+
+*** In terms of diametral pitch in English units (\(P\))
+\[p_b = \frac{\pi}{P} \cos \phi\]
+
+Where:
+- $p_b$ is the base pitch of the gears
+- $P$ is the diametral pitch of the gears
+- $\phi$ is the pressure angle between the two gears
+
+** Contact ratio (\(C.R.\))
+
+*** Diagram
+[[./images/contact-ratio-diagram.png]]
+
+*** Description
+- The contact ratio is an indicator of the *average number of pairs of teeth* in contact.
+- The contact ratio being equal to 1 (\(C.R. = 1\)) means that there is only one pair of teeth in contact.
+\[C.R. = \frac{\sqrt{(r_2 + a_2)^2 - r_2^2 \cos^2 \phi} - r_2 \sin \phi}{p_b} + \frac{\sqrt{(r_1 + a_1)^2 - r_1^2 \cos^2 \phi} - r_1 \sin \phi}{p_b}\]
+Where:
+- \(C.R.\) is the contact ratio
+- $r_2$ is the radius of pitch circle for the second gear
+- $a_2$ is the addendum for the second gear
+- $\phi$ is the pressure angle between the two gears
+- $p_b$ is the base pitch of the gears
+
+** Interference
+[[./images/interference-diagram.png]]
+- Involute gear teeth have involute profiles between the *base circle* and the *addendum circle*.
+- Below the base circle, there is no involute profile.
+- If contact between the two gears occurs below the base circle of one of the gears, interference is said to occur.
+
+*** Avoiding interference
+#+ATTR_LATEX: :height 18em
+[[./images/avoiding-interference-diagram.png]]
+
+To avoid interference, the following conditions must be met:
+
+\[r_1 + a_1 \le \sqrt{r_1^2 \cos^2 \phi + c^2 \sin^2 \phi}\]
+\[r_2 + a_2 \le \sqrt{r_2^2 \cos^2 \phi + c^2 \sin^2 \phi}\]
+
+Where:
+- $r_1$ is the radius of the pitch circle of the first gear
+- $a_1$ is the addendum of the first gear
+- $\phi$ is the pressure angle between the two gears
+- $r_2$ is the radius of the pitch circle of the second gear
+- $a_2$ is the addendum of the second gear
+
+For gear 2, the expression can be simplified to:
+\[r_2 + a_2 \le O_2 D\]
+
+Where:
+- $r_2$ is the radius of the pitch circle of the second gear
+- $a_2$ is the addendum of the second gear
+- $O_2 D$ is the length defined in the diagram above
+
+*** Interference of rack and pinion
+[[./images/interference-of-rack-and-pinion-diagram.png]]
+- The worst possible case for interference.
+- If interference does not occur under this condition, it will never occur to the pinion when it meshes with a gear with the same or more teeth.
+- To avoid interference between a pinion and a rack, the number of teeth on the pinion, \(N\), must satisfy the following condition.
+
+\[N \ge \frac{2k}{\sin^2 \phi}\]
+
+Where:
+- $N$ is the number of teeth on the pinion
+- $k$ is the addendum constant (in \(\unit{km}\))
+- $\phi$ is the pressure angle between the rack and the pinion
+
+*** Minimum number of teeth to avoid interference
+[[./images/minimum-number-of-teeth-to-avoid-interference-table.png]]
+- When a generation method is used in gear manufacturing, such as with a rack cutter, the interference problem will transform into an "undercutting" problem of removing materials in the interference regions, thus weakening the gear teeth.
+
+*** Rules on sizes of pinion and gear (or rack)
+1. For a given gear (\(N_G\)) or rack, there exists a minimum number of teeth for the pinion, \(N_P^*\), such that there is no interference if the pinion tooth number \(N_P \ge N_P^2\), and that interference occurs if \(N_P < N_P^*\).
+2. For a given pinion (\(N_P\)), there exists a maximum number of teeth for the gear, \(N_G^*\), such that there is no interference if the gear tooth number \(N_G \le N_G^*\), and that interference occurs if \(N_G > N_G^*\).
+
+Note that the "gear" and "pinion" refer to the larger and smaller parts of a (single-stage) gear transmission. Therefore, the relationship \(N_G > N_P\) always holds true.
+
+** Idler
+[[./images/idler-image.png]]
+
+For the equations below:
+- $n$ is the RPM of the gear
+- $N$ is the number of teeth on the gear
+
+*** For gears 1 and 2
+\[\frac{n_2}{n_1} = - \frac{N_1}{N_2}\]
+
+*** For gears 2 and 3
+\[\frac{n_3}{n_2} = - \frac{N_2}{N_3}\]
+
+*** For gears 1 and 3
+\[\frac{n_3}{n_1} = \left(\frac{n_3}{n_2}\right) \left(\frac{n_2}{n_1}\right) = \left(-\frac{N_2}{N_3} \right) \left(-\frac{N_1}{N_2} \right) = \frac{N_1}{N_3}\]
+
+** Reversing gear box
+[[./images/reversing-gear-box-image.png]]
+- Two idlers are used between the input and output gears to change the direction of the output on the fly.
+- When the L-shaped arm is moved to the position shown in the right picture above, the input and output shafts will have opposite directions of rotation.
+
+** Velocity ratio for spur gears (\(R\) or \(r_v\))
+#+ATTR_LATEX: :height 15em
+[[./images/double-stage-gear-reducer-image.png]]
+\[R \text{ or } r_v = \frac{|\omega_2|}{|\omega_1|} = \frac{|RPM_2|}{|RPM_1|} = \frac{r_1}{r_2} = \frac{d_{p1}}{d_{p2}} = \frac{N_1}{N_2}\]
+
+Where:
+- $R$ or $r_v$ is the velocity ratio
+- $\omega$ is the angular velocity of the gear
+- $RPM$ is the rotations per minute of the gear
+- $r$ is the pitch radii of the gear
+- $d_{p}$ is the pitch circle diameter of the gear
+- $N$ is the number of teeth on the gear
+
+\[r_v = \frac{\omega_2}{\omega_1} = - \frac{N_1}{N_2}\]
+
+Where:
+- $R$ or $r_v$ is the velocity ratio
+- $\omega_2$ is the angular velocity of the second gear
+- $\omega_1$ is the angular velocity of the first gear
+- $N_1$ is the number of teeth on the first gear
+- $N_2$ is the number of teeth on the second gear
+
+** Output-to-input speed ratio
+#+ATTR_LATEX: :height 15em
+[[./images/double-stage-gear-reducer-image.png]]
+- The general relationship between the output rotational speed to the input rotational speed is given by:
+  \[\left|\frac{n_{output}}{n_{input}} \right| = \frac{\text{product of driving gear teeth}}{\text{product of driven gear teeth}}\]
+
+  Where:
+  - $n_{output}$ is the rotations per minute of the output gear
+  - $n_{input}$ is the rotations per minute of the input gear
+
+- For the double-stage gear reducer above, it is:
+  \[\frac{n_4}{n_1} = \frac{N_1 N_3}{N_2 N_4}\]
+
+  Where:
+  - $n_4$ is the rotations per minute of the gear 4
+  - $n_1$ is the rotations per minute of the gear 1
+  - $N_1$ is the number of teeth on gear 1
+  - $N_2$ is the number of teeth on gear 2
+  - $N_3$ is the number of teeth on gear 3
+  - $N_4$ is the number of teeth on gear 4
+
+** Reverted gear train
+[[./images/reverted-gear-train-image.png]]
+In a reverted (or concentric) gear train, the input and output shaft have the same centreline. @@latex: \\@@
+
+Geometric constraint:
+\[r_1 + r_2 = r_3 + r_4\]
+
+Where:
+- $r_1$ is the radius of gear 1 in the image above
+- $r_2$ is the radius of gear 2 in the image above
+- $r_3$ is the radius of gear 3 in the image above
+- $r_4$ is the radius of gear 4 in the image above
+
+** Gear reducer
+One can ideally use two gears (single-stage gear transmission) to achieve the needed speed reduction, but due to size and cost constraints, multi-stage gear reducers are used.
+
+*** Double-stage gear reducer
+Velocity ratio:
+
+\[\frac{n_4}{n_1} = \left(- \frac{N_1}{N_2} \right) \left(- \frac{N_3}{N_4} \right)\]
+
+Where:
+- $N_1$ is the number of teeth on the first gear
+- $N_2$ is the number of teeth on the second gear
+- $N_3$ is the number of teeth on the third gear
+- $N_4$ is the number of teeth on the third gear
+
+** Speed ratio of planetary gear trains
+\[\frac{n_{output} - n_c}{n_{input} - n_c} = \pm \frac{\text{product of driving gear teeth}}{\text{product of driven gear teeth}}\]
+
+Where:
+- *input* is an arbitrarily chosen starting point (not necessarily the real input)
+- *output* is an arbitrarily chosen ending point (not necessarily the real output)
+- $n_{output}$ is the rotations per minute of the output gear
+- $n_{c}$ is the rotations per minute of the carrier link
+- $n_{input}$ is the rotations per minute of the input gear
+
+*** Example
+[[./images/planetary-gear-train-kinematic-diagram.png]]
+\[\frac{n_R - n_C}{n_S - n_C} = \left(- \frac{N_S}{N_P} \right) \left( \frac{N_P}{N_R}\right)\]
+
+Where:
+- $n_R$ is the rotations per minute of the ring gear
+- $n_C$ is the rotations per minute of the planet carrier gear
+- $n_S$ is the rotations per minute of the sun gear
+- $N_S$ is the number of gear teeth on the sun gear
+- $N_P$ is the number of gear teeth on the planet carrier gear
+- $N_R$ is the number of gear teeth on the ring gear
+
+@@latex: \newpage@@
+
+** Velocity ratio for planetary gear trains
+[[./images/planetary-gear-train-kinematic-diagram.png]]
+
+Consider the sun gear (\(s\)) as the input and the ring gear (\(r\)) as the output (\(s \rightarrow p \rightarrow r\)) to set up the equation.
+
+\[\frac{\omega_r - \omega_c}{\omega_s - \omega_c} = - \frac{N_s}{N_r}\]
+
+Where:
+- $\omega_r$ is the angular velocity of the ring gear
+- $\omega_c$ is the angular velocity of the planet carrier gear
+- $\omega_r$ is the angular velocity of the ring gear
+- $N_s$ is the number of teeth on the sun gear
+- $N_r$ is the number of teeth on the ring gear
+
+*** Locked carrier
+A locked carrier means \(\omega_c = 0\), so:
+\[\frac{\omega_r}{\omega_s} = - \frac{N_s}{N_r}\]
+
+*** Locked sun
+A locked sun means \(\omega_s = 0\), so:
+\[\frac{\omega_r}{\omega_c} = 1 + \frac{N_s}{N_r}\]
+
+*** Locked ring
+A locked ring means \(\omega_r = 0\), so:
+\[\frac{\omega_s}{\omega_c} = 1 + \frac{N_r}{N_s}\]
+
+** Scalar
+- A quantity with magnitude only, one-dimensional.
+- Examples:
+  - Temperature
+  - Mass
+  - Height
+  - Pressure
+  - Power
+
+** Vector
+- A quantity with magnitude and direction, can be visualised using a line segment with an arrow, multidimensional.
+- Magnitude: Length of the line segment.
+- Direction: Direction of the arrow.
+- Examples:
+  - Force
+  - Torque
+  - Displacement
+  - Velocity
+
+** Unit vector
+- A vector with a magnitude of 1.
+- Unit vectors along coordinate axes in 3D space:
+  \[\boldsymbol{i} = (1 \ 0 \ 0)\]
+  \[\boldsymbol{j} = (0 \ 1 \ 0)\]
+  \[\boldsymbol{k} = (0 \ 0 \ 1)\]
+
+** Position vector
+- A position vector describes the location of a point $P$ in space by drawing a line segment from the origin of the coordinate system to $P$.
+- Magnitude: Length of the line segment.
+- Direction: Arrow from origin to \(P\).
+
+** Vector components
+- A vector can be expressed in terms of the summation of vectors along the coordinate axes (vector components).
+- Magnitude:
+  \[R = |\boldsymbol{R}| = \sqrt{R_x^2 + R_y^2 + R_z^2}\]
+- Unit vector (direction):
+  \[\boldsymbol{R}^u = \frac{\boldsymbol{R}}{R} = \frac{R_x}{R} \boldsymbol{i} \frac{R_y}{R} \boldsymbol{j} + \frac{R_z}{R} \boldsymbol{k}\]
+
+#+ATTR_LATEX: :height 20em
+[[./images/vector-components.png]]
+
+** 2D planar vectors
+- Position vector of \(P\):
+  \[\boldsymbol{R} = \boldsymbol{i} R_x + R_y \boldsymbol{j} \equiv (R_x, R_y)\]
+  \[\boldsymbol{R} = (r \cos \theta) \boldsymbol{i} + (r \sin \theta) \boldsymbol{j}\]
+- Magnitude:
+  \[r = |\boldsymbol{R}| = \sqrt{R_x^2 + R_y^2}\]
+- Direction:
+  \[\boldsymbol{R}^u = \frac{\boldsymbol{R}}{r} = \cos \theta \boldsymbol{i} + \sin \theta \boldsymbol{j}\]
+
+[[./images/2d-planar-vectors.png]]
+
+** Motion
+- Motion is the way a rigid body moves in space.
+  - Most unrestrictive: 3D spatial motion, which is roughly 6 degrees-of-freedom (one body)
+
+    #+ATTR_LATEX: :height 5em
+    [[./images/3d-spatial-motion.png]]
+  - Restrictive: 2D planar motion, which is roughly 3 degrees-of-freedom (one body)
+
+    #+ATTR_LATEX: :height 10em
+    [[./images/2d-planar-motion.png]]
+  - Restrictive: 3D spherical motion, which is roughly 3 degrees-of-freedom (one body)
+
+    #+ATTR_LATEX: :height 10em
+    [[./images/3d-spherical-motion.png]]
+- Any motion can be characterised by:
+  - Displacement with respect to a reference frame.
+  - Velocity or speed of motion (displacement over time).
+  - Acceleration of motion (velocity over time).
+
+** Planar motion
+All points on the links of a mechanism is restricted to *one plane* or to *a set of parallel planes*. It is described and characterised by 2D vectors.
+[[./images/planar-motion.png]]
+
+** Purpose of position analysis
+- Given a fixed position or displacement of the input link, which can be an angle or a distance, depending on the type of joint or actuator.
+- Determine the position and orientation of all other links, including the output link.
+[[./images/position-analysis.png]]
+
+** Purpose of velocity analysis
+- Given the velocity of the input link at a particular position.
+- Determine the velocities and angular velocities of all other links, including the output link.
+
+[[./images/velocity-analysis.png]]
+
+** Velocity of points
+- Velocity of a point in space is the time change of position with respect to a fixed reference frame. The direction is tangent to the trajectory, and the speed is the magnitude.
+  \[\boldsymbol{V} = \frac{d \boldsymbol{R}}{dt} = \dot{\boldsymbol{R}} = \dot{R}_x \boldsymbol{i} \dot{R}_y \boldsymbol{j} + \dot{R}_z \boldsymbol{k}\]
+- Relative velocity is the velocity between two points.
+  - Points $A$ and $B$ with $V_A$ and \(V_B\).
+  - Velocity of $B$ relative $A$ (\(V_{BA}\)):
+    \[\boldsymbol{V}_{BA} = \boldsymbol{V}_B - \boldsymbol{V}_A \text{ or } \boldsymbol{V}_B = \boldsymbol{V}_A + \boldsymbol{V}_{BA}\]
+  - Take reference to the moving point.
+  - Absolute velocity is the velocity with respect to a fixed point \(O\):
+    \[\boldsymbol{V}_{AO} = \boldsymbol{V}_A - \boldsymbol{V}_O = \boldsymbol{V}_A - 0 \equiv \boldsymbol{V}_A\]
+
+** Planar rigid body motion
+- Fixed point, pure rotation, one point has no velocity.
+- Pure translation, all points have the same velocity.
+- General rotation and translation, the velocity different for every point.
+
+** Velocity of rigid body
+- Angular velocity for a body:
+  - Scalar: Time changes the angular position of a body.
+    \[\omega = \lim_{N \rightarrow 0} \frac{\delta \theta}{\Delta t} = \frac{d \theta}{dt}\]
+    \[\boldsymbol{\omega} = \omega_x \boldsymbol{i} + \omega_y \boldsymbol{j} + \omega_z \boldsymbol{k}\]
+  - Vector: Showing rotation axis and speed:
+    \[\boldsymbol{\omega} = \omega \boldsymbol{k}\]
+- Right-hand rule for \(\omega\):
+  - Counter-clockwise is positive
+  - Clockwise is negative
+- Velocity of points on the rotating body:
+  \[\boldsymbol{V}_A = \boldsymbol{\omega} \times \boldsymbol{r}_A\]
+  \[\text{For planar object: } v_A = \omega \cdot r_A\]
+
+@@latex: \newpage@@
+
+** Relative velocity of rigid body
+- Use graphical construction of the *velocity polygon* formed by *velocities of points on link members* to find angular velocity of link and linear velocity of other points on link.
+- *Each link member* can form one relative velocity equation.
+\[\boldsymbol{V}_B = \boldsymbol{V}_A + \boldsymbol{V}_{BA}\]
+\[\boldsymbol{V}_{BA} = \boldsymbol{\omega} \times \boldsymbol{r}_{BA}\]
+
+[[./images/relative-velocity-of-rigid-body.png]]
+
+@@latex: \newpage@@
+
+** Velocity image
+- It is a *similar-shaped figure in the velocity diagram* to the original link (object).
+  - The line is mapped to a line, a triangle is mapped to a triangle, and a circle is mapped to a circle, etc.
+  - The *orientation and size* will be different.
+  [[./images/velocity-image-comparison.png]]
+
+- It is used to determine the velocity of points on linkages not on the joint centres, like point $D$ in the image below.
+  [[./images/velocity-image-diagram.png]]
+
+@@latex: \newpage@@
+
+*** Example
+- $DBCD$ is a rigid body, and $Dbcd$ are points in a velocity diagram.
+- $Dbcd$ is the velocity image of $DBCD$, i.e. $DBCD$ is similar to $Dbcd$.
+  - $Dbcd$ is $DBCD$ rotated \(\qty{90}{\degree}\) counter-clockwise.
+  - It is magnified by a factor of \(\omega\).
+- The edges of the velocity image are relative velocity.
+
+\[\boldsymbol{V}_{CB} = \omega \times \boldsymbol{r}_{CB} \sim \vec{bc}\]
+\[\boldsymbol{V}_{DC} = \omega \times \boldsymbol{r}_{DC} \sim \vec{cd}\]
+\[\boldsymbol{V}_{BD} = \omega \times \boldsymbol{r}_{BD} \sim \vec{bd}\]
+
+[[./images/velocity-image-example.png]]
+
+@@latex: \newpage@@
+
+*** Velocity image of collinear points
+- Velocity image of link $BC$ is a straight line segment.
+- Velocity of points on link can be obtained proportionally.
+
+#+ATTR_LATEX: :height 20em
+[[./images/velocity-image-of-collinear-points-mechanism.png]]
+
+#+ATTR_LATEX: :height 20em
+[[./images/velocity-image-of-collinear-points-polygon.png]]
+
+** Purpose of acceleration analysis
+- Given the acceleration of the input link at a particular position.
+- Determine the accelerations and angular accelerations of all other links, including the output link.
+
+** Acceleration of points
+- The acceleration of a point in space is the time change of velocity with respect to the fixed reference frame:
+  \[\boldsymbol{A} = \frac{d \boldsymbol{V}}{dt} \ddot{\boldsymbol{R}} \ddot{R}_x \boldsymbol{i} + \ddot{R}_y + \boldsymbol{j} + \ddot{R}_z \boldsymbol{k}\]
+- Relative acceleration is the acceleration between two points.
+  - Points $A$ and $B$ with $A_A$ and \(A_B\).
+  - Acceleration of $B$ relative to $A$ (\(A_{BA}\)):
+    \[\boldsymbol{A}_{BA} = \boldsymbol{A}_B - \boldsymbol{A}_A\]
+    \[\boldsymbol{A}_{B} = \boldsymbol{A}_A - \boldsymbol{A}_{BA}\]
+  - Take reference to the moving point.
+  - Absolute acceleration is the acceleration taken with reference toa  fixed point \(O\):
+    \[\boldsymbol{A}_{AO} = \boldsymbol{A}_A - \boldsymbol{A}_O = \boldsymbol{A}_A - 0 \equiv \boldsymbol{A}_A\]
+
+** Angular acceleration of a rigid body
+- Angular acceleration for a body:
+  - Scalar: Time changes the angular velocity of a body:
+    \[\alpha = \lim_{N \rightarrow 0} \frac{\delta \omega}{\Delta t} = \frac{d \omega}{dt} = \ddot{\theta}\]
+    \[\boldsymbol{\alpha} = \alpha_x \boldsymbol{i} + \alpha_y \boldsymbol{j} + \alpha_z \boldsymbol{k}\]
+  - Vector: Showing rotation axis and speed:
+    \[\boldsymbol{\alpha} = \omega \boldsymbol{k}\]
+- Right-hand rule for \(\alpha\):
+  - Counter-clockwise is positive
+  - Clockwise is negative
+
+** Motion of rigid body at fixed point
+- Velocity of point on rigid body rotating about a fixed axis:
+  \[\boldsymbol{V} = \dot{\boldsymbol{R}} = \boldsymbol{\omega} \times \boldsymbol{R}\]
+- Acceleration of point:
+  \[\ddot{\boldsymbol{V}} = \ddot{\boldsymbol{\omega}} \times \boldsymbol{R} + \boldsymbol{\omega} \times \ddot{\boldsymbol{R}}\]
+  \[\ddot{\boldsymbol{A}} = \ddot{\boldsymbol{\alpha}} \times \boldsymbol{R} + \boldsymbol{\omega} \times (\omega \times \ddot{\boldsymbol{R}}) = \boldsymbol{A}^t + \boldsymbol{A}^n\]
+- Tangential acceleration is the acceleration tangent to the path and perpendicular to $R$.
+  \[\boldsymbol{A}^t = \boldsymbol{\alpha} \times \boldsymbol{R}\]
+- Normal or radian acceleration is the acceleration parallel to $R$, pointing towards $O$.
+  \[\boldsymbol{A}^n = \omega \times (\omega \times \boldsymbol{R})\]
+- For planar motion:
+  \[A^t = \alpha R\]
+  \[A^n = \omega^2 R = \frac{V^2}{R}\]
+  \[\text{Total magnitude: } A = \sqrt{(A^n)^2 + (A^t)^2}\]
+
+@@latex: \newpage@@
+
+** Relative accelerations
+- Differentiate relative velocity equation:
+  \[\boldsymbol{V}_B = \boldsymbol{V}_A + \boldsymbol{\omega} \times \boldsymbol{r}_{BA}\]
+- To form the relative acceleration equation:
+  \begin{align*}
+  \boldsymbol{A}_B &= \boldsymbol{A}_A + \boldsymbol{\omega} \times (\boldsymbol{\omega} \times \boldsymbol{r}_{BA}) + \boldsymbol{\alpha} \times \boldsymbol{r}_{BA} \\
+  &= \boldsymbol{A}_A - \omega^2 \boldsymbol{r}_{BA} + \boldsymbol{\alpha} \times \boldsymbol{r}_{BA} \\
+  &= \boldsymbol{A}_A + \boldsymbol{A}_{BA}^t + \boldsymbol{A}_{BA}^n
+  \end{align*}
+  \[A_{BA}^t = \boldsymbol{\alpha} \times \boldsymbol{r}_{BA}\]
+  \[A_{BA}^n = \omega^2 \boldsymbol{r}_{BA}\]
+
+  Where:
+  - $\boldsymbol{A}_A, \boldsymbol{A}_B$ are the absolute accelerations of point $A$ and $B$ relative to the fixed frame.
+  - $\boldsymbol{A}_{BA}^t$ is the tangential acceleration of $B$ relative to $A$.
+  - $\boldsymbol{A}_{BA}^n$ is the normal acceleration of $B$ relative to $A$, \(\boldsymbol{A}_{BA}^n \parallel \boldsymbol{r}_{BA}\)
+  - $\boldsymbol{r}_{BA}$ is the position vector of $B$ relative to $A$, \(\boldsymbol{A}_{BA}^t \perp \boldsymbol{r}_{BA}\)
+  - $\boldsymbol{\alpha}$ is the angular acceleration of the body relative to the fixed frame.
+
+** Acceleration at revolute joints
+\[\boldsymbol{A}_{B1} = \boldsymbol{A}_{B2}\]
+
+#+ATTR_LATEX: :height 15em
+[[./images/acceleration-at-revolute-joints.png]]
+
+** Acceleration at prismatic joints
+\[\boldsymbol{V}_{B1} \ne \boldsymbol{V}_{B2}\]
+\[\boldsymbol{A}_{B1} \ne \boldsymbol{A}_{B2}\]
+\[V_{B2B1} \parallel A_{B1B2} \parallel \text{Direction of travel}\]
+
+[[./images/acceleration-at-prismatic-joints.png]]
+
+@@latex: \newpage@@
+
+** Acceleration image
+- A *similar-shaped* figure in the acceleration diagram to the original link (object).
+  - Orientation and size are different from the link and its velocity image.
+  [[./images/acceleration-image-comparison.png]]
+- It is used to determine the acceleration of points on linkages not on the joint centres, e.g. point $D$ in the image below.
+  [[./images/velocity-image-diagram.png]]
+
+@@latex: \newpage@@
+
+*** Example
+- $DBCD$ is a rigid body, and $Db'c'd'$ are points an acceleration diagram.
+- $Db'c'd'$ is the velocity image of $DBCD$, i.e. $DBCD$ is similar to $Db'c'd'$.
+  - $Db'c'd'$ is $DBCD$ rotated \(\theta = \pi - \tan^{-1} \left(\frac{\alpha}{\omega^2} \right)\)
+  - It is magnified by a factor of \(\sqrt{\omega^4 + \alpha^2}\).
+- Order of the points remains:
+  - Links: \(B \rightarrow C \rightarrow D\)
+  - Velocity polygon: \(b \rightarrow c \rightarrow d\)
+  - Acceleration polygon: \(b' \rightarrow c' \rightarrow d'\)
+  - When one side of the acceleration image is found, e.g. \(\boldsymbol{A}_{BC}\), the orientation of the acceleration image can be determined.
+
+*** Acceleration image of collinear points
+- Acceleration image of link \(BC\) to $a$ is a straight line segment.
+- Acceleration of points on the link can be obtained proportionally from the acceleration polygon.
+
+#+ATTR_LATEX: :height 10em
+[[./images/acceleration-image-of-collinear-points-mechanism.png]]
+[[./images/acceleration-image-of-collinear-points-polygon.png]]
+
+** Jerk (\(J\))
+- Jerk (\(J\)) is defined as the third-order derivative of the displacement with respect to time.
+  \[J = \frac{d^3 s}{dt^3}\]
+- It is equal to the derivative of the acceleration.
+  \[J = \frac{da}{dt}\]
+- Jerk is an important variable to characterise the smoothness of motion of an object or a mechanism.
+- In addition to a finite acceleration, a finite jerk is desirable for the smooth operation of a cam-follower system.
+- For high speed operation of cams, displacement, velocity and acceleration must be continuous, and jerk must be finite.
+
+** Newton's first law
+Every object remains at rest or moves with constant velocity, unless an unbalanced force acts on it.
+
+@@latex: \newpage@@
+
+** Newton's second law
+And object that has an unbalanced force, has an acceleration that is:
+1. Proportional to the force
+2. In the direction of the force
+3. Inversely proportional to the mass of the object
+
+For translation:
+\[\sum \vec{F}_i = m \vec{a}\]
+
+In two-dimensions, two scalar equations can be created from the above equation:
+\[\sum F_{ix} = m a_x\]
+\[\sum F_{iy} = m a_y\]
+
+For rotation about a fixed point:
+\[\tau = \sum M_i = I \alpha\]
+
+#+ATTR_LATEX: :height 10em
+[[./images/rotation-about-a-fixed-point-diagram.png]]
+
+Where:
+- $\sum \vec{F}$ is the sum of the forces acting on the object
+- $m$ is the mass of the object
+- $\vec{a}$ is the acceleration of the object
+- $\tau$ is the torque on the object
+- $\sum M_i$ is the sum of the moments on the object
+- $I$ is the moment of inertia about a fixed point
+- $\alpha$ is the angular acceleration of the object
+
+@@latex: \newpage@@
+
+*** General planar motion
+#+ATTR_LATEX: :height 20em
+[[./images/general-planar-motion-diagram.png]]
+
+Translation of the centre of gravity (CG):
+\[\sum \vec{F}_j = m \vec{a}_G\]
+
+Rotation about the centre of gravity (CG):
+\[\sum M_{jG} = I_G \alpha\]
+
+Where:
+- $\sum \vec{F}_j$ is the sum of the forces acting on the object
+- $m$ is the mass of the object
+- $_G$ denotes the centre of mass of the object
+- $\vec{a}_G$ is the acceleration of the centre of mass of the object
+- $\sum M_{jG}$ is the sum of moments acting about the centre of mass of the object
+- $I_G$ is the moment of inertia of the object about \(G\)
+- $\alpha$ is the angular acceleration of the object
+
+** Newton's third law
+For every action, there is an equal and opposite reaction.
+
+** Statics
+Statics deals with the equilibrium of bodies that are either *at rest* or move with a *constant velocity*.
+
+** Dynamics
+Dynamics deals with the *accelerated motion* of bodies.
+
+** Kinematics
+Kinematics is the study of motion, *quite apart from the forces* which produce that motion. More particularly, it is the study of position, displacement, rotation, velocity, and acceleration.
+
+@@latex: \newpage@@
+
+** Forces and moments
+- Forces and moments (couples) are vectors.
+  \[\vec{F} = F_x \vec{i} + F_y \vec{j} + F_z \vec{k}\]
+- There are *three* components in the x, y and z directions in the Cartesian coordinate system.
+- $\boldsymbol{\vec{r}}$ is a position vector from a *reference point* to the point where a force is applied.
+- A *reference point* is needed to define *the moment* but not for the force.
+  \begin{align*}
+  \vec{M} = \vec{r} \times \vec{F} &= \begin{vmatrix}
+  \vec{i} & \vec{j} & \vec{k} \\
+  r_x & r_y & r_z \\
+  F_x & F_y F_z \\
+  \end{vmatrix} \\
+  &= (r_y F_z - r_z F_y) \vec{i} + (r_z F_x - r_x F_z) \vec{j} + (r_x F_y - r_y F_x) \vec{k}
+  \end{align*}
+
+#+ATTR_LATEX: :height 20em
+[[./images/forces-and-moments.png]]
+
+@@latex: \newpage@@
+
+** Free-body diagram
+- A free-body diagram is a sketch or drawing of part or all of a system, isolated to determine the nature of the forces acting on the body.
+- An isolated part is separated from the system.
+- All external forces and moments on the part are depicted.
+- Static or dynamic analysis is carried out.
+
+*** Examples
+1. A four-bar linkage.
+   #+ATTR_LATEX: :height 15em
+   [[./images/free-body-diagram-four-bar-linkage.png]]
+2. Free-body diagram of the three moving links.
+   #+ATTR_LATEX: :height 15em
+   [[./images/free-body-diagram-three-moving-links.png]]
+3. Free-body diagram of two connected links.
+   #+ATTR_LATEX: :height 15em
+   [[./images/free-body-diagram-two-connected-links.png]]
+4. Free-body diagram of a single link.
+   [[./images/free-body-diagram-single-link.png]]
+5. Free-body diagram of part of a link.
+   [[./images/free-body-diagram-part-of-a-link.png]]
+
+** Static equilibrium
+If a system is in static equilibrium, i.e. \(\vec{a} = 0\) and \(\alpha = 0\), then:
+\[\sum \vec{F} = 0 \qquad \text{Resultant force} = 0\]
+\[\sum \vec{M}_G = 0 \qquad \text{Resultant moment} = 0\]
+
+** Graphical force analysis
+- Graphical force analysis employs *scaled free-body diagrmas* and *vector graphics* in the detmination of unknown machine forces.
+- The graphical approach is best suited for planat force systems.
+
+** Special free-body diagrams
+- Two-force member
+- Three-force member
+- Two-force and a couple member
+- N-force members \(N > 3\) are not of much practical interest
+
+*** Two-force member
+When a link is subjected to only two forces:
+- We refer to the link as a "2-force member".
+- The forces must be *axial* (along the axis).
+- The 2 forces must be *equal and opposite*.
+- The two external forces are *equal, opposite and co-linear aligned with the link*.
+
+[[./images/free-body-diagram-two-force-member.png]]
+
+*** Three-force member
+A member subjected to three forces is in equilibrium if and only if:
+- The resultant of the three forces is zero.
+- The action lines of th forces all intersect at the same point.
+- Force equilibrium condition states that:
+  \[F_1 + F_2 + F_3 = 0\]
+
+  Three forces form a closed vector loop, a force polygon:
+  [[./images/three-force-member-force-polygon.png]]
+
+- All three external forces are *co-centred* and form a *closed triangle*.
+
+[[./images/free-body-diagram-three-force-member.png]]
+
+*** Two-force and a couple member
+Two external forces are *parallel, opposite and equal*.
+[[./images/two-force-and-a-couple-member-diagram.png]]
+
+** Friction
+- Friction is everywhere in our daily life and in machines.
+- Friction can dissipate energy by converting mechanical work into heat.
+- It reduces the efficiency of a machine.
+
+@@latex: \newpage@@
+
+** Coulomb friction
+- A friction is called *Coulomb Friction* when it is linearly proportional to the normal contact force.
+  \[f = \mu N\]
+
+  Where:
+  - $f$ is the friction
+  - $\mu$ is the coefficient of friction
+  - $N$ is the normal contact force
+
+- The direction of friction is opposite to the *relative velocity* between two contact surfaces.
+
+#+ATTR_LATEX: :height 15em
+[[./images/coulomb-friction-diagram.png]]
+
+@@latex: \newpage@@
+
+** D'Alembert's principle
+
+[[./images/newtons-law-diagram.png]]
+[[./images/d-alemberts-principle-diagram.png]]
+
+*** Force equation
+Newton's second law:
+\[\sum \vec{F}_j = m \vec{a}_G\]
+\[\sum \vec{F}_j - m \vec{a}_G = 0\]
+
+Defining inertial force to be:
+\[\vec{F}_I = - m \vec{a}_G\]
+
+We have:
+\[\sum \vec{F}_j + \vec{F}_I = 0\]
+\[\sum \vec{F}_i = 0\]
+
+Imaginary (mathematic) "static" equilibrium state with an additional inertial force:
+\[\vec{F}_I = - m \vec{a}_G\]
+
+*** Moment equation
+Newton's second law:
+\[\sum M_{jG} = I_G \alpha\]
+\[\sum M_{jG} - I_G \alpha = 0\]
+
+Defining inertial moment to be:
+\[C_I = - I_G \alpha\]
+
+We have:
+\[M_{jG} + C_I = 0\]
+\[\sum M_i = 0\]
+
+Imaginary (mathematic) "static" equilibrium state with an additional inertial moment:
+\[C_I = - I_G \alpha\]
+
+*** Link example
+Newton's second law:
+#+ATTR_LATEX: :height 15em
+[[./images/newtons-law-link-example-diagram.png]]
+
+Dynamic problem:
+\[\sum \vec{F}_j = m \vec{a}_G\]
+\[\sum M_{jG} = I_G \alpha\]
+
+D'Alembert's principle:
+#+ATTR_LATEX: :height 15em
+[[./images/d-alemberts-principle-link-example-diagram.png]]
+\[\sum \vec{F}_j = 0\]
+\[\sum \vec{M}_j = 0\]
+
+*** Convention for inertial force and moment
+For motion:
+[[./images/d-alemberts-principle-convention-for-motion-diagram.png]]
+
+For inertial force and moment:
+[[./images/d-alemberts-principle-convention-for-inertial-force-and-moment-diagram.png]]
+
+@@latex: \newpage@@
+
+** Mass moment of inertia
+\[I_G = \int r^2 \rho \, dV\]
+
+Where:
+- $I_G$ is the moment of inertia about the centre of the body
+- $\rho$ is the density of the body
+- $r$ is the distance from the centre of mass to an arbitrary point inside the body.
+
+*** Slender rod
+[[./images/moment-of-inertia-slender-rod-diagram.png]]
+\[I_G = \frac{1}{12} mL^2\]
+\[I_O = \frac{1}{3} mL^2\]
+
+*** Disk or cylinder
+[[./images/moment-of-inertia-cylinder-or-disk-diagram.png]]
+\[I_G = \frac{1}{2} mr^2\]
+
+*** Rectangular plate
+[[./images/moment-of-inertia-rectangular-plate-diagram.png]]
+\[I_G = \frac{1}{12} m (a^2 + b^2)\]
+*** Ring
+[[./images/moment-of-inertia-ring-diagram.png]]
+\[I_G = \frac{1}{2} m (r_1^2 + r_2^2)\]
+
+*** Thin ring
+[[./images/moment-of-inertia-thin-ring-diagram.png]]
+\[I_G = mr^2\]
+
+*** Semicircular plate
+[[./images/moment-of-inertia-semicircular-plate-diagram.png]]
+\[I_G = \frac{1}{2} mr^2\]
+\[I_O = \frac{1}{2} mr^2 - mh^2\]
+\[h = \frac{4r}{3 \pi}\]
+
+@@latex: \newpage@@
+
+** Parallel axis theorem
+For the mass moment of inertia being taken about a point \(A\) other than the centre of mass \(G\), we can derive the mass moment of inertia using the following parallel axis theorem:
+\[I_A = I_G + m \left| \vec{r}_{AG} \right|^2\]
+
+Where:
+- $I_A$ is the moment of inertia taken about an arbitrary point \(A\)
+- $I_G$ is the moment of inertia taken about the centre of mass \(G\)
+- $m$ is the mass of the object
+- $\vec{r}_{AG}$ is the position vector from point $A$ to the centre of mass \(G\)
+
+[[./images/parallel-axis-theorem-diagram.png]]
+
+@@latex: \newpage@@
+
+*** Example
+#+ATTR_LATEX: :height 10em
+[[./images/moment-of-inertia-example-diagram.png]]
+
+Determine the mass moment of inertia of the assemly about its centre of mass \(G\) and point \(C\). The moment so finertia of the disk and the rod about their mass centres \(A\) and \(B\) are known to be \(I_A = \frac{1}{2} m_D r^2\) and \(I_B = \frac{1}{12} m_r L^2\) respectively.
+
+- Centre of mass:
+  Using point \(A\) as the origin, the centre of mass can be located as:
+  \[r_{AG} = \frac{m_D r_{AA} + m_R + r_{AB}}{m_R + m_D}, \qquad r_{AA} = 0\]
+  \[r_{AG} = \qty{0.15}{m}\]
+
+- Mass moment of inertia about \(G\):
+  Using the parallel axis theorem, the moment of inertia can be calculated as follows:
+  \begin{align*}
+  \text{Disk: } I_G^{disk} &= I_A + m_D r^2_{AG} \\
+  &= \frac{1}{2} (5) (0.1)^2 \\
+  &= \qty{0.1375}{kg.m^2} \\
+  \text{Rod: } I_G^{rod} &= I_B + m_D r^2_{BG} \\
+  &= \frac{1}{2} (3) (0.6)^2 + 3(0.25)^2 \\
+  &= \qty{0.2775}{kg.m^2} \\
+  I_G &= I_G^{disk} + I_G^{rod} \\
+  &= \qty{0.415}{kg.m^2}
+  \end{align*}
+
+- Mass moment of inertia about \(C\):
+  Similarly, we have:
+  \begin{align*}
+  I_C &= I_C^{disk} + I_C^{rod} \\
+  &= I_G + (m_D + m_R) r_{CG}^2 \\
+  &= \qty{2.835}{kg.m^2}
+  \end{align*}
+
+@@latex: \newpage@@
+
+* Types of gears
+
+** Spur gears and helical gears
+[[./images/spur-and-helical-gears.png]]
+- Spur and helical gears are normally used when the driver and the follower shafts are parallel. Helical gears provide smoother, quieter, and less-shock operation.
+- The smaller gear in a pair of meshing gears is called a *pinion*.
+
+** Pinion and rack
+[[./images/pinion-and-rack.png]]
+- A rack is a straight bar with gear teeth, and may be considered as a spur gear with an infinite radius.
+
+** Bevel gears
+[[./images/straight-and-spiral-bevel-gears.png]]
+- Bevel gears are used when the driver and driven shafts' centreline intersect.
+
+** Worm gears
+[[./images/worm-gears.png]]
+- Worm gears are used when the driver and driven shaft centreline are at 90 degrees.
+- Worm gear (on the left) is a special helical gear (on the right).
+
+* Module pitch tooth dimensions
+[[./images/module-pitch-tooth-dimensions.png]]
+
+* Contact geometry for a pair of meshing gears
+[[./images/contact-geometry-for-a-pair-of-meshing-gears.png]]
+
+* Gear standards
+[[./images/gear-standards-table.png]]
+
+@@latex: \newpage@@
+
+* How to analyse planetary gear trains (PGT).
+[[./images/planetary-gear-train-simplified-diagram.png]]
+"Hold" the carrier link (\(c\)), which is fixed, and rotate gear 1.
+
+\[\frac{n_{2/c}}{n_{1/c}} = - \frac{N_1}{N_2}\]
+
+Where:
+- $n_{2/c}$ is the rotations per minute of gear 2 relative to the carrier link
+- $n_{1/c}$ is the rotations per minute of gear 1 relative to the carrier link
+- $N_1$ is the number of teeth on gear 1
+- $N_2$ is the number of teeth on gear 2
+
+@@latex: \newpage@@
+
+** Kinematic diagram
+[[./images/planetary-gear-train-kinematic-diagram.png]]
+
+Note that the carrier link rotates independently of the sun gear.
+
+** Levai variations of planetary gear trains
+[[./images/levai-variations-of-planetary-gear-trains.png]]
+
+@@latex: \newpage@@
+
+* Getting the velocity ratio of a gear chain
+The velocity ratio a gear chain is generally:
+\[\frac{\text{Target gear velocity}}{\text{Driving gear velocity}} = \frac{\text{Number of driving gear teeth}}{\text{Number of driven gear teeth}}\]
+
+- If there is a carrier, or the gear chain is a planetary gear chain, the velocity ratio will be relative to the carrier speed, so the velocity ratio equation must subtract the carrier speed term, \(- n_c\).
+- When the gear interaction is between an external gear and another external gear, the gear teeth ratio must be *negative (-)*.
+- When the gear interaction is between an external gear and another internal gear, the gear teeth ratio must be *positive (+)*.
+
+@@latex: \newpage@@
+
+* Vector algebra
+Let:
+\[\boldsymbol{A} = A_x \boldsymbol{i} A_y \boldsymbol{j} + A_z \boldsymbol{k}\]
+\[\boldsymbol{B} = B_x \boldsymbol{i} B_y \boldsymbol{j} + B_z \boldsymbol{k}\]
+
+** Equivalence
+\[\boldsymbol{A} = \boldsymbol{B} \Leftrightarrow A_x = B_x, A_y = B_y, A_z = B_z\]
+
+** Addition
+\[\boldsymbol{C} = \boldsymbol{A} + \boldsymbol{B} \Leftrightarrow \boldsymbol{C} = (A_x + B_x) \boldsymbol{i} + (A_y + B_y) \boldsymbol{j} + (A_z + B_z) \boldsymbol{k}\]
+
+** Subtraction
+\[\boldsymbol{D} = \boldsymbol{A} - \boldsymbol{B} \Leftrightarrow \boldsymbol{D} = (A_x - B_x) \boldsymbol{i} + (A_y - B_y) \boldsymbol{j} + (A_z - B_z) \boldsymbol{k}\]
+
+** Scalar multiplication
+\[m \boldsymbol{A} = mA_x \boldsymbol{i} + mA_y \boldsymbol{j} + mA_z \boldsymbol{k}\]
+
+** Cross product
+\[\boldsymbol{A} \times \boldsymbol{B} = (A_y B_z - A_z B_y) \boldsymbol{i} + (A_z B_x - A_x B_z) \boldsymbol{j} + (A_x B_y - A_y B_x) \boldsymbol{k}\]
+
+** Inner (dot) product
+\[\boldsymbol{A} \cdot \boldsymbol{B} = A_x B_x + A_y B_y + A_z + B_z\]
+
+** Vector derivatives
+\[\frac{d}{dt} (\boldsymbol{A} + \boldsymbol{B}) = \frac{d \boldsymbol{A}}{dt} + \frac{d \boldsymbol{B}}{dt}\]
+\[\frac{d}{dt} (\boldsymbol{A} \cdot \boldsymbol{B}) = \boldsymbol{A} \cdot \frac{d \boldsymbol{B}}{dt} + \frac{d \boldsymbol{A}}{dt} \cdot \boldsymbol{B}\]
+\[\frac{d}{dt} (\boldsymbol{A} \times \boldsymbol{B}) = \boldsymbol{A} \times \frac{d \boldsymbol{B}}{dt} + \frac{d \boldsymbol{A}}{dt} \times \boldsymbol{B}\]
+
+* Graphical vector algebra
+Addition and subtraction of 2D vectors can be done by joining vectors (line segments) head to tail to form *vector polygons*.
+
+[[./images/graphical-vector-algebra.png]]
+
+@@latex: \newpage@@
+
+* Graphical velocity analysis
+- Graphically solve \(\boldsymbol{V}_B = \boldsymbol{V}_A + \boldsymbol{V}_{BA}\), where \(\boldsymbol{V}_{BA} = \boldsymbol{\omega} \times \boldsymbol{r}_{BA}\).
+- The above equation creates a velocity vector polygon with 3 segments, a triangle.
+- Working from known velocity to one of unknown velocity.
+- 1 planar vector equation means:
+  - 2 scalar equations.
+  - Solving exactly 2 unknowns.
+
+#+ATTR_LATEX: :height 10em
+[[./images/graphical-velocity-analysis.png]]
+
+** Notation
+
+*** Relative and absolute velocity
+- Absolute velocity of a point starts from origin \(O_v\)
+- Relative velocity of a point usually does not start from origin \(O_v\), it is attached to certain vectors.
+
+*** Known and unknown
+\[\overset{\times \checkmark}{\boldsymbol{V}}\]
+
+Where:
+- The item on the left is the magnitude.
+- The item on the right is the direction.
+- $\times$ means the value is unknown.
+- $\checkmark$ means the value is known.
+
+** Velocity at revolute joints
+\[\boldsymbol{V}_{B1} = \boldsymbol{V}_{B2}\]
+
+[[./images/velocity-at-revolute-joints.png]]
+
+** Velocity at prismatic joints
+\[\boldsymbol{V}_{B1} \ne \boldsymbol{V}_{B2}\]
+But \(\boldsymbol{V}_{B1B2}\) is parallel to the direction of travel.
+
+[[./images/velocity-at-prismatic-joints.png]]
+
+@@latex: \newpage@@
+
+** Example 1: Slider Crank Linkage
+- Given: Link 1 (input) at current position (\(\qty{70}{\degree}\)), lengths of links 1 and 2 and \(\boldsymbol{V}_B = \qty{500}{mm.s^{-1}}\).
+- Distance of $O_2 C$ obtained from position analysis.
+- Find: $\boldsymbol{\omega}_2$ and \(\boldsymbol{v}_C\)
+
+[[./images/slider-crank-linkage-graphical-analysis-example.png]]
+
+*** Solution Step 1: Velocity Relationship
+- Establish velocity relations at joints of all links.
+- Work from the link with input motion and name it link 1.
+- Form relative velocity equation on link 2 (coupler).
+  - Velocity at joint B is known.
+  - Velocity at joint C is unknown (magnitude?).
+\[\overset{\times \checkmark}{\boldsymbol{V}}_C = \overset{\checkmark \checkmark}{\boldsymbol{V}}_B + \overset{\times \checkmark}{\boldsymbol{V}}_{CB}\]
+
+- Solve unknown magnitude of \(\boldsymbol{V}_C\) and \(\boldsymbol{V}_{CB}\).
+  \[\boldsymbol{V}_{CB} \perp CB\]
+
+*** Solution Step 2: Velocity Polygon
+Construct velocity poly based on:
+\[\overset{\times \checkmark}{\boldsymbol{V}}_C = \overset{\checkmark \checkmark}{\boldsymbol{V}}_B + \overset{\times \checkmark}{\boldsymbol{V}}_{CB}\]
+
+1. Choose origin \(O_V\).
+2. Define drawing scale: \(\frac{\text{velocity}}{\text{length}}\), which is \(\qty{1}{mm}\) for \(\qty{1}{mm.s^{-1}}\).
+3. Draw \(\boldsymbol{V}_B\) from \(O_V\) with scale.
+4. Draw direction (trial vector) of \(\boldsymbol{V}_{CB}\) from tip of \(\boldsymbol{V}_B\). \(\boldsymbol{V}_{CB}\) is perpendicular to $CB$.
+5. Draw direction (trial vector) of \(\boldsymbol{V}_C\) from tip of \(O_V\). \(\boldsymbol{V}_C\) is parallel to the ground.
+6. Find intersection of trial vectors.
+7. Measure lengths of $oc$ and $bc$ and determine the magnitude of \(\boldsymbol{V}_C\) and \(\boldsymbol{V}_{CB}\).
+
+Final drawing:
+[[./images/slider-crank-linkage-graphical-analysis-example-velocity-polygon.png]]
+
+@@latex: \newpage@@
+
+*** Solution Step 3: Direction Of Velocity
+- Directions of \(\boldsymbol{V}_C\) and $\boldsymbol{V}_{CB}$ determined based on vector addition in \(\boldsymbol{V}_C = \boldsymbol{V}_B + \boldsymbol{V}_{CB}\).
+- Directions of $\omega_2$ determined from \(\boldsymbol{V}_{CB}\).
+
+\[\omega_2 = \frac{\boldsymbol{V}_{CB}}{BC} \text{ Clockwise rotation}\]
+\[V_{CB} = \qty{198}{mm.s^{-1}}\]
+\[V_{C} = \qty{569}{mm.s^{-1}}\]
+\[\omega_2 = \qty{2.1}{rad.s^{-1}}\]
+
+@@latex: \newpage@@
+
+** Example 2: 4-bar Linkage
+- Given: link 1 (input) at current position (\(\qty{45}{\degree}\)) lengths of links 1, 2, 3, and 4, and \(\boldsymbol{V}_B = \qty{300}{mm.s^{-1}}\)
+- Find \(\omega_2\) and \(\omega_3\)
+
+*** Solution Step 1: Velocity Relationship
+- Establish velocity relations at joints of all links.
+- Work from the link with input motion, and name it link 1.
+- Form relative velocity equation on link 2 (coupler).
+  - Velocity at joint B is known.
+  - Velocity at joint C is unknown (magnitude?).
+\[\overset{\times \checkmark}{\boldsymbol{V}}_C = \overset{\checkmark \checkmark}{\boldsymbol{V}}_B + \overset{\times \checkmark}{\boldsymbol{V}}_{CB}\]
+
+- Solve unknown magnitude of \(\boldsymbol{V}_C\) and \(\boldsymbol{V}_{CB}\).
+  \[\boldsymbol{V}_{CB} \perp CB\]
+
+@@latex: \newpage@@
+
+*** Solution Step 2: Velocity Polygon
+1. Choose origin \(O_V\).
+2. Define drawing scale: \(\frac{\text{velocity}}{\text{length}}\), which is \(\qty{1}{mm}\) for \(\qty{1}{mm.s^{-1}}\).
+3. Draw \(\boldsymbol{V}_B\) from \(O_V\) with scale.
+4. Draw direction (trial vector) of \(\boldsymbol{V}_{CB}\) from tip of \(\boldsymbol{V}_B\). \(\boldsymbol{V}_{CB}\) is perpendicular to $CB$.
+5. Draw direction (trial vector) of \(\boldsymbol{V}_C\) from tip of \(O_V\). \(\boldsymbol{V}_C\) is parallel to the ground.
+6. Find intersection of trial vectors.
+7. Measure lengths of $oc$ and $bc$ and determine the magnitude of \(\boldsymbol{V}_C\) and \(\boldsymbol{V}_{CB}\).
+
+Final drawing:
+[[./images/4-bar-linkage-graphical-analysis-example-velocity-polygon.png]]
+*** Solution Step 3: Direction Of Velocity
+- Directions of \(\boldsymbol{V}_C\) and $\boldsymbol{V}_{CB}$ determined based on vector addition in \(\boldsymbol{V}_C = \boldsymbol{V}_B + \boldsymbol{V}_{CB}\).
+- Directions of $\omega_2$ determined from \(\boldsymbol{V}_{CB}\).
+- Directions of $\omega_3$ determined from \(\boldsymbol{V}_{C}\).
+
+\[V_{CB} = \qty{101}{mm.s^{-1}}\]
+\[V_{C} = \qty{216}{mm.s^{-1}}\]
+\[\omega_2 = \frac{\boldsymbol{V}_{CB}}{BC} = \qty{2.89}{rad.s^{-1}} \text{ Clockwise rotation}\]
+\[\omega_3 = \frac{\boldsymbol{V}_C}{OC} = \qty{10.8}{rad.s^{-1}} \text{ Counter-clockwise rotation}\]
+
+@@latex: \newpage@@
+
+** Example 3: Combination Of Basic Linkages
+- Given: Link 1 (input), \(\omega_1 = \qty{100}{rad.s^{-1}}\) clockwise, lengths of all links are known.
+- Find: \(\boldsymbol{V}_D\) and the angular velocities of all links.
+- Toggle linkage:
+  - Combination of 4-bar and slider-crank linkages.
+  - 6-bar linkage with 1 degree of freedom.
+  - 1 input, 1 output (Point D)
+
+#+ATTR_LATEX: :height 15em
+[[./images/combination-of-basic-linkages-graphical-analysis.png]]
+
+*** Solution Step 1: Velocity Relationship
+- Identify basic linkages, like 4-bar, crank-slider, etc.
+- Work from the link with input motion and name it link 1.
+- Establish velocity relations at joints of all links.
+- Form relative velocity equation on *each basic linkage*.
+- Solve each equation in order.
+
+A: Link 2 of 4-bar linkage.
+\[\boldsymbol{V}_C = \boldsymbol{V}_B + \boldsymbol{V}_{CB}\]
+
+B: Link 4 of slider-crank linkage.
+\[\boldsymbol{V}_D + \boldsymbol{V}_C + \boldsymbol{V}_{DC}\]
+
+@@latex: \newpage@@
+
+*** Solution Step 2: Velocity Polygon
+1. Choose origin \(O_V\).
+2. Define drawing scale: \(\frac{\text{velocity}}{\text{length}}\), which is \(\qty{1}{mm}\) for \(\qty{1}{mm.s^{-1}}\).
+3. Construct velocity polygon based on:
+   \[\overset{\times \checkmark}{\boldsymbol{V}_C} = \overset{\checkmark \checkmark}{\boldsymbol{V}_B} + \overset{\times \checkmark}{\boldsymbol{V}}_{CB}\]
+4. Draw \(V_B\) from \(O_v\) with scale, \(\boldsymbol{V}_B = \boldsymbol{\omega}_1 \times \boldsymbol{r}_{O_1 B}\).
+5. Draw direction (trial vector) of \(V_{CB}\) from tip of \(V_B\), \(\boldsymbol{V}_{CB} \perp CB\).
+6. Draw direction (trial vector) of \(V_C\) from \(O_v\), \(V_C \perp O_2 C\).
+7. Find intersection of trial vectors.
+8. Measure lengths of $oc$ and $bc$, determine magnitude of \(V_C\) and \(V_{CB}\).
+9. Construct velocity polygon based on:
+   \[\overset{\times \checkmark}{\boldsymbol{V}_D} = \overset{\checkmark \checkmark}{\boldsymbol{V}_C} + \overset{\times \checkmark}{\boldsymbol{V}}_{DC}\]
+10. Draw direction (trial vector) of \(V_{DC}\) from the tip of \(V_C\), \(\boldsymbol{V}_{DC} \perp DC\).
+11. Draw direction (trial vector) of \(V_{D}\) from \(O_v\), \(\boldsymbol{V}_C \perp \text{ Ground}\).
+12. Find the intersection of trial vectors.
+13. Measure the lengths of $od$ and $dc$, and determine magnitude of \(V_D\) and \(V_{DC}\).
+
+#+ATTR_LATEX: :height 17em
+[[./images/combination-of-basic-linkages-graphical-analysis-velocity-polygon.png]]
+
+*** Solution Step 3: Direction Of Velocity
+\[V_D = \qty{4}{m.s^{-1}} \text{ Left}\]
+\[\omega_2 = \frac{V_{CB}}{BC} \text{ Counter-clockwise}\]
+\[\omega_3 = \frac{V_{C}}{O_2 C} \text{ Counter-clockwise}\]
+\[\omega_4 = \frac{V_{DC}}{CD} \text{ Clockwise}\]
+
+@@latex: \newpage@@
+
+** Example 4: Slider-Crank Linkage using Velocity Image
+- Given: Link 1 (input) at current position (\(\qty{70}{\degree}\)), lengths of links 1 and 2 and \(\boldsymbol{V}_B = \qty{500}{mm.s^{-1}}\).
+- Find: \(\boldsymbol{V}_D\).
+
+[[./images/slider-crank-linkage-graphical-analysis-example.png]]
+
+*** Solution: Using velocity image
+- Complete velocity analysis of links and joints first.
+- Draw velocity image of link with designated points (e.g. Link 2).
+  - Option 1: Find out the orientation of the velocity image (rotating along with \(\qty{90}{\degree}\)) and scale.
+  - Option 2: Draw relative velocity vectors perpendicular to link edges (e.g. \(\boldsymbol{V}_{CB} \perp BC\)).
+- Draw the absolute velocity from the origin \(O_v\).
+
+@@latex: \newpage@@
+
+** Example 5: 6-bar linkage
+- Given: A constant \(\omega_2\).
+- Find: \(\omega_3, \omega_5, \omega_6\)
+
+#+ATTR_LATEX: :height 20em
+[[./images/6-bar-linkage-graphical-analysis-example.png]]
+
+*** Solving strategy
+#+ATTR_LATEX: :height 20em
+[[./images/6-bar-linkage-graphical-analysis-example-solving-strategy.png]]
+@@latex: \newpage@@
+
+* Graphical acceleration analysis
+- Using graphical construction of *acceleration polygon* formed by *acceleration of points on link members* to find the angular acceleration of the link and linear acceleration of other points on the link.
+- Based on the relative acceleration equation for *each* link member.
+  \[\boldsymbol{A}_B = \boldsymbol{A}_A + \boldsymbol{A}_{BA}^n + \boldsymbol{A}_{BA}^t\]
+- 1 planar vector equation means:
+  - 2 scalar equations.
+  - Solving exactly 2 unknowns.
+- Absolute acceleration of a point starts from the origin \(O_A\).
+- Relative acceleration of a point usually does not start from origin \(O_A\), it is attached after certain vectors.
+
+** Example 1: Slider Crank Linkage
+- Given: Link 1 (input) at current position (\(\qty{70}{\degree}\)), lengths of links 1 and 2, \(\boldsymbol{V}_B = \qty{500}{mm.s^{-1}}\), and \(\boldsymbol{\alpha}_1 = 0\) (constant \(\omega_1\)).
+- Find: \(\boldsymbol{\alpha}_2\) and \(\boldsymbol{A}_c\).
+
+[[./images/slider-crank-linkage-graphical-analysis-example.png]]
+
+@@latex: \newpage@@
+
+*** Solution Step 1: Acceleration Relationship
+- Establish acceleration relations at joints of all links.
+- Work from the link with input motion and name it link 1.
+- Form relative acceleration equation on link 2 (coupler).
+  - Acceleration at joint $B$ is known.
+  - Acceleration at joint $C$ is unknown.
+\[\boldsymbol{A}_C = \boldsymbol{A}_B + \boldsymbol{A}_{CB}\]
+\[\overset{\times \checkmark}{\boldsymbol{A}_C} = \overset{\checkmark \checkmark}{\boldsymbol{A}_B^n} + \overset{\checkmark \checkmark}{\boldsymbol{A}_B^t} + \overset{\checkmark \checkmark}{\boldsymbol{A}^n}_{CB} + \overset{\times \checkmark}{\boldsymbol{A}^t}_{CB}\]
+
+Solve for unknown magnitude of \(\boldsymbol{A}_C\) and \(\boldsymbol{A}_{CB}^t\). @@latex: \\@@
+
+At link 1:
+\[\boldsymbol{A}_B^t \perp O_1 B\]
+\[\alpha_1 = \frac{A_B^t}{O_1 B} = 0\]
+\[\boldsymbol{A}_B^n = \omega_1^2 \cdot O_1 B\]
+\[\boldsymbol{A}_B^n \parallel O_1 B \text{ towards } O_1\]
+
+At link 2:
+\[\boldsymbol{A}_{CB}^n = \omega_2^2 \cdot CB\]
+\[\boldsymbol{A}_{CB}^n \parallel CB \text{ towards } B\]
+\[\boldsymbol{A}_{CB}^t \perp CB\]
+
+At link 3:
+\[A_C \parallel \text{Ground}\]
+
+@@latex: \newpage@@
+
+*** Solution Step 2: Acceleration Polygon
+Construct acceleration polygon based on:
+\[\overset{\times \checkmark}{\boldsymbol{A}_C} = \overset{\checkmark \checkmark}{\boldsymbol{A}_B^n} + \overset{\checkmark \checkmark}{\boldsymbol{A}_B^t} + \overset{\checkmark \checkmark}{\boldsymbol{A}^n}_{CB} + \overset{\times \checkmark}{\boldsymbol{A}^t}_{CB}\]
+
+1. Choose origin \(O_A\).
+2. Define drawing scale: \(\frac{\text{velocity}}{\text{length}}\), which is \(\qty{1}{mm}\) for \(\qty{10}{mm.s^{-2}}\).
+3. Draw acceleration vector in order of \(\boldsymbol{A}_B^n, \boldsymbol{A}_{CB}^n (\boldsymbol{A}_B^t = 0)\) from \(O_A\) with scale.
+   \[\boldsymbol{A}_B^n = \omega_1^2 \cdot O_1 B = \qty{5000}{mm.s^{-2}}\]
+   \[\boldsymbol{A}_{CB}^n = \omega_2^2 \cdot CB = \qty{417}{mm.s^{-2}}\]
+4. Draw direction (trial vector) of \(\boldsymbol{A}_{CB}^t\) from tip of \(\boldsymbol{A}_{CB}^n\). \(\boldsymbol{A}_{CB}^t\) is perpendicular to $CB$.
+5. Draw direction (trial vector) of \(\boldsymbol{A}_C\) from \(O_A\).
+6. Find the intersection of the trial vectors.
+7. Measure lengths of respective vectors to determine the magnitude of \(\boldsymbol{A}_C\) and \(\boldsymbol{A}_{CB}^t\).
+
+Final drawing:
+#+ATTR_LATEX: :height 20em
+[[./images/slider-crank-linkage-graphical-analysis-example-acceleration-polygon.png]]
+
+*** Solution Step 3: Direction Of Acceleration
+- Directions of \(\boldsymbol{A}_C\) and $\boldsymbol{A}_{CB}^t$ determined based on vector addition in acceleration polygon:
+  \[\overset{\times \checkmark}{\boldsymbol{A}_C} = \overset{\checkmark \checkmark}{\boldsymbol{A}_B^n} + \overset{\checkmark \checkmark}{\boldsymbol{A}_B^t} + \overset{\checkmark \checkmark}{\boldsymbol{A}^n}_{CB} + \overset{\times \checkmark}{\boldsymbol{A}^t}_{CB}\]
+- Direction of \(\alpha_2\) determined from \(\boldsymbol{A}_{CB}^t\).
+\[A_{CB}^t = \qty{5180}{mm.s^{-2}}\]
+\[A_C = \qty{520}{mm.s^{-2}}\]
+\[\alpha_2 = \frac{A_{CB}^t}{CB} = \qty{55.11}{rad.s^{-2}} \text{ Counter-clockwise}\]
+
+@@latex: \newpage@@
+
+** Example 2: Slider Crank Linkage
+- Given: Link 1 (input) at current position (\(\qty{70}{\degree}\)), lengths of links 1 and 2, \(\omega_1 = \qty{10}{rad.s^{-1}}\) counter-clockwise, and \(\boldsymbol{\alpha}_1 = \qty{40}{rad.s^{-2}}\) counter-clockwise.
+- Find: \(\boldsymbol{\alpha}_2\) and \(\boldsymbol{A}_c\).
+
+[[./images/slider-crank-linkage-graphical-acceleration-analysis-example-2.png]]
+
+@@latex: \newpage@@
+
+*** Solution Step 1: Acceleration Relationship
+- Establish acceleration relations at joints of all links.
+- Work from the link with input motion and name it link 1.
+- Form relative acceleration equation on link 2 (coupler).
+  - Acceleration at joint $B$ is known.
+  - Acceleration at joint $C$ is unknown.
+\[\boldsymbol{A}_C = \boldsymbol{A}_B + \boldsymbol{A}_{CB}\]
+\[\overset{\times \checkmark}{\boldsymbol{A}_C} = \overset{\checkmark \checkmark}{\boldsymbol{A}_B^n} + \overset{\checkmark \checkmark}{\boldsymbol{A}_B^t} + \overset{\checkmark \checkmark}{\boldsymbol{A}^n}_{CB} + \overset{\times \checkmark}{\boldsymbol{A}^t}_{CB}\]
+
+Solve for unknown magnitude of \(\boldsymbol{A}_C\) and \(\boldsymbol{A}_{CB}^t\). @@latex: \\@@
+
+At link 1:
+\[\boldsymbol{A}_B^t \perp O_1 B\]
+\[\boldsymbol{A}_B^n = \omega_1^2 \cdot O_1 B\]
+\[\boldsymbol{A}_B^n \parallel O_1 B \text{ towards } O_1\]
+
+At link 2:
+\[\boldsymbol{A}_{CB}^n = \omega_2^2 \cdot CB\]
+\[\boldsymbol{A}_{CB}^n \parallel CB \text{ towards } B\]
+\[\boldsymbol{A}_{CB}^t \perp CB\]
+
+At link 3:
+\[A_C \parallel \text{Ground}\]
+
+@@latex: \newpage@@
+
+*** Solution Step 2: Acceleration Polygon
+Construct acceleration polygon based on:
+\[\overset{\times \checkmark}{\boldsymbol{A}_C} = \overset{\checkmark \checkmark}{\boldsymbol{A}_B^n} + \overset{\checkmark \checkmark}{\boldsymbol{A}_B^t} + \overset{\checkmark \checkmark}{\boldsymbol{A}^n}_{CB} + \overset{\times \checkmark}{\boldsymbol{A}^t}_{CB}\]
+
+1. Choose origin \(O_A\).
+2. Define drawing scale: \(\frac{\text{velocity}}{\text{length}}\), which is \(\qty{1}{mm}\) for \(\qty{10}{mm.s^{-2}}\).
+3. Draw acceleration vector in order of \(\boldsymbol{A}_B^n, \boldsymbol{A}_B^t \boldsymbol{A}_{CB}^n\) from \(O_A\) with scale.
+   \[\boldsymbol{A}_B^n = \omega_1^2 \cdot O_1 B = \qty{5000}{mm.s^{-2}}\]
+   \[\boldsymbol{A}_B^t = \omega_1^2 \cdot O_1 B = \qty{2000}{mm.s^{-2}}\]
+   \[\boldsymbol{A}_{CB}^n = \omega_2^2 \cdot CB = \qty{417}{mm.s^{-2}}\]
+4. Draw direction (trial vector) of \(\boldsymbol{A}_{CB}^t\) from tip of \(\boldsymbol{A}_{CB}^n\). \(\boldsymbol{A}_{CB}^t\) is perpendicular to $CB$.
+5. Draw direction (trial vector) of \(\boldsymbol{A}_C\) from \(O_A\).
+6. Find the intersection of the trial vectors.
+7. Measure lengths of respective vectors to determine the magnitude of \(\boldsymbol{A}_C\) and \(\boldsymbol{A}_{CB}^t\).
+
+Final drawing:
+#+ATTR_LATEX: :height 20em
+[[./images/slider-crank-linkage-graphical-acceleration-analysis-example-2-acceleration-polygon.png]]
+
+*** Solution Step 3: Direction Of Acceleration
+- Directions of \(\boldsymbol{A}_C\) and $\boldsymbol{A}_{CB}^t$ determined based on vector addition in acceleration polygon:
+  \[\overset{\times \checkmark}{\boldsymbol{A}_C} = \overset{\checkmark \checkmark}{\boldsymbol{A}_B^n} + \overset{\checkmark \checkmark}{\boldsymbol{A}_B^t} + \overset{\checkmark \checkmark}{\boldsymbol{A}^n}_{CB} + \overset{\times \checkmark}{\boldsymbol{A}^t}_{CB}\]
+- Direction of \(\alpha_2\) determined from \(\boldsymbol{A}_{CB}^t\).
+\[A_{CB}^t = \qty{4400}{mm.s^{-2}}\]
+\[A_C = \qty{1750}{mm.s^{-2}}\]
+\[\alpha_2 = \frac{A_{CB}^t}{CB} = \qty{46.8}{rad.s^{-2}} \text{ Counter-clockwise}\]
+
+@@latex: \newpage@@
+
+** Example 3: 4-bar linkage
+- Given: Link 1 (input) at current position (\(\qty{70}{\degree}\)), lengths of links 1 and 2, \(\boldsymbol{\omega}_1 = \qty{30}{rad.s^{-1}}\) counter-clockwise \(\boldsymbol{\alpha}_1 = \qty{200}{rad.s^{-2}}\) counter-clockwise.
+- Find: \(\boldsymbol{\alpha}_2\) and \(\boldsymbol{\alpha}_3\).
+
+[[./images/4-bar-linkage-graphical-acceleration-analysis-example.png]]
+
+@@latex: \newpage@@
+
+*** Solution Step 1: Acceleration Relationship
+- Establish acceleration relations at joints of all links.
+- Work from the link with input motion and name it link 1.
+- Form relative acceleration equation on link 2 (coupler).
+\[\boldsymbol{A}_C = \boldsymbol{A}_B + \boldsymbol{A}_{CB}\]
+\[\overset{\checkmark \checkmark}{\boldsymbol{A}_C^n} + \overset{\times \checkmark}{\boldsymbol{A}_C^t} = \overset{\checkmark \checkmark}{\boldsymbol{A}_B^n} + \overset{\checkmark \checkmark}{\boldsymbol{A}_B^t} + \overset{\checkmark \checkmark}{\boldsymbol{A}^n}_{CB} +  \overset{\times \checkmark}{\boldsymbol{A}^t}_{CB}\]
+
+Solve for unknown magnitude of \(\boldsymbol{A}_C\) and \(\boldsymbol{A}_{CB}^t\). @@latex: \\@@
+
+At link 1:
+\[\boldsymbol{A}_B^t \perp O_1 B\]
+\[\boldsymbol{A}_B^t = \alpha_1 \cdot O_1 B\]
+\[\boldsymbol{A}_B^n = \omega_1^2 \cdot O_1 B\]
+\[\boldsymbol{A}_B^n \parallel O_1 B \text{ towards } O_1\]
+
+At link 2:
+\[\boldsymbol{A}_{CB}^n = \omega_2^2 \cdot CB\]
+\[\boldsymbol{A}_{CB}^n \parallel CB \text{ towards } B\]
+\[\boldsymbol{A}_{CB}^t \perp CB\]
+
+At link 3:
+\[\boldsymbol{A}_C^t \perp O_3 C\]
+\[\boldsymbol{A}_C^t = \alpha_3 \cdot O_3 C\]
+\[\boldsymbol{A}_C^n = \omega_3^2 \cdot O_3 C\]
+\[\boldsymbol{A}_C^n \parallel O_3 C \text{ towards } O_3\]
+
+*** Solution Step 2: Acceleration Polygon
+Construct acceleration polygon based on:
+\[\overset{\checkmark \checkmark}{\boldsymbol{A}_C^n} + \overset{\times \checkmark}{\boldsymbol{A}_C^t} = \overset{\checkmark \checkmark}{\boldsymbol{A}_B^n} + \overset{\checkmark \checkmark}{\boldsymbol{A}_B^t} + \overset{\checkmark \checkmark}{\boldsymbol{A}^n}_{CB} +  \overset{\times \checkmark}{\boldsymbol{A}^t}_{CB}\]
+
+1. Choose origin \(O_A\).
+2. Define drawing scale: \(\frac{\text{velocity}}{\text{length}}\), which is \(\qty{1}{mm}\) for \(\qty{10}{mm.s^{-2}}\).
+3. Draw acceleration vector for the right-hand side of the equation in the order \(\boldsymbol{A}_B^n, \boldsymbol{A}_B^t, \boldsymbol{A}_{CB}^n\) from \(O_A\) with scale.
+   \[\boldsymbol{A}_C^n = \omega_1^2 \cdot O_1 B = \qty{4660}{mm.s^{-2}}\]
+   \[\boldsymbol{A}_{CB}^n = \omega_2^2 \cdot CB = \qty{580}{mm.s^{-2}}\]
+4. Draw direction (trial vector) of \(\boldsymbol{A}_{CB}^t\) from tip of \(\boldsymbol{A}_{CB}^n\). \(\boldsymbol{A}_{CB}^t\) is perpendicular to $CB$.
+5. Draw acceleration vector \(\boldsymbol{A}_C^n\) for the left-hand side of the equation from \(O_A\).
+6. Draw direction (trial vector) of \(\boldsymbol{A}_C^t\) from \(\boldsymbol{A}_C^n\), \(A_C^t \perp O_3 C\).
+7. Find the intersection of the trial vectors.
+8. Measure lengths of respective vectors to determine the magnitude of \(\boldsymbol{A}_C^t\) and \(\boldsymbol{A}_{CB}^t\).
+
+Final drawing:
+#+ATTR_LATEX: :height 15em
+[[./images/4-bar-linkage-graphical-analysis-example-acceleration-polygon.png]]
+
+*** Solution Step 3: Direction Of Acceleration
+- Directions of \(\boldsymbol{A}_C^t\) and $\boldsymbol{A}_{CB}^t$ determined based on vector addition in acceleration polygon:
+  \[\overset{\checkmark \checkmark}{\boldsymbol{A}_C^n} + \overset{\times \checkmark}{\boldsymbol{A}_C^t} = \overset{\checkmark \checkmark}{\boldsymbol{A}_B^n} + \overset{\checkmark \checkmark}{\boldsymbol{A}_B^t} + \overset{\checkmark \checkmark}{\boldsymbol{A}^n}_{CB} +  \overset{\times \checkmark}{\boldsymbol{A}^t}_{CB}\]
+- Direction of \(\alpha_2\) and \(\alpha_3\) determined from \(\boldsymbol{A}_{CB}^t\).
+\[A_{CB}^t = \qty{18600}{mm.s^{-2}}\]
+\[A_C^t = \qty{22200}{mm.s^{-2}}\]
+\[\alpha_2 = \frac{A_{CB}^t}{CB} = \qty{266}{rad.s^{-2}} \text{ Counter-clockwise}\]
+\[\alpha_3 = \frac{A_C^t}{O_3 C} = \qty{555}{rad.s^{-2}} \text{ Counter-clockwise}\]
+
+@@latex: \newpage@@
+
+** Example 4: Combination Of Basic Linkages using Acceleration Image
+- Given: Link 1 (input), \(\omega_1 = \qty{100}{rad.s^{-1}}\) clockwise, lengths of all links are known.
+- Find: \(\boldsymbol{A}_D\) and angular acceleration of all links.
+- Toggle linkage:
+  - Combination of 4-bar and slider-crank linkages.
+  - 6-bar linkage with 1 degree of freedom.
+  - 1 input, 1 output (Point D)
+
+*** Solution Step 1: Acceleration Relationship
+- Continue from velocity analysis.
+- Work from the link with input motion and name it link 1.
+- Establish acceleration relations at joints of all links.
+- Form relative acceleration equation on *each basic linkage*.
+- Solve each equation in order.
+
+A: Link 2 of 4-bar linkage.
+\[\boldsymbol{A}_C^n + \boldsymbol{A}_C^t = \boldsymbol{A}_B^n + \boldsymbol{A}_B^t + \boldsymbol{A}_{CB}^n + \boldsymbol{A}_{CB}^t\]
+
+B: Link 4 of slider-crank linkage.
+\[\boldsymbol{A}_D = \boldsymbol{A}_C + \boldsymbol{A}_{DC}^n + \boldsymbol{A}_{DC}^t\]
+
+@@latex: \newpage@@
+
+*** Solution Step 2: Acceleration Polygon
+1. Choose origin \(O_A\), and define drawing scale, which is \(\qty{1}{mm}\) for \(\qty{10}{mm.s^{-2}}\).
+2. Construct acceleration polygon based on:
+   \[\overset{\checkmark \checkmark}{\boldsymbol{A}_C^n} + \overset{\times \checkmark}{\boldsymbol{A}_C^t} = \overset{\checkmark \checkmark}{\boldsymbol{A}_B^n} + \overset{\checkmark \checkmark}{\boldsymbol{A}_B^t} + \overset{\checkmark \checkmark}{\boldsymbol{A}^n}_{CB} + \overset{\times \checkmark}{\boldsymbol{A}^t}_{CB}\]
+3. Draw acceleration vector for the right-hand side of the equation in the order \(\boldsymbol{A}_B^n, \boldsymbol{A}_B^t, \boldsymbol{A}_{CB}^n\) from \(O_A\) with scale.
+   \[\boldsymbol{A}_B^n = \omega_1^2 \cdot O_1 B = \qty{100000}{mm.s^{-2}}\]
+   \[\boldsymbol{A}_B^t = \alpha_1 \cdot O_1 B = 0\]
+   \[\boldsymbol{A}_{CB}^n = \omega_2^2 \cdot CB = \qty{3600}{mm.s^{-2}}\]
+4. Draw direction (trial vector) of \(\boldsymbol{A}_{CB}^t\) from tip of \(\boldsymbol{A}_{CB}^n\). \(\boldsymbol{A}_{CB}^t\) is perpendicular to $CB$.
+5. Draw acceleration vector \(\boldsymbol{A}_C^n\) from \(O_A\).
+   \[\boldsymbol{A}_C^n = \omega_3^2 \cdot O_3 C = \qty{31300}{mm.s^{-2}}\]
+6. Draw direction (trial vector) of \(\boldsymbol{A}_C^t\) from \(\boldsymbol{A}_C^n\), \(A_C^t \perp O_3 C\).
+7. Intersect the trial vectors and find the magnitude of \(A_C^t\) and \(A_{CB}^t\).
+8. Construct acceleration polygon based on:
+   \[\overset{\times \checkmark}{\boldsymbol{A}_D} = \overset{\checkmark \checkmark}{\boldsymbol{A}_C^n} + \overset{\checkmark \checkmark}{\boldsymbol{A}_C^t} + \overset{\checkmark \checkmark}{\boldsymbol{A}^n}_{DC} + \overset{\times \checkmark}{\boldsymbol{A}^t}_{DC}\]
+   \[\boldsymbol{A}_C = \qty{43000}{mm.s^{-2}}\]
+9. Draw acceleration vector \(\boldsymbol{A}_{DC}^n\) for the right-hand side of the equation from \(\boldsymbol{A}_C^t\).
+10. Draw direction (trial vector) of \(\boldsymbol{A}_{DC}^t\) from tip of \(\boldsymbol{A}_{DC}^n\), \(\boldsymbol{A}_{DC}^t \perp CD\).
+11. For the left-hand side of the equation, draw direction (trial vector) of \(A_D\) from \(O_A\).
+12. Find the intersection of trial vectors and the magnitude of \(A_D\) and \(A_{DC}^t\).
+
+Final drawing:
+[[./images/combination-of-basic-linkages-graphical-analysis-acceleration-polygon.png]]
+
+*** Solution Step 3: Direction Of Acceleration
+- Directions of \(\boldsymbol{A}_C^t, \boldsymbol{A}_{CB}^t\) and \(\boldsymbol{A}_{DC}^t\) are determined based on vector addition in acceleration polygon:
+  \[\overset{\checkmark \checkmark}{\boldsymbol{A}_C^n} + \overset{\times \checkmark}{\boldsymbol{A}_C^t} = \overset{\checkmark \checkmark}{\boldsymbol{A}_B^n} + \overset{\checkmark \checkmark}{\boldsymbol{A}_B^t} + \overset{\checkmark \checkmark}{\boldsymbol{A}^n}_{CB} + \overset{\times \checkmark}{\boldsymbol{A}^t}_{CB}\]
+  \[\overset{\times \checkmark}{\boldsymbol{A}_D} = \overset{\checkmark \checkmark}{\boldsymbol{A}_C^n} + \overset{\checkmark \checkmark}{\boldsymbol{A}_C^t} + \overset{\checkmark \checkmark}{\boldsymbol{A}^n}_{DC} + \overset{\times \checkmark}{\boldsymbol{A}^t}_{DC}\]
+- Direction of \(\alpha_2, \alpha_3\) and \(\alpha_4\) are determined from \(\boldsymbol{A}_{CB}^t, \boldsymbol{A}_C^t\) and \(A_{DC}^t\).
+\[\boldsymbol{A}_D = \qty{75000}{mm.s^{-2}}\]
+\[\alpha_2 = \frac{A_{CB}^t}{CB} \text{ Counter-clockwise}\]
+\[\alpha_3 = \frac{A_{C}^t}{O_3 C} \text{ Clockwise}\]
+\[\alpha_4 = \frac{A_{DC}^t}{DC} \text{ Counter-clockwise}\]
+
+@@latex: \newpage@@
+
+* Vector loops
+
+** Purpose of vector loop method
+- Forming vector loop equations to describe geometric constraints of mechanism and solve kinematics analytically.
+- Vector loop of displacement vectors.
+\[r_1 + r_4 = r_2 + r_3\]
+
+*** Velocity closure equation
+\[\dot{r}_1 + \dot{r}_4 = \dot{r}_2 + \dot{r}_3\]
+
+*** Acceleration closure equation
+\[\ddot{r}_1 + \ddot{r}_4 = \ddot{r}_2 +\ddot{r}_3\]
+
+** Forming vector loops
+- Utilise links between revolute joints.
+- Use position of prismatic joints.
+
+[[./images/forming-vector-loops.png]]
+
+** Position analysis
+1. Set up a fixed reference frame (\(X-Y\)) as shown below.
+   #+ATTR_LATEX: :height 13em
+   [[./images/vector-loop-closure.png]]
+2. Assign a vector (magnitude and direction) on every link member in the mechanism so that all the vectors form a closed loop or a vector polygon.
+3. Write the vector loop closure equation for every independent loop.
+4. Decompose the vector loop closure equation into the scalar equations along the directions of the coordinate axes of the reference frame, in this case, the $X$ and $Y$ directions. Note that in the planar mechanism analysis, one vector loop equation can be decomposed into 2 scalar equations; in the spatial mechanism analysis the number of scalar equations should be 3.
+5. Derive the necessary constraint equations (for rolling contact case), if any.
+6. Formulate a set of simultaneous equations based on the results of steps 4 and 5. The set of equations is called the displacement equations of the mechanism. Solve the displacement equations using appropriate methods to determine the position of all members in the mechanism.
+7. Use the positions of the link members found in step 6 to find the position of other points of interest on the mechanism.
+
+Note that in step 6, the displacement equations are usually non-linear trigonometric equations that can be solved by using trigonometry functions. In certain situations, the displacement equations become linear equations whereby methods in linear algebra can be used to obtain the solution.
+
+*** Example
+Given the lengths of all the links \(\boldsymbol{r}_0, \boldsymbol{r}_1, \boldsymbol{r}_2\) and \(\boldsymbol{r}_3\) and the input crank angle $\theta_1$, as shown below, use the vector loop method to determine the positions of links 2 and 3, i.e., \(\theta_2\) and \(\theta_3\).
+[[./images/vector-loop-position-analysis-example.png]]
+
+1. Set up the coordinate axes of the reference frame as shown in the figure. Note that the reference frame is usually attached to the fixed link, not the moving links.
+2. Define vectors as shown in the figure: \(\boldsymbol{r}_0 = \boldsymbol{\overrightarrow{O_1 O_2}}, \boldsymbol{r}_1 = \boldsymbol{\overrightarrow{O_1 A}}, \boldsymbol{r}_2 = \boldsymbol{\overrightarrow{AB}}\) and \(\boldsymbol{r}_3 = \boldsymbol{\overrightarrow{BO_2}}\). Since all joints are of the revolute type, the vectors are therefore defined between the centres of the joints. The magnitudes of the vectors represent the length of the links. The directions of the vectors can be defined in either way depending on the analysis. The angle \(\theta_i\) is used to represent the orientation of \(\boldsymbol{r}_i\) relative to \(X\)-axis. The angle \(\theta_i\) is measure in the *counter-clockwise* direction.
+3. The vector loop equation is then \(-\boldsymbol{r}_0 + \boldsymbol{r}_1 + \boldsymbol{r}_2 + \boldsymbol{r}_3 = 0\). Note that the directions of the vectors in the equation follow the vector addition and subtraction principles. Geometrically, the equation represents a vector polygon.
+4. By expressing \(x_i = r_i \cos \theta_i\) and \(y_i = \sin \theta_i\), where \(x_i\) and \(y_i\) are the components of \(\boldsymbol{r}_i\) along the $X$ and $Y$ directions, the following two scalar equations can be obtained:
+   \[-r_0 \cos \theta_0 + r_1 \cos \theta_1 + r_2 \cos \theta_2 + r_3 \cos \theta_3 = 0\]
+   \[-r_0 \sin \theta_0 + r_1 \sin \theta_1 + r_2 \sin \theta_2 + r_3 \sin \theta_3 = 0\]
+5. There is no constraint equation since there is no rolling contact in the mechanism.
+6. From the problem statement, there are only two unknowns $\theta_2$ and $\theta_3$ in the above scalar equations. Two scalar equations can solve for two unknowns exactly. \(\theta_0\) is a constant. If the direction of \(\boldsymbol{r}_0\) is aligned along the \(X\)-axis, then \(\theta_0 = 0\). The input \(\theta_1\) is also given.
+7. Suppose that a point $C$ is located on the coupling link, and the position of $C$ is given by the vector \(\boldsymbol{r'}_2 = \boldsymbol{\overrightarrow{AC}}\). The angle between \(\boldsymbol{\overrightarrow{AB}}\) and \(\boldsymbol{\overrightarrow{AC}}\) is \(\alpha\), therefore, the direction of \(\boldsymbol{r'}\) is \(\theta'_2 = \theta_2 + \alpha\). The position of C with respect to the reference frame \(X-Y\) is thus:
+   \[\boldsymbol{r}_c = \boldsymbol{r}_1 + \boldsymbol{r'}_2\]
+
+   Decompose the above equation into $X$ and $Y$ components and use the result form step 6, the $X$ and $Y$ coordinates of point C can be obtained:
+   \[X_c = r_1 \cos \theta_1 + r'_2 \cos \theta'_2 = r_1 \cos \theta_1 + r'_2 \cos (\theta_2 + \alpha)\]
+   \[Y_c = r_1 \sin \theta_1 + r'_2 \sin \theta'_2 = r_1 \sin \theta_1 + r'_2 \sin (\theta_2 + \alpha)\]
+
+For velocity and acceleration analysis, just different the equations above to obtain the velocity and acceleration equations.
+
+@@latex: \newpage@@
+
+** Location of the reference frame
+- The reference frame (\(X-Y\)) can be located anywhere on the fixed link.
+- The origin of the reference frame is usually attached to the centre of the pivot of the input link.
+- The direction of the input pivot to the output pivot is chosen as the direction of the \(X\)-axis.
+- As shown in the figure below, the \(X\)-axis is along the direction of the fixed link. In this way, a vector in \(-X\) direction can represent the fixed link. Thus, the vector has no \(Y\)-component and the displacement equations can be simplified.
+- The location and orientation of the reference frame is chosen in a way to simplify the formulation of the displacement equations.
+
+** Determination of the vectors
+Rules:
+1. The magnitudes or the angular orientations (\(\theta\)) of all vectors should contain the information of all mechanism variables for the position analysis.
+2. The vectors should be defined properly to reduce the non-linearity of the displacement equations.
+
+@@latex: \newpage@@
+
+** Example 1: 4-bar linkages
+- Displacement vector loop equations:
+  \[\boldsymbol{r}_2 + \boldsymbol{r}_3 = \boldsymbol{r}_1 + \boldsymbol{r}_4\]
+  \[r_2 (\cos \theta_2 \boldsymbol{i} + \sin \theta_2 \boldsymbol{j}) + r_3 (\cos \theta_3 \boldsymbol{i} + \sin \theta_3 \boldsymbol{j}) = r_1 (\cos \theta_1 \boldsymbol{i} + \sin \theta_1 \boldsymbol{j}) + r_4 (\cos \theta_1 \boldsymbol{i} + \sin \theta_4 \boldsymbol{j})\]
+- Put in component equations (\(i\) and \(j\))
+  \[r_2 \cos \theta_2 + r_3 \cos \theta_3 = r_1 \cos \theta_1 + r_4 \cos \theta_4\]
+  \[r_2 \sin \theta_2 + r_3 \sin \theta_3 = r_1 \sin \theta_1 + r_4 \sin \theta_4\]
+- Base vector \(r_1\) is a constant, which means \(r_1\) and \(\omega_1\) is constant.
+- Link lengths $r_2, r_3$ and $r_4$ are constant, but $\omega_2, \omega_3$ and $\omega_4$ are not constants.
+- For input link 2, \(\omega_2\) is given, so solve $\omega_3$ and $\omega_4$ in terms of $\omega_2$.
+
+[[./images/4-bar-linkage-vector-loop-example.png]]
+
+*** Solution of closure equation
+- Solve trigonometric equations.
+  \[r_3 \cos \theta_3 = r_1 \cos \theta_1 + r_4 \cos \theta_4 - r_2 \cos \theta_2\]
+  \[r_3 \sin \theta_3 = r_1 \sin \theta_1 + r_4 \sin \theta_4 - r_2 \sin \theta_2\]
+- Use trigonometric identity:
+  \[\sin^2 \theta + \cos^2 \theta = 1\]
+- We get:
+  \begin{align*}
+  r_3^2 &= r_1^2 + r_2^2 + r_4^2 + 2r_1 r_4 (\cos \theta_1 \cos \theta_4 + \sin \theta_1 + \sin \theta_4) \\
+  &- 2r_1 r_2 (\cos \theta_1 \cos \theta_2 + \sin \theta_1 \sin \theta_2) - 2r_2 r_4 (\cos \theta_2 \cos \theta_4 + \sin \theta_2 \sin \theta_4)
+  \end{align*}
+- Combining coefficients:
+  \[A \cos \theta_4 + B \sin \theta_4 + C = 0\]
+
+  Where:
+  \[A = 2r_1 r_4 \cos \theta_1 - 2r_2 r_4 \cos \theta_2\]
+  \[B = 2r_1 r_4 \sin \theta_1 - 2r_2 r_4 \sin \theta_2\]
+  \[r_1^2 + r_2^2 + r_4^2 - r_3^2 - 2r_1 r_2 (\cos \theta_1 \cos \theta_2 + \sin \theta_1 \sin \theta_2)\]
+- Using half-angle identity:
+  \[\sin \theta_4 = \frac{2 \tan \left(\frac{\theta_4}{2} \right)}{1 + \tan^2 \left(\frac{\theta_4}{2} \right)}\]
+  \[\cos \theta_4 = \frac{1 - \tan^2 \left(\frac{\theta_4}{2} \right)}{1 + \tan^2 \left(\frac{\theta_4}{2} \right)}\]
+- And let \(t = \tan \left(\frac{\theta_4}{2} \right)\):
+  \[\theta_4 = 2 \tan^{-1} t\]
+  \[t = \frac{-B \pm \sqrt{B^2 - C^2 + A^2}}{C - A}\]
+  \[\theta_3 = \tan^{-1} \left[\frac{r_1 \sin \theta_1 + r_4 \sin \theta_4 - r_2 \sin \theta_2}{r_1 \cos \theta_1 + r_4 \cos \theta_4 - r_2 \cos \theta_2} \right]\]
+- To ensure the angle lies in the correct quadrant, we use:
+  \[\theta_3 = \tan^{-1} \left[\frac{\sin \theta_3}{\cos \theta_3} \right]\]
+
+[[./images/4-bar-linkage-vector-loop-example-closure-equation.png]]
+
+@@latex: \newpage@@
+
+*** Velocity equation
+- Differentiating the loop equation, we have:
+  \[\dot{\boldsymbol{r}}_2 + \dot{\boldsymbol{r}}_3 + \dot{\boldsymbol{r}}_1 + \dot{\boldsymbol{r}}_4\]
+  \[r_2 \dot{\theta}_2 \sin \theta_2 + r_3 \dot{\theta}_3 \sin \theta_3 = r_4 \dot{\theta}_4 \sin \theta_4\]
+  \[r_2 \dot{\theta}_2 \cos \theta_2 + r_3 \dot{\theta}_3 \cos \theta_3 = r_4 \dot{\theta}_4 \cos \theta_4\]
+- Base vector \(r_1\) is a constant, which means \(r_1\) and \(\omega_1\) is constant.
+- Link lengths $r_2, r_3$ and $r_4$ are constant, but $\omega_2, \omega_3$ and $\omega_4$ are not constants.
+- For input link 2, \(\dot{\theta}_2\) is given, so solve $\dot{\theta}_3$ and $\dot{\theta}_4$.
+- In matrix form:
+  \begin{displaymath}
+  \begin{bmatrix}
+  -r_3 \sin \theta_3 & r_4 \sin \theta_4 \\
+  -r_3 \cos \theta_3 & r_4 \cos \theta_4
+  \end{bmatrix}
+  \begin{bmatrix}
+  \dot{\theta}_3 \\
+  \dot{\theta}_4 \\
+  \end{bmatrix} = \begin{bmatrix}
+  r_2 \dot{\theta_2} \sin \theta_2 \\
+  r_2 \dot{\theta_2} \cos \theta_2
+  \end{bmatrix}
+  \end{displaymath}
+
+*** Acceleration equation
+- Differentiating the velocity vector equation, we have:
+  \[\ddot{\boldsymbol{r}}_2 + \ddot{\boldsymbol{r}}_3 + \ddot{\boldsymbol{r}}_1 + \ddot{\boldsymbol{r}}_4\]
+  \[r_2 \ddot{\theta}_2 \sin \theta_2 + r_2 \dot{\theta}_2^2 \cos \theta_2 + r_3 \ddot{\theta}_3 \sin \theta_3 + r_3 \dot{\theta}_3^2 \cos \theta_3 = r_4 \ddot{\theta}_4 \sin \theta_4 + r_4 \dot{\theta}_4^2 \cos \theta_4\]
+  \[r_2 \ddot{\theta}_2 \cos \theta_2 + r_2 \dot{\theta}_2^2 \sin \theta_2 + r_3 \ddot{\theta}_3 \cos \theta_3 + r_3 \dot{\theta}_3^2 \sin \theta_3 = r_4 \ddot{\theta}_4 \cos \theta_4 + r_4 \dot{\theta}_4^2 \sin \theta_4\]
+- For input link 2, \(\ddot{\theta}_2\) is given, so solve $\ddot{\theta}_3$ and $\ddot{\theta}_4$.
+- In matrix form:
+  \begin{displaymath}
+  \begin{bmatrix}
+  -r_3 \sin \theta_3 & r_4 \sin \theta_4 \\
+  -r_3 \cos \theta_3 & r_4 \cos \theta_4
+  \end{bmatrix}
+  \begin{bmatrix}
+  \ddot{\theta}_3 \\
+  \ddot{\theta}_4 \\
+  \end{bmatrix} = \begin{bmatrix}
+  r_2 \ddot{\theta}_2 \sin \theta_2 + r_2 \dot{\theta}_2^2 \cos \theta_2 + r_3 \ddot{\theta}_3 \sin \theta_3 + r_3 \dot{\theta}_3^2 \cos \theta_3 - r_4 \dot{\theta}_4^2 \cos \theta_4 \\
+  r_2 \ddot{\theta}_2 \cos \theta_2 + r_2 \dot{\theta}_2^2 \sin \theta_2 + r_3 \ddot{\theta}_3 \cos \theta_3 + r_3 \dot{\theta}_3^2 \sin \theta_3 - r_4 \dot{\theta}_4^2 \sin \theta_4 \\
+  \end{bmatrix}
+  \end{displaymath}
+
+** Example 2: Slider Crank Mechanism
+- Displacement vector loop equations:
+  \[\boldsymbol{r}_2 + \boldsymbol{r}_3 = \boldsymbol{r}_1 + \boldsymbol{r}_4\]
+  \[r_2 (\cos \theta_2 \boldsymbol{i} + \sin \theta_2 \boldsymbol{j}) + r_3 (\cos \theta_3 \boldsymbol{i} + \sin \theta_3 \boldsymbol{j}) = r_1 (\cos \theta_1 \boldsymbol{i} + \sin \theta_1 \boldsymbol{j}) + r_4 (\cos \theta_1 \boldsymbol{i} + \sin \theta_4 \boldsymbol{j})\]
+- Put in component equations (\(i\) and \(j\))
+  \[r_2 \cos \theta_2 + r_3 \cos \theta_3 = r_1 \cos \theta_1 + r_4 \cos \theta_4\]
+  \[r_2 \sin \theta_2 + r_3 \sin \theta_3 = r_1 \sin \theta_1 + r_4 \sin \theta_4\]
+- Base vector \(r_1\) changes, which means \(\omega_1\) is constant and \(\theta_4 = \theta_1 + \frac{\pi}{2}\).
+- Link lengths $r_2$ and $r_3$ but $\omega_2$ and $\omega_3$ are not constant.
+- For input link 2, \(\omega_2\) is given, so solve $\omega_3$ and $r_1$ in terms of $\omega_2$.
+
+@@latex: \newpage@@
+
+*** Solution of closure equation
+- Solve trigonometric equations.
+  \[r_3 \cos \theta_3 = r_1 \cos \theta_1 + r_4 \cos \theta_4 - r_2 \cos \theta_2\]
+  \[r_3 \sin \theta_3 = r_1 \sin \theta_1 + r_4 \sin \theta_4 - r_2 \sin \theta_2\]
+- Use trigonometric identity:
+  \[\sin^2 \theta + \cos^2 \theta = 1\]
+- We get:
+  \begin{align*}
+  r_3^2 &= r_1^2 + r_2^2 + r_4^2 + 2r_1 r_4 (\cos \theta_1 \cos \theta_4 + \sin \theta_1 + \sin \theta_4) \\
+  &- 2r_1 r_2 (\cos \theta_1 \cos \theta_2 + \sin \theta_1 \sin \theta_2) - 2r_2 r_4 (\cos \theta_2 \cos \theta_4 + \sin \theta_2 \sin \theta_4)
+  \end{align*}
+- Combining coefficients:
+  \[r_1^2 + Ar_1 + B = 0\]
+
+  Where:
+  \[A = 2 r_4 (\cos \theta_1 \cos \theta_4 + \sin \theta_1 \sin \theta_4) - 2r_2 (\cos \theta_1 \cos \theta_2 + \sin \theta_1 \sin \theta_2)\]
+  \[B = r_2^2 + r_4^2 - r_3^2 - 2r_2 r_4 (\cos \theta_2 \cos \theta_4 + \sin \theta_2 \sin \theta_4)\]
+- Solve for $r_1$, we have:
+  \[\theta_3 = \tan^{-1} \left[\frac{r_1 \sin \theta_1 + r_4 \sin \theta_4 - r_2 \sin \theta_2}{r_1 \cos \theta_1 + r_4 \cos \theta_4 - r_2 \cos \theta_2} \right]\]
+- To ensure the angle lies in the correct quadrant, we use:
+  \[\theta_3 = \tan^{-1} \left[\frac{\sin \theta_3}{\cos \theta_3} \right]\]
+
+[[./images/slider-crank-mechanism-vector-loop-example-closure-equation.png]]
+
+*** Velocity equation
+- Differentiating the loop equation, we have:
+  \[\dot{\boldsymbol{r}}_2 + \dot{\boldsymbol{r}}_3 + \dot{\boldsymbol{r}}_1\]
+  \[-r_2 \dot{\theta}_2 \sin \theta_2 + r_3 \dot{\theta}_3 \sin \theta_3 = \dot{r}_1 \cos \theta_1\]
+  \[r_2 \dot{\theta}_2 \cos \theta_2 + r_3 \dot{\theta}_3 \cos \theta_3 = \dot{r}_1 \sin \theta_1\]
+- For input link 2, \(\dot{\theta}_2\) is given, so solve $\dot{\theta}_3$ and $\dot{r}_1$.
+- In matrix form:
+  \begin{displaymath}
+  \begin{bmatrix}
+  \cos \theta_1 & r_3 \sin \theta_3 \\
+  \sin \theta_1 & -r_3 \cos \theta_3
+  \end{bmatrix}
+  \begin{bmatrix}
+  \dot{r}_1 \\
+  \dot{\theta}_3 \\
+  \end{bmatrix} = \begin{bmatrix}
+  -r_2 \dot{\theta_2} \sin \theta_2 \\
+  r_2 \dot{\theta_2} \cos \theta_2
+  \end{bmatrix}
+  \end{displaymath}
+
+*** Acceleration equation
+- Differentiating the velocity vector equation, we have:
+  \[\ddot{\boldsymbol{r}}_P = \ddot{\boldsymbol{r}}_2 + \ddot{\boldsymbol{r}}_3 = \ddot{\boldsymbol{r}}_1 + \ddot{\boldsymbol{r}}_4\]
+  \[-r_2 \ddot{\theta}_2 \sin \theta_2 - r_2 \dot{\theta}_2^2 \cos \theta_2 - r_3 \ddot{\theta}_3 \sin \theta_3 - r_3 \dot{\theta}_3^2 \cos \theta_3 = \ddot{r}_1 \cos \theta_1\]
+  \[r_2 \ddot{\theta}_2 \cos \theta_2 - r_2 \dot{\theta}_2^2 \sin \theta_2 + r_3 \ddot{\theta}_3 \cos \theta_3 - r_3 \dot{\theta}_3^2 \sin \theta_3 = \ddot{r}_1 \sin \theta_1\]
+- For input link 2, \(\ddot{\theta}_2\) is given, so solve $\ddot{\theta}_3$ and $\ddot{r}_1$.
+- In matrix form:
+  \begin{displaymath}
+  \begin{bmatrix}
+  \cos \theta_1 & r_3 \sin \theta_3 \\
+  \sin \theta_1 & r_3 \cos \theta_3
+  \end{bmatrix}
+  \begin{bmatrix}
+  \ddot{r}_1 \\
+  \ddot{\theta}_3 \\
+  \end{bmatrix} = \begin{bmatrix}
+  -r_2 \ddot{\theta}_2 \sin \theta_2 - r_2 \dot{\theta}_2^2 \cos \theta_2 - r_3 \dot{\theta}_3^2 \cos \theta_3 \\
+  r_2 \ddot{\theta}_2 \cos \theta_2 - r_2 \dot{\theta}_2^2 \sin \theta_2 + r_3 \dot{\theta}_3^2 \sin \theta_3
+  \end{bmatrix}
+  \end{displaymath}
+
+** Compound mechanisms
+[[./images/vector-loop-compound-mechanisms.png]]
+\[\boldsymbol{r}_2 + \boldsymbol{r}_3 = \boldsymbol{r}_1 + \boldsymbol{r}_4 \tag{Loop 1}\]
+\[\boldsymbol{r}_6 + \boldsymbol{r}_5 = \boldsymbol{r}_7 + \boldsymbol{r}_8 \tag{Loop 2}\]
+
+Relationship between loop 1 and 2:
+\[\theta_4 = \theta_6 + \beta\]
+
+Given input \(\omega_2\), find output \(r_7\):
+- Have more than one vector loop.
+- Solve vector loops one by one.
+- Velocity and acceleration analysis are similar.
+
+@@latex: \newpage@@
+
+** Summary
+- Identify all joints on the linkage. Be sure that all joints are located by vectors. Identify all independent vector loops in the linkage and write a vector equation for each loop.
+- Represent link between adjacent R-joints using vector \(r_i\).
+- If sliders (prismatic joints) are involved, locate it by using 2 vectors.
+  - Parallel (variable) or in the direction of travel, or perpendicular (constant) to the direction of travel.
+- Note which lengths and angles are fixed and which are variable.
+- Write $x$ and $y$ component equations for each vector equation.
+- Identify any constraints among lengths and angles not shown in the vector loops, such as an off-set slider.
+- Differentiate position vector component equations to obtain velocity equations.
+- Differentiate velocity equations to obtain acceleration equations.
+
+* Cams and followers
+
+** Disk cams with different types of followers
+
+*** Translating roller follower
+#+ATTR_LATEX: :height 15em
+[[./images/translating-roller-follower.png]]
+
+*** Translating flat-faced follower
+#+ATTR_LATEX: :height 15em
+[[./images/translating-flat-faced-follower.png]]
+
+*** Rotating roller follower
+#+ATTR_LATEX: :height 15em
+[[./images/rotating-roller-follower.png]]
+
+*** Rotating flat-faced follower
+#+ATTR_LATEX: :height 15em
+[[./images/rotating-flat-faced-follower.png]]
+
+*** Cutaway of an engine
+Below is a cutaway of an engine with dual camshafts and 4 valves per cylinder.
+#+ATTR_LATEX: :height 15em
+[[./images/cutaway-of-an-engine.png]]
+
+** Applications of cam-and-follower systems
+- The high pressures required for diesel fuel injection cause high contact stresses on the cam.
+- A roller follower is used to reduce wear.
+- Most cam-and-follower systems are designed to control a process, not to transmit significant power.
+
+*** Examples
+#+ATTR_LATEX: :height 15em
+[[./images/four-stroke-engine.png]]
+- The thermodynamic cycle of a four-stroke engine involves two revolutions of the crankshaft.
+- The cycle progresses as follows:
+  1. Intake stroke (induction)
+  2. Compression stroke
+  3. Power stroke (expansion)
+  4. Exhaust stroke
+
+#+begin_center
+#+ATTR_LATEX: :height 15em :center
+[[./images/engine-cross-section.png]]
+#+ATTR_LATEX: :height 15em :center
+[[./images/camshaft.png]]
+#+end_center
+
+** Types of followers
+
+*** Roller type
+[[./images/roller-follower.png]]
+
+#+ATTR_LATEX: :height 30em
+[[./images/roller-follower-and-cam.png]]
+
+*** Flat-faced type
+[[./images/flat-faced-follower.png]]
+
+#+ATTR_LATEX: :height 30em
+[[./images/flat-faced-follower-and-cam.png]]
+
+*** Cylindrical-faced (mushroom) type
+[[./images/cylindrical-faced-follower.png]]
+
+#+ATTR_LATEX: :height 30em
+[[./images/cylindrical-follower-and-cam.png]]
+
+*** Knife-edge type
+[[./images/knife-edged-follower.png]]
+
+** Keeping the cam and follower in contact
+
+*** Force closure
+Use force to keep the cam and follower in contact, usually by using a spring.
+#+ATTR_LATEX: :height 15em
+[[./images/force-closure-diagram.png]]
+
+*** Form closure
+Use geometry to keep the cam and follower in contact, usually be using a track or a groove.
+#+ATTR_LATEX: :height 20em
+[[./images/form-closure-diagram.png]]
+
+** Follower motion
+
+*** Rotating follower
+This is analogous to a crank-rocker linkage.
+#+ATTR_LATEX: :height 18em
+[[./images/force-closure-diagram.png]]
+
+*** Translating follower
+This is analogous to a slider-crank linkage.
+#+ATTR_LATEX: :height 18em
+[[./images/translating-follower-diagram.png]]
+
+** Terminology
+
+*** Rise
+Rise means the follower is moving away from the cam centre.
+
+*** Dwell
+Dwell refers to the period when the follower is stationary.
+
+*** Return
+Return refers to the follower moving back towards the cam centre.
+
+*** Cam profile
+Cam profile is the shaped surface of the cam defining the follower motion.
+
+*** Follower motion graph
+The graph below illustrates rise, dwell and return.
+[[./images/motion-of-a-follower-graph.png]]
+
+** Types of motion
+- Uniform motion (for very low speeds)
+- Parabolic motion (for low or medium speeds)
+- Simple harmonic motion (for medium speeds)
+- Cycloidal motion (for high speed applications)
+- General polynomial motion (for high speed applications)
+
+** Uniform motion
+\[\theta = \omega t\]
+\[\text{Follower displacement: } s = C \theta = \frac{L}{\beta} \theta\]
+\[\dot{\theta} = \frac{d \theta}{dt} = \omega\]
+\[\dot{s} = \frac{L}{\beta} \dot{\theta}\]
+\[\ddot{s} = \frac{L}{\beta} \ddot{\theta}\]
+
+[[./images/follower-uniform-motion.png]]
+
+The accelerations are infinite and the forces and large, so this kind of motion is only suitable for very slow speeds.
+
+@@latex: \newpage@@
+
+** Parabolic motion
+Parabolic motion is usually made up of two parabolas. The equation is as follows:
+\[s = C_0 + C_1 \theta + C_2 \theta^2\]
+
+#+ATTR_LATEX: :height 14em
+[[./images/parabolic-motion-graph.png]]
+
+*** First parabola (from \(0 \le \theta \le \frac{\beta}{2}\))
+- At \(\theta = 0\), the displacement \(s = 0\), so \(C_0 = 0\).
+- If slope \(s' = 0\) at \(\theta = 0\), then \(C_1 = 0\).
+- At \(\theta = \frac{\beta}{2}\), \(s = \frac{L}{2}\), then:
+  \[C_2 = \frac{2L}{\beta^2}\]
+  \[s = \frac{2L}{\beta^2} \theta^2\]
+
+#+ATTR_LATEX: :height 14em
+[[./images/parabolic-motion-first-parabola-graph.png]]
+
+*** Second parabola
+- At \(\theta = \frac{\beta}{2}\), the displacement is \(s = \frac{L}{2}\).
+- At \(\theta = \beta\), \(s = L\) and \(s' = 0\), therefore:
+  \[C_2 = \frac{2L}{\beta^2}\]
+- Hence:
+  \[C_0 = -L\]
+  \[C_1 = \frac{4L}{\beta}\]
+  \[C_2 = -\frac{2L}{\beta^2}\]
+  \[s = -L + \frac{4L}{\beta} \theta - \frac{2L}{\beta^2} \theta^2\]
+
+#+ATTR_LATEX: :height 20em
+[[./images/parabolic-motion-second-parabola-graph.png]]
+
+*** Displacement-Velocity-Acceleration-Jerk (S-V-A-J) Diagram
+[[./images/parabolic-motion-svaj-diagram.png]]
+
+- Finite acceleration.
+- Infinite jerk at three locations in a rise or return.
+- Hence, parabolic motion is for low or medium speeds.
+
+** Simple harmonic motion
+For \(0 \le \theta \le \beta\), \(\theta = \omega t\):
+\[\text{Displacement: } s = \frac{L}{2} \left(1 - \cos \frac{\pi \theta}{\beta} \right)\]
+\[\text{Velocity: } \dot{s} = \frac{\pi L \omega}{2 \beta} \sin \frac{\pi \theta}{\beta}\]
+\[\text{Acceleration: } \ddot{s} = \frac{L}{2} \left(\frac{\pi L \omega}{2 \beta} \right)^2 \cos \frac{\pi \theta}{\beta}\]
+\[\text{Jerk: } \dddot{s} = \frac{L}{2} \left(\frac{\pi L \omega}{2 \beta} \right)^3 \sin \frac{\pi \theta}{\beta}\]
+
+*** Displacement-Velocity-Acceleration-Jerk (S-V-A-J) Diagram
+[[./images/simple-harmonic-motion-svaj-diagram.png]]
+
+*** Example
+Harmonic motion equation: \(s = \frac{L}{2} \left(1 - \cos \frac{\pi \theta}{\beta} \right)\), \(\theta\) starts from 0.
+
+- Question:
+  For the first \(\qty{120}{\degree}\), there is a *dwell*, from \(\qty{120}{\degree}\) to \(\qty{180}{\degree}\) a *harmonic motion*, from \(\qty{180}{\degree}\) \(\qty{210}{\degree}\), a \(\qty{0.8}{\degree}\), *dwell*, and from \(\qty{210}{\degree}\) to \(\qty{360}{\degree}\) a *harmonic motion* again. Find \(s\):
+
+- Solution (segment 1 and 2):
+  - Segment 1 dwell (\(\qty{0}{\degree} - \qty{120}{\degree}\)):
+    \[s = 0\]
+  - Segment 2 rise (\(\qty{120}{\degree} - \qty{180}{\degree}\)): \(\theta\) does not start from 0 but from \(\qty{120}{\degree}\), so replace \(\theta\) with \(\theta - \qty{120}{\degree}\), we get:
+    \[L = 0.8, \quad \beta = \qty{60}{\degree}\]
+    \[s = \frac{0.8}{2} \left(1 - \cos \frac{\pi (\theta - 120)}{60} \right)\]
+
+    [[./images/harmonic-motion-example-segment-1-and-2.png]]
+
+    @@latex: \newpage@@
+
+- Solution (segment 3 and 4):
+  - Segment 3 dwell (\(\qty{180}{\degree} - \qty{210}{\degree}\)): \(s = 0.8\)
+    \[s = 0.8\]
+  - Segment 4 return (\(\qty{210}{\degree} - \qty{360}{\degree}\)):
+    For return, \(\theta\) starts from \(\qty{210}{\degree}\) to \(\qty{360}{\degree}\), so replace \(\theta\) with (\(\qty{360}{\degree} - \theta\)), we get:
+    \[L = 0.8, \quad \beta = \qty{150}{\degree}\]
+    \[s = \frac{0.8}{2} \left(1 - \cos \frac{\pi (360 - \theta)}{150} \right)\]
+
+    [[./images/harmonic-motion-example-segment-3-and-4.png]]
+
+** Cycloidal motion
+\[\text{Displacement: } s = L \left(\frac{\theta}{\beta} - \frac{1}{2 \pi} \sin \frac{2 \pi \theta}{\beta} \right) \text{ for } 0 \le \theta \le \beta\]
+
+@@latex: \newpage@@
+
+*** Displacement-Velocity-Acceleration-Jerk (S-V-A-J) Diagram
+#+ATTR_LATEX: :height 11em
+[[./images/cycloidal-motion-displacement-graph.png]]
+
+#+ATTR_LATEX: :height 11em
+[[./images/cycloidal-motion-velocity-graph.png]]
+
+#+ATTR_LATEX: :height 11em
+[[./images/cycloidal-motion-acceleration-graph.png]]
+
+#+ATTR_LATEX: :height 11em
+[[./images/cycloidal-motion-jerk-graph.png]]
+
+** Formula method
+\[\beta = \theta_e - \theta_i\]
+
+*** Uniform motion
+- Rise
+  #+ATTR_LATEX: :height 15em
+  [[./images/formula-method-uniform-motion-rise-graph.png]]
+
+  For \(\theta_i \le \theta \le \theta_e\):
+  \[s = \frac{h}{\beta} (\theta - \theta_i)\]
+
+- Return
+  #+ATTR_LATEX: :height 15em
+  [[./images/formula-method-uniform-motion-return-graph.png]]
+
+  For \(\theta_i \le \theta \le \theta_e\):
+  \[s = \frac{h}{\beta} (\theta_e - \theta)\]
+
+*** Parabolic motion
+- Rise
+  #+ATTR_LATEX: :height 12em
+  [[./images/formula-method-parabolic-motion-rise-graph.png]]
+
+  For \(\theta_i \le \theta \le \theta_i + \frac{\beta}{2}\):
+  \[s = \frac{2h}{\beta^2} (\theta - \theta_i)^2\]
+
+  For \(\theta_i + \frac{\beta}{2} \le \theta \le \theta_e\):
+  \[s = -h + \frac{4h}{\beta} (\theta - \theta_i) - \frac{2h}{\beta^2} (\theta - \theta_i)^2\]
+
+- Return
+  #+ATTR_LATEX: :height 12em
+  [[./images/formula-method-parabolic-motion-return-graph.png]]
+
+  For \(\theta_i \le \theta \le \theta_i + \frac{\beta}{2}\):
+  \[s = -h + \frac{4h}{\beta} (\theta_e - \theta) - \frac{2h}{\beta^2} (\theta_e - \theta)^2\]
+
+  For \(\theta_i + \frac{\beta}{2} \le \theta \le \theta_e\):
+  \[s = \frac{2h}{\beta^2} (\theta_e - \theta)^2\]
+
+*** Cycloidal motion
+- Rise
+  [[./images/formula-method-cycloidal-motion-rise-graph.png]]
+
+  For \(\theta_i \le \theta \le \theta_e\):
+  \[s = h \left(\frac{\theta - \theta_i}{\beta} \right) - \frac{h}{2 \pi} \sin \left( 2 \pi \frac{\theta - \theta_i}{\beta} \right)\]
+
+- Return
+  [[./images/formula-method-cycloidal-motion-return-graph.png]]
+
+  For \(\theta_i \le \theta \le \theta_e\):
+  \[s = h \left(\frac{\theta_e - \theta}{\beta} \right) - \frac{h}{2 \pi} \sin \left( 2 \pi \frac{\theta_e - \theta}{\beta} \right)\]
+
+*** Simple harmonic motion
+- Rise
+  [[./images/formula-method-simple-harmonic-motion-rise-graph.png]]
+
+  For \(\theta_i \le \theta \le \theta_e\):
+  \[s = \frac{h}{2} \left[1 - \cos \frac{\pi (\theta - \theta_i)}{\beta} \right]\]
+
+- Return
+  [[./images/formula-method-simple-harmonic-motion-return-graph.png]]
+
+  For \(\theta_i \le \theta \le \theta_e\):
+  \[s = \frac{h}{2} \left[1 - \cos \frac{\pi (\theta_e - \theta)}{\beta} \right]\]
+
+** Solving a follower question
+<<sec:solving-follower-question>>
+
+*** Question
+A radial cam with a translating flat-faced follower as shown in the figure below is to be designed using a harmonic curve for both the rise (\(\qty{100}{\degree} \le \theta \le \qty{220}{\degree}\)) and the return (\(\qty{240}{\degree} \le \theta \le \qty{360}{\degree}\)). Assume that the follower is to dwell at zero lift for the first \(\qty{100}{\degree}\) of the motion cycle and to dwell \(\qty{25}{mm}\) lift for cam angles from \(\qty{220}{\degree}\) to \(\qty{240}{\degree}\). The cam rotates clockwise, and the base circle radius is \(\qty{50}{mm}\).
+
+[[./images/follower-question-example.png]]
+
+Write the equation of the follower displacement (\(S\)) as a function of the angular displacement of the cam (\(\theta\)).
+
+@@latex: \newpage@@
+
+*** Analytical method
+Displacement equation:
+\[s = \frac{L}{2} \left(1 - \cos \frac{\pi \theta}{\beta} \right) \text{ for } 0 \le \theta \le \beta \tag{1}\]
+- Segment 1 dwell (for \(\theta = \qty{0}{\degree} - \qty{100}{\degree}\)):
+  \[s = 0\]
+
+- Segment 2 rise (for \(\theta = \qty{100}{\degree} - \qty{220}{\degree}\)):
+  \(\theta\) does not start from 0, but from \(\qty{100}{\degree}\).
+  \[L = \qty{25}{mm}, \quad \beta = \qty{120}{\degree}\]
+
+  At \(\theta = \qty{100}{\degree}\), (\(\theta - \qty{100}{\degree} = 0\)), \(s = 0\). So, replacing \(\theta\) in equation \((1)\) with \((\theta - \qty{100}{\degree})\), we get:
+  \[s = \frac{25}{2} \left(1 - \cos \frac{\pi (\theta - 100)}{120} \right)\]
+
+- Segment 3 dwell (for \(\theta = \qty{220}{\degree} - \qty{240}{\degree}\)):
+  \[s = \qty{25}{mm}\]
+
+- Segment 4 return (for \(\theta = \qty{240}{\degree} - \qty{360}{\degree}\)):
+
+  For return, \(\theta\) starts from \(\qty{240}{\degree}\) to \(\qty{360}{\degree}\).
+  \[L = \qty{25}{mm}, \quad \beta = \qty{120}{\degree}\]
+
+  At \(\theta = \qty{360}{\degree}\), (\(\qty{360}{\degree} - \theta = 0\)), \(s = 0\). So, replacing \(\theta\) in equation (\(1\)) with \((\qty{360}{̣\degree})\), we get:
+  \[s = \frac{25}{2} \left(1 - \cos \frac{\pi (360 - \theta)}{120} \right)\]
+
+@@latex: \newpage@@
+
+*** Formula method
+For simple harmonic motion:
+\[\beta = \theta_e - \theta_i\]
+\[\text{Rise formula: } s = \frac{h}{2} \left[1 - \cos \frac{\pi (\theta - \theta_i)}{\beta} \right] \tag{1}\]
+\[\text{Return formula: } s = \frac{h}{2} \left[1 - \cos \frac{\pi (\theta_e - \theta)}{\beta} \right] \tag{2}\]
+
+- Segment 1 dwell (for \(\theta = \qty{0}{\degree} - \qty{100}{\degree}\)):
+  \[s = 0\]
+
+- Segment 2 rise (for \(\theta = \qty{100}{\degree} - \qty{220}{\degree}\)):
+  \[\theta_i = \qty{100}{\degree}, \quad \theta_e = \qty{200}{\degree}, \quad \beta = \qty{120}{\degree}, \quad h = \qty{25}{mm}\]
+
+  Using equation \((1)\), we get:
+  \[s = \frac{25}{2} \left(1 - \cos \frac{\pi (\theta - 100)}{120} \right)\]
+
+- Segment 3 dwell (for \(\theta = \qty{220}{\degree} - \qty{240}{\degree}\)):
+  \[s = \qty{25}{mm}\]
+
+- Segment 4 return (for \(\theta = \qty{240}{\degree} - \qty{360}{\degree}\)):
+  \[\theta_i = \qty{240}{\degree}, \quad \theta_e = \qty{360}{\degree}, \quad \beta = \qty{120}{\degree}, \quad h = \qty{25}{mm}\]
+
+  Using equation \((2)\), we get:
+  \[s = \frac{25}{2} \left(1 - \cos \frac{\pi (360 - \theta)}{120} \right)\]
+
+** Cam profile design
+- Determine the follower motion
+- Find the cam profile graphically or analytically
+- Extremely accurate cams
+  - Determine profile analytically
+  - Numerically controlled milling machine
+- Low speed cams
+  - Graphical layout
+  - Manual machining
+
+*** Graphical method
+Graphical cam profile layout for roller follower:
+- Approach
+  - Cam viewed as stationary
+  - Successive relative positions of the follower determined
+  - A polar plot of successive follower positions
+  - Cam profile as the envelope curve of the follower positions
+
+- Base circle
+  - The position of the follower at zero lift, shown as \(r_b\)
+  - Successive lift (displacement) values are plotted radially outward
+
+@@latex: \newpage@@
+
+* Graphical construction of cam (roller follower)
+
+** Question
+A follower dwells at zero lift for the first \(\qty{120}{\degree}\), rises harmonically from \(\qty{120}{\degree} - \qty{180}{\degree}\), dwells at 0.8'' lift from \(\qty{180}{\degree} - \qty{210}{\degree}\), then returns harmonically from \(\qty{210}{\degree} - \qty{360}{\degree}\). The roller's diameter is 1'' and base circle radius is 1.5'', Draw cam profile (\(\Delta \theta = \qty{10}{\degree}\))
+
+*** Solution
+From the example [[sec:solving-follower-question][above]], the rise is:
+\[s = 0.4 - 0.4 \cos (3 \theta - 360)\]
+
+And the return is:
+\[s = 0.4 \left(1 - \cos \frac{6 (360 - \theta)}{5} \right)\]
+
+@@latex: \newpage@@
+
+** Drawing steps
+1. Divide cam angle \(\theta \ (\qty{360}{\degree})\) into a *number of equal portions*, \(N\) (say \(\qty{10}{\degree}\) intervals, \(N = 36\) portions).
+2. Using displacement functions, *calculate and tabulate* \(s\) at every interval (say \(\qty{10}{\degree}\)) \(s_1, s_2, s_3, \ldots, s_{N + 1}\).
+   [[./images/graphical-construction-of-cam-follower-displacements.png]]
+
+3. Draw the *base circle* with given radius \(r_b = 1.5''\).
+   #+ATTR_LATEX: :height 25em
+   [[./images/graphical-construction-of-cam-base-circle.png]]
+
+4. From the centre of the base circle, draw radial lines every \(\qty{10}{\degree}\) (which is \(\Delta \theta\), obtained by dividing the circle's \(\qty{0}{\degree} - \qty{360}{\degree}\) into a number of equal portions \(N\)).
+   #+ATTR_LATEX: :height 20em
+   [[./images/graphical-construction-of-cam-radial-lines.png]]
+
+5. Starting from \(\theta = \qty{0}{\degree}\), use \(s_i + r_b + r_0\) to determine the location of the centre of the roller on the corresponding radial line, then *draw a circle of \(r_0 = 0.5''\) representing the roller on each radial line*.
+   #+ATTR_LATEX: :height 19em
+   [[./images/graphical-construction-of-cam-roller-representation.png]]
+
+6. Construct the cam profile so that the profile curve is *tangent to* all the roller circles.
+   #+ATTR_LATEX: :height 19em
+   [[./images/graphical-construction-of-cam-construct-cam-profile.png]]
+
+Final drawing:
+#+ATTR_LATEX: :height 20em
+[[./images/graphical-construction-of-cam-final-drawing.png]]
+
+** Contact geometry of a roller follower
+#+begin_center
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/contact-geometry-of-roller-follower-pic-1.png]]
+#+ATTR_LATEX: :width 0.49\textwidth :center
+[[./images/contact-geometry-of-roller-follower-pic-2.png]]
+#+end_center
+
+[[./images/roller-follower-and-cam-diagram.png]]
+
+** Contact geometry of a flat-faced follower
+[[./images/contact-geometry-of-flat-faced-follower.png]]
+
+[[./images/flat-faced-follower-and-cam-diagram.png]]
+
+** Roller follower with offset
+- Cam systems are sometimes designed with offset followers.
+- The intent is to *reduce the lateral forces* on a cam follower during the rise portion of the cycle.
+- Finding the optimum offset requires careful analysis.
+- Careless design could worsen the situation.
+
+*** Roller follower with offset \(e\)
+- The offset is represented by an offset circle.
+- The locations of roller centre are found at different angular positions based on the offset circle.
+
+*** Drawing steps
+1. Divide cam angle \(\theta \ (\qty{360}{\degree})\) into a *number of equal portions*, \(N\) (say \(\qty{30}{\degree}\) intervals, \(N = 12\) portions).
+2. Using displacement functions, *calculate and tabulate* \(s\) at every interval (say \(\qty{30}{\degree}\)) \(s_1, s_2, s_3, \ldots, s_{N + 1}\).
+3. Draw the *base circle* with given radius \(r_b\).
+4. Draw the *prime circle*, whose radius is \(r_b + r_0\).
+   #+ATTR_LATEX: :height 16em
+   [[./images/roller-follower-with-offset-prime-circle.png]]
+5. Draw an *offset circle* of radius \(e\), centred at the cam rotation axis.
+   #+ATTR_LATEX: :height 21em
+   [[./images/roller-follower-with-offset-offset-circle.png]]
+6. Draw $N$ lines tangent to the *offset circle*.
+   #+ATTR_LATEX: :height 21em
+   [[./images/roller-follower-with-offset-tangent-to-offset-circle.png]]
+7. Starting from \(\theta = \qty{0}{\degree}\), use $ss$, from the intersection point on the prime circle to determine the location of the centre of the roller on the corresponding line, then *draw a circle of \(r_0\) representing the roller on each line*.
+   #+ATTR_LATEX: :height 20em
+   [[./images/roller-follower-with-offset-roller-circle.png]]
+8. Construct the camp profile so that the profile curve is *tangent to* all the roller circles.
+   #+ATTR_LATEX: :height 20em
+   [[./images/roller-follower-with-offset-cam-profile.png]]
+
+** Analytical method
+
+*** Coordinates
+The cam profile coordinates are (for zero offset):
+\[x = - (r_b + s) \sin \theta - \frac{ds}{d \theta} \cos \theta\]
+\[y = (r_b + s) \cos \theta - \frac{ds}{d \theta} \sin \theta \tag{1}\]
+
+[[./images/cam-profile-design-analytical-method-diagram.png]]
+
+*** Cam curvature
+Parametric expression for the radius of curvature:
+\[\rho = \frac{\left[\left(\frac{dx}{d \theta} \right)^2 + \left(\frac{dy}{d \theta} \right)^2 \right]^{\frac{3}{2}}}{\frac{dx}{d \theta} \frac{d^2 y}{d \theta^2} - \frac{dy}{d \theta} \frac{d^2 x}{ d \theta^2}} \tag{2}\]
+
+For a translating flat-faced follower:
+\[\frac{dx}{d \theta} = - \left(r_b + s + \frac{d^2 s}{d \theta^2} \cos \theta \right)\]
+\[\frac{d^2 x}{d \theta^2} = \left(r_b + s + \frac{d^2 s}{d \theta^2} \right) \sin \theta - \left(\frac{ds}{d \theta} + \frac{d^3 s}{d \theta^3} \right) \cos \theta\]
+
+From \((2)\):
+\[\frac{dy}{d \theta} = - \left(r_b + s + \frac{d^2 s}{d \theta^2} \right) \sin \theta\]
+\[\frac{d^2 y}{d \theta^2} = - \left(r_b + s + \frac{d^2 s}{d \theta^2} \right) \cos \theta - \left(\frac{ds}{d \theta} + \frac{d^3}{d \theta^3} \right) \sin \theta\]
+
+Substituting into \((1)\):
+\[\rho = r_b + s + \frac{d^2 s}{d \theta^2}\]
+
+@@latex: \newpage@@
+
+*** Avoiding any cusps in the offset profile
+- When the radius of curvature \(\rho = 0\), a *cusp, or a sharp corner* occurs.
+- When \(\rho < 0\), *a concave portion* of the profile occurs, which is unfavourable for a flat-faced follower.
+- To avoid both problems, it is required that \(\rho > 0\) for the flat-faced follower.
+
+For a flat-faced follower:
+\[\text{Radius of curvature: } \rho = r_b + s + \frac{d^2 s}{d \theta^2}\]
+\[r_b + s + \frac{d^2 s}{d \theta^2} > 0\]
+\[r_b > - \left(s + \frac{d^2 s}{d \theta^2} \right)\]
+
+Let \(Q = s + \frac{d^2 s}{d \theta^2}\), then:
+\[r_b > -Q\]
+\[r_b > [-Q]_{max}\]
+
+[[./images/avoiding-cusps-and-concave-profile-diagram.png]]
+
+*** Example
+Determine the minimum allowable base-circle radius of a cam based only on the given harmonic return portion of a motion program. The angular range for the return is \(\pi \le \theta \le \frac{5 \pi}{3}\), with a span of \(\frac{2\pi}{3}\), and the lift, $L$, of the flat-faced follower is \(\qty{2}{cm}\).
+
+The follower displacement is given by:
+\[s = \frac{L}{2} \left[1 + \cos \left(\frac{\pi (\theta - \pi)}{\frac{2\pi}{3}} \right) \right] \text{ or } s = 1 + \cos [1.5 (\theta - \pi)]\]
+
+Differentiating with respect to \(\theta\):
+\[\frac{ds}{d \theta} = - 1.5 \sin [1.5 (\theta - \pi)]\]
+\[\frac{d^2 s}{d \theta^2} = - 1.5^2 \cos [1.5 (\theta - \pi)]\]
+
+Hence:
+\[Q = s + \frac{d^2 s}{d \theta} = 1 + \cos [1.5 (\theta - \pi)] - 2.25 \cos [1.5(\theta - \pi)]\]
+\[Q = 1 - 1.25 \cos [1.5(\theta - \pi)]\]
+\[-Q = -1 + 1.25 \cos [1.5(\theta - \pi)]\]
+\[[-Q]_{max} = 0.25\]
+
+The condition \(r_b > [-Q]_{max}\) gives \(r_b > 0.25\), hence:
+\[r_b > \qty{0.25}{cm}\]
+
+* Static force analysis
+
+** Steps
+1. Free individual body or bodies.
+2. Draw applied force and moments.
+3. Draw *assumed* constraint forces.
+4. Write the equilibrium equations for each free body. There is a total of \(3N\) equations for \(N\) bodies.
+5. Solve the equations for unknowns.
+
+** Drawing free body diagrams
+
+*** Vector equations
+\[\sum_i \vec{F}_i = 0\]
+\[\sum_j \vec{T}_j = 0\]
+
+*** Scalar equations
+\[\sum F_{ix} = 0\]
+\[\sum F_{iy} = 0\]
+\[\sum T_j = 0\]
+
+3 equations for each free body, which means \(3N\) equations for \(N\) bodies.
+
+*** Convention for forces in free-body diagram
+1. If the direction and magnitude are known, draw them accordingly.
+2. If the line of action of the force is known, but th emagnitude is unknown, assume that the direction is along the line of action of the force.
+3. If the action line is unknown, assume a \(x\)-component and a \(y\)-component.
+
+@@latex: \newpage@@
+
+*** Example 1
+- Analyse the linkage in the figure for the torque \(T_{12}\) required if \(P = \qty{120}{lb}\). The driver link 2 is at an angle of \(\qty{135}{\degree}\) with the horizontal axis.
+- Draw the free body diagram of each link.
+
+[[./images/example-1-free-body-diagram.png]]
+
+@@latex: \newpage@@
+
+*** Example 2
+- A pump used for pumping drilling mud in oil-well drilling has two double-acting cylinders. On the upstroke, the gage pressure in the cylinder above the piston is \(\qty{750}{psi}\) above atmospheric and on the bottom side is \(\qty{5}{psi}\) below atmospheric. The frictional resistance from the piston and gland seals and the crosshead is estimated to be total \(\qty{12}{lb}\).
+- Draw the free body diagram of each link.
+
+For link 4:
+#+ATTR_LATEX: :height 25em
+[[./images/example-2-link-4-free-body-diagram.png]]
+
+\[\text{Area of the piston top face, } A_T = 3^2 \pi\]
+\[\text{Net area of piston bottom face, } A_B = A_5 - 0.75^2 \pi\]
+\[750A_T = \qty{21210}{lb}\]
+\[5A_B = \qty{130}{lb}\]
+
+The gage pressure in the cylinder above the piston is \(\qty{750}{psi}\) above atmospheric pressure and the bottom side is \(\qty{5}{psi}\) below atmospheric pressure.
+
+@@latex: \newpage@@
+
+For all links:
+[[./images/example-2-all-links-free-body-diagram.png]]
+
+@@latex: \newpage@@
+
+*** Example 3
+- For the three gears shown below, gear 1, the driver, rotates at \(\qty{1000}{rev.min^{-1}}\) clockwise and delivers \(\qty{30}{kW}\). Gear 1 has a module of \(\qty{10}{mm}\), a pressure angle of \(\qty{20}{\degree}\) , and 35 teeth, while gear 2 has 45 teeth, and gear 3 has 60 teeth.
+- Draw the free body diagram of each link.
+
+[[./images/example-3-free-body-diagram.png]]
+
+** Solving equilibrium equations
+
+*** Using Pythagoras' theorem
+[[./images/solving-equilibrium-equations-using-pythagoras-theorem.png]]
+
+\[\sum M_0 = 0\]
+\[T - F_1 h = 0\]
+\[h = \overline{AO} \sin (\theta_1 + \theta_2)\]
+\[T - F_1 \overline{AO} \sin (\theta_1 + \theta_2) = 0\]
+\[\therefore F_1 = \frac{T}{\overline{AO} \sin (\theta_1 + \theta_2)}\]
+
+*** Using vector resolution
+#+ATTR_LATEX: :height 25em
+[[./images/solving-equilibrium-equations-using-vector-resolution.png]]
+
+\[\sum M_0 = 0\]
+\[T - F_1^x \overline{AO} \sin \theta_1 - F_1^y \overline{AO} \cos \theta_1 = 0\]
+\[F_1^x = F_1 \cos \theta_2 \qquad F_1^y = F_1 \sin \theta_2\]
+\[T - F_1 \cos \theta_2 \overline{AO} \sin \theta_1 - F_1 \sin \theta_2 \overline{AO} \cos \theta_2 = 0\]
+\[F_1 \overline{AO} (\sin \theta_1 \cos \theta_2 + \cos \theta_1 \sin \theta_2) = T\]
+\[\therefore F_1 = \frac{T}{\overline{AO} \sin (\theta_1 + \theta_2)}\]
+
+@@latex: \newpage@@
+
+** Graphical static force analysis
+Consider the slider crank linkage shown below, representing a compressor at so low a speed that inertial effects are negligible. It is assumed that gravity forces are also small compared to the other forces and that all forces lie in the same plane. The dimensions are:
+
+\[OB = \qty{30}{mm}, \quad BC = \qty{70}{mm}\]
+
+Find the required crankshaft torque \(T\) for a total gas pressure force \(P = \qty{40}{N}\) when the crank angle \(\phi = \qty{45}{\degree}\).
+
+#+begin_center
+#+ATTR_LATEX: :width 0.32\textwidth :center
+[[./images/graphical-static-force-analysis-link-1.png]]
+#+ATTR_LATEX: :width 0.32\textwidth :center
+[[./images/graphical-static-force-analysis-link-2.png]]
+#+ATTR_LATEX: :width 0.32\textwidth :center
+[[./images/graphical-static-force-analysis-link-3.png]]
+#+end_center
+
+#+ATTR_LATEX: :height 18em
+[[./images/graphical-static-force-analysis-all-links.png]]
+\[\boldsymbol{F}_{21} h - T = 0\]
+\[\boldsymbol{T} = \boldsymbol{F}_{21} h\]
+\begin{align*}
+\boldsymbol{T} &= \boldsymbol{F}_{21} h = (\qty{42.0}{N}) (\qty{26.6}{mm}) \\
+&= \qty{1.12}{N.m}
+\end{align*}
+
+** Sample problem
+
+*** Question
+Below is a photograph of a front-end loader showing the linkage arrangement for the boom mechanism. The boom is actuated by 2 hydraulic cylinders, one on each side of the machine, and the bucket is pivoted relative to the boom by a third hydraulic cylinder. @@latex: \\@@
+
+Neglecting member weights and friction effect, determine the cylinder force \(F_c\) required for static equilibrium of the boom in the position shown under a total bucket load of \(\qty{4000}{N}\) (\(\qty{2000}{N}\) per 1 side).
+
+[[./images/sample-problem-front-end-loader-dimensions.png]]
+
+@@latex: \newpage@@
+
+*** Solution
+The \(xy\) coordinate system has been selected with \(x\) being the horizontal axis and \(y\) being the vertical axis. @@latex: \\@@
+
+#+ATTR_LATEX: :height 10em
+[[./images/sample-problem-front-end-loader-free-body-diagram.png]]
+
+Applying equilibrium equations:
+\[F_{cx} + F_{12x} + F_{32x} = 0 \tag{1}\]
+\[F_{cy} + F_{12y} + F_{32y} - P = 0 \tag{2}\]
+
+Summing moments about point \(O\):
+\[2.84P - 0.71F_{32x} - 0.90F_{cx} - 0.22F_{cy} = 0 \tag{3}\]
+
+Equations \((1) - (3)\) are a system of three equations with 6 unknowns.
+
+From the figure above:
+\[F_{cx} = F_c \cos (\qty{57}{\degree}) \qquad F_{cy} = F_c \sin (\qty{57}{\degree}) \tag{4}\]
+\[F_{12x} = F_{12} \cos (\qty{38}{\degree}) \qquad F_{12y} = F_{12} \sin (\qty{38}{\degree}) \tag{5}\]
+\[F_{32x} = F_{32} \cos (\qty{20}{\degree}) \qquad F_{32y} = F_{32} \sin (\qty{20}{\degree}) \tag{6}\]
+
+Substituting equations \((4) - (6)\) into \((1) - (3)\):
+\[0.545 F_c + 0.788 F_{12} + 0.940 F_{32} = 0\]
+\[0.839 F_c + 0.616 F_{12} + 0.342 F_{32} - 2000 = 0\]
+\[5680 - 0.667 F_{32} - 0.675 F_c = 0\]
+
+Solving the above equations for the unknowns:
+\[F_c = \qty{6595}{N} \qquad F_{12} = \qty{-6758}{N} \qquad F_{32} = \qty{1842}{N}\]
+
+- The cylinder force \(F_c\) required for static equilibrium is \(\qty{6595}{N}\).
+- The components of \(F_{12}\) act in the negative coordinate directions.
+- Member 3 and the cylinder are acted on by compressive forces, whereas member 1 is in tension for the position analysed.
+
+* Dynamic force analysis
+
+** Steps
+1. Find the acceleration of the centre of gravity and the angular acceleration for each link, or use the given ones.
+2. Draw free body diagrams for individual bodies.
+3. Draw inertial force at the centre of gravity and the inertial moment about the centre of gravity.
+4. Draw the applied force and moments.
+5. Draw the assumed constraint forces.
+6. Write the equilibrium equations for each free body. There is a total of \(3N\) equations for \(N\) bodies.
+7. Solve the equations for unknowns.
+
+** Example 1
+The uniform slender rod of mass $m$ and length $L$ is pivoted at $A$ in the position as shown. The rod is released from rest. Determine the initial angular acceleration of the rod and the constraint force at $A$. (Given \(I_G = \frac{1}{12} mL^2\))
+
+[[./images/dynamic-force-analysis-example-1-diagram.png]]
+
+*** Solution
+- Kinematics analysis:
+  Letting \(\alpha\) be the angular acceleration of the rod, we have:
+  \[a_G^x = 0 \qquad a_G^y = - \frac{L}{4} \alpha\]
+- Using D'Alembert's principle:
+  [[./images/dynamic-force-analysis-example-1-d-alembert-principle-diagram.png]]
+  \[\sum M_a = 0\]
+  \[-mg \frac{L}{4} + m \frac{L}{4} \alpha \times \frac{L}{4} + I_G \alpha =0\]
+  \[\alpha = \frac{12g}{7L}\]
+
+  \[\sum F_x = 0\]
+  \[F_{Ax} = 0\]
+
+  \[F_y = 0\]
+  \[F_{Ay} + m \frac{L}{4} \alpha - mg = 0\]
+  \[F_{Ay} = \frac{4}{7} mg\]
+
+@@latex: \newpage@@
+
+** Example 2
+Analyse the planar inline slider-crank mechanism for the given dimensions as shown in the diagram. Given the input $\omega_1$ and $\alpha_1$, determine the required torque $T_1$ and the bearing forces at joints.
+
+[[./images/dynamic-force-analysis-example-2-diagram.png]]
+
+*** Kinematic analysis for velocity
+Using the relative velocity, we can find:
+\[\vec{v}_C = \vec{v}_B + \vec{v}_{C / B} = \vec{\omega}_1 \times \vec{r}_{O1B} + \vec{\omega}_2 \times \vec{r}_{BC}\]
+\[\vec{\omega}_2 = - 2.1 \hat{k} \ (\unit{rad.s^{-1}}) \ (\text{Clockwise})\]
+\[\vec{v}_C = - 14.85 \hat{i} \ (\unit{in.s^{-1}})\]
+
+[[./images/dynamic-force-analysis-example-2-velocity-analysis-diagram.png]]
+
+*** Kinematic analysis for acceleration
+Using the relative acceleration, we can find:
+\[\vec{a}_C = \vec{a}_B + \vec{a}_{C / B} = \vec{a}_B^n + \vec{a}_B^t + \vec{a}_{C /B}^n + \vec{a}_{C / B}^t\]
+\[\vec{\alpha}_2 = 46 \hat{k} \ (\unit{rad.s^{-2}}) \ (\text{Counter-clockwise})\]
+\[\vec{a}_C = - 70 \hat{i} \ (\unit{in.s^{-2}})\]
+
+With the angular velocities and accelerations, the following quantities can be obtained:
+\[\vec{a}_{G1x} = - 71.6 \hat{i} \ (\unit{in.s^{-2}}), \qquad \vec{a}_{G1y} = - 79.5 \hat{j} \ (\unit{in.s^{-2}})\]
+\[\vec{a}_{G2x} = - 106 \hat{i} \ (\unit{in.s^{-2}}), \qquad \vec{a}_{G2y} = - 80.0 \hat{j} \ (\unit{in.s^{-2}})\]
+
+[[./images/dynamic-force-analysis-example-2-acceleration-analysis-diagram.png]]
+
+*** Free body diagrams
+[[./images/dynamic-force-analysis-example-2-free-body-diagrams.png]]
+
+*** Dynamic analysis of link 3 (slider)
+[[./images/dynamic-force-analysis-example-2-link-3-free-body-diagram.png]]
+
+From the free body diagram, we have:
+\[\sum \vec{F} = 0\]
+\[\sum F_x = 0: \quad F_{Cx} + m_3 a_{G3x} = 0\]
+\[\sum F_y = 0: \quad F_N - F_{Cy} = 0\]
+\[F_{Cx} = - 7.776 \times 10^{-3} \times 70 = \qty{0.543}{lb}\]
+\[F_n = F_{Cy}\]
+
+*** Dynamic analysis of link 2
+[[./images/dynamic-force-analysis-example-2-link-2-free-body-diagram.png]]
+
+From the free body diagram, we have:
+\[\sum \vec{M}_B = 0\]
+\[r_{BC} \times (- F_{Cx} \hat{i} + F_{Cy} \hat{j}) - I_{G2} \alpha_2 + \vec{r}_{BG2} \times m_2 (a_{G2x} \hat{i} + a_{G2y} \hat{j}) = 0\]
+\[- r_{BCy} \times F_{Cx} + r_{BCx} \times F_{Cy} - I_{G2} \alpha_2 + r_{BG2y} \times m_2 a_{G2x} + r_{BG2x} \times m_2 a_{G2y} = 0\]
+\[F_{Cy} = - 0.396\]
+
+\[\sum F_x = 0: \quad F_{Bx} - F_{Cx} + m_2 a_{G2x} = 0\]
+\[\sum F_y = 0: \quad F_{By} + F_{Cy} + m_2 a_{G2y} = 0\]
+\[F_{Bx} = \qty{-1.09}{lb}\]
+\[F_{By} = \qty{-0.018}{lb}\]
+
+*** Dynamic analysis of link 1
+[[./images/dynamic-force-analysis-example-2-link-1-free-body-diagram.png]]
+
+From the free body diagram, we have:
+\[\sum \vec{M}_{O1} = 0\]
+\[T_1 \hat{k} + \vec{r}_{O1B} \times (- F_{Bx} \hat{i} - F_{By} \hat{j}) - I_{G1} \vec{\alpha}_1 + \vec{r}_{O1G1} \times m_1 (a_{G1x} \hat{i} + a_{G1y} \hat{j}) = 0\]
+\[T_1 + r_{O1By} \times F_{Bx} - r_{O1Bx} \times F_{By} - I_{G1} \alpha_1 - r_{O1G1y} \times m_1 a_{G1x} + r_{O1G1x} \times m_1 a_{G1y} = 0\]
+\[T_1 = \qty{2.54}{lb.in}\]
+
+\[\sum \vec{F} = 0\]
+\[\sum F_x = 0: \quad F_{01x} - F_{Bx} - m_1 a_{G1x} = 0\]
+\[\sum F_y = 0: \quad F_{01y} - F_{By} - m_1 a_{G1y} = 0\]
+
+\[F_{O1x} = \qty{-1.28}{lb}\]
+\[F_{O1y} = \qty{-0.224}{lb}\]
+
+** Example 3
+The figure below shows a mechanism driven by link 1. At the position shown, link 1 rotates with an angular acceleration \(\alpha_1\). At the output end $F$, the driven link 5 is pushing a mechanical part, which is idealised as a spring of stiffness \(K_s\). The mass of link 3 and the mass of the roller link 4 are considered to be negligible. The dimensions of the links are given in the figure. Given that the spring is compressed by a displacement \(\Delta_s\) at this instant, and the following:
+#+ATTR_LATEX: :environment tabularx :width 1.2\textwidth :align |X|X|X|X|X|X|
+|--------+----------+--------------------+----------------------------+-------------------------+-----------------------------|
+| Link   | Mass     | Location of CG     | Moment of inertia about CG | Acceleration of CG      | Angular acceleration        |
+|--------+----------+--------------------+----------------------------+-------------------------+-----------------------------|
+| /      | <        | <                  | <                          | <                       | <                           |
+| Link 1 | \(m_1\)  | \(G_1\) at \(O_1\) | \(I_1\)                    | 0                       | \(\alpha_1\) (clockwise)         |
+|--------+----------+--------------------+----------------------------+-------------------------+-----------------------------|
+| Link 2 | \(m_2\)  | \(G_2\)            | \(I_2\)                    | \(a_{2x} i + a_{2y} j\) | \(\alpha_2\) (clockwise)         |
+|--------+----------+--------------------+----------------------------+-------------------------+-----------------------------|
+| Link 3 | Massless | \(\textemdash\) | \(\textemdash\)          | \(\textemdash\)        | \(\textemdash\)            |
+|--------+----------+--------------------+----------------------------+-------------------------+-----------------------------|
+| Link 4 | Massless | \(\textemdash\) | \(\textemdash\)          | \(\textemdash\)        | \(\textemdash\)            |
+|--------+----------+--------------------+----------------------------+-------------------------+-----------------------------|
+| Link 5 | \(m_5\)  | \(G_5\) at \(O_5\) | \(I_5\)                    | 0                       | \(\alpha_5\) (counter-clockwise) |
+|--------+----------+--------------------+----------------------------+-------------------------+-----------------------------|
+
+Neglecting the gravitational force and friction forces,
+1. Draw the free-body diagram of each link (except the ground link), for dynamic force analysis.
+2. Derive the expressions for the constraint force at \(D\) between links 4 and 5, the constraint force at bearing \(O_5\), the constraint force at \(B\) (between links 2 and 3), the constraint force at \(A\) (between links 1 and 2), as well as the required input driving torque \(T\).
+
+*** Free-body diagrams
+[[./images/dynamic-force-analysis-example-3-free-body-diagrams.png]]
+
+@@latex: \newpage@@
+
+*** Free-body link 5
+[[./images/dynamic-force-analysis-example-3-link-5-free-body-diagram.png]]
+
+\[\sum T_{O5} = 0\]
+\[F_{45} \cdot \frac{r_5}{2} - I_5 \alpha_5 - K_s \Delta \cdot r_5 = 0\]
+\[F_{45} = \frac{2 I_5 \alpha_5}{r_5} + 2K_s \Delta = \frac{2}{3} I_5 \alpha_5 + 2K_s \Delta\]
+
+\[\sum F_x = 0\]
+\[F_{05}^x = 0\]
+
+\[\sum F_y = 0\]
+\[F_{05}^y + F_{45} - K_s \Delta = 0\]
+\[F_{05}^y = K_s \Delta - F_{45} = - \frac{2 I_5 \alpha_5}{r_5} - K_s \Delta\]
+
+*** Free-body link 2 and 4
+[[./images/dynamic-force-analysis-example-3-link-2-and-4-free-body-diagram.png]]
+
+\[\sum T_A = 0\]
+\[I_2 \alpha_2 + F_{32} (r_2 \cos \qty{30}{\degree} - r_3 \cos \qty{45}{\degree}) \sin \qty{45}{\degree} + m_2 a_{2x} \frac{r_2}{2} \sin \qty{30}{\degree} - m_2 a_{2y} \frac{r_2}{2} \cos \qty{30}{\degree} - F_{45} \frac{r_2}{2} \cos \qty{30}{\degree} = 0\]
+\[F_{32} = (3 \sqrt{3} m_2 a_{2y} + 2 \sqrt{3} I_5 \alpha_5 + 6 \sqrt{3} K_s \Delta - 1.5 m_2 a_{2x} - I_2 \alpha_2) \div 2 \sqrt{2}\]
+
+\[\sum F_x = 0\]
+\[F_{12}^x - m_2 a_{2x} + F_{32} \cos \qty{45}{\degree} = 0\]
+\[F_{12}^x = \frac{5}{8} m_2 a_{2x} - \frac{1}{4} (3 \sqrt{3} m_2 a_{2y} + 2 \sqrt{3} I_5 \alpha_5 + 6 \sqrt{3} K_s \Delta - I_2 \alpha_2)\]
+
+\[\sum F_y = 0\]
+\[F_{12}^y - m_2 a_{2y} - F_{45} + F_{32} \sin \qty{45}{\degree} = 0\]
+\[F_{12}^y = \frac{4 - 3 \sqrt{3}}{4} m_2 a_{2y} + \frac{4 - 3 \sqrt{3}}{6} I_5 \alpha_5 + (2 - 1.5 \sqrt{3}) K_s \Delta + \frac{1}{4} (1.5 m_2 a_{2x} + I_2 \alpha_2)\]
+
+*** Free-body link 1
+[[./images/dynamic-force-analysis-example-3-link-1-free-body-diagram.png]]
+
+\[\sum T_{O1} = 0\]
+\[T + I_1 \alpha_1 + F_{12}^y \cdot 1 = 0\]
+\[T = - I_1 \alpha_1 + \frac{3 \sqrt{3} - 4}{4} m_2 a_{2y} + \frac{3 \sqrt{3} - 4}{6} I_5 \alpha_5 + (1.5 \sqrt{3} - 2) K_s \Delta - \frac{1}{4} (1.5 m_2 a_{2x} + I_2 \alpha_2)\]
