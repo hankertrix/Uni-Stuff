@@ -1,0 +1,201 @@
+% Created 2025-04-29 Tue 19:27
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{minted}
+\author{Hankertrix}
+\date{\today}
+\title{Perspectives Notes}
+\hypersetup{
+ pdfauthor={Hankertrix},
+ pdftitle={Perspectives Notes},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 30.1 (Org mode 9.7.11)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents \clearpage\newpage
+\section{Definitions}
+\label{sec:orgd32f78e}
+
+\subsection{Genome}
+\label{sec:org2e7056d}
+A genome refers to all the genetic information of an individual (or a species).
+\subsection{Genomics}
+\label{sec:org71b6a28}
+Genomics is the study of the entire genome of an organism or genomes of several organisms.
+\subsection{Genetics}
+\label{sec:org235ce20}
+Genetics is the study of an individual gene or a specific group of genes.
+\subsection{"-omics" suffix}
+\label{sec:org39f85aa}
+The "-omics" suffix refers to using a holistic approach, like using a whole genome or a whole cell, to study complex interactions within biological systems. This approach is also called holism. Dealing with the complexity of multiple factors in a meaningful way is one of the challenges in this approach.
+
+
+All "-omics" studies ideally should have:
+\begin{itemize}
+\item Technology in handling large numbers of samples to acquire data. This is also known as high throughput sample management and data acquisition, which makes use of robotic and automated systems.
+\item Means of processing and analysing the large volume of data generated and acquired, which is made possible with computer programming, in the field known as bioinformatics.
+\end{itemize}
+
+\newpage
+\subsection{"-etics" suffix}
+\label{sec:orgc410fc0}
+The "-etics" suffix reflects the more traditional reductionist approach, whereby the focus of the study is "reduced" to one or few components, like one or a few genes. It is as if we are mentally dissecting a gene from the rest of the pool of genes in an organism and finding out about its function and regulation.
+
+
+Because of the interconnectivity of gene regulation, some studies cannot be done by examining one or two components through the "-etics" type of analysis. Instead, "-omics" level of study is needed to reveal complex patterns. However, without the data and conclusions based on "-etics" studies, no matter how much "-omics" data we may have, significant conclusions cannot be drawn. Thus, the two approaches complement each other.
+
+\newpage
+\subsection{The Human Genome Project (HGP)}
+\label{sec:org1ffe304}
+The goals of the Human Genome Project is to:
+\begin{itemize}
+\item Determine the base pair sequence of the entire human genome
+\item Construct a map showing the sequences of genes on specific chromosomes
+\end{itemize}
+
+The Human Genome Project started in 1990, and it took 13 years to completely sequence the haploid set of the human genome.
+
+
+From the sequence data of the human genome, we now know that:
+\begin{itemize}
+\item The human genome (the haploid set, which is 23 chromosomes) contains more than 3 billion base pairs.
+\item It is estimated that there are 20,000 to 25,000 protein-encoding genes, which take up only 1\% of the genome.
+\item 95\% of the average protein-coding gene in humans exists as intron sequences.
+\item Much of the human genome was therefore formerly described as "junk", and does not specify the order of amino acids in a polypeptide.
+\item It is now recognised that many "junk" regions have regulatory roles.
+\end{itemize}
+
+The human genome project has moved beyond the initial goal of simply determining the base sequences to the next phase that aims to bring clarity to the genes' functions and their complexity of interaction. This has spurred the concept of personalisation in healthcare. The data from the human genome project are also put through comparative genomic analysis.
+\subsection{Comparative genomic analysis}
+\label{sec:orgbb55217}
+Comparative genomics compares the genome of one organism to the genomes of other organisms. Many model organisms have genetic mechanisms and cellular pathways in common with humans and comparative genomic data gives us clues on the functions of many human genes. Comparative genomics also offers a way to study evolutionary changes in the genome over time.
+\subsection{Functional genomics}
+\label{sec:org6edff13}
+Functional genomics aims to understand the role of the genome in cells or organisms through the study of expressed genes, like when mRNA transcripts are produced. However, this method may not correctly pick up the expression of genes that are regulated at the translational level.
+\subsection{DNA microarrays}
+\label{sec:org38038d3}
+DNA microarrays are a technique for identifying genes.
+\begin{enumerate}
+\item Microscope amounts of known DNA are fixed onto a small glass slide or silicon chip in known locations.
+\item Mixtures of mRNAs collected from sample cells bind to DNA sequences on the chip through complementary base pairing and are detected through fluorescence.
+\item The presence of mRNA will indicate the expression of a particular gene under the test condition.
+\end{enumerate}
+\subsection{Next-generation sequencing}
+\label{sec:org762c2ba}
+Next-generation sequencing concepts are different from the traditional Sanger method of sequencing (which the human genome project was using) that allows several million to a billion bases to be sequenced within one run. Some of these methods can be used to determine the sequence of DNA and those of mRNA origin (i.e. genes which are expressed).
+\subsection{Primary protein structure}
+\label{sec:org361f1b4}
+The primary protein structure is a sequence of a chain of amino acids.
+\subsection{Secondary protein structure}
+\label{sec:org186468c}
+The secondary protein structure occurs when the sequence of amino acids is linked by hydrogen bonds.
+\subsection{Tertiary protein structure}
+\label{sec:org6b83dc7}
+The tertiary protein structure occurs when certain attractions are present between alpha helices, pleated sheets and other secondary structures.
+\subsection{Quaternary protein structure}
+\label{sec:orgb2e10c7}
+A quaternary protein structure is a protein structure consisting of more than one amino acid chain.
+\subsection{Proteomics}
+\label{sec:org2f8b516}
+Proteomics is the study of the structure, function and interaction of cellular proteins. Understanding protein function is essential to the development of better drugs. Often, \textbf{matrix-assisted desorption/ionisation (MADLI) - based mass spectrometry} is used to obtain the amino acid sequence (primary structure) of all proteins present.
+
+
+Once the primary structure of a protein is known, it should be possible to predict its tertiary structure. Computer modelling of the tertiary structures of proteins is an important part of proteomics.
+\subsection{Proteome}
+\label{sec:org342ae4c}
+The entire collection of a species' proteins is its proteome. The proteome is larger than the genome. Mechanisms such as \textbf{alternative pre-mRNA splicing} increase the number of possible proteins.
+\subsection{Glycomics}
+\label{sec:org3c8dba5}
+Glycomics is the study of a whole collection of carbohydrates from a cell type, tissue, or organ.
+\subsection{Lipidomics}
+\label{sec:orgb4b4279}
+Lipidomics is the study of a whole collection of lipids from a cell type, tissue or organ.
+\subsection{Metabolomics}
+\label{sec:org5f16af7}
+Metabolomics is the study of a whole collection of metabolites from a cell type, tissue or organ.
+\subsection{Metagenomics}
+\label{sec:org52141d6}
+Metagenomics are DNA sequences of the whole community of various microorganisms.
+\subsection{Bioinformatics}
+\label{sec:orgb09e8b9}
+Bioinformatics is the application of computer technologies, software and statistical techniques to the study of biological information.
+\begin{itemize}
+\item Genomics, proteomics and other "-omics" produce an enormous amount of raw data.
+\item These fields depend on computer analysis to find significant patterns in the data.
+\end{itemize}
+
+Scientists hope to find relationships between genetic profiles and genetic disorders. New computational tools will be needed to achieve these goals.
+\subsection{Personalised medicine (PM)}
+\label{sec:orge0138c7}
+Personalised medicine is a recently proposed medical model involving the customisation of healthcare. Medical decisions, practices and medical products are to be \textbf{tailored to the individual patient}, and not simply based on the disease or symptoms he is to be treated for.
+
+
+In order to select the most appropriate and effective therapies for a patient:
+\begin{itemize}
+\item Diagnostic testing of the patient is carried out extensively to collect data on his physiology and molecular or cell biology.
+\item The genetic profile of the patient is put through analysis.
+\end{itemize}
+
+The term personalised medicine was first coined in the context of classical genetics, like by considering whether a patient carries a particular allele of a gene to decide if a particular drug should be used to treat him.
+
+It has since broadened to encompass all sorts of measures making use of systems biology (the "-omics") approach, thanks to the progress made with the Human Genome Project (HGP).
+
+\newpage
+\subsubsection{Rationale for the systems biology ("-omics") approach}
+\label{sec:org334b273}
+\begin{itemize}
+\item Most of the genetic variation between individuals has no effect on health. Looking at specific genetic variations may not reveal much.
+\item However, an individual's health is a combined product of genetic variation, personal behaviours and influences from the environment. The collective outcome of these influences is better revealed at the systems biology level.
+\item The combination of genetic variations of an individual affects the responsiveness to some drugs. For example, most cancer drugs are only effective in 25\% of patients, and some anti-depression drugs are effective in only 60\% of patients.
+\item These differences in the responsiveness to drugs are not revealed through a single gene analysis of the patient, but possibly through a genomic level of analysis.
+\end{itemize}
+\subsubsection{Reliance on "-omics" technology}
+\label{sec:org2f4c98e}
+Modern personalised medicine relies on technology that confirms a patient's fundamental biology holistically at the DNA, RNA, protein and metabolite levels, which then leads to confirming a disease and diagnostic approach. For example:
+\begin{itemize}
+\item Genome sequencing can reveal mutations in DNA that influence diseases.
+\item Transcriptomic analysis can show which RNAs are involved with specific diseases.
+\item Variations in specific proteins that are drug targets may reveal whether this drug is effective with this patient.
+\item Analysis of metabolomics profiles may reveal the type, extent and severity of the disease.
+\end{itemize}
+
+\newpage
+\subsubsection{Challenges}
+\label{sec:orgc467393}
+\begin{itemize}
+\item We still do not know enough to make holistic patient profiling and treatment customisation. Even though the sequence of the whole genome may be obtained, many diseases and genes have not yet been associated.
+\item The analysis of acquired diagnostic data, like genetic data obtained from next-generation sequencing, requires computer-intensive data processing prior to its analysis. Current versions are limited in their capability.
+\item We try to use other "-omics" analyses to make up for the limitations of data processing, but it is still not sufficient until we have increased our knowledge base.
+\item In the future, more sophisticated and adequate tools will be required to accelerate the adoption of personalised medicine.
+\end{itemize}
+\subsubsection{Regulatory issues}
+\label{sec:org67c7334}
+The current approaches to intellectual property rights, health insurance policies and personal data protection (data of patients obtained for personalised medicine profiling are considered \textbf{"personal data"}), will have to be redefined and restructured to accommodate the changes personalised medicine will bring to healthcare.
+The FDA has already started to take initiatives to integrate personalised medicine into its regulatory policies. They developed a report in October 2013 titled, \textbf{"Paving the Way for Personalised Medicine: FDA's Role in a New Era of Medical Product Development"}.
+\subsection{Personalised health plans}
+\label{sec:orge09e99a}
+Personalised health plans can help patients mitigate risks, prevent disease, and treat it with precision when it occurs.
+
+\newpage
+\subsection{Genome-wide association study (GWAS)}
+\label{sec:org1c5623e}
+A genome-wide association study will look at one disease, and then sequence the genome of many patients with that particular disease to look for shared mutations in the genome (comparative genomics). Mutations that are determined to be related to a disease by a genome-wide association study can then be used to diagnose that disease in future patients, by looking at their genome sequence to find that same mutation. The first genome-wide association study was conducted in 2005 and studied patients with age-related macular degeneration.
+\subsection{Pharmacogenomics}
+\label{sec:org0053d91}
+Pharmacogenomics is an approach that uses an individual's genome to provide a more informed and tailored drug prescription. Since how well individuals respond to a certain treatment depends on their genetic variation, knowing their genetic content can change the type of treatment they receive. This will help prevent adverse events like side effects, allow for appropriate dosages, and create maximum efficacy with drug prescriptions.
+\end{document}

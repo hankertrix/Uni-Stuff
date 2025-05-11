@@ -1,0 +1,298 @@
+#+TITLE: ML0004 Career & Innovative Enterprise for the Future World Topic 3 Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** Personal brand
+- An intersection of perception and reality.
+- It relates to you and needs to be led by your voice, and supported by your personality, passions and interests.
+
+*** How to design your personal brand
+
+**** Embrace
+- Embrace your identity.
+- Embrace your adversity.
+- Embrace your diversity.
+- Embrace your whole self.
+- Vulnerability is an opportunity.
+- Sharing your backstory breathes life into your personal brand.
+
+**** Create
+- Create value for your audience.
+- Create value for your network.
+- Consume and curate good and relevant content.
+- Have a reason to speak.
+- Write with the intention to create impact and value.
+- Only when you create value for other people will they then see the value in you.
+- Make sure that you stay at the top of people's mind in your industry.
+
+**** Grow
+- Grow relationships.
+- Personal branding is not a numbers game, the number of connections is not as important compared to the depth of your relationships.
+- It's not just about how many people you know, but also about how well you know them.
+- Don't be transactional about outreach, think about reaching out to people for advice, rather than for favours.
+- Personal branding is about building your network and your relationships.
+- Engage with your mentors and the people that follow you, and think about ways you can add value to them.
+- Think about when you can check in with your mentors.
+- Attend conferences and dinners, or host them, and include people outside your industry.
+- 50-30-20 approach
+  - 50% of your time should be spent with people who you aspire to be.
+  - 30% of your time should be spent with people who are in your proximity, like your colleagues and peers, going through their career with you.
+  - 20% of your time should be spent paying it forward to people that look up to you, or your mentees.
+  - As you mature in your career, this can be flipped such that 50% of your time is spent paying it forward.
+
+** Elevator pitch
+- An elevator pitch is simply to pitch your strengths and attributes in a compelling way.
+- It is 30 - 60 seconds in length, and about 4 to 5 sentences long.
+- You are making your first impression with your elevator pitch.
+- Things to take note about an elevator pitch:
+  1. Name.
+  2. Educational background.
+  3. Professional experiences.
+  4. Important skills.
+  5. Be yourself.
+  6. Add value.
+  7. Avoid hobbies and interests, as well as cliché words and anything too personal.
+  8. Practice your elevator pitch.
+  9. Dress professionally.
+  10. Have a strong handshake.
+  11. Maintain eye contact, but remember to blink.
+  12. Don't smoke beforehand.
+  13. Don't use too much jargon.
+  14. Maintain personal space.
+  15. Be pleasant and approachable and try to relax.
+  16. Let it flow, it shouldn't be memorised.
+  17. Try to naturally work your employer or organisation into the pitch.
+  18. Think about using your elevator pitch in emails or even as your professional summary in your resume or your personal profile.
+
+*** Drafting an elevator pitch
+
+**** Step 1: You or your personal brand
+- Who are you? What do you do?
+- Start off your elevator picthc with an introduction and something that will differentiate you from the crowd.
+- You could talk about an interesting module you took in university or talk about something that creates common ground between you and the person you are speaking to.
+- Tweak your introduction and make it relevant to the person you are talking to.
+
+**** Step 2: Your audience
+- Why does it matter to the person you are speaking to?
+- You need to understand your audience. If you aspire to become an AI developer, your introduction to a potential employer would likely include your knowledge on machine learning and big data analysis. A good tip here is not just share what you want to do, but to focus on the problems you are excited to solve, that is, your "why".
+- For instance, instead of saying you are interested in being an AI developer, ask yourself, why do you want to be in that role? What is the motivation that drives you to want to be an AI developer? Identifying your "why" will enable you to talk about it with stronger conviction and passion.
+
+**** Step 3: Call to action
+- What is next?
+- How do you see the current opportunity aligned with your interest?
+- Are you looking for an internship, full-time position or a volunteer stint?
+- Articulate that to the person you are speaking to, to round off your elevator pitch.
+
+** Elevator conversation
+- An elevator conversation is a chance for you to tell your story and spread your network. Most of the time, you will be conducting more elevator conversations than elevator pitches as you network.
+- It's a chance to engage organically, generate enough interest to be remembered, and plan to move the relationship forward through a phone call, email, interview, or a longer conversation later.
+- It is not about "promoting yourself" in the hope of getting a job, it is about forming a genuine relationship so that you are remembered, and it opens doors for future interaction.
+- Before starting a conversation, ask yourself:
+  1. Who will you be speaking with?
+  2. How might you be able to contribute to their projects, teams and organisations?
+  3. What unique experiences have you had?
+- Structure of an elevator conversation:
+  - Introduce yourself.
+  - Make a connection to them or their organisation.
+  - Build on the connection by talking about their work.
+  - Conclude with a call to action, by asking for a follow-up through phone or email.
+- It is far more beneficial in the long-term as you progress in your career development or move into different jobs. Instead of thinking short-term of impressing someone with your elevator pitches.
+- Nevertheless, both elevator pitches and conversations are useful in developing connections to help you in your job search and long-term career development.
+
+** Outsider problem
+The outsider problem refers to the problem that many of the jobs out there are invisible to you. As many as 80% of available jobs may not be listed publicly.
+
+*** How to access "hidden" jobs
+- Get into the conversation, like by hearing insider stories to understand what jobs need doing and what it's like working there, and how you might fit in.
+- You will also eventually learn their lingo and jargon, and know the right questions to ask.
+- Opportunities may sometimes even be generated on the spot thanks to the interaction.
+- Talking to people inside the industry is the best way to discover or create new opportunities.
+- Personal network and word of mouth.
+  Recruiters and employers are usually more willing to consider the applications that come with referrals or word of mouth. When a current employee refers a friend to the role, it validates the qualifications and the character fo the candidate.
+- Referrals from professionals who are currently working in the field.
+  Cultivate good relations with your professors, participate in the NTU Mentorship or Job Shadowing Programmes as they may approach you when a suitable position is available.
+- Contacts from your past internships, part-time jobs, voluntary work and projects.
+  Very often, it is not what you know, but who you know, that opens multiple doors to your first career. Every experiential experience that you undertake matters in helping you discover "hidden" jobs.
+
+** Informational interview
+- An informational interview is not a job interview.
+- A successful informational interview is curiosity.
+- You can gain insights into their successes, failures, and what is important to them if you show sincere and genuine curiosity, which will lead to an authentically engaged conversation.
+- It gives you an opportunity to see what kinds of work resonate with you and helps you determine what communities you would like to be a part of.
+- The person you are interviewing also gets a lot out of the conversation.
+
+*** Tips
+1. Do your homework.
+   - Take some time to research LinkedIn or other online platforms to learn about the professional you're interviewing.
+   - Consider what questions you have about their life and work.
+2. Meet in person.
+   Always try to buy the coffee or lunch to repay them for their time.
+3. Ask who else they recommend you talk with.
+   They may be willing to connect you with other professionals that you could learn from, who might have opportunities for you too if the interview has gone well.
+4. Send a thank-you note.
+   If they want you to keep them in the loop, do so!
+
+*** Summary
+Informational interviewing:
+1. Helps you learn about the work you are interested in.
+2. Provides you with opportunities you cannot see from the outside.
+3. Requires you to show curiosity to ask questions to the professional you are interviewing.
+
+** Offer search
+- Many job descriptions are incomplete, inaccurate and unrepresentative of the real nature of the day-to-day work of the role.
+- Pursue offers instead of jobs.
+- Rejecting a job based on just the job description is rejecting something that you know very little about.
+- Looking for latent wonderfulness just means asking yourself the question, "What interesting opportunities might this organisation or role be able to offer?"
+- Seeking offers instead of jobs requires an open mind, as you need to be genuinely curious about the possibility of each role and organisation.
+- You are just exploring, so no need to bother so much about whether you actually want the job or not.
+- This may help you enter important conversations that may reveal great opportunities that are otherwise invisible from the outside.
+- Genuine curiosity and interest makes you an attractive candidate when job offers arrive.
+- You will then have the information you need when you get a job offer, and can negotiate from a place of genuine understanding.
+
+** Planned happenstance theory
+Planned happenstance theory states that it is okay to not always plan, as you could benefit from unplanned events, chance meetings, and unpredictable environmental factors which can turn out to be an amazing personal or professional opportunity for you.
+
+*** Utilising the theory
+- Be open to reframing.
+- Think positively about what could be learnt from whatever happens.
+- Be persistent in meeting the challenges that surface.
+- Be curious about unplanned events and ask questions instead of passively accepting or being resentful.
+- Be adaptable and flexible to meet the challenges in these unplanned events.
+
+* Managing your online presence
+- Workopolis found that 63% of companies check a person's social media background, and what you post can prevent you from getting a job.
+- 48% of the companies saw something that caused them not to hire, with reasons such as:
+  - Posts about excessive drinking or drug use.
+  - Profanities, racist, or sexist comments.
+  - Suggestive or provocative photos.
+  - Negative comments about previous employers.
+- Some employers like what they found and hired because of it, with reasons such as:
+  - Posts about community and charitable work.
+  - Athletic accomplishments.
+  - Appearing kind and compassionate
+  - Having a professional image.
+- Always think before you post, as it will have an impact on your job prospects.
+- Many employers are turned off by a person looking angry in their profile photo, and are more receptive to someone who appears kind and smiling.
+- Make sure that everything you post online, be it on Instagram, Facebook, Twitter, or any other form of social media is aligned to your personal brand.
+- Ask yourself if your post is something you are alright with future employers viewing in the future when you apply for jobs.
+- If you get the sense that you may regret your post six months, six years or even decades later, then do not post your comment at all!
+
+* Creating a good LinkedIn profile
+- Having a well-written LinkedIn profile will enhance your online presence.
+- Conduct a self-audit by searching yourself online and delete any negative posts.
+- Be forward-thinking, do not jeopardise your prospects of a dream job.
+- A LinkedIn profile is like a resume.
+- Get a professional photo of yourself instead of an inappropriate selfie.
+  - Collared shirt and a suit jacket with a tie for guys.
+  - Blazer or a nice fitted top that is appropriate for the office for ladies.
+- Use an appropriate headline, like your job title if you have any, as it makes it easy for recruiters and hiring managers to find you easily.
+- Have a "What I can do for you"-oriented profile summary.
+  - It helps you get noticed by recruiters and hiring managers for buzzwords that they may be looking up.
+  - Short and sweet, not self-focused, but problem-focused, like what problems you have helped solved.
+  - Include 3 or 4 problems to make up your profile summary.
+- Likewise, make your work experience short and sweet, include the following:
+  1. Job titles
+  2. Company names
+  3. Dates (months and years)
+  4. One bullet point that explains your experience (optional) and summarises the overall responsibilities within each of the jobs you've held.
+- Your LinkedIn profile should pique the interest of the recruiter or hiring manager.
+- Show off your recommendations.
+  - Simple way to make your LinkedIn profile stand out from the others out there.
+  - Recommendations should come from people whom you have worked for.
+- Put out your contact details.
+  - Email address at minimum, phone number if comfortable.
+- Focus on your internship and concrete experiences.
+- Avoid fluffy buzzwords like "hard-working" and highlight your skills using concrete explanations.
+
+** Job search on LinkedIn
+- Run a blank search by clicking the search bar and pressing enter.
+- Select "Posts", then "All filters", under "Author company", add your target companies, then click "Show results".
+- You will now get a list of everyone who is active on LinkedIn.
+- Scan through the posts and identify authors who fall into one of the following categories:
+  1. Those with a recruiter in their job title.
+  2. Those with an "I'm hiring" cover image in their profile picture.
+  3. Those who have just started a new role at that company recently.
+- Leave a meaningful comment on 5 posts for every day for the next 2 weeks.
+- This allows your profile to stay at the top of people's mind.
+- Recruiters and hiring managers are often connected on LinkedIn, so commenting more will increase the chances of you appearing on their radar.
+- 3 things that might happen after your comment:
+  1. Reply from the person.
+  2. Exposure due to recruiters being tagged in the post.
+  3. Allows you to send a follow-up connection request.
+- Send a connection request by doing the steps below:
+  1. Lead with positivity.
+     Open your connection request on a positive note and try to make it about them, like "Hope you have a great start to your week!"
+  2. Show them you know them.
+     - Talk about their career path.
+     - Make an observation on a piece of content they've shared or created.
+     - Check their other social media and see what they have been posting.
+     - Add value for them by recommending something or giving advice.
+  3. Ask a genuine question.
+     - This makes it seem like you're seeking guidance from your contact.
+     - This builds them up, makes them feel good and shows that you've given this topic some serious thought.
+
+* Networking
+
+** Networking reframe
+- Networking is just asking for directions.
+- Most people enjoy doing small things to help others.
+- Asking for help finding people or information in a professional context is similar to asking for directions.
+- Networking allows people inside a community to help people from outside the community find their way, learn new things, and participate in a domain or a type of work.
+- The community benefits as there is more information for everyone to take advantage of.
+- The goal is to be part of the network.
+
+*** Why is networking important?
+- According to a study by LinkedIn, 70 - 80% of jobs never get posted on public platforms and are filled via networking of some sort.
+- This means you only have access to 20 - 30% of the jobs that make it to the market.
+- When you network with people, whether professionally or socially, it allows more people to know about you.
+- When more people know about you, your visibility increases.
+- Also, we tend to get far more information through our networks than we can ever Google such as personal insights, industry trends and first-hand news.
+- In a nutshell, networking gives us more visibility, opportunities and access to useful information.
+
+** Outbound networking
+Outbound networking begins with people you already know and works outward through asking the people you know for contacts and referrals.
+
+*** When to use it?
+- Use it to broadly explore opportunities.
+- Find unexpected connections to people and organisations in your extended network.
+- Great place to start.
+
+** Inbound networking
+Inbound networking is reaching directly into a different network to get to a person or organisation more directly than asking the people you already know.
+
+It can be intimidating and requires creativity and cold calls.
+
+*** When to use it?
+- When you want to meet a specific person or have a specific interest.
+
+** Dos and don'ts of networking
+
+*** Dos
+1. Don't interrupt the person who is talking.
+2. Don't be the only one talking.
+3. Avoid negative body language.
+
+*** Don'ts
+1. Dress appropriately
+2. Use positive body language.
+3. Ask good questions and allow the other person to talk.
+
+*** Tips
+1. Craft and practice your pitch.
+2. Look into events that interest you and attend them.
+3. Make connections with individuals who add value.
+4. Follow up with the connections you make.
+5. Seek out alumni.
+
+** Follow up to networking
+1. Following the company's website or careers page on LinkedIn and attend future events held by the company.
+2. Following them on all social media platforms (Facebook, LinkedIn, Instagram and Twitter) so that you will be constantly updated on their latest happenings.
+3. Sending them a customised LinkedIn invitation, share news articles on topics of shared interest and share your thoughts on it.
+
+** Dressing
+- Dressing appropriately is important as first impressions count. You want to be dressed for the job you want.
+- It boosts your confidence and draws the right kind of attention when attending a networking event.
+- Dress based on the event dress code. Always check with the event organiser if you are not sure.

@@ -1,0 +1,36 @@
+#+TITLE: CY0002 Ethics Reflective Assignment
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Question
+Suppose that our *sole concern* with reasoning in the deductive mode. How has your understanding of the nature of ethical reasoning and ethical argumentation changed since the start of the semester?
+
+** Use of formalisation
+One of the biggest ways in which my understanding has changed is the through the use of formalisation in reasoning. Formalisation is essentially turning premises and arguments in natural language into abstract logical symbols for analysis. An example of formalisation is as follows, using Prior's paradox:
+
+Either tea drinking is common in England or it ought to be the case that all New Zealanders are shot. The sentence can be formalised as such:
+
+\[p \vee Oq\]
+
+Where:
+- $p$ refers to the proposition that tea drinking is common in England.
+- $q$ refers to the proposition that all New Zealanders are shot.
+- $Oq$ meaning that $q$ is obligatory.
+
+This way of formalisation allows the decomposition of long, and complex arguments made in natural language to be distilled into abstract logical symbols, which are far easier to analyse. This makes it possible to use theorem provers to prove the validity of a given statement based on the axioms and the rules of inference in deductive.
+
+For me, this brings a new dimension to ethical reasoning and argumentation as all arguments can be boiled down to these logical symbols and then given to theorem provers to prove the validity of a given argument or statement, allowing me to easily check the validity of a given argument, as humans are flawed and often make logical errors, and especially so when arguments are obscured by natural language.
+
+However, breaking down an argument into its logical symbol equivalent is not as easy, and requires a lot of practice, but having the ability to use a theorem prover to prove the validity of the argument can make truth more easily attainable in a post-truth world. Being able to work through the argument using steps, similar to how it is done in mathematics also makes it far easier to understand and work through.
+
+** Syntactic substitution
+One of the most surprising things that I have learnt so far is the use of syntactic substitution to invalidate an argument or defend a position. Semantics like the Gibbard-Karmo-Singer semantics are what I have always thought to be used in such situations, and have never seen anything similar to a syntactic substitution used in this way.
+
+The way you can apply syntactic substitution functions just like in maths, makes argumentation far more interesting, especially when a substitution can be made /salva veritate/. I am still not quite sure how Gerhard Schurz is- and o-restricted substitutions (\(\sigma\) and \(\sigma'\) respectively) can be made /salva veritate/, but it is a powerful tool in the philosopher's toolbox to be used in argumentation.
+
+** Concessions and loss of generality
+It is also quite eye-opening to see that philosophers are not as concerned with generality as mathematicians are. One great example would be the defence of Hume's law, where there are 7 different steps that one needs to take, conceding a lot of special cases along the way, to make sure that Hume's law still holds. I would think that at that point, the law is no longer a law, since it only applies in specific circumstances and has lost a lot of its power, due to the huge loss of generality. It seems that philosophers are still happy with a neutered law that only applies in specific circumstances, as long as it can hold up their view of the world. I find that quite interesting.
+
+** Complexity
+So far, it seems that ethical reasoning and argumentation is heading towards increasing complexity to deal with all the pitfalls, drawbacks and issues that are currently present in ethical reasoning. I wonder if there is a simpler way to go about all these, as such complexity makes proper ethical reasoning and argumentation untenable for most people who haven't studied philosophy for years to understand all the complex rules, laws and logical symbols of a particular logic system. As the saying goes, "The idiot admires complexity, while the genius admires simplicity". It may not be long before most philosophers would need the help of theorem provers by their side to work through the complex systems that they have created, somewhat similar to mathematicians of this day and age.

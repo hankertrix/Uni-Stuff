@@ -1,0 +1,13 @@
+{
+  "$schema": "https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json",
+  "version": "0.2",
+  "dictionaryDefinitions": [
+    {
+      "name": "arduino-cone-layer-words",
+      "path": "./words.txt",
+      "addWords": true
+    }
+  ],
+  "dictionaries": ["arduino-cone-layer-words"],
+  "ignorePaths": ["node_modules", "/words.txt"]
+}

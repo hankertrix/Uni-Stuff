@@ -1,0 +1,347 @@
+#+TITLE: MA0218 Exercise 4
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+STARTUP: inlineimages
+#+OPTIONS: toc:2
+#+PROPERTY: header-args :session py :kernel python3 :results output
+
+* Solutions
+
+** Problem 1
+Import the required libraries.
+#+begin_src jupyter-python :results none
+import numpy as np
+import pandas as pd
+import seaborn as sb
+import matplotlib.pyplot as plt
+
+# Set the default seaborn style for graphics
+sb.set_theme()
+#+end_src
+
+Load the data.
+#+begin_src jupyter-python
+house_data = pd.read_csv("train.csv")
+
+print(house_data)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+        Id  MSSubClass MSZoning  LotFrontage  LotArea Street Alley LotShape  \
+0        1          60       RL         65.0     8450   Pave   NaN      Reg
+1        2          20       RL         80.0     9600   Pave   NaN      Reg
+2        3          60       RL         68.0    11250   Pave   NaN      IR1
+3        4          70       RL         60.0     9550   Pave   NaN      IR1
+4        5          60       RL         84.0    14260   Pave   NaN      IR1
+...    ...         ...      ...          ...      ...    ...   ...      ...
+1455  1456          60       RL         62.0     7917   Pave   NaN      Reg
+1456  1457          20       RL         85.0    13175   Pave   NaN      Reg
+1457  1458          70       RL         66.0     9042   Pave   NaN      Reg
+1458  1459          20       RL         68.0     9717   Pave   NaN      Reg
+1459  1460          20       RL         75.0     9937   Pave   NaN      Reg
+
+     LandContour Utilities  ... PoolArea PoolQC  Fence MiscFeature MiscVal  \
+0            Lvl    AllPub  ...        0    NaN    NaN         NaN       0
+1            Lvl    AllPub  ...        0    NaN    NaN         NaN       0
+2            Lvl    AllPub  ...        0    NaN    NaN         NaN       0
+3            Lvl    AllPub  ...        0    NaN    NaN         NaN       0
+4            Lvl    AllPub  ...        0    NaN    NaN         NaN       0
+...          ...       ...  ...      ...    ...    ...         ...     ...
+1455         Lvl    AllPub  ...        0    NaN    NaN         NaN       0
+1456         Lvl    AllPub  ...        0    NaN  MnPrv         NaN       0
+1457         Lvl    AllPub  ...        0    NaN  GdPrv        Shed    2500
+1458         Lvl    AllPub  ...        0    NaN    NaN         NaN       0
+1459         Lvl    AllPub  ...        0    NaN    NaN         NaN       0
+
+     MoSold YrSold  SaleType  SaleCondition  SalePrice
+0         2   2008        WD         Normal     208500
+1         5   2007        WD         Normal     181500
+2         9   2008        WD         Normal     223500
+3         2   2006        WD        Abnorml     140000
+4        12   2008        WD         Normal     250000
+...     ...    ...       ...            ...        ...
+1455      8   2007        WD         Normal     175000
+1456      2   2010        WD         Normal     210000
+1457      5   2010        WD         Normal     266500
+1458      4   2010        WD         Normal     142125
+1459      6   2008        WD         Normal     147500
+
+[1460 rows x 81 columns]
+#+end_example
+
+Extract the required data.
+#+begin_src jupyter-python :results none
+house_gr_liv_area = house_data["GrLivArea"]
+house_sale_price = house_data["SalePrice"]
+#+end_src
+
+*** (a)
+Plot a joint plot of ~house_sale_price~ against ~house_gr_liv_area~.
+#+begin_src jupyter-python
+sb.jointplot(x=house_gr_liv_area, y=house_sale_price, height=10)
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/871b83c675be67fe09f76b366f0ed72e8a146df7.png]]
+
+Print the correlation of ~house_sale_price~ and ~house_gr_liv_area~.
+#+begin_src jupyter-python
+print(house_sale_price.corr(house_gr_liv_area))
+#+end_src
+
+#+RESULTS:
+: 0.7086244776126511
+
+*** (b)
+Import the linear regression model from ~scikit-learn~.
+#+begin_src jupyter-python :results none
+from sklearn.linear_model import LinearRegression
+#+end_src
+
+*** (c)
+Partition the data sets into a training data set with 1100 rows, and a testing data set with 360 rows.
+#+begin_src jupyter-python :results none
+# Training data sets
+house_gr_liv_area_train = pd.DataFrame(house_gr_liv_area[:1100])
+house_sale_price_train = pd.DataFrame(house_sale_price[:1100])
+
+# Testing data sets
+house_gr_liv_area_test = pd.DataFrame(house_gr_liv_area[1100:1100 + 360])
+house_sale_price_test = pd.DataFrame(house_sale_price[1100:1100 + 360])
+#+end_src
+
+Check whether the data is of the right size.
+#+begin_src jupyter-python
+for data in (
+        house_gr_liv_area_train,
+        house_sale_price_train,
+        house_gr_liv_area_test,
+        house_sale_price_test,
+):
+    print(len(data))
+#+end_src
+
+#+RESULTS:
+: 1100
+: 1100
+: 360
+: 360
+
+*** (d)
+Create the linear regression object.
+#+begin_src jupyter-python :results none
+linear_regression_obj = LinearRegression()
+#+end_src
+
+Train the linear regression model using the training data set.
+#+begin_src jupyter-python :results none
+linear_regression_obj.fit(house_gr_liv_area_train, house_sale_price_train)
+#+end_src
+
+*** (e)
+Print the coefficients of the linear regression model.
+#+begin_src jupyter-python
+print(linear_regression_obj.coef_)
+#+end_src
+
+#+RESULTS:
+: [[113.88950443]]
+
+Create the formula for the linear regression model.
+#+begin_src jupyter-python :results none
+linear_regression_x = house_gr_liv_area_train
+linear_regression_y = linear_regression_obj.coef_ * linear_regression_x + linear_regression_obj.intercept_
+#+end_src
+
+Plot the linear regression line.
+#+begin_src jupyter-python
+figure = plt.figure(figsize=(16, 8))
+plt.scatter(house_gr_liv_area_train, house_sale_price_train)
+plt.plot(linear_regression_x, linear_regression_y, "r-", linewidth=3)
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/e209f396ba9124555f12e75717399d91e4c79aba.png]]
+
+*** (f)
+Predict the sale price using the test data set.
+#+begin_src jupyter-python :results none
+house_sale_price_prediction = linear_regression_obj.predict(house_gr_liv_area_test)
+#+end_src
+
+Plot a scatter plot of the predictions.
+#+begin_src jupyter-python
+figure = plt.figure(figsize=(16, 8))
+plt.scatter(house_gr_liv_area_test, house_sale_price_test, color="green")
+plt.scatter(house_gr_liv_area_test, house_sale_price_prediction, color="red")
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/4b416f16b28010f752302b0c2d38fe2349e3e10c.png]]
+
+*** (g)
+Get the explained variance (R^2) of the model on both the training set and the test set.
+#+begin_src jupyter-python
+explained_variance_train = linear_regression_obj.score(house_gr_liv_area_train, house_sale_price_train)
+explained_variance_test = linear_regression_obj.score(house_gr_liv_area_test, house_sale_price_test)
+
+print(f"Explained variance for training set: {explained_variance_train}")
+print(f"Explained variance for testing set: {explained_variance_test}")
+#+end_src
+
+#+RESULTS:
+: Explained variance for training set: 0.5317704755454566
+: Explained variance for testing set: 0.4011772000692575
+
+The fit of the model isn't that great.
+
+** Problem 2
+Create the functions to do all steps in problem 1.
+#+begin_src jupyter-python :results none
+def linear_regression_pipeline(
+        dependent_variable: str, independent_variables: list[str], data: pd.DataFrame
+):
+    """
+    Function to go through all the steps of problem 1
+    for all dependent variables.
+    """
+
+    # Get the data for the dependent variable
+    dependent_variable_data = data[dependent_variable]
+
+    # Create the training data set for the dependent variable
+    # with 1100 rows
+    dependent_variable_training_data = pd.DataFrame(dependent_variable_data[:1100])
+
+    # Create the testing data set for the dependent variable
+    # with 360 rows
+    dependent_variable_test_data = pd.DataFrame(dependent_variable_data[-360:])
+
+    # Iterate over all of the independent_variables
+    for variable in independent_variables:
+        #
+
+        # Get the data for that variable
+        variable_data = data[variable]
+
+        # Plot the joint plot of the dependent
+        # variable against the independent variable
+        sb.jointplot(x=dependent_variable_data, y=variable_data, height=10)
+
+        # Print the correlation between the dependent variable
+        # and the independent variable
+        print(
+            f"Correlation between {dependent_variable} and {variable}:",
+            dependent_variable_data.corr(variable_data)
+        )
+
+        # Create the training data set for the dependent variable
+        # with 1100 rows
+        variable_training_data = pd.DataFrame(variable_data[:1100])
+
+        # Create the testing data set for the dependent variable
+        # with 360 rows
+        variable_test_data = pd.DataFrame(variable_data[-360:])
+
+        # Create the linear regression model
+        linear_regression_model = LinearRegression()
+
+        # Fit the linear regression model using the training data set
+        linear_regression_model.fit(
+            variable_training_data, dependent_variable_training_data
+        )
+
+        # Get the model coefficient
+        linear_regression_model_coefficient = linear_regression_model.coef_[0][0]
+
+        # Print the coefficient of the linear regression model
+        print(
+            f"Linear regression coefficient for {dependent_variable} vs {variable}:",
+            linear_regression_model_coefficient
+        )
+
+        # Create the formula for the linear regression model
+        linear_regression_x = variable_training_data
+        linear_regression_y = (
+            linear_regression_model.coef_ * linear_regression_x
+            + linear_regression_model.intercept_
+        )
+
+        # Plot the linear regression line on the data,
+        # which is plotted using a scatter plot
+        _ = plt.figure(figsize=(16, 8))
+        plt.scatter(variable_training_data, dependent_variable_training_data)
+        plt.plot(linear_regression_x, linear_regression_y, "r-", linewidth=3)
+
+        # Predict the dependent variable using the test data set
+        model_prediction = linear_regression_model.predict(variable_test_data)
+
+        # Plot a scatter plot for the predictions
+        _ = plt.figure(figsize=(16, 8))
+        plt.scatter(variable_test_data, dependent_variable_test_data, color="green")
+        plt.scatter(variable_test_data, model_prediction, color="red")
+
+        # Print the explained variance of the model on the training data set
+        training_explained_variance = linear_regression_model.score(
+            variable_training_data, dependent_variable_training_data
+        )
+        print(
+            "Explained variance for training set",
+            f"for {dependent_variable} vs {variable}:",
+            training_explained_variance,
+        )
+
+        # Print the explained variance of the model on the test data set
+        test_explained_variance = linear_regression_model.score(
+            variable_test_data, dependent_variable_test_data
+        )
+        print(
+            "Explained variance for testing set",
+            f"for {dependent_variable} vs {variable}:",
+            test_explained_variance,
+        )
+#+end_src
+
+Create the list of independent variables needed.
+#+begin_src jupyter-python :results none
+independent_variables = [
+    "LotArea",
+    "TotalBsmtSF",
+    "GarageArea",
+]
+#+end_src
+
+Call the function to do the linear regression pipeline on all the independent variables above.
+#+begin_src jupyter-python
+linear_regression_pipeline("SalePrice", independent_variables, house_data)
+#+end_src
+
+#+RESULTS:
+:RESULTS:
+#+begin_example
+Correlation between SalePrice and LotArea: 0.2638433538714062
+Linear regression coefficient for SalePrice vs LotArea: 1.9188124184063218
+Explained variance for training set for SalePrice vs LotArea: 0.06996047063721689
+Explained variance for testing set for SalePrice vs LotArea: 0.06617868448896169
+Correlation between SalePrice and TotalBsmtSF: 0.6135805515591944
+Linear regression coefficient for SalePrice vs TotalBsmtSF: 120.1997955853062
+Explained variance for training set for SalePrice vs TotalBsmtSF: 0.4096515413342241
+Explained variance for testing set for SalePrice vs TotalBsmtSF: 0.2630537869934424
+Correlation between SalePrice and GarageArea: 0.6234314389183598
+Linear regression coefficient for SalePrice vs GarageArea: 241.42776434282948
+Explained variance for training set for SalePrice vs GarageArea: 0.4052658994757937
+Explained variance for testing set for SalePrice vs GarageArea: 0.3341589488914384
+#+end_example
+[[file:./.ob-jupyter/59b530a549e956acc179f0c81ebf126ebbd1d243.png]]
+[[file:./.ob-jupyter/619c06404608756008d5169177e0920833c41fb1.png]]
+[[file:./.ob-jupyter/318e13a99ae120b13c611558cd501f40b8d70632.png]]
+[[file:./.ob-jupyter/2898290883eb831dc06adbb3a43e099a7390556c.png]]
+[[file:./.ob-jupyter/a4bffcf39c30fa79020df67e2b478857fc0e622b.png]]
+[[file:./.ob-jupyter/fb9f9bd57bb856ff7affeea7d31ad73bd190c7ff.png]]
+[[file:./.ob-jupyter/b5fc91a887fc52783a5fb0466b443b9f0e30e242.png]]
+[[file:./.ob-jupyter/22f5bc4d30b7cf873c6ccfccdf7e3abb727af00e.png]]
+[[file:./.ob-jupyter/39472fa50378d31bb363841fcac8b7b77a0018ad.png]]
+:END:
+
+From the results above, it seems that ~GrLivArea~ is still the best predictor of sale price, with the highest explained variance (R^2) and correlation. The rest of the variables have a lower explained variance value, but are still useful in predicting sale price, except for ~LotArea~, which has a very low correlation and explained variance value.

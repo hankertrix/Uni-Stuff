@@ -1,0 +1,179 @@
+#+TITLE: SP0061 Science & Tech for Humanity Week 9 Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** "Pro-Ana" content
+"Pro-Ana" content refers to content that promotes eating disorders like anorexia.
+
+** Social science
+- Social science is a broad umbrella that embraces the work of psychologists, sociologists, and communication scholars.
+- Social scientists also include economists and political scientists.
+- Social scientists conduct studies using various methods in an attempt to evaluate the validity or the soundness of a conclusion, like social media causes eating disorders, or that social media make eating disorders worse.
+
+** Internal research
+Internal research refers to research conducted by people within an organisation instead of people from external parties, like scientists or research firms.
+
+* Eating disorder content online
+
+** "Pro-Ana" content
+- "Pro-Ana" content is content that promotes eating disorders.
+- People with eating disorders have posted how-to tips, like how to eat very little or how to escape people noticing that you're eating very little.
+- Some users have publicly urged one another not to eat in their post, like saying, "You can do this!", "You're going to have a BMI under 15.", etc.
+- Some users have shamed each other about their bodies with posts like, "You could be beautiful, but you're so fat right now, lost the weight".
+
+** Eugenia Sullivan Cooney
+- A fashion and beauty influencer who is very thin.
+- In the past, she has acknowledged in interviews years ago that she suffered from an eating disorder.
+- Many people have suffered from eating disorders and discuss it in their socials, so there is nothing terribly unusual about that.
+- This influencer has hundreds of thousands of followers across platforms, and she rarely, if ever, discusses dieting or eating disorders on her social media.
+- She only talks about other topics because of this influencer's very thin appearance.
+- However, there have been petitions to social media companies to deplatform her, to close her account, or to demonetise her.
+- In other words, make it so that she is prevented from making any money from her content through advertising, or through contributions from other users.
+- Some of these petitions were initiated by women with eating disorders who say they are triggered by the influencer's videos.
+- These petitioners have suggested that this influencer's appearance is sufficient to trigger upsetting emotions in them.
+- There was an incident where she was streaming on Twitch and was chatting with fans about her outfit and how she's celebrating her birthday.
+- She was very pleasant and friendly, and some people were telling her to get help, but she just said thank you and that she's fine.
+
+** Questions regarding these cases of eating disorders
+- How good is the evidence that such social media content is harmful?
+- What would constitute convincing evidence to you that such content is harmful?
+- To be convinced, would you require scientific certainty of cause and effect that the social media content was causing the eating disorder?
+- Should action be taken to control such social media content?
+- What sort of action and by whom should governments get involved in preventing potential harm?
+- Should social media platforms such as Twitch, TikTok or Instagram take action either individually or should they band together as an industry to restrict such content?
+- Should we leave it to parents or perhaps to schools and communities to take action about to educate young people about such content and about eating disorders?
+
+* Social media
+
+** How social media companies make money
+- Social media content is driven by algorithms.
+- Social media companies make money by selling advertising, just like traditional media companies.
+- For centuries, newspapers have relied on advertising for much of their revenue, even though a lot of newspaper charge for their papers, either per copy, or for a subscription.
+- And for many years, broadcast media like radio and TV operated by offering their broadcasts for free.
+- Radio and TC sold advertising to make money.
+- When an advertiser buys an ad in a print newspaper, the advertiser just pays the newspaper the money and the ad runs.
+- The advertiser hopes people see the ad.
+- But social media platforms can offer an advertiser more than that.
+- Social media platforms can *measure* audience behaviour, which means they measure how long the ads hold our attention.
+- For example, how long we watch a video or an ad.
+- They also measure our engagement, whether we interact with the media.
+- Social media platforms can help advertisers target ads directly to people whom they want to reach.
+- For example, when you sign up for a TikTok account, you may tell ByteDance a bit about yourself, like your gender, date of birth, and where you are located geographically.
+- TikTok can detect these kinds of data, and target ads to you based on such characteristics.
+- But most social media targeting is based on what you do online, your behaviour and inferences about what your online behaviour reveals about you.
+- A social media can help a company target their target demographic only so that the ad has the highest success rate, which allows the company to not waste money on ads that reach people who are unlikely to be interested.
+- The AI algorithm handles the *tracking* and *matching* of ads.
+- It also *predicts* what content and ads you will be interested in based on what *other users* who share your characteristics are interested in.
+- For example, TikTok's data show that young women in Singapore who liked dance videos also tend to be interested in certain Korean drama series.
+- If you're a 22-year-old female, and you pause on a TikTok video about a viral dance, you might also get served content about those Korean dramas.
+- The Wall Street Journal published a report in July 2021 on TikTok's algorithm
+- They set up TikTok accounts that were powered by bots, or computer programs.
+- The bots were assigned certain unstated interests like sad content.
+- The bots only revealed their interests by pausing to let the videos finish instead of swiping to the next video.
+- Sometimes, the bots would rewatch videos.
+- The Wall Street Journal report measured how quickly TikTok's algorithm detected the interest and the extent to which TikTok serves the account more of the same kinds of content.
+- The algorithm is efficient, as it inferred interests like sad content and barraged the account with sad content within hours.
+- You may love the focused way that a platform like TikTok delivers content.
+- If you develop an interest in a new topic, like baking cookies, TikTok can be efficient in delivering you more and more baking videos.
+
+** Social media content and eating disorders
+- Social media content about eating disorders is often part of the experience of those who suffer from disorders.
+- When you see interviews of people who have suffered from disorders like anorexia and bulimia, you will often see that they viewed such social media contents regularly.
+- It certainly appears from some of the interviewees' remarks that the content inspired their behaviour.
+- It seems fair to say, based on journalism and anecdotal evidence, that social media content about thinness, about eating, about fitness, is woven into the experience of some people with eating disorders.
+
+** Is social media content dangerous?
+- In the context of eating disorders, does viewing the content *cause* the behaviour or reinforce the disordered behaviour.
+- Alternatively, is viewing the content just a behaviour that accompanies the disorder?
+- Is it behaviour that someone with an eating disorder is just likely to engage in?
+- It is possible that viewing thin models is an activity that people tend to do after they become sick.
+- It's possible that the social media behaviour may be viewed almost like a symptom of the eating disorder instead of a cause.
+
+** Wall Street Journal's Instagram is toxic for teen girls
+- After the reporting in July on the TikTok algorithm, the Wall Street Journal reported another story in September that revealed that Instagram had done studies suggesting that Instagram use was associated with negative feelings about body image.
+- When the report came out, there was widespread outrage and many people were saying that Facebook is being irresponsible in ways that are harmful to their audience.
+- Frances Haugen, a Facebook employee, leaked the information to the Wall Street Journal.
+- She leaked Facebook presentations and documents about the company's internal research that have been conducting from 2019 to 202.
+- The way the research results were phrased in the presentation slides were pretty damning.
+- According to the Wall Street Journal, below are the exact words that were used on the presentation slides:
+  - "We make *body image* issues worse for 1 in 3 teen girls"
+    - "When they felt bad about their bodies, IG made them feel worse"
+  - "Teens who struggle with *mental health* say IG makes it worse"
+    - "Teens blame IG for increases in ... *anxiety* and *depression*"
+- Hogan revealed that negative social comparison is worse on Instagram than on other social media platforms like TikTok and Snapchat.
+- Facebook seems to be saying that teens make comparisons to others bodies and lifestyles and often feel like they come up short.
+- The research claimed that social comparisons on TikTok are perhaps not so harmful because the emphasis on TikTok is on activities like dance performance instead of just looking fit.
+- Facebook also mentioned that social comparison is not as bad on Snapchat, as the emphasis on Snapchat is clowning around with comical filters for the face.
+- Facebook said that 40% of teen boys said they experienced negative social comparison.
+- Perhaps by looking at photos of guys with great abdominals for example.
+- The researchers also said that teens report feeling addicted to Instagram.
+- It may be fun to pile on and to join the crowd condemning Meta, but social scientists are quick to remind us that the evidence we have here is limited.
+- Wall Street Journal quoted internal presentations summarising the research.
+- Social scientists want to see more than just the bullet points on the slides, they want to scrutinise how terms were conceptualised, and they want to look at the details of how the studies were done.
+- Social scientists want to assess if we can trust these conclusions.
+- Meta would later defend itself, saying the presentations quoted in the Wall Street Journal report were taken out of context and the slides were created for and used by people who understood the limitations of the research, which is why they occasionally used shorthand language.
+- They also didn't explain the caveats on every slide.
+
+*** Interpretation issues
+- Supporting causal claims usually requires experimental research, which is elaborate.
+- For example, to conduct a proper experiment, a researcher would have to recruit participants and randomly assign them to two groups.
+- One group would be exposed to social media messages showing thin models, and the other group would not see thin models.
+- Ideally the research would hold everything else constant between the two groups and the participants would get the same Instagram feed, except the first group would get the images of thin people.
+- The researchers would see if the first group was more likely to develop eating disorders.
+- Meta did not conduct experimental research, as it is just too expensive and difficult.
+- In its internal research Instagram instead used self-reported data.
+- They asked participants about their social media habits and how their usage made them feel.
+- If participants say that images of thin people make them feel bad, it is helpful to know, but we must verify that they are remembering and reporting their experiences accurately.
+- And if an Instagram user says that she feels addicted to viewing images of thin people, that user is probably speaking casually, not using the term addicted in the same way that clinicians would define that term.
+- It is very difficult, to untangle social media and eating disorders.
+- A lot of research has been done on social media use and eating disorders, but the studies are mostly based on observation, not experiments in which a variable like social media use is manipulated by the experimenter.
+- Some of the studies show that as certain kinds of social media usage increases, eating disorder behaviour also increases.
+- But such studies are unable to demonstrate whether social media usage *causes* the eating disorder.
+
+* What can we do about social problems?
+- Should we take action to limit the spread of content that may be associated with harms?
+- Under what circumstances are there obligations to take action about social problems?
+- When is the evidence sufficient?
+- With most social problems, we're in a situation just like we're in with social media and eating disorders, the evidence is not conclusive.
+- If we decide that action is warranted, who should act and how actions might take the form of political action to craft legislation, such as law regulating potentially harmful content.
+- Social media industry players may take action against such problems, either as individual firms or they may band together and act as partners or through industry organisations.
+- Or maybe you will conclude that parents and communities have responsibilities to educate young people and others about potential harms.
+
+** Political action in the United States
+- In the United States, lawmakers in Congress had hearings in which they called representatives of the social media platforms to testify.
+- Should lawmakers in the United States or elsewhere pass laws to curb such content?
+- And what would such laws look like?
+- Should social media ban content that encourages eating disorders, it would be difficult under the US Constitution, as the First Amendment prohibits many government restrictions on free speech.
+- A question that gets more attention in the United States is, should lawmakers pass laws that make it easier to win lawsuits against social media for circulating content that allegedly contribute to harms.
+- Currently, social media platforms enjoy a higher degree of immunity for the content that circulates.
+- That's based on the theory that social media platforms cannot practically be responsible for content.
+- If the platforms attempted to screen messages, the flow of media messages will slow to a crawl.
+- Despite the level of immunity that social medial platforms have, there are attempts in the United States to sue them, and some of the lawsuits are based on causal claims.
+- There is a lot of pressure for the social media industry to take action against potentially harmful content, action through their content policies and the enforcement of those policies.
+- An Instagram spokesman said in 2021 that the platform does not allow content that promotes or encourages eating disorders, and that the platform removed the accounts that were brought to its attention for breaking the rules.
+- Instagram said they use technology and reports from users to find and remove this content as quickly as they can, and that they are always working to improve.
+- However, they also acknowledged that in the wake of the congressional hearings that they sometimes fail to take down such content.
+
+** Parental or community action
+- Instead of looking to government and industry, we should perhaps leave it to parents to guide their children.
+- Should schools educate young people about the risks of social media and eating disorders?
+- Should communities celebrate diverse body types instead of holding up thin people as ideal?
+- How would a community change norms about body image?
+
+** Other considerations on restricting content
+- When we're looking at restricting content, most ethical frameworks will also ask us to balance other considerations.
+- One of those considerations is the freedom of expression of those with controversial views.
+- If we restrict posts that make other people feel bad, to what extent are we infringing on the rights of people to express themselves or infringing on the rights of the audience to view the material.
+- We need not limit this analysis to whether one has a legal right to express or receive such content.
+- We can also consider moral rights.
+- Another consideration is the responsibility of viewers of the content.
+- Some students in previous classes took the view that skinny girls are not making anyone stop eating.
+- They said it was the responsibility of the viewer of the content to balance her social media diet, just as it's her responsibility to balance her diet of food.
+- How would you answer the questions raised in here?
+- Does the evidence show that social media causes eating disorders?
+- Are you convinced?
+- Do you believe that action is warranted?
+- Who should do what?

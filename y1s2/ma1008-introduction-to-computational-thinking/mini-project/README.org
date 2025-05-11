@@ -1,0 +1,494 @@
+#+TITLE: Logographer
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{upquote}
+#+LATEX_HEADER: \setlength{\parindent}{0em}
+
+* Overview
+Logographer is a [[https://www.python.org/][Python]] program for drawing logos. It requires at least *Python version 3.11* to run.
+
+* Installation
+Logographer requires Python to be installed, so please install Python before trying to run the program. This only applies to Windows, and macOS and Linux both have Python come preinstalled, so there's no need to install Python on these operating systems. However, you may need to update your system's version of Python or install a newer Python version for the program to run successfully. This program requires at least *Python version 3.11*.
+
+@@latex: ~\\~ @@ *Minimum Python version: 3.11*
+
+** Installing Python on Windows
+
+*** Manual installer
+Download the Python installer from this [[https://www.python.org/ftp/python/3.12.3/python-3.12.3-amd64.exe][link]] (this links to the official 64-bit Windows installer for Python 3.12.3) and run the installer. Follow the steps to install Python and you should be done.
+
+*** Winget (package manager)
+Winget is the built-in package manager that comes with Windows. Open up the terminal by using Window + R to open the run dialogue, and type in ~cmd~ and press enter to open the Command Prompt. Copy and paste the following command into the command prompt, press enter, and you should be done.
+
+#+begin_src
+winget install -e --id Python.Python.3.11
+#+end_src
+
+@@latex: \newpage@@
+
+*** Scoop (package manager)
+To use the Scoop package manager, you will need to download and install Scoop first. Feel free to skip this step if you already have Scoop installed. Open up the terminal by using Window + R to open the run dialogue, and type in ~powershell~ and to open Powershell. Copy and paste the following command into the command prompt, press enter, and you should be done installing Scoop.
+
+#+begin_src powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+#+end_src
+
+Test that Scoop is working properly by using the command below:
+#+begin_src powershell
+scoop
+#+end_src
+
+Now to install Python, copy and paste the command below, press enter, and you should be done installing Python.
+#+begin_src powershell
+scoop install main/python
+#+end_src
+
+*** Chocolatey (package manager)
+To use the Chocolatey package manager, you will need to download and install Chocolatey first. Feel free to skip this step if you already have Chocolatey installed. Open up the terminal by using Window + R to open the run dialogue, and type in ~powershell~ and press Ctrl + Shift + Enter to open Powershell in Administrator mode. Copy and paste the following command into the command prompt, press enter, and you should be done installing Chocolatey.
+
+#+begin_src powershell
+Set-ExecutionPolicy Bypass -Scope Process -Force; `
+[System.Net.ServicePointManager]::SecurityProtocol = `
+[System.Net.ServicePointManager]::SecurityProtocol -bor 3072; `
+iex ((New-Object System.Net.WebClient).DownloadString(
+'https://community.chocolatey.org/install.ps1'
+))
+#+end_src
+
+Test that Chocolatey is working properly by using the command below:
+#+begin_src powershell
+choco
+#+end_src
+
+Now to install Python, copy and paste the command below, press enter, and you should be done installing Python.
+#+begin_src powershell
+choco install python
+#+end_src
+
+@@latex: \newpage@@
+
+** Updating your Python version on macOS
+
+*** Manual installer
+Download the Python installer from this [[https://www.python.org/ftp/python/3.12.3/python-3.12.3-macos11.pkg][link]] (this links to the official 64-bit macOS installer for Python 3.12.3) and follow the instructions to install the newer version of Python and you should be done.
+
+*** Homebrew (package manager)
+To use the Homebrew package manager, you will need to download and install Homebrew first. Feel free to skip this step if you already have Homebrew installed. Open up the terminal and copy and paste the following command into the command prompt, press enter, and you should be done installing Homebrew.
+#+begin_src shell
+/bin/bash -c \
+"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#+end_src
+
+Test that Homebrew is working properly by using the command below:
+#+begin_src shell
+brew help
+#+end_src
+
+Now to update your Python version, copy and paste the command below, press enter, and you should be done updating Python.
+#+begin_src
+brew install python3
+#+end_src
+
+@@latex: \newpage@@
+
+** Updating your Python version on Linux
+Updating your Python version on Linux is just updating your system. The default Python version that comes on all modern Linux distributions should be Python 3.11, so there should be no need to do this.
+
+*** Arch-based distributions (Arch, Manjaro, EndeavourOS, etc.)
+#+begin_src shell
+sudo pacman -Syu
+#+end_src
+
+*** Debian-based distributions (Debian, Ubuntu, Linux Mint, etc.)
+#+begin_src shell
+sudo apt update && sudo apt upgrade -y
+#+end_src
+
+*** Fedora and Fedora derivatives (Nobara, Asahi Linux, etc.)
+#+begin_src shell
+sudo dnf upgrade
+#+end_src
+
+*** Gentoo
+#+begin_src shell
+sudo emaint -a sync
+sudo emerge -avuDN @world
+#+end_src
+
+*** Void Linux
+#+begin_src shell
+sudo xbps-install -Su
+#+end_src
+
+@@latex: \newpage@@
+
+** Installing ~tk~ on macOS and Linux
+On macOS and Linux, the ~tk~ library isn't installed by default, so it needs to be installed. This shouldn't be a problem on Windows.
+
+*** macOS
+If you installed Python *manually* using the *installer*, then there is *no need* to install the ~tk~ library.
+
+@@latex: ~\\~ @@ Otherwise, if you used Homebrew to install Python, then use the command below to install the ~tk~ library.
+#+begin_src
+brew install python-tk
+#+end_src
+
+*** Arch-based distributions (Arch, Manjaro, EndeavourOS, etc.)
+#+begin_src shell
+sudo pacman -S tk
+#+end_src
+
+*** Debian-based distributions (Debian, Ubuntu, Linux Mint, etc.)
+#+begin_src shell
+sudo apt install tk-dev
+#+end_src
+
+*** Fedora and Fedora derivatives (Nobara, Asahi Linux, etc.)
+#+begin_src shell
+sudo dnf install tk-devel
+#+end_src
+
+*** Gentoo
+Update your USE flags for Python.
+#+begin_src shell
+sudo cat "USE=\"tk\"" >> /etc/portage/make.conf
+#+end_src
+
+@@latex: \noindent@@ Re-emerge your packages.
+#+begin_src shell
+sudo emerge -avuDN @world
+#+end_src
+
+*** Void Linux
+#+begin_src shell
+sudo xbps-install -S tk
+#+end_src
+
+
+* Getting the program :noexport:
+You can download all the files for this program by using this [[https://download-directory.github.io/?url=https%3A%2F%2Fgithub.com%2Fhankertrix%2FUni-Stuff%2Ftree%2Fmain%2Fy1s2%2Fma1008-introduction-to-computational-thinking%2Fmini-project][link]]. The link downloads all the files for the program from the GitHub repository as a zip file. You'd probably want to rename the file to something like "logographer.zip" instead of the extremely long name that is used by default for the zip file. After downloading, all you need to do is to extract the files, and you're done.
+
+Alternatively, if you have Git installed, you can use the command below to clone the Git repository from GitHub:
+#+begin_src shell
+git clone --depth 1 https://github.com/hankertrix/Uni-Stuff logographer
+cd logographer
+FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-filter y1s2/ma1008-introduction-to-computational-thinking/mini-project/ HEAD
+#+end_src
+
+Or you can use the command below to clone the Git repository from the Codeberg mirror:
+#+begin_src shell
+git clone --depth 1 https://codeberg.org/Hanker/Uni-Stuff logographer
+cd logographer
+FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-filter y1s2/ma1008-introduction-to-computational-thinking/mini-project/ HEAD
+#+end_src
+
+
+* Running the program
+Go to the folder that contains the program, which is most likely where you have extracted the zip file to, or where you have cloned the repository. Once you are in the directory for the program, simply run the command below to start the program:
+#+begin_src shell
+python main.py
+#+end_src
+
+Alternatively, you can run the program by opening the ~main.py~ file using Python. On most systems, this should be just double-clicking on the file after you have Python installed. Otherwise, you might have to right-click on the file in your file explorer and use the "Open with" option to select Python to run the ~main.py~ file.
+
+
+* How to use the program
+For the most part, everything should be pretty clear from the dialogues and prompts given by the program when running it. The only part of the program that may be a bit more unintuitive is the file explorer, which can be interacted with by using the mouse to click on the items, or with the keys documented below.
+
+** File explorer key binds
+#+ATTR_LATEX: :align |c|c|
+|-----------------+-----------------------------------------------|
+| Key             | Action                                        |
+|-----------------+-----------------------------------------------|
+| Up Arrow Key    | Move the cursor up 1 item                     |
+| Down Arrow Key  | Move the cursor down 1 item                   |
+| Left Arrow Key  | Go to the parent folder                       |
+| Right Arrow Key | Select a file or enter a folder               |
+| w               | Move the cursor up 1 item                     |
+| a               | Go to the parent folder                       |
+| s               | Move the cursor down 1 item                   |
+| d               | Select a file or enter a folder               |
+| h               | Go to the parent folder                       |
+| j               | Move the cursor down 1 item                   |
+| k               | Move the cursor up 1 item                     |
+| l               | Select a file or enter a folder               |
+| c               | Select the current folder (for saving a file) |
+|-----------------+-----------------------------------------------|
+
+@@latex: \noindent@@ These key binds should be quite intuitive, maybe except ~hjkl~, which are Vim key binds, so they should be quite intuitive if you are a Vim user.
+
+
+* Logo file format
+The program has the ability to load and save logo files, which is in a standard file format called [[https://toml.io/en/][TOML]]. The logo file is a TOML table with two keys, one called ~data~ and another called ~background_colour~.
+
+** Background colour (~background_colour~)
+The key called ~background_colour~ can either be a string, containing a colour name like ~black~, or a hex string like ~#000000~, or a list of numbers representing the RGB value of the colour, like ~[0, 0, 0]~. This determines the background colour of the screen. This key can be left out, which means it is *optional*, and will *default* to turtle's background colour, which is *white* if it is not given. Below are a few examples:
+
+#+begin_src toml
+background_colour = "#000000"
+#+end_src
+
+#+begin_src toml
+background_colour = [255, 0, 0]  # red
+#+end_src
+
+#+begin_src toml
+background_colour = "blue"
+#+end_src
+
+** Data (~data~)
+The key called ~data~ is where all the data for each of the icon should be. It is a list containing either dictionaries (TOML tables) or lists of dictionaries. You can nest as many lists as you want, as long as every single item of every list is a dictionary in the format documented below.
+
+@@latex: \newpage@@
+
+*** Vertices (~vertices~)
+Each dictionary (TOML table) *must contain* a list of vertices, or points. It is required for the program to be able to draw the icon from the file. Each vertex, or point, is a matrix, or a list of list of integers or floats. For example, the matrix below corresponds to the point (2, 1).
+#+begin_src toml
+[[2], [1]]
+#+end_src
+
+@@latex: \noindent@@ The *square brackets* wrapping each of the numbers *is important*, and must not be left out. The program will tell you that your file is invalid if the square brackets are left out.
+
+@@latex: ~\\~ \noindent@@ The list of vertices must contain either *2 points, or 4 points*. The program will say that your file is invalid if the list of vertices contains any other number of vertices. For a *straight edge*, the list of vertices should have *2 points*, i.e.
+#+begin_src toml
+{ vertices = [[[3], [5]], [[7.7], [9.9]]] }
+#+end_src
+
+@@latex: \noindent@@ The program will draw a straight line between the two points.
+
+@@latex: ~\\~ \noindent@@ For a *curved edge*, the list of vertices should have *4 points*, as it is drawn as a Bézier curve. The first and the last points are the start and end points of the curve respectively, and the second and third points are the points on the control polygon of the Bézier curve. For example:
+#+begin_src toml
+{ vertices = [[[3.3], [5.5]], [[7], [9]], [[11], [13]], [[15], [17]]] }
+#+end_src
+
+@@latex: \newpage@@
+
+*** Fill colour (~fill_colour~)
+This should be self-explanatory, this is the colour to fill the shape with. This option is *optional* and can be left out. If not given, the fill colour will *default to the last fill colour* that was used. It can either be a string, containing a colour name like ~black~, or a hex string like ~#000000~, or a list of numbers representing the RGB value of the colour, like ~[0, 0, 0]~. A few examples are shown below:
+
+#+begin_src toml
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], fill_colour = "#000000" }
+#+end_src
+
+#+begin_src toml
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], fill_colour = "blue" }
+#+end_src
+
+#+begin_src toml
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], fill_colour = [0, 255, 0] }  # green
+#+end_src
+
+@@latex: \noindent@@ This option will usually accompany the option below.
+
+@@latex: \newpage@@
+
+*** Start fill (~start_fill~)
+This should also be self-explanatory, it tells the program to start filling the shape being drawn with the fill colour (~fill_colour~) given. This option is also *optional* and will default to ~false~ if it's not given. It is a boolean that can be either ~true~ or ~false~, but you'll usually want to set it to ~true~. This should be given together with the fill colour, otherwise the option doesn't do anything, and the fill colour option will also not do anything, since the program doesn't fill anything with colour. Below are some examples:
+
+#+begin_src toml
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], fill_colour = "#000000", start_fill = true }
+#+end_src
+
+#+begin_src toml
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], fill_colour = "blue", start_fill = true }
+#+end_src
+
+#+begin_src toml
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], fill_colour = [0, 255, 0], start_fill = true }  # green
+#+end_src
+
+*** End fill (~end_fill~)
+This is another self-explanatory option. This tells the program to stop filling the shape with the fill colour. For this to take effect, the program must already be filling a shape with colour, otherwise there is nothing to stop. This option is also *optional* and defaults to ~false~ if it's not given. It is a boolean that can either be ~true~ or ~false~, but you'll usually want to set it to ~true~. This can be given on its own without the fill colour, since it just tells the program to stop filling the shape with colour. Below is an example:
+
+#+begin_src toml
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], end_fill = true }
+#+end_src
+
+*** Pen colour (~pen_colour~)
+Yet another self-explanatory option. This tells the program what colour to use to draw the outline of the shape. This option is *optional* and can be left out. If it is left out, the pen colour will *default* to the *previous pen colour* being used. This option can either be a string, containing a colour name like ~black~, or a hex string like ~#000000~, or a list of numbers representing the RGB value of the colour, like ~[0, 0, 0]~. A few examples are shown below:
+
+#+begin_src toml
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], pen_colour = "#000000" }
+#+end_src
+
+#+begin_src toml
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], pen_colour = "blue" }
+#+end_src
+
+#+begin_src toml
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], pen_colour = [0, 255, 0] }  # green
+#+end_src
+
+@@latex: \newpage@@
+
+*** Pen size (~pen_size~)
+Once again, yet another self-explanatory option. This tells the program what pen size to use when drawing the edge, be it a curved edge or a straight edge. It affects how thick (or how wide) the line will be when drawn. It is another option that is *optional* and will *default* to a *pen size of 1* when it is not given. This option takes an integer that determines the thickness of the pen. An example is shown below:
+
+#+begin_src toml
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]]
+], pen_colour = "#000000", pen_size = 10 }
+#+end_src
+
+@@latex: \noindent@@ However, do take note that this option will not scale well if you decide to transform the logo after drawing it, such as by scaling or shearing the logo, as those transformations only affect the vertices and not the pen size. If you would like to have the pen thickness be affected by the transformations, consider creating an outer shape that is filled with the desired colour, and an inner shape that is smaller than the outer shape by the pen thickness and is filled with the background colour.
+
+@@latex: \newpage@@
+
+*** Number of segments (~number_of_segments~)
+Finally, an option that isn't self-explanatory. This option tells the program to draw the Bézier curve in the given number of segments. Simply put, this represents the resolution of the Bézier curve drawn. This option should be given with a list of vertices with *4 points*, as that is a Bézier curve. Otherwise, this option will have no effect. This option is *optional*, and defaults to *100 segments* if it is not given, which should be sufficient for most icons. The higher the number, the smoother the Bézier curve will look. However, a higher number also means that the program will take a longer time to draw your icon. The icons you see in the next major section are all drawn with this option set to the default value of 100, so it is definitely more than enough to draw beautiful icons. An example of setting this option is given below:
+
+#+begin_src toml
+{ vertices = [
+    [[3], [5]],
+    [[7.7], [9.9]],
+    [[11], [13]],
+    [[15.5], [17.7]]
+], number_of_segments = 500 }
+#+end_src
+
+@@latex: \newpage@@
+
+*** Trivial example of the full data
+Below is an example of a blue square:
+#+begin_src toml
+data = [
+    { vertices = [
+        [[-300], [300]],
+        [[300], [300]]
+    ], fill_colour = "blue", pen_colour = "blue", start_fill = true },
+    { vertices = [
+        [[300], [300]],
+        [[300], [-300]]
+    ]},
+    { vertices = [
+        [[300], [-300]],
+        [[-300], [-300]]
+    ]},
+    { vertices = [
+        [[-300], [-300]],
+        [[-300], [300]]
+    ], end_fill = true },
+]
+#+end_src
+
+@@latex: \newpage@@
+
+** Trivial example of a logo file
+Below is an example of a logo file that has a green rectangle on an orange background.
+#+begin_src toml
+background_colour = "orange"
+data = [
+    { vertices = [
+        [[-300], [200]],
+        [[300], [200]]
+    ], fill_colour = "green", pen_colour = "green", start_fill = true },
+    { vertices = [
+        [[300], [200]],
+        [[300], [-200]]
+    ]},
+    { vertices = [
+        [[300], [-200]],
+        [[-300], [-200]]
+    ]},
+    { vertices = [
+        [[-300], [-200]],
+        [[-300], [200]]
+    ], end_fill = true },
+]
+#+end_src
+
+** Non-trivial examples
+For non-trivial examples of what a logo file looks like, take a look at the ~logo_files~ folder. Inside the folder are the logo files for the logos drawn in the next section. Specifically, it includes the World Bank logo (~world_bank_logo.toml~), the CERN logo (~cern_logo.toml~) and the logo of the Rust programming language (~rust_logo.toml~).
+
+@@latex: \newpage@@
+
+* Drawn logos
+Just a few examples of what the program can do!
+
+** World Bank Logo
+
+*** Original
+[[file:./images/world_bank_logo.png]]
+
+*** Reflected about the line y = x
+[[file:./images/world_bank_logo_reflected_about_line_y_equal_x.png]]
+
+** CERN Logo
+
+*** Original
+[[file:./images/cern_logo.png]]
+
+*** Scaled down two-thirds and rotated 45 degrees clockwise
+[[file:./images/cern_logo_scaled_down_two_thirds_and_rotated_45_degrees.png]]
+
+** Rust Programming Language Logo
+
+*** Original
+[[file:./images/rust_logo.png]]
+
+*** Sheared with x shear factor of 1 and y shear factor of 0
+[[file:./images/rust_logo_sheared_with_x_shear_as_one_and_y_shear_as_zero.png]]
+
+@@latex: \newpage@@
+
+* Strengths and weaknesses
+
+** Strengths
+- No additional Python packages are used, as this program is built entirely using Python's standard library.
+- Can draw pretty much any logo you want if you can turn it into list of points and put it into the logo file format documented above.
+- Homogeneous coordinates make it easy to transform a logo. It also allows for multiple transformations to be applied at once.
+- Circles and circular arcs are turned into Bézier curves that only have an error of 0.0273% of the circle's radius in their approximation.
+- It can transform your logos in 5 different ways, translation, scaling, rotation, shearing, and reflection.
+- You can use it to create an icon manually, through the graphical user interface, either by typing in the coordinates manually or by clicking on the screen. However, this is an extremely slow way to create an icon, especially if it is more complex than just a few rectangular shapes. A better and faster way to draw an icon using the program is to create a logo file in the format documented above.
+
+** Weaknesses
+- Can only draw one logo at a time. The screen needs to be cleared to draw another logo.
+- Creating a logo is extremely tedious. Using the program's interface to create a logo is even more tedious than creating a logo file and loading the logo file.
+- Having a graphical user interface makes the program quite complicated and hence it has a lot of files and directories.
+
+@@latex: \newpage@@
+
+* Features
+- Has a beautiful title screen (subjective).
+- Has a purely graphical user interface (GUI), so there's no need to touch the command line or the terminal!
+- Has a built-in file explorer, so you don't have to type the files you want to load or save manually, or wonder about why the file you have given isn't found.
+- Automatically resizes the screen to make sure the logo drawn is fully visible. No more cut-off logos and scrolling in the turtle window to view the full logo, unless your logo is bigger than your entire screen, then that's on you.
+- You can create an icon programmatically by using this program as a library, using the functions in the ~math_utils.py~ file to much more easily create your own logos. The ~math_utils.py~ file contains a lot of convenience functions to make logo creation easier. After creating the logo, the logo can be exported as a logo file using the functions in the ~save_lib.py~ file. You can find a few examples in the ~default-logos~ folder.
+- The code is fully documented with comments and documentation strings.
+- Uses TOML as the logo file format, which is easy to read and learn.
+
+* Licence
+This program is licensed under the GNU AGPL V3 licence. You can view the ~LICENCE.txt~ file that is distributed with the program for the licence text.

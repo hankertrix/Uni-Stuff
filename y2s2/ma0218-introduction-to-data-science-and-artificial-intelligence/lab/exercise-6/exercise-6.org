@@ -1,0 +1,242 @@
+#+TITLE: MA0218 Exercise 6
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+STARTUP: inlineimages
+#+OPTIONS: toc:2
+#+PROPERTY: header-args :session py :kernel python3 :results output
+
+* Solution
+
+** Problem 1
+
+*** (a)
+Import the required libraries.
+#+begin_src jupyter-python :results none
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sb
+
+# Set the default theme to seaborn
+sb.set_theme()
+#+end_src
+
+Import the data.
+#+begin_src jupyter-python
+house_data = pd.read_csv("train.csv")
+print(house_data.head())
+#+end_src
+
+#+RESULTS:
+#+begin_example
+   Id  MSSubClass MSZoning  LotFrontage  LotArea Street Alley LotShape  \
+0   1          60       RL         65.0     8450   Pave   NaN      Reg
+1   2          20       RL         80.0     9600   Pave   NaN      Reg
+2   3          60       RL         68.0    11250   Pave   NaN      IR1
+3   4          70       RL         60.0     9550   Pave   NaN      IR1
+4   5          60       RL         84.0    14260   Pave   NaN      IR1
+
+  LandContour Utilities  ... PoolArea PoolQC Fence MiscFeature MiscVal MoSold  \
+0         Lvl    AllPub  ...        0    NaN   NaN         NaN       0      2
+1         Lvl    AllPub  ...        0    NaN   NaN         NaN       0      5
+2         Lvl    AllPub  ...        0    NaN   NaN         NaN       0      9
+3         Lvl    AllPub  ...        0    NaN   NaN         NaN       0      2
+4         Lvl    AllPub  ...        0    NaN   NaN         NaN       0     12
+
+  YrSold  SaleType  SaleCondition  SalePrice
+0   2008        WD         Normal     208500
+1   2007        WD         Normal     181500
+2   2008        WD         Normal     223500
+3   2006        WD        Abnorml     140000
+4   2008        WD         Normal     250000
+
+[5 rows x 81 columns]
+#+end_example
+
+Extract ~GrLivArea~ and ~GarageArea~ from the data set.
+#+begin_src jupyter-python
+extracted_data = house_data[["GrLivArea", "GarageArea"]]
+print(extracted_data.head())
+#+end_src
+
+#+RESULTS:
+:    GrLivArea  GarageArea
+: 0       1710         548
+: 1       1262         460
+: 2       1786         608
+: 3       1717         642
+: 4       2198         836
+
+*** (b)
+Visualise the distribution of the two variables above using a scatter plot.
+#+begin_src jupyter-python
+plt.subplots(figsize=(16, 8))
+plt.scatter(x="GrLivArea", y="GarageArea", data=extracted_data)
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/d69d6e05c16858de68ec34aae39839d08d65abc3.png]]
+
+*** (c)
+Import the k-means clustering model from ~scikit-learn~.
+#+begin_src jupyter-python :results none
+from sklearn.cluster import KMeans
+#+end_src
+
+*** (d)
+Take a guess on the number of clusters.
+#+begin_src jupyter-python :results none
+number_of_clusters = 4
+#+end_src
+
+Create the clustering model.
+#+begin_src jupyter-python :results none
+model = KMeans(n_clusters=number_of_clusters)
+#+end_src
+
+Fit the clustering model.
+#+begin_src jupyter-python :results none
+model.fit(extracted_data)
+#+end_src
+
+*** (e)
+Print the cluster centres.
+#+begin_src jupyter-python
+# The list of strings to display.
+# We use tab to delimit the columns
+centre_str_list: list[str] = [
+    f"Features\tGrLivArea\tGarageArea",
+
+    # Empty string for an extra new line
+    "",
+]
+
+# Iterate over the cluster centres
+for index, centre in enumerate(model.cluster_centers_):
+
+    # Get the GrLivArea and the GarageArea of the centre
+    gr_liv_area, garage_area = centre
+
+    # Add the cluster number with the data to the list of strings
+    centre_str_list.append(
+        f"Cluster {index + 1}:\t{gr_liv_area:.2f}\t{garage_area:.2f}"
+    )
+
+# Join the list of strings with a new line and print the result
+print("\n".join(centre_str_list))
+#+end_src
+
+#+RESULTS:
+: Features	GrLivArea	GarageArea
+:
+: Cluster 1:	1516.04	478.45
+: Cluster 2:	2011.48	600.58
+: Cluster 3:	1015.82	355.10
+: Cluster 4:	2850.62	711.64
+
+Predict the labels for the data using the mode.
+#+begin_src jupyter-python :results none
+labels = model.predict(extracted_data)
+#+end_src
+
+Add the cluster label to the data.
+#+begin_src jupyter-python
+labelled_data = extracted_data.copy()
+labelled_data["Cluster"] = pd.Categorical(labels)
+print(labelled_data.head())
+#+end_src
+
+#+RESULTS:
+:    GrLivArea  GarageArea Cluster
+: 0       1710         548       0
+: 1       1262         460       0
+: 2       1786         608       1
+: 3       1717         642       0
+: 4       2198         836       1
+
+Plot the count plot of the data based on the labels.
+#+begin_src jupyter-python
+plt.figure(figsize=(16, 8))
+sb.countplot(labelled_data["Cluster"])
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/95bbd3651bf3a6d8d7d6d681596bdc706b7e02d3.png]]
+
+Visualise the clusters in the data using a scatter plot.
+#+begin_src jupyter-python
+plt.subplots(figsize=(16, 8))
+plt.scatter(x="GrLivArea", y="GarageArea", c="Cluster", cmap="viridis", data=labelled_data)
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/164cab64e8c8c77fe6adcf2bb4ee10ca439e5841.png]]
+
+** Problem 2
+
+*** (a)
+Extract ~GrLivArea~ and ~GarageArea~ from the data set.
+#+begin_src jupyter-python :results none
+extracted_data = house_data[["GrLivArea", "GarageArea"]]
+#+end_src
+
+*** (b)
+Visualise the distribution of the two variables above using a scatter plot.
+#+begin_src jupyter-python
+plt.subplots(figsize=(16, 8))
+plt.scatter(x="GrLivArea", y="GarageArea", data=extracted_data)
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/d69d6e05c16858de68ec34aae39839d08d65abc3.png]]
+
+*** (c)
+Import the local outlier factor model from ~scikit-learn~.
+#+begin_src jupyter-python :results none
+from sklearn.neighbors import LocalOutlierFactor
+#+end_src
+
+Set the parameters for the local outlier factor model.
+#+begin_src jupyter-python :results none
+number_of_neighbours = 20
+fraction_of_anomalies = 0.05
+#+end_src
+
+Create the anomaly detection model using the local outlier factor model with the parameters.
+#+begin_src jupyter-python :results none
+model = LocalOutlierFactor(n_neighbors=number_of_neighbours, contamination=fraction_of_anomalies)
+#+end_src
+
+Fit the model on the data and predict anomalies.
+#+begin_src jupyter-python :results none
+model.fit(extracted_data)
+#+end_src
+
+*** (d)
+Use the model to predict the anomalies.
+#+begin_src jupyter-python :results none
+labels = model.fit_predict(extracted_data)
+#+end_src
+
+Add the anomaly label to the data.
+#+begin_src jupyter-python :results none
+labelled_data = extracted_data.copy()
+labelled_data["Anomaly"] = pd.Categorical(labels)
+#+end_src
+
+Plot the count plot of the data based on the labels.
+#+begin_src jupyter-python
+sb.countplot(labelled_data["Anomaly"])
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/6c1002c897785831cc47df1715c6cc44dd9c8716.png]]
+
+Visualise the anomalies in the data.
+#+begin_src jupyter-python
+plt.subplots(figsize=(16, 8))
+plt.scatter(x="GrLivArea", y="GarageArea", c="Anomaly", cmap="viridis", data=labelled_data)
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/7afa9a03319a6cb45f5d7dd9b763d596f5bb6d4b.png]]

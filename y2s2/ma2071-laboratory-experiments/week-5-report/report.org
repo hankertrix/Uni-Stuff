@@ -1,0 +1,246 @@
+#+TITLE: MA2071 E2.13 Report: Virtual Reality for Education
+#+AUTHOR: Nicholas Wee
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+CITE_EXPORT: csl ieee.csl
+#+BIBLIOGRAPHY: references.bib
+#+LATEX_HEADER: \usepackage{siunitx}
+#+LATEX_HEADER: \setlength{\parindent}{0em}
+#+LATEX_HEADER: \newcommand{\sectionbreak}{\clearpage}
+#+LATEX_HEADER: \newcommand{\subsectionbreak}{\clearpage}
+
+#+begin_comment
+Requirements:
+- 3 - 5 pages.
+- Use pictures.
+- Use videos.
+- Use social media and indicate the link of your publication.
+- Hashtag NTUsg, myycai, etc
+- Do research
+#+end_comment
+
+* Abstract
+#+begin_comment
+Use no more than 100 words to describe your E2.13 learning.
+
+Highlight the key points.
+#+end_comment
+
+The great pioneer of the modern concept of VR is Ivan Sutherland, who laid the foundational concept of what a VR device should look like. VR is used mainly as an entertainment and education tool, with it being very helpful in the visualisation of microscopic entities, such as cells and proteins, as well as complex mathematical concepts, such as the cross product of 3-dimensional vectors. It is also widely used for simulation training in preparation for a job, allowing users to make mistakes and fail safely in a virtual environment before needing to perform for real.
+
+* Introduction
+#+begin_comment
+Describe the history of VR and discuss the objectives and scope of this project.
+#+end_comment
+
+Before 1838, the panoramic paintings could be considered a primitive form of virtual reality, as it attempts to create the illusion of being somewhere where we are not [cite:@Society_2020].
+
+#+CAPTION: The battle of borodino, 1812 [cite:@Society_2020].
+[[./images/battle-borodino.jpg]]
+
+@@latex: \newpage@@
+
+** 1838
+In 1838, Charles Wheatstone, a professor of Experimental Philosophy at King's College created the stereoscope [cite:@College_2016], which was a device that can be used to view 2-dimensional stereoscopic images, called stereograms, as 3-dimensional. This is done by enhancing the illusion of depth using stereopsis for 2-eyed vision [cite:@Lazarus_2021].
+
+#+CAPTION: The steoreoscope [cite:@Society_2020].
+#+ATTR_LATEX: :height 12em
+[[./images/charles-wheatston-stereoscope.jpg]]
+
+** 1930s
+Pygmalion's Spectacles, written by Stanley G. Weinbraum, was the first science fiction story to predict the existence of VR, by describing a pair of goggles that will allow the user to experience a virtual world through their senses [cite:@Society_2020].
+
+#+CAPTION: The cover of Pygmalion's Spectacles [cite:@Society_2020].
+#+ATTR_LATEX: :height 12em
+[[./images/pygmallions-spectacles.png]]
+
+** 1950s
+A cinematography called Morton Heilig created the Sensorama, which was created to stimulate all the senses. It came with smell generators, fans, a chair capable of vibration, stereo speakers, and of course, a stereographic 3D display. The device was created to fully immerse the viewer in the film [cite:@Society_2020].
+
+#+CAPTION: The Sensorama [cite:@Foundation_2023].
+#+ATTR_LATEX: :height 14em
+[[./images/sensorama.jpg]]
+
+** 1960
+Morton Heilig creates the first VR head-mounted display, called the Telesphere Mask. The headset provided stereoscopic 3D and wide vision with stereo sound [cite:@Society_2020].
+
+#+CAPTION: The Telesphere Mask [cite:@Foundation_2023].
+#+ATTR_LATEX: :height 13em
+[[./images/telesphere-mask.jpg]]
+
+** 1961
+Comeau and Bryan developed the first motion tracking head-mounted display, called the Headsight. It featured binocular video screens and a magnetic motion tracking system which is linked to a closed circuit camera. The device was developed for military applications, particularly to immersively view dangerous situations [cite:@Society_2020].
+
+** 1965
+Ivan Sutherland describes the "Ultimate Display" concept, which could simulate reality to the point where it is impossible to tell the difference from actual reality. The "Ultimate Display" should include a realistic virtual world viewed through a head-mounted display that can be interacted with the user's senses, and provides sonic and tactile feedback. It should also include hardware to continuously generate and respond to the user's action in real time [cite:@Society_2020].
+
+@@latex: \newpage@@
+
+** 1968
+Ivan Sutherland creates the Sword of Damocles, which is the first head-mounted display that is connected to a computer instead of a camera, unlike the Headsight. However, the contraception was extremely bulky and heavy, and hence had to be hung from the ceiling since it would be too heavy for anyone to comfortably wear. The user also needed to be strapped in to the device to provide support for the heavy mechanism [cite:@Society_2020].
+
+#+CAPTION: The Sword of Damocles in action [cite:@Society_2020].
+[[./images/ivan-sword-of-damocles.jpg]]
+
+** 1969
+Myron Kruegere, a virtual reality computer artist, creates "Artificial Reality", which is a series of computer-generated environments that respond to the user's input [cite:@Society_2020].
+
+** 1975
+Myron Kruegere creates the VIDEOPLACE system, which is widely regarded as the first interactive AR system. It uses a mix of cameras, light projection, computer-generation and screens to measure user's position. It is considered an AR system as it projects to a screen rather than having the user wear a head-mounted display [cite:@Society_2020].
+
+** 1977
+MIT creates the Aspen Movie Map, which allowed users to explore Aspen, Colorado in a virtual tour. Videos were filmed from a moving car to create the illusion of walking through the city [cite:@Wikipedia_2024; @Society_2020].
+
+#+CAPTION: The Aspen Movie Map [cite:@Naimark_2016]
+#+ATTR_LATEX: :height 18em
+[[./images/aspen-movie-map.png]]
+
+** 1982
+Daniel Sandlin and Thomas DeFanti create finger-tracking gloves called "Sayre" gloves, which used optical sensors to detect finger movement [cite:@Society_2020].
+
+** 1985
+Jaron Lanier and Thomas Zimmerman found Visual Programming Lab Research, which is the first ever company to sell head-mounted displays and gloves. The "data glove" name comes from their product, the DataGlove [cite:@Society_2020].
+
+** 1987
+Virtual reality, or VR, is coined as a term by Jaron Lanier. His company, Visual Programming Lab Research, created a great many devices for the purpose of virtual reality, such as the DataGlove and the EyePhone head-mounted display [cite:@Society_2020].
+
+* Literature review
+#+begin_comment
+Search for the state of the art of VR for education technology online. Cite reference papers in this section if necessary.
+
+Virtual reality fundamentals.
+#+end_comment
+
+As VR technology becomes more powerful and more affordable, the VR is increasingly being applied in education as a teaching aid to help students in understanding difficult concepts better. It is also used to put students in exceptional circumstances to teach them how to react or behave in those circumstances, without actually being in those circumstances.
+
+** Purpose of VR in education
+Currently, VR is being applied in education for 4 different purposes. They are simulation, training, access of limited resources, and facilitating distance learning [cite:@kavanagh2017systematic].
+
+*** Simulation
+One of the biggest uses of VR for education is due to its ability to simulate life-like situations and scenarios that would otherwise be dangerous or impractical [cite:@sun20103; @wei2013fixed; @abdul2012desktop]. For example, Sun's paper [cite:@sun20103] creates a 3D virtual reality model of the sun and the moon for e-learning at elementary schools, which would be infeasible in reality. VR is usually also much cheaper than bringing such experiences in reality, as it would usually entail expensive overseas trips that schools will not have the budget for [cite:@kavanagh2017systematic].
+
+Boyles found that AR is used widely in electrical engineering, with applications such as ElectARManual, ELECT3D and ElectAR notes. He also found virtual and augmented reality to be used widely in various scientific fields, such as visualisation of chemical reactions in chemistry, visualising respiration and meiosis in biology, and to explore the solar system in astronomy [cite:@boyles2017virtual].
+
+@@latex: \newpage@@
+
+*** Training
+Kavanagh found that 58% of simulations found in his review were used for training purposes [cite:@kavanagh2017systematic], and included various applications such as flight simulators [cite:@wei2013fixed], chemical engineering [cite:@abdul2012desktop] and construction [cite:@sampaio2013virtual].
+
+He also found that VR is very commonly used to simulate medical activities for training purposes, especially surgery, but it can also be used to simulate other medical activities such as rehabilitation [cite:@kavanagh2017systematic]. For example, Nolin used a virtual classroom to assess children with attention deficit disorders [cite:@nolin2016clinicavr].
+
+Another common use case of VR is for pilot training, as virtual flights can be carried out similarly to actual piloting, since piloting is highly computerised in the modern age [cite:@kavanagh2017systematic]. This use of VR allows the pilot to train as much as they want, and make as many mistakes as they want, as such simulations do not pose any danger to the pilots [cite:@page2000brief; @wei2013fixed]. Similarly for the medical field, there are no patients that suffer from a virtual surgery.
+
+*** Access limited resources
+In virtual reality, resources are theoretically infinite, and hence, it can be used to simulate the access of limited resources. For example, Rahim simulated a commercial milk powder processing plant for students of chemical and process engineering, as visiting such plants was difficult due to availability and safety regulations [cite:@abdul2012desktop]. Another example would be to have art or archaeological pieces which are geographically separated be brought together into the virtual world where the user can experience it in one place [cite:@angeloni2012virtual].
+
+*** Distance learning
+Distance learning refers to experiential learning from a distance, without the need to be in a particular location, which is made possible through virtual reality. For example, Chang created a system to teach users with cerebral palsy how to independently perform rehabilitation exercises. This was much better than video tutorials as the Kinect motion-sensing devices could provide real-time feedback regarding the validity of their form based off of their joint angles [cite:@chang2014kinect].
+
+@@latex: \newpage@@
+
+* Fundamentals of VR
+#+begin_comment
+Discuss the 4 major elements of VR in terms of modelling, visualisation, interaction and interface.
+
+STEM learning.
+#+end_comment
+
+In VR and AR, there are 4 characteristics which are important to have an immersive experience, namely:
+- Fidelity modelling and simulation
+- Realistic and immersive visualisation
+- Real-time interaction
+- Natural user interface
+
+The experience in VR and AR needs to be as close to the actual physical world as possible, so models and simulations inside the virtual world should behave similarly to that of the physical world. Interactions in the virtual world have to be real-time, and interfaces to the virtual world should be similar to how a person interacts with the physical world, making use of their senses.
+
+** Fidelity modelling and simulation
+Virtual worlds should ideally be as close to the physical world as possible, to make sure the player feels immersed in the virtual world. The ideal would be to have a world where the virtual world and the real world are indistinguishable, like in the movie called "The Matrix". As such, 3D models and physics simulations in the virtual world need to be high fidelity to create the illusion of reality for the player and have them be engrossed and fully immersed in the experience. Simulated smell and taste would be ideal too, but currently, those aren't the focus at the moment for consumer VR headsets.
+
+** Realistic and immersive visualisation
+This is quite similar to the point above about modelling and simulation, but it refers more specifically to visualisations rather than the modelling of objects and the simulation of physics in the virtual world. Similar to modelling and simulation, visualisations in a virtual world should look realistic to keep the user engrossed in the world and to not break their immersion. Visuals in the virtual world should follow the design and visuals of real world objects, so that the transition between the real world into the virtual world is as smooth as possible, and ideally the user should not notice a difference if the visualisations are realistic enough.
+
+** Real-time interaction
+Once again, because virtual worlds should behave like the real physical world, all interactions in the visual world should be near instant and have immediate feedback, as that is how the real world works. Real-time interactions keep the user immersed in the virtual world. Ideally the user would also get tactile feedback and sonic feedback from the items they interact with, just like in the real world, but it is also not a focus at the moment for consumer VR headsets.
+
+** Natural user interface
+A natural user interface means that the user should interact with the world using his senses instead of relying on a controller to control their movements in the virtual world. Ideally, the user would interact with all objects in the virtual world just like he would in the real world. Hence, interactions in the virtual world will need to be designed around the user using his sight, his touch and even his voice or the sounds he makes to interact with objects in the virtual world. Currently, most VR headsets rely on motion and gesture tracking to figure out the action the user is taking and response to it. However, this way of emulating touch interaction has a lot of issues current, mainly with the camera location and the hand obscuring fingers which makes the controls go haywire, which is not idea for an intuitive and natural user interface that doesn't need to be learnt.
+
+* Experiment
+#+begin_comment
+Share your experiment on virtual cells, virtual F1 and virtual vectors with possible graphics (figures, tables diagrams).
+#+end_comment
+
+Overall, I found the experiments to be quite interesting, and learnt that different VR games will implement different control schemes, some better than others. The current technology for a natural control scheme isn't currently ideal, as a lot of my classmates found it difficult to figure out the controls in VR as they don't really work all that well and have trouble in tracking the motion of the hand. When the back of the hand obscures the fingers, the motion tracking goes haywire and things don't work well, and it happens very often. A controller might be still be a more intuitive control interface compared to using motion tracking with a camera for now.
+
+@@latex: \newpage@@
+
+** Virtual cells
+This experiment was about seeing cell parts, such as the mitochondria, Golgi body and the endoplasmic reticulum. It was quite fun to use my hands to manipulate the cells, but I was somewhat disappointed that the simulations were not more detailed.
+
+#+CAPTION: The menu.
+#+ATTR_LATEX: :height 15em
+[[./images/virtual-cell-game-menu.jpg]]
+
+#+CAPTION: The VR simulation of an endoplasmic reticulum.
+#+ATTR_LATEX: :height 15em
+[[./images/endoplasmic-reticulum.jpg]]
+
+#+CAPTION: The VR simulation of a Golgi body.
+#+ATTR_LATEX: :height 15em
+[[./images/golgi-body.jpg]]
+
+** Virtual F1
+This experiment was about putting together an F1 car and seeing it drive through an obstacle course. The controls in this one weren't as polished as the virtual cell game, and the pinching gesture didn't work half the time due to the fingers being obscured by the back of the hand. It was quite interesting to see how an F1 car looks on the inside though.
+
+#+CAPTION: The F1 car driving through obstacles after being assembled.
+#+ATTR_LATEX: :height 15em
+[[./images/f1-car-driving-through-obstacles.jpg]]
+
+** Virtual vectors
+This experiment was about visualising the result of a cross product of two vectors. This experiment also included a new kind of control scheme, which is eye tracking and focus, but I didn't find it to work well compared to hand gestures. It wasn't obvious that you had to focus on a spot to have something happen, and it is also a bit difficult to keep your body and eyes still to have the action registered. However, the use of VR seems quite useful in the teaching of vectors, as it makes it much easier to visualise and gain an intuitive understanding of how the cross product work. I wonder if it would be possible to use VR to visualise quaternions, as quaternions are far more difficult to visualise and imagine, since we are only capable of perceiving 3 dimensions, while quaternions are 4-dimensional objects. Perhaps a 3-dimensional stereographic projection of quaternions may be possible in VR.
+
+#+CAPTION: Dragging the vectors around to change the cross product vector.
+#+ATTR_LATEX: :height 20em
+[[./images/dragging-the-vectors.jpg]]
+
+#+CAPTION: Manipulating the vectors with the blackboard removed.
+#+ATTR_LATEX: :height 20em
+[[./images/dragging-the-vectors-no-blackboard.jpg]]
+
+#+CAPTION: The cross product vectors.
+#+ATTR_LATEX: :height 20em
+[[./images/cross-product-vectors.jpg]]
+
+@@latex: \newpage@@
+
+* Discussion and conclusion
+#+begin_comment
+Discuss the pros and cons of VR technology for educational applications. Suggest improvements and future works.
+
+Compare to conventional learning, advantages, and future work.
+#+end_comment
+
+As discussed in the literature review above, virtual and augmented reality has been used in many applications for education. With VR technology becoming cheaper and more widespread, it is likely that educators and schools alike will increase adoption of this technology to provide higher quality education at lower cost, such as experiential learning through virtual worlds and the ability to visit places that are difficult or even impossible to reach in reality.
+
+** Pros
+
+*** Personalised learning
+The main benefit of VR is that learning can be easily personalised to the students, as it is easy to let the student have a large amount of control over the virtual world and let them explore and learn at their own pace. Virtual reality also allows students to repeat lessons as many times as they want to improve their understanding, without affecting their classmates [cite:@kavanagh2017systematic].
+
+*** Deeper learning
+In VR, students are able to learn via doing, instead of just memorising for tests. The ability to visualise complex and abstract concepts in virtual reality can also help students understand the concepts being taught at a deeper level. VR is also better for learn practical skills, such as doing surgery in medical fields, or doing handyman work for engineering, as students will actually perform the task and get feedback similar to that of performing the task in the real world, which would better understanding and improve muscle memory [cite:@kavanagh2017systematic].
+
+@@latex: \newpage@@
+
+** Cons
+
+*** Cost
+Virtual reality experiences are not cheap to build, as it takes a lot of time and effort to create a custom, tuned experience for a specific domain. 3D modelling and programming a game in 3D are difficult tasks that take a lot of time to complete, and also require quite a lot of domain knowledge to ensure that the simulation is sufficiently realistic and mimics real world situations. Moreover, from my experience with the experiments, the natural user interfaces employed by VR don't seem to have built-in abstractions, such as standard API calls for developers to use, which means each developer has to roll their own implementation of these natural user interfaces, which makes for an inconsistent experience throughout different VR experiences and games.
+
+*** Insufficient realism
+Current virtual reality technology is still not at the point where it can perfectly simulate everything in the real world, so there are breaks in immersion due to poorly implemented user interfaces. One example would be the issue of the hand covering the fingers, causing the motion tracking camera that tracks hand and finger motion to go haywire when it cannot see the fingers. Such breaks in immersion can detract from the learning experience, as it distracts students from the actual game or experience. Insufficient realism in simulating real world experiences could result in the learnings being of limited value when applied to the real world. It could also result in bad situations in the real world if the simulation turns out to be incorrect, and has ingrained responses in users that are inappropriate or even dangerous to perform in the real world.
+
+@@latex: \newpage@@
+
+* References
+#+PRINT_BIBLIOGRAPHY:

@@ -1,0 +1,418 @@
+#+TITLE: MA0218 Exercise 2
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+STARTUP: inlineimages
+#+OPTIONS: toc:2
+#+PROPERTY: header-args :session py :kernel python3 :results output
+
+* Discussion questions :noexport:
+
+** Question 1
+I would say that SGD 1 million is a bit too expensive for a condo in Singapore. The median price of a condo is SGD 800,000, which suggests that 50% of condos in Singapore cost less than SGD 800,000. The mean being higher than the median suggests that the condos that cost more than SGD 800,000 are priced much higher than SGD 800,000, not that there are more condos that are priced higher than SGD 800,000. The distribution of the price of condos is likely skewed to the right instead of following a normal distribution. Hence, based on the median price, SGD 1 million is a bit too expensive for a condo in Singapore and there is a much better deal to be found, as 50% of the condos in Singapore cost less than SGD 800,000.
+
+* Solutions
+
+** Problem 1
+
+*** (a)
+Importing the required libraries.
+#+begin_src jupyter-python :results none
+from functools import partial
+import pandas as pd
+import numpy as np
+import seaborn as sb
+import matplotlib.pyplot as plt
+
+# Set the default Seaborn style for graphics
+sb.set_theme()
+#+end_src
+
+Import the data.
+#+begin_src jupyter-python :results none
+csv_data = pd.read_csv("train.csv")
+#+end_src
+
+*** (b)
+Print out the data types in the data.
+#+begin_src jupyter-python
+print(csv_data.dtypes)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Id                 int64
+MSSubClass         int64
+MSZoning          object
+LotFrontage      float64
+LotArea            int64
+                  ...
+MoSold             int64
+YrSold             int64
+SaleType          object
+SaleCondition     object
+SalePrice          int64
+Length: 81, dtype: object
+#+end_example
+
+The data types are 64-bit integers, 64-bit floating point numbers and objects, which are most likely strings.
+
+*** (c)
+Grab the 64-bit integers from the data.
+#+begin_src jupyter-python
+int64_data = csv_data.select_dtypes(include=["int64"])
+
+print(int64_data)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+        Id  MSSubClass  LotArea  OverallQual  OverallCond  YearBuilt  \
+0        1          60     8450            7            5       2003
+1        2          20     9600            6            8       1976
+2        3          60    11250            7            5       2001
+3        4          70     9550            7            5       1915
+4        5          60    14260            8            5       2000
+...    ...         ...      ...          ...          ...        ...
+1455  1456          60     7917            6            5       1999
+1456  1457          20    13175            6            6       1978
+1457  1458          70     9042            7            9       1941
+1458  1459          20     9717            5            6       1950
+1459  1460          20     9937            5            6       1965
+
+      YearRemodAdd  BsmtFinSF1  BsmtFinSF2  BsmtUnfSF  ...  WoodDeckSF  \
+0             2003         706           0        150  ...           0
+1             1976         978           0        284  ...         298
+2             2002         486           0        434  ...           0
+3             1970         216           0        540  ...           0
+4             2000         655           0        490  ...         192
+...            ...         ...         ...        ...  ...         ...
+1455          2000           0           0        953  ...           0
+1456          1988         790         163        589  ...         349
+1457          2006         275           0        877  ...           0
+1458          1996          49        1029          0  ...         366
+1459          1965         830         290        136  ...         736
+
+      OpenPorchSF  EnclosedPorch  3SsnPorch  ScreenPorch  PoolArea  MiscVal  \
+0              61              0          0            0         0        0
+1               0              0          0            0         0        0
+2              42              0          0            0         0        0
+3              35            272          0            0         0        0
+4              84              0          0            0         0        0
+...           ...            ...        ...          ...       ...      ...
+1455           40              0          0            0         0        0
+1456            0              0          0            0         0        0
+1457           60              0          0            0         0     2500
+1458            0            112          0            0         0        0
+1459           68              0          0            0         0        0
+
+      MoSold  YrSold  SalePrice
+0          2    2008     208500
+1          5    2007     181500
+2          9    2008     223500
+3          2    2006     140000
+4         12    2008     250000
+...      ...     ...        ...
+1455       8    2007     175000
+1456       2    2010     210000
+1457       5    2010     266500
+1458       4    2010     142125
+1459       6    2008     147500
+
+[1460 rows x 35 columns]
+#+end_example
+
+*** (d)
+#+begin_src jupyter-python
+# Initialise the list of numeric variables
+numeric_variables: list[str] = []
+
+# Initialise the string for the data description
+data_description: str = ""
+
+# Read the data_description.txt file into the string
+with open("data_description.txt", "r") as file:
+    data_description = file.read()
+
+# Initialise the variable to store the header index
+header_index: int = 0
+
+# Split the data description into lines
+lines = data_description.split("\n")
+
+# Iterate over the lines in the header
+for index, line in enumerate(lines):
+
+    # If the line is empty, skip it
+    if not line:
+        continue
+
+    # Get the first letter in the line
+    first_character = line[0]
+
+    # If the line starts with an alphanumeric character
+    # and contains a colon
+    if first_character.isalnum() and ":" in line:
+
+        # The line is a header, so get the description of the header,
+        # which is the lines from the header index to the current index
+        header_description = lines[header_index:index]
+
+        # Set the header index to the current index
+        header_index = index
+
+        # If the header description doesn't have 2 lines exactly,
+        # continue the loop
+        if len(header_description) != 2:
+            continue
+
+        # Otherwise, get the first line which is the header
+        header, _ = header_description
+
+        # Split the header at the colon to get the variable name
+        variable_name, _ = header.split(":")
+
+        # Add the variable name to the list of numeric variables
+        numeric_variables.append(variable_name)
+
+# Add the sale price variable to the numeric variables
+# as it is not inside the data descriptions
+numeric_variables.append("SalePrice")
+
+# Print out the list of numeric variables
+print(numeric_variables)
+#+end_src
+
+#+RESULTS:
+: ['LotFrontage', 'LotArea', 'YearBuilt', 'YearRemodAdd', 'MasVnrArea', 'BsmtFinSF1', 'BsmtFinSF2', 'BsmtUnfSF', 'TotalBsmtSF', '1stFlrSF', '2ndFlrSF', 'LowQualFinSF', 'GrLivArea', 'BsmtFullBath', 'BsmtHalfBath', 'FullBath', 'HalfBath', 'Bedroom', 'Kitchen', 'TotRmsAbvGrd', 'Fireplaces', 'GarageYrBlt', 'GarageCars', 'GarageArea', 'WoodDeckSF', 'OpenPorchSF', 'EnclosedPorch', '3SsnPorch', 'ScreenPorch', 'PoolArea', 'MiscVal', 'MoSold', 'YrSold', 'SalePrice']
+
+*** (e)
+Remove the non-numeric variables from the data.
+#+begin_src jupyter-python
+cleaned_data = int64_data[int64_data.columns.intersection(numeric_variables)]
+
+# Print the cleaned data
+print(cleaned_data)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+      LotArea  YearBuilt  YearRemodAdd  BsmtFinSF1  BsmtFinSF2  BsmtUnfSF  \
+0        8450       2003          2003         706           0        150
+1        9600       1976          1976         978           0        284
+2       11250       2001          2002         486           0        434
+3        9550       1915          1970         216           0        540
+4       14260       2000          2000         655           0        490
+...       ...        ...           ...         ...         ...        ...
+1455     7917       1999          2000           0           0        953
+1456    13175       1978          1988         790         163        589
+1457     9042       1941          2006         275           0        877
+1458     9717       1950          1996          49        1029          0
+1459     9937       1965          1965         830         290        136
+
+      TotalBsmtSF  1stFlrSF  2ndFlrSF  LowQualFinSF  ...  WoodDeckSF  \
+0             856       856       854             0  ...           0
+1            1262      1262         0             0  ...         298
+2             920       920       866             0  ...           0
+3             756       961       756             0  ...           0
+4            1145      1145      1053             0  ...         192
+...           ...       ...       ...           ...  ...         ...
+1455          953       953       694             0  ...           0
+1456         1542      2073         0             0  ...         349
+1457         1152      1188      1152             0  ...           0
+1458         1078      1078         0             0  ...         366
+1459         1256      1256         0             0  ...         736
+
+      OpenPorchSF  EnclosedPorch  3SsnPorch  ScreenPorch  PoolArea  MiscVal  \
+0              61              0          0            0         0        0
+1               0              0          0            0         0        0
+2              42              0          0            0         0        0
+3              35            272          0            0         0        0
+4              84              0          0            0         0        0
+...           ...            ...        ...          ...       ...      ...
+1455           40              0          0            0         0        0
+1456            0              0          0            0         0        0
+1457           60              0          0            0         0     2500
+1458            0            112          0            0         0        0
+1459           68              0          0            0         0        0
+
+      MoSold  YrSold  SalePrice
+0          2    2008     208500
+1          5    2007     181500
+2          9    2008     223500
+3          2    2006     140000
+4         12    2008     250000
+...      ...     ...        ...
+1455       8    2007     175000
+1456       2    2010     210000
+1457       5    2010     266500
+1458       4    2010     142125
+1459       6    2008     147500
+
+[1460 rows x 29 columns]
+#+end_example
+
+** Problem 2
+
+*** (a)
+Define a new describe function to include the mean.
+#+begin_src jupyter-python :results none
+def describe(
+    data_frame: pd.DataFrame,
+    additional_stats: list[str] = []
+) -> pd.DataFrame:
+    "Function to describe a data frame with additional statistics"
+
+    # The 25% percentile function
+    q_25 = partial(pd.Series.quantile, q=0.25)
+    q_25.__name__ = "25%"
+
+    # The 50% percentile function
+    q_50 = partial(pd.Series.quantile, q=0.5)
+    q_50.__name__ = "50%"
+
+    # The 75% percentile function
+    q_75 = partial(pd.Series.quantile, q=0.75)
+    q_75.__name__ = "75%"
+
+    # The list of default statistics
+    default_stats = [
+        "count",
+        "mean",
+        "std",
+        "min",
+        q_25,
+        "median",
+        q_75,
+        "max",
+    ]
+
+    # Get the full list of statistics
+    stats = default_stats + additional_stats
+
+    # Call the agg method on the dataframe to get the
+    # summary statistics of the data frame and return the result
+    return data_frame.agg(stats)
+#+end_src
+
+Get the sale price data.
+#+begin_src jupyter-python :results none
+sale_price_data = cleaned_data["SalePrice"]
+#+end_src
+
+Print the summary statistics of the sale price data.
+#+begin_src jupyter-python
+print(describe(sale_price_data))
+#+end_src
+
+#+RESULTS:
+: count       1460.000000
+: mean      180921.195890
+: std        79442.502883
+: min        34900.000000
+: 25%       129975.000000
+: median    163000.000000
+: 75%       214000.000000
+: max       755000.000000
+: Name: SalePrice, dtype: float64
+
+*** (b)
+Plot the box plot of the sale price data.
+#+begin_src jupyter-python
+figure = plt.figure(figsize=(24, 4))
+sb.boxplot(data=sale_price_data, orient="h")
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/97cd5547b51470da64f9755f3b16519c46898bb5.png]]
+
+Plot the histogram of the sale price data.
+#+begin_src jupyter-python
+figure = plt.figure(figsize=(16, 8))
+sb.histplot(data=sale_price_data)
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/b1416d16239a9ead25cdd9b87593dc8428cf2b3d.png]]
+
+Plot the kernel density estimate (KDE) of the sale price data.
+#+begin_src jupyter-python
+figure = plt.figure(figsize=(16, 8))
+sb.kdeplot(data=sale_price_data)
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/bd81ebae81857faec4cd57adf355c16940083a22.png]]
+
+*** (c)
+Get the data regarding the area of the lots.
+#+begin_src jupyter-python :results none
+lot_area_data = cleaned_data["LotArea"]
+#+end_src
+
+Print the summary statistics of the data regarding the area of the lots.
+#+begin_src jupyter-python
+print(describe(lot_area_data))
+#+end_src
+
+#+RESULTS:
+: count       1460.000000
+: mean       10516.828082
+: std         9981.264932
+: min         1300.000000
+: 25%         7553.500000
+: median      9478.500000
+: 75%        11601.500000
+: max       215245.000000
+: Name: LotArea, dtype: float64
+
+*** (d)
+Plot the box plot of the data regarding the area of the lots.
+#+begin_src jupyter-python
+figure = plt.figure(figsize=(24, 4))
+sb.boxplot(data=lot_area_data, orient="h")
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/68aeb84aa5779e79628e60d1d35e3c5c660fcfd8.png]]
+
+Plot the histogram of the data regarding the area of the lots.
+#+begin_src jupyter-python
+figure = plt.figure(figsize=(16, 8))
+sb.histplot(data=lot_area_data)
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/3716ac617f97c83ba289be914106e4ca28660ed4.png]]
+
+Plot the kernel density estimate (KDE) of the data regarding the area of the lots.
+#+begin_src jupyter-python
+figure = plt.figure(figsize=(16, 8))
+sb.kdeplot(data=lot_area_data)
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/772bcd21f98a8241f7bcbded91bbbeb546a07a24.png]]
+
+*** (e)
+Join the two data frames together and re-index based on the data regarding the area of the lots (x-axis).
+#+begin_src jupyter-python :results none
+joint_data = pd.concat([lot_area_data, sale_price_data], axis = 1).reindex(lot_area_data.index)
+#+end_src
+
+Plot the joint plot of sale price (y-axis) vs lot area (x-axis).
+#+begin_src jupyter-python
+sb.jointplot(data=joint_data, x="LotArea", y="SalePrice", height=10)
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/3ad69a17cd5827436ba3434b0d9438e491e53934.png]]
+
+Calculate the correlation coefficient between the two variables.
+#+begin_src jupyter-python
+print(joint_data.corr())
+#+end_src
+
+#+RESULTS:
+:             LotArea  SalePrice
+: LotArea    1.000000   0.263843
+: SalePrice  0.263843   1.000000

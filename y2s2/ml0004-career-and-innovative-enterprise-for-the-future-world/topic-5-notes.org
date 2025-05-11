@@ -1,0 +1,582 @@
+#+TITLE: ML0004 Career & Innovative Enterprise for the Future World Topic 5 Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** Intrapersonal skills
+- Intrapersonal skills refer to the ability to understand and manage one's own emotions, thoughts and behaviours.
+- These skills include:
+  - Self-awareness
+  - Emotional regulation
+  - Self-motivation
+  - Self-reflection
+- These skills are important because they allow you to understand yourself better, improve your decision-making abilities, and increase your resilience and adaptability to personal and workplace challenges.
+
+** Interpersonal skills
+- Interpersonal skills, on the other hand, are the abilities to communicate and interact effectively with others.
+- These skills include:
+  - Active listening
+  - Empathy
+  - Conflict resolution
+  - Collaboration
+- Interpersonal skills are important because they help you build positive relationships with others, establish trust and rapport, and achieve common goals through effective teamwork.
+- They are especially important in determining your career progression prospects in being able to lead teams and contribute to higher organisation goals.
+
+** Emotional intelligence
+- Emotional intelligence is the ability to recognise, understand, and manage one's own emotions, as well as the emotions of others. It includes skills such as empathy, self-awareness, self-regulation, social skills, and motivation.
+- Research shows that a person's emotional quotient can be a more effective indicator of potential success than their IQ.
+- It is also correlated with qualities like leadership potential, employability, health, happiness, and even success with relationships.
+- Emotional intelligence is extremely transferrable and transforms you for the long-term.
+- It will distinguish you as an effective leader.
+
+*** Categories
+
+**** Self-awareness
+The ability to understand your effect on others, play to your strengths and admit your weaknesses.
+
+**** Self-management
+Being able to control your impulses and avoid acting rashly.
+
+**** Motivation
+Having the innate passion to challenge yourself and remain optimistic when the going gets tough.
+
+**** Empathy
+It is not just listening to those around you, but really trying to understand their point of view.
+
+**** Social communication
+The ability to manage relationships and productively express your emotions.
+
+*** Benefits
+
+**** Improved relationships
+- Able to understand and respond to the emotions of others.
+- Able to communicate with others, manage conflict, build strong relationships.
+
+**** Better decision-making
+- Make better decisions by considering the emotional impact of their choices.
+- Able to manage their emotions, which allows them to think and decide more clearly.
+
+**** Improved mental health
+- Have lower levels of stress, anxiety, and depression.
+- Better able to cope with stress.
+
+**** Better leadership
+- Better able to inspire and motivate others.
+- Make decisions that benefit their team and organisation.
+
+** Self-confidence
+- Self-confidence is a feeling of trust in one's own abilities, qualities, and judgement.
+- People need to know that their leader has the confidence to make decisions in the appropriate timeframe.
+- Uncertainty leads to more uncertainty.
+- You will be more productive as a leader with high self-confidence.
+- Self-confidence is vital when you present your ideas to others and seek their buy-in and trust in you.
+- If you don't buy in to yourself, why should others buy into you?
+
+*** Increasing your self-confidence
+1. Look at what you've already achieved.
+2. Take pride in yourself, like grooming yourself and dressing nicely.
+3. Get active by exercising.
+4. Think positively.
+5. Kill negative thoughts.
+6. Clear your workspace.
+7. Be generous.
+8. Speak slowly.
+9. Be prepared by planning.
+10. Accept compliments.
+11. Take action.
+12. Use positive self-talk.
+    Say positive things about yourself. State the facts about a situation objectively instead of putting yourself down. Program yourself with a can-do spirit, like saying "Not being proficient in this topic doesn't mean I can't find ways to improve in grasping this topic." to yourself.
+13. Use positive imagery.
+    Imagine a positive outcome in your mind. Mentally rehearse a situation by appearing in control and confident in the situation so that you are better prepared to meet the challenges of the situation.
+
+*** Importance of self-confidence
+
+**** Improved performance
+Self-confident individuals are more likely to take on challenges and push themselves to succeed. They are more likely to take risks and are better able to handle failure or setbacks. This can lead to improved job performance and increased productivity.
+
+**** Better decision-making
+Self-confidence can help individuals make better decisions as they are less likely to second-guess themselves or be swayed by the opinions of others. Self-confident individuals are more likely to trust their own judgement and make decisions that are in their best interests.
+
+**** Improved communication
+Self-confidence can lead to improved communication skills. Confident individuals are more likely to express their opinions and ideas clearly and assertively, which can lead to better collaboration and teamwork.
+
+**** Increased resilience
+Self-confident individuals are more resilient in the face of challenges and setbacks. They are better able to handle criticism and rejection and are more likely to bounce back from difficult situations.
+
+**** Leadership potential
+Self-confidence is an important attribute for leadership. Confident leaders are able to inspire and motivate their teams, make tough decisions, and communicate effectively with stakeholders.
+
+** Growth mindset
+- A growth mindset is the belief that one's abilities and intelligence can be developed through hard work, effort, and dedication.
+- People with a growth mindset have a sense of self-efficacy and self-confidence that their abilities can be developed from scratch and see failures and challenges as a chance to grow and learn.
+
+** Fixed mindset
+- A fixed mindset is the belief that one's abilities and intelligence are fixed and cannot be changed.
+- People with a fixed mindset tend to view failure as a reflection of their abilities and are more likely to give up in the face of challenges. They may be less willing to take risks and may avoid opportunities for growth and learning. They tend to avoid challenges, and thus avoid failure. They like to stick to what they know, and is resistant to change, and are not motivated to improve. They tend to take feedback and criticism personally.
+
+** Growth mindset vs fixed mindset
+| Growth mindset                                                               | Fixed mindset                                                                 |
+|------------------------------------------------------------------------------+-------------------------------------------------------------------------------|
+| I can work hard to get better at something.                                  | I avoid things that I am not good at.                                         |
+| I will keep trying.                                                          | I give up easily.                                                             |
+| I can train my brain.                                                        | I can't change how smart I am as I was born with this amount of intelligence. |
+| Mistakes and failures help me learn and grow.                                | Mistakes and failures are bad.                                                |
+| I have got this right, how can I improve to make it even better?             | I either have potential or I don't.                                           |
+| What can I learn from this? What am I going to do differently the next time? | My potential is predetermined.                                                |
+| I can learn to do anything I want.                                           | When I am frustrated, I give up.                                              |
+| Failure is an opportunity to grow.                                           | I do not like to be challenged.                                               |
+| I am inspired by the success of others.                                      | My abilities are unchanging.                                                  |
+| I can learn from feedback and get better.                                    |                                                                               |
+
+** Adaptability
+- Adaptability refers to a person's ability to adjust to changing circumstances and environments.
+- It involves being flexible, open-minded, and willing to learn new things.
+- People who are adaptable are able to respond effectively to new challenges and opportunities, which can help them to achieve their goals and succeed in their careers.
+
+*** Being more adaptable
+- Be flexible.
+- Have a positive attitude.
+- Focus on the big picture.
+- Accept multiple perspectives.
+- Be open to failure.
+- Ask for help.
+
+** Resilience
+- Resilience refers to a person's ability to bounce back from setbacks and challenges.
+- It involves being able to cope with stress, manage emotions, and maintain a positive outlook in the face of adversity.
+- People who are resilient are better able to recover from setbacks, learn from their experiences, and move forward with confidence.
+
+**** Being more resilient
+- Face the facts squarely.
+- Allow time for recovering
+- Take the time to understand what happened.
+- Start again in better shape.
+- Bounce back with the attitude of growth.
+
+** Grit
+- Grit is a key component of resilience.
+- Grit refers to the passion and perseverance needed to achieve your goals.
+- Both grit and resilience are often used interchangeably and are developed through much effort as they are not innate qualities that you have from birth.
+
+** Five-stage model of team building
+
+*** Forming
+- The stage when the team just comes together, which result in a lot of stress for the members.
+- A charter can be helpful at this stage may be helpful to establish ground rules and clarify the objective.
+- A charter is formal agreement that lays out the teams overall purpose and lays out the expectations and behaviours for each team member.
+- It helps in establishing rules like required attendance and meetings.
+- It can also reduce misunderstandings and serve as a regulatory device, as any team member that violates the agreed upon norms can be reminded of the group's commitments.
+
+*** Storming
+- Happens when the teams begin work.
+- Conflicts often emerge about the goals and contributions of each team member, and there may also be challenges to the leader of the group.
+- In this stage, leaders should openly address conflicts and emphasise the team's purpose and ground rules as established in the charter.
+- At the end of this stage, the question of who will lead the team will have been resolved, and a team hierarchy is established.
+- Disagreements may result in team members leaving the team due to disillusionment at the team.
+
+*** Norming
+- Team members form close relationships in this stage.
+- Norms or unwritten rules about what is acceptable, take shape during this stage.
+
+*** Performing
+- The team at this stage is more focused on achieving goals instead of building relationships.
+- Teams should make it a point to celebrate achievements and successes in achieving the team's overall goals.
+
+*** Adjourning
+- The team finalises their work and disbands.
+- Team leaders should arrange a celebration to reward team members for having achieved their overall purpose.
+
+*** Punctuated equilibrium
+- This is common for teams that are formed with a stipulated deadline for their goals.
+- The team is active initially when goals are being discussed, and then very little work takes place, until about halfway through the time period, when a flurry of activity occurs and team members scramble to meet their goals on time.
+- This can be avoided if the team leader sets early benchmarks to avoid having the rush at the end of the project.
+
+** Conflict management
+- Conflict management is the process of handling and resolving disputes between individuals, groups or organisations.
+- It involves identifying and addressing the underlying causes of the conflict and finding ways to reach a mutually beneficial resolution that satisfies all parties involved.
+- Conflict management can occur in various settings, including personal relationships, teams, workplaces and communities.
+
+*** Steps
+
+**** Recognising the conflict
+The first step is to identify that a conflict exists and acknowledge its presence.
+
+**** Understanding the conflict
+The next step is to understand the underlying causes of the conflict, the parties involved, and their perspectives.
+
+**** Reframing
+Look at the positive side of the situation as well as ask questions, e.g. "Have I interpreted the situation correctly?", "How can I react positively to the situation instead of showing anger?"
+
+**** Communication
+Communication is crucial in resolving conflicts. The parties involved must be willing to listen to each other's perspectives and communicate their own.
+
+**** Negotiation
+Once the parties understand each other's perspectives, they can negotiate a resolution that addresses everyone's needs.
+
+**** Finding a solution
+Finally, the parties can work together to find a mutually acceptable solution to the conflict.
+
+** Thomas-Kilmann Conflict Management Styles (TKI)
+
+*** Competing
+- This mode involves a win-lose approach to conflict, where one party tries to assert their own interests and gain power over the other party.
+- This approach may be appropriate for emergencies when time is of the essence or when you need a quick decisive decision.
+
+*** Collaborating
+- This mode involves a win-win approach to conflict, where both parties work together to find a mutually beneficial solution.
+- This can be effective for complex scenarios where you need to find a new or innovative solution.
+- This can also mean reframing the challenge to create a bigger space for everyone's ideas.
+- This however, requires a high degree of trust, and reaching consensus can require a lot of time and effort to get everyone on board.
+
+*** Compromising
+- This mode involves a give-and-take approach to conflict, where both parties make concessions to reach a middle ground.
+- It is a lose-lose scenario, where neither party really gets what they want.
+- It may be appropriate for scenarios that require a temporary solution.
+- However, you may fall into compromising as an easy way out.
+
+*** Avoiding
+- This mode involves a withdrawal approach to conflict, where on or both parties choose to ignore or delay the conflict.
+- This works when the issue is trivial or when you have no chance of winning.
+- It is also very effective when the atmosphere is emotionally-charged, and you need to create some space.
+
+*** Accommodating
+- This mode involves a yield approach to conflict, where one party sacrifices their own interests to satisfy the other party.
+- This approach is effective when the other party is the expert with a better solution.
+- It can also be effective for preserving future relations.
+
+** Assertive, Aggressive and Submissive
+| Type   | Assertive        | Aggressive                       | Submissive                                      |
+|--------+------------------+----------------------------------+-------------------------------------------------|
+| Verbal | Direct and clear | Sarcastic or abusive             | Apologetic and rambling                         |
+| Tone   | Calm and sincere | Loud and abrupt                  | Quiet, muffled, tails off at the end            |
+| Facial | Good eye contact | Glaring and tense                | Does not maintain eye contact, apologetic smile |
+| Body   | Relaxed and open | Strong gestures, finger pointing | Nervous movements, closed                       |
+
+** DESC model of assertiveness
+1. Describe the situation
+   State the cause of the conflict in objective terms. For example, "I notice you have been interrupting me when I am presenting my ideas."
+2. Express your feelings
+   For example, "I feel frustrated when you don't allow me the chance to elaborate on my ideas."
+3. Specify what you want
+   For example, "I would appreciate it if you could allow me to finish explaining my idea before you judge."
+4. Consequences
+   For example, "If you were to do that, it would help me a lot as I will feel supported when I share my ideas."
+
+** Critical thinking
+Critical thinking is a way of approaching a question that allows you to carefully deconstruct a situation, reveal its hidden issues, such as bias and manipulation, to make the best decisions.
+
+** Value proposition canvas
+
+*** Customer profile
+- Jobs that your customer is trying to get done.
+  - Functional like getting from one place to another.
+  - Social like impressing friends and colleagues.
+  - Emotional like getting peace of mind.
+- Pains which annoy your customers while trying to get a job done.
+  - Pains are negative outcomes that customers hope to avoid, like dissatisfaction with existing solutions, or frustrations, ricks or obstacles related to performing a job.
+- Gains
+  - Gains describe how customers measure the success of a job well done.
+  - Gains are the positive outcomes that customers hope to achieve, like concrete results, benefits and even aspirations.
+
+*** Value map
+- Product and services your value proposition builds on.
+- Describe in which way these products, services and features are pain relievers, like how they eliminate, reduce or minimise pains customers care about.
+- Outline in which way these products, services and features are gain creators, like how they produce, increase or maximise outcomes and benefits that your customers expect, desire or would be surprised by.
+
+** Lifelong learning
+Lifelong learning is self-initiated self education for personal and professional development.
+
+*** Reasons to learn for personal development
+1. Increase knowledge or skills in a hobby.
+2. Learn a new skill that can enhance your life.
+3. Learn how to interact with people better.
+4. Learn how to take care of yourself better.
+
+*** Reasons to learn for professional development
+1. Get into the position they desire.
+2. Be indispensable to their employers.
+3. Learn other skills to get new jobs.
+
+*** Benefits
+1. Lifelong learning can renew self-motivation.
+2. You get to discover your personal interests.
+3. Your self-confidence improves.
+4. Lifelong learning can challenge your ideas and beliefs.
+
+*** How to be a lifelong learner
+1. Make a list of what you want to learn.
+2. Choose one thing you want to learn and identify the resources available.
+3. Structure in some time in your day to learn. Make sure it's realistic.
+4. Make a commitment and try to learn every day if possible.
+
+*** Tips
+- Set aside time for learning instead of being caught up with the daily grind of life.
+- Do one new thing or a different thing every day. For example, try a new dish instead of just sticking to your favourite food, walk a different route back home.
+- Set yourself learning goals. For example learn a new language or a new exercise activity.
+- Be curious to learn what it took for successful people to succeed so that you can learn from how they overcame challenges.
+
+* Life skills
+- Both intrapersonal and interpersonal skills are critical for your career success as they can help you *build relationships with colleagues and clients*.
+- Skills like communication, teamwork, conflict management skills and empathy can help you build strong relationships with the people you work with and build yourself more *professional credibility* in your workplace. Nowadays, peer feedback has an increasing importance to your career success as negative feedback is a clear indication your peers do not have respect for you, nor see you as fit to lead them.
+- Effective business communication and presentation skills will *increase your chances to be hired, increase your ability to win stakeholders over to your agenda and convince others of your potential leadership skills*.
+- Intrapersonal skills like emotional intelligence, self-confidence, and growth mindset, can help you *manage stress and stay motivated* in your workplace which can be a stressful environment. Critical thinking and problem-solving skills and resilience can help you manage stress and stay motivated in the face of challenges instead of you just quitting and job-hopping when the going gets tough. By doing so, you will prove to the bosses that you are capable of positions of higher responsibility which come with more stress.
+- Having a strong sense of curiosity and passion for continuous learning are all the more important in this VUCA (volatility, uncertainty, complexity and ambiguity) world where we could all become stagnant and even made redundant in our jobs if we do not *continually adapt and thrive* in the ever-changing times.
+
+* Communication skills
+
+** Reasons
+
+*** Building relationships
+- Effective communication skills are essential for building positive relationships with colleagues, supervisors, and clients.
+- It can be helpful to build trust, respect, and rapport, which can lead to more productive and collaborative working relationships.
+
+*** Resolving conflicts
+- Effective communication skills are essential for resolving conflicts in the workplace.
+- It can help to de-escalate tensions, find common ground, and reach a resolution that is satisfactory to all parties.
+
+*** Problem-solving
+- Effective communication is essential for problem-solving.
+- It allows individuals to gather information, understand the perspectives of others, and develop effective solutions to problems.
+
+*** Enhancing productivity
+- Effective communication can enhance productivity in the workplace.
+- It can help to streamline processes, clarify expectations, and ensure that everyone is on the same page.
+
+** Tips
+
+*** Listening
+- Being a good listener is the most advised way to communicate as you know what has been said.
+- Pay attention.
+- Ask clarifying questions.
+- Rephrase what the other person said to ensure understanding.
+- Repeat the steps above as needed.
+
+*** Friendliness
+- Being friendly and creating an open environment go a long way in workplace communications.
+- Smile, but only if it is genuine.
+- Being friendly lets people feel like they can and should talk to you.
+- Personalise whenever possible as it makes you more approachable.
+
+*** Open-mindedness
+- Being open-minded is the ability to consider other points of view without staunchly sticking to your own.
+- Open-minded people are not married to their own ideas, which opens communication channels and makes idea workshopping possible.
+- This makes everyone feel valid and supported.
+- Adopt a policy of listening to reasoning before every decision is made.
+- Use phrases like:
+  - This is my reasoning. Can you explain yours, and then we can agree on which we should go with?
+  - Can you help me understand your point of view?
+
+*** Feedback
+- Giving feedback is a critical skill in every workplace.
+- Without feedback, workers cannot know whether their methods are effective or need improvement.
+- Try not to focus on "buts", like:
+  - I liked the layout of this presentation, but your content wasn't right.
+- Use the compliment sandwich, like:
+  - The presentation was great visually, and I really liked the layout. Once we work on elevating the content, it'll be perfect. Since you already have such a great organisation of the ideas, we should be able to punch the content up easily.
+
+*** Non-verbal communication
+- Accounts for 70 - 93% of communication.
+- People get up to 93% of a message even when we are silent, even if it's not the one we think we are sending.
+- Learning how to leverage non-verbal communication properly, we can ensure we are sending the right message.
+- Making and maintain eye-contact to show that you are paying attention, but don't stare.
+- If they're not looking at you, and you've been looking longer than 5 seconds, you're staring.
+- Relax your stance, uncross your arms, relax your shoulders, and pay attention to what your face is doing.
+
+*** Communicate effectively
+- Remember that you are not the only participant in conversations or communication.
+- The other person needs to be considered for communication to consider both parties viewpoints, ideas, and development.
+
+** Tips for active listening
+
+*** Speak less, listen more
+- Try to spend 20% of your time talking while 80% listening to the other person.
+- Ask open-ended questions like the 5 Ws (What? Where? Which? Who? Why?) and 1 H (How?) such as "How do you feel..." to encourage the other person to talk more.
+
+*** Maintain eye contact
+- Put aside your phone as checking your messages while having a conversation is disrespectful to the other person.
+- This will ensure that you have full eye contact with the other person instead of having your eyes on your phone.
+
+*** Reflect on the other person's feelings
+- The other person is more likely to feel "heard" when you use words like "I sense that you feel upset about..."
+- You can also paraphrase what the other person said, e.g. "Just now you shared that..." and "Let me know if I understood you correctly..."
+
+*** Show positive body language
+- You can show postiive body language by nodding your head from time to time and leaning forward as a sign of interest in what the other person is saying.
+
+* Business communication skills
+
+** Reasons
+
+*** Builds professionalism
+Effective communication skills are essential for building a professional image in the workplace. As a fresh graduate or intern, it is important to convey professionalism in your communication, including emails, presentations, and conversations with colleagues. By communicating effectively, they can demonstrate their ability to work well in a team, and be an asset to the company.
+
+*** Builds relationships
+Effective communication helps to build relationships with colleagues, supervisors, and clients. By communicating clearly and respectfully, fresh graduates and interns can build trust, credibility, and rapport with others.
+
+*** Enhances problem-solving
+Effective communication is essential for problem-solving in the workplace. By communicating clearly and asking questions, fresh graduates and interns can identify problems, brainstorm solutions, and work collaboratively to find the best course of action.
+
+*** Helps to adapt to company culture
+Effective communication helps to adapt to the culture of the workplace. By communicating appropriately and understanding the norms of the organisation, fresh graduates and interns can integrate into the team and work more effectively.
+
+** Business emails
+- Pay attention to the purpose of the writing, the audience (is the writing for your bosses, colleagues of the same or below you, or to people outside your organisation) and the tone which should always be respectful and not overly casual as this lack of formality may be misconstrued as tough, demanding or unintentionally disrespectful.
+- All business emails should be direct, clear and easy to read.
+- The formality can vary depending on your company, your readers, your subject, or other factors.
+- Always stay professional and choose your words carefully.
+- The subject line should be brief and descriptive.
+- Consider using the carbon copy (CC) field for readers who do not need to respond.
+- Make your greeting brief and friendly, and address the recipient by name if you know it.
+- Use the first name to be more informal, and the last name to be more formal.
+- Start with the main point in the body of your email and keep it concise and focused on your readers.
+- Include a call to action if you need a response to your email.
+- Be sure to mention any attachments in your email.
+- Offer a quick farewell and provide your name and contact information.
+
+** Presentation skills
+
+*** Tips for a presentation opener
+1. Give a confident introduction.
+   - Stand still.
+   - Bring your inflection down to show confidence.
+2. Give your credentials.
+   - Tell your audience why you are the best person to deliver this presentation and what you have to offer them.
+   - State your credentials as a solution to a problem.
+   - You know how some people have this problem? Well I provide the solution to this problem.
+3. Deliver your hook.
+   - Get your audience to feel something, either more happy, more successful or more free.
+   - I'm going to show you... and fill in the rest with something that is going to make your audience feel happier, more successful or more free.
+   - Write down the reason your presentation will make your audience happier, more successful or more free.
+4. Introduce your agenda.
+   - Show your audience the takeaways for your presentation.
+   - Don't read the slides and summarise what you'll be doing.
+   - Do this by mentioning the number of takeaways you'll be giving them and paraphrasing the goal of your presentation.
+5. Give a credible statement.
+   - Give relevant or compelling data to your audience to support your message.
+   - Your audience will start to trust you and will think that you know what you are talking about.
+
+*** Tips to become a better presenter
+
+**** Focus on the audience
+- What will your audience think, feel and do as a result of listening to you?
+
+**** Delete all excess text from your slides
+- Nobody reads the text.
+- It sends a signal to your audience to start daydreaming.
+- Use powerful images and pictures to get your message across.
+
+**** Keep it simple
+- Less is more, keep only what really matters in your presentation and nothing more.
+- Repeating something 3 times can be really effective.
+
+**** Always rehearse
+- Rehearse in front of the bathroom mirror, or anywhere else for that matter.
+
+**** Make friends with people at the venue
+- Get to the venue early and make friends with them.
+- Learn their names and ask them for help and advice.
+- Ask politely for a soundcheck and to view your presentation on the big screen.
+
+**** Dress to impress
+- Be smart.
+- Err on the smart side, even when dressing smart-casual.
+
+**** Be comfortable
+- Be comfortable with yourself and don't try to be someone else.
+- Be authentic and be yourself.
+
+**** Stand still
+- Don't weave or prowl the stage.
+- Lock your hips and imagine your feet are stuck to the floor.
+
+**** Tell a story
+- Tell the audience a story.
+- Engage in a conversation with the audience, and only then should you talk about targets and measurable goals.
+- Use anecdotes or personal stories to illustrate your points and make your presentation more relatable.
+
+**** Be enthusiastic
+- People will forgive you for any imperfections or omissions in your presentation if you seem enthusiastic.
+
+**** Know your audience
+- Understand the demographics, expectations, and interests of your audience to tailor your presentation accordingly.
+
+**** Use body language
+- Your body language can convey as much as your words.
+- Maintain eye contact, use hand gestures, and vary your tone of voice to make your presentation more dynamic.
+
+**** Be confident
+- Believe in yourself and your message.
+- Speak clearly, stand tall, and smile to show your audience that you are confident and knowledgeable.
+
+**** Manage your time
+- Stick to your allotted time and be respectful of your audience's time.
+
+**** Engage your audience
+- Encourage participation, ask questions and invite feedback to keep your audience engaged throughout your presentation.
+
+* Critical thinking and problem-solving skills
+Critical thinking and problem-solving skills are essential for success in all areas of life, including personal, academic, and professional endeavours. These skills enable individuals to analyse, evaluate, synthesise information, make informed decisions, and solve complex problems effectively.
+
+** Improving your critical thinking skills
+
+*** Formulate your question
+- Know what you are looking for.
+- Know what you are trying to achieve.
+- Have a clear idea of what you want.
+
+*** Gather your information
+- There is a lot of information out there, so having a clear idea of what you want will help you determine what is relevant.
+- It helps you weigh different options, moving you closer to a decision that meets your goal.
+
+*** Apply the information
+- Ask critical questions, such as:
+  - What concepts are at work?
+  - What assumptions exists?
+  - Is my interpretation of the information logically sound?
+  - What is shaping my approach to this situation?
+
+*** Consider the implication
+- Think about the consequences of your actions and any unintended consequences.
+
+*** Explore other points of view
+- Exploring the full spectrum of viewpoints might explain why certain things that don't seem valid to you might appeal to others.
+- This allows you to explore alternatives and evaluate your own choices, and ultimately help you make more informed decisions.
+
+** Steps to problem-solve
+1. Be aware of the problematic situation and define the context and problem as accurately as possible.
+2. List existing knowledge about the problem, like what we know based on our existing knowledge and experiences (what we know).
+3. Identify unknown elements and generate questions about the problem (questions we have).
+4. Build new knowledge on unknown elements through research (what do we need to research).
+5. Make connections between the information collected and come up with a potential solution.
+
+** 7-step problem-solving by Dr Shoji Shiba
+1. Definition
+   - What is the real problem?
+2. Data collection
+   - What is going on?
+3. Cause analysis
+   - Why does the problem exist?
+4. Solution planning and implementation
+5. Evaluation of effects
+   - Check if the implemented solution works, if it didn't, go back to step 1.
+6. Standardisation
+   - Try to generalise the solution and apply it to other areas where it makes sense.
+7. Evaluation of processes
+   - How did we solve this problem?
+   - What did we do well?
+   - What should we do differently next time?
+
+** Design process for problem-solving
+1. Observing the world to ask an interesting question.
+   - Observing the way people live their lives and asking:
+     - Why does somebody do this? And not that?
+     - Why is someone struggling with this problem?
+2. Ideation
+   - Take the insights and imagine ideas.
+3. Prototype.
+4. Test it.
+5. Storytelling.
+   - Explain to people why your idea is interesting.
+6. Repeat until you get something that works.

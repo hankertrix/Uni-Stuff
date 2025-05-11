@@ -1,0 +1,228 @@
+#+TITLE: Math Module 3B Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** Riemann sum
+A Riemann sum is the sum of all the areas of the rectangles under a curve.
+
+\[\sum_{i = 1}^n f(x_{i}^*) \Delta x_i\]
+
+The limit of a Riemann sum is the area under a curve as the maximum width of a rectangle approaches 0 and the number of rectangles approaches infinity. Hence, the area under the curve is:
+\[\lim_{\Delta x \rightarrow 0} \sum_{i = 1}^n f(x_i^*) \Delta x_i\]
+
+** Riemann integral
+Given a function \(f : [a, b] \rightarrow \mathbb{R}\), a Riemann sum is:
+\[\sum_{i = 1}^n f(x_i^*) \Delta x_i, \quad \Delta x_i = a_i - a_{i - 1}\]
+
+Points $a = a_0 < a_1 < \cdots < a_n = b$ form a *partition* of the interval $[a, b]$, and $x_i^*$ are *sample points*. Further, let $\Delta x = max\{\Delta x_i : i = 1, \ldots, n\}$. Suppose the limit of the Riemann sums *exists* and is independent of our choice of partition or sample points. Then we say that $f$ is integrable on $[a, b]$ and the limit below is called the *Riemann integral* of $f$ from $a$ to $b$.
+
+\[\lim_{\Delta x \rightarrow 0} \sum_{i = 1}^n f(x_i^*) \Delta x_i = \int_a^b f(x) \, dx\]
+
+Also, for $a = b$ and $a > b$, we define:
+\[\int_a^a f(x) \, dx = 0, \quad \int_a^b f(x) \, dx = - \int_b^a f(x) \, dx\]
+
+\newpage
+
+** Antiderivatives
+Given a function $f(x)$, any function satisfying $F' = f$ is called an *antiderivative* (or primitive function) to the function $f$.
+\\
+
+If $F' = G' = f$ on an interval $I$, then $F(x) = G(x) + C$ on $I$ for some constants C. This means that on an interval, different antiderivatives of a function can only differ by a constant.
+
+** Improper integrals
+If $f(x)$ is unbounded on $(a, b]$, but integrable (and hence bounded) on $[c, b]$ for every $c > a$, put:
+\[\int_a^b f(x) \, dx = \lim_{c \rightarrow a+} \int_c^b f(t) \, dt\]
+
+The left-hand side of the equation above is called an *improper integral*, and if the limit on the right exists, we say that the improper integral *converges*. Otherwise, we say that it *diverges*.
+\\
+
+Similarly, we can consider the following improper integrals:
+\\
+
+If $f(x)$ is unbounded on $[a, b)$ but integrable on $[a, c]$ for $c < b$, put:
+\[\int_a^b f(x) \, dx = \lim_{c \rightarrow b-} \int_a^c f(t) \, dt\]
+
+And also:
+\[\int_a^{+ \infty} f(x) \, dx = \lim_{R \rightarrow +\infty} \int_a^R f(t) \, dt\]
+\[\int_{- \infty}^b f(x) \, dx = \lim_{R \rightarrow - \infty} \int_R^b f(t) \, dt\]
+
+\newpage
+
+*** Example
+\[\int_0^1 \frac{1}{\sqrt{x}} \, dx\]
+
+Here, $f$ is unbounded on $(0, 1]$ (not even defined at $x = 0$), but for $c \in (0, 1]$, the integral below exists:
+\[\int_c^1 \frac{1}{\sqrt{x}} \, dx\]
+
+Hence, $\int_0^1 \frac{1}{\sqrt{x}} \, dx$ is an improper integral, that can be evaluated as:
+\[\int_0^1 \frac{1}{\sqrt{x}} \, dx = \lim_{c \rightarrow 0+} \int_c^1 \frac{1}{\sqrt{x}} \, dx\]
+
+This is only true if the limit exists.
+
+* Theorems and lemmas
+
+** Continuous functions are integrable
+If a function is continuous on $[a, b]$, then it is integrable on $[a, b]$.
+
+** Linearity
+If $f$ and $g$ are both integrable on $[a, b]$ and $c, d \in \mathbb{R}$, then $cf + dg$ is also integrable on $[a, b]$ and:
+\[\int_a^b [cf(x) + dg(x)] \, dx = c \int_a^b f(x) \, dx + d \int_a^b g(x) \, dx\]
+
+** Additivity
+For $f$ integrable on an interval containing the points $a, b, c$, we have:
+\[\int_a^b f(x) \, dx + \int_b^c f(x) \, dx = \int_a^c f(x) \, dx\]
+
+** The value of the integral follows the output of the function
+If $f$ and $g$ are both integrable on $[a, b]$ and if:
+\[f(x) \le g(x), \quad \text{for all } x \in [a, b]\]
+
+Then:
+\[\int_a^b f(x) \, dx \le \int_b^a g(x) \, dx\]
+
+** Triangle inequality for integrals
+Note that the triangle inequality $|x + y| \le |x| + |y|$ generalises to sums with more terms, i.e.
+\[\left| \sum_{i = i}^n x_i \right| \le \sum_{i = i}^n |x_i|\]
+
+Using the definition of integrals and the properties of limits, and given that $f$ and $|f|$ are integrable on $[a, b]$, it also follows that:
+\[\left| \int_a^b f(x) \, dx \right| \le \int_a^b |f(x)| \, dx\]
+
+** Continuity
+Given an integrable function $f : [a, b] \rightarrow \mathbb{R}$ and let
+\[F(x) = \int_a^x f(t) \, dt\]
+
+Then $F \in C([a, b])$. This is to show that for every \(x_0 \in [a, b], \lim_{x \rightarrow x_0} F(x) = F(x_0)\)
+
+** The integral mean value theorem
+Suppose $f \in C([a, b])$. Then there exists a point $c \in (a, b)$ such that:
+\[f(c) = \frac{1}{b - a} \int_a^b f(x) \, dx\]
+
+** The fundamental theorem of calculus
+Suppose that $f \in C([a, b])$ and let $F : [a, b] \rightarrow \mathbb{R}$ be defined by:
+\[F(x) = \int_a^x f(t) \, dt\]
+
+Then $F'(x) = f(x)$ for any \(x \in (a, b)\).
+
+** Newton-Leibniz' Formula
+If $f$ is continuous and $F' = f$ on $[a, b]$, then:
+\begin{align*}
+\int_a^b f(x) \, dx &= F(b) - F(a) \\
+&= [F(x)]_a^b \\
+&= F(x) |_a^b
+\end{align*}
+
+
+* Variable of integration
+The name for the variable of integration is like a summation index. It is *arbitrary*. However, please *avoid* writing:
+\[\int_a^x f(x) \, dx\]
+
+
+* What kind of functions are integrable?
+The definition requires that for $f$ to be integrable on $[a, b]$, \(\\\) the limit \(\lim_{\Delta x \rightarrow 0} \sum_{i = 1}^n f(x_i^*) \Delta x_i\) must exist and be independent of how the partition points $a_i$ and sample points $x_i^*$ are chosen.
+\\
+
+A previous theorem stated that *continuous* functions on $[a, b]$ are integrable.
+\\
+
+Also, if $f : [a, b] \rightarrow \mathbb{R}$ is *bounded* and is continuous on $[a, b]$ except at finitely many points, $f$ is still integrable. Moreover, changing the value of $f(x)$ at only finitely many points, does not affect the value of the integral \(\int_a^b f(x) \, dx\).
+
+
+* Non-integrable functions
+
+** Example
+Let $f : [0, 1] \rightarrow \mathbb{R}$ be given by:
+\[
+f(x) = \begin{cases}
+1 & \text{for } x \in \mathbb{Q} \\
+0 & \text{for } x \notin \mathbb{Q}
+\end{cases}
+\]
+
+Is $f(x)$ integrable on $[0, 1]$?
+\\
+
+Let \(0 = a_0 < a_1 < a_2 < \cdots < a_n = 1\) be a partition of $[0, 1]$. In each subinterval $[a_{i - 1}, a_i]$, we can pick a point $x_i^* \in \mathbb{Q}$ and a point $t_i^* \notin \mathbb{Q}$.
+\\
+
+With sample points $x_i^*$, we get:
+\[\sum_{i = 1}^n f(x_i^*) \Delta x_i = \sum_{i = 1}^n 1 \cdot \Delta x_i = 1 \rightarrow 1 \text{ as } \Delta x \rightarrow 0\]
+
+On the other hand, with sample points $t_i^*$, we get:
+\[\sum_{i = 1}^n f(t_i^*) \Delta x_i = \sum _{i = 1}^n 0 \cdot \Delta x_i = 0 \rightarrow 0 \text{ as } \Delta x \rightarrow 0\]
+
+Since the limit of Riemann sums as \(\Delta x \rightarrow 0\) is not independent of our choice of sample points, the function $f$ is *not integrable*.
+
+** Unbounded functions are not integrable
+If $f$ is unbounded on $[a, b]$, then $f$ is *not* integrable on $[a, b]$.
+
+\newpage
+
+* Average value of a function
+For a finite set of numbers \(a_1, a_2, \ldots, a_n\), their mean (average) value $a_{avg}$ is:
+\[a_{avg} = \frac{a_1 + a_2 + \ldots + a_n}{n}\]
+
+The idea is that if we replaced all the different $a_i$ with one fixed value, the average $a_{avg}$, we would still have the same sum, i.e.
+\[a_{avg} + a_{avg} + \ldots + a_{avg} = na_{avg} = a_1 + a_2 + \ldots + a_n\]
+\[\sum_{i = 1}^n a_{avg} = \sum_{i = 1}^n a_i\]
+
+The average value $f_{avg}$ of a function $f : [a, b] \rightarrow \mathbb{R}$ we choose such that if we replace $y = f(x)$ with the constant $f = f_{avg}$, we still get the same *integral*.
+
+\newpage
+
+* Applications to physics
+
+** Work
+The amount of work $W$ is the product of the force $F$ and the distance $s$ the object is moved:
+\[W = F \cdot s\]
+
+This assumes that the force is *constant* and acts in the direction of motion.
+\\
+
+If the force is not constant, suppose \(F = F(x)\).
+\\
+
+Let's assume that $F(x)$ is continuous, and moves an object from $x = a$ to $x = b$. Divide $[a, b]$ into $n$ subintervals, $[a_{i - 1}, a_i]$ where:
+\[a = a_0 < a_ 1 < a_2 < \ldots < a_n = b\]
+
+Let \(\Delta x_i = a_i - a_{i - 1}\) and take $x_i^* \in [a_{i - 1}, a_i]$. Since $F$ is continuous, if $\Delta x_i$ is small, we have:
+\[F \approx F(x_i^*), \quad \text{for } x \in [a_{i - 1}, a_i]\]
+
+The work \(\Delta W_i\) required to move the object along $[a_{i - 1}, a_i] is:
+\[\Delta W_i \approx F(x_i^*) \Delta x_i\]
+
+And the total work to move from $a$ to $b$ is:
+\[W = \sum_{i = 1}^n \Delta W_i \approx \sum_{i = 1}^n F(x_i^*) \Delta x_i\]
+
+Taking more but smaller subintervals, the approximation gets better, so:
+\[W \int_a^b F(x) \, dx\]
+
+\newpage
+
+** Centre of mass
+Consider a system of $n$ masses $m_i$ at positions $x_i$ respectively ($i = 1, \ldots, n$).
+\\
+
+It's centre of mass, is the point $\bar{x}$ about which the total moment is zero.
+\[\sum_{i = 1}^n (x_i - \bar{x})m_i = \sum_{i = 1}^n x_i m_i - \bar{x} \sum_{i = 1}^n m_i = 0\]
+
+I.e.
+\[\bar{x} = \frac{\sum_{i = 1}^n x_i m_i}{\sum_{i = 1}^n m_i} = \frac{M_{x = 0}}{m}\]
+
+Where \(M_{x = 0}\) is the total moment about $x = 0$ and $m$ is the total mass.
+
+** Continuous mass distribution
+Consider a one-dimensional distribution of mass with continuously variable line density \(\rho(x)\) along the interval \([a, b]\).
+\\
+
+Consider an element of length $dx$ at position $x$. It has mass $dm = \rho(x) \, dx$ and has a moment \(x = x_0\) of:
+\[dM_{x = x_0} = (x - x_0) \, dm = (x - x_0) \rho(x) \, dx\]
+
+It's centre of mass, is the point $\bar{x}$ about which the total moment is zero, i.e.
+\[\int_{x = a}^b \, dM_{x = \bar{x}} = \int_a^b (x - \bar{x}) \rho (x) \, dx = \int_a^b x \rho (x) \, dx - \bar{x} \int_a^b \rho(x) \, dx = 0\]
+
+Hence:
+\[\bar{x} = \frac{\int_a^b x \rho(x) \, dx}{\int_a^b \rho(x) \, dx} = \frac{M_{x = 0}}{m}\]
+
+Where \(M_{x = 0}\)a is the total moment about $x = 0$ and $m$ is the total mass.

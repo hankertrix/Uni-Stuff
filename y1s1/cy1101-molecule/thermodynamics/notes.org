@@ -1,0 +1,198 @@
+#+TITLE: Thermodynamics Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{graphicx, siunitx}
+#+LATEX_HEADER: \graphicspath{ {./images/} }
+
+* Definitions
+
+** Spontaneous process
+A spontaneous process is a process that, once started, proceeds on its own without a continuous external influence.
+\\
+
+A spontaneous reaction occurs slowly if it has a high activation energy $E_a$.
+
+** State function
+A state function is a function or property whose value depends only on the present state, or condition, of the system, not on the path used to arrive at that state.
+
+** Enthalpy change (\(\Delta H\))
+Enthalpy change is the heat change in a reaction or process at constant pressure.
+\[\Delta H = \Delta E + P \Delta V\]
+
+** Entropy (\(S\))
+Entropy is the amount of molecular randomness in a system.
+
+** Exothermic
+A process is considered exothermic if its \(\Delta H < 0\). In other words, the reaction releases energy.
+
+** Endothermic
+A process is considered endothermic if its \(\Delta H > 0\). In other words, the reaction takes in energy.
+
+** First law of thermodynamics
+The first law of thermodynamics states that in any process, regardless of the process' spontaneity, the total energy of a system and its surroundings is constant.
+
+** Second law of thermodynamics
+The second law of thermodynamics states that in any *spontaneous* process, the total entropy of a system and its surroundings always increases.
+
+** Third law of thermodynamics
+The third law of thermodynamics states that the entropy of a perfectly ordered crystalline substance at \(\qty{0}{\unit{K}}\) is zero.
+
+** Standard molar entropy (\(S^{\circ}\))
+The entropy of 1 mole of a pure substance at \(\qty{1}{\unit{atm}}\) pressure and a specified temperature.
+
+** Thermodynamic standard state
+The thermodynamic standard state is the most stable form of a substance. The conditions are:
+- Pressure of \(\qty{1}{\unit{atm}}\)
+- Temperature of \(\qty{25}{\unit{\degreeCelsius}}\)
+- Concentration of \(\qty{1}{\unit{M}}\) for all substances in solution
+
+\[\Delta G^{\circ} = \Delta H^{\circ} - T \Delta S^{\circ}\]
+
+\newpage
+
+* Formulas
+
+** Change in entropy (\(\Delta S\))
+\[\Delta S = S_{final} - S_{initial}\]
+
+*** Entropy change for a change in state
+\[\includegraphics[width = \textwidth]{entropy-change-solid-liquid-gas}\]
+
+*** Entropy change for a gas reaction
+\[\includegraphics[width = \textwidth]{entropy-change-gas-reaction}\]
+
+*** Entropy change for the dissolution of an ionic compound
+\[\includegraphics[width = \textwidth]{entropy-change-dissolution-of-nacl}\]
+
+** Entropy (\(S\))
+\[S = k \ln W\]
+
+Where:
+\begin{align*}
+k &= \text{Boltzmann's constant} \\
+&= 1.38 \times 10^{-23} \ \unit{J.K^{-1}}
+\end{align*}
+\[W = \text{The number of ways that the state can be achieved}\]
+
+*** Entropy at various temperatures
+\[\includegraphics[width = \textwidth]{entropy-vs-temperature-graph}\]
+
+*** Entropy at high temperatures
+\[\includegraphics[width = 0.5 \textwidth]{entropy-high-temperature}\]
+
+*** Entropy at low temperatures
+\[\includegraphics[width = 0.5 \textwidth]{entropy-low-temperature}\]
+
+\newpage
+
+** Standard molar entropy (\(S^{\circ}\))
+\[\Delta S^{\circ} = S^{\circ}(\text{Products}) - S^{\circ}(\text{Reactants})\]
+
+\[aA + bB \rightarrow cC + dD\]
+\[\Delta S^{\circ} = \underbrace{[cS^{\circ}(C) + dS^{\circ}(D)]}_{\text{Products}} - \underbrace{[aS^{\circ}(A) + bS^{\circ}(B)]}_{\text{Reactants}}\]
+
+** Change in entropy and the 2nd law of thermodynamics
+\[\Delta S_{total} = \Delta S_{system} + \Delta S_{surroundings}\]
+\[\Delta S_{total} = \Delta S_{sys} + \Delta S_{surr}\]
+
+\begin{center}
+\begin{tabular}{c c}
+\(\Delta S_{total} > 0\) & The reaction is spontaneous. \\
+\(\Delta S_{total} < 0\) & The reaction is not spontaneous. \\
+\(\Delta S_{total} = 0\) & The reaction mixture is at equilibrium.
+\end{tabular}
+\end{center}
+
+\[\Delta S_{surr} \propto - \Delta H\]
+\[\Delta S_{surr} \propto \frac{1}{T}\]
+\[\Delta S_{surr} \propto \frac{- \Delta H}{T}\]
+
+\newpage
+
+** Free energy (\(G\))
+\[G = H - TS\]
+\[\Delta G = \Delta H - T \Delta S\]
+
+\begin{align*}
+\Delta S_{total} &= \Delta S_{sys} + \Delta S_{surr} \\
+&= \Delta S_{sys} + \frac{- \Delta H}{T} \quad (\because \Delta S_{surr} = \frac{-\Delta H}{T}) \\
+&= \Delta S - \frac{\Delta H}{T} \quad (\because \Delta S = \Delta S_{sys})
+\end{align*}
+
+Hence:
+\[\Delta S = \Delta S_{total} + \frac{\Delta H}{T}\]
+
+Substituting into the formula for the change in Gibbs free energy
+\begin{align*}
+\Delta G &= \Delta H - T \Delta S \\
+&= \Delta H - T \left( \Delta S_{total} + \frac{\Delta H}{T} \right) \\
+&= \Delta H - T \Delta S_{total} + \Delta H \\
+&= - T \Delta S_{total}
+\end{align*}
+
+Using the second law of thermodynamics and \(\Delta G = - T \Delta S_{total}\):
+\begin{center}
+\begin{tabular}{c c}
+\(\Delta G > 0\) & The reaction is spontaneous. \\
+\(\Delta G < 0\) & The reaction is not spontaneous. \\
+\(\Delta G = 0\) & The reaction mixture is at equilibrium.
+\end{tabular}
+\end{center}
+
+** Standard free energy of formation
+\[\Delta G^{\circ} = \Delta G^{\circ}_f (\text{Products}) - \Delta G^{\circ}_f (\text{Reactants})\]
+
+\[aA + bB \rightarrow cC + dD\]
+\[\Delta G^{\circ} = \underbrace{[cG^{\circ}_f(C) + dG^{\circ}_f(D)]}_{\text{Products}} - \underbrace{[aG^{\circ}_f(A) + bG^{\circ}_f(B)]}_{\text{Reactants}}\]
+
+** Free energy changes under non-standard conditions
+\[\Delta G = \Delta G^{\circ} + RT \ln Q\]
+
+Where \(\Delta G\) is the free energy change under non-standard conditions.
+\\
+
+For example, the Haber synthesis of ammonia:
+\[N_2 (g) + 3H_2 (g) \rightleftharpoons 2NH_3 (g)\]
+\[Q_p = \frac{\left( P_{NH_3} \right)^2}{\left( P_{N_2} \right)^2 \left( P_{H_2} \right)^3}\]
+
+** Free energy and chemical equilibrium
+\[\Delta G = \Delta G^{\circ} + RT \ln Q\]
+
+When the reaction mixture is mostly *reactants*:
+\[Q << 1\]
+\[RT \ln Q << 0\]
+\[\Delta G < 0\]
+
+The total free energy decreases as the reaction proceeds spontaneously in the *forward* direction.
+\\
+
+When the reaction mixture is mostly *products*:
+\[Q >> 1\]
+\[RT \ln Q >> 0\]
+\[\Delta G > 0\]
+
+The total free energy decreases as the reaction proceeds spontaneously in the *reverse* direction.
+\\
+
+\[\Delta G = \Delta G^{\circ} + RT \ln Q\]
+
+At equilibrium, \(\Delta G = 0\) and \(Q = K\):
+\[\Delta G^{\circ} = - RT \ln K\]
+
+\newpage
+
+*** A diagram to explain the relationship between free energy and chemical equilibrium
+\[\includegraphics[width = \textwidth]{free-energy-and-chem-equilibria}\]
+
+*** Relationship between the standard free energy change and the equilibrium constant
+
+\begin{center}
+\begin{tabular}{c|c|c|m{20em}}
+\(\boldsymbol{\Delta G^{\circ}}\) & \(\boldsymbol{\ln K}\) & \(\boldsymbol{K}\) & \(\textbf{Comment}\) \\
+\hline
+\(\Delta G^{\circ} < 0\) & \(\ln K > 0\) & \(K > 1\) & The equilibrium mixture is mainly products. \\
+\(\Delta G^{\circ} > 0\) & \(\ln K < 0\) & \(K < 1\) & The equilibrium mixutre is mainly reactants. \\
+\(\Delta G^{\circ} = 0\) & \(\ln K = 0\) & \(K = 1\) & The equilibrium mixture contains comparable amounts of reactants and products.
+\end{tabular}
+\end{center}

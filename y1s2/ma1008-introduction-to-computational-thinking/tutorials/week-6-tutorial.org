@@ -1,0 +1,978 @@
+#+TITLE: Intro To Comp Thinking Week 6 Tutorial
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Question 1
+
+** (i)
+Python implementation:
+#+begin_src python
+print("Introduction to Computational Thinking"[0])
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+println!("{}", "Introduction to Computational Thinking".chars().nth(0).unwrap());
+#+end_src
+
+** (ii)
+Python implementation:
+#+begin_src python
+print("Introduction to Computational Thinking"[-1])
+#+end_src
+
+No equivalent Rust implementation.
+
+** (iii)
+Python implementation:
+#+begin_src python
+string = "Introduction to Computational Thinking"
+print(string[len(string) - 1])
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+let string = "Introduction to Computational Thinking";
+println!("{}", string.chars().nth(string.len() - 1).unwrap());
+#+end_src
+
+** (iv)
+Python implementation:
+#+begin_src python
+string = "Introduction to Computational Thinking"
+print(string[:12])
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+let string = "Introduction to Computational Thinking";
+println!("{}", &string.to_string()[..12]);
+#+end_src
+
+** (v)
+Python implementation:
+#+begin_src python
+string = "Introduction to Computational Thinking"
+print(string[3:14])
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+let string = "Introduction to Computational Thinking";
+println!("{}", &string.to_string()[3..14]);
+#+end_src
+
+** (vi)
+Python implementation:
+#+begin_src python
+string = "Introduction to Computational Thinking"
+print(string[3:14:-1])
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+let string = "Introduction to Computational Thinking";
+println!("{}", &string.to_string()[3..14].chars().rev().collect::<String>());
+#+end_src
+
+** (vii)
+Python implementation:
+#+begin_src python
+string = "Introduction to Computational Thinking"
+print(string[1::2])
+#+end_src
+
+Rust implementation (non-trivial):
+#+begin_src rust
+
+// Function to print every alternate character starting from the second
+fn print_every_alternate_character() {
+
+    // Gets the string
+    let string = "Introduction to Computational Thinking";
+
+    // Gets the list of characters from the string
+    let char_list: Vec<char> = string.chars().collect();
+
+    // Initialise the list of characters for the final string
+    let mut final_char_list: Vec<char> = vec![];
+
+    // Iterates over the characters of the list,
+    // starting from the second character
+    for i in (1..char_list.len()).step_by(2) {
+
+        // Add the current character to the final list of characters
+        final_char_list.push(char_list[i]);
+    }
+
+    // Get the string from the final list of characters
+    let final_string: String = final_char_list.iter().collect();
+
+    // Print the final string
+    println!("{}", final_string);
+}
+#+end_src
+
+
+* Question 2
+
+** (i)
+#+begin_src python
+string = "it's a beautiful day"
+print(string.capitalize())
+#+end_src
+
+** (ii)
+#+begin_src python
+string = "it's a beautiful day"
+print(string.title())
+#+end_src
+
+** (iii)
+#+begin_src python
+string = "it's a beautiful day"
+print(string.upper())
+#+end_src
+
+** (iv)
+#+begin_src python
+string = "it's a beautiful day"
+print(string.replace(" ", ""))
+#+end_src
+
+** (v)
+#+begin_src python
+string = "it's a beautiful day"
+specified_character = "a"
+print(string.count(specified_character))
+#+end_src
+
+
+* Question 3
+#+begin_src python :results output
+for fahr in range(32, 200, 50):
+    cels = (fahr - 32) * 5 / 9
+    print("{:>4.0f} Fahrenheit = {:<6.2f} Celsius".format(fahr, cels).replace(" ", "□"))
+#+end_src
+
+#+RESULTS:
+: □□32□Fahrenheit□=□0.00□□□Celsius
+: □□82□Fahrenheit□=□27.78□□Celsius
+: □132□Fahrenheit□=□55.56□□Celsius
+: □182□Fahrenheit□=□83.33□□Celsius
+
+
+* Question 4
+
+** (i)
+#+begin_src python
+TypeError: 'str' object does not support item assignment
+#+end_src
+
+** (ii)
+#+begin_src python :results output
+S = "I am testing my program"
+print(S)
+#+end_src
+
+#+RESULTS:
+: I am testing my program
+
+** (iii)
+#+begin_src python :results output
+S = "I am testing my program"
+print(S[::3])
+#+end_src
+
+#+RESULTS:
+: Imei  oa
+
+** (iv)
+#+begin_src python :results output
+S = "I am testing my program"
+print(S[12:4:-1])
+#+end_src
+
+#+RESULTS:
+:  gnitset
+
+
+* Question 5
+
+** (i)
+#+begin_src python :results output
+print("Nanyang"*3)
+#+end_src
+
+#+RESULTS:
+: NanyangNanyangNanyang
+
+** (ii)
+#+begin_src python
+TypeError: can't multiply sequence by non-int of type 'float'
+#+end_src
+
+** (iii)
+#+begin_src python :results output
+print("Nanyang" + "Technological" + "University")
+#+end_src
+
+#+RESULTS:
+: NanyangTechnologicalUniversity
+
+** (iv)
+#+begin_src python
+TypeError: unsupported operand type(s) for -: 'str' and 'str'
+#+end_src
+
+
+* Question 6
+#+begin_src python :results output
+string = "wow"
+y = 0
+for c in string:
+    print(y, c)
+    y += 1
+#+end_src
+
+#+RESULTS:
+: 0 w
+: 1 o
+: 2 w
+
+Essentially, the iterates over all the characters of the string and prints the index in front of each character of the string.
+
+
+* Question 7
+#+begin_src python
+integer = 12345
+last_digit = int(str(integer)[-1])
+#+end_src
+
+
+* Lab
+
+** Question 1
+Python implementation:
+#+begin_src python
+def prompt_string_and_print_ascii() -> None:
+    """
+    The function to prompt the user for a string
+    and print the ASCII value of each character in the string
+    """
+
+    # Asks the user for an input
+    user_input = input("Please enter a string: ")
+
+    # The list of ASCII values
+    ascii_values = [str(ord(char)) for char in user_input]
+
+    # Prints the ASCII values
+    print(*ascii_values)
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// The function to prompt the user for a string and print the ASCII value of
+// each character in the string
+fn prompt_string_and_print_ascii() {
+
+    // Initialise the string to store the user's input
+    let mut input = String::new();
+
+    // Prints the prompt
+    print!("Please enter a string: ");
+
+    // Flush the stdout
+    std::io::stdout().flush().unwrap();
+
+    // Read the user's input to the input variable
+    match std::io::stdin().read_line(&mut input) {
+        Ok(_number_of_bytes) => (),
+        Err(error) => println!("Error: {error}")
+    }
+
+    // The list of ASCII values
+    let ascii_values: Vec<String> = input.trim().chars()
+        .map(|char| (char as u8).to_string())
+        .collect();
+
+    // Prints the ASCII values
+    println!("{}", ascii_values.join(" "));
+}
+#+end_src
+
+** Question 2
+Python implementation:
+#+begin_src python
+def print_multiplication_table() -> None:
+    "Function to print the multiplication table from 1 to 12"
+
+    # Initialise the list of strings to print
+    str_list: list[str] = []
+
+    # The number range
+    number_range = range(1, 12 + 1)
+
+    # Iterates over the numbers
+    for first_number in number_range:
+
+        # Adds an empty string to the list for a new line
+        str_list.append("")
+
+        # Add the header for the multiplication table
+        str_list.append(f"Multiplication table for {first_number}")
+
+        # Iterates over the number range again
+        for second_number in number_range:
+
+            # Gets the result of the multiplication
+            result = first_number * second_number
+
+            # Adds the multiplication to the list
+            str_list.append(f"{first_number} x {second_number} = {result}")
+
+    # Prints the multiplication table joined by new lines
+    print("\n".join(str_list))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to print the multiplication table form 1 to 12
+fn print_multiplication_table() {
+
+    // Initialise the list of strings to print
+    let mut str_list: Vec<String> = vec![];
+
+    // The number range
+    let number_range = 1..=12;
+
+    // Iterates over the numbers
+    for first_number in number_range.clone() {
+
+        // Adds an empty string to the list for a new line
+        str_list.push("".to_string());
+
+        // Add the header for the multiplication table
+        str_list.push(format!("Multiplication table for {first_number}"));
+
+        // Iterates over the number range again
+        for second_number in number_range.clone() {
+
+            // Gets the result of the multiplication
+            let result = first_number * second_number;
+
+            // Adds the multiplication to the list
+            str_list.push(
+                format!("{first_number} x {second_number} = {result}")
+            );
+        }
+    }
+
+    // Prints the multiplication table joined by new lines
+    println!("{}", str_list.join("\n"));
+}
+#+end_src
+
+** Question 3
+Python implementation:
+#+begin_src python
+def all_vowels_present(string: str) -> bool:
+    "The function to check if all the vowels are present in the string"
+
+    # The set of all vowels
+    vowels = {"a", "e", "i", "o", "u"}
+
+    # Initialise an empty set to store the vowels in the string
+    vowels_in_str = set()
+
+    # Iterates over the characters in the string
+    for char in string:
+
+        # If the current character, changed to lowercase, is a vowel
+        if char.lower() in vowels:
+
+            # Add the character to the set of vowels in the string
+            vowels_in_str.add(char)
+
+    # Returns if the set of vowels in the string has the same length
+    # as the set of vowels
+    return len(vowels_in_str) == len(vowels)
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to check if all the vowels are present in the string
+fn all_vowels_present(string: &str) -> bool {
+
+    // The set of all vowels
+    let vowels = std::collections::HashSet::from(['a', 'e', 'i', 'o', 'u']);
+
+    // Initialise an empty set to store the vowels in the string
+    let mut vowels_in_str = std::collections::HashSet::<char>::new();
+
+    // Iterates over the characters in the string
+    for char in string.chars() {
+
+        // If the current character, changed to lowercase, is a vowel
+        if vowels.contains(&char.to_ascii_lowercase()) {
+
+            // Add the character to the set of vowels in the string
+            vowels_in_str.insert(char);
+        }
+    }
+
+    // Returns if the set of vowels in the string has the same length
+    // as the set of vowels
+    return vowels_in_str.len() == vowels.len();
+}
+#+end_src
+
+** Question 4
+Python implementation:
+#+begin_src python
+def print_sentence_stats() -> None:
+    """
+    Function to print out the number of
+    words, upper case letters, lower case letters, digits and other characters.
+    """
+
+    # Initialise all the variables to store the information required
+    number_of_words = 0
+    number_of_uppercase = 0
+    number_of_lowercase = 0
+    number_of_digits = 0
+    number_of_other_chars = 0
+
+    # Get the user's input
+    user_input = input("Please enter a sentence: ")
+
+    # Iterate over all of the characters of the string
+    for char in user_input:
+
+        # Check if the character is an uppercase letter
+        if char.isupper():
+
+            # Increment the uppercase letter count by 1
+            number_of_uppercase += 1
+
+        # Otherwise, check if the character is a lowercase letter
+        elif char.islower():
+
+            # Increment the lowercase letter count by 1
+            number_of_lowercase += 1
+
+        # Otherwise, check if the character is a digit
+        elif char.isdigit():
+
+            # Increment the digit count by 1
+            number_of_digits += 1
+
+        # Otherwise
+        else:
+
+            # Increment the count of other characters by 1
+            number_of_other_chars += 1
+
+            # If the character is a space character
+            if char.isspace():
+
+                # Increment the word count
+                number_of_words += 1
+
+    # If the number of words is not zero, increment its count by 1.
+    # This is because the number of spaces is always 1 less than the number
+    # of words, due to the spaces being the separator between words.
+    number_of_words = number_of_words + 1 if number_of_words != 0 else 0
+
+    # The list of strings to print out
+    str_list = [
+        f"Number of words: {number_of_words}",
+        f"Number of uppercase letters: {number_of_uppercase}",
+        f"Number of lowercase letters: {number_of_lowercase}",
+        f"Number of digits: {number_of_digits}",
+        f"Number of other characters: {number_of_other_chars}",
+    ]
+
+    # Print the list of strings joined by a new line character
+    print("\n".join(str_list))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// Function to print out the number of words, upper case letters,
+// lower case letters, digits and other characters.
+fn print_sentence_stats() {
+
+    // Initialise all the variables to store the information required
+    let mut number_of_words = 0;
+    let mut number_of_uppercase = 0;
+    let mut number_of_lowercase = 0;
+    let mut number_of_digits = 0;
+    let mut number_of_other_chars = 0;
+
+    // Initialise the string to store the user's input
+    let mut input = String::new();
+
+    // Prints the prompt
+    print!("Please enter a sentence: ");
+
+    // Flush the stdout
+    std::io::stdout().flush().unwrap();
+
+    // Read the user's input to the input variable
+    match std::io::stdin().read_line(&mut input) {
+        Ok(_number_of_bytes) => (),
+        Err(error) => println!("Error: {error}")
+    }
+
+    // Iterate over all the characters of the string
+    for char in input.trim().chars() {
+
+        // Check if the character is an uppercase letter
+        if char.is_uppercase() {
+
+            // Increment the uppercase letter count by 1
+            number_of_uppercase += 1;
+        }
+
+        // Otherwise, check if the character is a lowercase letter
+        else if char.is_lowercase() {
+
+            // Increment the lowercase letter count by 1
+            number_of_lowercase += 1;
+        }
+
+        // Otherwise, check if the character is a digit
+        else if char.is_digit(10) {
+
+            // Increment the digit count by 1
+            number_of_digits += 1;
+        }
+
+        // Otherwise
+        else {
+
+            // Increment the count of the other characters by 1
+            number_of_other_chars += 1;
+
+            // Check if the character is a space character
+            if char.is_whitespace() {
+
+                // Increment the word count
+                number_of_words += 1;
+            }
+        }
+    }
+
+    // If the number of words is not zero, increment its count by 1
+    // This is because the number of spaces is always 1 less than the number
+    // of words, due to the spaces being the separator between words.
+    number_of_words = if number_of_words != 0 {
+        number_of_words + 1
+    } else { 0 };
+
+    // The list of strings to print out
+    let str_list = [
+        format!("Number of words: {number_of_words}"),
+        format!("Number of uppercase letters: {number_of_uppercase}"),
+        format!("Number of lowercase letters: {number_of_lowercase}"),
+        format!("Number of digits: {number_of_digits}"),
+        format!("Number of other characters: {number_of_other_chars}"),
+    ];
+
+    // Print the list of strings joined by a new line character
+    println!("{}", str_list.join("\n"));
+}
+#+end_src
+
+** Question 5
+Python implementation:
+#+begin_src python
+def encrypt_given_string() -> None:
+    "A function to ask the user for a string and encrypt it"
+
+    # Gets the user's input
+    user_input = input("Please enter a message you want to encrypt: ")
+
+    # Initialise the list of characters
+    list_of_chars: list[str] = []
+
+    # Iterates over the user's input
+    for char in user_input:
+
+        # If the character is not a digit or a letter
+        if not char.isalnum():
+
+            # Add the character to the list of characters
+            list_of_chars.append(char)
+
+            # Continue the loop
+            continue
+
+        # Otherwise, check if the character is uppercase
+        if char.isupper():
+
+            # Gets the number of the encrypted character
+            # 65 is because uppercase A is 65,
+            # so subtracting 64 will make uppercase A 0
+            new_ordinal = (ord(char) - 65 + 5) % 26 + 65
+
+            # The new character
+            new_char = chr(new_ordinal)
+
+        # Otherwise, check if the character is lowercase
+        elif char.islower():
+
+            # Gets the number of the encrypted character
+            # 97 is because lowercase a is 97,
+            # so subtracting 97 will make lowercase a 0
+            new_ordinal = (ord(char) - 97 + 5) % 26 + 97
+
+            # The new character
+            new_char = chr(new_ordinal)
+
+        # Otherwise, the character is a digit
+        else:
+
+            # Gets the number of the encrypted digit
+            new_number = (int(char) + 3) % 9
+
+            # The new character
+            new_char = str(new_number)
+
+        # Add the new character to the list of characters
+        list_of_chars.append(new_char)
+
+    # Prints the encrypted string
+    print("".join(list_of_chars))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// A function to ask the user for a string and encrypt it
+fn encrypt_given_string() {
+
+    // Initialise the string to store the user's input
+    let mut input = String::new();
+
+    // Prints the prompt
+    print!("Please enter a sentence: ");
+
+    // Flush the stdout
+    std::io::stdout().flush().unwrap();
+
+    // Read the user's input to the input variable
+    match std::io::stdin().read_line(&mut input) {
+        Ok(_number_of_bytes) => (),
+        Err(error) => println!("Error: {error}")
+    }
+
+    // Initialise the list of characters
+    let mut list_of_chars: Vec<char> = vec![];
+
+    // Iterates over the user's input
+    for char in input.trim().chars() {
+
+        // If the character is not a digit or a letter
+        if !char.is_alphanumeric() {
+
+            // Add the character to the list of characters
+            list_of_chars.push(char);
+
+            // Continue the loop
+            continue;
+        }
+
+        // Otherwise, initialise the new character to
+        // add to the list of characters
+        let mut new_char: char;
+
+        // Otherwise, check if the character is uppercase
+        if char.is_uppercase() {
+
+            // Gets the number of the encrypted character
+            // 65 is because uppercase A is 65,
+            // so subtracting 64 will make uppercase A 0
+            let new_ordinal = (char as u8 - 65 + 5) % 26 + 65;
+
+            // Set the new character
+            new_char = new_ordinal as char;
+        }
+
+        // Otherwise, check if the character is lowercase
+        else if char.is_lowercase() {
+
+            // Gets the number of the encrypted character
+            // 97 is because lowercase a is 97,
+            // so subtracting 97 will make lowercase a 0
+            let new_ordinal = (char as u8 - 97 + 5) % 26 + 97;
+
+            // Set the new character
+            new_char = new_ordinal as char;
+        }
+
+        // Otherwise, the character is a digit
+        else {
+
+            // Gets the number of the encrypted digit
+            let new_number = (char.to_digit(10).unwrap() + 3) % 9;
+
+            // Set the new character
+            new_char = char::from_digit(new_number, 10).unwrap();
+        }
+
+        // Add the new character to the list of characters
+        list_of_chars.push(new_char);
+    }
+
+    // Prints the encrypted string
+    println!("{}", list_of_chars.iter().collect::<String>());
+}
+#+end_src
+
+** Question 6
+Python implementation:
+#+begin_src python
+def is_valid_python_variable() -> None:
+    """
+    A function to print 'valid' if the given string is a valid Python variable
+    name and 'invalid' otherwise.
+    """
+
+    # Gets the user's input and strips it
+    user_input = input("Please enter a variable name: ").strip()
+
+    # If the user's input is empty, print "Invalid" and exit the function
+    if len(user_input) == 0:
+        return print("Invalid")
+
+    # The list of ordinals for the numbers
+    number_ordinals = [i for i in range(ord("0"), ord("9") + 1)]
+
+    # The list of ordinals for the alphabets
+    alphabet_ordinals = [i for i in range(ord("A"), ord("z") + 1)]
+
+    # The set containing the ordinals of all the accepted characters
+    # for a Python variable
+    valid_char_ordinals = set(number_ordinals + alphabet_ordinals + [ord("_")])
+
+    # If the first character of the string is a digit or special character,
+    # print "Invalid" and exit the function
+    if (
+        (first_char := user_input[0]).isdigit()
+        or ord(first_char) not in valid_char_ordinals
+    ):
+        return print("Invalid")
+
+    # Otherwise, iterate over the string
+    for char in user_input:
+
+        # If the ordinal of the character isn't in the set of valid characters,
+        # print "Invalid" and exit the function
+        if ord(char) not in valid_char_ordinals:
+            return print("Invalid")
+
+    # Print "Valid"
+    print("Valid")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// A function to print 'valid' if the given string is a valid Python variable
+// nam and 'invalid' otherwise.
+fn is_valid_python_variable() {
+
+    // Initialise the string to store the user's input
+    let mut input = String::new();
+
+    // Prints the prompt
+    print!("Please enter a variable name: ");
+
+    // Flush the stdout
+    std::io::stdout().flush().unwrap();
+
+    // Read the user's input to the input variable
+    match std::io::stdin().read_line(&mut input) {
+        Ok(_number_of_bytes) => (),
+        Err(error) => println!("Error: {error}")
+    }
+
+    // Trims the user input
+    let user_input = input.trim();
+
+    // If the user's input is empty, print "Invalid" and exit the function
+    if user_input.len() == 0 {
+        return println!("Invalid");
+    }
+
+    // The list of ordinals for the numbers
+    let mut number_ordinals: Vec<u8> = (('0' as u8)..=('9' as u8)).collect();
+
+    // The list of ordinals for the alphabets
+    let mut alphabet_ordinals: Vec<u8> = (('A' as u8)..=('z' as u8)).collect();
+
+    // Append the number ordinals to the alphabet ones
+    alphabet_ordinals.append(&mut number_ordinals);
+
+    // Add the ordinal for the underscore to the list of ordinals
+    alphabet_ordinals.push('_' as u8);
+
+    // Create a set containing the ordinals of all the accepted characters
+    let valid_char_ordinals = std::collections::HashSet::<u8>::from_iter(
+        alphabet_ordinals
+    );
+
+    // Gets the first character of the user's input
+    let first_char = user_input.chars().nth(0).unwrap();
+
+    // If the first character of the string is a digit or special character,
+    // print "Invalid" and exit the function
+    if first_char.is_digit(10) || !valid_char_ordinals.contains(
+        &(first_char as u8)
+    ) {
+        return println!("Invalid");
+    }
+
+    // Otherwise, iterate over the string
+    for char in user_input.chars() {
+
+        // If the ordinal of the character isn't
+        // in the set of valid characters,
+        // print "Invalid" and exit the function
+        if !valid_char_ordinals.contains(&(char as u8)) {
+            return println!("Invalid");
+        }
+    }
+
+    // Print "Valid"
+    println!("Valid");
+}
+#+end_src
+
+** Question 7
+Python implementation:
+#+begin_src python
+import re
+import math
+
+# The regex to check if a string is a number
+is_number_regex = re.compile(r"^-?\d+(?:\.\d+)?$")
+
+
+def calculate_circumference_and_area_of_circle() -> None:
+    """
+    The function to calculate the circumference and the area of a circle,
+    given the radius.
+    """
+
+    # The variable representing whether the input is a number or not
+    is_number = False
+
+    # While the input isn't a number
+    while not is_number:
+
+        # Gets the input
+        user_input = input(
+            "Please enter the radius of the circle: "
+        )
+
+        # Set the is_number variable
+        is_number = bool(is_number_regex.match(user_input))
+
+    # Set the radius of the circle to the user's input
+    radius = float(user_input)
+
+    # Calculate the circumference and the radius of the circle
+    circumference = 2 * math.pi * radius
+    area = 2 * math.pi * radius ** 2
+
+    # Print the calculations
+    print(
+        f"Radius of circle = {radius:.2f}, {circumference = :.2f}, {area = :.2f}"
+    )
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// The function to calculate the circumference and the area of a circle,
+// given the radius.
+fn calculate_circumference_and_area_of_circle() {
+
+    // Initialise the radius variable to store the radius of the circle
+    let mut radius = 0.0;
+
+    // Initialise the variable to represent
+    // whether or not the input is numeric
+    let mut is_number = false;
+
+    // Initialise the string to store the user's input
+    let mut input = String::new();
+
+    // While the input is not numeric
+    while !is_number {
+
+        // Prints the prompt
+        print!(
+            "Please enter the radius of the circle: "
+        );
+
+        // Flush the stdout
+        std::io::stdout().flush().unwrap();
+
+        // Read the user's input to the input variable
+        match std::io::stdin().read_line(&mut input) {
+            Ok(_number_of_bytes) => (),
+            Err(error) => println!("Error: {error}")
+        }
+
+        // Match statement to handle errors
+        match input.trim().parse::<f64>() {
+
+            // If there are no errors
+            Ok(value) => {
+
+                // Sets the height to the user's input
+                radius = value;
+
+                // Set the is_number variable to true
+                is_number = true;
+            },
+
+            // If there's an error parsing, set is_number is false
+            Err(_) => is_number = false
+        }
+
+        // Make the input an empty string
+        input = "".to_string();
+    }
+
+    // Calculate the circumference and the radius of the circle
+    let circumference = 2.0 * std::f64::consts::PI * radius;
+    let area = 2.0 * std::f64::consts::PI * radius.powi(2);
+
+    // Print the calculations
+    println!(
+        "Radius of circle = {:.2}, circumference = {:.2}, area = {:.2}",
+        radius, circumference, area
+    );
+}
+#+end_src

@@ -1,0 +1,175 @@
+#+TITLE: SP0061 Science & Tech for Humanity Week 2 Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** Germ line cells
+Germ line cells are cells that are "immortal", in the sense that they can keep replicating and never cause us to die.
+
+** Somatic cells
+Somatic cells are cells that are subject to ageing and cause us to ultimately die as they stop dividing after a finite number of cell divisions.
+
+** Senescent cells
+Senescent cells are cells that remain metabolically active but they no longer replicate. Senescent cells also cause:
+- Inflammation
+- Tissue degeneration
+- Induce DNA damage
+
+Theoretically, the removal of senescent cells should allow the proliferation of healthy cells and repair the damaged tissue. It has been found that clearing senescent cells delayed age-associated problems in mice.
+
+** Senolytics
+Senolytics are drugs that target and kill senescent cells.
+
+** Telomeres
+- They are the bits of repetitive DNA sequences that are found at the end of the chromosome, to protect the chromosome ends from being recognised as broken pieces of DNA.
+- The name comes from the Greek word *"telos"*.
+- They also limit cell proliferation.
+
+** End replication problem
+The chromosome ends of DNA shorten during replication. The telomeres on the cell shorten until they reach a critically shortened length, which causes the cell to elicit a DNA damage response. This DNA damage caused by the shortening of the telomeres cannot be repaired, unlike other kinds of DNA damage. This triggers the cell to enter a senescent state, where it cannot continue replicating.
+
+** Apoptosis
+Controlled cell death, usually caused by a signal sent by the body to ask the cell to self-destruct.
+
+** Telomerase
+An enzyme that joins up with the ends of shortened chromosomes to make the telomeres long again. This allows the cell to circumvent the end replication problem and makes the cell effectively immortal. It is the main difference between germ line and somatic cells.
+
+** Senescence biomarkers
+Senescence biomarkers are biological markers of senescent cells.
+
+** Mitochondria
+- Involved in ATP (energy) production
+- Involved in neurotransmitter production (glutamate and GABA)
+- Produce reactive oxygen species (ROS) as a by product
+
+** Metabolic brain ageing
+- It is characterised by *bioenergetic failure* and is accompanied by the *impairment of mitochondrial dynamics* and mitochondrial quality control pathways, leading to excessive production of *reactive oxygen species (ROS)* which are harmful to cell proteins lipids, and DNA.
+- Bioenergetic deficit is caused by ageing cells being *unable to take up glucose effectively*, resulting in *reduced production of energy (ATP)* and *increased amounts of reactive oxygen species (ROS)*, which results in cell death, causing the loss of tissue and hence cognitive decline.
+
+*** Mitigation through keto diet
+- The body metabolises fats differently from glucose, which produces ketone bodies.
+- Ketone bodies can be metabolised by the body's cells, but do not produce any reactive oxygen species in the process.
+- Clinical trials have demonstrated that a keto diet improves cognition during ageing.
+
+[[./images/gut-microbiome-and-keto-diet.png]]
+
+** Gut microbiome
+- Has 100 trillions of bacteria (10 times of all human cells), with over 1,000 different species.
+- Has over 3 million genes.
+- Weighs up to 2 kg
+- Bacteria in the gut eat the food and produce *nutrients*.
+- Probiotics and prebiotics can help our gut microbiome function better.
+
+** Fecal Microbiota Transplant (FMT)
+Fecal microbiota transplant is a procedure to implant the gut bacteria of another person into a target individual to replenish or increase the diversity of the gut microbiome of that target individual
+
+** Prebiotics
+Prebiotics are compounds in food that foster growth or activity of beneficial microorganisms such as bacteria and fungi. Prebiotics can alter the composition of organisms in the gut microbiome.
+
+** Probiotics
+Probiotics are live microorganisms promoted with claims that they provide health benefits when consumed, generally by improving or restoring the gut microbiota.
+
+** Dementia
+- Dementia is just rapid cognitive decline.
+- The brain usually undergoes cognitive decline when ageing, but dementia causes the brain to undergo rapid changes in structure and function.
+- Usually, cognitive decline when ageing is minor, or non-existent. Cognition may even improve as we age, and one example is Dr. Sydney Brenner, a Nobel laureate and one of the greatest biologists in the world of all time, who died in Singapore in 2019 at the age of 92.
+
+** Cognitive performance during ageing
+
+*** Cognitive reserve
+A cognitive reserve is a reserve of cognition that is built up over one's lifetime through their lifetime experiences. Examples of such lifetime experiences include:
+- Education
+- Having an engaging occupation
+- Taking part in stimulating activities, ideally combining leisure activities, learning and social interactions
+
+The better you cognitive reserve is, the better you are protected against cognitive decline. As such, it is imperative to build up a large cognitive reserve when you are young and your brain plasticity is better. You should constantly engage yourself in cognitive activities, with enriching family and social contacts, etc.
+
+*** Maintenance
+Maintenance is the maintenance of cognitive performance by engaging in stimulating activities.
+
+*** Compensation
+Compensation is when the brain activates more resources to compensate for ageing-related loss in structure and function in the brain.
+
+** Recruitment based brain mechanism
+When a simple cognitive task is performed in a younger brain, such as the recall of objects presented in a sequence, only small regions are activated in the brain, which means that relatively few neurons are required to perform the task. For older brains, larger sections of the brain are activated to perform the same task, indicating that more neurons are used to perform the task. In elderly with high performance, the neuron activation is complemented in the other side of the brain, which means the brain is mobilising other neuronal populations to help the ones that are involved in the task.
+
+This is called spatial recruitment, where the brain mobilises resources other than those sufficient at younger ages to perform the cognitive task. The brain can also make use of temporal recruitment when performing the task needs more processing time.
+
+** Blue zones
+Blue zones are places in the world with high life expectancy. Some examples of such places include:
+- Loma Linda, California
+- Nicoya, Costa Rica
+- Ogliastra Region, Sardinia
+- Ikaria, Greece
+- Okinawa, Japan
+
+The people in these places usually have:
+- An active family life
+- An active social life
+- Life purpose and meaning
+- Spirituality or religion
+- Stress reduction
+- Moderate calorie intake
+- Moderate alcohol intake
+- Plant-based diet
+- Regular physical activity
+
+** Centenarians
+Centenarians are people who are 100 years or older.
+
+* Ageing by 2050
+By 2050:
+- One-fifth of the human population will be over 60.
+- This trend is exacerbated in developed countries.
+- Increased health care costs.
+- Result in significant demographic challenges.
+
+* Age-related illnesses
+*Age* is the major risk factor for developing *chronic illnesses*.
+- Cardiovascular diseases
+- Neurodegenerative diseases
+- Cancer
+- Diabetes
+- Chronic wounds
+- Frailty
+
+* Risks for telomere shortening
+- Exposure to pollution
+- Smoking
+- Obesity
+- Excessive alcohol consumption
+- Chronic stress
+
+Telomere shortening is associated with an earlier onset of developing chronic age-related diseases.
+
+* Cell effects of ageing
+[[./images/cell-effects-of-aging.png]]
+
+- Altered intercellular communication
+- Genomic instability
+- Telomere attrition or dysfunction
+- Epigenetic alterations
+- Loss of proteostasis
+- Impaired nutrient sensing, which means the body is less able to process and absorb nutrients as we age
+- Mitochondrial dysfunction
+- Cellular senescence
+- Stem cell exhaustion
+
+* Energy use by the brain
+- 20% of the whole body's energy budget is used by the brain, while the brain is only one-fiftieth of the whole body.
+- This energy is used to maintain communication between nerve cells, called synaptic transmission.
+- The energy is also used to movement ions across the cell membrane as that movement requires chemical energy in the form of ATP.
+- Glucose is the main source of chemical energy used by the brain.
+
+[[./images/glucose-cycle.png]]
+[[./images/cell-glucose-cycle.png]]
+
+* Activities to improve cognition
+- Cognitive training
+- Physical training
+- Enriched environment
+- Stimulating cognitive activities
+
+These activities have also been proven to improve life expectancy.

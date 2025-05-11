@@ -1,0 +1,279 @@
+#+TITLE: ML0004 Career & Innovative Enterprise for the Future World Topic 2 Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** VIPS
+
+*** Values
+
+*** Interests
+It is often easier to think about what you are NOT interested in, rather than what you are interested in. Ideally, you should not be limited by a specific industry or job title you are attracted to, but to keep an open mind in exploring your interests.
+
+Do not be influenced by passing trends or what others (like your parents, teachers) may advise you, as ultimately, you have to make your own informed decision on what is best for yourself.
+
+*** Personality styles
+Understanding your own personality can give you a better idea on which job you may find a better fit.
+
+*** Skills
+
+**** Hard skills
+Hard skills are the technical skills needed to achieve your work goals. Employers can get an idea by looking at your resume or qualifications.
+
+**** Soft skills
+Soft skills refer to the skills needed to get along well with others to achieve harmonious relationships with your bosses and team members.
+
+** SODA
+
+*** Self-assessment
+- Discover your VIPS (Values, Interests, Personality styles, and Skills).
+- Invest time to power up essential career search skills, such as resume writing and interview techniques.
+- Self-knowledge is the first fundamental step in a successful job search and long-term career planning.
+- Career exploration with your career coach.
+- Online career module.
+- Career and employability skills workshops.
+
+**** Work
+- Work may be paid or unpaid.
+- Most people have more than one type of work.
+- For example, it could be a responsibility in the family, school or at the workplace.
+- If you are a volunteer, you could count that as work too.
+
+**** Play
+- Play is an activity that brings you joy and just by doing it.
+- It can be organised for formal groups like in your curriculum activities, or done as informal activities like playing a game on your phone.
+- All lives need some play so ensuring you have some play in your life is an important step in your life design.
+
+**** Love
+- Love is a relationship with your significant other, your family, community and even pets!
+- In the [[https://news.harvard.edu/gazette/story/2017/04/over-nearly-80-years-harvard-study-has-been-showing-how-to-live-a-healthy-and-happy-life/][80-year-long Harvard Study of Adult Development]], researchers found that the most important determinant of health was the quality of relationships. Close relationships help keep people happy and help delay cognitive and physical decline.
+- No man is an island, so do you have enough enriching relationships in your life?
+
+**** Health
+- Would you say that health is arguably more important than some or all of the other areas?
+- After all, without health, the other areas could be badly affected.
+- Health could refer to physical, mental or spiritual health.
+- Spiritual health need not necessarily refer to the state of your religious beliefs.
+- Some might define spiritual health as a belief in something larger than yourself and being at peace with the world.
+- It is up to you to interpret what health means to you.
+
+**** Start where you are
+1. Recognise and mark your current state and identify the actions or inactions that led to this state.
+2. Ask yourself if there are any areas you would like to improve, especially if you think it is low.
+
+*** Explore Options
+- Explore your full range of career options and gauge your fit.
+- Understanding job requirements by networking with industry professionals, including mentors and alumni through experiential programmes, events, internships and career fairs.
+- Industry and experiential career education.
+- Network with industry professionals.
+
+*** Set Directions
+- Focus on your best available and attainable career options.
+- Deepen your skills and expand your horizons with real-world projects.
+- Meet with your Career Coach again to evaluate and fine-tune your career plans.
+- Enhance your career planning and job search with industry insights from Career Consultants to have a better understanding of employer expectations and application processes.
+- Internships and global experience.
+- Career planning with career coach.
+- Industry insights from career consultants.
+
+*** Take Action
+- Set yourself for career success by acquiring more workplace-ready skills for CAO (NTU Career and Attachment Office) workshops.
+- Tap all opportunities to connect with potential employers to shine and secure your First destination upon graduation.
+- Career and employability skills workshops.
+- CareerAxis, one-stop portal for jobs, internships and events.
+- Recruitment and networking events.
+- Career fairs.
+
+** Work view
+A work view should address the critical issues related to what work is and what it means to you.
+
+It is not just a list of what you want from or out of work, but a general statement of your view of work.
+
+A workview may address such questions as:
+- Why work?
+- What's work for?
+- What defines good or worthwhile work?
+- What does money have to do with it? - Does work need to pay well?
+- How important is your experience, fulfilment and personal growth while working?
+
+** Life view
+Your life view is what provides your definition of what matters most to you.
+
+- Why are we here?
+- What is the meaning or purpose of life?
+- What is the relationship between you and others?
+- Where do family, country, and the rest of the world fit in?
+- What is good, and what is evil?
+- Is there a higher power, God, or something transcendent, and if so, what impact does this have on your life?
+- What is the role of joy, sorrow, justice, injustice, love, peace, and strife in life?
+
+** Achieving coherence
+Review your work view and life view statements and see if there is a contradiction. For example, you may think that worthwhile work is when you can earn lots of money in a particular career. But you also know you are not willing to sacrifice for long hours at the office with little time spend with family.
+
+People could end up feeling burnt out and dread going to work because their experience of work contradicts with their life view. *By having your work view and life view in alignment, you will be able to achieve clarity and live a coherent life*.
+
+** Flow theory
+1. The task needs to be something you find intrinsically rewarding.
+2. You need clear goals and a sense of progress.
+3. The task needs clear and immediate feedback.
+4. The challenge must match the perceived skills.
+5. It requires intense focus on the present moment.
+
+** Holland's personality types (RIASEC)
+
+*** Realistic (Doers)
+
+**** Characteristics
+- Athletic ability
+- Work outdoors
+- Realistic
+- Likes working with plants, animals and real world objects and materials
+
+**** Career possibilities
+- Engineers
+- Fishing game wardens
+- Athletic trainers
+- Plumbers
+- Audio and video technicians
+
+**** Generally avoids
+- Social activities
+- Teaching
+- Healing
+- Informing others
+
+*** Investigative (Thinkers)
+
+**** Characteristics
+- Work independently
+- Like challenging ideas
+- Precise, scientific and intellectual
+
+**** Career possibilities
+- Archaeologists
+- Biologists
+- Sociologists
+- Psychologists
+
+**** Generally avoids
+- Leading, selling or persuading people
+
+*** Artistic (Creators)
+
+**** Characteristics
+- Imaginative
+- Unconventional
+- Emotionally expressive
+
+**** Career possibilities
+- Architects
+- Entertainers
+- Photographers
+- Journalists
+
+**** Generally avoids
+- Highly ordered or repetitive activities
+
+*** Social (Helpers)
+
+**** Characteristics
+- Skilled with words
+- Helps, informs, and cures others
+
+**** Career possibilities
+- Therapists
+- Police officers
+- Teachers
+- Social workers
+- Members of college and university faculty
+
+**** Generally avoids
+- Using tools, machines or animals to achieve a goal
+
+*** Enterprising (Persuaders)
+
+**** Characteristics
+- Self-confident
+- Adventurous
+- Spontaneous
+- Optimistic
+
+**** Career possibilities
+- Advertisers
+- Entrepreneurs
+- Politicians
+- Stockbrokers
+
+**** Generally avoids
+- Activities that require careful observation and scientific analytical thinking
+
+*** Conventional (Organisers)
+
+**** Characteristics
+- Organised
+- Methodical
+- Numerically inclined
+
+**** Career possibilities
+- Tax consultants
+- Bookkeepers
+- Travel agents
+- Accountants
+- Loan officers
+
+**** Generally avoids
+- Ambiguous, unstructured activities
+
+** Prototype conversations
+Prototype conversations just refer to conversations with people who are already doing what you are interested in to get a better idea of something.
+
+** Prototype experience
+Prototype experience refers to experiencing what you are interested in by actually doing it in an controlled environment with no expectation of commitment.
+
+** Why prototype?
+We prototype to ask good questions, create experiences, reveal our assumptions, fail fast, fail forward, sneak up on the future, and build empathy for ourselves and others.
+
+** Odyssey Years
+Odyssey years refer to the ages 20 - 35. It is the decade of wander that frequently occurs between adolescence and adulthood. It is a formative time in any young person's life.
+
+** Odyssey Plan
+An odyssey plan is a brainstorm of how your life might look like 5 - 10 years in the future.
+
+*** Ingredients
+1. Three unique 5-year timelines:
+   - Professional and personal milestones (bucket list)
+   - 6-word title
+   - 3 questions
+2. Preferred timeline extended to 10 years:
+   - Dashboard
+   - Thank you note
+3. A graphical symbol
+
+*** Designing the 3 unique timelines
+1. What I think I'm going to do?
+2. What if the first thing disappeared?
+3. What if money or image were no object?
+
+*** 10-year plan dashboard
+- Resources
+  Do you have the time and resources to fulfil this plan?
+- Likeability
+  How much do you like this plan?
+- Confidence
+  How confident are you about achieving this plan?
+- Coherence
+  Is this plan consistent with your life view and work view?
+
+** Career mobility
+
+*** 4 wisdoms
+1. Up is not the only way.
+   Your goal can differ at different points in time, and can change over time. To make progress towards your destination, you must have a clear understanding of where you want to go.
+2. There are countless ways to go from point A to point B.
+   There are various routes to achieve your goal. It helps to gain perspective from others with more experience who can provide helpful advice and support.
+3. Many different factors affect your actions.
+   Your skills, strengths, experiences, performance, and the landscape all affect your actions and your trajectory.
+4. The path is flexible.
+   You can choose safer or riskier paths, depending on the options and conditions that present themselves.

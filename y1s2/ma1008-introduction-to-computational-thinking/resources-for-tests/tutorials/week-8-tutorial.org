@@ -1,0 +1,852 @@
+#+TITLE: Intro To Comp Thinking Week 8 Tutorial
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Question 1
+
+** ~def~ keyword
+The ~def~ keyword tells Python that the line is a function definition.
+
+** Function name
+The name of the function is a valid Python identifier that is used to call the function after it is defined.
+
+** Parameter list
+The parameter list, inside parentheses ~()~, is the list of parameter names that represent the inputs to the function.
+
+
+* Question 2
+1. Functions abstract away implementation details.
+2. Functions can be reused, which results in less duplication of code.
+3. Functions simplify things and also improve readability by breaking down code into parts.
+
+
+* Question 3
+#+begin_src python
+def Func(num):
+    total = 0
+    while num > 0:
+        total = total + num*(num-1)
+        num = num -1
+    return total
+#+end_src
+The function calculates the factorial of a given number.
+
+* Question 4
+#+begin_src python :results output
+def Func(num):
+    total = 0
+    while num > 0:
+        total = total + num*(num-1)
+        num = num -1
+    return total
+
+print(Func(5))
+print(Func(5.5))
+print(Func("5"))
+print(Func())
+#+end_src
+
+** (i)
+#+begin_src python
+40
+#+end_src
+
+** (ii)
+#+begin_src python
+53.5
+#+end_src
+
+** (iii)
+#+begin_src python
+None
+#+end_src
+
+** (iv)
+#+begin_src python
+None
+#+end_src
+
+
+* Question 5
+#+begin_src python :results output
+number = 50
+def Func(number):
+    print(number)
+    number=2
+    print(number)
+
+Func(number)
+print(number)
+#+end_src
+
+#+RESULTS:
+: 50
+: 2
+: 50
+
+** Explanation
+1. When the ~Func~ function is called, ~50~ is passed as the argument to the ~Func~ function.
+2. The ~Func~ function then prints the ~number~ variable, which is ~50~.
+3. Within the ~Func~ function, the variable ~number~ is reassigned to ~2~.
+4. The ~Func~ function then prints the ~number~ variable, which is ~2~.
+5. After the ~Func~ function is called, the global variable ~number~ is printed, which is ~50~.
+   - The global variable ~number~ is not modified as the function creates its own local scope.
+   - This means that the ~number~ variable within the ~Func~ function is separate from the global variable ~number~ and is hence not the same.
+   - Thus, the ~global~ variable ~number~ is not modified.
+
+
+* Question 6
+#+begin_src python :results output
+confusing = 0
+def do_work(num):
+    confusing = -50
+    confusing += num
+    print("confusing in do_work is ", confusing)
+    return confusing
+
+confusing = 100
+print("confusing in main is ", confusing)
+confusing += do_work(confusing)
+print("confusing in main is ", confusing)
+confusing += do_work(confusing)
+print("confusing in main is ", confusing)
+confusing += do_work(confusing)
+#+end_src
+
+#+RESULTS:
+: confusing in main is  100
+: confusing in do_work is  50
+: confusing in main is  150
+: confusing in do_work is  100
+: confusing in main is  250
+: confusing in do_work is  200
+
+
+* Question 7
+Python implementation:
+#+begin_src python
+def is_leap_year(year: int) -> bool:
+    "The function to return if a year is a leap year"
+    return year % 4 == 0 and not year % 100 == 0 or year % 400 == 0
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// The function to return if a year is a leap year
+fn is_leap_year(year: i32) -> bool {
+    year % 4 == 0 && !(year % 100 == 0) || year % 400 == 0
+}
+#+end_src
+
+
+* Question 8
+Python implementation:
+#+begin_src python
+def add_two_vectors(v1: list[float], v2: list[float]) -> list[float]:
+    "Function to add two vectors together"
+
+    # Returns the sum of the two vectors
+    return [v1[i] + v2[i] for i in range(len(vec_1))]
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to add two vectors together
+fn add_two_vectors(v1: Vec<i32>, v2: Vec<i32>) -> Vec<i32> {
+
+    // Returns the sum of the two vectors
+    v1.iter().enumerate()
+        .map(|(index, value)| value + v2[index])
+        .collect()
+}
+#+end_src
+
+* Lab
+
+** Question 1
+Python implementation:
+#+begin_src python
+def add_two_vectors(v1: list[float], v2: list[float]) -> list[float]:
+    "Function to add two vectors together"
+
+    # Returns the sum of the two vectors
+    return [v1[i] + v2[i] for i in range(len(vec_1))]
+
+
+# The program
+def print_sum_of_two_vectors() -> None:
+    """
+    Function to read in 2 vectors and print their sum.
+    """
+
+    # Initalise the list to store the vectors
+    vec_list: list[list[float]] = []
+
+    # Iterates over the number of vectors, which is 2
+    for vec_num in range(1, 3):
+
+        # Initialise the vector
+        vec: list[float] = []
+
+        # Iterates over the coordinates for the vector
+        for nth_coord in range(1, 3):
+
+            # Initialise the is_number variable to False
+            is_number = False
+
+            # While the input isn't a number
+            while not is_number:
+
+                # Gets the input
+                user_input = input(
+                    f"Please enter the {nth_coord} coordinate "
+                    f"for vector {vec_num}: "
+                )
+
+                # Set the is_number variable
+                is_number = bool(is_number_regex.match(user_input))
+
+            # Adds the user's input to the vector
+            vec.append(float(user_input))
+
+        # Adds the vector to the list of vectors
+        vec_list.append(vec)
+
+    # Adds the two vectors together and print the result
+    print(add_two_vectors(*vec_list))
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// Function to add two vectors together
+fn add_two_vectors(v1: Vec<i32>, v2: Vec<i32>) -> Vec<i32> {
+
+    // Returns the sum of the two vectors
+    v1.iter().enumerate()
+        .map(|(index, value)| value + v2[index])
+        .collect()
+}
+
+
+// The program
+// Function to read in 2 vectors and print their sum
+fn print_sum_of_vectors() {
+
+    // Initialise the list to store the vectors
+    let mut vec_list: Vec<Vec<f64>> = vec![];
+
+    // Iterates over the number of vectors, which is 2
+    for vec_num in 1..=2 {
+
+        // Initialise the vector
+        let mut vector: Vec<f64> = vec![];
+
+        // Iterates over the coordinates for the vector
+        for nth_coord in 1..=2 {
+
+            // Initialise the variable to represent
+            // whether or not the input is numeric
+            let mut is_number = false;
+
+            // Initialise the string to store the user's input
+            let mut input = String::new();
+
+            // While the input is not numeric
+            while !is_number {
+
+                // Print the prompt
+                print!("Please enter the {nth_coord} coordinate for vector {vec_num}: ");
+
+                // Flush the stdout
+                std::io::stdout().flush().unwrap();
+
+                // Read the user's input to the input variable
+                match std::io::stdin().read_line(&mut input) {
+                    Ok(_number_of_bytes) => (),
+                    Err(error) => println!("Error: {error}")
+                }
+
+                // Match statement to handle errors
+                match input.trim().parse::<f64>() {
+
+                    // If there are no errors
+                    Ok(value) => {
+
+                        // Add the value to the vector
+                        vector.push(value);
+
+                        // Set the is_number variable to true
+                        is_number = true;
+                    },
+
+                    // If there's an error parsing, set is_number is false
+                    Err(_) => is_number = false
+                }
+
+                // Make the input an empty string
+                input = "".to_string();
+            }
+        }
+
+        // Adds the vector to the list of vectors
+        vec_list.push(vector);
+    }
+
+    // Adds the two vectors together and print the result
+    println!("{:?}", add_two_vectors(
+        (*vec_list[0]).to_vec(), (*vec_list[1]).to_vec())
+    );
+}
+#+end_src
+
+** Question 2
+Python implementation:
+#+begin_src python
+def calculate_horizontal_distance_of_projectile_motion(
+    velocity: float,
+    height: float,
+    angle: float
+) -> float:
+    """
+    A function to calculate the horizontal distance of projectile motion
+
+    The velocity is the velocity of the projectile at launch.
+    The height is the initial height of the projectile.
+    The theta is the angle at which the projectile is launched in radians.
+    """
+
+    # Set the gravitational constant g
+    g = 9.81
+
+    # Gets the distance using the mathematical equation
+    distance = (velocity ** 2 / (2 * g)) * \
+        (1 + (1 + (
+            (2 * g * height) / (velocity ** 2 * (math.sin(angle) ** 2))
+        )) ** 0.5) * math.sin(angle * 2)
+
+    # Returns the distance
+    return distance
+
+
+# The program
+def print_horizontal_distance_of_projectile_motion() -> None:
+    """
+    A function to read the velocity, height and angle of projectile motion
+    from the user and print the horizontal distance.
+    """
+
+    # The list of variables to store
+    variable_list = ("velocity", "height", "angle in radians")
+
+    # The list to store the user's input
+    data: list[float] = []
+
+    # Iterates over all the variables
+    for variable in variable_list:
+
+        # Initialise the is_number variable to False
+        is_number = False
+
+        # While the input isn't a number
+        while not is_number:
+
+            # Gets the input
+            user_input = input(
+                f"Please enter the {variable} of projectile motion: "
+            )
+
+            # Set the is_number variable
+            is_number = bool(is_number_regex.match(user_input))
+
+        # Add the user's input to the list as a float
+        data.append(float(user_input))
+
+    # Calculate the horizontal distance
+    distance = calculate_horizontal_distance_of_projectile_motion(*data)
+
+    # Prints the distance
+    print(f"The horizontal distance is {distance} m.")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// A function to calculate the horizontal distance of projectile motion
+// The velocity is the velocity of the projectile at launch.
+// The height is the initial height of the projectile.
+// The theta is the angle at which the projectile is launched in radians.
+fn calculate_horizontal_distance_of_projectile_motion(
+    velocity: f64,
+    height: f64,
+    angle: f64
+) -> f64 {
+
+    // Set the gravitational constant g
+    let g = 9.81;
+
+    // Gets the distance using the mathematical equation
+    let distance = (velocity.powi(2) / (2.0 * g)) *
+        (1.0 + (1.0 + (
+            (2.0 * g * height) / (velocity.powi(2) * (angle.sin().powi(2)))
+        )).powf(0.5)) * (angle * 2.0).sin();
+
+    // Returns the distance
+    distance
+}
+
+
+// The program
+// A function to read the velocity, height and angle of projectile motion
+// from the user and print the horizontal distance
+fn print_horizontal_distance_of_projectile_motion() {
+
+    // The list of variables
+    let variable_list = ["velocity", "height", "angle in radians"];
+
+    // The list to store the user's input
+    let mut data: Vec<f64> = vec![];
+
+    // Iterates over all the variables
+    for variable in variable_list {
+
+        // Initialise the variable to represent
+        // whether or not the input is numeric
+        let mut is_number = false;
+
+        // Initialise the string to store the user's input
+        let mut input = String::new();
+
+        // While the input is not numeric
+        while !is_number {
+
+            // Print the prompt
+            print!("Please enter the {variable} of projectile motion: ");
+
+            // Flush the stdout
+            std::io::stdout().flush().unwrap();
+
+            // Read the user's input to the input variable
+            match std::io::stdin().read_line(&mut input) {
+                Ok(_number_of_bytes) => (),
+                Err(error) => println!("Error: {error}")
+            }
+
+            // Match statement to handle errors
+            match input.trim().parse::<f64>() {
+
+                // If there are no errors
+                Ok(value) => {
+
+                    // Add the value to the data
+                    data.push(value);
+
+                    // Set the is_number variable to true
+                    is_number = true;
+                },
+
+                // If there's an error parsing, set is_number is false
+                Err(_) => is_number = false
+            }
+
+            // Make the input an empty string
+            input = "".to_string();
+        }
+    }
+
+    // Calculate the horizontal distance
+    let distance = calculate_horizontal_distance_of_projectile_motion(
+        data[0], data[1], data[2]
+    );
+
+    // Prints the distance
+    println!("The horizontal distance is {distance} m.");
+}
+#+end_src
+
+** Question 3
+
+*** (i)
+Python implementation:
+#+begin_src python
+def roll_dice() -> int:
+    "Function to simulate the rolling of a dice"
+    return random.randint(1, 6)
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use rand::Rng;
+
+
+// Function to simulate the rolling of a dice
+fn roll_dice() -> i32 {
+
+    // Use the random crate to generate a random number between 1 and 6
+    rand::thread_rng().gen_range(1..=6)
+}
+#+end_src
+
+*** (ii)
+Python implementation:
+#+begin_src python
+def sum_of_three_rolls() -> tuple[int, bool]:
+    """
+    Function to sum 3 rolls of the dice, and return the sum.
+
+    It also returns whether the 3 rolls are the same.
+    """
+
+    # Gets the list of rolls
+    rolls = [roll_dice() for i in range(3)]
+
+    # Gets the sum of the 3 rolls
+    sum_of_rolls = sum(rolls)
+
+    # Gets whether the 3 rolls are equal
+    three_rolls_are_equal = rolls.count(rolls[0]) == len(rolls)
+
+    # Returns the sum of the 3 rolls and whether the 3 rolls are equal
+    return (sum_of_rolls, three_rolls_are_equal)
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to sum 3 rolls of the dice, and return the sum.
+// It also returns whether the 3 rolls are the same.
+fn sum_of_three_rolls() -> (i32, bool) {
+
+    // Gets the list of rolls
+    let rolls: Vec<i32> = (1..=3).map(|_| roll_dice()).collect();
+
+    // Gets the sums of the 3 rolls
+    let sum_of_rolls = rolls.iter().sum::<i32>();
+
+    // Gets whether the 3 rolls are equal
+    let three_rolls_are_equal = rolls.iter().all(|roll| *roll == rolls[0]);
+
+    // Returns the sum of the 3 rolls and whether the 3 rolls are equal
+    (sum_of_rolls, three_rolls_are_equal)
+}
+#+end_src
+
+*** (iii)
+Python implementation:
+#+begin_src python
+def dice_game() -> None:
+    """
+    A function to play a dice game.
+
+    The function prints 'Jackpot' if all the dice rolls are the same,
+    'Big' if the sum of the dice rolls is 11 and above,
+    'Small' if the sum of the dice rolls is 10 and below.
+    """
+
+    # Gets the sum of the 3 rolls and if the three rolls are equal
+    sum_of_rolls, three_rolls_are_equal = sum_of_three_rolls()
+
+    # If the three rolls are equal
+    if three_rolls_are_equal:
+
+        # Print "Jackpot"
+        print("Jackpot")
+
+    # Otherwise, if the sum is greater or equal to 11
+    elif sum_of_rolls >= 11:
+
+        # Print "Big"
+        print("Big")
+
+    # Otherwise
+    else:
+
+        # Print "Small"
+        print("Small")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// A function to play a dice game
+// The function prints 'Jackpot' if all the dice rolls are the same,
+// 'Big' if the sum of the dice rolls is 11 and above,
+// 'Small' if the sum of the dice rolls is 10 and below
+fn dice_game() {
+
+    // Gets the sum of the 3 rolls and if the 3 rolls are equal
+    let (sum_of_rolls, three_rolls_are_equal) = sum_of_three_rolls();
+
+    // If the 3 rolls are equal
+    if three_rolls_are_equal {
+
+        // Print "Jackpot"
+        println!("Jackpot");
+    }
+
+    // Otherwise, if the sum is greater or equal to 11
+    else if sum_of_rolls >= 11 {
+
+        // Print "Big"
+        println!("Big");
+    }
+
+    // Otherwise
+    else {
+
+        // Print "Small"
+        println!("Small");
+    }
+}
+#+end_src
+
+** Question 4
+Python implementation:
+#+begin_src python
+def number_of_days_from_jan_1_2023() -> None:
+    """
+    Function to return the number of days that have passed
+    since January 1st 2023.
+    """
+
+    # The list of variables
+    variables = ("day of the month", "month")
+
+    # The list of the number of days in a specific month
+    num_of_days_in_month_list = [
+        31,
+        28,
+        31,
+        30,
+        31,
+        30,
+        31,
+        31,
+        30,
+        31,
+        30,
+        31
+    ]
+
+    # The list to store the user's input
+    data: list[int] = []
+
+    # Iterates over the variables
+    for variable in variables:
+
+        # Initialise the is_number variable to False
+        is_number = False
+
+        # While the input isn't a number
+        while not is_number:
+
+            # Gets the input
+            user_input = input(
+                f"Enter the {variable}: "
+            )
+
+            # Set the is_number variable
+            is_number = bool(is_number_regex.match(user_input))
+
+        # Add the user's input to the list
+        data.append(int(user_input))
+
+    # Get the day of the month and the month
+    day_of_the_month = data[0]
+    month = data[1]
+
+    # Get the number of days from the start of the year
+    num_of_days = sum(num_of_days_in_month_list[:month - 1]) + day_of_the_month
+
+    # Print the number of days elapsed
+    print(
+        "The number of days elapsed from 1/1/2023 to "
+        f"{day_of_the_month}/{month}/2023 is {num_of_days}"
+    )
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// Function to return the number of days that have passed
+// since Januaray 1st 2023
+fn number_of_days_from_jan_2023() {
+
+    // The list of variables
+    let variables = ["day of the month", "month"];
+
+    // The list of the number of days in a specific month
+    let num_of_days_in_month_list = [
+        31,
+        28,
+        31,
+        30,
+        31,
+        30,
+        31,
+        31,
+        30,
+        31,
+        30,
+        31
+    ];
+
+    // The list to store the user's input
+    let mut data: Vec<i32> = vec![];
+
+    // Iterates over the variables
+    for variable in variables {
+
+        // Initialise the variable to represent
+        // whether or not the input is numeric
+        let mut is_number = false;
+
+        // Initialise the string to store the user's input
+        let mut input = String::new();
+
+        // While the input is not numeric
+        while !is_number {
+
+            // Print the prompt
+            print!("Enter the {variable}: ");
+
+            // Flush the stdout
+            std::io::stdout().flush().unwrap();
+
+            // Read the user's input to the input variable
+            match std::io::stdin().read_line(&mut input) {
+                Ok(_number_of_bytes) => (),
+                Err(error) => println!("Error: {error}")
+            }
+
+            // Match statement to handle errors
+            match input.trim().parse::<i32>() {
+
+                // If there are no errors
+                Ok(value) => {
+
+                    // Add the value to the data
+                    data.push(value);
+
+                    // Set the is_number variable to true
+                    is_number = true;
+                },
+
+                // If there's an error parsing, set is_number is false
+                Err(_) => is_number = false
+            }
+
+            // Make the input an empty string
+            input = "".to_string();
+        }
+    }
+
+    // Get the day of the month and the month
+    let day_of_the_month = data[0];
+    let month = data[1];
+
+    // Get the number of days from the start of the year
+    let num_of_days = &num_of_days_in_month_list[..(month - 1) as usize]
+        .iter().sum::<i32>() + day_of_the_month;
+
+    // Print the number of days elapsed
+    println!(
+        "{} {day_of_the_month}/{month}/2023 is {num_of_days}",
+        "The number of days elapsed from 1/1/2023 to",
+    )
+}
+#+end_src
+
+** Question 5
+Python implementation:
+#+begin_src python
+def add_income(
+    revenue: dict[str, float], shop: str, income: float | int
+) -> None:
+    "Function to add the income of a shop to the revenue dictionary"
+
+    # Change the income to a floating point number
+    income = float(income)
+
+    # If the shop is already inside the revenue dictionary
+    if revenue.get(shop) is not None:
+
+        # Add the shop's income to the revenue
+        revenue[shop] += income
+
+    # Otherwise
+    else:
+
+        # Add the shop to the revenue dictionary
+        revenue[shop] = income
+
+
+# The program
+def add_shops_to_revenue_dict() -> None:
+    "A function to add multiple shops to the revenue dictionary"
+
+    # The revenue dictionary
+    revenue = {"Jurong": 1620.55, "Bedok": 2598.60, "Sengkang": 1886.40}
+
+    # Add the income of a shop called "Punggol"
+    add_income(revenue, "Punggol", 3000)
+
+    # Add the income of a shop named "Tanjong Pagar"
+    add_income(revenue, "Tanjong Pagar", 42069)
+
+    # Add the income of the Jurong shop
+    add_income(revenue, "Jurong", 6969.42069)
+
+    # Print the revenue dictionary
+    print(revenue)
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+// Function to add the income of a shopt to the revenue dictionary
+fn add_income<'a>(
+    revenue: &mut std::collections::HashMap<&'a str, f32>,
+    shop: &'a str,
+    income: f32
+) {
+
+    // If the shop is already inside the revenue dictionary,
+    // add the shop's income to the revenue.
+    // Otherwise, add the shop to the revenue dictionary.
+    *revenue.entry(shop).or_insert(0.0) += income;
+}
+
+
+// The program
+// A function to add multiple shops to the revenue dictionary
+fn add_shops_to_revenue_dict() {
+
+    // The revenue dictionary
+    let mut revenue = std::collections::HashMap::from([
+        ("Jurong", 1620.55),
+        ("Bedok", 2598.60),
+        ("Sengkang", 1886.40)
+    ]);
+
+    // Add the income of a shop called "Punggol"
+    add_income(&mut revenue, "Punggol", 3000.0);
+
+    // Add the income of a shop named "Tanjong Pagar"
+    add_income(&mut revenue, "Tanjong Pagar", 42069.0);
+
+    // Add the income of the Jurong shop
+    add_income(&mut revenue, "Jurong", 6969.42069);
+
+    // Print the revenue dictionary
+    println!("{:?}", revenue);
+}
+#+end_src

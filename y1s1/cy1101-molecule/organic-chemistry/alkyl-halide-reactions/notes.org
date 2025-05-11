@@ -1,0 +1,233 @@
+#+TITLE: Alkyl Halide Reactions Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{graphicx, tabularx}
+#+LATEX_HEADER: \graphicspath{ {./images/} }
+
+* Definitions
+
+** Halogen
+Halogen just refers to group 7 elements in the periodic table.
+
+** Nucleophiles
+A nucleophile is a chemical species that form bonds by donating an electron-pair. Nucleophiles are electron-pair donors. You can think of nucleophiles as electron haters, so they want to donate their electrons away.
+
+** Organic halides (\(RX\))
+Organic halides are organic compounds that contain one or more halogen atoms. The \(C - X\) bond is longer and hence weaker as you go down the periodic table. The \(C - X\) bond is polarised, and organic halides are often good starting materials in *nucleophilic substitution and elimination*.
+
+** Polar protic solvents
+Polar protic solvents are polar solvents that have at least 1 hydrogen that is connected directly to a particular electronegative atom, such as \(O-H, N-H\) and are capable of forming hydrogen bonds with the solute. Water is an example of a polar protic solvent.
+
+** Polar aprotic solvents
+Polar aprotic solvents are polar solvents that are unable to form hydrogen bonds with the solute. Examples include, acetone, chloroform, dichloromethane, ether, HMPA, DMSO, DMF and \(CH_3 CN\).
+
+** Alpha carbon (\(\alpha\)-carbon)
+The alpha carbon is the *first* carbon atom that attaches to a functional group, like a halogen group.
+
+** Beta carbon (\(\beta\)-carbon)
+The beta carbon is the second carbon atom that attaches to a function group, like a halogen group. The beta carbon atom is always the adjacent carbon atom to the alpha carbon atom.
+
+** Zaitsev's rule
+Zaitsev's rule states that the major product is the one with the *more substituted* double bonds.
+
+** Hoffman's rule
+Hoffman's rule states that the major product is the one with the *less substituted* double bonds.
+
+
+* Nucleophilic substitution: \(S_N 2\) reactions
+\(S_N 2\) reactions are single step, and the $S$ stands for substitution, $N$ stands for nucleophilic, and 2 stands for bimolecular.
+\[\includegraphics[width = \textwidth]{SN2}\]
+
+- Configuration is *inverted* at the carbon where substitution occurs.
+- The formation of the new bond and the breaking of the old bond happens *simultaneously*.
+
+The nucleophile attacks from the back side as the halogen simultaneously leaves from the front side. It is a one-step process.
+\\
+
+There are 4 factors that affect $S_N 2$ reactions:
+1. Steric effects
+2. Nucleophilic strength
+3. Leaving group effects
+4. Solvent effects
+
+** Steric effects
+The rate of $S_N 2$ nucleophilic substitution reaction *increases* as the steric hindrance *decreases*. This is because it is much easier for the nucleophile to perform the backside attack when there are less bulky groups blocking the carbon atom.
+
+** Nucleophilic strength
+- Nucleophilic strength decreases across the same row (left to right) in the periodic table.
+- Nucleophilic strength increases down the same group in the period table (in polar protic solvent).
+- Negative charge increases the nucleophilic strength.
+
+** Leaving group effects
+- The more stable the negatively-charged leaving group, the better the leaving group.
+- Weak bases are usually good leaving groups as the negative charges are stabilised.
+- Bulky groups are often good leaving groups due to *resonance stabilisation*.
+- If a leaving group is very basic or small, it does not undergo the $S_N 2$ reaction (e.g. alkyl fluoride, alcohols, ethers and amines do not undergo $S_N 2$ reactions).
+- However, you can activate alcohols to make them better leaving groups.
+
+*** Conversion of alcohols to tosylate
+\[\includegraphics[width = \textwidth]{alcohol-to-tosylate}\]
+
+*** Conversion of alcohols to alkyl halides
+\[\includegraphics[width = \textwidth]{alcohol-to-alkyl-halide}\]
+
+** Solvent effects
+- Polar protic solvents form \(H\)-bond with the anion, which *lowers the reactivity* of the nucleophile.
+- Polar aprotic solvents *increase the reactivity of the nucleophiles* by stabilising the cation. They do not undergo hydrogen bonding with the anions.
+- Hence *polar aprotic solvents* are better for \(S_N 2\) reactions.
+
+* Nucleophilic substitution: \(S_N 1\) reactions
+\(S_N 1\) reactions have two steps, and the $S$ stands for substitution, $N$ stands for nucleophilic, and 1 stands for unimolecular.
+\[\includegraphics[width = \textwidth]{SN1}\]
+
+- In the first step of the \(S_N 1\), the leaving group departs to generate a carbo-cation. The step is the slow step, or the rate-determining step.
+- The intermediate is *planar*, and hence the *chirality* is lost.
+- In the second step, the nucleophile attacks the carbo-cation. The product is a *racemic mixture* with 50% of each enantiomer.
+
+There are 3 factors that affect \(S_N 1\) reactions:
+1. Substrate effects
+2. Leaving group effects
+3. Solvent effects
+
+** Substrate effects
+- Alkyl halides that can generate more *stable carbo-cations* are more reactive in the \(S_N 1\) pathway.
+- *Sterically bulky substituents* are preferred for $S_N 1$ reactions, which is the opposite of $S_N 2$ reactions.
+
+** Leaving group effects
+- Good leaving groups facilitates \(S_N 1\) reactions, which is the same as \(S_N 2\) reactions.
+
+** Solvent effects
+The solvent influences the *transition state* and the *intermediate carbo-cation*.
+
+- Polar solvents can stabilise the $C^+$ in the transition state.
+- Polar protic solvents could also stabilise the leaving group.
+- Hence, polar protic solvents are ideal for \(S_N 1\) reactions.
+
+** Nucleophilic strength
+Nucleophilic strength of the nucleophile is *not crucial* as the nucleophile is not involved in the rate determining step. Often, the nucleophile is the solvent itself.
+
+
+* \(S_N 2\) versus \(S_N 1\)
+\begin{tabular}{c|c|c}
+& \(S_N 1\) & \(S_N 2\) \\
+\hline
+Electrophile & \(CH_3 X > 1^{\circ} > 2^{\circ}\) & \(3^{\circ} > 2^{\circ}\) \\
+Nucleophile & Strong, unhindered base & Often the solvent \\
+Rate & \(2^{nd}\) order & \(1^{st}\) order \\
+Solvent & Polar protic & Polar aprotic \\
+Leaving group & Weak base & Weak base \\
+Stereochemistry & Inversion of configuration & Racemic mixture formed \\
+\end{tabular}
+
+
+* Elimination
+- Elimination reactions compete with nucleophilic substitution reactions in alkyl halides.
+- The nucleophile acts as the *base* by plucking the \(H\) atom on the *beta carbon atom*.
+- *Alkenes* are the result of elimination reactions.
+
+There are 2 types of elimination reactions:
+- E2 mechanism
+- E1 mechanism
+
+\newpage
+
+** E2 mechanism
+In the E2 mechanism, the breaking of the \(R-L\) and \(C-H\) bonds is simultaneous. The E2 mechanism is analogous to \(S_N 2\) reactions. The E stands for elimination and the 2 stands for bimolecular. The rate for the E2 mechanism is \(2^{nd}\) order.
+\[\includegraphics[width = \textwidth]{E2}\]
+
+- The E2 mechanism is a single step reaction with the adduct "\(Nu-H-C-X\)" as the intermediate scaffold.
+- Nucleophiles attack the \(\beta-H\) bond to initialise the elimination.
+- E2 occurs in the presence of *strong bases* like \(OH^-\) or \(RO^-\).
+- Tertiary alkyl halides are good substrates for E2, which is unlike \(S_N 2\).
+
+*** Stereochemistry
+E2 occurs through an *anti-periplanar geometry* of the hydrogen atom bonded to the beta carbon and the halogen group. Basically, the hydrogen atom must be \(180^{\circ}\) away from the halogen, or the hydrogen atom must be on the opposite side of the halogen group.
+\\
+
+This anti-periplanar requirement makes *E2 reactions stereospecific*. This means the stereochemistry of the product is controlled by the stereochemistry in the starting compound.
+
+*** Reaction in cyclohexyl halides
+- The hydrogen atom and the leaving group should align *trans-diaxial* to be anti-periplanar.
+- An *equatorial* leaving group *cannot* undergo elimination via the E2 mechanism.
+- So conformation matters in the E2 mechanism.
+
+\newpage
+
+** E1 mechanism
+In the E1 mechanism, the breaking of the \(R-L\) bond generates a carbo-cation. The base then extracts the proton. The E1 mechanism is analogous to \(S_N 1\) reactions. The E stands for elimination and the 1 stands for unimolecular.
+\[\includegraphics[width = \textwidth]{E1}\]
+
+- E1 occurs with a *weak base* and under *acidic or neutral* conditions (similar to \(S_N 1\))
+- There is no anti-periplanar requirement for $H$ and $X$.
+- The E1 product often accompanies the product of a \(S_N 1\) reaction.
+- There are no geometric requirements for E1, which means E1 can take place in any conformation of the cyclohexane ring.
+
+** Zaitsev's rule for elimination
+- Elimination often gives a mixture of products when there is more than \(\beta-H\).
+- The major product is the one with the *more substituted* double bonds.
+
+There are exceptions to the Zaitsev's rule when the base is *bulky*. The base cannot extract the hydrogen atom on the more substituted carbon atom due to *steric hindrance*, and thus the major product is the one with *less substituted* double bonds. One example of such a base is tert-butoxide, \(C(CH_3)_3O^-\).
+
+
+* E2 and E1 comparison
+\begin{tabularx}{\textwidth}{|c|>{\centering\arraybackslash}X|>{\centering\arraybackslash}X|}
+\hline
+& E2 & E1 \\
+\hline
+Rate law & Bimolecular (depends on the concentration of both the substrate and the base) & Unimolecular (depends on the concentration of the substrate) \\
+\hline
+Barrier & None & Formation of \newline carbo-cation \newline \(3^{\circ} > 2^{\circ} >> 1^{\circ}\) \\
+\hline
+Requires strong base? & Yes & No \\
+\hline
+Stereochemistry & Leaving group must be \textit{anti} to the hydrogen removed & No requirement \\
+\hline
+\end{tabularx}
+
+
+* Summary of \(S_N\) and E
+\[\includegraphics[width = \textwidth]{summary-of-sn-and-e}\]
+
+\newpage
+
+* Determining the mechanism of alkyl halide reactions
+
+** Step 1
+Identify the type of carbon atom attached to the halogen atom.
+
+*** Primary halides (\(1^{\circ}\))
+Primary halides can only undergo $\boldsymbol{S_N 2}$ *and E2*.
+
+*** Secondary halides (\(2^{\circ}\))
+Secondary halides can undergo all alkyl halide reactions, so they can undergo $\boldsymbol{S_N 1, S_N 2}$, *E1, and E2*.
+
+*** Tertiary halides (\(3^{\circ}\))
+Tertiary halides can only undergo $\boldsymbol{S_N 1}$, *E1, and E2*.
+
+** Step 2
+Identify the attacking group or the nucleophile.
+
+*** Weak nucleophile and weak base
+Examples include acidic \(H_2 O\), $ROH$, or any neutral molecule in general. The possible mechanisms for this situation are $\boldsymbol{S_N 1}$ *and E1*.
+
+*** Weak nucleophile and strong base
+Examples include bulky nucleophiles like t-Bu\(O^-\), DBU, and DBN. The only possible mechanism in this situation is *E2*.
+
+*** Strong nucleophile and weak base
+Examples include small nucleophiles like \(N, S, Se, Cl^-, Br^-, I^-, NC^-, N_3^-, S^-, Se^-, \text{ and } AcO^-\). The only mechanism for this situation is $\boldsymbol{S_N 2}$.
+
+*** Strong nucleophile and strong base
+Examples include non-bulky nucleophiles like \(RO^-\). The possible mechanisms for this situation are $\boldsymbol{S_N 2}$ *and E2*.
+
+** Step 3
+Identify the solvent.
+
+*** Polar protic solvent
+Examples of polar protic solvents include water and alcohols. They favour $\boldsymbol{S_N 1}$ *and E1* reactions, and disfavour $S_N 2$ reactions.
+
+*** Polar aprotic solvent
+Examples of polar *aprotic* solvents include acetone, ether, HMPA, and DMSO. Generally the solvents with names in capital letter are polar *aprotic* solvents. They favour $\boldsymbol{S_N 2}$ reactions.
+
+*** Heat
+When there is heat, the mechanism is highly likely to be *E1*.

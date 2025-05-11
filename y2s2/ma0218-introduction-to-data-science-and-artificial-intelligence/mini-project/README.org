@@ -1,0 +1,119 @@
+#+TITLE: MA0218 Mini Project: The Climate Forum
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \setlength{\parindent}{0em}
+
+* Preface
+The entirety of the project is contained within the ~main.py~ Python file,
+and that also includes the slides.
+The project makes use of [[https://marimo.io/][Marimo]], an alternative
+to the Jupyter notebook format, and makes use of its slides.
+Thus, [[https://marimo.io/][Marimo]] is needed to display the slides and
+run the notebook.
+The data is also needed for the slides to display properly,
+as the slides makes use of the data for its visualisations.
+
+* Installing required software
+
+** Marimo
+To install [[https://marimo.io/][Marimo]] using ~pip~, run the command below:
+#+begin_src shell
+pip install marimo
+#+end_src
+
+If you are using [[https://www.anaconda.com/][Anaconda]],
+run the command below to install [[https://marimo.io/][Marimo]]:
+#+begin_src shell
+conda install conda-forge::marimo
+#+end_src
+
+#+begin_export latex
+\newpage
+#+end_export
+
+** Other required libraries
+The project also makes use of the libraries
+covered in the lectures, such as:
+- [[https://numpy.org/][Numpy]]
+- [[https://pandas.pydata.org/][Pandas]]
+- [[https://matplotlib.org/][Matplotlib]]
+- [[https://seaborn.pydata.org/][Seaborn]]
+- [[https://scikit-learn.org/stable/][Scikit-Learn]]
+
+If you are using a package manager like ~pip~, ~poetry~, ~pdm~ or ~uv~,
+you can run the commands below to automatically install
+the required packages.
+
+- For ~pip~:
+  #+begin_src shell
+  pip install -r requirements.txt
+  #+end_src
+
+- For ~poetry~:
+  #+begin_src shell
+  poetry install
+  #+end_src
+
+- For ~pdm~:
+  #+begin_src shell
+  pdm install
+  #+end_src
+
+- For ~uv~:
+  #+begin_src shell
+  uv install
+  #+end_src
+
+#+begin_export latex
+\newpage
+#+end_export
+
+* Running the notebook
+To run the notebook, change to the directory
+where you have downloaded the program,
+making sure that the data file is also
+in the same folder, and use the command below:
+#+begin_src shell
+marimo run main.py
+#+end_src
+
+[[https://marimo.io/][Marimo]] should automatically open your browser,
+similar to how Jupyter would, and you should be
+able to view the notebook in the browser as slides.
+
+#+ATTR_LATEX: :height 15em
+[[./images/result-of-running-the-notebook.png]]
+
+If you would like to see the code, instead of running
+the above command, use the command below to view it
+in a notebook format:
+
+#+begin_src shell
+marimo edit main.py
+#+end_src
+
+#+ATTR_LATEX: :height 15em
+[[./images/result-of-editing-the-notebook.png]]
+
+* Viewing the project without [[https://marimo.io/][Marimo]]
+
+** Non-interactive notebook using the browser
+To view the notebook non-interactively, open the
+[[./notebook.html][notebook.html]] file in your browser.
+Double-clicking the file in your file explorer
+should be sufficient to view the notebook.
+Please be patient, as it takes a while to load.
+
+** Non-interactive slides using the browser
+To view the slides non-interactively, open the
+[[./slides.html][slides.html]] file in your browser.
+Double-clicking the file in your file explorer
+should be sufficient to view the slides.
+Please be patient, as it takes a while to load.
+
+* [[./LICENCE.txt][Licence]]
+This project is licensed under the
+[[https://www.gnu.org/licenses/agpl-3.0.en.html][GNU AGPL v3]].
+For the full licence text, you can view the
+[[./LICENCE.txt][LICENCE.txt]] file.

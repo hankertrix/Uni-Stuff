@@ -1,0 +1,122 @@
+#+TITLE: Solving Kinematics Tutorial Question with Python
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+PROPERTY: header-args :tangle solving-kinematics-tutorial-qns-with-python.py
+
+* Question 6
+
+** Importing the required libraries and functions
+#+begin_src python
+from sympy import symbols
+from sympy import cos
+from sympy import sin
+from sympy import solve
+from sympy import diff
+from sympy import simplify
+from sympy.core.function import _coeff_isneg as is_negative
+#+end_src
+
+
+** Setting alpha = theta
+The angle =alpha= here is the same as the angle =theta= in the question. For some reason, using =theta= as the variable will cause =sympy= to mess up and give wrong values for =vx= and =vy=, with both of them turning into =phi - theta= instead of =theta - phi=. =vy= also becomes negative. I believe it is just =sympy= trying to automatically use the trigonometric identities to put the =phi= in front of =theta=, but it really isn't helping in this case.
+
+** Resolving the vectors
+The vectors first need to be resolved in the direction of the slope, and we will let =vx= be the component of the initial speed =v0= that is parallel to the slope and =vy= be the component of the initial speed that is perpendicular to the slope.
+
+Now we can get values of =vx= and =vy= in terms of =v0=.
+#+begin_src python
+# Initialise the variables that we are using so that sympy recognises them as symbols
+v0, alpha, phi = symbols("v0 alpha phi")
+
+vx = v0 * cos(alpha - phi)
+vy = v0 * sin(alpha - phi)
+#+end_src
+
+We also need to resolve the acceleration in the direction of the slope as well, so we will let =gx= be the component of the acceleration =g= that is parallel to the slope and =gy= be the component of the acceleration =g= that is perpendicular to the slope.
+#+begin_src python
+# Intiialise the variable g so that sympy recognises them as symbols
+g = symbols("g")
+
+gx = g * sin(phi)
+gy = g * cos(phi)
+#+end_src
+
+
+** Solving the equation to get the time (t) in terms of the angle alpha
+Let =t= be the time the ball takes to hit the ground again after being thrown, so =t= cannot be equal to 0. When the ball hits the ground again, the displacement of the ball must be 0. Hence, we can get =sympy= to solve the equation for us:
+#+begin_src python
+# Initialise the variables that we are using so that sympy recognises them as symbols
+t = symbols("t")
+
+# Solving for t in the equation vy * t + 1/2 * gy * t^2
+possible_ts = solve(vy * t - (1 / 2) * gy * t**2, t)
+#+end_src
+
+#+RESULTS:
+: [0.0, 2.0 * v0 * sin(phi - alpha) / (g * cos(phi))]
+
+Since the first answer to =t= is =0.0=, there we should exclude that solution since =t= cannot be equal to =0=. Thus, we set =t= to the other solution.
+#+begin_src python
+t = possible_ts[1]
+#+end_src
+
+
+** Creating the equation for the distance travelled by the ball (d)
+The distance travelled by the ball in the x-direction would be =d=, as defined in the question. Hence, we will create the equation for =d=.
+#+begin_src python
+d = vx * t - (1 / 2) * gx * t**2
+#+end_src
+
+
+** Differentiating d with respect to alpha
+Now we will differentiate =d= with respect to =alpha= so that we can equate it to zero to find the maximum =d=.
+#+begin_src python
+dd_dalpha = diff(d, alpha)
+dd_dalpha = simplify(dd_dalpha)
+#+end_src
+
+
+** Equating the first derivative of d with 0
+Now we will equate =dd_dalpha= to 0 and solve the equation.
+#+begin_src python
+possible_alphas = solve(dd_dalpha, alpha)
+#+end_src
+
+
+** Finding the second derivative of d with respect to alpha
+#+begin_src python
+d2d_dalpha2 = diff(dd_dalpha, alpha)
+#+end_src
+
+
+** Finding the correct solution to alpha
+There can only one solution to the angle =alpha= where the distance =d= is maximum. Thus, we will iterate over all the possible solutions to =alpha= and substitute them into the equation for the second derivative of d with respect to alpha.
+#+begin_src python
+
+# Iterating over all the possible solutions to alpha
+for possible_alpha in possible_alphas:
+
+  # Substitute the solution into the equation for the second derivative of d with respect to alpha
+  value_of_d2d_dalpha2 = d2d_dalpha2.subs(alpha, possible_alpha)
+
+  # If value of d2d_dalpha2 is negative, that means that the point is maximum
+  if is_negative(value_of_d2d_dalpha2):
+
+    # So we take alpha as that solution
+    alpha = possible_alpha
+
+    # And we break out of the loop
+    break
+
+#+end_src
+
+
+** Final answer
+Now we print the value of =alpha= that we got as the final answer, which should be =phi/2 + pi/4=.
+#+begin_src python
+print(alpha)
+#+end_src
+
+#+RESULTS:
+: 0.5*phi + 0.785398163397448

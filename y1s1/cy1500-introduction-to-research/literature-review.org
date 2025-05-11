@@ -1,0 +1,137 @@
+#+TITLE: Machine Learning In Chemistry Literature Review
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+CITE_EXPORT: csl ieee.csl
+#+BIBLIOGRAPHY: references.bib
+#+LATEX_HEADER: \usepackage[labelfont=bf]{caption}
+
+\newpage
+
+* Abstract
+$\indent$ This paper investigates the research applications of machine learning, mostly in chemistry. It will do so by looking at 3 different papers, namely "Machine Learning for Chemistry: Basics and Applications" [cite:@shi2023machine], "Rethinking drug design in the artificial intelligence era" [cite:@schneider2020rethinking], and "The advent of generative chemistry" [cite:@vanhaelen2020advent]. The applications include retrosynthesis, chemical hypothesis generation, and reducing cycle times. A brief overview of machine learning and data, as well as the issues faced with current datasets will be given, followed by a brief overview of the various applications. The difficulties and challenges faced in the various applications will be discussed, along with a brief outlook at the end. This literature review aims to show that artificial intelligence (AI) and machine learning (ML) will eventually become an important part of chemistry in the future.
+
+
+* Introduction
+$\indent$ With the rise of artificial intelligence (AI) and machine learning (ML), it is important to examine their possible applications in chemistry research. AI and ML are particularly useful for tedious and repetitive tasks [cite:@davenport2018ai], such as drug discovery and retrosynthesis, which are iterative processes that take a long amount of time. The current latest and greatest ML models such as ChatGPT, DALL-E 2, Midjourney and Stable Diffusion, which are all neural networks, are also generative in nature, meaning that they create things that haven't been created before [cite:@borji2022generated; @roose2022ai; @gozalo2023chatgpt]. This ability to generate novel items makes neural networks especially helpful in the realm of drug discovery [cite:@vanhaelen2020advent]. AI and ML are also helpful in retrosynthesis, chemical hypothesis generation, and reducing cycle times.
+
+\newpage
+
+* Machine learning and data
+$\indent$ Machine learning (ML) is a branch of AI that allows computers to perform tasks without explicit instructions [cite:@bzdok2017machine]. Most computers usually require explicit instructions in the form of code to perform their tasks [cite:@kernighan2002c; @rusling1999linux], but ML models "learn" to perform tasks through maths and data in a manner that is similar to biological brains [cite:@alpaydin2020introduction].
+\\
+
+As seen in *Figure [[fig:ml-flow]]*, the steps to train an ML model are:
+1. Data is split into training and testing data.
+2. The ML model is trained on the training data using an algorithm.
+3. After the model is trained, the testing data is used to evaluate the model and improve its algorithm.
+4. This cycle is repeated with new data until the model is sufficiently accurate.
+5. Afterwards, the model is ready to be used.
+
+#+CAPTION: A flow diagram showing how an ML model learns from training data [cite:@Pant_2019].
+#+NAME: fig:ml-flow
+[[./images/ml-flow.png]]
+
+\newpage
+
+** Issues with data
+$\indent$ The quality of data used to train ML models greatly affects the resulting models' capability. However, data in chemistry is rarely high-quality for various reasons. Large datasets are usually designed to facilitate the testing of massive quantities of chemicals to identify their physical and chemical properties quickly. This results in the tests not being as sensitive as possible, leading to less accurate results [cite:@schneider2020rethinking].
+
+Another reason would be the ever-changing knowledge regarding biology, making data annotations challenging [cite:@lin2017drug; @santos2017comprehensive]. Next, misreported data can significantly impact predictive models, but ML can help identify outliers within the given dataset, pointing out potential mistakes or typos. Nevertheless, these outliers are not indicative of a mistake, only that the data point is an anomaly [cite:@schneider2020rethinking]. Also, large chemical datasets often have missing values due to time and money constraints as only the compounds suited to a high-throughput testing method will be tested, while the others will be neglected [cite:@schneider2020rethinking]. This also implies that the data is not missing at random, and hence care and consideration must be taken when using large chemical datasets [cite:@schneider2020rethinking].
+
+In addition, documentation of chemical experiments may be incomplete due to sheer complexity, which results in crucial variables being overlooked [cite:@shi2023machine]. Furthermore, chemists rarely publish failed experiments, resulting in a lack of negative examples for ML models to learn from [cite:@shi2023machine]. This bias increases the difficulty of training accurate ML models due to the reduced quantity of data and the imbalanced view of the chemical space [cite:@shi2023machine]. Chemical experiments also rarely create data that can be easily translated to a single number for the ML model to process [cite:@schneider2020rethinking], which makes model improvement difficult as most ML models are usually optimising for a single value, usually minimising something called a cost or loss function [cite:@shi2023machine]. Furthermore, companies view chemical datasets as a competitive advantage, meaning that they are unwilling to share their proprietary datasets. This results in less overall data to train ML models on and results in less accurate ML models [cite:@schneider2020rethinking]. Despite this, ML has proven to be hugely useful in various chemistry applications.
+
+\newpage
+
+* Retrosynthesis
+$\indent$ Retrosynthesis, also known as retrosynthetic analysis, refers to finding a synthesis pathway for a target molecule or compound by working backwards from product to reactant *(Figure [[fig:retrosynthesis]])*. The reactants for target molecules are typically commercially available chemicals to facilitate synthesis and scalability. Neural networks are used in retrosynthesis to compute a synthetic complexity score (SCScore) to rank the molecules in retrosynthesis [cite:@coley2018scscore]. This hinges on the premise that reaction products are generally more synthetically complex than the reactants, meaning a larger difference between the SCScore of the products and reactants is ideal. Thus, the neural networks are trained to find synthesis pathways that have a strictly increasing SCScore. In spite of the success of ML in retrosynthesis, synthesising naturally occurring molecules remains a challenge due to the lack of data on complex molecules. Most ML models also do not consider the yield of enantiomers, which results in improper evaluation of synthesis pathways [cite:@shi2023machine].
+
+#+CAPTION: A diagram showing an example of retrosynthesis [cite:@zheng2019predicting]. The target molecule is the molecule on the left side of the image, while the reactants that are found are on the right side of the image.
+#+NAME: fig:retrosynthesis
+[[./images/retrosynthesis.png]]
+
+
+* Chemical hypothesis generation
+$\indent$ Chemical hypothesis generation is basically the generation of molecules or chemicals that have a set of properties and functions [cite:@sprague1995automated; @schneider2020rethinking]. The set of properties and functions that the chemical should have is called the hypothesis [cite:@sprague1995automated]. There are a lot of different ML models that have been used in chemical hypothesis generation such as recurrent neural networks (RNNs), variational autoencoders (VAEs), adversarial encoders (AAEs), and generative adversarial networks (GANs) [cite:@vanhaelen2020advent; @schneider2020rethinking]. Most of these ML models are first trained on massive datasets to learn the grammar for the simplified molecular-input line-entry system (SMILES) *(Figure [[fig:smiles-ex-1]])* and are later refined by being trained on datasets containing molecules that have the desired properties and functions described in the hypothesis [cite:@vanhaelen2020advent].
+
+#+CAPTION: An example of the simplified molecular-input line-entry system (SMILES) representation, which is at the bottom [cite:@Imperius_2013]. SMILES is a way to represent the structure of molecules with only text.
+#+NAME: fig:smiles-ex-1
+[[./images/smiles-ex-1.jpg]]
+
+\newpage
+
+** Examples
+$\indent$ One example of such a model is an RNN based on the long short-term memory (LSTM) architecture *(Figure [[fig:lstm-model]])*. The LSTM model enables RNNs to store and retain information longer by using memory, with the forget gate deciding on retention, the input gate determining the value of an input, and the output gate as the final model output *(Figure [[fig:lstm-model]])*. This model was trained on the SMILES-encoded ChEMBL database, and was then fine-tuned using compounds that were active against 2 receptors [cite:@merk2018novo]. Specifically, retinoid X receptors (RXRs) and peroxisome proliferator-activated receptors (PPARs) [cite:@merk2018novo]. The ML model will thus generate novel compounds that are active against these 2 receptors due to this fine-tuning [cite:@vanhaelen2020advent].
+
+#+CAPTION: A diagram showing the LSTM architecture [cite:@Calzone_2022].
+#+NAME: fig:lstm-model
+[[./images/lstm-model.png]]
+
+\newpage
+
+Another example is a VAE model trained on the SMILES representation of publicly available chemical structures in the ZINC and QM9 databases [cite:@gomez2018automatic]. This model encoded molecules in a continuous representation, which allows the model to create molecules by stepping through the continuous graph, like in a normal distribution [cite:@vanhaelen2020advent] *(Figure [[fig:vae-model]])*. The VAE decoder then converted this continuous representation back into molecular representations [cite:@vanhaelen2020advent]. This continuous representation resulted in generated molecules which were optimal, due to their desired drug-like properties [cite:@vanhaelen2020advent].
+
+#+CAPTION: (a) A diagram of the VAE. (b) A diagram showing the continuous representation of molecules.
+#+NAME: fig:vae-model
+[[./images/vae-model.jpeg]]
+
+\newpage
+
+** Reinforcement learning (RL)
+$\indent$ Reinforcement learning (RL) [cite:@arulkumaran2017brief] is often used to fine-tune these generative models by rewarding and punishing the models. This makes the models more effective in generating chemical hypotheses as they are more likely to produce compounds with the desired properties. An example of RL being applied to GANs is the objective-reinforced generative adversarial network (ORGAN) [cite:@guimaraes2017objective]. The model adds reward functions for related objectives, which are particular chemical sequences or fragments in this case [cite:@guimaraes2017objective] *(Figure [[fig:organ-schema]])*. This causes the ML model to favour the molecules that contain these particular chemical sequences or fragments, resulting in more desired molecules being generated.
+
+#+CAPTION: Schema for ORGAN. On the left, D is trained on a mix of generated data by G, and real data, to become a classifier. On the right, G is trained by RL where the reward is a combination of D and the objectives. The sequences that are not unique are punished [cite:@guimaraes2017objective].
+#+NAME: fig:organ-schema
+[[./images/organ-schema.png]]
+
+\newpage
+
+** Problems
+$\indent$ However, despite the promising results of initial AI-based generative models, there are still limitations. SMILES representation used by these models cannot incorporate reward functions favouring particular chemical sequences or fragments, as the SMILES representation makes it impossible to find chemical fragments [cite:@vanhaelen2020advent]. One solution is to use other ways of representing molecules, such as graph representations, which are basically the skeletal formula of a molecule. Additionally, evaluating generative AI models can be challenging due to insufficient documentation regarding their capabilities [cite:@vanhaelen2020advent].
+
+In addition, the effects of drugs on the biological systems do not always map well to the chemical structure of a drug, and the effects are usually muddied up by multiple confounding factors that are usually unknown [cite:@vanhaelen2020advent]. As a result, the behaviour of the AI model is ultimately unpredictable as the structure of a drug doesn't necessarily correspond to its function [cite:@vanhaelen2020advent]. This additional complexity is not always taken into account, which makes molecular scoring a complex task [cite:@vanhaelen2020advent]. Current molecular scoring functions are also not very appropriate, resulting in a more difficult fine-tuning and optimisation of drugs for desired properties [cite:@vanhaelen2020advent].
+
+Furthermore, generated molecules are usually difficult to synthesise, which greatly limits the practical use of such molecules. Even though the molecules are AI-generated, there is still a lot of manual input required to make the generated molecules easier to synthesise [cite:@vanhaelen2020advent]. This is usually the case when the chemicals required are unavailable, unstable, insufficiently reactive or require lengthy preparation. However, it is a problem that can be solved by using ML in retrosynthesis to find easier synthesis pathways for the generated molecules.
+
+\newpage
+
+* Reducing cycle times
+$\indent$ There is considerable investment of time and money in the discovery of new drugs, and the risk of failure at all stages of the drug discovery process is high [cite:@schneider2020rethinking]. Thus, it would be ideal to use ML models to automate the process of new drug discovery. Currently, profiling capabilities have been improving, but the massive increase in the number of data points makes it onerous for the human brain to keep up [cite:@schneider2020rethinking]. This results in scientists using simple heuristics and efficiency metrics [cite:@meanwell2016improving; @cavalluzzi2017ligand; @hopkins2014role] which are less than ideal [cite:@kenny2014ligand], but it has not resulted in any improvement in the cycle times needed to create new drugs [cite:@schneider2020rethinking].
+
+#+CAPTION: An illustration of the design-make-test-analyse (DMTA) cycle [cite:@Strateos_2022].
+#+NAME: fig:dmta-cycle
+#+ATTR_LATEX: :height 22em
+[[./images/dmta-cycle.png]]
+
+The main process in drug discovery is the design-make-test-analyse (DMTA) cycle *(Figure [[fig:dmta-cycle]])* [cite:@plowright2012hypothesis]. Available data is first used to generate hypotheses and design compounds. The designed compounds are then synthesised and tested to figure out if the hypotheses are correct. The knowledge gained from one DMTA cycle is then put into the development of design hypotheses for the next DMTA cycle [cite:@schneider2020rethinking]. Automating this DMTA cycle would have a sizeable impact on drug discovery [cite:@parry2019closing; @plowright2012hypothesis].
+\\
+
+The benefits of automation include [cite:@nettekoven2002accelerating]:
+- Reduced measurement errors and material consumption as computers excel in accuracy, unlike humans.
+- Faster feedback loops for AI-Based hypothesis generation and optimisation.
+- Opportunities to increase the number of ways to synthesise compounds, like microfluidic-assisted synthesis and reactions under extreme conditions [cite:@dimitrov2019autonomous].
+- Prioritising compounds that are effective in humans using cellular testing of the compounds [cite:@jones2017applications; @eglen2015drug; @esch2015organs].
+- Optimisation without any personal bias.
+
+Automated DMTA platforms have already shown their efficiency in drug design and optimisation in the reduced amount of time it takes to complete a DMTA cycle [cite:@trobe2018molecular]. In the case of the researchers at AbbVie, they could obtain results within 1 - 2 days [cite:@vasudevan2017enabling].
+
+However, DMTA cycles still take a long time, often taking more than 4 - 8 weeks to complete [cite:@schneider2020rethinking]. The slow "make" phase of the cycle, responsible for synthesising new molecules, can take several weeks [cite:@schneider2020rethinking]. Consequently, shortening this phase is crucial for reducing DMTA cycle times. To expedite the process, laboratory automation with automatic analytics and purification is key [cite:@nettekoven2002accelerating; @dimitrov2019autonomous; @selekman2017high; @king2009make].
+
+To maximise efficiency, multiple DMTA cycles are often performed simultaneously, and the cycles are often left incomplete [cite:@schneider2020rethinking]. This ensures that the chemicals are synthesised before all the data is available, effectively addressing design hypotheses [cite:@d2012multi]. However, the accumulation of data becomes challenging to record and analyse, [cite:@schneider2020rethinking]. To cope with this difficulty, scientists often rely on rules of thumb [cite:@scott2018practical], efficiency metrics, model systems like logP or logD, or matched molecular pairs [cite:@griffen2011matched] to make sense of the data. Searching for trends, insights and patterns is intellectually taxing and runs the risk of being overwhelming, resulting in important conclusions being missed.
+
+\newpage
+
+Thus, there is potential for AI to enhance DMTA cycles by assisting chemists with molecule design hypotheses and data analysis [cite:@hessler2018artificial]. AI could also look for improved synthesis routes and optimise reaction conditions so that the synthesis of molecules is done correctly the first time, shortening the "make" phase [cite:@bedard2018reconfigurable; @coley2018machine; @segler2018planning; @szymkuc2016computer]. It can also provide timely and context-specific recommendations to researchers [cite:@rohall2018recommendations], reducing the time spent reviewing raw data [cite:@schneider2020rethinking]. However, this requires a documented data trail, standardised concepts to describe the data, and access to raw data when needed [cite:@schneider2020rethinking].
+
+* Future outlook
+$\indent$ The current spotlight on ML suggests that ML applications in research will continue to improve. Companies are now seriously considering ML to automate workflows and reduce errors when they might not have before. The surge in popularity of AI and ML is likely to attract a lot of young talents to the field of ML, particularly computer science graduates. These talents could bring a fresh perspective and may eventually come up with novel ways of applying ML to chemistry. With an increasingly automated world, AI robots may soon conduct experiments and analyse data, automating the DMTA cycle and allowing researchers to focus on fine-tuning the generated molecules. Such automation could result in standardised documentation and benchmarks to maximise efficiency. ML and automation may lead to faster DMTA cycles as laboratory procedures and experiments may be increasingly designed with them in mind. This will eventually make AI and ML a crucial part of chemistry in the future when most laboratory processes are automated and AI and ML-based tools are being used to automate chemical discovery.
+
+\newpage
+
+* References
+$\indent$ Below is the list of references used in this literature review:
+\\
+
+#+PRINT_BIBLIOGRAPHY:
+
+\[\text{Word count: } 2189\]
