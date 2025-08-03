@@ -145,4 +145,4 @@ The full licence text can be found in the
 [Saber]: https://saber.adil.hanney.org/
 [Stylus Labs Write]: http://www.styluslabs.com/
 [cc-by-nc-sa]: http://creativecommons.org/licenses/by-nc-sa/4.0/
-[cc-by-nc-sa-image]: https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png
+[cc-by-nc-sa-image]: http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg
