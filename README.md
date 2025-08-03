@@ -132,12 +132,13 @@ Alternatively, you can contact me on Telegram using my Telegram handle
 
 All files in this repository are licenced under a
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Licence][cc-by-nc-sa],
-which can be found in the top level `LICENCE.txt` file.
+which can be found in the top level [`LICENCE.txt`](LICENCE.txt) file.
 All code in this repository is licenced under the
 [GNU AGPL v3](https://www.gnu.org/licenses/agpl-3.0.en.html).
 The licences found inside the folders for the
 software projects should agree with this licence.
-The full licence text can be found in the `LICENCE-CODE.txt` file.
+The full licence text can be found in the
+[`LICENCE-CODE.txt`](LICENCE-CODE.txt) file.
 
 [![CC BY-NC-SA 4.0][cc-by-nc-sa-image]][cc-by-nc-sa]
 
