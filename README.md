@@ -117,9 +117,10 @@ use as a simple cheat sheet, and have become more of a proper resource
 that should be maintained separately from this repository, which is
 really just a dump of my university notes and tutorials.
 
-| Module                                 | Repository link                                                                          |
-| -------------------------------------- | ---------------------------------------------------------------------------------------- |
-| LL5001 Singapore Sign Language Level 1 | [Singapore Sign Language (SgSL) Sign Bank](https://github.com/hankertrix/SgSL-Sign-Bank) |
+| Module                                 | Repository link                                       |
+| -------------------------------------- | ----------------------------------------------------- |
+| LL5001 Singapore Sign Language Level 1 | [Singapore Sign Language (SgSL) Sign Bank][sign-bank] |
+| LL5002 Singapore Sign Language Level 2 | [Singapore Sign Language (SgSL) Sign Bank][sign-bank] |
 
 ## Errors
 
@@ -144,5 +145,6 @@ The full licence text can be found in the
 
 [Saber]: https://saber.adil.hanney.org/
 [Stylus Labs Write]: https://www.styluslabs.com/
+[sign-bank]: https://github.com/hankertrix/SgSL-Sign-Bank
 [cc-by-nc-sa]: https://creativecommons.org/licenses/by-nc-sa/4.0/
 [cc-by-nc-sa-image]: https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-nc-sa.svg
