@@ -1,5 +1,5 @@
 #+TITLE: CY2001 Research Attachment 1
-#+AUTHOR: Wee Si Yang Nicholas
+#+AUTHOR: Hankertrix
 #+STARTUP: showeverything
 #+OPTIONS: toc:nil
 #+CITE_EXPORT: csl ieee.csl
@@ -74,9 +74,7 @@
 
         \vspace*{3.5cm}
 
-        \textbf{\large{Wee Si Yang Nicholas}}
-
-        \textbf{\large{U2321818F}}
+        \textbf{\large{Hankertrix}}
 
         \textbf{\large{Mechanical Engineering}}
 
