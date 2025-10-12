@@ -101,14 +101,6 @@ cd arduino-cone-layer
 FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-filter y1-special-term/ps5888-making-and-tinkering/arduino-cone-layer/ HEAD
 ```
 
-To clone the repository from Codeberg:
-
-```sh
-git clone --depth 1 https://codeberg.org/Hanker/Uni-Stuff arduino-cone-layer
-cd arduino-cone-layer
-FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-filter y1-special-term/ps5888-making-and-tinkering/arduino-cone-layer/ HEAD
-```
-
 ## Building the project
 
 Run `cargo build` to build the firmware for the Arduino.

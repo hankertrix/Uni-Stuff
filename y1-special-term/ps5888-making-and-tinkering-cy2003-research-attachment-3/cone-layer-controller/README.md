@@ -22,14 +22,6 @@ cd cone-layer-controller
 FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-filter y1-special-term/ps5888-making-and-tinkering/cone-layer-controller/ HEAD
 ```
 
-To clone from the Codeberg repository:
-
-```sh
-git clone --depth 1 https://codeberg.org/Hanker/Uni-Stuff cone-layer-controller
-cd cone-layer-controller
-FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-filter y1-special-term/ps5888-making-and-tinkering/cone-layer-controller/ HEAD
-```
-
 ## Installing `npm`
 
 ### Windows
@@ -140,9 +132,11 @@ npx eas build
    distribute it to the App Store.
 
 # Licence
+
 This project is licenced under the GNU AGPL v3.
 You can view the `LICENCE.txt` file for the full
 licence text.
 
 # Privacy
+
 This application doesn't collect any user data.

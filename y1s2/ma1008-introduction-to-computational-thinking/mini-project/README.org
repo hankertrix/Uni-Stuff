@@ -177,13 +177,6 @@ cd logographer
 FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-filter y1s2/ma1008-introduction-to-computational-thinking/mini-project/ HEAD
 #+end_src
 
-Or you can use the command below to clone the Git repository from the Codeberg mirror:
-#+begin_src shell
-git clone --depth 1 https://codeberg.org/Hanker/Uni-Stuff logographer
-cd logographer
-FILTER_BRANCH_SQUELCH_WARNING=1 git filter-branch --prune-empty --subdirectory-filter y1s2/ma1008-introduction-to-computational-thinking/mini-project/ HEAD
-#+end_src
-
 
 * Running the program
 Go to the folder that contains the program, which is most likely where you have extracted the zip file to, or where you have cloned the repository. Once you are in the directory for the program, simply run the command below to start the program:
