@@ -2668,7 +2668,7 @@ $ Y(t) = 1/tau e^(-t/tau) $
     $ tau = 0.746 $
     $ k = 0.730/(1 - 0.512) = 1.496 $
 
-#pagebreak()
+    #v(10em)
 
 + The plant is connected into the closed-loop system as shown in Figure (c).
     Sketch the unit step response of the closed-loop system.
@@ -4337,11 +4337,11 @@ Characteristic equation (CE):
 $ "CE": 1 + K N(s)/D(s) = 0 $
 $ D(s) + K N(s) = 0 $
 
-Smallest $K$, like $K = 0$:
+*Smallest $K$, like $K = 0$*:
 $ "CE": D(s) + K N(s) = 0 quad -> quad D(s) = 0 $
 Solution shows that *closed-loop poles* are equal to *open-loop poles*.
 
-Largest $K$, like $K -> oo$:
+*Largest $K$, like $K -> oo$*:
 $ "CE": D(s) + K N(s) = 0 quad -> quad N(s) = 0 $
 Solution shows that *closed-loop poles* are equal to *open-loop zeros*.
 
