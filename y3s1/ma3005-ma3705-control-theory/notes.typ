@@ -4312,7 +4312,7 @@ $
 $
 $ K N(s)/D(s) = 1e^(plus.minus j(pi plus.minus 2 q pi)) $
 $
-    [K |N(s)/D(s)|] e^(j (angle N - angle D))
+    [K lr(|N(s)/D(s)|)] e^(j (angle N - angle D))
     = 1 e^(plus.minus j(pi plus.minus 2 q pi))
 $
 
@@ -4321,9 +4321,9 @@ $
     column-gutter: 2em,
     [
         Magnitude condition:
-        $ K|N(s)/D(s)| = 1 $
+        $ K lr(|N(s)/D(s)|) = 1 $
     ],
-    [
+    text(red)[
         Phase condition:
         $ angle N - angle D = - pi - 2 q pi $
         $ angle N - angle D = -(1 + 2q) pi $
@@ -4337,17 +4337,22 @@ Characteristic equation (CE):
 $ "CE": 1 + K N(s)/D(s) = 0 $
 $ D(s) + K N(s) = 0 $
 
-*Smallest $K$, like $K = 0$*:
+*Smallest $K$, i.e. $K = 0$*:
 $ "CE": D(s) + K N(s) = 0 quad -> quad D(s) = 0 $
+$ "Denominator": D(s) = 0 $
 Solution shows that *closed-loop poles* are equal to *open-loop poles*.
 
-*Largest $K$, like $K -> oo$*:
+*Largest $K$, i.e. $K -> oo$*:
 $ "CE": D(s) + K N(s) = 0 quad -> quad N(s) = 0 $
+$ "Numerator": N(s) = 0 $
 Solution shows that *closed-loop poles* are equal to *open-loop zeros*.
+
+All *odd-numbered* points on the *$x$-axis* will have a locus to the *left of
+    them*.
 
 #pagebreak()
 
-== Infinite open-loop zeros
+== Open-loop zeros at #sym.oo
 $
     1 + K frac(
         (s + z_1) (s + z_2) dots.c (s + z_m),
@@ -4361,8 +4366,9 @@ $
     ) = 1e^(-j pi (1 + 2q))
 $
 
-In general, when $m <= n$, some *closed-loop poles* end at infinite open-loop
-zeros.
+In general, when $m <= n$, some *closed-loop poles* end at open-loop zeros which
+are at #sym.oo, where *$n$* represents the number of *open-loop poles* and *$m$*
+represents the number of *open-loop zeros*.
 
 $
     lim_(s -> oo) K(frac(
@@ -4383,7 +4389,7 @@ $ lim_(s -> oo) K(|s| e^(j angle s))^(m - n) = 1e^(-j pi(1 + 2q)) $
         Magnitude condition:
         $ K(|s|)^(m - n) = 1 $
     ],
-    [
+    text(red)[
         Phase condition:
         $ (m - n) angle s = - pi (1 + 2q) $
         $ angle s = frac(pi(1 + 2q), n - m) $
@@ -4400,6 +4406,13 @@ It is required to substitute $q$ with $|n - m|$ number of integer values.
 
 The asymptote location on the real axis is:
 $ sigma_a = frac(sum_i^n (- p_i) - sum_j^m (- z_j), n - m) $
+
+Where:
+- $sigma_a$ is the asymptote location
+- $sum_i^n p_i$ is the sum of the real values of all open-loop poles
+- $sum_j^m z_i$ is the sum of the real values of all open-loop zeros
+- $n$ is the number of open-loop poles
+- $m$ is the number of open-loop zeros
 
 === Example
 #cimage("./images/root-locus-physical-interpretation-example.png", height: 30em)
@@ -4637,8 +4650,14 @@ Regions with *an odd number* of #sym.times and #sym.circle that are *on the
 
     grid.cell(colspan: 2)[
         $ "CE": 1 + K frac(s + 4, (s + 1) (s + 1 + j) (s + 1 - j)) = 0 $
+
+        + To find the departure angles, take a point (#sym.star) infinitesimally
+            close to one of the starting points, or poles (#sym.times).
+        + Calculate the angles to the point (#sym.star) for each pole
+            (#sym.times) and zero (#sym.circle) and use the phase condition
+            below to find the remaining angle ($alpha$).
         $
-            "Phase": sum_(i = 1)^(m = 1) angle (s + z_i)
+            "Phase condition": sum_(i = 1)^(m = 1) angle (s + z_i)
             - sum_(j = 1)^(n = 3) angle (s + p_j) = plus.minus pi
         $
         $ arctan (1/3) - pi/2 -pi/2 - alpha = - pi $
@@ -4680,7 +4699,7 @@ Regions with *an odd number* of #sym.times and #sym.circle that are *on the
     column-gutter: 2em,
     row-gutter: 2em,
     align: horizon,
-    image("./images/root-locus-arrival-angles-1.png", height: 23em),
+    image("./images/root-locus-arrival-angles-1.png", height: 17em),
     [
         Using the characteristic equation:
         $ "CE": 1 + K frac((s + 1 + j) (s + 1 - j), (s + 1) (s + 5)) = 0 $
@@ -4692,8 +4711,14 @@ Regions with *an odd number* of #sym.times and #sym.circle that are *on the
     ],
 
     grid.cell(colspan: 2)[
+
+        + To find the arrival angles, take a point (#sym.star) infinitesimally
+            close to one of the ending points, or zeros (#sym.circle).
+        + Calculate the angles to the point (#sym.star) for each zero
+            (#sym.circle) and pole (#sym.circle) and use the phase condition
+            below to find the remaining angle ($alpha$).
         $
-            "Phase": sum_(i = 1)^m angle(s + z_i)
+            "Phase condition": sum_(i = 1)^m angle(s + z_i)
             - sum_(j = 1)^n angle(s + p_j) = plus.minus pi
         $
         $ pi/2 + alpha - pi/2 - arctan(1/4) = pi $
@@ -4709,9 +4734,9 @@ Regions with *an odd number* of #sym.times and #sym.circle that are *on the
     #enum(
         numbering: "a.",
         [Starting points - *open loop poles*],
-        [Ending points - *open loop zeroes*],
+        [Ending points - *open loop zeros*],
     )
-+ Asymptotes (*infinite open-loop zeros*)
++ Asymptotes (*open-loop zeros at infinity*)
     #enum(
         numbering: "a.",
         [Angles],
