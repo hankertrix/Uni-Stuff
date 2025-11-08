@@ -2431,7 +2431,7 @@ oscillation. A system having a pole which has a positive real part is unstable.
 
 == Routh-Hurwitz stability criterion
 The Routh-Hurwitz stability criterion is a simple way to check the *number of
-    poles* that have *positive real parts*.
+poles* that have *positive real parts*.
 
 === Steps
 + Form the roof array.
@@ -2474,7 +2474,7 @@ Special cases:
     coefficients of the result to replace the 0s, then continue as normal. In
     this case, the system is *partially stable* if there are *no* sign changes
     in the first numerical column, and *partially unstable* if there are *sign
-        changes* in the first column.
+    changes* in the first column.
 
 #pagebreak()
 
@@ -3965,7 +3965,7 @@ rate, with outflow rate being a wild variable.
 #cimage("./images/closed-loop-system-with-labels.png")
 
 Objective: Design $G_c (s)$ to achieve the *desired steady-state errors and
-    poles* for closed-loop transfer function.
+poles* for closed-loop transfer function.
 
 To make $c(t)$ stable, control its:
 + Steady-state error
@@ -3996,8 +3996,8 @@ $
 - The system type is the power of $s$ in the denominator.
 
 When $N$ increases, and is used to make a closed-loop system, the *steady state
-    error decreases*, which is *desirable*, but *stability also decreases*,
-which is *undesirable*.
+error decreases*, which is *desirable*, but *stability also decreases*, which is
+*undesirable*.
 
 Hence, $N$ is a *trade-off* between steady-state error and stability.
 
@@ -4299,7 +4299,7 @@ For a given $K$, *any $s$ that satisfies the characteristic equation* will be a
 *closed-loop pole*.
 
 When $K$ varies, the location of the closed-loop poles changes. The *root locus
-    represents the trajectory of the closed-loop poles*.
+represents the trajectory of the closed-loop poles*.
 
 == Required conditions
 Characteristic equation (CE):
@@ -4348,7 +4348,7 @@ $ "Numerator": N(s) = 0 $
 Solution shows that *closed-loop poles* are equal to *open-loop zeros*.
 
 All *odd-numbered* points on the *$x$-axis* will have a locus to the *left of
-    them*.
+them*.
 
 #pagebreak()
 
@@ -4559,7 +4559,7 @@ $
 $
 
 Regions with *an odd number* of #sym.times and #sym.circle that are *on the
-    right of* #sym.star will satisfy the phase condition.
+right of* #sym.star will satisfy the phase condition.
 
 == Break-out points
 #grid(
@@ -4656,6 +4656,9 @@ Regions with *an odd number* of #sym.times and #sym.circle that are *on the
         + Calculate the angles to the point (#sym.star) for each pole
             (#sym.times) and zero (#sym.circle) and use the phase condition
             below to find the remaining angle ($alpha$).
+        + The angle for the lines must *start* from *right side* of the point,
+            rotating *counter-clockwise*, which is the standard angle used for
+            most physics and engineering questions.
         $
             "Phase condition": sum_(i = 1)^(m = 1) angle (s + z_i)
             - sum_(j = 1)^(n = 3) angle (s + p_j) = plus.minus pi
@@ -4715,8 +4718,11 @@ Regions with *an odd number* of #sym.times and #sym.circle that are *on the
         + To find the arrival angles, take a point (#sym.star) infinitesimally
             close to one of the ending points, or zeros (#sym.circle).
         + Calculate the angles to the point (#sym.star) for each zero
-            (#sym.circle) and pole (#sym.circle) and use the phase condition
+            (#sym.circle) and pole (#sym.times) and use the phase condition
             below to find the remaining angle ($alpha$).
+        + The angle for the lines must *start* from *right side* of the point,
+            rotating *counter-clockwise*, which is the standard angle used for
+            most physics and engineering questions.
         $
             "Phase condition": sum_(i = 1)^m angle(s + z_i)
             - sum_(j = 1)^n angle(s + p_j) = plus.minus pi
@@ -4725,8 +4731,8 @@ Regions with *an odd number* of #sym.times and #sym.circle that are *on the
         $ alpha = pi + arctan(1/4) $
     ],
 
-    image("./images/root-locus-arrival-angles-2.png"),
-    image("./images/root-locus-arrival-angles-3.png"),
+    image("./images/root-locus-arrival-angles-2.png", height: 23em),
+    image("./images/root-locus-arrival-angles-3.png", height: 23em),
 )
 
 == Summary
@@ -4967,7 +4973,7 @@ $
 $
 
 The lead compensator has finite amplification, which is *better than the PD
-    controller*.
+controller*.
 
 === Designing the lead compensator
 #cimage("./images/lead-compensator-design-block-diagram.png")
