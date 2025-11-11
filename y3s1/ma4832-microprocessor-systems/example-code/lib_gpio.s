@@ -81,7 +81,7 @@ SYSCTL_RCGCGPIO_R	EQU 0x400FE608
 activate_clock
 
 		; Get the address of the RCGCGPIO register
-		LDR R0, =SYSCTL_RCGCGPIO_R
+		LDR R1, =SYSCTL_RCGCGPIO_R
 
 		; Get the previously held value
 		LDR R0, [R1]

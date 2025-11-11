@@ -1,8 +1,8 @@
 		GET		lib_gpio.s
 
 ; The two on board buttons, the code below uses switch 1
-ON_BOARD_SWITCH_1		EQU 0x40025040	; PF4
-ON_BOARD_SWITCH_2		EQU 0x40025004	; PF0
+ON_BOARD_SWITCH_1	EQU 0x40025040	; PF4
+ON_BOARD_SWITCH_2	EQU 0x40025004	; PF0
 
 		AREA	|.text|, CODE, READONLY, ALIGN=2
 		THUMB
@@ -133,7 +133,7 @@ wait_for_press_to_turn_on
 		;
 		; Button is high by default due to the pull up resistors
 		; configured above, so if it reads a 1, it's not pressed.
-		BEQ wait_for_press_to_turn_off
+		BEQ wait_for_press_to_turn_on
 
 ; LED is off, button is pressed, wait for the release to turn on LED
 wait_for_release_to_turn_on
@@ -148,7 +148,7 @@ wait_for_release_to_turn_on
 		;
 		; Button is high by default due to the pull up resistors
 		; configured above, so if it is not 1, it is still being pressed.
-		BNE wait_for_release_to_turn_off
+		BNE wait_for_release_to_turn_on
 
 		; Go back to the start of the loop
 		B loop
