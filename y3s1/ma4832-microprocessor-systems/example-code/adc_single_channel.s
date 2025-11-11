@@ -12,12 +12,6 @@ Result	SPACE	4
 
 Start
 
-	; Initialise the GPIO variables
-	BL gpio_variable_init
-
-	; Initialise the ADC variables
-	BL adc_variable_init
-
 ; Activate clock for port E
 
 	; Pass the required value to activate the clock
@@ -27,8 +21,8 @@ Start
 	; Load the base address for port E
 	LDR R3, =GPIO_PORT_E_BASE
 
-	; The value for port E bit 4 (PE4)
-	LDR R4, #0x10
+	; The value for port E bit 5 (PE5)
+	MOV R4, #0x20
 
 ; Enable alternate function
 
@@ -66,7 +60,7 @@ Start
 ; Set up the ADC
 
 	; Set the ADC base
-	MOV R8, =ADC0_BASE
+	LDR R8, =ADC0_BASE
 
 	; Set the analogue inputs
 	MOV R9, #9
