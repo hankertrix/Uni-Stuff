@@ -22,11 +22,11 @@
 		EXPORT	delay
 
 ; ADC 0 base address and variables
-ADC0_BASE		EQU 0x40003800
+ADC0_BASE		EQU 0x40038000
 ADC0_RCGCADC	EQU 0x1
 
 ; ADC 1 base address and variables
-ADC1_BASE		EQU 0x40003900
+ADC1_BASE		EQU 0x40039000
 ADC1_RCGCADC	EQU 0x2
 
 ; Offsets for the ADC
@@ -184,11 +184,11 @@ check_given_adc
 		LDR R0, =ADC1_BASE
 		CMP R8, R0
 
-		; If it is, move the value for ADC 1
-		MOVEQ R7, ADC1_RCGCADC
+		; If it is, load the value for ADC 1
+		LDREQ R7, =ADC1_RCGCADC
 
-		; Otherwise, move the value for ADC 0
-		MOVNE R7, ADC0_RCGCADC
+		; Otherwise, load the value for ADC 0
+		LDRNE R7, =ADC0_RCGCADC
 
 ; Activate the clock for the given ADC
 
@@ -283,7 +283,8 @@ check_given_adc
 ; Load the addresses for the sample sequencer
 
 		; Check if the sample sequencer value is for SS0
-		CMP R4, SS0_VALUE
+		LDR R0, =SS0_VALUE
+		CMP R4, R0
 
 		; If it is, load the addresses needed into R5, R6, and R7
 		LDREQ R5, =ADC_SSMUX0_OFFSET
@@ -291,7 +292,8 @@ check_given_adc
 		LDREQ R7, =ADC_SSFIFO0_OFFSET
 
 		; Check if the sample sequencer value is for SS1
-		CMP R4, SS1_VALUE
+		LDR R0, =SS1_VALUE
+		CMP R4, R0
 
 		; If it is, load the addresses needed into R5, R6, and R7
 		LDREQ R5, =ADC_SSMUX1_OFFSET
@@ -299,7 +301,8 @@ check_given_adc
 		LDREQ R7, =ADC_SSFIFO1_OFFSET
 
 		; Check if the sample sequencer value is for SS2
-		CMP R4, SS2_VALUE
+		LDR R0, =SS2_VALUE
+		CMP R4, R0
 
 		; If it is, load the addresses needed into R5, R6, and R7
 		LDREQ R5, =ADC_SSMUX2_OFFSET
@@ -307,7 +310,8 @@ check_given_adc
 		LDREQ R7, =ADC_SSFIFO2_OFFSET
 
 		; Check if the sample sequencer value is for SS3
-		CMP R4, SS3_VALUE
+		LDR R0, =SS3_VALUE
+		CMP R4, R0
 
 		; If it is, load the addresses needed into R5, R6, and R7
 		LDREQ R5, =ADC_SSMUX3_OFFSET
@@ -339,12 +343,14 @@ check_given_adc
 		MOV R2, R6
 		ORR R1, R3, R2
 
-		; The default sample configuration
-		LDR R0, =0x0006
 
 		; Multiply the number of analogue inputs
 		; by the number of bits per hex value
-		MUL R12, #4
+		MOV R0, #4
+		MUL R12, R0
+		
+		; The default sample configuration
+		LDR R0, =0x0006
 
 		; Shift R0 by the amount in R12 and write the value
 		LSL R0, R12
