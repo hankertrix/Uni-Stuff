@@ -67,24 +67,21 @@ Start
 		; Load the address for the switch
 		LDR R5, =ON_BOARD_SWITCH_1
 
-		; Initialise the LED state to off
-		LDR R6, =LED_OFF
+		; Initialise the LED state to 0
+		MOV R6, #0
+
 
 ; Main loop, the buttons only work on release, instead of on press
 loop
 
-		; Set the LED to the state
-		MOV R8, R6
+		; Get the button colour
+		BL get_led_colour
+
+		; Function returns in register R7,
+		; so call set_led with that value
+		MOV R8, R7
 		BL set_led
 
-		; Increment the LED state and update the condition flags
-		ADDS R6, R6, #1
-
-		; If there is no carry, move on to the next section
-		BCC wait_for_press_to_turn_off
-
-		; Otherwise, reset the LED state to off
-		LDR R6, =LED_OFF
 
 ; LED is on, button is not pressed, wait for the press to move on
 wait_for_press_to_turn_off
@@ -152,6 +149,45 @@ wait_for_release_to_turn_on
 
 		; Go back to the start of the loop
 		B loop
+
+; Function to get the LED colour
+get_led_colour
+
+		; Add 1 to the LED state
+		ADD R6, R6, #1
+
+		; If the state is 1
+		CMP R6, #1
+
+		; Set the LED to red
+		LDR R7, =LED_RED
+		BXEQ LR
+
+		; If the state is 2
+		CMP R6, #2
+
+		; Set the LED to blue
+		LDR R7, =LED_BLUE
+		BXEQ LR
+
+		; If the state is 3
+		CMP R6, #3
+
+		; Set the LED to green
+		LDR R7, =LED_GREEN
+		BXEQ LR
+
+		; If the state is 4
+		CMP R6, #4
+
+		; Set the LED to white
+		LDR R7, =LED_WHITE
+		BXEQ LR
+
+		; Otherwise, set the LED to off
+		MOV R7, #0x00
+		MOV R6, #0
+		BX LR
 
 
 		; Make sure the section is aligned
