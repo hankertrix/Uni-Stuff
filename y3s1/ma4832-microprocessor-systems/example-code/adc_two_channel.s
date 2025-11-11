@@ -12,12 +12,6 @@ Result	SPACE	4
 
 Start
 
-	; Initialise the GPIO variables
-	BL gpio_variable_init
-
-	; Initialise the ADC variables
-	BL adc_variable_init
-
 ; Activate clock for port E
 
 	; Pass the required value to activate the clock
