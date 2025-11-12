@@ -1,4 +1,4 @@
-; adc_single_ch.s
+; ADC single channel
 ; Samples one ADC channel, PortE bit 4 (PE4), using Sample Sequencer 3 (SS3)
 
 ; GPIO_PORTE and ADC0 address
