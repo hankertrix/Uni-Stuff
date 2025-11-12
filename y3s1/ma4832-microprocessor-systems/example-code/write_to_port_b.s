@@ -43,7 +43,7 @@ Start
 		LDR R1, =GPIO_PORTB_PCTL_R
 		LDR R0, [R1]
 		BIC R0, R0,#0x000000FF			; bit clear PortA bit 0 & 1
-		BIC R0, R0,#0X0000FF00			; bit clear PortA bit 2 & 3
+		BIC R0, R0,#0x0000FF00			; bit clear PortA bit 2 & 3
 		STR R0, [R1]
 
 ; set direction register
