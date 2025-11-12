@@ -1,4 +1,4 @@
-% Created 2025-09-23 Tue 01:18
+% Created 2025-11-12 Wed 14:11
 % Intended LaTeX compiler: pdflatex
 \documentclass[12pt]{report}
 \usepackage[utf8]{inputenc}
@@ -173,7 +173,7 @@
 
 \pagenumbering{roman}
 \chapter{Abstract}
-\label{sec:org0e9b415}
+\label{sec:org2303c45}
 This paper presents an open-source step-counting algorithm that aims
 to be efficient, accurate and accessible, allowing it to be used
 on embedded devices. Its main purpose is in physical activity tracking
@@ -189,7 +189,7 @@ as well as climbing up and down stairs, and has been
 found to be relatively accurate in counting steps,
 with a maximum mean absolute percentage error of 30\%.
 A complete Python implementation of the algorithm is provided
-in the \hyperref[orgbc9f4fa]{appendix}, and it is distributed under an open-source licence.
+in the \hyperref[orgd12c8af]{appendix}, and it is distributed under an open-source licence.
 
 A literature review is also included in this study,
 evaluating the state-of-the-art algorithms currently available
@@ -200,7 +200,7 @@ accelerometer data and mapping acceleration frequencies to
 human actions in future research to create more effective
 and efficient heuristics for determining an accurate step count.
 \chapter{Acknowledgements}
-\label{sec:org51ae6b5}
+\label{sec:org8a2c302}
 I would like to thank Professor Li King Ho, Holden, for taking me under
 his wing and allowing me to do a research project under him.
 I am also thankful to Nanyang Technological University (NTU) and the
@@ -224,11 +224,11 @@ It is only thanks to him that this research project is even possible.
 Lastly, I would also like to thank my friends
 and family for supporting me throughout the duration of the research project.
 \chapter{Table of contents}
-\label{sec:org024350d}
+\label{sec:org1e08fb6}
 \setcounter{tocdepth}{2}
 \tableofcontents
 \chapter{List of figures}
-\label{sec:orgf65cfbc}
+\label{sec:org60b0c15}
 \listoffigures
 \clearpage
 
@@ -260,8 +260,8 @@ and family for supporting me throughout the duration of the research project.
 
 \titlespacing{\chapter}{0em}{0em}{0em}
 \chapter{Introduction}
-\label{sec:org73e2381}
-\label{org1d243e6}
+\label{sec:org7295d17}
+\label{orgf8fe5d3}
 Step counters are devices worn on the body that measure the
 number of steps taken.
 There are many different types of step counters, all designed to
@@ -292,7 +292,7 @@ Thus, step counters are an important part of physical activity tracking
 \cslcitation{6}{[6]}, both by individuals and healthcare researchers,
 and thus is a prime area for further research and improvement.
 \section{Motivation for research}
-\label{sec:org7b0bbbf}
+\label{sec:org69e4a23}
 Currently, there are a lot of commercial step counters,
 some built into smartwatches such as the Apple Watch,
 Google Pixel Watch, and Samsung Galaxy Watch,
@@ -325,7 +325,7 @@ This diminishes the value of step counts as an indicator of physical
 activity, especially in less developed countries where the roads are
 not well-maintained and are hence bumpier.
 \section{Objectives}
-\label{sec:orgaa88e27}
+\label{sec:org76d83fd}
 The first objective of this research is to develop a step-counting
 algorithm that performs at least as well as the step-counting algorithms
 implemented in smartwatches and fitness trackers for personal use.
@@ -354,7 +354,7 @@ It would also result in the algorithm becoming unexplainable,
 which makes the algorithm more difficult to build upon and modify,
 which is a key part of open-source software.
 \section{Scope of work}
-\label{sec:orgd0efff1}
+\label{sec:org725465b}
 To achieve the objectives mentioned, a literature review of
 existing open-sourced step-counting algorithms and programs
 will need to be done to ensure the algorithm is not already available.
@@ -370,36 +370,36 @@ and will always remain available for use and modification.
 
 \clearpage
 \section{Organisation of report}
-\label{sec:org18e58b7}
+\label{sec:org81ccbae}
 The report is organised as follows:
 \begin{itemize}
-\item \hyperref[org1d243e6]{Chapter 1}, which is this chapter, presents an introduction to step
+\item \hyperref[orgf8fe5d3]{Chapter 1}, which is this chapter, presents an introduction to step
 counting. It includes the research motivation, objectives and scope,
 as well as the organisation of the report.
-\item \hyperref[org354d85a]{Chapter 2} describes the literature review methodology,
+\item \hyperref[orgbfe9aea]{Chapter 2} describes the literature review methodology,
 summarises findings from the literature review and discusses
 the gaps and possible improvements that can be made.
-\item \hyperref[org948f204]{Chapter 3} explains the research methodology used,
+\item \hyperref[org80a8a25]{Chapter 3} explains the research methodology used,
 gives an overview of the step-counting algorithm,
 describes how data is collected,
 and explains how the algorithm is developed.
-\item \hyperref[org2fafd27]{Chapter 4} presents the results of the research,
+\item \hyperref[orga2a01c9]{Chapter 4} presents the results of the research,
 evaluating the accuracy and performance of the proposed algorithm.
-\item \hyperref[orge5153a9]{Chapter 5} summarises the conclusions of the research and discusses
+\item \hyperref[org9ca0695]{Chapter 5} summarises the conclusions of the research and discusses
 the flaws with the research and how these flaws can be mitigated
 in future research. It also presents recommendations for future work.
-\item \hyperref[orgbc9f4fa]{The appendix} contains the full implementation of the algorithm.
+\item \hyperref[orgd12c8af]{The appendix} contains the full implementation of the algorithm.
 \end{itemize}
 \chapter{Literature review}
-\label{sec:org797521c}
-\label{org354d85a}
+\label{sec:org6b7cb8e}
+\label{orgbfe9aea}
 A literature review was done to obtain an overview of the current
 methods, techniques and algorithms that are used for step counting.
 There are numerous possible methods for step counting, and this
 literature review will go over the methods in existing literature
 and evaluate it with regard to the research objectives.
 \section{Sensor-based techniques}
-\label{sec:orge4a0c3d}
+\label{sec:org86c81a0}
 Sensor-based techniques make use of pressure sensors or
 foot switches built into the soles of the shoes to detect
 when a person takes a step.
@@ -432,7 +432,7 @@ and are embedded into the sole of the shoe, they are not financially
 viable for healthcare research with thousands of participants,
 and are not easy to install for personal use.
 \section{Optical techniques}
-\label{sec:orge08b395}
+\label{sec:org5848bae}
 Optical techniques to count steps make use of a video feed of the
 person's legs to count steps, much like how humans would visually
 count steps from viewing a video feed.
@@ -467,7 +467,7 @@ k-means, but it is a simple machine learning algorithm and will
 likely still be able to run on low-powered embedded devices such
 as smartwatches, fitness trackers and phones.
 \section{Accelerometer-based techniques}
-\label{sec:orgfdc4aab}
+\label{sec:orgd98976e}
 Accelerometer-based techniques make use of a triaxial
 accelerometer attached to a part of the human body
 to measure the acceleration.
@@ -483,7 +483,7 @@ The acceleration data collected from the accelerometer or IMU is then
 processed, and an algorithm is used on the processed data to obtain
 a step count.
 \subsection{Accelerometer position}
-\label{sec:org177fd7c}
+\label{sec:org984ddf2}
 The main difference in accelerometer-based techniques is the
 accelerometer's position on the human body. Different accelerometer
 position will call for different techniques to be used in determining
@@ -533,7 +533,7 @@ that is less representative. With recent research being more focused
 on free-living situations, there is an increase in the focus on
 wrist-mounted accelerometer data.
 \subsection{Algorithms}
-\label{sec:org91045b4}
+\label{sec:org5cc5386}
 The algorithms used to determine a step count from acceleration data
 vary widely, with some as simple as using a \texttt{find\_peaks} function
 from a library to advanced machine learning techniques, making use
@@ -612,12 +612,12 @@ is determined for the window, which is associated with a frequency.
 The step count for the window is then obtained from this frequency
 and the step counts for each window are summed up to obtain a step
 count for the full duration.
-This algorithm is illustrated in Figure \ref{fig:orgfa5eeb2}.
+This algorithm is illustrated in Figure \ref{fig:orgadafa68}.
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{./images/straczkiewicz-wavelet-transform.png}
-\caption{\label{fig:orgfa5eeb2}(A) shows the accelerometer magnitude. (B) shows the accelerometer magnitude projected onto the time-frequency domain using wavelet transformation. Brighter colours represent frequencies that have higher weights or are more prominent in the signal. (C) is (B) split up into 1-second windows. (D) The step frequency is estimated to be the frequency with the highest average wavelet coefficient in each 1-second window. (E) The total number of steps is the sum of the steps in each 1-second window, rounded to the nearest integer. \cslcitation{18}{[18]}}
+\caption{\label{fig:orgadafa68}(A) shows the accelerometer magnitude. (B) shows the accelerometer magnitude projected onto the time-frequency domain using wavelet transformation. Brighter colours represent frequencies that have higher weights or are more prominent in the signal. (C) is (B) split up into 1-second windows. (D) The step frequency is estimated to be the frequency with the highest average wavelet coefficient in each 1-second window. (E) The total number of steps is the sum of the steps in each 1-second window, rounded to the nearest integer. \cslcitation{18}{[18]}}
 \end{figure}
 
 The study made use of 7 publicly available data sets, as well as
@@ -637,7 +637,7 @@ Karas et al. \cslcitation{13}{[13]} made use of a concept similar to
 continuous wavelet transformations to segment strides to count steps.
 It makes use of a wavelet pattern that is estimated from the
 given data and maximises the distance between the wavelet pattern,
-translated and scaled, and the original signal (Figure \ref{fig:org4496067}).
+translated and scaled, and the original signal (Figure \ref{fig:org287ddf4}).
 The accelerometer data, which has been converted to a magnitude,
 is first smoothed before the distance matrix is computed.
 The result of the distance matrix computation is then tuned,
@@ -653,7 +653,7 @@ the initial point and the initial point + specific length.
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{./images/adept-translation-and-scaling.jpeg}
-\caption{\label{fig:org4496067}The first row shows the acceleration magnitude. The second to fourth rows show the covariance (muted grey lines in the background), and the wavelet pattern (red and green lines). \cslcitation{13}{[13]}}
+\caption{\label{fig:org287ddf4}The first row shows the acceleration magnitude. The second to fourth rows show the covariance (muted grey lines in the background), and the wavelet pattern (red and green lines). \cslcitation{13}{[13]}}
 \end{figure}
 
 This segmentation of strides can then be used to effectively count
@@ -710,7 +710,7 @@ a correlation of 0.91. The Verisense algorithm
 a mean absolute percentage error of 63.5\%, 7.2\% underestimation
 of steps and a correlation of 0.85.
 \section{Research gaps}
-\label{sec:org2b610d4}
+\label{sec:org563f44c}
 Most of the reviewed papers have focused their attention on determining
 step counts from just triaxial accelerometer data, making use of
 increasingly complex algorithms to obtain more accurate readings based on
@@ -802,8 +802,8 @@ accessible to all.
 These research gaps will be addressed in this study and
 in the algorithm developed.
 \chapter{Research methodology}
-\label{sec:org771bc62}
-\label{org948f204}
+\label{sec:org6cc8a78}
+\label{org80a8a25}
 In this study, preliminary data was first collected to gain a better
 understanding of the accelerometer data and what it means.
 Tiny sets of data, including just a single step,
@@ -814,7 +814,7 @@ Afterwards, an algorithm was developed to catch all the edge
 cases found in this preliminary data, and then further improved
 after collecting the full data set.
 \section{Overview of the step counting algorithm}
-\label{sec:org290cf0d}
+\label{sec:org40cbb92}
 The main idea behind the algorithm is to make use of orientation
 filters, such as the Madgwick orientation filter
 \cslcitation{25}{[25]} to determine the orientation of
@@ -986,7 +986,7 @@ Below is a flow chart of the algorithm:
 \clearpage
 
 For exact implementation details regarding the algorithm,
-please refer to the \hyperref[orgbc9f4fa]{appendix}.
+please refer to the \hyperref[orgd12c8af]{appendix}.
 Alternatively, you can view the implementation in the
 \texttt{algorithm.py} file distributed together with this paper.
 
@@ -1003,8 +1003,8 @@ as this is the main goal for the development of this algorithm.
 
 \clearpage
 \section{Data collection}
-\label{sec:org2b5b246}
-\label{org2b972e1}
+\label{sec:org84dfd62}
+\label{org8247a6d}
 Accelerometer data was self-collected
 using a \href{https://witmotion-sensor.com/collections/bluetooth-accerometer/products/bluetooth-5-0-accelerometer-inclinometer-wt901blecl-mpu9250-high-precision-9-axis-gyroscope-anglexy-0-05-accuracy-magnetometer-with-kalman-filter-low-power-3-axis-ahrs-imu-sensor-for-arduino}{WitMotion WT901BLECL 9-DOF IMU},
 as publicly available data sets do not contain gyroscope
@@ -1105,54 +1105,52 @@ which is a flat area with no slopes.
     \caption{Images of the stairs where data is collected.}
 \end{figure}
 \chapter{Results and discussion}
-\label{sec:orgb1e66db}
-\label{org2fafd27}
+\label{sec:org65d31d4}
+\label{orga2a01c9}
 \section{Walking}
-\label{sec:org2812c13}
+\label{sec:org8cafead}
 
 \subsection{50 steps data set}
-\label{sec:orga7c9808}
+\label{sec:orgfa110f3}
 The details of how the data for the 50 steps data set is
-collected is detailed in the \hyperref[org2b972e1]{data collection} section.
+collected is detailed in the \hyperref[org8247a6d]{data collection} section.
 \phantomsection
-\label{org6c703ee}
+\label{orgf56af18}
 \begin{verbatim}
-[31m---------------------------------------------------------------------------[39m
-[31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m walking_50_steps_results = [43mvalidate_algorithm_on_dataset[49m([33m"[39m[33m./data/walking/50-steps/[39m[33m"[39m)
-[32m      3[39m [38;5;66;03m# Plot the box plot[39;00m
-[32m      4[39m seaborn.boxplot(data={
-[32m      5[39m     [33m"[39m[33mGround Truth[39m[33m"[39m: walking_50_steps_results.actual_step_count,
-[32m      6[39m     [33m"[39m[33mAlgorithm Step Count[39m[33m"[39m: walking_50_steps_results.algorithm_step_count,
-[32m      7[39m }).set(title=[33m"[39m[33mWalking for 50 steps[39m[33m"[39m)
+Below are the accuracy metrics:
 
-[31mNameError[39m: name 'validate_algorithm_on_dataset' is not defined
+Maximum error: 3.0
+Mean absolute percentage error: 0.013999999999999999
+Mean squared error: 1.3
+Root mean squared error: 1.140175425099138
 \end{verbatim}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./.ob-jupyter/d1337eafb0301b06a98b61d6c8b5d76d21cf2a2a.png}
+\end{center}
 
 As seen from the box plot and the accuracy metrics above,
 the algorithm performs quite well for counting walked steps.
 \subsection{500 steps data set}
-\label{sec:org379dde6}
+\label{sec:orge96dddd}
 The 500-step data set is collected in the same way as the 50-step
 data set, but the ground truth value varies a little due to the
 difficulty in ensuring that the walking person stops walking
 after walking exactly 500 steps.
 \phantomsection
-\label{orgc92dd4a}
+\label{orgc2a0425}
 \begin{verbatim}
-[31m---------------------------------------------------------------------------[39m
-[31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[3][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m walking_500_steps_results = [43mvalidate_algorithm_on_dataset[49m([33m"[39m[33m./data/walking/500-steps/[39m[33m"[39m)
-[32m      3[39m [38;5;66;03m# Plot the box plot[39;00m
-[32m      4[39m seaborn.boxplot(data={
-[32m      5[39m     [33m"[39m[33mGround Truth[39m[33m"[39m: walking_500_steps_results.actual_step_count,
-[32m      6[39m     [33m"[39m[33mAlgorithm Step Count[39m[33m"[39m: walking_500_steps_results.algorithm_step_count,
-[32m      7[39m }).set(title=[33m"[39m[33mWalking for roughly 500 steps[39m[33m"[39m)
+Below are the accuracy metrics:
 
-[31mNameError[39m: name 'validate_algorithm_on_dataset' is not defined
+Maximum error: 201.0
+Mean absolute percentage error: 0.29880000000000007
+Mean squared error: 23379.0
+Root mean squared error: 152.90192935342574
 \end{verbatim}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./.ob-jupyter/dcfab35a11fc4cf1b65ce00545cd674c99089034.png}
+\end{center}
 
 From the box plot and the accuracy metrics above, the algorithm's
 accuracy decreased quite significantly when counting a larger
@@ -1161,46 +1159,44 @@ speed varying throughout, with higher stepping speed causing the
 step counting algorithm to miss steps,
 resulting in undercounted steps.
 \section{Running}
-\label{sec:org5a911fd}
+\label{sec:org86be92f}
 The running data set is collected as detailed in the
-\hyperref[org2b972e1]{data collection section}.
+\hyperref[org8247a6d]{data collection section}.
 \phantomsection
-\label{org79971d5}
+\label{org3c27e2d}
 \begin{verbatim}
-[31m---------------------------------------------------------------------------[39m
-[31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[4][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m running_results = [43mvalidate_algorithm_on_dataset[49m([33m"[39m[33m./data/running/[39m[33m"[39m)
-[32m      3[39m [38;5;66;03m# Plot the box plot[39;00m
-[32m      4[39m seaborn.boxplot(data={
-[32m      5[39m     [33m"[39m[33mGround Truth[39m[33m"[39m: running_results.actual_step_count,
-[32m      6[39m     [33m"[39m[33mAlgorithm Step Count[39m[33m"[39m: running_results.algorithm_step_count,
-[32m      7[39m }).set(title=[33m"[39m[33mRunning[39m[33m"[39m)
+Below are the accuracy metrics:
 
-[31mNameError[39m: name 'validate_algorithm_on_dataset' is not defined
+Maximum error: 2.0
+Mean absolute percentage error: 0.025490196078431372
+Mean squared error: 2.1
+Root mean squared error: 1.449137674618944
 \end{verbatim}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./.ob-jupyter/ab0dd17180e27a023cbb6fc4fe8a827f74e1b854.png}
+\end{center}
 
 As seen from the box plots and accuracy metrics above,
 the algorithm is quite accurate for running.
 \section{Limping}
-\label{sec:org58e74ab}
+\label{sec:org731a3eb}
 The limping data set is collected as detailed in the
-\hyperref[org2b972e1]{data collection section}.
+\hyperref[org8247a6d]{data collection section}.
 \phantomsection
-\label{org8640471}
+\label{orgeb207d3}
 \begin{verbatim}
-[31m---------------------------------------------------------------------------[39m
-[31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[5][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m limping_100_steps_results = [43mvalidate_algorithm_on_dataset[49m([33m"[39m[33m./data/limping/[39m[33m"[39m)
-[32m      3[39m [38;5;66;03m# Plot the box plot[39;00m
-[32m      4[39m seaborn.boxplot(data={
-[32m      5[39m     [33m"[39m[33mGround Truth[39m[33m"[39m: limping_100_steps_results.actual_step_count,
-[32m      6[39m     [33m"[39m[33mAlgorithm Step Count[39m[33m"[39m: limping_100_steps_results.algorithm_step_count,
-[32m      7[39m }).set(title=[33m"[39m[33mLimping[39m[33m"[39m)
+Below are the accuracy metrics:
 
-[31mNameError[39m: name 'validate_algorithm_on_dataset' is not defined
+Maximum error: 2.0
+Mean absolute percentage error: 0.01
+Mean squared error: 1.4
+Root mean squared error: 1.1832159566199232
 \end{verbatim}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./.ob-jupyter/594169e0a1c383bbf4fd56c83a4eb11d185d5e3f.png}
+\end{center}
 
 \clearpage
 
@@ -1217,24 +1213,23 @@ foot forward, which would cause the acceleration to spike before
 dipping back down to the value of gravity, which would be considered
 a trough by the algorithm, and hence sufficient to count as a step.
 \section{Shuffling}
-\label{sec:orgb141f6d}
+\label{sec:org648a8f9}
 The shuffling data set is collected as detailed in the
-\hyperref[org2b972e1]{data collection section}.
+\hyperref[org8247a6d]{data collection section}.
 \phantomsection
-\label{org0fa21d1}
+\label{org55b04f0}
 \begin{verbatim}
-[31m---------------------------------------------------------------------------[39m
-[31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[6][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m shuffling_50_steps_results = [43mvalidate_algorithm_on_dataset[49m([33m"[39m[33m./data/shuffling/[39m[33m"[39m)
-[32m      3[39m [38;5;66;03m# Plot the box plot[39;00m
-[32m      4[39m seaborn.boxplot(data={
-[32m      5[39m     [33m"[39m[33mGround Truth[39m[33m"[39m: shuffling_50_steps_results.actual_step_count,
-[32m      6[39m     [33m"[39m[33mAlgorithm Step Count[39m[33m"[39m: shuffling_50_steps_results.algorithm_step_count,
-[32m      7[39m }).set(title=[33m"[39m[33mShuffling[39m[33m"[39m)
+Below are the accuracy metrics:
 
-[31mNameError[39m: name 'validate_algorithm_on_dataset' is not defined
+Maximum error: 18.0
+Mean absolute percentage error: 0.15400000000000003
+Mean squared error: 91.3
+Root mean squared error: 9.555103348473002
 \end{verbatim}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./.ob-jupyter/d08c5dfc1c6c359018cf00632704aec7d28430ba.png}
+\end{center}
 
 \clearpage
 
@@ -1246,56 +1241,54 @@ to count a step, and since shuffling usually results in
 small changes in acceleration as the foot is not lifted,
 shuffled steps are not picked up by the algorithm.
 \section{Climbing stairs}
-\label{sec:org70ca103}
+\label{sec:org8bf4516}
 
 \subsection{Climbing up stairs}
-\label{sec:org01cff0f}
+\label{sec:orgbd40633}
 The data set for climbing up stairs is collected as detailed in the
-\hyperref[org2b972e1]{data collection section}.
+\hyperref[org8247a6d]{data collection section}.
 \phantomsection
-\label{org32840e1}
+\label{orgad314af}
 \begin{verbatim}
-[31m---------------------------------------------------------------------------[39m
-[31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[7][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m climbing_up_12_steps_results = [43mvalidate_algorithm_on_dataset[49m([33m"[39m[33m./data/climbing-up-stairs/[39m[33m"[39m)
-[32m      3[39m [38;5;66;03m# Plot the box plot[39;00m
-[32m      4[39m seaborn.boxplot(data={
-[32m      5[39m     [33m"[39m[33mGround Truth[39m[33m"[39m: climbing_up_12_steps_results.actual_step_count,
-[32m      6[39m     [33m"[39m[33mAlgorithm Step Count[39m[33m"[39m: climbing_up_12_steps_results.algorithm_step_count,
-[32m      7[39m }).set(title=[33m"[39m[33mClimbing up stairs[39m[33m"[39m)
+Below are the accuracy metrics:
 
-[31mNameError[39m: name 'validate_algorithm_on_dataset' is not defined
+Maximum error: 5.0
+Mean absolute percentage error: 0.10333333333333333
+Mean squared error: 2.92
+Root mean squared error: 1.7088007490635062
 \end{verbatim}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./.ob-jupyter/b08177a9d1efa22707d54a37d9db31dfa7042b6c.png}
+\end{center}
 
 As seen from the box plot and the accuracy metrics above,
 algorithm performs poorly for counting steps when climbing up stairs,
 and misses a lot of steps.
 \subsection{Climbing down stairs}
-\label{sec:orgeb5378e}
+\label{sec:org074a1f6}
 The data set for climbing down stairs is collected as detailed in the
-\hyperref[org2b972e1]{data collection section}.
+\hyperref[org8247a6d]{data collection section}.
 \phantomsection
-\label{org12b2359}
+\label{org6360fb0}
 \begin{verbatim}
-[31m---------------------------------------------------------------------------[39m
-[31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[8][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m climbing_down_12_steps_results = [43mvalidate_algorithm_on_dataset[49m([33m"[39m[33m./data/climbing-down-stairs/[39m[33m"[39m)
-[32m      3[39m [38;5;66;03m# Plot the box plot[39;00m
-[32m      4[39m seaborn.boxplot(data={
-[32m      5[39m     [33m"[39m[33mGround Truth[39m[33m"[39m: climbing_up_12_steps_results.actual_step_count,
-[32m      6[39m     [33m"[39m[33mAlgorithm Step Count[39m[33m"[39m: climbing_up_12_steps_results.algorithm_step_count,
-[32m      7[39m }).set(title=[33m"[39m[33mClimbing down stairs[39m[33m"[39m)
+Below are the accuracy metrics:
 
-[31mNameError[39m: name 'validate_algorithm_on_dataset' is not defined
+Maximum error: 6.0
+Mean absolute percentage error: 0.2316666666666667
+Mean squared error: 9.62
+Root mean squared error: 3.1016124838541645
 \end{verbatim}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./.ob-jupyter/05c8877ca92d666a6381ba84e9a22aea5aa5ded9.png}
+\end{center}
 
 As seen from the box plot and the accuracy metrics above,
 algorithm also performs poorly for counting steps when
 climbing down stairs, and misses a lot of steps.
 \subsection{Explanation}
-\label{sec:orgbbae029}
+\label{sec:org09b4a65}
 The cause of undercounting steps in the algorithm
 when climbing stairs is likely due to uneven steps.
 
@@ -1324,10 +1317,10 @@ as this problem is also the likely explanation for the significant
 undercounting of steps in the larger 500-step walking data set,
 which had a higher stepping frequency than the 50-step data set.
 \section{Miscellaneous}
-\label{sec:org4721af0}
+\label{sec:org7dbbfef}
 
 \subsection{Manual shaking}
-\label{sec:org43f3401}
+\label{sec:org69338e2}
 The manual shaking data set is data from manually shaking the
 accelerometer for a few seconds. The data set considers the
 different ways to shake the accelerometer, such as shaking it
@@ -1345,46 +1338,44 @@ which is characteristic of manually shaking the accelerometer.
 \clearpage
 
 \phantomsection
-\label{org80730b3}
+\label{orgcfb47d5}
 \begin{verbatim}
-[31m---------------------------------------------------------------------------[39m
-[31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[9][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m manual_shaking_results = [43mvalidate_algorithm_on_dataset[49m([33m"[39m[33m./data/miscellaneous/manual-shaking/[39m[33m"[39m)
-[32m      3[39m [38;5;66;03m# Plot the box plot[39;00m
-[32m      4[39m seaborn.boxplot(data={
-[32m      5[39m     [33m"[39m[33mGround Truth[39m[33m"[39m: manual_shaking_results.actual_step_count,
-[32m      6[39m     [33m"[39m[33mAlgorithm Step Count[39m[33m"[39m: manual_shaking_results.algorithm_step_count,
-[32m      7[39m }).set(title=[33m"[39m[33mManually shaking the accelerometer[39m[33m"[39m)
+Below are the accuracy metrics:
 
-[31mNameError[39m: name 'validate_algorithm_on_dataset' is not defined
+Maximum error: 0.0
+Mean absolute percentage error: 0.0
+Mean squared error: 0.0
+Root mean squared error: 0.0
 \end{verbatim}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./.ob-jupyter/a1a677e1b992395f965c1039291d3cfcbc211003.png}
+\end{center}
 
 As seen from the box plot and accuracy metrics above,
 the algorithm successfully filters out cheated accelerometer data
 through shaking the accelerometer,
 while remaining fairly accurate for legitimate data.
 \subsection{Eating pasta}
-\label{sec:org764021e}
+\label{sec:orgb5e0d18}
 The eating pasta data set was also only collected once, and it is an
 initial attempt in making the algorithm more accurate in free living
 situations where there is a lot of hand movement that is not due to
 walking or running.
 \phantomsection
-\label{orga3fa87b}
+\label{orge60c5a5}
 \begin{verbatim}
-[31m---------------------------------------------------------------------------[39m
-[31mNameError[39m                                 Traceback (most recent call last)
-[36mCell[39m[36m [39m[32mIn[10][39m[32m, line 1[39m
-[32m----> [39m[32m1[39m eating_pasta_results = [43mvalidate_algorithm_on_dataset[49m([33m"[39m[33m./data/miscellaneous/eating-pasta/[39m[33m"[39m)
-[32m      3[39m [38;5;66;03m# Plot the box plot[39;00m
-[32m      4[39m seaborn.boxplot(data={
-[32m      5[39m     [33m"[39m[33mGround Truth[39m[33m"[39m: eating_pasta_results.actual_step_count,
-[32m      6[39m     [33m"[39m[33mAlgorithm Step Count[39m[33m"[39m: eating_pasta_results.algorithm_step_count,
-[32m      7[39m }).set(title=[33m"[39m[33mEating pasta[39m[33m"[39m)
+Below are the accuracy metrics:
 
-[31mNameError[39m: name 'validate_algorithm_on_dataset' is not defined
+Maximum error: 6.0
+Mean absolute percentage error: 2.7021597764222976e+16
+Mean squared error: 36.0
+Root mean squared error: 6.0
 \end{verbatim}
+
+\begin{center}
+\includegraphics[width=.9\linewidth]{./.ob-jupyter/1da3f052ce5ea65c9da879bb574558a4de141283.png}
+\end{center}
 
 As seen from the box plot and the accuracy metrics above,
 the algorithm handles a free-living situation like eating pasta
@@ -1393,7 +1384,7 @@ to test the effectiveness of the algorithm in other
 free living situations, as this piece of data only accounts for
 one free living situation, which is eating pasta.
 \section{Discussion}
-\label{sec:orgf23676e}
+\label{sec:org3ee1fc9}
 While the algorithm is decently effective at counting steps,
 as the data is all self-collected, the data is only representative
 of a single individual and hence may not apply to the wider
@@ -1449,10 +1440,10 @@ would require expensive hardware to train and make use of,
 which can make the algorithm prohibitively expensive and
 financially inaccessible despite being open source.
 \chapter{Conclusions and recommendations}
-\label{sec:org63cd6c1}
-\label{orge5153a9}
+\label{sec:orga5fc3f3}
+\label{org9ca0695}
 \section{Conclusions}
-\label{sec:org056a494}
+\label{sec:org6db57a9}
 This paper presents an open-source step-counting algorithm that aims
 to be accessible, both in terms of hardware and computing power, and
 in terms of financial accessibility. While the step-counting algorithm
@@ -1472,10 +1463,10 @@ for more accurate step counting.
 
 If there is an interest in the implementation of the algorithm,
 It is clearly documented, and the explanation for
-various aspects of detailed in the \hyperref[orgbc9f4fa]{appendix},
+various aspects of detailed in the \hyperref[orgd12c8af]{appendix},
 so anyone can make modifications to the algorithm to improve it.
 \section{Recommendations for future work}
-\label{sec:org5e394ef}
+\label{sec:org8e40352}
 With the new approach to step counting introduced in this paper,
 there is a lot of future work that can be done to improve and refine
 the algorithm presented.
@@ -1555,7 +1546,7 @@ human senses, and hence is more laborious but worthwhile.
 \setcounter{page}{1}
 \renewcommand{\thepage}{R-\arabic{page}}
 \chapter{List of references}
-\label{sec:org795c969}
+\label{sec:orge393d9b}
 \begin{cslbibliography}{0}{0}
 \cslbibitem{1}{\cslleftmargin{[1]}\cslrightinline{H. Hub, “Corporate challenge: Steps and initiatives,” Mar. 2023. Available: \url{https://www.healthhub.sg/live-healthy/corporate-challenge-steps-and-initiatives}}}
 
@@ -1625,10 +1616,10 @@ human senses, and hence is more laborious but worthwhile.
 
 \setlength{\parindent}{0em}
 \chapter{Appendix - Python implementation of the algorithm}
-\label{sec:orgba01af0}
-\label{orgbc9f4fa}
+\label{sec:org51a3b2e}
+\label{orgd12c8af}
 \section{Installation}
-\label{sec:org9286604}
+\label{sec:orgcb3e649}
 Install the Python dependencies required for the algorithm.
 \begin{minted}[]{shell}
 pip install pandas numpy matplotlib scipy ahrs
@@ -1647,7 +1638,7 @@ pdm install
 uv install
 \end{minted}
 \section{Imports}
-\label{sec:orgba0c60c}
+\label{sec:org595adeb}
 Import the required libraries.
 The minimum Python version required is Python 3.11.
 \begin{minted}[]{python}
@@ -1659,8 +1650,8 @@ from ahrs.common.dcm import DCM
 from ahrs import Quaternion
 \end{minted}
 \section{Constants}
-\label{sec:org75b8459}
-\label{org19693d5}
+\label{sec:orgaec0bf6}
+\label{org567a897}
 The constants here represent the parameters to the algorithm.
 \begin{minted}[]{python}
 # The sampling frequency of the sensor
@@ -1701,10 +1692,10 @@ ANGLE_DIFFERENCE_THRESHOLD: float = numpy.deg2rad(45)
 MAX_NUMBER_OF_DIFFERENT_ORIENTATIONS: int = 2
 \end{minted}
 \section{Functions}
-\label{sec:org218d9c1}
+\label{sec:org606fa52}
 
 \subsection{Converting the accelerometer data in a standard form}
-\label{sec:orgca80631}
+\label{sec:orga412b32}
 The acceleration data is converted into metres per second squared
 from "g"s,
 and is converted from each of the scalars in the 3 cardinal
@@ -1732,7 +1723,7 @@ def convert_accelerometer_data_to_standard_form(
     )
 \end{minted}
 \subsection{Converting the gyroscope data into a standard form}
-\label{sec:orgc29ef96}
+\label{sec:org0db3282}
 The gyroscope data is converted into radians from degrees,
 and is converted from each of the scalars in the 3 cardinal
 directions into a 3-dimensional vector.
@@ -1758,7 +1749,7 @@ def convert_gyroscope_data_to_standard_form(
     )
 \end{minted}
 \subsection{Converting the magnetometer data into a standard form}
-\label{sec:org3ead1f1}
+\label{sec:orgb61418c}
 The magnetometer data is converted from microtesla to millitesla,
 and is converted from each of the scalars in the 3 cardinal
 directions into a 3-dimensional vector.
@@ -1784,7 +1775,7 @@ def convert_magnetometer_data_to_standard_form(
     )
 \end{minted}
 \subsection{Low-pass frequency filter}
-\label{sec:orgf55322f}
+\label{sec:org51b5b4f}
 The function below applies a 4th-order Butterworth low-pass filter
 to the data given.
 \begin{minted}[]{python}
@@ -1812,7 +1803,7 @@ def apply_frequency_filter(accelerometer_data: numpy.ndarray) -> numpy.ndarray:
     return filtered_accelerometer_data
 \end{minted}
 \subsection{AHRS orientation filter}
-\label{sec:org5042792}
+\label{sec:orga4f36a4}
 \begin{minted}[]{python}
 def apply_orientation_filter(
     orientation_filter,
@@ -1840,7 +1831,7 @@ def apply_orientation_filter(
     return result.Q
 \end{minted}
 \subsection{Obtain direction cosine matrices from quaternions}
-\label{sec:orgb4ba2bb}
+\label{sec:org06150fc}
 \begin{minted}[]{python}
 def get_rotation_matrices_from_quaternions(
     quaternions: numpy.ndarray,
@@ -1849,7 +1840,7 @@ def get_rotation_matrices_from_quaternions(
     return DCM().from_quaternion(quaternions)
 \end{minted}
 \subsection{Rotate the accelerometer axis using the rotation matrices}
-\label{sec:org59dc2b4}
+\label{sec:org25678a1}
 \begin{minted}[]{python}
 def get_rotated_accelerometer_data(
     accelerometer_data: numpy.ndarray,
@@ -1876,7 +1867,7 @@ def get_rotated_accelerometer_data(
     return rotated_accelerometer_data
 \end{minted}
 \subsection{Obtaining the vector projections}
-\label{sec:org0dfb1d2}
+\label{sec:orgc7ca57f}
 \begin{minted}[]{python}
 def get_projection(
     vector_to_project_on: numpy.ndarray[float],
@@ -1897,7 +1888,7 @@ def get_projection(
     return numpy.array(projected_vectors)
 \end{minted}
 \subsection{Trough finding}
-\label{sec:org5b14d1c}
+\label{sec:org7ae2c54}
 The function below finds the troughs in the acceleration data.
 \begin{minted}[]{python}
 def find_troughs(
@@ -1923,7 +1914,7 @@ def find_troughs(
     return troughs
 \end{minted}
 \subsection{Calculate Euler angles from quaternions}
-\label{sec:org83e7ef0}
+\label{sec:org3407f0e}
 \begin{minted}[]{python}
 def quaternion_to_euler(quaternion: numpy.ndarray) -> numpy.ndarray:
     "Function to get the Euler angles from a quaternion."
@@ -1951,7 +1942,7 @@ def quaternion_to_euler(quaternion: numpy.ndarray) -> numpy.ndarray:
     return (phi, theta, psi)
 \end{minted}
 \subsection{Determine if two quaternions have similar orientations}
-\label{sec:org884da3d}
+\label{sec:org2d975e6}
 \begin{minted}[]{python}
 def quaternion_orientations_are_similar(
     quaternion_1: numpy.ndarray,
@@ -1978,7 +1969,7 @@ def quaternion_orientations_are_similar(
     ])
 \end{minted}
 \subsection{Check for raw peaks that exceed the threshold}
-\label{sec:org11e1f92}
+\label{sec:org83aadf5}
 \begin{minted}[]{python}
 def exceed_raw_peak_threshold(
     raw_accelerometer_data: numpy.ndarray,
@@ -2000,7 +1991,7 @@ def exceed_raw_peak_threshold(
     return False
 \end{minted}
 \subsection{Check for different orientations}
-\label{sec:org011596d}
+\label{sec:org9a4e9ea}
 \begin{minted}[]{python}
 def exceeded_number_of_different_orientations(
     troughs: numpy.ndarray,
@@ -2096,7 +2087,7 @@ def exceeded_number_of_different_orientations(
     return False
 \end{minted}
 \subsection{Filter the list of troughs}
-\label{sec:org82bf09e}
+\label{sec:orgbcf136e}
 \begin{minted}[]{python}
 def filter_troughs(
     accelerometer_data: numpy.ndarray,
@@ -2141,7 +2132,7 @@ def filter_troughs(
     return troughs
 \end{minted}
 \subsection{Overall step count function}
-\label{sec:org578c991}
+\label{sec:org256988a}
 \begin{minted}[]{python}
 def get_step_count(
     accelerometer_data: numpy.ndarray,
@@ -2220,10 +2211,10 @@ def get_step_count(
     return step_count, list_of_troughs
 \end{minted}
 \section{Processing WitMotion sensor data}
-\label{sec:orgb87e721}
+\label{sec:org3390680}
 
 \subsection{Loading the sensor data}
-\label{sec:org814c074}
+\label{sec:org8c64386}
 \begin{minted}[]{python}
 raw_sensor_data = pandas.read_csv(
     "./data/walking/50-steps/50-steps-arm-swing-27-03-2025-14-43-15.tsv",
@@ -2233,7 +2224,7 @@ print(raw_sensor_data.head(1))
 \end{minted}
 
 \phantomsection
-\label{orge92b866}
+\label{org8aeb8ab}
 \begin{verbatim}
                      time                   DeviceName  AccX(g)  AccY(g)  \
 0  2025-3-27 14:43:15.252  WT901BLE68-01(48591DE3C19B)   -0.146    -0.97   
@@ -2250,7 +2241,7 @@ print(raw_sensor_data.head(1))
 [1 rows x 21 columns]
 \end{verbatim}
 \subsection{Convert accelerometer data into the standard form}
-\label{sec:orge3ed996}
+\label{sec:orgc8e2b94}
 \begin{minted}[]{python}
 raw_accelerometer_data = convert_accelerometer_data_to_standard_form(
     raw_sensor_data,
@@ -2261,7 +2252,7 @@ print(pandas.DataFrame(raw_accelerometer_data).head())
 \end{minted}
 
 \phantomsection
-\label{org0a66995}
+\label{org50fb04d}
 \begin{verbatim}
                                0
 0   [-1.43226, -9.5157, 2.43288]
@@ -2271,7 +2262,7 @@ print(pandas.DataFrame(raw_accelerometer_data).head())
 4   [-1.4715, -9.32931, 2.40345]
 \end{verbatim}
 \subsection{Convert gyroscope data into the standard form}
-\label{sec:orge957bbe}
+\label{sec:org77f32cb}
 \begin{minted}[]{python}
 raw_gyroscope_data = convert_gyroscope_data_to_standard_form(
     raw_sensor_data,
@@ -2282,7 +2273,7 @@ print(pandas.DataFrame(raw_gyroscope_data).head())
 \end{minted}
 
 \phantomsection
-\label{orge1413da}
+\label{org524bad3}
 \begin{verbatim}
                                                    0
 0  [-0.007452555906015787, 0.006387905062299246, ...
@@ -2292,7 +2283,7 @@ print(pandas.DataFrame(raw_gyroscope_data).head())
 4  [-0.005323254218582705, 0.0170518667919846, -0...
 \end{verbatim}
 \subsection{Convert magnetometer data into the standard form}
-\label{sec:org3f95ca5}
+\label{sec:org256e638}
 \begin{minted}[]{python}
 raw_magnetometer_data = convert_magnetometer_data_to_standard_form(
     raw_sensor_data,
@@ -2303,7 +2294,7 @@ print(pandas.DataFrame(raw_magnetometer_data).head())
 \end{minted}
 
 \phantomsection
-\label{org3a71f6b}
+\label{org1394f98}
 \begin{verbatim}
                                             0
 0  [-0.063994, -0.01274, 0.07477400000000001]
@@ -2313,14 +2304,14 @@ print(pandas.DataFrame(raw_magnetometer_data).head())
 4  [-0.063994, -0.01274, 0.07477400000000001]
 \end{verbatim}
 \subsection{Filter the accelerometer data using a low-pass filter}
-\label{sec:org4795cc2}
+\label{sec:org80764bc}
 \begin{minted}[]{python}
 accelerometer_data = apply_frequency_filter(raw_accelerometer_data)
 print(pandas.DataFrame(accelerometer_data).head())
 \end{minted}
 
 \phantomsection
-\label{orgd347cd1}
+\label{orga5a7b4f}
 \begin{verbatim}
                                                    0
 0  [-1.438445822475191, -9.546895633911067, 2.443...
@@ -2330,7 +2321,7 @@ print(pandas.DataFrame(accelerometer_data).head())
 4  [-1.4321083564649622, -9.484501371898622, 2.41...
 \end{verbatim}
 \subsection{Obtain the orientation quaternions for the accelerometer data}
-\label{sec:orgd26b5ae}
+\label{sec:orge725f62}
 \begin{minted}[]{python}
 orientation_quaternions = apply_orientation_filter(
     Madgwick, accelerometer_data, raw_gyroscope_data, raw_magnetometer_data,
@@ -2346,7 +2337,7 @@ print(pandas.DataFrame(raw_orientation_quaternions).head(3))
 \end{minted}
 
 \phantomsection
-\label{org4985136}
+\label{org73f29f5}
 \begin{verbatim}
 Orientation quaternions
           0         1         2         3
@@ -2361,7 +2352,7 @@ Raw orientation quaternions
 2  0.754452 -0.554066  0.265511 -0.230903
 \end{verbatim}
 \subsection{Obtain the rotation matrices from the quaternions}
-\label{sec:orgd3937b8}
+\label{sec:org14006b2}
 \begin{minted}[]{python}
 rotation_matrices = get_rotation_matrices_from_quaternions(
     orientation_quaternions
@@ -2377,7 +2368,7 @@ print(raw_rotation_matrices[:1])
 \end{minted}
 
 \phantomsection
-\label{org7e5f6a2}
+\label{orgd266d5a}
 \begin{verbatim}
 Rotation matrices
 [[[ 0.75355745  0.05403601  0.65515745]
@@ -2390,7 +2381,7 @@ Raw rotation matrices
   [-0.14439297 -0.9586984   0.24504702]]]
 \end{verbatim}
 \subsection{Rotate the accelerometer data to the global reference frame}
-\label{sec:orgdafaf1c}
+\label{sec:org140c2c7}
 \begin{minted}[]{python}
 rotated_accelerometer_data = get_rotated_accelerometer_data(
     accelerometer_data, rotation_matrices,
@@ -2408,7 +2399,7 @@ print(pandas.DataFrame(raw_rotated_accelerometer_data).head(2))
 \end{minted}
 
 \phantomsection
-\label{org5d21e4a}
+\label{org8e40b49}
 \begin{verbatim}
 
 
@@ -2448,7 +2439,7 @@ Raw rotated accelerometer data
 1  [-1.595550415890446, -1.7371617419820324, -0.5...  
 \end{verbatim}
 \subsection{Obtain the accelerometer projection}
-\label{sec:org458d16c}
+\label{sec:org4d2f7ac}
 \begin{minted}[]{python}
 accelerometer_projection = [
     get_projection(cardinal_vector, rotated_accelerometer_data)
@@ -2469,7 +2460,7 @@ print(pandas.DataFrame(raw_accelerometer_projection).head(1))
 \end{minted}
 
 \phantomsection
-\label{org7216299}
+\label{orgc9ccf55}
 \begin{verbatim}
 
 
@@ -2504,10 +2495,10 @@ Raw accelerometer projection
 [1 rows x 3520 columns]
 \end{verbatim}
 \section{Visualising the step count}
-\label{sec:org161c3f6}
+\label{sec:orgc472843}
 
 \subsection{Obtaining the step count}
-\label{sec:org352a7fe}
+\label{sec:org5f5f928}
 \begin{minted}[]{python}
 step_count, troughs = get_step_count(
     accelerometer_projection,
@@ -2525,12 +2516,12 @@ print(f"{step_count = }")
 \end{minted}
 
 \phantomsection
-\label{org958dfe7}
+\label{org4ce3ea5}
 \begin{verbatim}
 step_count = 50
 \end{verbatim}
 \subsection{Visualising the troughs}
-\label{sec:orgcad993f}
+\label{sec:orgd4cddc0}
 \begin{minted}[]{python}
 # Import matplotlib for plotting
 import matplotlib.pyplot as plt
@@ -2545,7 +2536,7 @@ plt.plot(troughs, z_projection[troughs], "v")
 \end{minted}
 
 \begin{center}
-\includegraphics[width=.9\linewidth]{./.ob-jupyter/73edb000e9537e8455d3a50f19718d79e6742c05.png}
-\label{org378d81e}
+\includegraphics[width=.9\linewidth]{./.ob-jupyter/39d07de686d93e4bca945d088ec0827687a925f6.png}
+\label{orgcd20fc7}
 \end{center}
 \end{document}
