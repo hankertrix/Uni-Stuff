@@ -189,6 +189,9 @@ TTL stands for transistor-transistor logic.
 == RTOS
 RTOS stands for real time operating system.
 
+== CCP
+CCP stands for capture, compare and PWM.
+
 == IRQ
 IRQ stands for interrupt request.
 
