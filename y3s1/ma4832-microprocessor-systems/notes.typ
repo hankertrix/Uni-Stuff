@@ -15453,7 +15453,7 @@ The TM4C123GH6PM SSI modules have the follow features:
     ),
 )
 
-== Connectors
+== J connectors
 #cimage("./images/j1-j4-connectors-description.png")
 
 #{
