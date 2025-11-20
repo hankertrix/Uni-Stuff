@@ -5769,7 +5769,7 @@ SYSCTL_RCGCGPIO_R       EQU 0x400FE608
 		LDR R1, =GPIO_PORTA_PCTL_R
 		LDR R0, [R1]
 		BIC R0, R0,#0x00FF0000  ; clear Port A bits 4 & 5
-		BIC R0, R0,#0xFF00000   ; clear Port A bits 6 & 7
+		BIC R0, R0,#0xFF000000  ; clear Port A bits 6 & 7
 		STR R0, [R1]
 
 ; Set the direction (input or output)
