@@ -348,7 +348,7 @@ check_given_adc
 		; by the number of bits per hex value
 		MOV R0, #4
 		MUL R12, R0
-		
+
 		; The default sample configuration
 		LDR R0, =0x0006
 
