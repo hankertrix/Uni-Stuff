@@ -11756,7 +11756,7 @@ SYSCTL_RCGCADC_R    EQU 0x400FE638  ; ADC run mode clock gating control
     ),
 
     [ADC0], [`0x4003.8000`], [`0x1`],
-    [ADC0], [`0x4003.9000`], [`0x2`],
+    [ADC1], [`0x4003.9000`], [`0x2`],
 )
 
 *ADC* offsets and values:
