@@ -1,0 +1,21 @@
+# Ignore Python cache files
+__pycache__/
+
+# Ignore the target directory for Rust
+target/
+
+# Ignore all references
+references/
+
+# Ignore the data files for BS1009
+**/bs1009-introduction-to-computational-thinking/ay-*/data/
+
+# Ignore the files for Singapore Sign Language Level 1 and 2
+**/ll5001-singapore-sign-language-level-1/
+**/ll5002-singapore-sign-language-level-2/
+
+# Ignore the private folder
+**/private/
+
+# Ignore all ipynb checkpoints
+**/.ipynb_checkpoints/

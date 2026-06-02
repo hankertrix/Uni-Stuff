@@ -1,0 +1,201 @@
+#+TITLE: Rotation of Rigid Bodies Tutorial
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{siunitx}
+
+\newpage
+
+* Question 1
+
+** (a)
+\[F_{net} = \frac{mv_{tan}^2}{r}\]
+\[T - mg = \frac{2.00 \cdot v_{tan}^2}{1.10}\]
+\[1.10(25.0 - 2.00(9.81)) = 2 v_{tan}^2\]
+\[5.918 = 2 v_{tan}^2\]
+\[v_{tan}^2 = 2.959\]
+\[v_{tan} = 1.72017411\]
+\[v_{tan} \approx \qty{1.72}{\unit{m.s^{-1}}}\]
+
+** (b)
+For the rope to not be slack, the tension of the rope needs to be at least 0.
+\\
+
+At the top of the circle:
+\[T + mg = \frac{mv_{tan}^2}{r}\]
+\[0 + 2.00(9.81) = \frac{2.00v_{tan}^2}{1.10}\]
+\[21.582 = 2v_{tan}^2\]
+\[v_{tan}^2 = 10.791\]
+\[v_{tan} = 3.284965753\]
+\[v_{tan} = \qty{3.28}{\unit{m.s^{-1}}}\]
+
+** (c)
+
+The tangential component of the net force will always be provided by the weight, as the tension is perpendicular to the tangential component, hence:
+\[F_{tan} = mg \cos \theta\]
+
+The radial component of the net force will be provided by the tension and the weight, hence:
+\[F_{radial} = T + mg \sin \theta\]
+
+
+* Question 2
+
+Finding the centripetal force on block \(B\):
+\begin{align*}
+F_{net} &= m_B r_B \omega^2 \\
+&= m_B r_B (2 \pi f)^2 \\
+&= 4 \pi^2 m_B r_B f^2
+\end{align*}
+
+Since the tension provides for the centripetal force on block \(B\):
+\[T_B = 4 \pi^2 m_B r_B f^2 \tag{1}\]
+
+Finding the centripetal force on block \(A\):
+\[F_{net} = m_A r_A \omega^2\]
+\[T_A - T_B = m_A r_A (2 \pi f)^2\]
+\[T_A - T_B = 4 \pi^2 f^2 m_A r_A\]
+
+Substituting \((1)\):
+\[T_A - 4 \pi^2 m_B r_B f^2 = 4 \pi^2 f^2 m_A r_A\]
+\[T_A = 4 \pi^2 f^2 m_A r_A + 4 \pi^2 m_B r_B f^2\]
+\[T_A = 4 \pi^2 f^2 (m_A r_A + m_B r_B)\]
+
+
+* Question 3
+
+** (a)
+
+Finding the angular velocity of the blade:
+\begin{align*}
+\omega &= 2 \pi f \\
+&= 2 \pi \cdot 650 \\
+&= \qty{4084.07045}{\unit{rad.min^{-1}}} \\
+&= \qty{68.06784083}{\unit{rad.s^{-1}}} \\
+&\approx \qty{68.1}{\unit{rad.s^{-1}}}
+\end{align*}
+
+** (b)
+Finding the linear speed:
+\begin{align*}
+v &= r \omega \\
+&= 0.055 \cdot 68.86784083 \\
+&= 3.743731246 \\
+&\approx \qty{3.74}{\unit{m.s^{-1}}}
+\end{align*}
+
+Finding the centripetal acceleration:
+\begin{align*}
+a &= \frac{v^2}{r} \\
+&= \frac{3.743731246^2}{0.055} \\
+&= 254.8277025 \\
+&= \qty{255}{\unit{m.s^{-1}}}
+\end{align*}
+
+** (c)
+Finding the angular acceleration of the blade:
+\begin{align*}
+\alpha &= \frac{d \omega}{dt} \\
+&= \frac{0 - 68.06784083}{4} \\
+&= \frac{- 68.06784083}{4} \\
+&= -\qty{17.01696021}{\unit{rad.s^{-1}}} \\
+&= -\qty{17.0}{\unit{rad.s^{-1}}}
+\end{align*}
+
+\newpage
+
+* Question 4
+Finding the centripetal force provided by the static friction:
+\begin{align*}
+F_{net} &= mr \omega^2 \\
+&= m (12 \cdot 10^{-2}) \left(\frac{2\pi 35.0}{60} \right)^2 \\
+&= \frac{49}{300} m \pi^2
+\end{align*}
+
+The static friction provides for the centripetal force, so:
+\[f_s = F_{net}\]
+\[\mu_s \cdot N = F_{net}\]
+\[\mu_s \cdot mg = \frac{49}{300} m \pi^2\]
+\[\mu_s g = \frac{49}{300} \pi^2\]
+\[\mu_s (9.81) = \frac{49}{300} \pi^2\]
+\[\mu_s = 0.1643257274\]
+\[\mu_s \approx 0.164\]
+
+
+* Question 5
+The tension in the string provides for the centripetal force, hence:
+\[T = \frac{Mv^2}{R}\]
+\[mg = \frac{Mv^2}{R}\]
+\[mgR = Mv^2\]
+\[v^2 = \frac{mgR}{M}\]
+\[v = \sqrt{\frac{mgR}{M}}\]
+\[v = \left(\frac{mgR}{M} \right)^{\frac{1}{2}} \textbf{ (Shown)}\]
+
+
+* Question 6
+
+Let \(\theta\) be the banking angle.
+\\
+
+When there is no friction, the centripetal force will be fully provided by the normal contact force, hence:
+\[N \sin \theta = \frac{mv_0^2}{R} \tag{1}\]
+
+The vertical component of the centripetal force must be equivalent to the weight, thus:
+\[N \cos \theta = mg \tag{2}\]
+
+Dividing $(1)$ by \((2)\):
+\[\frac{N \sin \theta}{N \cos \theta} = \frac{mv_0^2}{R} \cdot \frac{1}{mg}\]
+\[\tan \theta = \frac{v_0^2}{Rg} \tag{3}\]
+
+The minimum speed that the car will need to go at so that it doesn't slip towards the centre of the circle would mean that the horizontal component of the normal contact force subtracting the horizontal component of the frictional force must provide for the centripetal force, hence:
+\[N \sin \theta - f_s \cos \theta = \frac{mv_{min}^2}{R}\]
+\[N \sin \theta - \mu_s \cdot N \cos \theta = \frac{mv_{min}^2}{R}\]
+\[N (\sin \theta - \mu_s \cos \theta) = \frac{mv_{min}^2}{R} \tag{4}\]
+
+The vertical component of the normal contact force and the friction must also be equal to the weight, so:
+\[f_s \sin \theta + N \cos \theta = mg\]
+\[\mu_s N \sin \theta + N \cos \theta = mg\]
+\[N (\mu_s \sin \theta + \cos \theta) = mg\]
+\[N = \frac{mg}{\mu_s \sin \theta + \cos \theta} \tag{5}\]
+
+Substituting \((5)\) into \((4)\):
+\[\frac{mg}{\mu_s \sin \theta + \cos \theta} (\sin \theta - \mu_s \cos \theta) = \frac{mv_{min}^2}{R}\]
+\[\frac{g}{\mu_s \sin \theta + \cos \theta} (\sin \theta - \mu_s \cos \theta) = \frac{v_{min}^2}{R}\]
+\[v_{min}^2 = \frac{gR(\sin \theta - \mu_s \cos \theta)}{\mu_s \sin \theta + \cos \theta}\]
+\[v_{min}^2 = \frac{gR(\tan \theta - \mu_s)}{\mu_s \tan \theta + 1} \tag{6}\]
+
+Substituting $(3)$ into \((6)\):
+\[v_{min}^2 = \frac{gR \left(\frac{v_0^2}{Rg} - \mu_s \right)}{\mu_s \frac{v_0^2}{Rg} + 1}\]
+\[v_{min}^2 = \frac{v_0^2 - \mu_s Rg}{1 + \frac{\mu_s v_0^2}{Rg}}\]
+\[v_{min}^2 = \frac{1 - \frac{\mu_s Rg}{v_0^2}}{1 + \frac{\mu_s v_0^2}{Rg}}\]
+\[v_{min} = \sqrt{\frac{1 - \frac{\mu_s Rg}{v_0^2}}{1 + \frac{\mu_s v_0^2}{Rg}}}\]
+
+\newpage
+
+The maximum speed that the car will need to go at so that it doesn't slip up the bank would mean that the horizontal component of the normal contact force and the horizontal component of the frictional force is providing the centripetal force for the car, hence:
+\[f_s \cos \theta + N \sin \theta = \frac{mv_{max}^2}{R}\]
+\[\mu_s \cdot N \cos \theta + N \sin \theta = \frac{mv_{max}^2}{R}\]
+\[N (\mu_s \cos \theta + \sin \theta) = \frac{mv_{max}^2}{R} \tag{7}\]
+
+The vertical component of the normal contact force must be equal to the sum of the vertical component of the frictional force and the weight of the car, hence:
+\[N \cos \theta = f_s \sin \theta + mg\]
+\[N \cos \theta - f_s \sin \theta = mg\]
+\[N \cos \theta - \mu_s \cdot N \sin \theta = mg\]
+\[N (\cos \theta - \mu_s \sin \theta) = mg\]
+\[N = \frac{mg}{\cos \theta - \mu_s \sin \theta} \tag{8}\]
+
+Substituting $(8)$ into \((7)\):
+\[\frac{mg}{\cos \theta - \mu_s \sin \theta} (\mu_s \cos \theta + \sin \theta) = \frac{mv_{max}^2}{R}\]
+\[\frac{mg(\mu_s \cos \theta + \sin \theta)}{\cos \theta - \mu_s \sin \theta} = \frac{mv_{max}^2}{R}\]
+\[\frac{g(\mu_s \cos \theta + \sin \theta)}{\cos \theta - \mu_s \sin \theta} = \frac{v_{max}^2}{R}\]
+\[v_{max}^2 = \frac{Rg(\mu_s \cos \theta + \sin \theta)}{\cos \theta - \mu_s \sin \theta}\]
+\[v_{max}^2 = \frac{Rg(\mu_s + \tan \theta)}{1 - \mu_s \tan \theta} \tag{9}\]
+
+\newpage
+
+Substituting $(3)$ into \((9)\):
+\[v_{max}^2 = \frac{Rg(\mu_s + \frac{v_0^2}{Rg})}{1 - \mu_s \frac{v_0^2}{Rg}}\]
+\[v_{max}^2 = \frac{Rg\mu_s + v_0^2}{1 - \mu_s \frac{v_0^2}{Rg}}\]
+\[v_{max}^2 = \frac{Rg\mu_s + v_0^2}{1 - \frac{\mu_s v_0^2}{Rg}}\]
+\[v_{max}^2 = \frac{v_0^2 + Rg\mu_s}{1 - \frac{\mu_s v_0^2}{Rg}}\]
+\[v_{max}^2 = \frac{1 + \frac{Rg\mu_s}{v_0^2}}{1 - \frac{\mu_s v_0^2}{Rg}}\]
+\[v_{max} = \sqrt{\frac{1 + \frac{Rg\mu_s}{v_0^2}}{1 - \frac{\mu_s v_0^2}{Rg}}}\]

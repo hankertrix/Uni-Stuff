@@ -1,0 +1,265 @@
+#+TITLE: Work Energy Power Tutorial
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{siunitx}
+
+* Question 1
+
+** (a)
+Let the net force on the crate be \(F_net\), the frictional force on the crate be \(f\) and the normal contact force on the crate be \(F_N\):
+\begin{align*}
+F_{net} &= mg \sin \theta - f \\
+&= mg \sin \theta - F_n \mu_k \\
+&= mg \sin \theta - mg \cos \theta \mu_k \\
+&= mg (\sin \theta - \mu_k \cos \theta)
+\end{align*}
+
+By Newton's Second Law:
+\[F_{net} = ma\]
+\[ma = mg (\sin \theta -\mu_k \cos \theta)\]
+\[a = g (\sin \theta - \mu_k \cos \theta)\]
+\[a = 9.81 (\sin 25 \unit{\degree} - 0.19 \cos 25 \unit{\degree})\]
+\[a = 2.456618063\]
+\[a = \SI{2.46}{\unit{m.s^{-2}}} \text{ (3 s.f)}\]
+
+** (b)
+Getting the time taken for the crate to travel the distance:
+\[s = ut + \frac{1}{2}at^2\]
+\[8.15 = 0 + \frac{1}{2}(2.456618063)t^2\]
+\[8.15 \times 2 = 2.456618063t^2\]
+\[t^2 = 6.635138056\]
+\[t = 2.575876173\]
+
+Getting the final speed of the crate:
+\[v = v_0 + at\]
+\[v = 0 + 2.456618063 \times 2.575876173\]
+\[v = 6.327943934\]
+\[v = \SI{6.33}{\unit{m.s^{-2}}} \text{ (3 s.f)}\]
+
+
+* Question 2
+
+** (a)
+First, the force $F$ needs to overcome the frictional force due to the ground ($f_g$):
+\begin{align*}
+f_g &= mg \mu_s \\
+&= (5 + 3)(9.8)(0.6) \\
+&= \qty{47.04}{\unit{N}}
+\end{align*}
+
+Next, the force $F$ needs to overcome the frictional force on the \(\qty{3.0}{\unit{kg}}\) \(f_{3kg}\):
+\begin{align*}
+f_{3kg} &= mg \mu_s \\
+&= 3(9.8)(0.6) \\
+&= \qty{17.64}{\unit{N}}
+\end{align*}
+
+The force $F$ also needs to overcome the frictional force from the movement of the \(\qty{5.0}{\unit{kg}}\) causing the \(\qty{3.0}{\unit{kg}}\) to move backwards (\(f_{mov}\)):
+\begin{align*}
+f_{mov} = &= mg \mu_s \\
+&= 3(9.8)(0.6) \\
+&= \qty{17.64}{\unit{N}}
+\end{align*}
+
+Thus, the force $F$ is:
+\begin{align*}
+F &= f_g + f_{3kg} + f_{mov} \\
+&= 47.4 + 17.64 + 17.64 \\
+&= \qty{82.32}{\unit{N}} \\
+&= \qty{82.3}{\unit{N}} \text{ (3.s.f)}
+\end{align*}
+
+\newpage
+
+** (b)
+Finding the force when it is 10% greater:
+\begin{align*}
+F &= 1.1(82.32) \\
+&= \qty{90.552}{\unit{N}}
+\end{align*}
+
+Since the blocks start to move, we will need to use kinetic friction, \(\mu_k\). The blocks are also joined together with a rope, so the acceleration of the two blocks will be the same.
+\\
+
+From part \((a)\):
+\[F_{net} = F - (f_g + f_{3kg} + f_{mov})\]
+\[F_{net} = 90.552 - ((5 + 3)(9.8)(0.4) + (3)(9.8)(0.4) + (3)(9.8)(0.4))\]
+\[F_{net} = 90.552 - ((5 + 3)(9.8)(0.4) + (3)(9.8)(0.4) + (3)(9.8)(0.4))\]
+\[(5 + 3)a = 90.552 - ((5 + 3)(9.8)(0.4) + (3)(9.8)(0.4) + (3)(9.8)(0.4))\]
+\[8a = 35.672\]
+\[a = 4.459\]
+\[a = \qty{4.46}{\unit{m.s^{-2}}} \text{ (3 s.f)}\]
+
+* Question 3
+
+** (a)
+\[F_{net} = F - f\]
+\[F_{net} = 650 - 65(9.8)(0.18) - 125(9.8)(0.18)\]
+\[ma = 314.84\]
+\[190a = 314.84\]
+\[a = 1.657052632\]
+\[a = \qty{1.66}{\unit{m.s^{-2}}} \text{ (3 s.f)}\]
+
+** (b)
+Let the contact force that acts on the first block be \(F_c\):
+\[F - F_c - f = ma\]
+\[650 - F_c - 65(9.8)(0.18) = 65(1.657052632)\]
+\[F_c = 650 - 107.7084211 - 114.66\]
+\[F_c = 427.6315789\]
+\[F_c = \qty{428}{\unit{N}}\]
+
+** (c)
+\[F_{net} = F - f\]
+\[F_{net} = 650 - 65(9.8)(0.18) - 125(9.8)(0.18)\]
+\[ma = 314.84\]
+\[190a = 314.84\]
+\[a = 1.657052632\]
+\[a = \qty{1.66}{\unit{m.s^{-2}}} \text{ (3 s.f)}\]
+
+Let the contact force that acts on the first block be \(F_c\):
+\[F - F_c - f = ma\]
+\[650 - F_c - 125(9.8)(0.18) = 125(1.657052632)\]
+\[F_c = 650 - 220.5 - 207.131579\]
+\[F_c = 222.368421\]
+\[F_c = \qty{222}{\unit{N}} \text{ (3 s.f)}\]
+
+
+* Question 4
+
+** (a)
+Let $l$ be the distance moved by the object with mass \(m_1\). When the object with mass $m_1$ moves a distance $l$, $P_2$ moves a distance $l$ towards $P_1$. At the same time, the object with mass $m_2$ also moves a distance $l$ towards $P_2$. As such, the object with mass $m_2$ will effectively be moving $2l$ when the object with mass $m_1$ moves a distance $l$, which would mean that $2a_1 = a_2$.
+
+** (b)
+The tension in the string for $P_1$ would be:
+\[F_{net} = m_1 g - T_1\]
+\[m_1 g - T_1 = m_1 a_1\]
+\[T_1 = m_1 g - m_1 a_1\]
+
+The tension in the string for $P_2$ would be:
+\[F_{net} = T_2\]
+\[F_{net} = m_2 a_2\]
+\[T_2 = m_2 a_2\]
+
+** (c)
+The net force on the block with mass $m_1$ is:
+\[F_{net} = m_1 g - T_1\]
+
+Since the tension in $P_1$ is the force on \(P_2\), which is twice of the tension in the string of \(P_2\):
+\[m_1 a_1 = m_1 g - 2T_2\]
+\[m_1 a_1 = m_1 g - 2m_2 a_2\]
+
+Since \(a_1 = 2a_2\):
+\[m_1 a_1 = m_1 g - 4m_2 a_1\]
+\[a_1 (m_1 + 4m_2) = m_1 g\]
+\[a_1 (m_1 + 4m_2) = m_1 g\]
+\[a_1 = \frac{m_1 g}{m_1 + 4m_2}\]
+
+Since \(a_1 = 2a_2\):
+\[a_2 = \frac{2m_1 g}{m_1 + 4m_2}\]
+
+
+* Question 5
+
+** (a)
+Using the conservation of momentum:
+\[m_1 v_1 + m_2 v_2 = 0\]
+\[m_1 v_1 = - m_2 v_2\]
+\[0.500(4.00) = -3.0v\]
+\[v_2 = -\frac{2}{3}\]
+\[v_2 = \qty{- 0.667}{\unit{m.s^{-1}}}\]
+
+** (b)
+By the conservation of energy, the potential energy of the block must have been fully converted into the kinetic energy of the block and the wedge:
+\[E_p = \text{KE}_{block} + \text{KE}_{wedge}\]
+\[m_1gh = \frac{1}{2}m_1 v_1^2 + \frac{1}{2}m_2 v_2^2\]
+\[(0.500)(9.8)h = \frac{1}{2} (0.5) (4)^2 + \frac{1}{2} (3) \left( \frac{2}{3} \right)^2\]
+\[4.9h = \frac{14}{3}\]
+\[h = \frac{20}{21}\]
+\[h = \qty{0.952}{\unit{m}}\]
+
+\newpage
+
+* Question 6
+
+By the conservation of energy, the potential energy gained by the spring must be equal to the potential energy of the climber, hence:
+\[\frac{1}{2}kx^2 = mgh\]
+\[\frac{1}{2}kx^2 = mg(2l + x)\]
+\[kx^2 = 2mg(2l + x)\]
+\[kx^2 = 4mgl + 2mgx\]
+\[kx^2 - 2mgx - 4mgl = 0\]
+\[x = \frac{2mg \pm \sqrt{(-2mg)^2 - 4(k)(-4mgl)}}{2k}\]
+\[x = \frac{2mg \pm \sqrt{4m^2 g^2 + 16kmgl}}{2k}\]
+\[x = \frac{2mg \pm \sqrt{4m^2 g^2 \left(1 + \frac{4kl}{mg} \right)}}{2k}\]
+\[x = \frac{2mg \pm 2mg\sqrt{1 + \frac{4kl}{mg}}}{2k}\]
+\[x = 2mg \left(\frac{1 \pm \sqrt{1 + \frac{4kl}{mg}}}{2k} \right)\]
+\[x = mg \left(\frac{1 \pm \sqrt{1 + \frac{4kl}{mg}}}{k} \right)\]
+\[x = \frac{mg}{k} \left(1 \pm \sqrt{1 + \frac{4kl}{mg}} \right)\]
+
+Since $x$ is always positive:
+\[x = \frac{mg}{k} \left(1 + \sqrt{1 + \frac{4kl}{mg}} \right) \textbf{ (Shown)}\]
+
+
+* Question 7
+
+** (a)
+
+*** (i)
+The velocity of the air relative to the cyclist would be:
+\[v_r = v + w\]
+
+The power developed by the cyclist would be:
+\[P = \frac{WD}{t}\]
+\[P = F \left(\frac{x}{t} \right)\]
+\[P = Fv\]
+\[P = (k(v + w)^2)v\]
+\[P = kv(v + w)^2\]
+
+\newpage
+
+*** (ii)
+The velocity of the air relative to the cyclist would be:
+\[v_r = \sqrt{v^2 + w^2}\]
+
+Let the angle between the velocity of the air and the velocity of the cyclist be \(\theta\).
+\[\cos \theta = \frac{A}{H}\]
+\[\cos \theta = \frac{v}{\sqrt{v^2 + w^2}}\]
+
+Resolving the velocity of the cyclist in the direction of the air resistance:
+\begin{align*}
+v \cos \theta &= v \frac{v}{\sqrt{v^2 + w^2}} \\
+&= \frac{v^2}{\sqrt{v^2 + w^2}}
+\end{align*}
+
+The power developed by the cyclist would be:
+\[P = \frac{WD}{t}\]
+\[P = F \left(\frac{x}{t} \right)\]
+\[P = Fv\]
+\[P = (k(\sqrt{v^2 + w^2})^2) \left( \frac{v^2}{\sqrt{v^2 + w^2}} \right)\]
+\[P = k(v^2 + w^2) \left( \frac{v^2}{\sqrt{v^2 + w^2}} \right)\]
+\[P = kv^2\sqrt{v^2 + w^2}\]
+
+\newpage
+
+** (b)
+
+From *(aii)*, the power required to cycle at speed $v$ in a cross wind of speed $v$ is:
+\begin{align*}
+P_{cross} &= kv^2 \sqrt{v^2 + v^2} \\
+&= kv^2 (\sqrt{2} v) \\
+&= \sqrt{2}kv^3
+\end{align*}
+
+The power required to cycle at speed $v$ in still air is:
+\begin{align*}
+P_{still} &= \frac{WD}{t} \\
+&= F \left(\frac{x}{t} \right) \\
+&= Fv \\
+&= kv^2(v) \\
+&= kv^3
+\end{align*}
+
+\[\frac{P_{cross}}{P_{still}} = \frac{\sqrt{2}kv^3}{kv^3}\]
+\[\frac{P_{cross}}{P_{still}} = \sqrt{2}\]
+
+Hence, the power required to cycle at speed $v$ in a cross wind speed of speed $v$ is $\sqrt{2}$ greater than the power required to cycle at the same speed $v$ in still air *(shown)*.

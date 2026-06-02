@@ -1,0 +1,128 @@
+% Created 2023-08-29 Tue 12:37
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Hankertrix}
+\date{\today}
+\title{Math Module 1B Cheat Sheet}
+\hypersetup{
+ pdfauthor={Hankertrix},
+ pdftitle={Math Module 1B Cheat Sheet},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.1 (Org mode 9.6.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\newpage
+
+\section{Definitions}
+\label{sec:org6abed0f}
+
+\subsection{Distance between points}
+\label{sec:org2f1acc5}
+The distance between two points \(x, y \in \mathbb{R}\) is \(|x - y|\).
+
+\subsection{Limit points}
+\label{sec:org03814fe}
+For \(A \subset \mathbb{R}\), a point \(a \in \mathbb{R}\) is a \textbf{limit point} of \(A\) if for every \(\delta >0\), there exists a point \(x \n A\) such that \(0 < |x - a| < \delta\).
+
+\subsection{Limit}
+\label{sec:orge267753}
+For a function \(f : A \rightarrow \mathbb{R}, \, A \subset \mathbb{R}\) with \(a\) as a limit point of \(A\), \(f\) approaches a \textbf{limit} \(L\) if for every \(\varepsilon > 0\), there exists a \(\delta > 0\) such that:
+
+\[\lim_{x \rightarrow a} f(x) = L\]
+\[\Updownarrow\]
+
+For every \(\varepsilon > 0\), there exists a \(\delta > 0\) such that:
+\[0 < |x - a| < \delta, \quad x \in A \ \ \Rightarrow \ \ |f(x) - L| < \varepsilon.\]
+
+\subsection{Limits at infinity}
+\label{sec:orga092976}
+Suppose \(f\) is defined on some interval \((a, \infty)\). We say that \(f(x)\) has a limit \(L\) as \(x\) approaches positive infinity, and write \(\lim_{X \rightarrow + \infty} f(x) = L\), if for every \(\varepsilon > 0\), there exists a number \(R\) such that:
+\[x > R \quad \Rightarrow \quad |f(x) - L| < \varepsilon\]
+
+Likewise, for \(f\) defined on some interval \((-\infty, b)\), we say that \(f(x)\) has a limit \(L\) as \(x\) approaches negative infinity, and write \(\lim_{x \rightarrow - \infty} f(x) = L\), if for every \(\varepsilon > 0\), there exists a number \(R\) such that:
+\[x < R \quad \Rightarrow \quad |f(x) - L| < \varepsilon\]
+
+Limits at infinity follow the same limit laws as normal limits, so we can use limit laws to conclude that for any \textbf{positive} integer \(n\), we also have:
+\[\lim_{x \rightarrow \pm \infty} \frac{1}{x^n} = 0\]
+
+When evaluating a limit at infinity, a common technique is to factor out the highest possible power.
+
+\subsection{Limit of a sequence}
+\label{sec:org45213da}
+We say that a sequence \((a_n)\) has the limit \(L\) and write \(\lim_{n \rightarrow \infty} a_n = L\), if for every \(\varepsilon > 0\), there exists a number \(N\) such that:
+\[n > N \quad \Rightarrow \quad |a_n - L| < \varepsilon\]
+
+The limits of sequences are evaluated with similar methods to other forms of limits.
+
+
+\section{Limit laws}
+\label{sec:org38b85c6}
+Consider \(f : A_1 \rightarrow \mathbb{R}, g : A_2 \rightarrow \mathbb{R}\). Suppose \(a\) is a limit point of \(A_1 \cap A_2\), and \(\lim_{x \rightarrow a} \, f(x) = l, \lim_{x \rightarrow a} \, g(x) = m\), then:
+
+\begin{align*}
+\textbf{1. } \lim_{x \rightarrow a}(Af(x) + Bg(x)) &= Al + Bm \\
+&= A \cdot \lim_{x \rightarrow a} f(x) + B \cdot \lim_{x \rightarrow a} g(x)
+\end{align*}
+
+\begin{align*}
+\textbf{2. } \lim_{x \rightarrow a}(f(x) g(x)) &= lm \\
+&= \lim_{x \rightarrow a} f(x) \cdot \lim_{x \rightarrow a} g(x)
+\end{align*}
+
+\begin{align*}
+\textbf{3. } \lim_{x \rightarrow a} \frac{f(x)}{g(x)} &= \frac{l}{m},
+\text{ provided } m \neq 0 \\
+&= \frac{\lim_{x \rightarrow a} f(x)}{\lim_{x \rightarrow a} g(x)}
+\end{align*}
+
+\begin{align*}
+\textbf{4. } \lim_{x \rightarrow a} \sqrt[n]{f(x)} &= \sqrt[n]{l},
+\text{ provided } n \in \mathbb{N} \text{ and } l \ge 0 \text{ if } n \text{ is even} \\
+&= \sqrt[n]{\lim_{x \rightarrow a} f(x)}
+\end{align*}
+
+\textbf{5.} L'H\(\text{\^o}\)pital's rule:
+\[\lim_{x \rightarrow a} \frac{f(x)}{g(x)} = \lim_{x \rightarrow a} \frac{f'(x)}{g'(x)}, \text{ when } \lim_{x \rightarrow a} \frac{f(x)}{g(x)} = \frac{0}{0} \text{ and } g'(x) \neq 0\]
+
+\section{Squeeze Theorem}
+\label{sec:org7faca05}
+Suppose \(f(x) \leq g(x) \leq h(x)\), for \(x \in I \setminus \{a\}\), where \(I\) is some open interval containing the point \(a\). Then:
+
+\[\lim_{x \rightarrow a} f(x) = \lim_{x \rightarrow a} h(x) = L \quad \Rightarrow \quad \lim_{x \rightarrow a} g(x) = L\]
+
+\subsection{Extremely useful result}
+\label{sec:orgb77a125}
+For \(f : A \rightarrow \mathbb{R}\), we have:
+\[\lim_{x \rightarrow a} f(x) = L \quad \Leftrightarrow \quad \lim_{x \rightarrow a} |f(x) - L| = 0\]
+
+\subsection{A useful lemma}
+\label{sec:orgb3244bf}
+For \(0 < x < \frac{\pi}{2}\), we have:
+\[x \cos^2 x < \sin x < x\]
+
+If \(f\) and \(g\) are \textbf{even} functions such that \(f(x) < g(x)\), for \(x \in (0, a)\), then we also have:
+\[f(x) < g(x), \text{ for } x \in (-a, 0)\]
+
+\section{Useful limits}
+\label{sec:orge66aac9}
+\[\lim_{x \rightarrow 0} \sin x = 0\]
+\[\lim_{x \rightarrow 0} \cos x = 1\]
+\[\lim_{x \rightarrow 0} \frac{\sin x}{x} = 1\]
+\end{document}

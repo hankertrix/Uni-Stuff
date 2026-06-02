@@ -1,0 +1,450 @@
+% Created 2023-09-12 Tue 17:04
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{siunitx}
+\author{Hankertrix}
+\date{\today}
+\title{Math Module 2B Tutorial}
+\hypersetup{
+ pdfauthor={Hankertrix},
+ pdftitle={Math Module 2B Tutorial},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.1 (Org mode 9.6.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\newpage
+
+\section{Question 1}
+\label{sec:org0632b77}
+
+\subsection{(a)}
+\label{sec:org7f98e9e}
+
+\begin{align*}
+\frac{d}{dx}(af(x) + bg(x)) &= \lim_{h \rightarrow 0} \left[a \left(\frac{f(a + h) - f(a)}{h} \right) + b \left( \frac{g(a + h) - g(a)}{h} \right) \right] \\
+&= \lim_{h \rightarrow 0} a \left(\frac{f(a + h) - f(a)}{h} \right) + \lim_{h \rightarrow 0} b \left( \frac{g(a + h) - g(a)}{h} \right) \\
+&= a \lim_{h \rightarrow 0} \left(\frac{f(a + h) - f(a)}{h} \right) + b \lim_{h \rightarrow 0} \left( \frac{g(a + h) - g(a)}{h} \right) \\
+&= a f'(x) + b g'(x) \textbf{ (Proven)}
+\end{align*}
+
+\subsection{(b)}
+\label{sec:orge7fa02d}
+
+\subsubsection{(i)}
+\label{sec:org66e056f}
+
+\begin{align*}
+\frac{d}{dx} \frac{1}{g(x)} &= \lim_{h \rightarrow 0} \frac{\frac{1}{g(a + h)} - \frac{1}{g(a)}}{h} \\
+&= \lim_{h \rightarrow 0} \frac{\frac{g(a) - g(a + h)}{g(a + h) g(a)}}{h} \\
+&= \lim_{h \rightarrow 0} \frac{-(g(a + h) - g(a))}{h \cdot g(a + h) g(a)} \\
+&= \lim_{h \rightarrow 0} \left(\frac{-(g(a + h) - g(a))}{h} \cdot \frac{1}{g(a + h) g(a)} \right) \\
+&= \lim_{h \rightarrow 0} \frac{-(g(a + h) - g(a))}{h} \cdot \lim_{h \rightarrow 0} \frac{1}{g(a + h) g(a)} \\
+&= - g'(x) \cdot \frac{1}{(g(x))^2} \\
+&= \frac{- g'(x)}{(g(x))^2} \textbf{ (Proven)}
+\end{align*}
+
+\subsubsection{(ii)}
+\label{sec:orgb3e67a7}
+
+\begin{align*}
+\frac{d}{dx} \frac{f(x)}{g(x)} &= f(x) \cdot \frac{1}{g(x)} \\
+&= f'(x) \left( \frac{1}{g(x)} \right) + f(x) \left( \frac{-g'(x)}{(g(x))^2} \right) \\
+&= \frac{f'(x)}{g(x)} + \frac{-f(x)g'(x)}{(g(x))^2} \\
+&= \frac{f'(x)g(x)}{(g(x))^2} + \frac{-f(x)g'(x)}{(g(x))^2} \\
+&= \frac{f'(x)g(x) - f(x) g'(x)}{(g(x))^2} \\
+&= \frac{g(x) f'(x) - f(x) g'(x)}{(g(x))^2} \textbf{ (Proven)}
+\end{align*}
+
+\newpage
+
+\section{Question 2}
+\label{sec:org8bc0e35}
+
+\subsection{(a)}
+\label{sec:orgf290d8e}
+
+\begin{align*}
+f'(0) &= \lim_{h \rightarrow 0} \frac{f(x + h) - f(x)}{h} \\
+&= \lim_{h \rightarrow 0} \frac{f(0 + h) - f(0)}{h} \\
+&= \lim_{h \rightarrow 0} \frac{f(h) - 0}{h} \\
+&= \lim_{h \rightarrow 0} \frac{f(h)}{h} \\
+&= \lim_{h \rightarrow 0} \frac{h^2 \sin \frac{1}{h}}{h} \\
+&= \lim_{h \rightarrow 0} h \sin \frac{1}{x}
+\end{align*}
+
+By squeeze theorem:
+\[0 \le \left|h \sin \frac{1}{h} - 0 \right| \le |h|\]
+\[\left|h \sin \frac{1}{h}\right| < |h|\]
+
+Hence:
+\begin{align*}
+f'(0) &= \lim_{h \rightarrow 0} h \sin \frac{1}{x} \\
+&= 0
+\end{align*}
+
+\newpage
+
+\subsection{(b)}
+\label{sec:org5862628}
+
+\begin{align*}
+f'(0) &= \lim_{h \rightarrow 0} \frac{f(x + h) - f(x)}{h} \\
+&= \lim_{h \rightarrow 0} \frac{f(0 + h) - f(0)}{h} \\
+&= \lim_{h \rightarrow 0} \frac{f(h)}{h}
+\end{align*}
+
+Using the lemma:
+\begin{align*}
+\lim_{h \rightarrow 0} \frac{f(h)}{h} &= \lim_{n \rightarrow \infty} \frac{f(a_n)}{a_n} \\
+&= \frac{a}{a} \\
+&= 1
+\end{align*}
+
+\begin{align*}
+\lim_{h \rightarrow 0} \frac{f(h)}{h} &= \lim_{n \rightarrow \infty} \frac{f(b_n)}{b_n} \\
+&= \frac{0}{a} \\
+&= 0 \neq 1
+\end{align*}
+
+Since:
+\[\lim_{n \rightarrow \infty} \frac{f(a_n)}{a_n} \neq \lim_{n \rightarrow \infty} \frac{f(b_n)}{b_n}\]
+
+\(\lim_{h \rightarrow 0} \frac{f(h)}{h}\) doesn't exist and hence \(f'(0)\) doesn't exist.
+
+\newpage
+
+\subsection{(c)}
+\label{sec:orgbea67b3}
+
+\begin{align*}
+f'(0) &= \lim_{h \rightarrow 0} \frac{f(x + h) - f(x)}{h} \\
+&= \lim_{n \rightarrow \infty} \frac{f(0 + h) - f(0)}{h} \\
+&= \lim_{n \rightarrow \infty} \frac{f(h)}{h}
+\end{align*}
+
+Using the lemma:
+\begin{align*}
+\lim_{h \rightarrow 0} \frac{f(h)}{h} &= \lim_{n \rightarrow \infty} \frac{f(a_n)}{a_n} \\
+&= \frac{a^2}{a} \\
+&= a
+\end{align*}
+
+\begin{align*}
+\lim_{h \rightarrow 0} \frac{f(h)}{h} &= \lim_{n \rightarrow \infty} \frac{f(b_n)}{b_n} \\
+&= \frac{0}{b_n} \\
+&= 0
+\end{align*}
+
+When the limit point is \(0\), \(a = 0\), hence:
+\[\lim_{n \rightarrow \infty} \frac{f(a_n)}{a_n} = \lim_{n \rightarrow \infty} \frac{f(b_n)}{b_n} = 0\]
+
+Thus, \(f'(0) = 0\).
+
+\newpage
+
+\section{Question 3}
+\label{sec:org4f59aeb}
+
+\subsection{(a)}
+\label{sec:org177d77d}
+
+Let \(p = -n\):
+\[x^p = \frac{1}{x^n}\]
+
+Using quotient rule:
+\begin{align*}
+\frac{d}{dx} x^p &= \frac{0(x) - 1(nx^{n-1})}{x^{n+2}} \\
+&= \frac{-nx^{n-1}}{x^{2n}} \\
+&= -nx^{n-1 - 2n} \\
+&= -nx^{n - 1 - 2n} \\
+&= -nx^{-n - 1} \\
+&= px^{p - 1} \quad (\because p = -n) \textbf{ (Shown)}
+\end{align*}
+
+\subsection{(b)}
+\label{sec:org66fb51c}
+
+Using chain rule:
+\begin{align*}
+\frac{d}{dx} x^{\frac{p}{q}} &= \frac{d}{dx} \left( x^{\frac{1}{q}} \right)^p \\
+&= \frac{1}{q} x^{\frac{1}{q} - 1} \cdot p \left(x^{\frac{1}{q}} \right)^{p - 1} \\
+&= \frac{p}{q} x^{\frac{1}{q} - 1} \cdot x^{\frac{p - 1}{q}} \\
+&= \frac{p}{q} x^{\frac{1 + p - 1}{q} - 1} \\
+&= \frac{p}{q} x^{\frac{p}{q} - 1} \textbf{ (Shown)}
+\end{align*}
+
+\section{Question 4}
+\label{sec:orgba3de7a}
+
+\subsection{(a)}
+\label{sec:org1b89671}
+
+\begin{align*}
+\frac{d}{dx} \cos x &= \lim_{h \rightarrow 0} \frac{\cos (x + h) - \cos x}{h} \\
+&= \lim_{h \rightarrow 0} \frac{\cos x \cos h - \sin x \sin h - \cos x}{h} \\
+&= \lim_{h \rightarrow 0} \frac{\cos x \cos h - \sin x \sin h - \cos x}{h} \\
+&= \lim_{h \rightarrow 0} \left[\cos x \frac{\cos h - 1}{h} - \sin x \frac{\sin h}{h} \right] \\
+&= \lim_{h \rightarrow 0} \left[\cos x \frac{\cos h - 1}{h} \cdot \frac{\cos h + 1}{\cos h + 1} - \sin x \frac{\sin h}{h} \right] \\
+&= \lim_{h \rightarrow 0} \left[\cos x \frac{\cos^2 h - 1}{h(\cos h + 1)} - \sin x \frac{\sin h}{h} \right] \\
+&= \lim_{h \rightarrow 0} \left[\cos x \frac{- \sin^2 h}{h(\cos h + 1)} - \sin x \frac{\sin h}{h} \right] \quad (\because \sin^2 + \cos^2 = 1) \\
+&= \lim_{h \rightarrow 0} \left[\cos x \cdot \frac{- \sin h}{h} \cdot \frac{\sin h}{\cos h + 1} - \sin x \frac{\sin h}{h} \right] \\
+&= \lim_{h \rightarrow 0} \cos x \cdot \lim_{h \rightarrow 0} \left[ \frac{- \sin h}{h} \frac{\sin h}{\cos h + 1} \right] - \lim_{h \rightarrow 0} \frac{\sin x \sin h}{h} \\
+&= 1 \cdot \left( -1 \cdot \frac{0}{2} \right) - 1 \sin x \quad \left(\because \lim_{x \rightarrow 0} \frac{\sin x}{x} = 1 \right) \\
+&= 0 - \sin x \\
+&= - \sin x \textbf{ (Proven)}
+\end{align*}
+
+\subsection{(b)}
+\label{sec:org8ddb930}
+
+Using the quotient rule:
+\begin{align*}
+\frac{d}{dx} \tan x &= \frac{d}{dx} \frac{\sin x}{\cos x} \\
+&= \frac{\cos x \cos x - \sin x \cdot - \sin x}{\cos^2 x} \\
+&= \frac{\cos^2 x + \sin^2}{\cos^2 x} \\
+&= \frac{1}{\cos^2 x} \quad (\because \sin^2 + \cos^2 = 1) \textbf{ (Proven)}
+\end{align*}
+
+\subsection{(c)}
+\label{sec:org373c57c}
+
+Let \(y = \arccos x\):
+\[y = \arccos x \quad \Leftrightarrow \quad x = \cos y, \quad y \in [0, \pi]\]
+
+Hence:
+\[x = \cos y\]
+
+Differentiating both sides with respect to \(x\):
+\[1 = -\sin y \cdot \frac{dy}{dx}\]
+\[\frac{dy}{dx} = -\frac{1}{\sin y}\]
+\[\frac{dy}{dx} = -\frac{1}{\sqrt{1 - \cos^2 y}} \quad (\because \sin^2 x + \cos^2 x = 1 \text{ and } y \in [0, \pi])\]
+\[\frac{dy}{dx} = -\frac{1}{\sqrt{1 - x^2}} \quad (\because x = \cos y)\]
+
+Hence,
+\[\frac{d}{dx} \arccos x = \frac{-1}{\sqrt{1 - x^2}} \textbf{ (Proven)}\]
+
+\newpage
+
+\section{Question 5}
+\label{sec:org9002a9e}
+
+Writing down the rate of change as a mathematical expression:
+\[\frac{dR_1}{dt} = 0.3\]
+\[\frac{dR_2}{dt} = 0.2\]
+
+Getting the value of \(R\) when \(R_1 = \qty{80}{\unit{\ohm}}\) and \(R_2 = \qty{100}{\unit{\ohm}}\):
+\[\frac{1}{R} = \frac{1}{80} + \frac{1}{100}\]
+\[R = \left( \frac{1}{80} + \frac{1}{100} \right)^{-1} \]
+\[R = \frac{400}{9} \ \unit{\ohm}\]
+
+\[\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2}\]
+
+Differentiating both sides with respect to \(t\):
+\[- \frac{1}{R^2} \frac{dR}{dt} = - \frac{1}{R_1^2} \frac{dR_1}{dt} - \frac{1}{R_2^2} \frac{dR_2}{dt}\]
+\[\frac{1}{R^2} \frac{dR}{dt} = \frac{1}{R_1^2} \frac{dR_1}{dt} + \frac{1}{R_2^2} \frac{dR_2}{dt}\]
+
+Substituting the values into the equation:
+\[\frac{1}{\left( \frac{400}{9} \right)^2} \frac{dR}{dt} = \frac{1}{80^2} \cdot 0.3 + \frac{1}{100^2} \cdot 0.2\]
+\[\frac{80}{160000} \frac{dR}{dt} = 0.000066875\]
+\[\frac{dR}{dt} = 0.1320987654\]
+\[\frac{dR}{dt} \approx \qty{0.13}{\unit{\ohm\per\second}}\]
+
+\section{Question 6}
+\label{sec:org616b73c}
+
+Let \(f\) be the distance from the alien to the light and let \(s\) be the shadow's length.
+\\[0pt]
+
+The ratio of the smaller triangle created by the alien moving towards the light source to the bigger triangle created by the light source on the wall is \(f : 12\).
+\\[0pt]
+
+Hence, getting the shadow's length in terms of the distance from the alien to the light source using similar triangles, i.e. \(s\) in terms of \(f\):
+\[\frac{f}{12} = \frac{2}{s}\]
+\[\frac{s \cdot f}{12} = 2\]
+\[s = \frac{24}{f}\]
+
+Differentiating both sides with respect to \(t\):
+\[\frac{ds}{dt} = 24 \cdot -\frac{1}{f^2} \cdot \frac{df}{dt} \]
+\[\frac{ds}{dt} = -\frac{24}{f^2} \frac{df}{dt}\]
+
+Substituting \(\frac{df}{dt} = 1.6\) and \(f = 12 - 4 = 8\):
+\[\frac{ds}{dt} = -\frac{24}{8^2} \cdot 1.6\]
+\[\frac{ds}{dt} = - 0.6\]
+
+Hence, the length of his shadow on the building is decreasing at \(\qty{0.6}{\unit{m.s^{-1}}}\).
+
+\newpage
+
+\section{Question 7}
+\label{sec:org2907b1b}
+
+Finding the value of \(\frac{d \theta}{dt}\):
+\begin{align*}
+\frac{d \theta}{dt} &= \frac{8 \pi}{60} \\
+&= \frac{2 \pi}{15}
+\end{align*}
+
+Finding the expression for \(x\):
+\[\tan \theta = \frac{O}{A}\]
+\[\tan \theta = \frac{x}{3}\]
+\[x = 3 \tan \theta\]
+
+Differentiating the expression for \(x\) with respect to \(\theta\):
+\[\frac{dx}{d \theta} = 3 \sec^2 \theta\]
+
+\[\frac{dx}{dt} = \frac{d \theta}{dt} \cdot \frac{dx}{d \theta}\]
+
+Finding the value of \(\theta\) when \(x = 1\):
+\[1 = 3 \tan \theta\]
+\[\frac{1}{3} = \tan \theta\]
+\[\theta = \arctan \frac{1}{3}\]
+
+Finding \(\frac{dx}{dt}\):
+\begin{align*}
+\frac{dx}{dt} &= \frac{d \theta}{dt} \cdot \frac{dx}{d \theta} \\
+&= \frac{2 \pi}{15} \cdot \frac{3}{\cos^2 \left(\arctan \frac{1}{3} \right)} \\
+&= \qty{1.396263402}{\unit{km.s^{-1}}} \\
+&= \qty{5026.548246}{\unit{\kilo\metre\per\hour}} \\
+&\approx \qty{5027}{\unit{\kilo\metre\per\hour}}
+\end{align*}
+
+\section{Question 8}
+\label{sec:org3f82fc3}
+
+Let \(x\) be the distance \(PX\). This means that \(QX = 10 - x\):
+\\[0pt]
+
+Getting the length of the cable in water (\(l_w\)):
+\begin{align*}
+l_w = \sqrt{5^2 + x^2}
+\end{align*}
+
+The length of the cable in land (\(l_l = QX\))
+\[l_l = 10 - x\]
+
+The total cost would be (\(T\)):
+\begin{align*}
+T &= 5000\sqrt{5^2 + x^2} + 3000(10 - x) \\
+&= 5000\sqrt{25 + x^2} + 30000 - 3000x
+\end{align*}
+
+Differentiating total cost with respect to \(x\):
+\begin{align*}
+\frac{dT}{dx} &= 5000(2x) \cdot \frac{1}{2} (25 + x^2)^{-\frac{1}{2}} - 3000 \\
+&= \frac{5000x}{\sqrt{25 + x^2}} - 3000
+\end{align*}
+
+To find the stationary points, \(\frac{dT}{dx} = 0\):
+\[3000 = \frac{5000x}{\sqrt{25 + x^2}}\]
+\[3 = \frac{5x}{\sqrt{25 + x^2}}\]
+\[9 = \frac{25x^2}{25 + x^2}\]
+\[225 + 9x^2 = 25x^2\]
+\[16x^2 = 225\]
+\[x^2 = \frac{225}{16}\]
+\[x = 3.75 \quad (\because x > 0)\]
+
+When \(x = 3.75^+, \frac{dT}{dx} > 0\) and when \(x = 3.75^-, \frac{dT}{dx} < 0\), hence \(x = 3.75\) is a minimum point. Thus, the point X should be \(\qty{3.75}{\unit{m}}\) from \(P\).
+
+\section{Question 9}
+\label{sec:org744b777}
+
+Let \(O\) be the centre of the swimming pool. Let the angle between \(OB\) and \(OC\) be \(\theta\).
+\\[0pt]
+
+Let the distance he runs be \(D_r\):
+\begin{align*}
+D_r &= \frac{40}{2} \cdot (\pi - \theta) \\
+&= 20(\pi - \theta)
+\end{align*}
+
+Differentiating \(D_r\) with respect to \(t\):
+\begin{align*}
+\frac{dD_r}{dt} &= - 20 \cdot \frac{d \theta}{dt} \\
+\frac{d \theta}{dt} &= - 20 \cdot \left( \frac{dD_r}{dt} \right)^{-1} \\
+\end{align*}
+
+Let the distance he swims be \(D_s\). Using the cosine rule:
+\begin{align*}
+D_s &= \sqrt{OB^2 + OC^2 - 2(OB)(OC) \cos \theta} \\
+&= \sqrt{20^2 + 20^2 - 2(20)(20) \cos \theta} \\
+&= \sqrt{800 - 800 \cos \theta} \\
+&= \sqrt{400(2 - 2 \cos \theta)} \\
+&= 20 \sqrt{2 - 2 \cos \theta} \\
+&= 20 \sqrt{2(1 - \cos \theta)} \\
+&= 20 \sqrt{2} \sqrt{1 - \cos \theta}
+\end{align*}
+
+Let the speed of the man swimming be the constant \(s\). Since the man runs twice as fast as he swims, his running speed will be \(2s\).
+\\[0pt]
+
+Dividing the distance by the speed to get the time for him running (\(t_r\)):
+\begin{align*}
+t_r &= \frac{20(\pi - \theta)}{2s} \\
+&= \frac{10(\pi - \theta)}{s} \\
+\end{align*}
+
+Dividing the distance by the speed to get the time for him swimming (\(t_s\)):
+\[t_s = \frac{20 \sqrt{2} \sqrt{1 - \cos \theta}}{s}\]
+
+The total time taken (\(t\)) by the man would be:
+
+\begin{align*}
+t &= t_r + t_s \\
+&= \frac{10(\pi - \theta)}{s} + \frac{20 \sqrt{2} \sqrt{1 - \cos \theta}}{s} \\
+&= \frac{10(\pi - \theta + 2\sqrt{2} \sqrt{1 - \cos \theta})}{s} \\
+&= \frac{10}{s} \left( \pi - \theta + 2 \sqrt{2} \sqrt{1 - \cos \theta} \right)
+\end{align*}
+
+Differentiating \(t\) with respect to \(\theta\):
+
+\begin{align*}
+\frac{dt}{d \theta} &= \frac{10}{s} \left(-1 + 2\sqrt{2} \cdot \frac{1}{2} \cdot \frac{1}{\sqrt{1 - \cos \theta}} \cdot \sin \theta \right) \\
+&= \frac{10}{s} \left( \frac{\sqrt{2} \sin \theta}{\sqrt{1 - \cos \theta}} - 1 \right)
+\end{align*}
+
+To find the stationary points, \(\frac{dt}{d \theta} = 0\):
+\begin{align*}
+0 &= \frac{10}{s} \left( \frac{\sqrt{2} \sin \theta}{\sqrt{1 - \cos \theta}} - 1\right) \\
+0 &= \frac{\sqrt{2} \sin \theta}{\sqrt{1 - \cos \theta}} - 1 \\
+1 &= \frac{\sqrt{2} \sin \theta}{\sqrt{1 - \cos \theta}} \\
+\sqrt{1 - \cos \theta} &= \sqrt{2} \sin \theta \\
+1 - \cos \theta &= 2 \sin^2 \theta \\
+1 - \cos \theta &= 2 (1 - \cos^2 \theta) \\
+1 - \cos \theta &= 2 - 2\cos^2 \theta \\
+2 \cos^2 \theta - \cos \theta - 1 &= 0 \\
+(\cos \theta - 1) (2\cos \theta + 1) &= 0
+\end{align*}
+
+Hence:
+\begin{align*}
+\cos \theta &= 1  &\text{or}& &2 \cos \theta &= -1 \\
+\theta &= 0  &\text{or}& &\cos \theta &= -\frac{1}{2} \\
+\theta &= 0  &\text{or}& &\cos \theta &= -\frac{1}{2} \\
+\theta &= 0  &\text{or}& &\theta &= \frac{2\pi}{3}
+\end{align*}
+
+When \(\theta = 0^+\), \(\frac{dt}{d \theta} > 0\) and when \(\theta = 0^-\), \(\frac{dt}{d \theta} < 0\). Hence, \(\theta = 0\) is a minimum point.
+\\[0pt]
+
+When \(\theta = \left(\frac{2\pi}{3} \right)^+\), \(\frac{dt}{d \theta} < 0\) and when \(\theta = \left(\frac{2\pi}{3} \right)^-\), \(\frac{dt}{d \theta} > 0\). Hence, \(\theta = \frac{2\pi}{3}\) is a maximum point.
+\\[0pt]
+
+Since we want to minimise the total time taken, \(\theta = 0\) and hence, the point \(C\) should be chosen to be at point \(B\).
+\end{document}

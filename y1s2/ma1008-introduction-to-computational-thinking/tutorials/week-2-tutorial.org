@@ -1,0 +1,906 @@
+#+TITLE: Intro To Comp Thinking Week 2 Tutorial
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Question 1
+
+** (i)
+The two levels are high-level programming languages and low-level machine language, or binary.
+
+** (ii)
+High-level programming languages are an abstraction over the low-level machine language to make it easier for humans to write instructions for the computer to solve problems. The low-level machine language is what the computer executes to carry out the instructions written by the human.
+
+** (iii)
+The high-level programming language is either compiled to machine language or interpreted using an interpreter to execute the instructions written by the human.
+
+
+* Question 2
+
+** (i)
+Compiled languages are programming languages that go through a compilation process to convert the high-level programming language into low-level machine language. The resulting output is a binary file that can be directly executed by the computer.
+
+** (ii)
+An interpreter is a program that reads the code of an interpreted programming language and converts it to machine language for the computer to execute in real time.
+
+** (iii)
+
+*** Compiled languages
+- Julia
+- Carp
+- Go
+- TeX
+- Nim
+- Zig
+- D
+- Pascal
+- Assembly
+- Elixir
+- Erlang
+- Fortran
+- Dart
+- COBOL
+- Cython
+- Pyrex
+- B
+- ACL2
+- Coq
+- Clojure
+- Scala
+- Ada
+- SPARK
+
+*** Interpreted languages
+- OCaml
+- ML
+- FL
+- APL
+- J
+- Lua
+- Lisp
+- Perl
+- Ruby
+
+* Question 3
+
+** (i)
+It represents numbers as a set of bits in binary format. A 32-bit integer would take up 32 bits.
+
+** (ii)
+It represents non-numeric data as a set of bits in binary format as well. The non-numeric data undergoes encoding, such as ASCII or Unicode encoding (UTF-8, UTF-16, etc) for text, and is then stored in the computer in a binary format. Colours are stored as a set of three 8-bit numbers, with each representing the red, green and blue channels respectively (RGB). The colour data can also be represented as a hex value that is based on the RGB value.
+
+** (iii)
+It represents data with multiple components as an array of memory address references, or just as an array for an array.
+
+* Question 4
+
+** (i)
+The transistors in the computer can only have 2 states, either "on", which is high voltage, or "off", which is low voltage or zero voltage. As such, data must be represented in binary as the transistors cannot have more than 2 states.
+
+** (ii)
+215
+
+** (iii)
+01110101
+
+** (iv)
+
+*** 14.125 (IEEE 754 binary floating point representation)
+0-10000010-11000100000000000000000
+
+*** 14.124 (IEEE 754 binary floating point representation)
+0-10000010-11000011111101111100111
+
+*** Model answer
+14.125 = 14 + 0.125
+
+14_{10} = 1110_{2}
+
+0.125_{10} = 0.001_{2} (0.001_{2} = 0x2^{-1} + 0x2^{-2} + 1x2^{-3} = 1/8 = 0.125)
+
+So, 14.125_{10} = 1110.001_{2}, which is exact.
+
+0.124_{2} = 0.000111111101... an infinite sequence of bits.
+
+14.124 = 1110.000111111101, truncated to 12 binary point places. This is an approximation. Almost all floating point numbers are represented approximately in the computer. The computer representation of floating point numbers uses the same basic principle as illustrated here, but has several enhancements to ensure that it can deal with a large range of numbers with good precision.
+
+* Question 5
+#+begin_src python
+c = a
+a = b
+b = c
+#+end_src
+
+* Question 6
+Python implementation:
+#+begin_src python
+import operator
+
+
+def get_max_or_min(
+    number_list: list[float | int],
+    max: bool = True
+) -> float | int:
+    "Function to get the minimum or the maximum number in a list of numbers."
+
+    # If the maximum is wanted, set the operator to greater than
+    if max:
+        compare = operator.gt
+
+    # Otherwise, set the operator to less than
+    else:
+        compare = operator.lt
+
+    # Iterates over the list of numbers
+    for index, number in enumerate(number_list):
+
+        # If the number is the first number
+        if index == 0:
+
+            # Sets it to be the critical number
+            critical_number = number
+
+            # Continue the loop
+            continue
+
+        # Otherwise, compare the two numbers
+        # And if the number in the list is greater or less than
+        # the critical value (depends on the comparison function)
+        if compare(number, critical_number):
+
+            # Set the critical number to the number
+            critical_number = number
+
+        # Otherwise, continue the loop
+
+    # Return the critical number
+    return critical_number
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+// The function to get the minimum or maximum value in a list of numbers
+fn get_max_or_min(number_list: Vec<f64>, max: bool) -> f64 {
+
+    // Initialise the compare variable to store the comparison function.
+    // The comparison function is greater than if the maximum is wanted
+    // and less than if the minimum is wanted.
+    let compare = if max { f64::gt } else { f64::lt };
+
+    // Initialise the critical number,
+    // which is either the maximum or minimum number,
+    // to the first number in the list
+    let mut critical_number = number_list[0];
+
+    // Iterates over the array of numbers
+    for number in number_list.iter() {
+
+        // Ohterwise, compare the two numbers.
+        // If the encountered number is greater or less than
+        // the critical number (depends on the comparison function)
+        if compare(number, &critical_number) {
+
+            // Set the critical number to the
+            // encountered number
+            critical_number = *number;
+        }
+
+        // Otherwise, continue the loop
+    }
+
+    // Return the critical number
+    critical_number
+}
+#+end_src
+
+* Question 7
+1. Choose either the instant coffee or the powdered coffee.
+2. Take the powdered or instant coffee and put the coffee in the perforated basket in the percolator.
+3. Turn on the tap and add 1 litre of cold tap water to the percolator.
+4. Turn on the percolator.
+5. When the percolator is done brewing the coffee, pour the coffee into a cup.
+6. Add milk to the coffee if wanted and stir the coffee using a spoon.
+7. Add sugar to the coffee if wanted and stir the coffee using a spoon.
+
+* Question 8
+Python implementation:
+#+begin_src python
+import re
+import math
+
+# The regex to check if a string is a number
+is_number_regex = re.compile(r"^-?\d+(?:\.\d+)?$")
+
+
+def solve_quadratic_eqn() -> None:
+    """
+    The function to solve a quadratic equation.
+    It asks for the coefficients of the quadratic equation to solve it.
+    """
+
+    # The dictionary to store the coefficients
+    coefficients = {
+        "x^2": float(0),
+        "x": float(0),
+        "constant": float(0)
+    }
+
+    # Iterates over the coefficients
+    for term in coefficients:
+
+        # The variable representing whether the input is a number or not
+        is_number = False
+
+        # Iterates while the input isn't a number
+        while not is_number:
+
+            # Gets the user's input for the coefficient
+            coefficient = input(
+                f"Please enter the coefficient for the {term} term: "
+            )
+
+            # Sets the is_number variable to whether or not the regex matches
+            is_number = bool(is_number_regex.search(coefficient))
+
+        # Add the coefficient to the dictionary
+        coefficients[term] = float(coefficient)
+
+    # Gets the value of a, b and c
+    a = coefficients["x^2"]
+    b = coefficients["x"]
+    c = coefficients["constant"]
+
+    # Gets the discriminant
+    discriminant = b ** 2 - 4 * a * c
+
+    # The part of the result after the plus minus part
+    part_after_plus_minus = math.sqrt(abs(discriminant)) / (2 * a)
+
+    # Prints the word "Results:"
+    print("Results:")
+
+    # If the discriminant is more than 0
+    if discriminant >= 0:
+
+        # If the part after the plus minus is zero
+        if part_after_plus_minus == 0:
+
+            # Then just print the front part
+            print(f"{(-b / 2 * a)}")
+
+        # Otherwise
+        else:
+
+            # Prints the results normally
+            print(f"{(-b / 2 * a) + part_after_plus_minus} or")
+            print(f"{(-b / 2 * a) - part_after_plus_minus}")
+
+    # Otherwise
+    else:
+
+        # Prints the result with the i to signify a complex number
+        print(f"{(-b / 2 * a)} + {part_after_plus_minus}i or")
+        print(f"{(-b / 2 * a)} - {part_after_plus_minus}i")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// The function to solve a quadratic equation
+fn solve_quadratic_eqn() {
+
+    // The list of terms
+    let terms = ["x^2", "x", "constant"];
+
+    // Initialise the hashmap to store the coefficients
+    let mut coefficients = std::collections::HashMap::<&str, f64>::new();
+
+    // Iterates over the coefficients
+    for term in terms {
+
+        // Initialise the variable to represent
+        // whether or not the input is numeric
+        let mut is_number = false;
+
+        // Initialise the string to store the user's input
+        let mut input = String::new();
+
+        // While the input is not numeric
+        while !is_number {
+
+            // Print the prompt
+            print!("Please enter the coefficient for the {} term: ", term);
+
+            // Flush the stdout
+            std::io::stdout().flush().unwrap();
+
+            // Read the user's input to the input variable
+            match std::io::stdin().read_line(&mut input) {
+                Ok(_number_of_bytes) => (),
+                Err(error) => println!("Error: {error}")
+            }
+
+            // Match statement to handle errors
+            match input.trim().parse::<f64>() {
+
+                // If there are no errors
+                Ok(value) => {
+
+                    // Set the value in the hashmap
+                    coefficients.insert(term, value);
+
+                    // Set the is_number variable to true
+                    is_number = true;
+                },
+
+                // If there's an error parsing, set is_number is false
+                Err(_) => is_number = false
+            }
+
+            // Make the input an empty string
+            input = "".to_string();
+        }
+    }
+
+    // Gets the values for a, b and c
+    let a = *coefficients.get("x^2").unwrap();
+    let b = *coefficients.get("x").unwrap();
+    let c = *coefficients.get("constant").unwrap();
+
+    // Get the discriminant
+    let discriminant = b.powi(2) - 4.0 * a * c;
+
+    // Gets the part after the plus minus function
+    let part_after_plus_minus = f64::sqrt(discriminant.abs()) / (2.0 * a);
+
+    // Prints the word "Results:"
+    println!("Results:");
+
+    // Check if the discriminant is more than or equal to zero
+    match discriminant >= 0.0 {
+
+        // If the discriminant is more than or equal to 0
+        true => {
+
+            // Check if the part after the plus minus is zero
+            match part_after_plus_minus == 0.0 {
+
+                // If it is, just print the front part
+                true => println!("{}", (-b / 2.0 * a)),
+
+                // Otherwise
+                false => {
+
+                    // Prints the results normally
+                    println!("{} or", (-b / 2.0 * a) + part_after_plus_minus);
+                    println!("{}", (-b / 2.0 * a) - part_after_plus_minus);
+                }
+            }
+        },
+
+        // If the discriminant is less than 0
+        false => {
+
+            // Prints the result with the i to signify a complex number
+            println!("{} + {}i or", (-b / 2.0 * a), part_after_plus_minus);
+            println!("{} - {}i", (-b / 2.0 * a), part_after_plus_minus);
+        }
+    }
+}
+#+end_src
+
+
+* Lab
+
+** Question 1
+Python implementation:
+#+begin_src python
+import re
+import math
+
+# The regex to check if a string is a number
+is_number_regex = re.compile(r"^-?\d+(?:\.\d+)?$")
+
+
+def calculate_sphere_surface_area_and_volume() -> None:
+    "Function to calculate the surface area and volume of a sphere."
+
+    # The variable representing whether the input is a number or not
+    is_number = False
+
+    # While the input isn't a number
+    while not is_number:
+
+        # Gets the input
+        user_input = input("Please enter the sphere radius: ")
+
+        # Set the is_number variable
+        is_number = bool(is_number_regex.match(user_input))
+
+    # Change the input into a floating point integer
+    radius = float(user_input)
+
+    # Calculate the sphere surface area
+    surface_area = 4 * math.pi * radius ** 2
+
+    # Calculate the sphere volume
+    volume = (4 / 3) * math.pi * radius ** 3
+
+    # Prints the surface area and volume
+    print(f"Surface area of the sphere: {surface_area}")
+    print(f"Volume of the sphere: {volume}")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+// Function to compute the volume and the surface area of a sphere
+fn compute_surface_area_and_volume_of_sphere() {
+
+    // Initialise the variable to represent
+    // whether or not the input is numeric
+    let mut is_number = false;
+
+    // Initialise the string to store the user's input
+    let mut input = String::new();
+
+    // Initialise the variable to store the radius
+    let mut radius = 0.0;
+
+    // While the input is not numeric
+    while !is_number {
+
+        // Print the prompt
+        print!("Enter the radius of the sphere: ");
+
+        // Flush the stdout
+        std::io::stdout().flush().unwrap();
+
+        // Read the user's input to the input variable
+        match std::io::stdin().read_line(&mut input) {
+            Ok(_number_of_bytes) => (),
+            Err(error) => println!("Error: {error}")
+        }
+
+        // Match statement to handle errors
+        match input.trim().parse::<f64>() {
+
+            // If there are no errors
+            Ok(value) => {
+
+                // Set radius to the value
+                radius = value;
+
+                // Set the is_number variable to true
+                is_number = true;
+            },
+
+            // If there's an error parsing, set is_number is false
+            Err(_) => is_number = false
+        }
+
+        // Make the input an empty string
+        input = "".to_string();
+    }
+
+    // Calculate the surface area of the sphere
+    let surface_area = 4.0 * std::f64::consts::PI * radius.powi(2);
+
+    // Calculate the volume of the sphere
+    let volume = (4.0 / 3.0) * std::f64::consts::PI * radius.powi(3);
+
+    // Prints the surface area and volume
+    println!("Surface area of the sphere: {}", surface_area);
+    println!("Volume of the sphere: {}", volume);
+}
+#+end_src
+
+** Question 2
+Python implementation:
+#+begin_src python
+import re
+import math
+
+# The regex to check if a string is a number
+is_number_regex = re.compile(r"^-?\d+(?:\.\d+)?$")
+
+
+def compute_simultaneous_eqn_solutions() -> None:
+    """
+    Function to calculate the solutions to a simultaneous equation of the form:
+        a1x + b1y = c1
+        a2x + b2y = c2
+    """
+
+    # The dictionary to store the data from the user
+    coefficients: dict[str, float] = {}
+
+    # Iterates over all the variables
+    for term in ("a1", "b1", "c1", "a2", "b2", "c2"):
+
+        # The variable representing whether the input is a number or not
+        is_number = False
+
+        # While the input isn't a number
+        while not is_number:
+
+            # Gets the input
+            user_input = input(f"  {term}: ")
+
+            # Set the is_number variable
+            is_number = bool(is_number_regex.match(user_input))
+
+        # Add the number to the dictionary
+        coefficients[term] = float(user_input)
+
+    # Gets all the variables from the dictionary
+    a1 = coefficients["a1"]
+    b1 = coefficients["b1"]
+    c1 = coefficients["c1"]
+    a2 = coefficients["a2"]
+    b2 = coefficients["b2"]
+    c2 = coefficients["c2"]
+
+    # Calculate x and y
+    x = (b2 * c1 - b1 * c2) / (a1 * b2 - a2 * b1)
+    y = (a1 * c2 - a2 * c1) / (a1 * b2 - a2 * b1)
+
+    # Print the solutions
+    print(f"{x = }")
+    print(f"{y = }")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// The function to solve a simultaneous equation of the form:
+// a1x + b1y = c1
+// a2x + b2y = c2
+fn compute_simultaneous_eqn_solutions() {
+
+    // The hashmap to store all the data from the user
+    let mut coefficients = std::collections::HashMap::<&str, f64>::new();
+
+    // Iterates over all the coefficients
+    for term in ["a1", "b1", "c1", "a2", "b2", "c2"] {
+
+        // Initialise the variable to represent
+        // whether or not the input is numeric
+        let mut is_number = false;
+
+        // Initialise the string to store the user's input
+        let mut input = String::new();
+
+        // While the input is not numeric
+        while !is_number {
+
+            // Print the prompt
+            print!("  {}: ", term);
+
+            // Flush the stdout
+            std::io::stdout().flush().unwrap();
+
+            // Read the user's input to the input variable
+            match std::io::stdin().read_line(&mut input) {
+                Ok(_number_of_bytes) => (),
+                Err(error) => println!("Error: {error}")
+            }
+
+            // Match statement to handle errors
+            match input.trim().parse::<f64>() {
+
+                // If there are no errors
+                Ok(value) => {
+
+                    // Adds the user input to the hashmap
+                    coefficients.insert(term, value);
+
+                    // Set the is_number variable to true
+                    is_number = true;
+                },
+
+                // If there's an error parsing, set is_number is false
+                Err(_) => is_number = false
+            }
+
+            // Make the input an empty string
+            input = "".to_string();
+        }
+    }
+
+    // Gets all the coefficients of the simultaneous equations
+    let a1 = *coefficients.get("a1").unwrap();
+    let b1 = *coefficients.get("b1").unwrap();
+    let c1 = *coefficients.get("c1").unwrap();
+    let a2 = *coefficients.get("a2").unwrap();
+    let b2 = *coefficients.get("b2").unwrap();
+    let c2 = *coefficients.get("c2").unwrap();
+
+    // Calculate x and y
+    let x = (b2 * c1 - b1 * c2) / (a1 * b2 - a2 * b1);
+    let y = (a1 * c2 - a2 * c1) / (a1 * b2 - a2 * b1);
+
+    // Print the solutions
+    println!("x = {}", x);
+    println!("y = {}", y);
+}
+#+end_src
+
+** Question 3
+Python implementation:
+#+begin_src python
+import re
+import math
+
+# The regex to check if a string is a number
+is_number_regex = re.compile(r"^-?\d+(?:\.\d+)?$")
+
+
+def even_or_odd() -> None:
+    "Function to print whether a given integer is even or odd."
+
+    # The variable representing whether the input is a number or not
+    is_number = False
+
+    # While the input isn't a number
+    while not is_number:
+
+        # Gets the input
+        user_input = input("Enter an integer: ")
+
+        # Set the is_number variable
+        is_number = bool(is_number_regex.match(user_input))
+
+    # Prints whether the integer is even or odd
+    print(
+        f'''The integer {user_input} is {
+            "even" if int(user_input) % 2 == 0 else "odd"
+            }'''
+    )
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// The function to print whether a given integer is even or odd
+fn even_or_odd() {
+
+    // Initialise the variable to represent
+    // whether or not the input is numeric
+    let mut is_number = false;
+
+    // Initialise the string to store the user's input
+    let mut input = String::new();
+
+    // Initialise the integer than the user gave
+    let mut integer = 0;
+
+    // While the input is not numeric
+    while !is_number {
+
+        // Print the prompt
+        print!("Enter an integer: ");
+
+        // Flush the stdout
+        std::io::stdout().flush().unwrap();
+
+        // Read the user's input to the input variable
+        match std::io::stdin().read_line(&mut input) {
+            Ok(_number_of_bytes) => (),
+            Err(error) => println!("Error: {error}")
+        }
+
+        // Match statement to handle errors
+        match input.trim().parse::<i64>() {
+
+            // If there are no errors
+            Ok(value) => {
+
+                // Sets the integer variable to the user's input
+                integer = value;
+
+                // Set the is_number variable to true
+                is_number = true;
+            },
+
+            // If there's an error parsing, set is_number is false
+            Err(_) => is_number = false
+        }
+
+        // Make the input an empty string
+        input = "".to_string();
+    }
+
+    // The string that says even or odd
+    let even_or_odd_string = if integer % 2 == 0 { "even" } else { "odd" };
+
+    // Tells the user that the integer is even or odd
+    println!("The integer {} is {}", integer, even_or_odd_string);
+}
+#+end_src
+
+** Question 4
+Python implementation:
+#+begin_src python
+import re
+import math
+
+# The regex to check if a string is a number
+is_number_regex = re.compile(r"^-?\d+(?:\.\d+)?$")
+
+
+def calculate_bmi() -> None:
+    "Function to calculate a person's BMI."
+
+    # The dictionary containing the variable and the corresponding prompt
+    prompt_dict = {
+        "weight": "Please enter your weight in kg: ",
+        "height": "Please enter your height in m: "
+    }
+
+    # The dictionary to store the user's input
+    data_dict: dict[str, float] = {}
+
+    # Iterates over the prompt dictionary
+    for variable, prompt in prompt_dict.items():
+
+        # The variable representing whether the input is a number or not
+        is_number = False
+
+        # While the input isn't a number
+        while not is_number:
+
+            # Gets the input
+            user_input = input(prompt)
+
+            # Set the is_number variable
+            is_number = bool(is_number_regex.match(user_input))
+
+        # Adds the user input to the data dictionary
+        data_dict[variable] = float(user_input)
+
+    # Gets the weight and the height
+    weight = data_dict["weight"]
+    height = data_dict["height"]
+
+    # Calculate the person's BMI
+    bmi = weight / (height ** 2)
+
+    # Print the user's BMI
+    print(f"Your BMI is {bmi}")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// The function to calculate a person's BMI
+fn calculate_bmi() {
+
+    // The hashmap storing the variables and the prompts
+    let prompt_mapping = std::collections::HashMap::from([
+        ("weight", "Please enter your weight in kg: "),
+        ("height", "Please enter your height in m: ")
+    ]);
+
+    // Initialise the hashmap to store the user's data
+    let mut data_map = std::collections::HashMap::<&str, f64>::new();
+
+    // Iterates over the prompt mapping
+    for (variable, prompt) in prompt_mapping {
+
+        // Initialise the variable to represent
+        // whether or not the input is numeric
+        let mut is_number = false;
+
+        // Initialise the string to store the user's input
+        let mut input = String::new();
+
+        // While the input is not numeric
+        while !is_number {
+
+            // Print the prompt
+            print!("{prompt}");
+
+            // Flush the stdout
+            std::io::stdout().flush().unwrap();
+
+            // Read the user's input to the input variable
+            match std::io::stdin().read_line(&mut input) {
+                Ok(_number_of_bytes) => (),
+                Err(error) => println!("Error: {error}")
+            }
+
+            // Match statement to handle errors
+            match input.trim().parse::<f64>() {
+
+                // If there are no errors
+                Ok(value) => {
+
+                    // Adds the user's input to the data mapping
+                    data_map.insert(variable, value);
+
+                    // Set the is_number variable to true
+                    is_number = true;
+                },
+
+                // If there's an error parsing, set is_number is false
+                Err(_) => is_number = false
+            }
+
+            // Make the input an empty string
+            input = "".to_string();
+        }
+    }
+
+    // Get the weight and the height from the data map
+    let weight = *data_map.get("weight").unwrap();
+    let height = *data_map.get("height").unwrap();
+
+    // Calculate the person's BMI
+    let bmi = weight / (height.powi(2));
+
+    // Prints the person's BMI
+    println!("Your BMI is {bmi}");
+}
+#+end_src
+
+** Question 5
+Python implementation:
+#+begin_src python
+def calculate_marathon_time() -> None:
+    "Function to calculate the time taken for a marathon."
+
+    # Get the time for the first 12 km
+    first_12_km_time_in_hr = 12 / 15
+
+    # Get the time for the next 15 km
+    next_15_km_time_in_hr = 15 / 10
+
+    # Get the time for the following 10 km
+    following_10_km_time_in_hr = 10 / 14
+
+    # Get the time for the last stretch
+    last_stretch_time_in_hr = (42.2 - 12 - 15 - 10) / 18
+
+    # Get the total time
+    total_time_in_hr = first_12_km_time_in_hr + next_15_km_time_in_hr \
+        + following_10_km_time_in_hr + last_stretch_time_in_hr
+
+    # Print the total time taken
+    print(f"The runner took {total_time_in_hr}hrs.")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+// Function to calculate the time taken for a marathon
+fn calculate_time_for_marathon() {
+
+    // Get the time for the first 12 km
+    let first_12_km_time_in_hr = 12.0 / 15.0;
+
+    // Get the time for the next 15 km
+    let next_15_km_time_in_hr = 15.0 / 10.0;
+
+    // Get the time for the following 10 km
+    let following_10_km_time_in_hr = 10.0 / 14.0;
+
+    // Get the time for the last stretch
+    let last_stretch_time_in_hr = (42.2 - 12.0 - 15.0 - 10.0) / 18.0;
+
+    // Get the total time
+    let total_time_in_hr = first_12_km_time_in_hr + next_15_km_time_in_hr
+        + following_10_km_time_in_hr + last_stretch_time_in_hr;
+
+    // Print the total time taken
+    println!("The runner took {total_time_in_hr}hrs.")
+}
+#+end_src

@@ -1,0 +1,609 @@
+#+TITLE: Well-being Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** Mental health
+The WHO defines mental health as a state of well-being in which every individual realises his or her own potential, can cope with the normal stresses of life, can work productively and fruitfully, and is able to make a contribution to his or her community.
+
+** Flourishing
+In the mental health context, this refers to the people who are doing well in life and have good mental health.
+
+** Languishing
+In the mental health context, this refers to the people who are struggling in life and have bad mental health.
+
+** Struggling
+In the mental health context, this refers to the people who are doing well in life and have good mental health but are suffering from a mental illness.
+
+** Floundering
+In the mental health context, this refers to the people who are struggling in life, have bad mental health, and are also suffering from a mental illness.
+
+** Anhedonia
+Anhedonia is the loss of interest and pleasure in almost all activities.
+
+** Listlessness
+Listlessness is the feeling of having no energy or enthusiasm and being unwilling to do anything that requires effort.
+
+** Deficiency needs
+Deficiency needs are needs that will diminish once they have been satisfied, like safety, sense of belonging, love, etc.
+
+** Growth needs
+Growth needs refer to the motivation to fulfil one's potential. This need is never truly fulfilled and may become stronger as individuals grapple with it.
+
+** Intrinsic motivation
+Intrinsic motivation refers to our drive to set goals and engage in goal-sustaining behaviour due to our inherent interest, desire for personal growth, or due to pure enjoyment.
+
+** Self-concordance
+Self-concordance just means that you're doing the things that align with your beliefs and goals.
+
+** Controlled extrinsic motivation
+Controlled extrinsic motivation is motivation that is controlled by a reward or punishment.
+
+** Autonomous extrinsic motivation
+Autonomous extrinsic motivation is motivation that is controlled by us recognising that the behaviour or action that we do is worthwhile.
+
+** Autotelic personality
+Autotelic personality refers to someone who does things for its own sake, instead of doing it to achieve some later external goal.
+
+** Resonance performance model
+The resonance performance model states that we need to define the dream, work towards the dream, overcome obstacles, and revisit the dream.
+
+** Self-efficacy
+Self-efficacy refers to the belief in one's own capabilities to identify and execute the behaviours required to attain the desired outcome.
+
+** External locus of control
+The belief that external factors and external circumstances determine my outcomes and life experiences. It takes little ownership and responsibility for choices.
+
+** Internal locus of control
+The belief that we have the power to change our circumstances in life.
+
+** Learned helplessness
+Learned helplessness is the situation when a person doesn't adapt to changing circumstances, usually due to past experiences.
+
+** Committed action
+A committed action involves engaging in patterns of effective action that are driven and guided by one's core values.
+
+** Ecocosm paradox
+The paradox of having eco-sustainability and growing the global economy at the same time, as slowing the growth of the global economy is required for eco-sustainability to decrease the rate of resource depletion, but slowing the global economy would endanger the stability of governments, social systems and individuals as the financial system is threatened.
+
+** Paradoxical mindset
+A paradoxical mindset is the ability to hold seemingly opposing attitudes and motivations, moving effortlessly between them as circumstances demand. This involves accepting alternative perspectives, learning to live with the tensions associated with competing demands, and increasing one's ability to cope with these demands.
+
+** Wisdom
+The quality of having experience, knowledge and good judgement. It is also the capacity to judge rightly in matters relating to life and conduct. It can also be the state of being wise; possessing the knowledge of what is true and right, coupled with just judgement for action.
+
+** Logos knowledge
+Knowledge that is gained through the use of analytical, propositional, and other formal structures of logic. It's basically just using maths and scientific reasoning.
+
+** Mythos knowledge
+Knowledge that is gained through narratives, dialogue, social relationship and experiences. It's basically the knowledge from listening and understanding people.
+
+** Compassionate detachment
+Relating to others by allowing them to deal with their own problems and becoming responsible for their own issues, while expressing a loving concern for the nature of their current predicament. This way, you would respond compassionately to other's struggles, but simultaneously stay detached from the outcome.
+
+** Emergent wisdom
+Emergent wisdom is:
+- Respecting, which is being considerate and thoughtful when dealing with others
+- Engaging, which is acting in ethical ways for the common good
+- Discerning, which is having a deep understanding of fundamental patterns and relationships
+- Transforming, which is looking inwards and tolerating paradoxes, ambiguity and uncertainty
+
+** Transcendental wisdom
+Transcendental wisdom is:
+- The ability to be fully present in the reality of things, like being at the top of a mountain and seeing the all-encompassing vista, above and below.
+- The ability to rise above the noise and delusion of daily life to clearly see the reality, beauty, and connectedness of life.
+- The ability to have singular and expansive sight, which is being focused on what is true and being open to everything respectively.
+
+
+** Practical wisdom
+The characteristics of practical wisdom are:
+- Interpersonal skills
+- Clarity of thinking
+- Insightful actions
+- Greater tolerance
+- Generativity
+- Improvisation
+- Bending rules when necessary
+
+
+** Nonce definition of creativity
+
+*** Novel
+The results of the creative process must be novel for the individual.
+
+*** Optionally novel
+The results of the creative process may or may not be novel for society.
+
+*** Non-deterministic
+Alternative possibilities and results can be generated by a similar creative process across time or context.
+
+*** Constraints
+Creativity satisfies pre-existing constraints or criteria. Total freedom can be detrimental to creativity.
+
+*** Existing elements
+Creativity cannot be constructed out of nothing, basic knowledge are critical for the creative process.
+
+** Equifinality model
+The equifinality model states that there are multiple actions that will result in the same final state.
+
+** Multifinality model
+The multifinality model states that there are multiple final states that can be reached by doing a single action.
+
+** SMART goal model
+
+*** Specific
+Make your goal specific and narrow for more effective planning.
+
+*** Measurable
+Make sure your goal and progress are measurable.
+
+*** Achievable
+Make sure you can reasonably accomplish your goal within a certain time frame.
+
+*** Relevant
+Your goal should align with your values and long-term objectives.
+
+*** Time-based
+Set a realistic ambitious end date to clarify task prioritisation and increase motivation.
+
+** PERMA model
+
+*** Positive emotions
+What makes you feel good?
+
+Examples:
+- Favourite TV, movies and music which make you smile, laugh and relax.
+- Playing games with family, friends and work colleagues.
+- Physical exercise and breathing techniques.
+- Getting out in nature and paying attention to the sensations (mindfulness).
+- Reflecting on the positive things that happen each day.
+- Keeping a gratitude diary of the things you cherish.
+- Making plans for the near and distant future
+
+*** Engagement
+What activities activate your "flow" state and make you lose track of time?
+
+Examples:
+- Puzzles or board games.
+- Musical instruments.
+- Yoga or meditation.
+- Writing a story, poem or a blog.
+- Indulging in creative tasks such as drawing, painting or cross-stitching.
+- Taking part in individual or team sports.
+- Working on a new display in the garden.
+- Practising a new cooking or baking recipe.
+- Making a photo collage or video of a recent trip.
+
+*** Relationships
+Who brings you joy, peace, and support?
+
+Examples:
+- Catch-ups & get-togethers in person or online.
+- Showing your appreciation for work colleagues.
+- Sharing photos or souvenirs with others, to remind you of good times.
+- Spending a few minutes chatting to a stranger.
+- Using active listening and empathy when helping someone with a problem.
+- Sending a thank-you card or a message that shows "I'm thinking of you".
+- Reminding someone that you love them.
+
+*** Meaning
+What causes and pursuits do you find important and worthwhile?
+
+Examples:
+- Engaging in spiritual activities.
+- Making a donation to charity.
+- Sending a care package to a family or friend in need.
+- Fundraising through an individual or group challenge.
+- Volunteering your time in a community project.
+- Sharing knowledge and teaching others about a special interest.
+- Commemorating a loved one's memory.
+
+*** Accomplishment
+What are your goals? How can they be achieved?
+
+Examples:
+- Making a "to do" list and prioritising the tasks.
+- Keeping goals S.M.A.R.T.
+- Taking on new jobs and responsibilities - a different role at work or school.
+- Starting a long-term project - some DIY at home.
+- Learning something new - webinars and podcasts.
+- Setting an exercise target - schedule the activities in a way which makes them rewarding and sustainable.
+- Changing your work-life balance - use a planner to organise your time better.
+
+
+* Positive coping styles
+
+** Emotion-focused coping
+
+*** Goal
+Diminish the emotional consequences of stressful events.
+
+*** Examples
+1. Focusing on and venting emotions
+2. Behavioural and mental disengagement
+3. Seeking spiritual comfort
+4. Meditating
+5. Journaling
+6. Reframing
+
+** Problem-focused coping
+
+*** Goal
+Resolve the stressful event or alter the source of stress.
+
+*** Examples
+1. Seeking information
+2. Taking direct action
+3. Planning
+4. Focusing on solutions
+5. Seeking support
+6. Physical exercise
+
+** Proactive coping
+
+*** Goal
+Manage predictable future obstacles through self-regulation (i.e. future-proofing).
+
+*** Examples
+1. Building resources needed to succeed
+2. Setting realistic goals
+3. Recognising potential stressors
+
+** Meaning-focused coping
+
+*** Goal
+Draw on personal values and life goals to sustain meaning in life when faced with stressful events.
+
+*** Examples
+1. Realistically acknowledging threats
+2. Benefit seeking
+3. Benefit reminding
+4. Adaptive goal processes
+5. Reordering priorities
+6. Infusing ordinary events with positive meaning
+
+
+** Benefit seeking (benefit finding)
+Benefit seeking or benefit finding is basically looking at the positive things that are associated with a situation, even if the situation is negative.
+
+** Benefit reminding
+Benefit reminding is just reminding oneself of the benefits of an event, even if the event is negative, such as the things that one can learn from the experience.
+
+
+* Facets of resilience
+
+** Recovery
+Recovery is basically just being able to "bounce back" from a stressful event.
+
+** Resistance
+Resistance is being able to function normally before, during and after a stressful event.
+
+** Reconfiguration
+Reconfiguration is being able to change your goals, mindset and beliefs to adapt to the stressor.
+
+
+* Facets of mental health
+
+** Psychological well-being
+When we are psychologically well, we feel that we have control over our own lives and have a sense of purpose in life.
+
+** Social well-being
+When we are socially well, we have pro-social attitudes and behaviour. We have a sense of belonging and feel included in our community and thus contribute back to our community and society.
+
+** Emotional well-being
+When we are emotionally well, we can experience happiness in our life and are satisfied with our lives.
+
+
+* Signs of mental disorders
+
+** Depression
+1. Profound negative emotions such as sadness, worthlessness and emptiness
+2. Anhedonia
+3. Disturbances in sleep such as sleeping too much, sleeping too little and not being able to fall asleep
+4. Changes in weight, such as gaining or losing weight
+5. Functional impairment, such as having difficulty concentrating, having very little energy and listlessness
+6. Suicide ideation
+
+** Generalised anxiety disorder (GAD)
+1. Excessive and disproportionate worrying
+2. Feeling agitated (rapid heartbeat, dry mouth)
+3. Frequent feelings of restlessness
+4. Trouble falling asleep or staying asleep
+5. Easily fatigued
+6. Difficulty concentrating
+7. Irrational fears
+8. Avoiding social situations
+9. Panic attacks
+
+** Anorexia Nervosa (eating disorder)
+1. Severely limit good intake
+2. Intense fear of weight gain
+3. Perceives oneself to be overweight despite being severely underweight
+4. Preoccupation with food and exercise
+5. Excessive focus on weight
+6. Excessively engaged in exercise
+7. Expressing guilt about eating
+8. Frequently checking the mirror or scale
+9. Skipping meals
+10. Having a highly restrictive diet
+11. Making their own meals instead of eating what their family eats
+
+** Bulimia Nervosa (eating disorder)
+It is cyclical and oscillates between binge-eating and purging.
+
+*** Binge-eating
+Binge-eating is the uncontrolled intake of food.
+
+*** Purging
+Some symptoms of purging include:
+1. Self-induced vomiting
+2. Laxative abuse
+3. Extreme exercise
+4. Excessive fasting
+
+*** Possible signs
+1. Excessive focus on weight
+2. Excessively engaged in exercise
+3. Expressing guilt about eating
+4. Frequently checking the mirror or scale
+5. Self-induced vomiting
+6. Excessive use of laxatives
+7. May oscillate between highly restrictive diet and binge-eating unhealthy foods
+
+** Binge-eating disorder
+1. Periods of uncontrolled continuous eating until uncomfortably full
+2. Often triggered by emotional events
+3. Results in guilt, but the guilt often doesn't result in compensatory behaviours
+4. Repeatedly eating large amounts of sweets or high-fat foods
+5. Eating much more food in a meal, or much more food than what is considered normal
+6. Expressing guilt or shame about eating habits
+
+
+* Empathic listening guidelines
+- Be attentive
+- Be interested
+- Be alert and not distracted
+- Be a sounding board, by allowing the person to bounce ideas and feelings off you while assuming a non-judgemental, non-critical manner
+- Act like a mirror, by reflecting and paraphrasing what you think the person is saying and feeling
+- Refrain from providing judgements or to say cliché statements
+- Don't let the person "hook" you into his or her arguments and maintain a stance of neutrality and impartiality
+
+
+* Signs of a good and healthy relationship
+1. We are not controlled by anything or anyone.
+2. We are not concealing a part of ourselves from the other person.
+3. We don't have any reservations about the other person.
+4. We don't have to pretend that we are someone we are not in front of the other person.
+
+
+* Aspects of a healthy relationship
+- Listening to each other
+- Accepting boundaries
+- Encouraging growth
+- Making time for each other
+- Being non-judgemental and supportive
+- Having honesty and openness
+- Having respect and trust
+
+
+* Signs of emotional and mental abuse
+1. Humiliation and bullying
+2. Control and manipulation
+3. Blame and denial
+4. Emotional neglect and isolation
+5. Unhealthy co-dependence
+
+
+* Aspects of consent
+- Voluntary
+- Unambiguous
+- Mutual
+- Coherent and informed
+- Reversible
+- Ongoing and specific
+- Independent of relationship status
+
+
+* Maslow Hierarchy of Needs
+
+** Basic needs
+
+*** Physiological needs
+- Food
+- Water
+- Warmth
+- Rest
+
+*** Safety needs
+- Security
+- Safety
+
+
+** Psychological needs
+
+*** Love and sense of belonging
+- Intimate relationships
+- Friends
+
+*** Esteem needs
+- Prestige
+- Feelings of accomplishment
+
+** Self-fulfilment needs
+
+*** Self-actualisation
+Achieving one's full potential, including creative activities.
+
+
+* Requirements for self-determination
+- Competence
+- Autonomy
+- Relatedness
+
+* Actions to take for self-actualisation
+1. Experience life like a child, with full absorption and concentration
+2. Try new things instead of sticking to safe paths
+3. Listening to your own feelings in evaluating experiences instead of the voice of tradition, authority or the majority
+4. Avoid pretense and instead, be honest
+5. Be prepared to be unpopular if your views are not in line with the majority
+6. Take responsibility and work hard
+7. Identify your defences and have the courage to give them up
+
+
+* Barriers to achieving our goals
+1. Finding comfort within discomfort
+2. Blaming others
+3. Allowing the self to be trapped by circumstances
+4. Expect others to be responsible for our well-being
+5. Learnt helplessness
+
+
+* Steps to taking responsibility
+1. Embrace our internal locus of control
+2. Be willing to learn
+3. Be selective of media consumption
+4. Focus on solutions
+5. Observe and confront our blaming tendencies
+
+* Learnt optimism
+Optimism can be learnt through 3 things:
+1. Explanatory styles
+2. Time orientations
+3. ABCDE model of learnt optimism
+
+** Explanatory styles
+Explanatory styles is the perception of positive and negative events on three different dimensions that influence our optimism about the future.
+
+*** Permanence
+The extent to which the events themselves are permanent. If we believe that things are permanent, it can lower our sense of optimism.
+
+*** Pervasiveness
+Pervasiveness is just how wide-reaching we perceive an event to be, whether we see it as something global or something specific. An example could be doing poorly on a test and then believing that you will never be good at tests because of it.
+
+*** Personalisation
+Personalisation just means how personal the event was, whether it was caused by the self, or caused by external factors. An optimistic mindset looks at bad events as caused by external factors and looks at good events as caused by the self.
+
+** Time orientation
+
+*** Present-oriented individuals
+These individuals live in the present moment and to enjoy life as it currently is, and may be less inclined to work towards future goals.
+
+*** Future-oriented individuals
+These individuals work towards long term goals, and they can better delay gratification as they know that if they work hard now, they'll eventually get the happiness and satisfaction that they sought after.
+
+*** Ideal
+The ideal is to have a good balance of the two time orientations so that we can enjoy the current pleasures of life while still working towards long term goals that will bring us happiness and satisfaction in the future.
+
+** ABCDE model
+
+*** Adversity
+The situation that triggers pessimism. Example: You get a lower-than-expected mark for an exam.
+
+*** Belief
+How you interpret the adversity. Example: You believe the questions on the exam are unfair.
+
+*** Consequence
+How you react to the adversity. Example: You don't study for the next exam.
+
+*** Disruption
+Effort to disrupt the habitual thought pattern. Example: You re-evaluate your belief, and think about how you could have studied harder.
+
+*** Energisation
+Outcome of redirecting one's thoughts. Example: Being energised by a plan of action to study harder gives you optimism about your marks on the final exam.
+
+
+* Characteristics of realistic optimism
+1. Understand your own strengths
+2. Acknowledge your own limitations and constraints imposed by external factors
+3. Staying focused and persistent
+4. Identifying pathways to desired outcome, evaluate options and implement the best course of action
+5. Remaining positive while being cognisant of potential challenges
+
+
+* Steps toward authentic happiness
+1. Engagement
+2. Nurturing positive emotions
+3. Build accomplishments
+4. Cultivate positive relationships
+5. Create meaning
+
+
+* Steps for committed action
+1. Choose a domain of your life that is high priority for change
+2. Choose which values you desire to pursue within this domain
+3. Develop goals that align with these values
+4. Take action mindfully and intentionally
+
+
+* Steps to set value-based goals
+1. Name the area of your life that you choose to work one.
+2. Identify the underlying values of your goals in this domain. The goals need to be specific, realistic and adaptive, and you should reflect on the meaning of the goals.
+
+* Steps to cultivate a paradoxical mindset
+
+** Step 1
+Reframe the situation or question at hand.
+
+** Step 2
+- Accept the tension and develop comfort with the discomfort.
+- Instead of avoiding potential conflicts, see them as an opportunity to grow.
+
+** Step 3
+Distance yourself from the problem, and search for new possibilities.
+
+
+* Ultra self
+1. Higher centre of information processing, integrating cognition and emotion.
+2. A form of self-transcendence that relates to and manoeuvre through life in a detached, but more encompassing way.
+3. A capacity to reflect on, and grapple with difficult existential life issues.
+4. Transforming negative experiences into life-affirming ones.
+
+* Re-moralising work
+- Celebrate moral exemplars
+- Enhance meaning in what we do
+- Promote a morally nurturing environment
+- Foster individual-community connectedness
+- Acknowledge the difference between "jobs" vs "careers" vs "callings"
+
+
+* Dimensions of creativity
+- Combinational creativity, which is combining familiar ideas together
+- Exploratory creativity, which is the generation of new ideas by exploring structured concepts
+- Transformational creativity, which is transforming some dimensions of the structure to create new structures
+
+
+* Elements of creativity
+1. Fluency, which is to provide ideas in volume
+2. Flexibility, which is to bend familiar ideas into new shapes
+3. Originality, which is to create new and unusual ideas
+4. Awareness, which is to perceive connections beyond the obvious
+5. Drive, which is the motivation to be creative and to think of new ideas
+
+
+* Common traits of a creative person
+1. Open to experience
+2. Willing to take risk
+3. Sensitive to problems
+4. Has both convergent and divergent thinking
+5. Tolerant of ambiguity
+6. Tolerant of frustration
+7. Intrinsically motivated
+8. Independent
+9. Productive
+
+
+* The stages of the creative process
+
+** Preparation
+Gathering information, brainstorming, conscious processing
+
+** Incubation
+Exploration, connecting ideas, unconscious processing
+
+** Illumination
+Creative solution emerges, unexpected breakthrough
+
+** Verification
+Implementation of ideas into final form

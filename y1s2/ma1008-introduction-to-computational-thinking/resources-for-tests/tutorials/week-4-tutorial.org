@@ -1,0 +1,1259 @@
+#+TITLE: Intro To Comp Thinking Week 4 Tutorial
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Question 1
+#+begin_src python :results output
+times = 5
+print("## "*times)
+#+end_src
+
+#+RESULTS:
+: ## ## ## ## ##
+
+
+* Question 2
+Assume ~x = 11~, ~y = 6~, ~z = 2~, ~c = 'a'~, ~d = 'z'~,
+| Expression                           | Value of expression                                                |
+|--------------------------------------+--------------------------------------------------------------------|
+| x == 5 or y !=3                      | False                                                              |
+| not (x > 9 and y != 23)              | True                                                               |
+| x <= 1 and y == 6 or z < 4           | True                                                               |
+| 5 and y !=8 or 0                     | True                                                               |
+| x >= y >= z                          | True                                                               |
+| c >= 'A' or d >= 'Z'                 | False                                                              |
+| c <= 'e' <= d                        | True                                                               |
+| c <= 2 <= d                          | TypeError: "<=" not supported between instances of 'str' and 'int' |
+| c == 'a' or 'e' or 'i' or 'o' or 'u' | True                                                               |
+| d == 'a' or 'e' or 'i' or 'o' or 'u' | True                                                               |
+
+
+* Question 3
+#+begin_src python
+num1 = input("Enter a positive integer: ")
+if num1 < 5:
+    if num1 <= 0:
+        print(f"{num1} is out of range")
+    else:
+        print(f"{num1} is a small value.")
+elif num1 == 5:
+    print(f"{num1} is a medium value.")
+else #num1 > 5:
+    print("This is a large value.")
+#+end_src
+
+#+RESULTS:
+: This is a large value.
+
+
+* Question 4
+#+begin_src python
+if BooleanA:
+    Suite A
+if BooleanB:
+    Suite B
+#+end_src
+This code block will check for both BooleanA and BooleanB. If both BooleanA and BooleanB are True, then both Suite A and Suite B will be executed.
+
+#+begin_src python
+if BooleanA:
+    Suite A
+elif BooleanB:
+    Suite B
+#+end_src
+This code block will check for BooleanB only if BooleanA is ~False~. Hence, if both BooleanA and BooleanB are ~True~, then only Suite B will be executed instead of both Suite A and Suite B, which is unlike the previous code block.
+
+
+* Question 5
+Python implementation:
+#+begin_src python
+def print_the_largest_of_3_numbers(a: float, b: float, c: float) -> None:
+    "Function to print the largest of 3 numbers."
+
+    # Creates a list from the 3 numbers
+    numbers = [a, b, c]
+
+    # Initialise the largest number to the first number
+    largest_number = a
+
+    # Iterates over the list of numbers,
+    # skipping the first number
+    for number in numbers[1:]:
+
+        # Check if the current number is larger than the largest number
+        if number > largest_number:
+
+            # Set the largest number to the current number
+            largest_number = number
+
+    # Print the largest number
+    print(f"The largest number is {largest_number}")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// The function to print the largest of 3 numbers
+fn print_the_largest_of_3_numbers(a: f32, b: f32, c: f32) {
+
+    // Creates a list from the 3 numbers
+    let numbers = [a, b, c];
+
+    // Initialise the largest number to the first number
+    let mut largest_number = a;
+
+    // Iterate over the list of numbers
+    for &number in numbers[1..].iter() {
+
+        // Check if the current number is larger than the largest number
+        if number > largest_number {
+
+            // Set the largest number to the current number
+            largest_number = number;
+        }
+    }
+
+    // Print the largest number
+    println!("The largest number is {largest_number}");
+}
+#+end_src
+
+
+* Question 6
+Python implementation:
+#+begin_src python
+def qualifies_for_ntu(academic_score: int, aptitude_grade: str) -> bool:
+    "Function to check if an applicant qualifies for NTU."
+
+    # The variables to store whether an applicant qualifies for NTU
+    is_qualified = academic_score >= 75 and aptitude_grade in ["A", "B", "C"] \
+        or academic_score >= 60 and aptitude_grade == "A"
+
+    # Returns the is_qualified variable
+    return is_qualified
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to check if an applicant qualifies for NTU
+fn qualifies_for_ntu(academic_score: i32, aptitude_grade: &str) -> bool {
+
+    // The variables to store whether an applicant qualifies for NTU
+    let is_qualified = academic_score >= 75 &&
+        ["A", "B", "C"].contains(&aptitude_grade) ||
+        academic_score >= 60 && aptitude_grade == "A";
+
+    // Returns the is qualified variable
+    return is_qualified;
+}
+#+end_src
+
+
+* Lab
+
+** Question 1
+Python implementation:
+#+begin_src python
+import re
+
+# The regex to check if a string is a number
+is_number_regex = re.compile(r"^-?\d+(?:\.\d+)?$")
+
+
+def print_pay_and_taxes() -> None:
+    """
+    Function that takes the number of hours worked in one month and then
+    prints the gross pay, taxes and net pay.
+    """
+
+    # Initialise the basic pay rate
+    BASIC_PAY_RATE = 10
+
+    # Initialise the tax rate on the final remaining amount, which is 30%
+    REMAINING_AMOUNT_TAX_RATE = 0.3
+
+    # The variable representing whether the input is a number or not
+    is_number = False
+
+    # While the input isn't a number
+    while not is_number:
+
+        # Gets the input
+        user_input = input(
+            "Please enter the number of hours worked in a month: "
+        )
+
+        # Set the is_number variable
+        is_number = bool(is_number_regex.match(user_input))
+
+    # Gets the number of hours worked in a month from the user input
+    number_of_hours_worked = float(user_input)
+
+    # Gets the gross pay
+    gross_pay = BASIC_PAY_RATE * number_of_hours_worked
+
+    # Checks if the number of hours is above 160
+    # for overtime pay
+    if number_of_hours_worked > 160:
+
+        # Sets the gross pay to 1.5 times the current gross pay
+        gross_pay = 1.5 * gross_pay
+
+    # Initialise the tax
+    tax: float = 0
+
+    # The dictionary to store the tax rates
+    tax_rates = {
+        1000: 0.1,
+        500: 0.2
+    }
+
+    # Initialise the remaining amount to the gross pay
+    remaining_amount = gross_pay
+
+    # Iterates over the tax rates
+    for tax_amount, tax_rate in tax_rates.items():
+
+        # Intialise the initial amount from the previous iteration of the loop
+        initial_remaining_amount = remaining_amount
+
+        # Subtract the tax amount from the remaining amount
+        remaining_amount = remaining_amount - tax_amount
+
+        # If the remaining amount is negative
+        if remaining_amount < 0:
+
+            # Add to the tax with the current tax rate
+            # multiplied by the initial remaining amount
+            tax += initial_remaining_amount * tax_rate
+
+            # Break the loop
+            break
+
+        # Otherwise, add the tax multiplied by the tax amount
+        tax += tax_amount * tax_rate
+
+    # If there's any amount remaining
+    if remaining_amount > 0:
+
+        # Add the tax on that remaining amount
+        tax += REMAINING_AMOUNT_TAX_RATE * remaining_amount
+
+    # Prints the gross pay, taxes and net pay
+    print(f"Gross pay: ${gross_pay}")
+    print(f"Taxes: ${tax}")
+    print(f"Net pay: ${gross_pay - tax}")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// Function that takes the number of hours worked in one month
+// and then prints the gross pay, taxes and net pay.
+fn print_pay_and_taxes() {
+
+    // Initialise the basic pay rate
+    const BASIC_PAY_RATE: f64 = 10.0;
+
+    // Initialise the tax rate on the final remaining amount, which is 30%
+    const REMAINING_AMOUNT_TAX_RATE: f64 = 0.3;
+
+    // Initialise the user input variable
+    let mut number_of_hours_worked = 0.0;
+
+    // Initialise the variable to represent
+    // whether or not the input is numeric
+    let mut is_number = false;
+
+    // Initialise the string to store the user's input
+    let mut input = String::new();
+
+    // While the input is not numeric
+    while !is_number {
+
+        // Prints the prompt
+        print!(
+            "Please enter the number of hours worked in a month: "
+        );
+
+        // Flush the stdout
+        std::io::stdout().flush().unwrap();
+
+        // Read the user's input to the input variable
+        match std::io::stdin().read_line(&mut input) {
+            Ok(_number_of_bytes) => (),
+            Err(error) => println!("Error: {error}")
+        }
+
+        // Match statement to handle errors
+        match input.trim().parse::<f64>() {
+
+            // If there are no errors
+            Ok(value) => {
+
+                // Set the number of hours worked to the value
+                number_of_hours_worked = value;
+
+                // Set the is_number variable to true
+                is_number = true;
+            },
+
+            // If there's an error parsing, set is_number is false
+            Err(_) => is_number = false
+        }
+
+        // Make the input an empty string
+        input = "".to_string();
+    }
+
+    // Gets the gross pay
+    let mut gross_pay = BASIC_PAY_RATE * number_of_hours_worked;
+
+    // Checks if the number of hours is above 160
+    if number_of_hours_worked > 160.0 {
+
+        // Sets the gross pay to 1.5 times the current gross pay
+        gross_pay = 1.5 * gross_pay;
+    }
+
+    // Initialise the tax
+    let mut tax = 0.0;
+
+    // The hashmap to store the tax rates
+    let tax_rates = std::collections::HashMap::from([
+        (1000, 0.1),
+        (500, 0.2),
+    ]);
+
+    // Initialise the remaining amount to the gross pay
+    let mut remaining_amount = gross_pay;
+
+    // Iterates over the tax rates
+    for (tax_amount, tax_rate) in tax_rates {
+
+        // Initialise the initial remaining amount
+        // from the previous iteration of the loop
+        let initial_remaining_amount = remaining_amount;
+
+        // Subtract the tax amount from the remaining amount
+        remaining_amount = remaining_amount - tax_amount as f64;
+
+        // If the remaining amount is negative
+        if remaining_amount < 0.0 {
+
+            // Add to the tax with the current tax rate
+            // multipled by the initial remaining amount
+            tax += initial_remaining_amount * tax_rate;
+
+            // Break the loop
+            break;
+        }
+
+        // Otherwise, add the tax multiplied by the tax amount
+        tax += tax_amount as f64 * tax_rate;
+    }
+
+    // If there's any amount remaining
+    if remaining_amount > 0.0 {
+
+        // Add the tax on that remaining amount
+        tax += REMAINING_AMOUNT_TAX_RATE * remaining_amount;
+    }
+
+    // Gets the net pay
+    let net_pay = gross_pay - tax;
+
+    // Prints the gross pay, taxes and net pay
+    println!("Gross pay: {gross_pay}");
+    println!("Taxes: {tax}");
+    println!("Net pay: {net_pay}");
+}
+#+end_src
+
+** Question 2
+Python implementation:
+#+begin_src python
+def get_numerical_range(a: float, b: float, c: float) -> None:
+    "Function to get the numerical range of 3 given numbers"
+
+    # Initialise the list of numbers
+    number_list = [a, b, c]
+
+    # Initialise the largest and smallest number to the first number
+    largest_number = a
+    smallest_number = a
+
+    # Iterates over the list of numbers,
+    # skipping the first number
+    for number in number_list[1:]:
+
+        # Check if the current number
+        # is greater than the largest number
+        if number > largest_number:
+
+            # Set the largest number to the current number
+            largest_number = number
+
+        # Check if the current number is smaller than the smallest number
+        if number < smallest_number:
+
+            # Set the smallest number to the current number
+            smallest_number = number
+
+    # Print the numerical range
+    # which is the largest number - smallest number
+    print(f"Numerical range: {largest_number - smallest_number}")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+
+// Function to get the numerical range of 3 given numbers
+fn get_numerical_range(a: f32, b: f32, c: f32) {
+
+    // Initalise the list of numbers
+    let numbers = [a, b, c];
+
+    // Initialise the largest and smallest number to the first number
+    let mut largest_number = a;
+    let mut smallest_number = a;
+
+    // Iterates over th list of numbers,
+    // skipping the first number
+    for &number in numbers[1..].iter() {
+
+        // Check if the current number is greater than the largest number
+        if number > largest_number {
+
+            // Set the largest number to the current number
+            largest_number = number;
+        }
+
+        // Check if the current number is smaller than the smallest number
+        if number < smallest_number {
+
+            // Set the smallest number to the current number
+            smallest_number = number;
+        }
+    }
+
+    // Get the numerical range
+    // which is the largest number - smallest number
+    let numerical_range = largest_number - smallest_number;
+
+    // Print the numerical range
+    println!("Numerical range: {numerical_range}");
+}
+#+end_src
+
+** Question 3
+Python implementation:
+#+begin_src python
+import re
+
+# The regex to check if a string is a number
+is_number_regex = re.compile(r"^-?\d+(?:\.\d+)?$")
+
+
+def compare_birthdays() -> None:
+    "Function to compare 2 birthdays and report who is older"
+
+    # Initialise the dictionary to store the data
+    data_dict: dict[str, list[float]] = {
+        "first person": [],
+        "second person": []
+    }
+
+    # Parts of the birthday
+    birthday_parts = ["day", "month", "year"]
+
+    # Iterates over the data dictionary
+    for person, data_list in data_dict.items():
+
+        # Tells the user to input the birthday for the person
+        print(f"Enter the {person}'s birthday")
+
+        # Iterates over the parts of the birthday
+        for part in birthday_parts:
+
+            # The variable representing whether the input is a number or not
+            is_number = False
+
+            # While the input isn't a number
+            while not is_number:
+
+                # Gets the input
+                user_input = input(
+                    f"Please enter the {part} of the birthday as an integer: "
+                )
+
+                # Set the is_number variable
+                is_number = bool(is_number_regex.match(user_input))
+
+            # Adds the user input, converted to a integer, to the data list
+            data_list.append(int(user_input))
+
+    # Gets the first birthday and reverse the list
+    # so it's (year, month, day)
+    first_birthday = data_dict["first person"][::-1]
+
+    # Gets the second birthday and reverse the list
+    # so it's (year, month, day)
+    second_birthday = data_dict["second person"][::-1]
+
+    # Check if the first birthday is equal to the second birthday
+    if first_birthday == second_birthday:
+
+        # Print that both people have the same birthday
+        print("Both individuals have the same birthday.")
+
+    # Otherwise, check if the first birthday is later than the second birthday
+    elif first_birthday > second_birthday:
+
+        # Print that the second person is older
+        print("The second person is older.")
+
+    # Otherwise, the first birthday is earlier than the second birthday
+    else:
+
+        # Print that the first person is older
+        print("The first person is older.")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// Function to compare 2 birthdays and report who is older
+fn compare_birthdays() {
+
+    // Initialise the dictionary to store the data
+    let mut data_dict: std::collections::HashMap<&str, Vec<i32>> =
+        std::collections::HashMap::from([
+            ("first person", vec![]),
+            ("second person", vec![])
+        ]);
+
+    // Parts of the birthday
+    let birthday_parts = ["day", "month", "year"];
+
+    // Iterates over the data dictionary
+    for (person, data_list) in &mut data_dict {
+
+        // Tells the user to input the birthday for the person
+        println!("Enter the {person}'s birthday");
+
+        // Iterates over the parts of the birthday
+        for part in birthday_parts {
+
+            // Initialise the variable to represent
+            // whether or not the input is numeric
+            let mut is_number = false;
+
+            // Initialise the string to store the user's input
+            let mut input = String::new();
+
+            // While the input is not numeric
+            while !is_number {
+
+                // Prints the prompt
+                print!(
+                    "Please enter the {part} of the birthday as an integer: "
+                );
+
+                // Flush the stdout
+                std::io::stdout().flush().unwrap();
+
+                // Read the user's input to the input variable
+                match std::io::stdin().read_line(&mut input) {
+                    Ok(_number_of_bytes) => (),
+                    Err(error) => println!("Error: {error}")
+                }
+
+                // Match statement to handle errors
+                match input.trim().parse::<i32>() {
+
+                    // If there are no errors
+                    Ok(value) => {
+
+                        // Adds the value to the list
+                        data_list.push(value);
+
+                        // Set the is_number variable to true
+                        is_number = true;
+                    },
+
+                    // If there's an error parsing, set is_number is false
+                    Err(_) => is_number = false
+                }
+
+                // Make the input an empty string
+                input = "".to_string();
+            }
+        }
+    }
+
+    // Gets the first birthday and reverse the list
+    // so it's (year, month, day)
+    let first_birthday: Vec<&i32> = data_dict.get("first person")
+        .unwrap()
+        .into_iter()
+        .rev()
+        .collect();
+
+    // Gets the second birthday and reverse the list
+    // so it's (year, month, day)
+    let second_birthday: Vec<&i32> = data_dict.get("second person")
+        .unwrap()
+        .into_iter()
+        .rev()
+        .collect();
+
+    // Check if the first birthday is equal to the second birthday
+    if first_birthday == second_birthday {
+
+        // Print that both people have the same birthday
+        println!("Both individuals have the same birthday.");
+    }
+
+    // Otherwise, check if the first birthday is later than the second birthday
+    else if first_birthday > second_birthday {
+
+        // Print that the second person is older
+        println!("The second person is older.")
+    }
+
+    // Otherwise
+    else {
+
+        // Print that the first person is older
+        println!("The first person is older.")
+    }
+}
+#+end_src
+
+** Question 4
+Python implementation:
+#+begin_src python
+import re
+
+# The regex to check if a string is a number
+is_number_regex = re.compile(r"^-?\d+(?:\.\d+)?$")
+
+
+def print_is_leap_year() -> None:
+    "Function to take a year and print if the year is a leap year"
+
+    # The variable representing whether the input is a number or not
+    is_number = False
+
+    # While the input isn't a number
+    while not is_number:
+
+        # Gets the input
+        user_input = input("Please enter a year: ")
+
+        # Set the is_number variable
+        is_number = bool(is_number_regex.match(user_input))
+
+    # Gets the year from the user's input
+    year = float(user_input)
+
+    # Set the variable is_leap_year.
+    # The right hand side is the boolean expression.
+    is_leap_year = year % 4 == 0 and not year % 100 == 0 or year % 400 == 0
+
+    # If the year is a leap year
+    if is_leap_year:
+
+        # Print "Leap year"
+        print("Leap year")
+
+    # Otherwise
+    else:
+
+        # Print "Not leap year"
+        print("Not leap year")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// Function to take a year and print if the year is a leap year
+fn print_is_leap_year() {
+
+    // Initialise the year variable
+    let mut year = 0;
+
+    // Initialise the variable to represent
+    // whether or not the input is numeric
+    let mut is_number = false;
+
+    // Initialise the string to store the user's input
+    let mut input = String::new();
+
+    // While the input is not numeric
+    while !is_number {
+
+        // Prints the prompt
+        print!(
+            "Please enter a year: "
+        );
+
+        // Flush the stdout
+        std::io::stdout().flush().unwrap();
+
+        // Read the user's input to the input variable
+        match std::io::stdin().read_line(&mut input) {
+            Ok(_number_of_bytes) => (),
+            Err(error) => println!("Error: {error}")
+        }
+
+        // Match statement to handle errors
+        match input.trim().parse::<i32>() {
+
+            // If there are no errors
+            Ok(value) => {
+
+                // Sets the year to the user's input
+                year = value;
+
+                // Set the is_number variable to true
+                is_number = true;
+            },
+
+            // If there's an error parsing, set is_number is false
+            Err(_) => is_number = false
+        }
+
+        // Make the input an empty string
+        input = "".to_string();
+    }
+
+    // Set the variable is_leap_year.
+    // The right hand side is the boolean expression.
+    let is_leap_year = year % 4 == 0 && !(year % 100 == 0) || year % 400 == 0;
+
+    // If the year is a leap year
+    if is_leap_year {
+
+        // Print "Leap year"
+        println!("Leap year");
+    }
+
+    // Otherwise
+    else {
+
+        // Print "Not leap year"
+        println!("Not leap year");
+    }
+}
+#+end_src
+
+** Question 5
+Python implementation:
+#+begin_src python
+import re
+
+# The regex to check if a string is a number
+is_number_regex = re.compile(r"^-?\d+(?:\.\d+)?$")
+
+
+def print_day_from_integer_value() -> None:
+    "Function to take an integer and print the integer as a day string"
+
+    # The dictionary mapping the day integer to the string
+    day_dict = {
+        1: "Monday",
+        2: "Tuesday",
+        3: "Wednesday",
+        4: "Thursday",
+        5: "Friday",
+        6: "Saturday",
+        7: "Sunday"
+    }
+
+    # The variable representing whether the input is a number or not
+    is_number = False
+
+    # While the input isn't a number
+    while not is_number:
+
+        # Gets the input
+        user_input = input("Please enter an integer representing a day: ")
+
+        # Set the is_number variable
+        is_number = bool(is_number_regex.match(user_input))
+
+    # Set the day to the user's input
+    day = int(user_input)
+
+    # Gets the day string from the dictionary
+    day_string = day_dict.get(day)
+
+    # If the day string is not None
+    if day_string is not None:
+
+        # Print the day string
+        print(day_string)
+
+    # Otherwise
+    else:
+
+        # Print "Illegal input"
+        print("Illegal input")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// Function to take an integer and print the integer as a day string
+fn print_day_from_integer_value() {
+
+    // The dictionary mapping the day integer to the string
+    let day_dict = std::collections::HashMap::from([
+        (1, "Monday"),
+        (2, "Tuesday"),
+        (3, "Wednesday"),
+        (4, "Thursday"),
+        (5, "Friday"),
+        (6, "Saturday"),
+        (7, "Sunday")
+    ]);
+
+    // Initialise the day variable
+    let mut day = 0;
+
+    // Initialise the variable to represent
+    // whether or not the input is numeric
+    let mut is_number = false;
+
+    // Initialise the string to store the user's input
+    let mut input = String::new();
+
+    // While the input is not numeric
+    while !is_number {
+
+        // Prints the prompt
+        print!(
+            "Please enter an integer representing a day: "
+        );
+
+        // Flush the stdout
+        std::io::stdout().flush().unwrap();
+
+        // Read the user's input to the input variable
+        match std::io::stdin().read_line(&mut input) {
+            Ok(_number_of_bytes) => (),
+            Err(error) => println!("Error: {error}")
+        }
+
+        // Match statement to handle errors
+        match input.trim().parse::<i32>() {
+
+            // If there are no errors
+            Ok(value) => {
+
+                // Sets the year to the user's input
+                day = value;
+
+                // Set the is_number variable to true
+                is_number = true;
+            },
+
+            // If there's an error parsing, set is_number is false
+            Err(_) => is_number = false
+        }
+
+        // Make the input an empty string
+        input = "".to_string();
+    }
+
+    // Gets the day string from the dictionary and
+    // prints a result based on whether the day string is found or not
+    match day_dict.get(&day) {
+        Some(value) => println!("{}", value),
+        None => println!("Illegal input")
+    }
+}
+#+end_src
+
+** Question 6
+Python implementation:
+#+begin_src python
+import re
+import math
+
+# The regex to check if a string is a number
+is_number_regex = re.compile(r"^-?\d+(?:\.\d+)?$")
+
+
+def solve_quadratic_eqn() -> None:
+    """
+    The function to solve a quadratic equation.
+    It asks for the coefficients of the quadratic equation to solve it.
+    """
+
+    # The dictionary to store the coefficients
+    coefficients = {
+        "x^2": float(0),
+        "x": float(0),
+        "constant": float(0)
+    }
+
+    # Iterates over the coefficients
+    for term in coefficients:
+
+        # The variable representing whether the input is a number or not
+        is_number = False
+
+        # Iterates while the input isn't a number
+        while not is_number:
+
+            # Gets the user's input for the coefficient
+            coefficient = input(
+                f"Please enter the coefficient for the {term} term: "
+            )
+
+            # Sets the is_number variable to whether or not the regex matches
+            is_number = bool(is_number_regex.search(coefficient))
+
+        # Add the coefficient to the dictionary
+        coefficients[term] = float(coefficient)
+
+    # Gets the value of a, b and c
+    a = coefficients["x^2"]
+    b = coefficients["x"]
+    c = coefficients["constant"]
+
+    # Gets the discriminant
+    discriminant = b ** 2 - 4 * a * c
+
+    # The part of the result after the plus minus part
+    part_after_plus_minus = math.sqrt(abs(discriminant)) / (2 * a)
+
+    # Prints the word "Results:"
+    print("Results:")
+
+    # If the discriminant is more than 0
+    if discriminant >= 0:
+
+        # If the part after the plus minus is zero
+        if part_after_plus_minus == 0:
+
+            # Then just print the front part
+            print(f"{(-b / 2 * a)}")
+
+        # Otherwise
+        else:
+
+            # Prints the results normally
+            print(f"{(-b / 2 * a) + part_after_plus_minus} or")
+            print(f"{(-b / 2 * a) - part_after_plus_minus}")
+
+    # Otherwise
+    else:
+
+        # Prints the result with the i to signify a complex number
+        print(f"{(-b / 2 * a)} + {part_after_plus_minus}i or")
+        print(f"{(-b / 2 * a)} - {part_after_plus_minus}i")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// The function to solve a quadratic equation
+fn solve_quadratic_eqn() {
+
+    // The list of terms
+    let terms = ["x^2", "x", "constant"];
+
+    // Initialise the hashmap to store the coefficients
+    let mut coefficients = std::collections::HashMap::<&str, f64>::new();
+
+    // Iterates over the coefficients
+    for term in terms {
+
+        // Initialise the variable to represent
+        // whether or not the input is numeric
+        let mut is_number = false;
+
+        // Initialise the string to store the user's input
+        let mut input = String::new();
+
+        // While the input is not numeric
+        while !is_number {
+
+            // Print the prompt
+            print!("Please enter the coefficient for the {} term: ", term);
+
+            // Flush the stdout
+            std::io::stdout().flush().unwrap();
+
+            // Read the user's input to the input variable
+            match std::io::stdin().read_line(&mut input) {
+                Ok(_number_of_bytes) => (),
+                Err(error) => println!("Error: {error}")
+            }
+
+            // Match statement to handle errors
+            match input.trim().parse::<f64>() {
+
+                // If there are no errors
+                Ok(value) => {
+
+                    // Set the value in the hashmap
+                    coefficients.insert(term, value);
+
+                    // Set the is_number variable to true
+                    is_number = true;
+                },
+
+                // If there's an error parsing, set is_number is false
+                Err(_) => is_number = false
+            }
+
+            // Make the input an empty string
+            input = "".to_string();
+        }
+    }
+
+    // Gets the values for a, b and c
+    let a = *coefficients.get("x^2").unwrap();
+    let b = *coefficients.get("x").unwrap();
+    let c = *coefficients.get("constant").unwrap();
+
+    // Get the discriminant
+    let discriminant = b.powi(2) - 4.0 * a * c;
+
+    // Gets the part after the plus minus function
+    let part_after_plus_minus = f64::sqrt(discriminant.abs()) / (2.0 * a);
+
+    // Prints the word "Results:"
+    println!("Results:");
+
+    // Check if the discriminant is more than or equal to zero
+    match discriminant >= 0.0 {
+
+        // If the discriminant is more than or equal to 0
+        true => {
+
+            // Check if the part after the plus minus is zero
+            match part_after_plus_minus == 0.0 {
+
+                // If it is, just print the front part
+                true => println!("{}", (-b / 2.0 * a)),
+
+                // Otherwise
+                false => {
+
+                    // Prints the results normally
+                    println!("{} or", (-b / 2.0 * a) + part_after_plus_minus);
+                    println!("{}", (-b / 2.0 * a) - part_after_plus_minus);
+                }
+            }
+        },
+
+        // If the discriminant is less than 0
+        false => {
+
+            // Prints the result with the i to signify a complex number
+            println!("{} + {}i or", (-b / 2.0 * a), part_after_plus_minus);
+            println!("{} - {}i", (-b / 2.0 * a), part_after_plus_minus);
+        }
+    }
+}
+#+end_src
+
+** Question 7
+Python implementation:
+#+begin_src python
+import re
+
+# The regex to check if a string is a number
+is_number_regex = re.compile(r"^-?\d+(?:\.\d+)?$")
+
+
+def find_quadrant_of_coordinates() -> None:
+    "Function to get the quadrant from an (x, y) coordinate"
+
+    # The list to store the user's input for the x and y coordinates
+    x_y_coordinates: list[float] = []
+
+    # Iterates over the list of axes
+    for axis in ["x", "y"]:
+
+        # The variable representing whether the input is a number or not
+        is_number = False
+
+        # While the input isn't a number
+        while not is_number:
+
+            # Gets the input
+            user_input = input(f"Please enter the {axis} coordinate: ")
+
+            # Set the is_number variable
+            is_number = bool(is_number_regex.match(user_input))
+
+        # Add the user's input converted to a float to the of coordinates
+        x_y_coordinates.append(float(user_input))
+
+    # Gets the x and y values
+    x = x_y_coordinates[0]
+    y = x_y_coordinates[1]
+
+    # Check if the x and y values are in the first quadrant
+    if x > 0 and y > 0:
+
+        # Print that the coordinates are in the first quadrant
+        print("The coordinates are in the first quadrant.")
+
+    # Otherwise, check if the x and y values are in the second quadrant
+    elif x < 0 and y > 0:
+
+        # Print that the coordinates are in the second quadrant
+        print("The coordinates are in the second quadrant.")
+
+    # Otherwise, check if the x and y values are in the third quadrant
+    elif x < 0 and y < 0:
+
+        # Print that the coordinates are in the third quadrant
+        print("The coordinates are in the third quadrant.")
+
+    # Otherwise, check if the x and y values are in the fourth quadrant
+    elif x > 0 and y < 0:
+
+        # Print that the coordinates are in the fourth quadrant
+        print("The coordinates are in the fourth quadrant.")
+
+    # Otherwise, check if the x value is 0
+    elif int(x) == 0:
+
+        # Print that the coordinates are on the x-axis
+        print("The coordinates are on the x-axis.")
+
+    # Otherwise, check if the y value is 0
+    elif int(y) == 0:
+
+        # Print that the coordinates are on the x-axis
+        print("The coordinates are on the y-axis.")
+#+end_src
+
+Rust implementation:
+#+begin_src rust
+use std::io::Write;
+
+
+// Function to get the quadrant from an (x, y) coordinate
+fn find_quadrant_of_coordinates() {
+
+    // The list to store the user's input for the x and y coordinates
+    let mut x_y_coordinates: Vec<f64> = vec![];
+
+    // Iterates over the list of axes
+    for axis in ["x", "y"] {
+
+        // Initialise the variable to represent
+        // whether or not the input is numeric
+        let mut is_number = false;
+
+        // Initialise the string to store the user's input
+        let mut input = String::new();
+
+        // While the input is not numeric
+        while !is_number {
+
+            // Prints the prompt
+            print!(
+                "Please enter the {axis} coordinate: "
+            );
+
+            // Flush the stdout
+            std::io::stdout().flush().unwrap();
+
+            // Read the user's input to the input variable
+            match std::io::stdin().read_line(&mut input) {
+                Ok(_number_of_bytes) => (),
+                Err(error) => println!("Error: {error}")
+            }
+
+            // Match statement to handle errors
+            match input.trim().parse::<f64>() {
+
+                // If there are no errors
+                Ok(value) => {
+
+                    // Adds the user's input to the list of coordinates
+                    x_y_coordinates.push(value);
+
+                    // Set the is_number variable to true
+                    is_number = true;
+                },
+
+                // If there's an error parsing, set is_number is false
+                Err(_) => is_number = false
+            }
+
+            // Make the input an empty string
+            input = "".to_string();
+        }
+    }
+
+    // Gets the x and y values
+    let x = x_y_coordinates[0];
+    let y = x_y_coordinates[1];
+
+    // Check if the x && y values are in the first quadrant
+    if x > 0.0 && y > 0.0 {
+
+        // Print that the coordinates are in the first quadrant
+        println!("The coordinates are in the first quadrant.");
+    }
+
+    // Otherwise, check if the x && y values are in the second quadrant
+    else if x < 0.0 && y > 0.0 {
+
+        // Print that the coordinates are in the second quadrant
+        println!("The coordinates are in the second quadrant.");
+    }
+
+    // Otherwise, check if the x && y values are in the third quadrant
+    else if x < 0.0 && y < 0.0 {
+
+        // Print that the coordinates are in the third quadrant
+        println!("The coordinates are in the third quadrant.");
+    }
+
+    // Otherwise, check if the x && y values are in the fourth quadrant
+    else if x > 0.0 && y < 0.0 {
+
+        // Print that the coordinates are in the fourth quadrant
+        println!("The coordinates are in the fourth quadrant.");
+    }
+
+    // Otherwise, check if the x value is 0
+    else if x as i32 == 0 {
+
+        // Print that the coordinates are on the x-axis
+        println!("The coordinates are on the x-axis.");
+    }
+
+    // Otherwise, check if the y value is 0
+    else if x as i32 == 0 {
+
+        // Print that the coordinates are on the x-axis
+        println!("The coordinates are on the y-axis.");
+    }
+}
+#+end_src

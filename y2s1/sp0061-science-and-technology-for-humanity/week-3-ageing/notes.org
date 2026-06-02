@@ -1,0 +1,423 @@
+#+TITLE: SP0061 Science & Tech for Humanity Week 3 Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** Population health
+Population health refers to the health outcomes of a group of individuals, including the distribution of such outcomes within the group. These groups are often geographic populations such as nations or communities, but can also be other groups such as employees, ethnic groups, disabled persons, prisoners, or any other defined group.
+
+In Singapore, this would refer to either:
+- People living in a geographical area within Singapore
+- Age or occupational related groups, like school children, taxi drivers and retirees.
+
+Healthcare budgets should be allocated to meet needs, not wants.
+
+** Old age support ratio
+Old age support ratio refers to the number of people aged 20 - 64 per resident aged 65 and above in Singapore.
+
+** Elderly
+The elderly are a group of people defined as people aged 65 and above.
+
+*** Grouping by age
+[[./images/elderly-grouped-by-age.png]]
+
+1. "Young olds", who are aged 65 - 74, are generally well and independent elderly.
+2. Elderly who are 75 - 84 years old are considered to have chronic illness and disabilities.
+3. Elderly above 85 years old are considered to be frail elderly
+
+*** Grouping by health and functional status
+[[./images/elderly-grouped-by-health.png]]
+
+
+** Production economics
+[[./images/production-economics.png]]
+
+Production economics consists of multiple factors to create an output, which is basically any good or service.
+
+*** Labour
+Labour is a traditional input of production that refers to the labour or workforce of the economy. You need labour as an input to produce any good or service.
+
+**** Impact of ageing
+- Labour will be directly impacted by the ageing population, especially in economies that rely primarily on physical labour. The elderly typically will not fare very well doing physical labour.
+- The effective size of the labour force will also be impacted by an ageing population, which results in less sources of income tax revenue which will reduce the amount the country collects from taxes.
+
+*** Land
+Land is a traditional input of production that refers to natural resources like oil, gas, as well as the actual land used to produce agricultural products and the land that factories occupy to produce goods.
+
+**** Impact of ageing
+As the population ages, the land use for agricultural societies will decrease.
+
+*** Capital
+Capital is a traditional input of production that refers to funding for the business to produce the good or service.
+
+**** Impact of ageing
+As the population ages, more of the funds in the banks are held in retirement and pension funds, which have specific regulation and rules about their investment strategies, which have to be more risk averse. As such, these funds will not be able to be used for high risk projects.
+
+
+*** Entrepreneurship
+Entrepreneurship is a new input of production that refers to the leadership of a business by individuals with the right business mindset and entrepreneurship spirit.
+
+**** Impact of ageing
+As the population ages, there is an increase in entrepreneurship to a certain extent, as individuals who start businesses in their 50s tend to be more successful due to the years of experience they have garnered. Beyond the age of 60, entrepreneurship is negatively impacted by ageing.
+
+*** Technology
+Technology is a new input of production that refers to the ability to harness the production capability of the other inputs above and convert them into outputs in the most efficient manner.
+
+**** Impact of ageing
+Technology does not impact ageing, but rather moderates the effect of ageing on societies by forcing societies to make processes more efficient and reliable.
+
+** Consumption economics
+Consumption is the goods and services consumed by the economy.
+
+*** Public goods
+Public goods are goods that are produced by the government. Examples include:
+- Public healthcare
+- Social security and needs
+- Environment accessibility
+- Defence
+
+*** Private goods
+Private goods are goods that are produced by commercial entities.
+
+**** Services
+- Private healthcare
+- Social and lifestyle needs
+
+**** Products
+- Durables like electrical appliances, mobility aids, etc.
+- Consumables like nutrient supplements
+
+* Views of healthcare
+
+** Specific diseases
+In healthcare, we can look at specific diseases to study their causes, effects on humans, find ways to investigate, treat those affected, manage the complications, if any, and think about how to prevent them or mitigate their effects. Examples include ischaemic heart disease, cancers, and metabolic diseases.
+
+** Specific groups of people
+We can also look at specific groups of people, the kinds of diseases they get and how to diagnose and treat them:
+- Age groups, like children and the elderly.
+- Defined groups, like those living in a particular environment, occupational groups, racial groups (heredity, diet, cultural practices and social norms).
+
+* Healthcare trends, problems and solutions
+- Increasing number of elderly population. The percentage of resident population *aged 65 and above* increased from 9% in 2010 to 16% in 2021.
+- *Old age support ratio* fell from 10.5 in 1990 to 7.4 in 2010 to 4.0 in 2021.
+- Number of *people living alone* increased from 9.9% in 2011 to 15.6% in 2021. Note that this statistic is not limited to the elderly.
+
+** Changing demographics and implications
+
+*** What does increasing number of elderly really mean?
+- More elderly equals more people with frailty?
+- Or more well elderly and a changing workforce?
+
+*** Longer durations of chronic disease?
+- More people with co-morbidities and end-organ failures?
+- Or better disease control with longer disability free lives?
+
+*** Changing workforce?
+- More retirees and greater dependence on society for support?
+- Or shifting retirement age, extended employment, and new careers?
+
+*** New shifts in health and social care?
+- Redefining ageing
+
+** Using a solutions-oriented approach rather than a problem-oriented approach
+
+*** Increasing number of elderly
+Increasing the number of active and productive older people who can still contribute to the larger society.
+
+*** Environmental modifications to support care of the elderly
+Creating new environments that allow older people to continue active, meaningful and productive lives.
+
+*** Healthcare burden of older population
+Creating meaningful career opportunities for younger people.
+
+*** Costs of supporting the elderly
+Keeping older people economically productive in creative ways (it doesn't always have to be work).
+
+*** A burden to the young
+Create mutual support amongst older populations so that they are self-sufficient, with some help.
+
+** Common health issues
+
+*** Medical
+- Cataracts
+- Chronic heart and lung diseases
+- Osteoporosis, fragility fractures, osteoarthritis
+- Neurological diseases
+- Cognitive impairment
+- Depression
+- Multiple medications
+- Malignancies
+
+*** Functional
+- Visual impairment
+- Decreased effort tolerance
+- Chronic pain, impaired hand function, impaired mobility
+- Memory impairment, increasing dependence on caregivers
+- Disturbed behaviour
+- Sleep disturbance
+- Adverse effects
+
+** History of aged care in Singapore (from the 1980s)
+
+*** Report on the problems of the aged, 1984 ("Howe Yoon Chong Report")
+There is a need to set aside individual savings and government funding for aged care.
+
+*** Homes for the Aged Act 1988
+- Regulation of aged care homes
+- Aged care homes, nursing homes, chronic sick units
+
+*** Home nursing
+- Home nursing foundation was set up
+- Senior Citizens' Health Care Centre (SCHCC)
+
+*** Hospitals
+Hospitals were grown, rebuilt and restructured to cater to the needs of the elderly.
+
+** Community services for the elderly: 1980 - 90s
+
+*** Acute
+- Hospitals
+
+*** Intermediate
+- Community hospitals
+- Day rehabilitation
+- Home care
+- Hospice care
+
+*** Long-term
+- Nursing homes
+- Sheltered homes
+- Hospices
+- Day care
+- Home care
+- Home hospice
+
+** Challenges in managing frail elderly
+- Different disease patterns and responses to treatment
+- Complex chronic disease that are usually combinations of diseases
+- Physical and mental conditions
+- Increasing need for subacute and rehabilitative care
+- Evolving social structure
+  - Fewer children to support
+  - Smaller nuclear family
+    - Causes a decrease in informal caregivers
+    - Causes a decrease in societal capability in caring for the frail elderly
+  - Caregiver stress
+
+** Geriatric syndromes ("Giants of Geriatrics")
+
+*** Coined in 1965 by Bernard Isaacs
+- Immobility
+- Instability, meaning increased propensity for falling
+- Incontinence, meaning difficulty in pooping
+- Impaired intellect and memory
+- Inanition, meaning the lack of adequate nutrition or a physiological inability to utilise them.
+
+*** Coined in 2017 by John Morley
+- Sarcopenia, which is a progressive decline in muscle mass and strength due to ageing
+- Frailty
+- Cognitive impairment
+- Anorexia of ageing, which is just anorexia due to poor appetite or reduced food intake
+- Hip fractures
+- Depression
+- Delirium, which is severe confusion, disorientation and being unaware of surroundings.
+
+** Care integration
+- With many settings to look after the continuum of illness for one patient, care can be fragmented.
+- High risk of care fragmentation for frail elderly, whose health needs traverse across different or multiple sectors by different care providers.
+- Integrative care model offers care that is patient-centred, recognising that health and social outcomes are *interdependent*.
+
+** Anticipatory care
+Anticipatory care is just anticipating problems and trying to prevent or mitigate them before they occur, asking questions like:
+1. What are the existing problems?
+2. What other problems do we anticipate in the coming future?
+
+*** Medical issues
+- Progression of disease
+- Likelihood of new disease
+- Prolonged effects of treatment
+
+*** Functional issues
+- Decline in physical or mental function
+- Disease progression or disuse or deconditioning
+
+*** Social issues
+- Potential care crisis and placement issues
+- Potential ethical or legal issues
+- Elder mistreatment or abuse
+
+** Team approach to care
+- Specialists
+- Family physician
+
+- Nurse
+- Nurse clinician
+- Advanced nurse practitioner
+
+- Pharmacists
+- Medical social worker
+- Psychologist
+
+- Physiotherapist
+- Occupational therapist
+- Prosthetist
+- Orthotist
+- Speech therapist
+- Dietician
+
+- Case managers
+- Operations team
+
+- Patient, family and caregivers
+
+** Healthcare cluster
+[[./images/healthcare-cluster.jpg]]
+
+** Healthcare facilities
+[[./images/healthcare-facilities.png]]
+
+** Healthcare: Moving forward
+
+*** Beyond hospital to community
+- Managing regional health
+- Transforming primary care
+- Developing aged care in the community
+
+*** Beyond quality to value
+- Ensuring appropriate care
+- Making healthcare manpower more efficient through innovation
+
+*** Beyond healthcare to health
+- Ageing actively
+- Moving upstream to health and declaring war on diabetes
+
+** Funding of healthcare
+
+*** Medisave
+Compulsory savings in Central Provident Fund (CPF).
+
+*** Medishield, Medishield Life
+Catastrophic medical insurance
+
+*** Medifund
+For low-income groups
+
+*** Eldershield
+Long-term disability insurance
+
+*** Other government schemes
+- Pioneer generation (PG)
+- Community Health Assist Scheme (CHAS)
+- Interim Disability Assistance Programme for the Elderly (IDAPE)
+- Caregivers Training Grant (CTG)
+- Eldercarer Foreign Domestic Worker Scheme (FDW)
+- Seniors Mobility and Enabling Fund (SMF or SMEF)
+
+** Stages of Advance Care Planning (ACP)
+
+*** Healthy adults or adults with early chronic disease
+
+*General ACP discussion*:
+
+Nominate substitute decision makers and consider when a serious neurological injury would change goals of treatment.
+
+*** Adults with progressive, life-limiting illness, and are suffering from frequent complications
+
+*Disease specific-ACP*:
+
+Determine what goals of treatment should be followed if complications result in "bad" outcomes:
+- Cardiac-DS
+- Renal-DS
+- COPD-DS
+
+*** Adults whom it will not be a surprised if they died in the next 12 months
+
+*Preferred Plan of Care ACP*:
+
+Establish a specific plan of care expressed in the preferred plan of care form.
+
+* Functional assessment scales
+- Clinical frailty score (CFS)
+  1. Very fit
+  2. Well
+  3. Managing well
+  4. Vulnerable
+  5. Mildly frail
+  6. Moderately frail
+  7. Severely frail
+  8. Very severely frail, which means you are wheelchair-bound or bedridden
+  9. Terminally ill
+- Barthel index for Activities of Daily Living (ADL)
+- Instrumental Activities of Daily Living (IADL), which include things like whether the individual can prepare food for themselves and similar daily tasks
+- Abbreviated Mental Test (AMT) tests an individual's memory and cognition
+- Geriatric Depression Scale (GDS) tests an individual's mood for depression
+
+* Care for the elderly
+[[./images/eldercare-landscape.png]]
+
+** Elderly who are well
+The goals for this group of elderly are "healthy ageing" and "successful ageing".
+
+*** Individual factors
+- Longevity
+- Genetic factors
+- Diet, exercise and lifestyle
+
+*** Community and society factos
+- Family and community interactions
+- Intergenerational relationships
+- Housing, community living
+- Workplace, retirement, finances
+
+*** Health promotion and education
+- Health for older persons
+- Mini medical school
+
+** Elderly who have chronic illness
+The goals for this group of elderly are disease management and "restorative medicine". This group of elderly needs a lot more care and more programs to support their illnesses and to treat the conditions.
+
+*** Diseases and impairments
+- Acute and chronic diseases
+- Blood pressure, diabetes, lipids, malignancies
+- Functional impairment
+
+*** Other issues
+- Memory deficits, dementia
+- Depression
+- Falls, osteoporosis, fractures
+- Incontinence
+- Chronic pain
+- Polypharmacy
+- Rehabilitation
+- "Restorative medicine", which refers to joint and other organ replacements
+
+** Elderly who have complex illnesses
+The goal for this group of elderly is "advance care management".
+
+Complex illnesses will require:
+- Acute, subacute, intermediate and long-term care
+- Utilisation of multiple health services
+- Care transitions
+- Care coordination
+- Healthcare funding, costs, benefits
+
+** Elderly who are near the end of life
+This group of elderly will receive palliative care for the end of life issues, and advance care planning for their preferences at the end of their life.
+
+* Silver Tsunami
+- 9% of Singaporeans are aged 65 and above in 2010
+- 15.2% of Singaporeans are aged 65 and above in 2020
+- 25% of Singaporeans are predicted to be aged 65 and above in 2030
+
+** Distribution of residents older than 65
+
+*** 2001
+[[./images/distribution-of-residents-older-than-65-in-2001.png]]
+
+*** 2011
+[[./images/distribution-of-residents-older-than-65-in-2011.png]]
+
+*** 2021
+[[./images/distribution-of-residents-older-than-65-in-2021.png]]

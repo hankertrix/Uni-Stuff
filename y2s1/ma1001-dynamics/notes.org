@@ -1,0 +1,1996 @@
+#+TITLE: MA1001 Dynamics Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{siunitx}
+#+LATEX_HEADER: \usepackage{mathtools}
+#+LATEX_HEADER: \setlength{\parindent}{0em}
+
+* Definitions
+
+** Scalars
+Scalars are quantities that are fully described by a *magnitude* (or numerical value) alone, like mass, length, time, and energy.
+
+** Vectors
+Vectors are quantities that are fully described by both a *magnitude* and a *direction*, like displacement, velocity and acceleration.
+
+** Rectilinear motion
+Rectilinear motion is defined as the motion of a particle along a straight line.
+
+** Position coordinates
+The position coordinates is the coordinates that wholly defines the position of a particle, usually from an origin.
+
+** Reference frames
+Reference frames are the frames in which a coordinate system is created to determine an object's motion.
+
+*** Absolute reference frame
+The absolute reference frame is the frame that never moves. In other words, it is glued to the ground and does not translate or rotate as the ground never moves.
+
+*** Point-attached reference frame
+Point-attached reference frames are reference frames that are attached to a point on an object or body. These reference frames never rotate, only translate. The origin of the reference frame is the point the reference frame is attached to. In other words, the origin of a point-attached reference frame is glued to a point on an object or a body, and since a point cannot be rotated, the reference frame likewise also cannot be rotated, only translated.
+
+*** Body-attached reference frame
+Body-attached reference frames are reference frames where the reference frame is attached to an object or body. The reference frame can be thought of as being glued to an object or body. Such reference frames can both translate and rotate, as they follow the body's motion.
+
+** Velocity (\(v\))
+The velocity of a particle is equal to the time derivative of the particle's position (\(x\)), i.e.
+\[v = \frac{dx}{dt}\]
+
+Where:
+- $v$ is the velocity of the particle
+- $\frac{dx}{dt}$ is the derivative of the position of the particle with respect to time
+
+** Acceleration (\(a\))
+The acceleration of a particle is obtained by differentiating the particle's velocity (\(v\)) with respect to time, i.e.
+\[a = \frac{dv}{dt}\]
+\[a = \frac{d^2x}{dt^2}\]
+\[a = v \frac{dv}{dx}\]
+
+Where:
+- $a$ is the acceleration of the particle
+- $\frac{dv}{dt}$ is the derivative of the velocity of the particle with respect to time
+- $\frac{d^2x}{dt^2}$ is the second derivative of the position of the particle with respect to time
+- $v$ is the velocity of the particle
+- $\frac{dv}{dx}$ is the derivative of the velocity of the particle with respect to its position
+
+** Right-hand grip (screw) rule
+[[./images/right-hand-grip-rule.png]]
+
+** Circular motion
+
+*** Period (\(T\))
+Period refers to the time taken for an object in circular motion to complete one revolution.
+
+*** Frequency (\(f\))
+\[f = \frac{1}{T}\]
+
+Where:
+- $f$ is the frequency
+- $T$ is the period
+
+@@latex: \newpage@@
+
+*** Angular displacement (\(\theta\))
+\[\theta = \frac{\text{Arc length}}{r}\]
+
+Where:
+- $\theta$ is the angular displacement of the object in circular motion
+- $r$ is the distance of the object from the centre of the circle
+
+*** Angular velocity (\(\vec{\omega}\))
+\[\vec{\omega} = \frac{2 \pi}{T} \hat{e}\]
+\[\vec{\omega} = \frac{\theta}{t} \hat{e}\]
+\[\vec{\omega} = \frac{\vec{v}}{r}\]
+
+Where:
+- $\vec{\omega}$ is the angular velocity vector of the object in circular motion
+- $T$ is the period
+- $\theta$ is the angle rotated by the object in circular motion
+- $t$ is the time taken for the object to rotate the angle $\theta$
+- $\hat{e}$ is the direction vector perpendicular to the plane that the motion is taking place, usually $\vec{k}$. Use the right-hand grip (screw) rule to figure out the direction of the angular velocity.
+- $\vec{v}$ is the velocity vector of the object in circular motion
+- $r$ is the distance of the object from the centre of the circle
+
+@@latex: \newpage@@
+
+*** Angular acceleration (\(\vec{\alpha}\))
+\[\vec{\alpha} = \frac{a_t}{r} \hat{e}\]
+\[\vec{\alpha} = \frac{\vec{\omega}}{t}\]
+
+Where:
+- $\vec{\alpha}$ is the angular acceleration of the object in circular motion
+- $a_t$ is the magnitude of the tangential acceleration of the object in circular motion
+- $\hat{e}$ is the direction vector perpendicular to the plane that the motion is taking place, usually $\vec{k}$. Use the right-hand grip (screw) rule to figure out the direction of the angular velocity.
+- $r$ is the distance of the object from the centre of the circle
+- $\vec{\omega}$ is the angular velocity of the object in circular motion
+- $t$ is the time taken for the object to rotate
+
+*** Position (\(\vec{r}\))
+\[\vec{r} = r_0 \vec{e}_r = r_0 (\cos \theta \hat{i} + \sin \theta \hat{j})\]
+
+Where:
+- $\vec{r}$ is the position vector of an object in circular motion
+- $r_0$ is the distance of the object away from the centre of the circle
+- $\theta$ is the angular displacement
+
+@@latex: \newpage@@
+
+*** Velocity (\(\vec{v}\))
+\[\vec{v} = \frac{d \vec{r}}{dt} = \frac{d}{dt} (r_0 \hat{e}_r) = r_0 \frac{d \hat{e}_r}{dt}\]
+\[\frac{d \hat{e}_r}{dt} = \dot{\theta} (- \sin \theta \hat{i} + \cos \theta \hat{j}) = \omega \hat{e}_{\theta}\]
+\[\vec{v} = \vec{\omega} \times \vec{r}\]
+
+Where:
+- $\vec{v}$ is the velocity vector of the object in circular motion
+- $r_0$ is the distance of the object from the centre of the circle
+- $\hat{e}_r$ is the unit vector parallel to the position vector of the object
+- $\dot{\theta}$ is the rate of change of angular displacement
+- $\theta$ is the angular displacement
+- $\hat{e}_{\theta}$ is the unit vector perpendicular to the position vector of the object, it is $\hat{e}_r$ rotated $90^{\circ}$ anti-clockwise
+- $\vec{\omega}$ is the angular velocity vector of the object
+- $\vec{r}$ is the position vector of the object with respect to the centre of the circle, i.e. the centre of the circle is the origin
+
+*** Tangential acceleration (\(\vec{a}_t\))
+Tangential acceleration of an object in circular motion is the acceleration *parallel* to its direction of motion. Tangential acceleration only changes the *speed* or the *magnitude of the velocity* of the object.
+\[\vec{a}_t = \vec{\alpha} \times \vec{r}\]
+
+Where:
+- $\vec{a}$ is the tangential acceleration vector of the object in circular motion
+- $\vec{\alpha}$ is the angular acceleration vector of the object
+- $\vec{r}$ is the position vector of the object with respect to the centre of the circle, i.e. the centre of the circle is the origin
+
+@@latex: \newpage@@
+
+*** Centripetal or normal acceleration (\(\vec{a}_n\))
+Centripetal or normal acceleration of an object in circular motion is the acceleration *perpendicular* to its direction of motion. Centripetal or normal acceleration only changes the *direction* of the object.
+\[\vec{a}_n = \vec{\omega} \times \vec{v} = - \omega^2 \vec{r} = - \frac{v^2}{r} \hat{e}_{\theta}\]
+
+Where:
+- $\vec{a}_n$ is the centripetal or normal acceleration of the object in circular motion
+- $\vec{\omega}$ is the angular velocity vector of an object in circular motion
+- $\vec{v}$ is the velocity vector of the object in circular motion
+- $\omega$ is the magnitude of the angular velocity of an object in circular motion
+- $\vec{r}$ is the position vector of the object with respect to the centre of the circle, i.e. the centre of the circle is the origin
+- $v$ is the magnitude of the velocity vector
+- $\hat{e}_{\theta}$ is the unit vector perpendicular to the position vector of the object, it is $\hat{e}_r$ rotated $90^{\circ}$ anti-clockwise
+
+*** Total acceleration (\(\vec{a}\))
+\[\vec{a} = \vec{a}_t + \vec{a}_n\]
+
+Where:
+- $\vec{a}$ is the total acceleration of the object in circular motion
+- $\vec{a}_t$ is the tangential acceleration of the object in circular motion
+- $\vec{a}_n$ is the centripetal or normal acceleration of the object in circular motion
+
+*** Physical meaning of the components of total acceleration
+[[./images/physical-meaning-of-components-of-total-acceleration.png]]
+
+@@latex: \newpage@@
+
+** Uniform rectilinear motion
+The velocity of the particle is *constant* in uniform rectilinear motion, i.e.
+\[x = x_0 + vt\]
+
+Where:
+- $x$ is the final position of the particle
+- $x_0$ is the initial position of the particle
+- $v$ is the velocity of the particle
+- $t$ is the time taken by the particle
+
+** Uniformly accelerated rectilinear motion
+The acceleration of the particle is *constant* in uniformly accelerated rectilinear motion, i.e.
+\[v = v_0 + at\]
+\[x = x_0 + v_0t + \frac{1}{2}at^2\]
+\[v^2 = v_0^2 + 2a(x - x_0)\]
+
+Where:
+- $v$ is the final velocity of the particle
+- $x$ is the final position of the particle
+- $a$ is the acceleration of the particle
+- $t$ is the time take by the particle
+- $v_0$ is the initial velocity of the particle
+- $x_0$ is the initial position of the particle
+
+@@latex: \newpage@@
+
+** Acceleration of free fall
+The acceleration of free fall is \(\qty{-9.81}{m.s^{-2}}\), taking upwards as positive.
+
+** Graphical solution
+- A graphical solution is essentially just drawing a graph to solve a dynamics problem.
+- A graphical solution most commonly involves:
+  - $x$ - $t$ curve or displacement-time curve
+  - $v$ - $t$ curve or velocity-time curve
+  - $a$ - $t$ curve or acceleration-time curve
+- At any given time \(t\):
+  - \(v =\) slope of $x$ - $t$ curve
+  - \(a =\) slope of $a$ - $t$ curve
+- Over any given time interval \(t_1\) to \(t_2\):
+  - \(v_2 - v_1 = \) area under $a$ - $t$ curve \( = \int_{t_1}^{t_2} a \, dt\)
+  - \(x_2 - x_1 = \) area under $v$ - $t$ curve \( = \int_{t_1}^{t_2} v \, dt\)
+
+@@latex: \newpage@@
+
+** Curvilinear motion
+[[./images/curvilinear-motion-of-particle.png]]
+
+The curvilinear motion of a particle involves particle motion along a curved path. The position $P$ of the particle at a given time is defined by the position vector $\vec{r}$ joining the origin $O$ of the coordinate system with the point $P$.
+
+** Velocity of a particle in curvilinear motion (\(\vec{v}\))
+[[./images/curvilinear-motion-of-particle.png]]
+
+The velocity \(\vec{v}\) of the particle is defined by the relation:
+\[\vec{v} = \frac{d \vec{r}}{dt}\]
+
+The velocity vector is tangent to the path of the particle, and has a magnitude $v$ equal to the time derivative of the length $s$ of the arc described by the particle:
+\[v = \frac{ds}{dt}\]
+
+** Instantaneous velocity of a particle in curvilinear motion (\(\vec{v}_{instant}\))
+#+ATTR_LATEX: :scale 0.6
+[[./images/instantaneous-velocity-in-curvilinear-motion.png]]
+
+\[\vec{v}_{instant} \equiv \lim_{\Delta t \rightarrow 0} \frac{\Delta \vec{r}}{\Delta t} = \frac{d \vec{r}}{dt}\]
+
+Where:
+- $\vec{v}_{instant}$ is the instantaneous velocity of the particle in curvilinear motion
+- $\delta \vec{r}$ is the change in position vector of the particle
+- $\delta t$ is the change in time
+- $d \vec{r}$ is the change in position vector of the particle
+- $dt$ is the infinitesimal change in time
+
+** Acceleration of a particle in curvilinear motion (\(\vec{a}\))
+In general, the acceleration $\vec{a}$ of the particle is not tangent to the *path of the particle*. It is defined by the relation:
+\[\vec{a} = \frac{d \vec{v}}{dt}\]
+
+Where:
+- $\vec{a}$ is the acceleration vector of the particle
+- $d \vec{v}$ is the change in the velocity vector
+- $dt$ is the change in time
+
+** Instantaneous acceleration of a particle in curvilinear motion (\(\vec{a}_{instant}\))
+In general, the acceleration $\vec{a}$ of the particle is not tangent to the *path of the particle*. It is defined by the relation:
+
+\[\vec{a}_{instant} \equiv \lim_{\Delta t \rightarrow 0} \frac{\Delta \vec{v}}{\Delta t} = \frac{d \vec{v}}{dt}\]
+
+The instantaneous acceleration is the limit of the average acceleration \(\frac{\Delta \vec{v}}{\Delta t}\), as $\Delta t$ approaches 0.
+- The magnitude of the velocity vector may change.
+- The direction of the velocity vector may change, even if the magnitude remains constant.
+- Both may change simultaneously.
+
+Where:
+- $\vec{a}_{instant}$ is the instantaneous acceleration vector of the particle
+- $\Delta \vec{v}$ is the change in the velocity vector
+- $\Delta t$ is the change in time
+- $d \vec{v}$ is the change in the velocity vector
+- $dt$ is the infinitesimal change in time
+
+** Rectangular coordinate system
+Denoting $x, y$ and $z$ as the rectangular coordinates of a particle $P$, the rectangular components of velocity and acceleration of $P$ are equal to the first and second derivatives with respect to $t$ of the corresponding coordinates:
+\begin{center}
+\begin{tabular}{ c c c }
+$v_x = \dot{x}$ & $v_y = \dot{y}$ & $v_z = \dot{z}$ \\
+$a_x = \ddot{x}$ & $a_y = \ddot{y}$ & $a_z = \ddot{z}$
+\end{tabular}
+\end{center}
+
+The use of rectangular components is particularly effective in the study of the motion of particles.
+
+** Path coordinate system
+[[./images/path-coordinate-system.png]]
+
+\[\hat{e}_t = \cos \theta (t) \hat{i} + \sin \theta (t) \hat{j}\]
+\[\vec{v} = \dot{s} \hat{e}_t = v \hat{e}_t = v \angle \theta = \dot{s} \theta\]
+
+Where:
+- $\hat{e}_t$ is the unit vector directed along the tangent to the path
+- $\theta (t)$ is the tangent unit vector
+- $\vec{v}$ is the velocity vector directed along the tangent to the path
+- $\dot{s}$ is the rate of change of the path coordinate
+- $v$ is the speed of the particle
+
+*** Kinematics equations
+[[./images/path-coordinates-kinematics-equations.png]]
+\[\vec{v} = v \hat{e}_t\]
+\[\vec{a} = \frac{dv}{dt} \hat{e}_t + \frac{v^2}{\rho} \hat{e}_n\]
+
+Where:
+- $\vec{v}$ is the velocity vector directed along the tangent to the path
+- $v$ is the speed of the particle
+- $\hat{e}_t$ is the unit vector directed along the tangent to the path
+- $\rho$ is the radius of curvature of its path.
+- $\vec{a}$ is the acceleration vector
+- $\hat{e}_n$ is the unit vector directed towards the centre of curvature of the path
+
+*** Radius of curvature (\(\rho\))
+[[./images/radius-of-curvature-in-path-coordinate-system.png]]
+\[\rho = \lim_{\Delta \theta \rightarrow 0} \left|\frac{\Delta s}{\Delta \theta} \right| = \left| \frac{ds}{d \theta} \right| = \left| \frac{\frac{ds}{dt}}{\frac{d \theta}{dt}} \right| = \left| \frac{v}{\omega} \right|\]
+
+Where:
+- $\rho$ is the radius of curvature
+- $\Delta s$ is the change in path coordinate
+- $\Delta \theta$ is the change in angle subtended from the middle of the circle
+- $ds$ is the infinitesimal change in path coordinate
+- $d \theta$ is the infinitesimal change in angle subtended from the middle of the circle
+- $v$ is the velocity of the particle
+- $\omega$ is the angular velocity of the particle
+
+*** Acceleration (\(\vec{a}\))
+#+ATTR_LATEX: :scale 0.4
+[[./images/acceleration-in-path-coordinate-system.png]]
+
+\[\vec{a}_t = \ddot{s} \hat{e}_t\]
+\[\vec{a}_n = \frac{v^2}{\rho} \hat{e}_n\]
+\[\vec{a} = \vec{a}_t + \vec{a}_n\]
+
+Where:
+- $\vec{a}_t$ is the tangential acceleration
+- $\ddot{s}$ is the rate of change of the rate of change of the path coordinate
+- $\hat{e}_t$ is the unit vector directed along the tangent to the path
+- $\vec{a}_n$ is the normal or centripetal acceleration
+- $v$ is the velocity of the particle
+- $\rho$ is the radius of curvature of the path
+- $\hat{e}_n$ is the unit vector directed towards the centre of curvature of the path
+- $\vec{a}$ is the total acceleration
+
+** Polar coordinate system
+[[./images/polar-coordinates.png]]
+\[\theta = \frac{\text{Arc length}}{1}\]
+\[\hat{e}_r = \cos \theta \hat{i} + \sin \theta \hat{j}\]
+\[\hat{e}_{\theta} = - \sin \theta \hat{i} + \cos \theta \hat{j}\]
+\[\vec{r} = r_0 \hat{e}_r = (r_0, \theta)\]
+
+Where:
+- $\theta$ is the angle from the positive \(x\)-axis in the anti-clockwise direction
+- $\hat{e}_r$ is the unit vector parallel to the position vector of the object
+- $\hat{e}_{\theta}$ is the unit vector perpendicular to the position vector of the object, it is $\hat{e}_r$ rotated $90^{\circ}$ anti-clockwise
+- $\vec{r}$ is the position vector of point $P$
+- $r_0$ is the radius of the circle
+
+*** Kinematics equations
+[[./images/polar-coordinates-kinematics-equations.png]]
+\[\text{Angular displacement} = \theta\]
+\[\text{Angular velocity} = \frac{d}{dt} \theta = \dot{\theta}\]
+\[\text{Angular acceleration} = \frac{d^2}{dt^2} \theta = \ddot{\theta}\]
+
+*** Polar coordinates vs Cartesian coordinates
+| Circular motion                                    | Straight-line motion                |
+| /                                                  | <                                   |
+|----------------------------------------------------+-------------------------------------|
+| Polar coordinate (\(\hat{k}\))                     | Cartesian coordinate (\(\hat{i}\))  |
+| \(\theta\)                                         | \(x\)                               |
+| \(\omega = \dot{\theta}\)                          | \(v = \dot{x}\)                     |
+| \(\alpha = \ddot{\theta}\)                         | \(a = \ddot{x}\)                    |
+| \(\theta \hat{k}, \omega \hat{k}, \alpha \hat{k}\) | \(x \hat{i}, v \hat{i}, a \hat{i}\) |
+
+@@latex: \newpage@@
+
+*** Velocity (\(\vec{v}\))
+\[\vec{v} = \dot{r} \hat{e}_r + r \dot{\theta} \hat{e}_{\theta}\]
+
+Where:
+- $\vec{v}$ is the velocity vector of the object in polar coordinates
+- $\dot{r}$ is the rate of change of the magnitude of the position vector
+- $\hat{e}_r$ is the unit vector parallel to the position vector of the object
+- $r$ is the magnitude of the position vector of the object
+- $\dot{\theta}$ is the rate of change of the angular displacement, or the angular velocity
+- $\hat{e}_{\theta}$ is the unit vector perpendicular to the position vector of the object, it is $\hat{e}_r$ rotated $90^{\circ}$ anti-clockwise
+
+*** Acceleration (\(\vec{a}\))
+<<sec:polar-coordinate-acceleration-definitions>>
+\[\vec{a} = \ddot{r} \hat{e}_r + r \ddot{\theta} \hat{e}_{\theta} - r \dot{\theta}^2 \hat{e}_r + 2 \dot{r} \dot{\theta} \hat{e}_{\theta}\]
+
+Where:
+- $\vec{a}$ is the acceleration vector of the object in polar coordinates
+- $\ddot{r}$ is the rate of change of the rate of change of the magnitude of the position vector, or the magnitude of the acceleration of the object
+- $\hat{e}_r$ is the unit vector parallel to the position vector of the object
+- $\ddot{\theta}$ is the rate of change of the rate of change of the angular displacement of the object, or the magnitude of the angular acceleration of the object
+- $\hat{e}_{\theta}$ is the unit vector perpendicular to the position vector of the object, it is $\hat{e}_r$ rotated $90^{\circ}$ anti-clockwise
+- $r$ is the magnitude of the position vector of the object
+- $\dot{\theta}$ is the rate of change of the angular displacement, or the angular velocity
+- $\dot{r}$ is the rate of change of the magnitude of the position vector
+
+@@latex: \newpage@@
+
+** Entrained quantity
+Entrained quantity is the quantity imparted into an object by another object that it is in contact with. This quantity is usually either velocity or acceleration, but could be other physical quantities as well. For example, a bead sliding down a rotating wire will have a sliding velocity, and a velocity imparted to it due to the rotation of the wire. This imparted velocity is called the entrained velocity.
+
+** Entraining point
+Entraining point is the point of contact between two moving objects, such that an entrained quantity is created, which is a quantity from one object is imparted into the other object and vice versa.
+
+** Relative quantity
+Relative quantity is a quantity of one object, like $A$, measured with respect to another object, like $B$. The quantity is usually either velocity or acceleration. It is given by:
+\[\vec{q}_{A/B} = \vec{q}_A - \vec{q}_B\]
+
+Where:
+- $\vec{q}_{A/B}$ is the relative quantity of object $A$ with respect to $B$
+- $\vec{q}_A$ is the absolute quantity of object $A$
+- $\vec{q}_B$ is the absolute quantity of object $B$
+
+@@latex: \newpage@@
+
+** Absolute velocity
+Absolute velocity is the sum of the relative velocity and the entrained velocity.
+
+[[./images/different-types-of-velocities-in-curvilinear-motion.png]]
+
+#+ATTR_LATEX: :align c c c c c
+| $\vec{v}_p$       | $=$ | $\vec{v}_{p/f}$   | $+$ | $\vec{v}_{p'}$     |
+| Absolute velocity |     | Relative velocity |     | Entrained velocity |
+|                   |     |                   |     |                    |
+| Curvilinear       | $=$ | Rectilinear       | $+$ | Circular           |
+
+@@latex: \newpage@@
+
+** Coriolis acceleration (\(\vec{a}_c\))
+- Coriolis acceleration is the acceleration experienced or observed by objects which are moving relative to a rotating frame of reference.
+- The Coriolis acceleration comes from 2 sources, and together they make up the total Coriolis acceleration, which is:
+
+\[\vec{a}_c = 2 \dot{r} \dot{\theta} \hat{e}_{\theta}\]
+
+Where:
+- $\vec{a}_c$ is the Coriolis acceleration
+- $\dot{r}$ is the rate of change of position of the sliding object, which is the magnitude of the radial velocity
+- $\hat{e}_r$ is the unit vector parallel to the position vector of the object
+- $\dot{\theta}$ is the rate of change of angular displacement, or the angular velocity
+- $\hat{e}_{\theta}$ is the unit vector perpendicular to the position vector of the object, it is $\hat{e}_r$ rotated $90^{\circ}$ anti-clockwise
+
+@@latex: \newpage@@
+
+*** Change in radial velocity direction
+[[./images/change-in-radial-velocity-direction-coriolis-acceleration.png]]
+- The first source is due to the interaction of the radial velocity of the sliding object and the angular velocity imparted on the object.
+- While the magnitude of the radial velocity of the sliding object is constant, there is a change in the velocity's direction, which creates a tangential acceleration:
+
+\[\vec{a}_t = \vec{\omega} \times \dot{r} \hat{e}_r = \dot{\theta} \dot{r} \hat{e}_{\theta}\]
+
+Where:
+- $\vec{a}_t$ is the Coriolis acceleration that is tangential
+- $\vec{\omega}$ is the angular velocity vector
+- $\dot{r}$ is the rate of change of position of the sliding object, which is the magnitude of the radial velocity
+- $\hat{e}_r$ is the unit vector parallel to the position vector of the object
+- $\dot{\theta}$ is the rate of change of angular displacement, or the angular velocity
+- $\hat{e}_{\theta}$ is the unit vector perpendicular to the position vector of the object, it is $\hat{e}_r$ rotated $90^{\circ}$ anti-clockwise
+
+*** Change in tangential velocity
+#+ATTR_LATEX: :scale 0.62
+[[./images/change-in-tangential-velocity-coriolis-acceleration.png]]
+- The second source is due to the change in tangential velocity of the sliding object.
+- The sliding object moves away from the centre of the circle it is rotating about.
+- This causes the distance of the object from the circle to increase from $r$ to $r + \Delta r$.
+- Since the object takes some time to move the distance $\Delta r$, there is also a change in time $\Delta t$.
+- This means that the tangential velocity has increased by \(\frac{\Delta r}{\Delta t} \dot{\theta}\), which also means there is an acceleration equal to \(\frac{\Delta r}{\Delta t} \dot{\theta}\).
+- Hence:
+
+\[\vec{a}_t = \frac{\Delta r}{\Delta t} \dot{\theta} \hat{e}_{\theta} = \dot{r} \dot{\theta} \hat{e}_{\theta}\]
+
+Where:
+- $\vec{a}_t$ is the Coriolis acceleration that is tangential
+- $\Delta r$ is change in position of the object
+- $\Delta t$ is the change in time
+- $\dot{\theta}$ is the rate of change of angular displacement, or the angular velocity
+- $\hat{e}_{\theta}$ is the unit vector perpendicular to the position vector of the object, it is $\hat{e}_r$ rotated $90^{\circ}$ anti-clockwise
+
+** Absolute acceleration
+[[./images/absolute-acceleration-diagram.png]]
+
+#+ATTR_LATEX: :align >{\centering\arraybackslash}m{6em} >{\centering\arraybackslash}m{2em} >{\centering\arraybackslash}m{6em} >{\centering\arraybackslash}m{2em} >{\centering\arraybackslash}m{6em} >{\centering\arraybackslash}m{2em} >{\centering\arraybackslash}m{6em}
+| $\vec{a}_p$           | $=$ | $\vec{a}_{p/f}$       | $+$ | $\vec{a}_{p'}$                                                    | $+$ | $\vec{a}_p^c$                             |
+| Absolute acceleration |     | Relative acceleration |     | Entrained acceleration                                            |     | Coriolis acceleration                     |
+|                       |     |                       |     |                                                                   |     |                                           |
+|                       |     | $\ddot{r} \hat{e}_r$  | $+$ | $(r \ddot{\theta} \hat{e}_{\theta} - r \dot{\theta}^2 \hat{e}_r)$ |     | $2 \dot{r} \dot{\theta} \hat{e}_{\theta}$ |
+
+@@latex: \newpage@@
+
+** One-dimensional relative motion
+[[./images/one-dimensional-relative-motion.png]]
+
+When particles $A$ and $B$ move along the same straight line, the *relative motion* of $B$ with respect to $A$ can be considered. Denoting the relative position coordinate of $B$ with respect to $A$ as $x_{B/A}$, we have:
+\[x_B = x_A + x_{B/A}\]
+\[v_B = v_A + v_{B/A}\]
+\[a_B = a_A + a_{B/A}\]
+
+Where:
+- $v_{B/A}$ is the relative velocity of B with respect to A
+- $a_{B/A}$ is the relative acceleration of B with respect to A
+
+@@latex: \newpage@@
+
+*** Pulley system
+When several blocks are connected by *inextensible cords*, it is possible to write a linear relation between their position coordinates. Similar relations can then be written between their velocities and accelerations and can be used to analyse their motion.
+
+[[./images/pulley-system-diagram.png]]
+
+Steps to solving pulley system problems:
+1. Define the position coordinates of all the blocks that move. The coordinates are determined relative to a fixed point, which is the origin.
+2. Set up the constraint equations by expressing the length of the strings in the pulley system using the position coordinates of all the points of interests (the blocks that move).
+3. Use the simultaneous equations to solve.
+4. Differentiate the position coordinates with respect to time to find velocity and acceleration if necessary.
+
+** Two-dimensional relative motion
+For two particles $A$ and $B$ moving in space, we consider the relative motion of $B$ with respect to $A$, or more precisely, with respect to a moving frame attached to $A$ and in translation with $A$. Denoting the relative position vector of $B$ with respect to $A$ as $\vec{r}_B$, we have:
+\[\vec{r}_B = \vec{r}_A + \vec{r}_{B/A}\]
+\[\vec{v}_B = \vec{v}_A + \vec{v}_{B/A}\]
+\[\vec{a}_B = \vec{a}_A + \vec{a}_{B/A}\]
+
+Where:
+- $\vec{v}_{B/A}$ is the relative velocity of $B$ with respect to $A$
+- $\vec{a}_{B/A}$ is the relative acceleration of $B$ with respect to $A$
+
+*** Relative velocity
+The relative velocity with respect to *any fixed point* is the same.
+
+*** Relative acceleration
+The relative acceleration with respect to *any fixed point* is the same.
+
+@@latex: \newpage@@
+
+** Absolute velocity in circular motion
+#+ATTR_LATEX: :scale 0.5
+[[./images/planar-motion-of-a-rigid-slab-velocity.png]]
+
+[[./images/relative-motion-analysis-velocity.png]]
+\[\vec{v}_B = \vec{v}_A + \vec{\omega} \times \vec{r}_{B/A}\]
+
+- $\vec{v}_B$ is determined by considering the entire body to translate with a velocity of $\vec{v}_A$, and rotate about $A$ with an angular velocity $\vec{\omega}$
+- Vector addition of these two effects, applied to $B$, yields $\vec{v}_B$
+- $\vec{v}_{B/A}$ represents the effect of circular motion about $A$. It can be expressed by the cross product:
+  \[\vec{v}_{B/A} = \vec{\omega} \times \vec{r}_{B/A}\]
+
+** Absolute acceleration in circular motion
+[[./images/planar-motion-of-a-rigid-slab-acceleration.png]]
+[[./images/relative-motion-analysis-acceleration.png]]
+\[\vec{a}_B = \vec{a}_A + \vec{\alpha} \times \vec{r}_{B/A} - \omega^2 \vec{r}_{B/A}\]
+
+@@latex: \newpage@@
+
+** Instantaneous centre of zero velocity (Instant centre)
+- The instantaneous centre of zero velocity is a point that has zero velocity, at a *single instant in time*.
+- This instantaneous centre of zero velocity can be treated as a fixed point at which all points on the rigid object can be assumed to be in circular motion about.
+  [[./images/instantaneous-centre-as-centre-of-rotation.png]]
+
+@@latex: \newpage@@
+
+*** Determining the instantaneous centre with non-parallel vectors
+1. Get the direction of the 2 vectors.
+   #+ATTR_LATEX: :scale 0.4
+   [[./images/instantaneous-centre-non-parallel-vectors-first-step.png]]
+2. Draw a line perpendicular to each of the vectors.
+   #+ATTR_LATEX: :scale 0.4
+   [[./images/instantaneous-centre-non-parallel-vectors-second-step.png]]
+3. The intersection of the two lines is the instantaneous centre of zero velocity.
+
+@@latex: \newpage@@
+
+*** Determining the instantaneous centre with parallel vectors
+1. Draw a line that passes through the start of the 2 vectors.
+2. Get the magnitude and direction of the 2 vectors.
+3. Draw a line that connects the ends of the 2 vectors.
+4. Depending on the direction and magnitude of the 2 vectors, there can be 3 cases as illustrated below.
+   [[./images/instantaneous-centre-parallel-vectors.png]]
+
+** Point of sliding contact with a body
+A point of sliding contact with a body must have a velocity that is tangential to the curvature of the body. This means that there cannot be a velocity component directed inwards or outwards from the body, or in two words, no penetration of the body by the velocity.
+
+[[./images/sliding-contact-of-a-point.png]]
+
+** Velocity combination equation
+#+ATTR_LATEX: :height 30em
+[[./images/velocity-combination-equation-diagram.png]]
+
+\[\vec{v}_P = \vec{v}_{P/f} + \vec{v}_A + \vec{\omega}_f \times \vec{r}_{PA}\]
+
+Where:
+- $\vec{v}_P$ is the absolute velocity of the point $P$
+- $\vec{v}_{P/f}$ is the relative velocity of the point $P$ with respect to the rotating and translating frame $f$
+- $\vec{v}_A$ is the absolute velocity of the point $A$ on the rotating and translating frame $f$
+- $\vec{\omega}$ is the angular velocity of the rotating and translating frame $f$
+- $\vec{r}_{PA}$ is the position vector of the point $P$ with respect to the point $A$
+
+** Acceleration combination equation
+#+ATTR_LATEX: :height 29em
+[[./images/acceleration-combination-equation-diagram.png]]
+
+\[\vec{a}_P = \vec{a}_{P/f} + \vec{a}_{P'} + 2 \vec{\omega}_f \times \vec{v}_{P/f}\]
+
+Where:
+- $\vec{a}_P$ is the absolute acceleration of the point $P$
+- $\vec{a}_{P/f}$ is the relative acceleration of point $P$ with respect to the rotating and translating frame $f$
+- $\vec{a}_{P'}$ is entrained acceleration of the point $P$, which is given by \(r \ddot{\theta} \hat{e}_{\theta} - r \dot{\theta}^2 \hat{e}_r\), the meaning of the symbols are given in this [[sec:polar-coordinate-acceleration-definitions][section]].
+- $\vec{\omega}_f$ is the angular velocity of the rotating and translating frame $f$
+- $\vec{v}_{P/f}$ is the relative velocity of the point $P$ with respect to the rotating and translating frame $f$
+
+** Moment of inertia of a particle (\(I\))
+\[I = mr^2\]
+
+Where:
+- $I$ is the moment of inertia of the particle
+- $m$ is the mass of the particle
+- $r$ is the radius of the particle from the centre of the circle
+
+** Momentum
+
+*** Linear momentum (\(\vec{L}\))
+\[\vec{L} = m \vec{v}\]
+
+Where:
+- $\vec{L}$ is the linear momentum of the object
+- $m$ is the mass of the object
+- $\vec{v}$ is the velocity of the object
+
+*** Angular momentum (\(\vec{H}\))
+\[\vec{H} = I \vec{\omega}\]
+
+Where:
+- $\vec{H}$ is the angular momentum of the object
+- $I$ is the moment of inertia of the object
+- $\vec{\omega}$ is the angular velocity of the object
+
+** Torque (\(\vec{M}\))
+\[\vec{M} = \vec{r} \times \vec{F}\]
+
+Where:
+- $\vec{M}$ is the torque acting on the object
+- $\vec{r}$ is the perpendicular distance from the force to the pivot point on the object
+- $\vec{F}$ is the force acting on the object
+
+*** Circular motion
+\[\vec{M} = I \vec{\alpha}\]
+
+Where:
+- $\vec{M}$ is the torque acting on the object
+- $I$ is the moment of inertia of the object
+- $\vec{\alpha}$ is the angular acceleration of the object
+
+** Newton's second law
+
+*** Acceleration form
+\[\vec{F} = m \vec{a}\]
+
+Where:
+- $\vec{F}$ is the force acting on the object
+- $m$ is the mass of the object
+- $\vec{a}$ is the acceleration of the object
+
+*** Momentum form
+\[\vec{F} = \frac{d}{dt} \vec{L} = \frac{m \vec{v}}{\Delta t}\]
+
+Where:
+- $\vec{F}$ is the force acting on the object
+- $\frac{d}{dt} \vec{L}$ is the rate of change of linear momentum with respect to time
+- $m$ is the mass of the object
+- $v$ is the velocity of the object
+- $\Delta t$ is the change in time
+
+*** Torque form
+\[\vec{r} \times \vec{F} = \frac{d}{dt} \left(\vec{r} \times \vec{L} \right)\]
+\[\vec{M} = \frac{d}{dt} \vec{H}\]
+
+Where:
+- $\vec{r}$ is the perpendicular distance from the force to the pivot point on the object
+- $\vec{F}$ is the force acting on the object
+- $\frac{d}{dt}$ is the rate of change with respect to time
+- $\vec{L}$ is the linear momentum of the object
+- $\vec{M}$ is the torque acting on the object
+- $\frac{d}{dt} \vec{H}$ is the rate of change of angular momentum with respect to time
+
+** Static friction (\(f_s\))
+Static friction varies, so it is not always \(f_s = \mu_s N\).
+\(\mu_s N\) is just the maximum value of static friction.
+\[-\mu_s N \le f_s \le \mu_s N\]
+
+Where:
+- $f_s$ is the static friction
+- $\mu_s$ is the coefficient of static friction
+- $N$ is the normal contact force on the body
+
+** Kinetic friction (\(f_k\))
+Kinetic friction is always constant.
+\[f_k = \mu_k N\]
+
+Where:
+- $f_k$ is the kinetic friction
+- $\mu_s$ is the coefficient of kinetic friction
+- $N$ is the normal contact force on the body
+
+** Work done (\(U\))
+\[U = \int F \, dx\]
+\[U = \int \vec{F} \cdot d \vec{r}\]
+
+Where:
+- $U$ is the work done on the object
+- $F$ is the force on the object
+- $x$ is the displacement of the object
+- $\vec{F}$ is the force vector on the object
+- $\vec{r}$ is the displacement vector of the object
+
+*** Circular motion
+\[U = \int M \, d \theta\]
+
+Where:
+- $U$ is work done on the object
+- $M$ is the torque on the object
+- $\theta$ is the angular displacement of the object
+
+@@latex: \newpage@@
+
+** Power (\(P\))
+Power is the rate of work done.
+\[P = \frac{U}{t}\]
+\[P = \vec{F} \cdot \vec{v}\]
+\[P = \vec{F} \cdot \frac{d \vec{r}}{dt}\]
+
+Where:
+- $P$ is the power
+- $U$ is the work done
+- $t$ is the time taken
+- $\vec{F}$ is the force vector on the object
+- $\vec{v}$ is the velocity vector on the object
+- $\vec{r}$ is the displacement vector of the object
+
+** Kinetic energy
+\[U_k = \frac{1}{2} m \vec{v}^2\]
+
+Where:
+- $U_k$ is the kinetic energy of the object
+- $m$ is the mass of the object
+- $\vec{v}$ is the velocity vector of the object
+
+*** Circular motion
+\[U_k = \frac{1}{2} I \vec{\omega}^2\]
+
+Where:
+- $U_k$ is the kinetic energy of the object
+- $I$ is the moment of inertia of the object
+- $\vec{\omega}$ is the angular velocity vector of the object
+
+** Work and kinetic energy relation
+\[U = \frac{1}{2} m \vec{v}_2^2 - \frac{1}{2} m \vec{v}_1^2\]
+
+Where:
+- $U$ is the work done on the object
+- $m$ is the mass of the object
+- $\vec{v}_2$ is the final velocity vector of the object
+- $\vec{v}_1$ is the initial velocity vector of the object
+
+*** Circular motion
+\[U = \frac{1}{2} I \vec{\omega}_2^2 - \frac{1}{2} I \vec{\omega}_1^2\]
+
+- $U$ is the work done on the object
+- $I$ is the moment of inertia of the object
+- $\vec{\omega}_2$ is the final angular velocity vector of the object
+- $\vec{\omega}_1$ is the initial angular velocity vector of the object
+
+** Impulse
+\[\vec{I} = \int \vec{F} \, dt = m \vec{v}_2 - m \vec{v}_1\]
+
+Where:
+- $\vec{I}$ is the impulse of the object
+- $\vec{F}$ is the force on the object
+- $m$ is the mass of the object
+- $\vec{v}_2$ is the final velocity of the object
+- $\vec{v}_1$ is the initial velocity of the object
+
+*** Circular motion
+\[\vec{I} = \int \vec{M} \, dt = \vec{H}_2 - \vec{H}_1\]
+
+Where:
+- $\vec{I}$ is the angular impulse of the object
+- $\vec{M}$ is the torque on the object
+- $\vec{H}_2$ is the final angular momentum of the object
+- $\vec{H}_1$ is the initial angular momentum of the object
+
+** Potential energy
+
+*** Gravitational potential energy (\(E_g\))
+\[E_g = mgh\]
+
+Where:
+- $E_g$ is the gravitational potential energy of the object
+- $m$ is the mass of the object
+- $h$ is the height of the object above the ground
+
+*** Elastic potential energy (\(E_e\))
+\[E_e = \frac{1}{2} kx^2\]
+
+Where:
+- $E_e$ is the elastic potential energy
+- $k$ is the spring constant
+- $x$ is the extension or contraction of the spring, measured from its natural length
+
+** Conservation of energy
+The conservation of energy states that the initial energy of a system is equal to the final energy of the system, as energy cannot be created or destroyed, i.e.
+\[E_1 = E_2\]
+
+Where:
+- $E_1$ is the initial energy of the system
+- $E_2$ is the final energy of the system
+
+*** Conservation of kinetic energy
+\[\frac{1}{2} m_A v_{A0}^2 + \frac{1}{2} m_B \vec{v}_{B0}^2 = \frac{1}{2} m_A v_{A1}^2 + \frac{1}{2} m_B v_{B1}^2\]
+
+Where:
+- $m_A$ is the mass of the first object \(A\)
+- $v_{A0}$ is the *initial* speed of the first object \(A\)
+- $m_B$ is the mass of the first object \(B\)
+- $v_{B0}$ is the *initial* speed of the first object \(B\)
+- $v_{A1}$ is the *final* speed of the first object \(A\)
+- $v_{B1}$ is the *final* speed of the first object \(B\)
+
+** Forces
+
+*** Gravitational force (\(F_g\))
+\[F_g = mg\]
+
+Where:
+- $F_g$ is the gravitational force
+- $m$ is the mass of the object
+- $g$ is the gravitational acceleration, \(\qty{9.81}{m.s^{-2}}\)
+
+*** Elastic spring force (\(F_s\))
+\[F_s = kx\]
+
+Where:
+- $F_s$ is the elastic spring force
+- $k$ is the spring constant
+- $x$ is the extension or contraction of the spring, measured from its natural length
+
+** Conservation of momentum
+
+*** Linear momentum
+\[m_A \vec{v}_{A2} + m_B \vec{v}_{B2} = m_A \vec{v}_{A1} + m_B \vec{v}_{B1}\]
+
+Where:
+- $m_A$ is the mass of the first object \(A\)
+- $\vec{v}_{A2}$ is the *final* velocity of the first object \(A\)
+- $m_B$ is the mass of the first object \(B\)
+- $\vec{v}_{B2}$ is the *final* velocity of the first object \(B\)
+- $\vec{v}_{A1}$ is the *initial* velocity of the first object \(A\)
+- $\vec{v}_{B1}$ is the *initial* velocity of the first object \(B\)
+
+@@latex: \newpage@@
+
+*** Angular momentum
+\[r_1 mv_1 = r_2 m v_2\]
+\[m r_1^2 \omega_1 = m r_2^2 \omega_2\]
+
+Where:
+- $r_1$ is the *initial* radius of the object from the centre of the circle
+- $m$ is the mass of the object
+- $v_1$ is the *initial* velocity of the object
+- $r_2$ is the *final* radius of the object from the centre of the circle
+- $v_1$ is the *final* velocity of the object
+- $\omega_1$ is the *initial* angular velocity of the object
+- $\omega_2$ is the *final* angular velocity of the object
+
+** Coefficient of restitution (\(e\))
+The coefficient of restitution the percentage of kinetic energy conserved in a collision
+
+*** Perfectly elastic collision (\(e = 1\))
+A perfectly elastic collision is when there is no energy lost and hence \(e = 1\).
+
+*** Elastic-plastic collision (\(0 < e < 1\))
+An elastic-plastic collision is when there is some energy lost and hence \(0 < e < 1\).
+
+*** Perfectly plastic collision (\(e = 0\))
+A perfectly plastic collision is when all energy is lost, and hence \(e = 0\). The objects stick together after the collision.
+
+** Restitution equation
+The restitution equation is always in the direction of the impact force, or the \(\hat{e}_n\) direction.
+\[(v_{A1}^n - v_{B1}^n) = - e(v_{A0}^n - v_{B0}^n)\]
+\[(v_{A/B}^n)_1 = -e (v_{A/B}^n)_0\]
+
+Where:
+- $v_{A1}$ is the *final* speed of the first object \(A\)
+- $v_{B1}$ is the *final* speed of the first object \(B\)
+- $e$ is the coefficient of restitution, where \(0 \le e \le 1\)
+- $v_{A0}$ is the *initial* speed of the first object \(A\)
+- $v_{B0}$ is the *initial* speed of the first object \(B\)
+- $(v_{A/B})_1$ is the *final* velocity of object \(A\) with respect to object \(B\)
+- $(v_{A/B})_0$ is the *initial* velocity of object \(A\) with respect to object \(B\)
+
+** Rigid body
+A rigid body is an idealisation of a solid body in which deformation is neglected.
+
+*** Motion
+A rigid body has translation and rotation.
+
+*** Distribution of mass
+- Centre of mass, \(G\)
+- Moment of inertia, \(I_G\)
+
+** Centre of mass
+
+*** Discretely distributed mass (\(x_G\))
+\[x_G = \frac{\sum_{i = 1}^n x_i m_i}{\sum_{i = 1}^n m_i}\]
+\[\sum_{i = 1}^n \vec{x}_{iG} m_i = 0\]
+
+Where:
+- $x_G$ is the position of the centre of mass
+- $x_i$ is the position of particle \(i\)
+- $m_i$ is the mass of particle \(i\)
+
+*** Continuously distributed mass (\(\vec{r}_G\))
+\[\vec{r}_G = \frac{\int \vec{r} \, dm}{\int dm}\]
+\[\int (\vec{r} - \vec{r}_G) \, dm = 0\]
+
+Where:
+- $\vec{r}_G$ is the vector representing centre of mass of the object
+- $\vec{r}$ is the position vector of the object
+- $dm$ is the infinitesimal mass element of the object
+- $\int dm$ is the mass of the object
+
+** Linear momentum for a continuously distributed mass
+\[\vec{L} = \int \dot{\vec{r}} \, dm = \vec{v} \, dm\]
+
+Where:
+- $\vec{L}$ is the linear momentum of the body
+- $\dot{\vec{r}}$ is the rate of change of position of the body
+- $dm$ is the infinitesimal mass element of the object
+- $\vec{v}$ is the velocity of the object
+
+** Principle of linear momentum for rigid bodies
+\[\vec{F} = \frac{d}{dt} \vec{L} = m \vec{a}_G\]
+
+Where:
+- $\vec{F}$ is the resultant force on the body
+- $\vec{L}$ is the linear momentum of the body
+- $m$ is the total mass of the body
+- $\vec{a}_G$ is the acceleration of the centre of mass
+
+** Moment of inertia of an object (\(I_G\))
+\[I_G = \int r^2 \, dm\]
+\[dm = p \, dx dy\]
+\[I_G = \int (x^2 + y^2) \, \rho \, dx dy\]
+
+Where:
+- $dm$ is the infinitesimal mass element of the object
+- $dx$ is the length of the infinitesimal element of the object
+- $dy$ is the width of the infinitesimal element of the object
+- $r$ is the distance to the centre of mass of the object
+- $\rho$ is the density of the object
+
+** Parallel axis theorem
+\[I_A = I_G + mr_{GA}^2\]
+
+Where:
+- $I_A$ is the moment of inertia at point \(A\)
+- $I_G$ is the moment of inertia of the object at point \(G\)
+- $m$ is the mass of the object
+- $r_{GA}$ is the distance between point \(G\) and point \(A\)
+
+** Rotation of a rigid body about its mass centre \(G\)
+\[\vec{M}_G = \frac{d}{dt} \vec{H}_G = I_G \vec{\alpha}\]
+
+Where:
+- $\vec{M}_G$ is the moment of the rigid body about its mass centre \(G\)
+- $\vec{H}_G$ is the angular momentum of the rigid body about its mass centre \(G\)
+- $I_G$ is the moment of inertia of the rigid body about its mass centre \(G\)
+- $\vec{\alpha}$ is the angular acceleration of the rigid body
+
+** General planar motion of a rigid body
+\[\vec{M}_C = \frac{d}{dt} \vec{H}_C = \vec{r}_{GC} \times (m \vec{a}_G) + I_G \vec{\alpha}\]
+\[\vec{H}_C = \vec{r}_{GC} \times (m \vec{v}_G) + I_{G} \vec{\omega}\]
+
+Where:
+- $\vec{M}$ is the moment of the body about point \(C\)
+- $\vec{H}_C$ is the angular momentum of the body about point \(C\)
+- $\vec{r}_{GC}$ is the position vector of the centre of mass of the body (\(G\)) with respect to point \(C\)
+- $m$ is the mass of the body
+- $\vec{a}_G$ is the acceleration of the centre of mass of the body (\(G\))
+- $I_G$ is the moment of inertia of the body about its centre of mass (\(G\))
+- $\vec{\alpha}$ is the angular acceleration of the body
+- $\vec{v}_G$ is the velocity of the centre of mass of the body (\(G\))
+- $\vec{\omega}$ is the angular velocity of the body
+
+** Motion of a rigid body about a fixed point
+\[\vec{M}_O = \frac{d}{dt} \vec{H}_O = I_O \vec{\alpha}\]
+\[H_O = I_O \omega\]
+
+Where:
+- $\vec{M}_O$ is the moment of the body about the fixed point \(O\)
+- $\vec{H}_O$ is the angular momentum of the body about the fixed point \(O\)
+- $I_O$ is the moment of inertia of the body about the fixed point \(O\)
+- $\vec{\alpha}$ is the angular acceleration of the body
+- $\vec{H}_O$ is the magnitude of the angular momentum of the body about the fixed point \(O\)
+- $\omega$ is the magnitude of the angular velocity of the body
+
+** Work done by a body
+\[U_{1 \rightarrow 2} = \int_1^2 \vec{F} \cdot d \vec{r}_G + \int_{\theta_1}^{\theta_2} M_G \, d \theta\]
+
+Where:
+- $U_{1 \rightarrow 2}$ is the work done by a body from state 1 to state 2
+- $\vec{F}$ is the resultant force on the body
+- $\vec{r}_G$ is the position of the centre of mass of the body (\(G\))
+- $M_G$ is the magnitude of the moment about the centre of mass of the body (\(G\))
+- $\theta$ is the angle of rotation of the body
+
+@@latex: \newpage@@
+
+** Kinetic energy of a body (\(U_k\))
+\[U_k = \frac{1}{2} mv_G^2 + \frac{1}{2} I_G \omega^2 = \frac{1}{2} I_O \omega^2\]
+
+Where:
+- $U_k$ is the kinetic energy of the body
+- $m$ is the mass of the body
+- $v_G$ is the velocity of the centre of mass of the body (\(G\))
+- $I_G$ is the moment of inertia about the centre of mass of the body (\(G\))
+- $\omega$ is the magnitude of the angular velocity of the body
+- $I_O$ is the moment of inertia about an instantaneous centre of rotation or a fixed point
+
+** Principle of linear impulse and momentum (translation)
+\begin{align*}
+\vec{I}_{1 \rightarrow 2} &= \int_{t1}^{t2} \vec{F} \, dt \\
+&= \vec{L}_2 - \vec{L}_1 \\
+&= m \vec{v}_{G2} - m \vec{v}_{G1}
+\end{align*}
+
+Where:
+- $\vec{I}_{1 \rightarrow 2}$ is the linear impulse of the object from time 1 \(t1\) to time 2 \(t2\)
+- $\vec{F}$ is the net force on the object
+- $dt$ is the infinitesimal change in time
+- $\vec{L}_2$ is the linear momentum at time 2 (\(t2\))
+- $\vec{L}_1$ is the linear momentum at time 1 (\(t1\))
+- $m$ is the mass of the object
+- $\vec{v}_{G2}$ is the velocity of the centre of mass of the object (\(G\)) at time 2 (\(t2\))
+- $\vec{v}_{G1}$ is the velocity of the centre of mass of the object (\(G\)) at time 1 (\(t1\))
+
+** Principle of angular impulse and momentum (rotation)
+\begin{align*}
+I_{1 \rightarrow 2}^{(ang)} &= \int_{t1}^{t2} M_G \, dt \\
+&= H_{G2} - H_{G1} \\
+&= I_G \omega_2 - I_G \omega_1
+\end{align*}
+
+Where:
+- $I_{1 \rightarrow 2}^{(ang)}$ is the angular impulse of the object from time 1 \(t1\) to time 2 \(t2\)
+- $M_G$ is the moment about the centre of mass of the object (\(G\))
+- $dt$ is the infinitesimal change in time
+- $\vec{H}_2$ is the angular momentum at time 2 (\(t2\))
+- $\vec{H}_1$ is the angular momentum at time 1 (\(t1\))
+- $I_G$ is the moment of inertia about the centre of mass of the object (\(G\))
+- $\omega_{2}$ is the angular velocity of the object (\(G\)) at time 2 (\(t2\))
+- $\omega_{1}$ is the angular velocity of the object (\(G\)) at time 1 (\(t1\))
+
+@@latex: \newpage@@
+
+* Formulas
+
+** Velocity (\(v\))
+\[v = \frac{dx}{dt}\]
+
+Where:
+- $v$ is the velocity of the particle
+- $\frac{dx}{dt}$ is the derivative of the position of the particle with respect to time
+
+** Acceleration (\(a\))
+\[a = \frac{dv}{dt}\]
+\[a = \frac{d^2x}{dt^2}\]
+\[a = v \frac{dv}{dx}\]
+
+Where:
+- $a$ is the acceleration of the particle
+- $\frac{dv}{dt}$ is the derivative of the velocity of the particle with respect to time
+- $\frac{d^2x}{dt^2}$ is the second derivative of the position of the particle with respect to time
+- $v$ is the velocity of the particle
+- $\frac{dv}{dx}$ is the derivative of the velocity of the particle with respect to its position
+
+@@latex: \newpage@@
+
+** Circular motion
+
+*** Angular displacement (\(\theta\))
+\[\theta = \frac{\text{Arc length}}{r}\]
+
+Where:
+- $\theta$ is the angular displacement of the object in circular motion
+- $r$ is the distance of the object from the centre of the circle
+
+*** Angular velocity (\(\vec{\omega}\))
+\[\vec{\omega} = \frac{2 \pi}{T} \hat{e}\]
+\[\vec{\omega} = \frac{\theta}{t} \hat{e}\]
+\[\vec{\omega} = \frac{\vec{v}}{r}\]
+
+Where:
+- $\vec{\omega}$ is the angular velocity vector of the object in circular motion
+- $T$ is the period
+- $\theta$ is the angle rotated by the object in circular motion
+- $t$ is the time taken for the object to rotate the angle $\theta$
+- $\hat{e}$ is the direction vector perpendicular to the plane that the motion is taking place, usually $\vec{k}$. Use the right-hand grip (screw) rule to figure out the direction of the angular velocity.
+- $\vec{v}$ is the velocity vector of the object in circular motion
+- $r$ is the distance of the object from the centre of the circle
+
+@@latex: \newpage@@
+
+*** Angular acceleration (\(\vec{\alpha}\))
+\[\vec{\alpha} = \frac{a_t}{r} \hat{e}\]
+\[\vec{\alpha} = \frac{\vec{\omega}}{t}\]
+
+Where:
+- $\vec{\alpha}$ is the angular acceleration of the object in circular motion
+- $a_t$ is the magnitude of the tangential acceleration of the object in circular motion
+- $\hat{e}$ is the direction vector perpendicular to the plane that the motion is taking place, usually $\vec{k}$. Use the right-hand grip (screw) rule to figure out the direction of the angular velocity.
+- $r$ is the distance of the object from the centre of the circle
+- $\vec{\omega}$ is the angular velocity of the object in circular motion
+- $t$ is the time taken for the object to rotate
+
+*** Position (\(\vec{r}\))
+\[\vec{r} = r_0 \vec{e}_r = r_0 (\cos \theta \hat{i} + \sin \theta \hat{j})\]
+
+Where:
+- $\vec{r}$ is the position vector of an object in circular motion
+- $r_0$ is the distance of the object away from the centre of the circle
+- $\theta$ is the angular displacement
+
+@@latex: \newpage@@
+
+*** Velocity (\(\vec{v}\))
+\[\vec{v} = \frac{d \vec{r}}{dt} = \frac{d}{dt} (r_0 \hat{e}_r) = r_0 \frac{d \hat{e}_r}{dt}\]
+\[\frac{d \hat{e}_r}{dt} = \dot{\theta} (- \sin \theta \hat{i} + \cos \theta \hat{j}) = \omega \hat{e}_{\theta}\]
+\[\vec{v} = \vec{\omega} \times \vec{r}\]
+
+Where:
+- $\vec{v}$ is the velocity vector of the object in circular motion
+- $r_0$ is the distance of the object from the centre of the circle
+- $\hat{e}_r$ is the unit vector parallel to the position vector of the object
+- $\dot{\theta}$ is the rate of change of angular displacement
+- $\theta$ is the angular displacement
+- $\hat{e}_{\theta}$ is the unit vector perpendicular to the position vector of the object, it is $\hat{e}_r$ rotated $90^{\circ}$ anti-clockwise
+- $\vec{\omega}$ is the angular velocity vector of the object
+- $\vec{r}$ is the position vector of the object with respect to the centre of the circle, i.e. the centre of the circle is the origin
+
+*** Tangential acceleration (\(\vec{a}_t\))
+\[\vec{a}_t = \vec{\alpha} \times \vec{r}\]
+
+Where:
+- $\vec{a}$ is the tangential acceleration vector of the object in circular motion
+- $\vec{\alpha}$ is the angular acceleration vector of the object
+- $\vec{r}$ is the position vector of the object with respect to the centre of the circle, i.e. the centre of the circle is the origin
+
+@@latex: \newpage@@
+
+*** Centripetal or normal acceleration (\(\vec{a}_n\))
+\[\vec{a}_n = \vec{\omega} \times \vec{v} = - \omega^2 \vec{r} = - \frac{v^2}{r} \hat{e}_{\theta}\]
+
+Where:
+- $\vec{a}_n$ is the centripetal or normal acceleration of the object in circular motion
+- $\vec{\omega}$ is the angular velocity vector of an object in circular motion
+- $\vec{v}$ is the velocity vector of the object in circular motion
+- $\omega$ is the magnitude of the angular velocity of an object in circular motion
+- $\vec{r}$ is the position vector of the object with respect to the centre of the circle, i.e. the centre of the circle is the origin
+- $v$ is the magnitude of the velocity vector
+- $\hat{e}_{\theta}$ is the unit vector perpendicular to the position vector of the object, it is $\hat{e}_r$ rotated $90^{\circ}$ anti-clockwise
+
+*** Total acceleration (\(\vec{a}\))
+\[\vec{a} = \vec{a}_t + \vec{a}_n\]
+
+Where:
+- $\vec{a}$ is the total acceleration of the object in circular motion
+- $\vec{a}_t$ is the tangential acceleration of the object in circular motion
+- $\vec{a}_n$ is the centripetal or normal acceleration of the object in circular motion
+
+** Uniform rectilinear motion
+\[x = x_0 + vt\]
+
+Where:
+- $x$ is the final position of the particle
+- $x_0$ is the initial position of the particle
+- $v$ is the velocity of the particle
+- $t$ is the time taken by the particle
+
+** Uniformly accelerated rectilinear motion
+\[v = v_0 + at\]
+\[x = x_0 + v_0t + \frac{1}{2}at^2\]
+\[v^2 = v_0^2 + 2a(x - x_0)\]
+
+Where:
+- $v$ is the final velocity of the particle
+- $x$ is the final position of the particle
+- $a$ is the acceleration of the particle
+- $t$ is the time take by the particle
+- $v_0$ is the initial velocity of the particle
+- $x_0$ is the initial position of the particle
+
+** Velocity of a particle in curvilinear motion
+\[\vec{v} = \frac{d \vec{r}}{dt}\]
+\[v = \frac{ds}{dt}\]
+
+Where:
+- $\vec{v}$ is the velocity vector of the particle
+- $\vec{r}$ is the current position vector of the particle from the origin $O$
+- $dt$ is the infinitesimal change in time
+- $v$ is the magnitude of the velocity vector
+- $s$ is the arc length of particle, measured from the initial position of the particle
+
+** Instantaneous velocity of a particle in curvilinear motion (\(\vec{v}_{instant}\))
+\[\vec{v}_{instant} \equiv \lim_{\Delta t \rightarrow 0} \frac{\Delta \vec{r}}{\Delta t} = \frac{d \vec{r}}{dt}\]
+
+Where:
+- $\vec{v}_{instant}$ is the instantaneous velocity of the particle in curvilinear motion
+- $\delta \vec{r}$ is the change in position vector of the particle
+- $\delta t$ is the change in time
+- $d \vec{r}$ is the change in position vector of the particle
+- $dt$ is the infinitesimal change in time
+
+** Acceleration of a particle in curvilinear motion (\(\vec{a}\))
+\[\vec{a} = \frac{d \vec{v}}{dt}\]
+
+Where:
+- $\vec{a}$ is the acceleration vector of the particle
+- $d \vec{v}$ is the change in the velocity vector
+- $dt$ is the change in time
+
+** Instantaneous acceleration of a particle in curvilinear motion (\(\vec{a}_{instant}\))
+\[\vec{a}_{instant} \equiv \lim_{\Delta t \rightarrow 0} \frac{\Delta \vec{v}}{\Delta t} = \frac{d \vec{v}}{dt}\]
+
+Where:
+- $\vec{a}_{instant}$ is the instantaneous acceleration vector of the particle
+- $\Delta \vec{v}$ is the change in the velocity vector
+- $\Delta t$ is the change in time
+- $d \vec{v}$ is the change in the velocity vector
+- $dt$ is the infinitesimal change in time
+
+** Path coordinate system
+\[\hat{e}_t = \cos \theta (t) \hat{i} + \sin \theta (t) \hat{j}\]
+\[\vec{v} = \dot{s} \hat{e}_t = v \hat{e}_t = v \angle \theta = \dot{s} \theta\]
+
+Where:
+- $\hat{e}_t$ is the unit vector directed along the tangent to the path
+- $\theta (t)$ is the tangent unit vector
+- $\vec{v}$ is the velocity vector directed along the tangent to the path
+- $\dot{s}$ is the rate of change of the path coordinate
+- $v$ is the speed of the particle
+
+*** Kinematics equations
+\[\vec{v} = v \hat{e}_t\]
+\[\vec{a} = \frac{dv}{dt} \hat{e}_t + \frac{v^2}{\rho} \hat{e}_n\]
+
+Where:
+- $\vec{v}$ is the velocity vector directed along the tangent to the path
+- $v$ is the speed of the particle
+- $\hat{e}_t$ is the unit vector directed along the tangent to the path
+- $\rho$ is the radius of curvature of its path.
+- $\vec{a}$ is the acceleration vector
+- $\hat{e}_n$ is the unit vector directed towards the centre of curvature of the path
+
+*** Radius of curvature (\(\rho\))
+\[\rho = \left| \frac{v}{\omega} \right|\]
+
+Where:
+- $\rho$ is the radius of curvature
+- $v$ is the velocity of the particle
+- $\omega$ is the angular velocity of the particle
+
+*** Acceleration (\(\vec{a}\))
+\[\vec{a}_t = \ddot{s} \hat{e}_t\]
+\[\vec{a}_n = \frac{v^2}{\rho} \hat{e}_n\]
+\[\vec{a} = \vec{a}_t + \vec{a}_n\]
+
+Where:
+- $\vec{a}_t$ is the tangential acceleration
+- $\ddot{s}$ is the rate of change of the rate of change of the path coordinate
+- $\hat{e}_t$ is the unit vector directed along the tangent to the path
+- $\vec{a}_n$ is the normal or centripetal acceleration
+- $v$ is the velocity of the particle
+- $\rho$ is the radius of curvature of the path
+- $\hat{e}_n$ is the unit vector directed towards the centre of curvature of the path
+- $\vec{a}$ is the total acceleration
+
+** Polar coordinate system
+\[\theta = \frac{\text{Arc length}}{1}\]
+\[\hat{e}_r = \cos \theta \hat{i} + \sin \theta \hat{j}\]
+\[\hat{e}_{\theta} = - \sin \theta \hat{i} + \cos \theta \hat{j}\]
+\[\vec{r} = r_0 \hat{e}_r = (r_0, \theta)\]
+
+Where:
+- $\theta$ is the angle from the positive \(x\)-axis in the anti-clockwise direction
+- $\hat{e}_r$ is the unit vector parallel to the position vector of the object
+- $\hat{e}_{\theta}$ is the unit vector perpendicular to the position vector of the object, it is $\hat{e}_r$ rotated $90^{\circ}$ anti-clockwise
+- $\vec{r}$ is the position vector of the object
+- $r_0$ is the radius of the circle
+
+*** Kinematics equations
+\[\text{Angular displacement} = \theta\]
+\[\text{Angular velocity} = \frac{d}{dt} \theta = \dot{\theta}\]
+\[\text{Angular acceleration} = \frac{d^2}{dt^2} \theta = \ddot{\theta}\]
+
+*** Velocity (\(\vec{v}\))
+\[\vec{v} = \dot{r} \hat{e}_r + r \dot{\theta} \hat{e}_{\theta}\]
+
+Where:
+- $\vec{v}$ is the velocity vector of the object in polar coordinates
+- $\dot{r}$ is the rate of change of the magnitude of the position vector
+- $\hat{e}_r$ is the unit vector parallel to the position vector of the object
+- $r$ is the magnitude of the position vector of the object
+- $\dot{\theta}$ is the rate of change of the angular displacement, or the angular velocity
+- $\hat{e}_{\theta}$ is the unit vector perpendicular to the position vector of the object, it is $\hat{e}_r$ rotated $90^{\circ}$ anti-clockwise
+
+@@latex: \newpage@@
+
+*** Acceleration (\(\vec{a}\))
+<<sec:polar-coordinate-acceleration-formulas>>
+\[\vec{a} = \ddot{r} \hat{e}_r + r \ddot{\theta} \hat{e}_{\theta} - r \dot{\theta}^2 \hat{e}_r + 2 \dot{r} \dot{\theta} \hat{e}_{\theta}\]
+
+Where:
+- $\vec{a}$ is the acceleration vector of the object in polar coordinates
+- $\ddot{r}$ is the rate of change of the rate of change of the magnitude of the position vector, or the magnitude of the acceleration of the object
+- $\hat{e}_r$ is the unit vector parallel to the position vector of the object
+- $\ddot{\theta}$ is the rate of change of the rate of change of the angular displacement of the object, or the magnitude of the angular acceleration of the object
+- $\hat{e}_{\theta}$ is the unit vector perpendicular to the position vector of the object, it is $\hat{e}_r$ rotated $90^{\circ}$ anti-clockwise
+- $r$ is the magnitude of the position vector of the object
+- $\dot{\theta}$ is the rate of change of the angular displacement, or the angular velocity
+- $\dot{r}$ is the rate of change of the magnitude of the position vector
+
+** Relative quantity
+\[\vec{q}_{A/B} = \vec{q}_A - \vec{q}_B\]
+
+Where:
+- $\vec{q}_{A/B}$ is the relative quantity of object $A$ with respect to $B$
+- $\vec{q}_A$ is the absolute quantity of object $A$
+- $\vec{q}_B$ is the absolute quantity of object $B$
+
+** Absolute velocity
+\[\vec{v}_p = \vec{v}_{p/f} + \vec{v}_{p'}\]
+
+Where:
+- $\vec{v}_p$ is the absolute velocity
+- $\vec{v}_{p/f}$ is the relative velocity
+- $\vec{v}_{p'}$ is the entrained velocity
+
+@@latex: \newpage@@
+
+** Coriolis acceleration (\(\vec{a}_c\))
+\[\vec{a}_c = 2 \dot{r} \dot{\theta} \hat{e}_{\theta}\]
+
+Where:
+- $\vec{a}_c$ is the Coriolis acceleration
+- $\dot{r}$ is the rate of change of position of the sliding object, which is the magnitude of the radial velocity
+- $\hat{e}_r$ is the unit vector parallel to the position vector of the object
+- $\dot{\theta}$ is the rate of change of angular displacement, or the angular velocity
+- $\hat{e}_{\theta}$ is the unit vector perpendicular to the position vector of the object, it is $\hat{e}_r$ rotated $90^{\circ}$ anti-clockwise
+
+** Absolute acceleration
+\[\vec{a}_p = \vec{a}_{p/f} + \vec{a}_{p'} + \vec{a}_p^c\]
+
+Where:
+- $\vec{a}_p$ is the absolute acceleration
+- $\vec{a}_{p/f}$ is the relative acceleration
+- $\vec{a}_{p'}$ is the entrained acceleration
+- $\vec{a}_p^c$ is the Coriolis acceleration
+
+@@latex: \newpage@@
+
+** Relative motion
+\[\vec{x}_B = \vec{x}_{B/A} + \vec{x}_A\]
+\[\vec{v}_B = \vec{v}_{B/A} + \vec{v}_A\]
+\[\vec{a}_B = \vec{a}_{B/A} + \vec{a}_A\]
+
+Where:
+- $\vec{x}_B$ is the position vector of the point \(B\)
+- $\vec{x}_{B/A}$ is the position vector of the point \(B\) relative to \(A\)
+- $\vec{x}_A$ is the position vector of the point \(A\)
+- $\vec{v}_B$ is the velocity vector of the point \(B\)
+- $\vec{v}_{B/A}$ is the velocity vector of the point \(B\) relative to \(A\)
+- $\vec{v}_A$ is the velocity vector of the point \(A\)
+- $\vec{a}_B$ is the acceleration vector of the point \(B\)
+- $\vec{a}_{B/A}$ is the acceleration vector of the point \(B\) relative to \(A\)
+- $\vec{a}_A$ is the acceleration vector of the point \(A\)
+
+** Absolute velocity in circular motion
+\[\vec{v}_B = \vec{v}_A + \vec{\omega} \times \vec{r}_{B/A}\]
+
+Where:
+- $\vec{v}_B$ is the absolute velocity of point $B$
+- $\vec{v}_A$ is the absolute velocity of the reference point $A$
+- $\vec{\omega}$ is the angular velocity of the point $B$ about reference point $A$
+- $\vec{r}_{B/A}$ is the position vector of $B$ relative to reference point $A$
+
+** Absolute acceleration in circular motion
+\[\vec{a}_B = \vec{a}_A + \vec{\alpha} \times \vec{r}_{B/A} - \omega^2 \vec{r}_{B/A}\]
+
+Where:
+- $\vec{a}_B$ is the absolute acceleration of point $B$
+- $\vec{a}_A$ is the absolute acceleration of reference point $A$
+- $\vec{\alpha}$ is the angular acceleration of point $B$ about reference point $A$
+- $\vec{r}_{B/A}$ is the position vector of $B$ relative to reference point $A$
+- $\omega$ is the magnitude of the angular velocity of point $B$ about reference point $A$
+
+** Velocity combination equation
+\[\vec{v}_P = \vec{v}_{P/f} + \vec{v}_A + \vec{\omega}_f \times \vec{r}_{PA}\]
+
+Where:
+- $\vec{v}_P$ is the absolute velocity of the point $P$
+- $\vec{v}_{P/f}$ is the relative velocity of the point $P$ with respect to the rotating and translating frame $f$
+- $\vec{v}_A$ is the absolute velocity of the point $A$ on the rotating and translating frame $f$
+- $\vec{\omega_f}$ is the angular velocity of the rotating and translating frame $f$
+- $\vec{r}_{PA}$ is the position vector of the point $P$ with respect to the point $A$
+
+@@latex: \newpage@@
+
+** Acceleration combination equation
+\[\vec{a}_P = \vec{a}_{P/f} + \vec{a}_{P'} + 2 \vec{\omega}_f \times \vec{v}_{P/f}\]
+
+Where:
+- $\vec{a}_P$ is the absolute acceleration of the point $P$
+- $\vec{a}_{P/f}$ is the relative acceleration of point $P$ with respect to the rotating and translating frame $f$
+- $\vec{a}_{P'}$ is entrained acceleration of the point $P$, which is given by \(r \ddot{\theta} \hat{e}_{\theta} - r \dot{\theta}^2 \hat{e}_r\), the meaning of the symbols are given in this [[sec:polar-coordinate-acceleration-formulas][section]].
+- $\vec{\omega}_f$ is the angular velocity of the rotating and translating frame $f$
+- $\vec{v}_{P/f}$ is the relative velocity of the point $P$ with respect to the rotating and translating frame $f$
+
+** Moment of inertia of a particle (\(I\))
+\[I = mr^2\]
+
+Where:
+- $I$ is the moment of inertia of the particle
+- $m$ is the mass of the particle
+- $r$ is the radius of the particle from the centre of the circle
+
+** Momentum
+
+*** Linear momentum (\(\vec{L}\))
+\[\vec{L} = m \vec{v}\]
+
+Where:
+- $\vec{L}$ is the linear momentum of the object
+- $m$ is the mass of the object
+- $\vec{v}$ is the velocity of the object
+
+*** Angular momentum (\(\vec{H}\))
+\[\vec{H} = I \vec{\omega}\]
+
+Where:
+- $\vec{H}$ is the angular momentum of the object
+- $I$ is the moment of inertia of the object
+- $\vec{\omega}$ is the angular velocity of the object
+
+** Torque (\(\vec{M}\))
+\[\vec{M} = \vec{r} \times \vec{F}\]
+
+Where:
+- $\vec{M}$ is the torque acting on the object
+- $\vec{r}$ is the perpendicular distance from the force to the pivot point on the object
+- $\vec{F}$ is the force acting on the object
+
+*** Circular motion
+\[\vec{M} = I \vec{\alpha}\]
+
+Where:
+- $\vec{M}$ is the torque acting on the object
+- $I$ is the moment of inertia of the object
+- $\vec{\alpha}$ is the angular acceleration of the object
+
+** Newton's second law
+
+*** Acceleration form
+\[\vec{F} = m \vec{a}\]
+
+Where:
+- $\vec{F}$ is the force acting on the object
+- $m$ is the mass of the object
+- $\vec{a}$ is the acceleration of the object
+
+@@latex: \newpage@@
+
+*** Momentum form
+\[\vec{F} = \frac{d}{dt} \vec{L} = \frac{m \vec{v}}{\Delta t}\]
+
+Where:
+- $\vec{F}$ is the force acting on the object
+- $\frac{d}{dt} \vec{L}$ is the rate of change of linear momentum with respect to time
+- $m$ is the mass of the object
+- $v$ is the velocity of the object
+- $\Delta t$ is the change in time
+
+*** Torque form
+\[\vec{r} \times \vec{F} = \frac{d}{dt} \left(\vec{r} \times \vec{L} \right)\]
+\[\vec{M} = \frac{d}{dt} \vec{H}\]
+
+Where:
+- $\vec{r}$ is the perpendicular distance from the force to the pivot point on the object
+- $\vec{F}$ is the force acting on the object
+- $\frac{d}{dt}$ is the rate of change with respect to time
+- $\vec{L}$ is the linear momentum of the object
+- $\vec{M}$ is the torque acting on the object
+- $\frac{d}{dt} \vec{H}$ is the rate of change of angular momentum with respect to time
+
+@@latex: \newpage@@
+
+** Static friction (\(f_s\))
+Static friction varies, so it is not always \(f_s = \mu_s N\).
+\(\mu_s N\) is just the maximum value of static friction.
+\[-\mu_s N \le f_s \le \mu_s N\]
+
+Where:
+- $f_s$ is the static friction
+- $\mu_s$ is the coefficient of static friction
+- $N$ is the normal contact force on the body
+
+** Kinetic friction (\(f_k\))
+\[f_k = \mu_k N\]
+
+Where:
+- $f_k$ is the kinetic friction
+- $\mu_s$ is the coefficient of kinetic friction
+- $N$ is the normal contact force on the body
+
+** Work done (\(U\))
+\[U = \int F \, dx\]
+\[U = \int \vec{F} \cdot d \vec{r}\]
+
+Where:
+- $U$ is the work done on the object
+- $F$ is the force on the object
+- $x$ is the displacement of the object
+- $\vec{F}$ is the force vector on the object
+- $\vec{r}$ is the displacement vector of the object
+
+*** Circular motion
+\[U = \int M \, d \theta\]
+
+Where:
+- $U$ is work done on the object
+- $M$ is the torque on the object
+- $\theta$ is the angular displacement of the object
+
+** Power (\(P\))
+\[P = \frac{U}{t}\]
+\[P = \vec{F} \cdot \vec{v}\]
+\[P = \vec{F} \cdot \frac{d \vec{r}}{dt}\]
+
+Where:
+- $P$ is the power
+- $U$ is the work done
+- $t$ is the time taken
+- $\vec{F}$ is the force vector on the object
+- $\vec{v}$ is the velocity vector on the object
+- $\vec{r}$ is the displacement vector of the object
+
+** Kinetic energy
+\[U_k = \frac{1}{2} m \vec{v}^2\]
+
+Where:
+- $U_k$ is the kinetic energy of the object
+- $m$ is the mass of the object
+- $\vec{v}$ is the velocity vector of the object
+
+*** Circular motion
+\[U_k = \frac{1}{2} I \vec{\omega}^2\]
+
+Where:
+- $U_k$ is the kinetic energy of the object
+- $I$ is the moment of inertia of the object
+- $\vec{\omega}$ is the angular velocity vector of the object
+
+** Work and kinetic energy relation
+\[U = \frac{1}{2} m \vec{v}_2^2 - \frac{1}{2} m \vec{v}_1^2\]
+
+Where:
+- $U$ is the work done on the object
+- $m$ is the mass of the object
+- $\vec{v}_2$ is the final velocity vector of the object
+- $\vec{v}_1$ is the initial velocity vector of the object
+
+*** Circular motion
+\[U = \frac{1}{2} I \vec{\omega}_2^2 - \frac{1}{2} I \vec{\omega}_1^2\]
+
+- $U$ is the work done on the object
+- $I$ is the moment of inertia of the object
+- $\vec{\omega}_2$ is the final angular velocity vector of the object
+- $\vec{\omega}_1$ is the initial angular velocity vector of the object
+
+** Impulse
+\[\vec{I} = \int \vec{F} \, dt = m \vec{v}_2 - m \vec{v}_1\]
+
+Where:
+- $\vec{I}$ is the impulse of the object
+- $\vec{F}$ is the force on the object
+- $m$ is the mass of the object
+- $\vec{v}_2$ is the final velocity of the object
+- $\vec{v}_1$ is the initial velocity of the object
+
+*** Circular motion
+\[\vec{I} = \int \vec{M} \, dt = \vec{H}_2 - \vec{H}_1\]
+
+Where:
+- $\vec{I}$ is the angular impulse of the object
+- $\vec{M}$ is the torque on the object
+- $\vec{H}_2$ is the final angular momentum of the object
+- $\vec{H}_1$ is the initial angular momentum of the object
+
+** Potential energy
+
+*** Gravitational potential energy (\(E_g\))
+\[E_g = mgh\]
+
+Where:
+- $E_g$ is the gravitational potential energy of the object
+- $m$ is the mass of the object
+- $h$ is the height of the object above the ground
+
+*** Elastic potential energy (\(E_e\))
+\[E_e = \frac{1}{2} kx^2\]
+
+Where:
+- $E_e$ is the elastic potential energy
+- $k$ is the spring constant
+- $x$ is the extension or contraction of the spring, measured from its natural length
+
+** Conservation of energy
+\[E_1 = E_2\]
+
+Where:
+- $E_1$ is the initial energy of the system
+- $E_2$ is the final energy of the system
+
+*** Conservation of kinetic energy
+\[\frac{1}{2} m_A v_{A0}^2 + \frac{1}{2} m_B \vec{v}_{B0}^2 = \frac{1}{2} m_A v_{A1}^2 + \frac{1}{2} m_B v_{B1}^2\]
+
+Where:
+- $m_A$ is the mass of the first object \(A\)
+- $v_{A0}$ is the *initial* speed of the first object \(A\)
+- $m_B$ is the mass of the first object \(B\)
+- $v_{B0}$ is the *initial* speed of the first object \(B\)
+- $v_{A1}$ is the *final* speed of the first object \(A\)
+- $v_{B1}$ is the *final* speed of the first object \(B\)
+
+** Forces
+
+*** Gravitational force (\(F_g\))
+\[F_g = mg\]
+
+Where:
+- $F_g$ is the gravitational force
+- $m$ is the mass of the object
+- $g$ is the gravitational acceleration, \(\qty{9.81}{m.s^{-2}}\)
+
+*** Elastic spring force (\(F_s\))
+\[F_s = kx\]
+
+Where:
+- $F_s$ is the elastic spring force
+- $k$ is the spring constant
+- $x$ is the extension or contraction of the spring, measured from its natural length
+
+** Conservation of momentum
+
+*** Linear momentum
+\[m_A \vec{v}_{A2} + m_B \vec{v}_{B2} = m_A \vec{v}_{A1} + m_B \vec{v}_{B1}\]
+
+Where:
+- $m_A$ is the mass of the first object \(A\)
+- $\vec{v}_{A2}$ is the *final* velocity of the first object \(A\)
+- $m_B$ is the mass of the first object \(B\)
+- $\vec{v}_{B2}$ is the *final* velocity of the first object \(B\)
+- $\vec{v}_{A1}$ is the *initial* velocity of the first object \(A\)
+- $\vec{v}_{B1}$ is the *initial* velocity of the first object \(B\)
+
+@@latex: \newpage@@
+
+*** Angular momentum
+\[r_1 mv_1 = r_2 m v_2\]
+\[m r_1^2 \omega_1 = m r_2^2 \omega_2\]
+
+Where:
+- $r_1$ is the *initial* radius of the object from the centre of the circle
+- $m$ is the mass of the object
+- $v_1$ is the *initial* velocity of the object
+- $r_2$ is the *final* radius of the object from the centre of the circle
+- $v_1$ is the *final* velocity of the object
+- $\omega_1$ is the *initial* angular velocity of the object
+- $\omega_2$ is the *final* angular velocity of the object
+
+** Restitution equation
+\[(v_{A1}^n - v_{B1}^n) = - e(v_{A0}^n - v_{B0}^n)\]
+\[(v_{A/B}^n)_1 = -e (v_{A/B}^n)_0\]
+
+Where:
+- $v_{A1}$ is the *final* speed of the first object \(A\)
+- $v_{B1}$ is the *final* speed of the first object \(B\)
+- $e$ is the coefficient of restitution, where \(0 \le e \le 1\)
+- $v_{A0}$ is the *initial* speed of the first object \(A\)
+- $v_{B0}$ is the *initial* speed of the first object \(B\)
+- $(v_{A/B})_1$ is the *final* velocity of object \(A\) with respect to object \(B\)
+- $(v_{A/B})_0$ is the *initial* velocity of object \(A\) with respect to object \(B\)
+
+** Centre of mass
+
+*** Discretely distributed mass (\(x_G\))
+\[x_G = \frac{\sum_{i = 1}^n x_i m_i}{\sum_{i = 1}^n m_i}\]
+\[\sum_{i = 1}^n \vec{x}_{iG} m_i = 0\]
+
+Where:
+- $x_G$ is the position of the centre of mass
+- $x_i$ is the position of particle \(i\)
+- $m_i$ is the mass of particle \(i\)
+
+*** Continuously distributed mass (\(\vec{r}_G\))
+\[\vec{r}_G = \frac{\int \vec{r} \, dm}{\int dm}\]
+\[\int (\vec{r} - \vec{r}_G) \, dm = 0\]
+
+Where:
+- $\vec{r}_G$ is the vector representing centre of mass of the object
+- $\vec{r}$ is the position vector of the object
+- $dm$ is the infinitesimal mass element of the object
+- $\int dm$ is the mass of the object
+
+** Linear momentum for a continuously distributed mass
+\[\vec{L} = \int \dot{\vec{r}} \, dm = \vec{v} \, dm\]
+
+Where:
+- $\vec{L}$ is the linear momentum of the body
+- $\dot{\vec{r}}$ is the rate of change of position of the body
+- $dm$ is the infinitesimal mass element of the object
+- $\vec{v}$ is the velocity of the object
+
+** Principle of linear momentum for rigid bodies
+\[\vec{F} = \frac{d}{dt} \vec{L} = m \vec{a}_G\]
+
+Where:
+- $\vec{F}$ is the resultant force on the body
+- $\vec{L}$ is the linear momentum of the body
+- $m$ is the total mass of the body
+- $\vec{a}_G$ is the acceleration of the centre of mass
+
+** Moment of inertia of an object (\(I_G\))
+\[I_G = \int r^2 \, dm\]
+\[dm = p \, dx dy\]
+\[I_G = \int (x^2 + y^2) \, \rho \, dx dy\]
+
+Where:
+- $dm$ is the infinitesimal mass element of the object
+- $dx$ is the length of the infinitesimal element of the object
+- $dy$ is the width of the infinitesimal element of the object
+- $r$ is the distance to the centre of mass of the object
+- $\rho$ is the density of the object
+
+** Parallel axis theorem
+\[I_A = I_G + mr_{GA}^2\]
+
+Where:
+- $I_A$ is the moment of inertia at point \(A\)
+- $I_G$ is the moment of inertia of the object at point \(G\)
+- $m$ is the mass of the object
+- $r_{GA}$ is the distance between point \(G\) and point \(A\)
+
+** Rotation of a rigid body about its mass centre \(G\)
+\[\vec{M}_G = \frac{d}{dt} \vec{H}_G = I_G \vec{\alpha}\]
+
+Where:
+- $\vec{M}_G$ is the moment of the rigid body about its mass centre \(G\)
+- $\vec{H}_G$ is the angular momentum of the rigid body about its mass centre \(G\)
+- $I_G$ is the moment of inertia of the rigid body about its mass centre \(G\)
+- $\vec{\alpha}$ is the angular acceleration of the rigid body
+
+** General planar motion of a rigid body
+\[\vec{M}_C = \frac{d}{dt} \vec{H}_C = \vec{r}_{GC} \times (m \vec{a}_G) + I_G \vec{\alpha}\]
+\[\vec{H}_C = \vec{r}_{GC} \times (m \vec{v}_G) + I_{G} \vec{\omega}\]
+
+Where:
+- $\vec{M}$ is the moment of the body about point \(C\)
+- $\vec{H}_C$ is the angular momentum of the body about point \(C\)
+- $\vec{r}_{GC}$ is the position vector of the centre of mass of the body (\(G\)) with respect to point \(C\)
+- $m$ is the mass of the body
+- $\vec{a}_G$ is the acceleration of the centre of mass of the body (\(G\))
+- $I_G$ is the moment of inertia of the body about its centre of mass (\(G\))
+- $\vec{\alpha}$ is the angular acceleration of the body
+- $\vec{v}_G$ is the velocity of the centre of mass of the body (\(G\))
+- $\vec{\omega}$ is the angular velocity of the body
+
+** Motion of a rigid body about a fixed point
+\[\vec{M}_O = \frac{d}{dt} \vec{H}_O = I_O \vec{\alpha}\]
+\[H_O = I_O \omega\]
+
+Where:
+- $\vec{M}_O$ is the moment of the body about the fixed point \(O\)
+- $\vec{H}_O$ is the angular momentum of the body about the fixed point \(O\)
+- $I_O$ is the moment of inertia of the body about the fixed point \(O\)
+- $\vec{\alpha}$ is the angular acceleration of the body
+- $\vec{H}_O$ is the magnitude of the angular momentum of the body about the fixed point \(O\)
+- $\omega$ is the magnitude of the angular velocity of the body
+
+** Work done by a body
+\[U_{1 \rightarrow 2} = \int_1^2 \vec{F} \cdot d \vec{r}_G + \int_{\theta_1}^{\theta_2} M_G \, d \theta\]
+
+Where:
+- $U_{1 \rightarrow 2}$ is the work done by a body from state 1 to state 2
+- $\vec{F}$ is the resultant force on the body
+- $\vec{r}_G$ is the position of the centre of mass of the body (\(G\))
+- $M_G$ is the magnitude of the moment about the centre of mass of the body (\(G\))
+- $\theta$ is the angle of rotation of the body
+
+@@latex: \newpage@@
+
+** Kinetic energy of a body (\(U_k\))
+\[U_k = \frac{1}{2} mv_G^2 + \frac{1}{2} I_G \omega^2 = \frac{1}{2} I_O \omega^2\]
+
+Where:
+- $U_k$ is the kinetic energy of the body
+- $m$ is the mass of the body
+- $v_G$ is the velocity of the centre of mass of the body (\(G\))
+- $I_G$ is the moment of inertia about the centre of mass of the body (\(G\))
+- $\omega$ is the magnitude of the angular velocity of the body
+- $I_O$ is the moment of inertia about an instantaneous centre of rotation or a fixed point
+
+** Principle of linear impulse and momentum (translation)
+\begin{align*}
+\vec{I}_{1 \rightarrow 2} &= \int_{t1}^{t2} \vec{F} \, dt \\
+&= \vec{L}_2 - \vec{L}_1 \\
+&= m \vec{v}_{G2} - m \vec{v}_{G1}
+\end{align*}
+
+Where:
+- $\vec{I}_{1 \rightarrow 2}$ is the linear impulse of the object from time 1 \(t1\) to time 2 \(t2\)
+- $\vec{F}$ is the net force on the object
+- $dt$ is the infinitesimal change in time
+- $\vec{L}_2$ is the linear momentum at time 2 (\(t2\))
+- $\vec{L}_1$ is the linear momentum at time 1 (\(t1\))
+- $m$ is the mass of the object
+- $\vec{v}_{G2}$ is the velocity of the centre of mass of the object (\(G\)) at time 2 (\(t2\))
+- $\vec{v}_{G1}$ is the velocity of the centre of mass of the object (\(G\)) at time 1 (\(t1\))
+
+** Principle of angular impulse and momentum (rotation)
+\begin{align*}
+I_{1 \rightarrow 2}^{(ang)} &= \int_{t1}^{t2} M_G \, dt \\
+&= H_{G2} - H_{G1} \\
+&= I_G \omega_2 - I_G \omega_1
+\end{align*}
+
+Where:
+- $I_{1 \rightarrow 2}^{(ang)}$ is the angular impulse of the object from time 1 \(t1\) to time 2 \(t2\)
+- $M_G$ is the moment about the centre of mass of the object (\(G\))
+- $dt$ is the infinitesimal change in time
+- $\vec{H}_2$ is the angular momentum at time 2 (\(t2\))
+- $\vec{H}_1$ is the angular momentum at time 1 (\(t1\))
+- $I_G$ is the moment of inertia about the centre of mass of the object (\(G\))
+- $\omega_{2}$ is the angular velocity of the object (\(G\)) at time 2 (\(t2\))
+- $\omega_{1}$ is the angular velocity of the object (\(G\)) at time 1 (\(t1\))
+
+@@latex: \newpage@@
+
+* Vectors
+
+** Notation
+A vector ($a$, $b$) can be expressed in the form below, where $r$ is the magnitude of the angle and $\theta$ is the *anti-clockwise* angle from the *positive* \(x\)-axis:
+\[\vec{r} = r \angle \theta\]
+
+The magnitude $r$ of the vector is given by:
+\[r = \left| \vec{r} \right| = \sqrt{a^2 + b^2}\]
+
+The angle $\theta$ is given by:
+\[\theta = \arctan \left( \frac{b}{a} \right)\]
+
+The vector can also be expressed as follows:
+\begin{align*}
+\vec{r} &= a \vec{i} + b \vec{j} \\
+&= r \hat{e}_r \\
+&= r \left( \cos \theta \vec{i} + \sin \theta \vec{j} \right) \quad \because \ \hat{e}_r = \cos \theta \vec{i} + \sin \theta \vec{j}
+\end{align*}
+
+*** \(\vec{r}\) notation
+The $\vec{r}$ notation is notated opposite to the regular vector notation, so for a line $AB$, the vector is usually notated $\overrightarrow{AB}$, while in the $\vec{r}$ notation, it would be $\vec{r}_{BA}$. The $\vec{r}$ means "relative to", i.e. $\vec{r}_{BA}$ is the position vector of the first point ($B$) relative to the second point ($A$). The $O$ is omitted when the point is relative to the *origin*, so the position vector $\overrightarrow{OA}$ will be $\vec{r}_A$ in $\vec{r}$ notation.
+
+@@latex: \newpage@@
+
+** Dot product (Scalar product)
+\[\vec{A} = a \vec{i} + b \vec{j}\]
+\[\vec{B} = c \vec{i} + d \vec{j}\]
+\begin{align*}
+\vec{A} \cdot \vec{B} &= \left( a \vec{i} + b \vec{j} \right) \cdot \left(c \vec{i} + d \vec{j} \right) \\
+&= ac + bd
+\end{align*}
+\[\vec{A} \cdot \vec{B} = |\vec{A}| |\vec{B}| \cos \theta\]
+
+Where:
+- $\theta$ is the angle between the two vectors
+
+*** Physical meaning
+- *Work* is the dot product of force and *displacement*.
+- A force is said to do positive work if the force (when applied) has a component in the direction of the displacement.
+- The dot product gives the projection of the first vector on the second vector.
+
+** Cross product (Vector product)
+\[\vec{A} \times \vec{B} = |\vec{A}| |\vec{B}| \sin \theta\]
+
+Where:
+- $\theta$ is the angle between the two vectors
+
+*** Directional vectors (\(\vec{i}, \vec{j}, \vec{k}\))
+\[\vec{i} \times \vec{j} = \vec{k} \qquad \qquad \vec{j} \times \vec{i} = -\vec{k}\]
+\[\vec{j} \times \vec{k} = \vec{i} \qquad \qquad \vec{k} \times \vec{j} = -\vec{i}\]
+\[\vec{k} \times \vec{i} = \vec{j} \qquad \qquad \vec{i} \times \vec{k} = -\vec{i}\]
+
+A tip to quickly figure out the direction of the vectors is to write the directional vectors out like shown below:
+\begin{align*}
+\text{Result is positive } (+) &: \quad \vec{i} \xrightarrow{\times} \vec{j} \xrightarrow{\times} \vec{k} \xrightarrow{\times} \vec{i} \\
+\text{Result is negative } (-) &: \quad \vec{i} \xleftarrow{\times} \vec{j} \xleftarrow{\times} \vec{k} \xleftarrow{\times} \vec{i}
+\end{align*}
+
+*** Using the right-hand rule to figure out the direction
+[[./images/right-hand-rule-cross-product.png]]
+
+@@latex: \newpage@@
+
+* Mathematical formulas
+
+** Trigonometric identities
+
+*** Basic and Pythagorean identities
+\[\csc x = \frac{1}{\sin x}\]
+\[\sec x = \frac{1}{\cos x}\]
+\[\cot x = \frac{1}{\tan x}\]
+\[\sin (-x) = - \sin x\]
+\[\cos (-x) = \cos x\]
+\[\tan (-x) = - \tan x\]
+\[\tan x = \frac{\sin x}{\cos x}\]
+\[\cot x = \frac{\cos x}{\sin x}\]
+\[\sin^2 x + \cos^2 x = 1\]
+\[\tan^2 x + 1 = \sec x\]
+\[1 + \cot^2 x = \csc^2 x\]
+
+*** Angle sum and different identities
+\[\sin(A \pm B) = \sin A \cos B \pm \cos A \sin B\]
+\[\sin(A \pm B) = \cos A \cos B \mp \sin A \sin B\]
+\[\tan(A \pm B) = \frac{\tan A \pm \tan B}{1 \mp \tan A \tan B}\]
+
+*** Double angle identities
+\[\sin 2A = 2 \sin A \cos A\]
+\[\cos 2A = \cos^2 A - \sin^2 A = 2 \cos^2 A - 1 = 1 - 2 \sin^2 A\]
+\[\tan 2A = \frac{2 \tan A}{1 - \tan^2 A}\]
+
+*** Half angle identities
+\[\sin \left(\frac{x}{2} \right) = \pm \sqrt{\frac{1 - \cos x}{2}}\]
+\[\cos \left(\frac{x}{2} \right) = \pm \sqrt{\frac{1 + \cos x}{2}}\]
+\[\tan \left(\frac{x}{2} \right) = \pm \sqrt{\frac{1 - \cos x}{1 + \cos x}} = \frac{1 - \cos x}{\sin x} = \frac{\sin x}{1 + \cos x}\]
+
+\[\sin^2 x = \frac{1}{2} \left[1 - \cos 2x \right]\]
+\[\cos^2 x = \frac{1}{2} \left[1 + \cos 2x \right]\]
+\[\tan^2 x = \frac{1 - \cos 2x}{1 + \cos 2x}\]
+
+*** Sum identities
+\[\sin P + \sin Q = 2 \sin \frac{1}{2}(P + Q) \cos \frac{1}{2}(P - Q)\]
+\[\sin P - \sin Q = 2 \cos \frac{1}{2}(P + Q) \sin \frac{1}{2}(P - Q)\]
+\[\cos P + \cos Q = 2 \cos \frac{1}{2}(P + Q) \cos \frac{1}{2}(P - Q)\]
+\[\cos P - \cos Q = - 2 \sin \frac{1}{2}(P + Q) \sin \frac{1}{2}(P - Q)\]
+
+** Standard derivatives
+\[\frac{d}{dx} \left(\arcsin x \right) = \frac{1}{\sqrt{1 - x^2}}\]
+\[\frac{d}{dx} \left(\arccos x \right) = - \frac{1}{\sqrt{1 - x^2}}\]
+\[\frac{d}{dx} \left(\arctan x \right) = \frac{1}{1 + x^2}\]
+\[\frac{d}{dx} \left(\csc x \right) = - \csc x \cot x\]
+\[\frac{d}{dx} \left(\sec x \right) = \sec x \tan x\]
+
+** Standard integrals
+\[\int \frac{1}{x^2 + a^2} \, dx = \frac{1}{a} \arctan \left(\frac{x}{a} \right)\]
+\[\int \frac{1}{\sqrt{a^2 - x^2}} \, dx = \arcsin \left(\frac{x}{a} \right)\]
+\[\int \frac{1}{x^2 - a^2} \, dx = \frac{1}{2a} \ln \left|\frac{x - a}{x + a} \right|\]
+\[\int \frac{1}{a^2 - x^2} \, dx = \frac{1}{2a} \ln \left|\frac{a + x}{a - x} \right|\]
+\[\int \frac{1}{\sqrt{x^2 - a^2}} \, dx = \ln \left|\sqrt{x^2 - a^2} + x \right|\]
+\[\int \tan x \, dx = \ln |\sec x|\]
+\[\int \cot x \, dx = \ln |\sin x|\]
+\[\int \csc x \, dx = - \ln |\csc x + \cot x|\]
+\[\int \sec x \, dx = - \ln |\sec x + \tan x|\]
+
+* Figuring out the motion of objects relative to an attached frame of reference
+1. Look at the length of the line with respect to the new origin of the attached frame of reference.
+2. If the length of the line is constant, as in it doesn't change with time, then the motion of the object is likely a circular motion.
+3. To confirm if the object is truly in circular motion, look at the angle the object makes with the origin of the attached frame.
+4. This angle can be derived from the angle of the object with respect to the origin in the absolute frame.
+5. If the angle is variable, as in it changes with time, then the object is circular motion.
+6. Otherwise, if the angle is constant and doesn't change with time, then the object is not moving at all in the attached frame of reference.
+
+* Determining the friction direction
+1. Get the relative velocity of the object with respect to the other object that it is in contact with, and hence experiencing friction due to that contact.
+2. The friction direction will always be opposite in direction to the obtained relative velocity.
+
+* Steps to solve collision problems
+1. Set coordinates of the direction parallel (\(\hat{e}_n\)) and perpendicular (\(\hat{e}_t\)) to the impact, i.e. express \(\hat{i}\) and \(\hat{j}\) in terms of \(\hat{e}_n\) and \(\hat{e}_t\).
+2. Set the restitution equation in the direction parallel to the impact (\(\hat{e}_n\) direction).
+3. The direction perpendicular to the impact (\(\hat{e}_t\) direction) has no net force, and hence there is no change in velocities in that direction.
+4. Gravitational force is negligible during the collision as the impact forces are relatively large.
+5. Analyse the directions of the impact force and constrains to find the direction in which the net force of the system is zero. Apply the conservation of linear momentum in that direction.
+
+* Steps to solve pulley problems
+1. Break down the system into individual objects.
+2. Set the kinetic equation for each object.
+   \[F = ma \quad \text{and} \quad M = I \alpha\]
+3. Find the relationship between the accelerations, the work done, or the energies.
+4. Solve all the equations.

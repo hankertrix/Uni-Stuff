@@ -1,0 +1,265 @@
+% Created 2023-09-11 Mon 17:04
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Hankertrix}
+\date{\today}
+\title{Math Module 2A Tutorial}
+\hypersetup{
+ pdfauthor={Hankertrix},
+ pdftitle={Math Module 2A Tutorial},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 29.1 (Org mode 9.6.6)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\setcounter{tocdepth}{2}
+\tableofcontents
+
+\newpage
+
+\section{Question 1}
+\label{sec:orgf3c4c2b}
+No, as having \(f(x) = \frac{1}{x}\) and \(g(x) = \frac{1}{x}\), both \(f(x)\) and \(g(x)\) have no limit as \(x \rightarrow 0\) but the resulting function \(\frac{f(x)}{g(x)} = 1\) has a limit as \(x \rightarrow 0\).
+
+\section{Question 2}
+\label{sec:orgf18323d}
+Let:
+\[a_n = \frac{1}{n\pi} \quad \text{ for } n = 1, 2, 3, \ldots\]
+\[a_n = \frac{1}{\frac{\pi}{4} + 2n\pi} \quad \text{ for } n = 1, 2, 3, \ldots\]
+
+We get:
+\[a_n \neq = 0, a_n \rightarrow 0 \text{ as } n \rightarrow \infty\]
+\[f(a_n) = \tan \frac{1}{a_n} = \tan n \pi = 0\]
+
+And:
+\[a_n \neq = 0, a_n \rightarrow 1 \text{ as } n \rightarrow \infty\]
+\[f(a_n) = \tan \frac{1}{b_n} = \tan \left( \frac{\pi}{4} + 2n\pi \right) = 1\]
+
+So:
+\[\lim_{n \rightarrow \infty} f(a_n) = 0\]
+\[\lim_{n \rightarrow \infty} f(b_n) = 1\]
+
+Since \(\lim_{n \rightarrow \infty} f(a_n) \neq \lim_{n \rightarrow \infty} f(b_n)\), \(\lim_{x \rightarrow 0} f(x)\) does not exist.
+
+\newpage
+
+\section{Question 3}
+\label{sec:orge0201ca}
+
+\subsection{(a)}
+\label{sec:org839633f}
+\[\lim_{x \rightarrow 0} (1 + x) = 1 \neq 0 \text{ and } \lim_{x \rightarrow 0} \sin \frac{1}{x} \text{ does not exist.}\]
+\\[0pt]
+
+Supposing that given expression has a limit:
+\[\lim_{x \rightarrow 0} (1 + x) \sin \frac{1}{x} = l\]
+
+Using the limit laws:
+\[\lim_{x \rightarrow 0} (1 + x) \sin \frac{1}{x} = \lim_{x \rightarrow 0} (1 + x) \cdot \lim_{x \rightarrow 0} \sin \frac{1}{x}\]
+\[l = 1 \cdot \lim_{x \rightarrow 0} \sin \frac{1}{x}\]
+\[\lim_{x \rightarrow 0} \sin \frac{1}{x} = \frac{l}{1}\]
+\[\lim_{x \rightarrow 0} \sin \frac{1}{x} = l\]
+
+Since \(\lim_{x \rightarrow 0} \sin \frac{1}{x}\) does not exist, \(\lim_{x \rightarrow 0} \sin \frac{1}{x} = l\) is a contradiction and hence \(\lim_{x \rightarrow 0} (1 + x) \sin \frac{1}{x}\) does not exist.
+
+\subsection{(b)}
+\label{sec:org942d517}
+For \(x \neq 0\):
+\[0 < \left| (\sin x) \sin \frac{1}{x} \right| = |\sin x| \cdot \left|\sin \frac{1}{x} \right| \leq | \sin x | \quad (\because \left| \sin \frac{1}{x} \right| \leq 1)\]
+
+Since \(| \sin x | \rightarrow 0\) as \(x \rightarrow 0\), by squeeze theorem:
+\[\left|(\sin x) \sin \frac{1}{x} \right| \rightarrow 0, \text{ as } x \rightarrow 0\]
+
+Which means that:
+\[(\sin x) \sin \frac{1}{x} \rightarrow 0, \text{ as } x \rightarrow 0\]
+
+\section{Question 4}
+\label{sec:org7b3b703}
+Since both \(\sin x\) and \(\cos x\) are continuous functions, that means that for any limit point \(a \in A\):
+\[\lim_{x \rightarrow a} \sin x = \sin a\]
+\[\lim_{x \rightarrow a} \cos x = \cos a\]
+
+The domain of \(\tan\) is:
+\[x \in \mathbb{R}: \cos x \neq 0 = \mathbb{R} \setminus \{\frac{\pi}{2} + n\pi : n \in \mathbb{Z}\}\]
+
+Using the limit laws:
+\begin{align*}
+\lim_{x \rightarrow a} \tan x &= \frac{\lim_{x \rightarrow a} \sin x}{\lim_{x \rightarrow a} \cos x} \\
+&= \frac{\sin a}{\cos a} \\
+&= \tan a
+\end{align*}
+
+Since \(\lim_{x \rightarrow a} \tan x = \tan a\), \(\tan\) is a continuous function within its domain.
+
+\section{Question 5}
+\label{sec:orgabe353e}
+From module 1B question 2, we have already proven that \(\lim_{x \rightarrow 0} f(x) = 0\). Since \(f(0) = 0\), \(f(x)\) is continuous at \(x = 0\).
+\\[0pt]
+
+Let \(a \neq 0\), and using the lemma:
+\[\lim_{x \rightarrow a} f(a_n) = \lim_{n \rightarrow \infty} a_n = a_n \neq 0\]
+\[\lim_{x \rightarrow a} f(b_n) = \lim_{n \rightarrow \infty} 0 = 0\]
+
+Since \(\lim_{x \rightarrow a} f(a_n) \neq \lim_{x \rightarrow a} f(b_n)\):
+\[\lim_{x \rightarrow a} f(x) \text{ does not exist}\]
+
+Hence, \(f(x)\) is not continuous when \(x \neq 0\).
+
+\section{Question 6}
+\label{sec:org2e2d616}
+
+\subsection{(a)}
+\label{sec:orga72e220}
+For \(x \neq \frac{\pi}{4}\):
+\begin{align*}
+\frac{\sin x - \cos x}{\cos 2x} &= \frac{\sin x - \cos x}{\cos^2 x - \sin^2 x} \\
+&= \frac{\sin x - \cos x}{(\cos x + \sin x)(\cos x - \sin x)} \\
+&= \frac{-1}{\cos x + \sin x}
+\end{align*}
+
+Using the limit laws and the fact that \(\sin x\) and \(\cos x\) are continuous:
+\begin{align*}
+\lim_{x \rightarrow \frac{\pi}{4}} \frac{\sin x - \cos x}{\cos x} &= \lim_{x \rightarrow \frac{\pi}{4}} \frac{-1}{\cos x + \sin x} \\
+&= \frac{-1}{\frac{1}{\sqrt{2}} + \frac{1}{\sqrt{2}}} \\
+&= \frac{-1}{\frac{2}{\sqrt{2}}} \\
+&= \frac{-1}{\sqrt{2}} \\
+&= \frac{1}{\sqrt{2}}
+\end{align*}
+
+\subsection{(b)}
+\label{sec:orgab99d37}
+Simplifying the expression:
+\begin{align*}
+\frac{e^{3x} - e^{-3x}}{e^{3x} + e^{-3x}} &= \frac{e^{3x}(1 - e^{-6x})}{e^{3x}(1 + e^{-6x})} \\
+&= \frac{1 - e^{-6x}}{1 + e^{-6x}}
+\end{align*}
+
+Finding the limit using the limit laws:
+\begin{align*}
+\lim_{x \rightarrow \infty} \frac{e^{3x} - e^{-3x}}{e^{3x} + e^{-3x}} &= \lim_{x \rightarrow \infty} \frac{1 - e^{-6x}}{1 + e^{-6x}} \\
+&= \frac{1 - 0}{1 + 0} \ \ (\because \lim_{x \rightarrow \infty} e^{-x} = 0) \\
+&= 1
+\end{align*}
+
+\subsection{(c)}
+\label{sec:orgf573801}
+Since \(\ln\) is an elementary function, it is continuous, hence:
+\begin{align*}
+\lim_{x \rightarrow \infty} [\ln (2 + x) - \ln(1 + x)] &= \lim_{x \rightarrow \infty} \ln \left( \frac{2 + x}{1 + x} \right) \\
+&= \ln \left( \frac{x \left(\frac{2}{x} + 1 \right)}{x \left(\frac{1}{x} + 1 \right)} \right) \\
+&= \ln \left( \frac{\frac{2}{x} + 1}{\frac{1}{x} + 1} \right) \\
+&= \ln \left( \frac{1}{1} \right) \ \ \left(\because \frac{1}{x} \rightarrow 0 \text{ as } x \rightarrow \infty \right) \\
+&= \ln 1 \\
+&= 0
+\end{align*}
+
+\subsection{(d)}
+\label{sec:orge205f6d}
+Simplifying the expression:
+\begin{align*}
+\frac{\sin 2r}{7|r| \cos r} &= \frac{2r \sin 2r}{2r} \cdot \frac{1}{7|r| \cos r} \\
+&= \frac{\sin 2r}{2r} \cdot \frac{2r}{7|r| \cos r} \\
+\end{align*}
+
+Finding the limit using limit laws:
+\begin{align*}
+\lim_{r \rightarrow 0-} \frac{\sin 2r}{7|r| \cos r} &= \lim_{r \rightarrow 0-} \frac{\sin 2r}{2r} \cdot \lim_{r \rightarrow 0-} \frac{2r}{7|r| \cos r} \\
+&= \lim_{r \rightarrow 0-} \frac{\sin 2r}{2r} \cdot \lim_{r \rightarrow 0-} \frac{2r}{-7r \cos r} \ \ (\because |r| = -r \text{ when } r < 0) \\
+&= 1 \cdot \lim_{r \rightarrow 0-} -\frac{2}{7 \cos r} \\
+&= -\frac{2}{7} \ \ (\because \cos r \rightarrow 1 \text{ when } r \rightarrow 0-)
+\end{align*}
+
+\section{Question 7}
+\label{sec:org018fc8d}
+
+\subsection{(a)}
+\label{sec:orga551f47}
+
+The domain of \(f\) is:
+\[\{x \in \mathbb{R} : |2x - 3| \neq 0\} = \mathbb{R} \setminus \left\{\frac{3}{2} \right\}\]
+
+\subsection{(b)}
+\label{sec:org22f33c6}
+
+\subsubsection{(i)}
+\label{sec:org4d25951}
+\begin{align*}
+\lim_{x \rightarrow \frac{3}{2}-} f(x) &= \lim_{x \rightarrow \frac{3}{2}-} \frac{2x^2 - 3x}{|2x - 3|} \\
+&= \lim_{x \rightarrow \frac{3}{2}-} \frac{2x^2 - 3x}{-(2x - 3)} \ \ (\because |2x + 3| = -(2x - 3) \text{ when } x < 0) \\
+&= \lim_{x \rightarrow \frac{3}{2}-} \frac{2x^2 - 3x}{3 - 2x} \\
+&= \lim_{x \rightarrow \frac{3}{2}-}\frac{-x(3 - 2x)}{3 - 2x} \\
+&= \lim_{x \rightarrow \frac{3}{2}-} -x \\
+&= - \frac{3}{2}
+\end{align*}
+
+\subsubsection{(ii)}
+\label{sec:org8525dd7}
+\begin{align*}
+\lim_{x \rightarrow \frac{3}{2}+} f(x) &= \lim_{x \rightarrow \frac{3}{2}+} \frac{2x^2 - 3x}{|2x - 3|} \\
+&= \lim_{x \rightarrow \frac{3}{2}+} \frac{2x^2 - 3x}{2x - 3} \ \ (\because |2x + 3| = 2x - 3 \text{ when } x > 0) \\
+&= \lim_{x \rightarrow \frac{3}{2}+} \frac{2x^2 - 3x}{2x - 3} \\
+&= \lim_{x \rightarrow \frac{3}{2}+}\frac{x(2x - 3)}{2x - 3} \\
+&= \lim_{x \rightarrow \frac{3}{2}+} x \\
+&= \frac{3}{2}
+\end{align*}
+
+\subsubsection{(iii)}
+\label{sec:org2bd6e7b}
+Since \(\lim_{x \rightarrow \frac{3}{2}-} f(x) = -\frac{3}{2}\) and \(\lim_{x \rightarrow \frac{3}{2}+} = \frac{3}{2}\), the left-hand and the right-hand limits at this point are different and hence \(\lim_{x \rightarrow \frac{3}{2}} f(x)\) does not exist.
+
+\section{Question 8}
+\label{sec:org3c533aa}
+Rearranging the equation:
+\[\sqrt[3]{x} = 1 - x\]
+\[\sqrt[3]{x} + x - 1 = 0\]
+
+Let \(f(x) = \sqrt[3]{x} + x - 1\):
+\[f(0) = -1\]
+\[f(1) = 1\]
+
+Since \(f\) is a continuous function and \(0\) is between \(f(0)\) and \(f(1)\). The intermediate value theorem tells us that there exists a \(c \in (0, 1)\) such that \(f(c) = 0\). In other words, the equation is satisfied for some \(c \in (0, 1)\) and hence has a root in the interval \((0, 1)\).
+
+\section{Question 9}
+\label{sec:orge559b75}
+No. The intermediate value theorem doesn't apply since the function that represents the amount of money you have is not necessarily continuous. For example, you can spend all 100 dollars in one go.
+
+
+\section{Question 10}
+\label{sec:org8b54b23}
+Let the temperature at longitude \(\theta\) be given by the function \(T: T [-\pi, \pi] \rightarrow \mathbb{R}\). We are choosing the measure longitude in radians. By assumption, \(T\) is continuous and since \(\theta = - \pi\) and \(\theta = \pi\) represent the same point on the equator, we have \(T(-\pi) = T(\pi)\).
+
+Let:
+\[f(\theta) = T(\theta) - T(\theta - \pi), \quad \theta \in [0, \pi]\]
+
+Where \(f\) is the function representing the difference in temperature between two diametrically opposite points on the equator.
+\\[0pt]
+
+We see that:
+\begin{itemize}
+\item \(f: [0, \pi] \rightarrow \mathbb{R}\) is continuous
+\item \(f(0) = T(0) - T(-\pi) = T(0) - T(\pi) = -f(\pi)\)
+\end{itemize}
+
+For the case of \(f(0) = 0\):
+
+\[0 = T(0) - T(0 - \pi)\]
+\[T(0) = T(-\pi)\]
+
+That means that the temperature at longitude \(0\) is equal to the temperature at longitude \(-\pi\), which means that there are two diametrically opposite points on the equator where the temperature is the same.
+\\[0pt]
+
+For the case of \(f(0) \neq 0\), \(f(0)\) and \(f(\pi)\) will have opposite signs since \(f(0) = -f(\pi)\). Since \(f\) is continuous on \([0, \pi]\), the intermediate value theorem tells us that there exists a point \(c \in (0, \pi)\) such that \(f(c) = 0\), which means that \(T(c) = T(c - \pi)\). Thus, we can guarantee that there are two diametrically opposite points on the equator where the temperature is the same.
+\end{document}

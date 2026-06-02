@@ -1,0 +1,50 @@
+#+TITLE: Science is trustworthy
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+CITE_EXPORT: csl ieee.csl
+#+BIBLIOGRAPHY: references.bib
+
+* What is science?
+Science is defined as a rigorous, systematic endeavour that builds and organises knowledge in the form of testable explanations and predictions about the world [cite:@wilson1999natural; @heilbron2003oxford]. This definition suggests that science is a kind of method, perhaps called the "scientific method".
+
+** The "scientific method"
+The scientific method is often described using the hypothetico-deductive model. The model usually entails making a hypothesis, and then gathering the data to test that hypothesis, followed by checking whether the hypothesis is supported or refuted by the data [cite:@popper2005logic].
+
+
+* What is trust?
+Trust is the firm belief in the reliability, truth, or ability of someone or something, which is science in this case [cite:@oxford_trust].
+
+
+* Is science trustworthy?
+To rephrase the above question, "Is science worthy of our firm belief in its truth and reliability?" This means that we need to prove science's ability to provide us with the truth, and its ability to provide us with the truth reliably and consistently. Only then can we prove that science is trustworthy. We should first look at if the "scientific method" is inherently trustworthy.
+
+\newpage
+
+** Is the "scientific method" trustworthy?
+The hypothetico-deductive model may seem inherently trustworthy due to the process of validating a hypothesis. However, it suffers from a logical fallacy called the fallacy of affirming the consequent [cite:@oreskes2019trust]. This fallacy is because we cannot prove a hypothesis is true based on its predictions, as a false hypothesis can also result in true predictions. For example, the geocentric Ptolemaic model managed to predict the motion of the planets with decent accuracy, but it was proven to be wrong in the end. Another problem is that there are hidden assumptions when testing the hypothesis, such as the assumption that the measuring instruments are sufficiently reliable, accurate and sensitive enough to be able to test the hypothesis. An example would be the stellar parallax that was unmeasurable before the 19th century due to insufficiently sensitive telescopes, which led to it being used as an argument against the now-proven heliocentric Copernican model [cite:@dobrzycki1972reception]. Thus, the "scientific method" is not inherently trustworthy and is logically flawed. Let's take a look at another way that scientists come up with scientific theories.
+
+** Is inductive reasoning trustworthy?
+Inductive reasoning is another way that scientists come up with theories about reality. Simply put, it is coming up with a generalisation that is derived from a lot of different observations [cite:@riggsby2005assessment]. However, inductive reasoning can never be used to prove a statement, or be certain that a hypothesis is true. It can only state that something is highly likely to be true, and not be 100% certain that something is true. An example of such a theory would be Einstein's theory of general relativity. As Einstein famously said, "No amount of experimentation can ever prove me right; a single experiment can prove me wrong" [cite:@calaprice2005new]. As such, theories that are created from inductive reasoning are only true until they are disproven by a counter-example. Hence, such theories can never be proven to be true and thus are fundamentally unreliable, as they can be disproven at any time in the future.
+
+\newpage
+
+** What makes science trustworthy?
+If the methods of science are not inherently trustworthy, then there must be a reason why we still trust science over religion and mysticism, despite the logical flaws and fallibility of scientific theories. It turns out that it is the scientific community that we currently have in place that makes science trustworthy. Scientific communities are independent communities of experts in various fields, with many independent scientists in them. If these communities can independently come to the same conclusion on a subject, we can at least be somewhat confident that their conclusions are true. This is because each individual expert has reviewed the available data and come to a conclusion on their own, and all the individual experts have come to the exact same conclusion by themselves, which must mean that the conclusion they have come to is most likely true. This social construct, referring to the community of scientists, is what makes science more trustworthy than the other forms of searching for the truth like religious belief and mysticism, but it still fails to free science from the grasp of unprovability. We can only be so sure that science is true, and never 100% certain that science is absolutely true. Basing the trustworthiness of science on a social construct is also worrying, as the social construct is fundamentally temporal in nature. But in light of the unprovability of science, this is the best that we currently have, and possibly what we will have for a long time if the social construct does not dissolve, unless a colossal revolution in formal logic and philosophy happens in the future.
+
+\newpage
+
+
+* Reflection
+Going through this exercise of proving why science is trustworthy has been an eye-opening experience. Despite being a person who regularly asks religious people for the proof of their beliefs, I have never thought to question the trustworthiness of science. It is just so natural and logical for me to just trust science. Since science relies on a social construct and consensus within that social construct to prove its validity and reliability, and has no formal logical proof, the reason why we should trust science is shaky at best. The fact that scientific theories are ultimately temporal and not eternal also does not help the situation, as scientific theories held in high regard today might be proven wrong tomorrow, which makes science fundamentally inconsistent, uncertain, and therefore, unreliable. Trust in science is still very much a leap of faith, but at the very least, there is still empirical evidence that we, the layman, can use to prove that scientific theories are true for the most part, which is very much unlike religious beliefs or mysticism. In the end, there are a lot of flaws with the way in which we try to prove something as true. G\(\ddot{o}\)del's incompleteness theorem and Alan Turing's halting problem showed that mathematics was fundamentally flawed, in that it was incomplete, inconsistent, as well as undecidable. This meant that mathematics could not prove all truths within mathematics, that mathematics could not prove its own consistency, and that there is no algorithm that can always determine whether a statement is derivable from the axioms of mathematics. All these means that science is just the best way we have to come close to finding the truth, in comparison to other methods such as religious beliefs and mysticism.
+
+\newpage
+
+
+* References
+$\indent$ Below is the list of references used in this assignment:
+\\
+
+#+PRINT_BIBLIOGRAPHY:
+
+\[\text{Word count: } 1052\]

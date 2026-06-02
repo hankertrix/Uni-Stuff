@@ -1,0 +1,200 @@
+#+TITLE: Math Module 1A Cheat Sheet
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+\newpage
+
+* Definitions
+
+** Sets
+A *set* is a collection of objects. These objects are *points* or *elements* of the set.
+
+** Set notation
+\[A = \{x: \text{some condition}\}\]
+
+** Subsets
+If each element of the set $A$ also belongs to the set $B$, then $A$ is a subset of $B$, which is represented by $A \subset B$.
+
+** Equal sets
+If $A$ is a subset of $B$ and $B$ is also a subset of $A$, then the sets $A$ and $B$ are considered to be *equal*, which is represented by $A = B$.
+
+** Empty set
+A set with no elements is called an *empty set*, and it is denoted by {} or $\emptyset$.
+\\
+
+Note that an empty *set* is not the set containing the number 0, as an empty set doesn't contain any elements, while the set containing 0 contains 1 element.
+
+** Union
+The union $A \cup B$ of the sets $A$ and $B$ is the set:
+\[A \cup B = \{x : x \in A \textbf{ or } x \in B\}\]
+
+** Intersection
+The intersection $A \cap B$ of the sets $A$ and $B$ is the set:
+\[A \cap B = \{x : x \in A \textbf{ and } x \in B\}\]
+
+** Subtracting sets
+The set "$A$ minus $B$", written as $A \setminus B$ is the set:
+\[A \setminus B = \{x : x \in A \textbf{ and } x \notin B\}\]
+
+** Intervals
+Generally, an interval is a subset $I$ of $\mathbb{R}$ such that:
+\[x, y \in I, \quad x < c < y \Rightarrow c \in I\]
+
+** Interval notation
+The round brackets () means that the number is excluded from the interval while a square bracket means that the number is included in the interval. For example, the interval $(a, b]$ will include the number $a$, but will include the number $b$.
+
+** Statements
+Statements in maths are *either* true or false. They cannot be both true and false, or neither true nor false.
+
+** Negation of a statement
+The *negation* $not \ P$ of a statement $P$, is a statement that is *true* when $P$ is *false*.
+
+** "For all" statements
+"For all" statements are usually represented with the symbol $\forall$. Generally, the negation of a "for all" statement is a "there exists" statement.
+
+** "There exists" statements
+"There exists" statements are usually represented with the symbol $\exists$. Generally, the negation of a "there exists" statement is a "for all" statement.
+
+** Open sets
+A set is $A \subset \mathbb{R}$ is *open*, if *for every $x \in A$, there exists $\delta > 0$ such that \((x - \delta, x + \delta) \subset A\)*. If not, $A$ is not open.
+
+** Not open sets
+A set is *not open* means that *there exists $x \in A$ such that for every $\delta > 0$, \((x - \delta, x + \delta) \not\subset A\).
+
+** Closed sets
+A set $A \subset \mathbb{R}$ is *closed* if its "complement" $\mathbb{R} \setminus A$ is open.
+
+** Clopen sets
+Open and closed sets are not mutually exclusive, which means that a set can be both open and closed at the same time. Sets that are both open and closed at the same time, like the empty set $\emptyset$ and the set of real numbers $\mathbb{R}$, are called *clopen* sets.
+
+** Logical AND
+Given two statements $P$ and $Q$, the statement $P$ AND $Q$ is true when *both* $P$ and $Q$ are *true*, and false otherwise.
+
+** Logical OR
+Given two statements $P$ and $Q$, the statement $P$ OR $Q$ is true when *both* $P$ and $Q$ are *false*, and true otherwise.
+
+** Implications
+Implications are statements that have the form "if something, then something". Implications are usually represented with the symbol $\Rightarrow$.
+\\
+
+So the statement "if P, then Q" can be expressed as:
+\[P \Rightarrow Q \text{ which also means } P \text{ implies } Q\]
+
+An implication has a "direction", which means that if $P$ implies $Q$, that does not necessarily mean that $Q$ also implies $P$.
+
+*** Another way of to think of implications
+The implication $P \Rightarrow Q$ is another way of saying $not \ (P \text{ AND } not \ Q)$.
+
+** Equivalences
+Two statements $P$ and $Q$ are equivalent when $P$ if and only if $Q$. This can be represented as:
+
+\[(P \Rightarrow Q) \text{ and } (Q \Rightarrow P)\]
+\[P \Leftrightarrow Q\]
+
+** Functions
+Consider two sets $A$ and $B$. A *function* $f : A \rightarrow B$ is a rule that assigns to each element $x \in A$ exactly one element $f(x) \in B$ called the value of the function $f$ at the point $x$.
+\\
+
+Put simply, a function takes a set of inputs, $A$ and returns a set of outputs $B$. One input can only have one output.
+\\
+
+We also say that $f : A \rightarrow B$ is a function *from* A *to* B.
+
+** Domain of a function
+For a function $f : A \rightarrow B$, the set $A$ is called the *domain* of $f$. Note that for a function $f$ with domain $A$, $f(x)$ is only defined for $x \in A$. The domain of a function is also part of the definition of a function, so the two functions below are different functions.
+
+\[f : \mathbb{R} \rightarrow \mathbb{R} \ f(x) = x^2\]
+\[g : [0, \infty) \rightarrow \mathbb{R} \ g(x) = x^2\]
+
+** Codomain of a function
+For a function $f : A \rightarrow B$, the set $B$ is called the *codomain* of $f$.
+
+** Sequences
+A function $f : A \rightarrow \mathbb{R}$ where $A$ is a subset of $\mathbb{N}$ is called a *sequence*. Usually, sequences are notated using $a_n$ and \((a_n), (a_n)_{n=1}^{\infty}, \ (a_1, a_2, a_3, ...), \ etc.\) instead of $f(n)$ and $f$ respectively.
+
+** Different ways of describing functions
+1. *Explicit* formulae like \(f(x) = \sin (1 + x^3)\) and \(a_n = 2^n\)
+2. *Implicit* formulae like \(\sin g(t) = t, \quad -\frac{\pi}{2} \le g(t) \le \frac{\pi}{2}\)
+3. *Recurrent* formulae for a *sequence* like \(a_1 = 2, a_{n + 1} = 2a_n\)
+
+** Natural domain of a function
+When nothing is said about the domain of a function $f$, the largest set $A$ for which $f(x)$ "makes sense" $x \in A$ is called the *natural domain* of the function $f$.
+
+** Image of a function
+Consider a function $f : A \rightarrow B$. For $K \subset A$, the set \(f(K) = \{f(x) : x \in K\} \subset B\) is called the *image* of the set $K$.
+
+** Range of a function
+Consider a function $f : A \rightarrow B$. The image $f(A)$ of the whole domain $A$ is called the *range* of the function $f$. This means that the range of a function is an image of the function for the *entire domain* of the function.
+
+** Increasing functions
+A function $f : A \rightarrow \mathbb{R}$ where $A \subset \mathbb{R}$, is said to be *increasing if:
+\[x_1, x_2 \in A, \  x_1 < x_2 \Rightarrow f(x_1) \le f(x_2)\]
+
+** Decreasing functions
+A function $f : A \rightarrow \mathbb{R}$ where $A \subset \mathbb{R}$, is said to be *decreasing* if:
+\[x_1, x_2 \in A, \  x_1 < x_2 \Rightarrow f(x_1) \ge f(x_2)\]
+
+** Monotonic functions
+Monotonic functions are functions that are either increasing or decreasing.
+
+** Strictly increasing functions
+A function $f : A \rightarrow \mathbb{R}$ where $A \subset \mathbb{R}$, is said to be *strictly increasing* if:
+\[x_1, x_2 \in A, \  x_1 < x_2 \Rightarrow f(x_1) < f(x_2)\]
+
+** Strictly decreasing functions
+A function $f : A \rightarrow \mathbb{R}$ where $A \subset \mathbb{R}$, is said to be *strictly decreasing* if:
+\[x_1, x_2 \in A, \  x_1 < x_2 \Rightarrow f(x_1) > f(x_2)\]
+
+** Strictly monotonic functions
+Strictly monotonic functions are function that are either strictly increasing or strictly decreasing.
+
+** Bounded functions
+A function $f : A \rightarrow \mathbb{R}$ is *bounded* if there exists an $M > 0$ such that:
+\[|f(x)| \le M, \ \text{ for all } x \in A\]
+
+Note that:
+\[|f(x)| \le M \Leftrightarrow -M \le f(x) \le M\]
+
+A function that is not bounded is said to be *unbounded*.
+
+** Locally bounded functions
+A function $f : A \rightarrow \mathbb{R}$ is *locally bounded at point* $a \in A$ if there exists some $\delta > 0$ such that $f$ is bounded on $A \cap (a - \delta, a + \delta)$.
+\\
+
+A function that is *locally bounded* means that $f$ is locally bounded at every $a \in A$.
+
+** Unbounded functions
+A function $f : A \rightarrow \mathbb{R}$ is unbounded if for all $M > 0$, there exists $x \in A$ such that $|f(x)| > M$.
+
+** Odd functions
+A function $f : A \rightarrow \mathbb{R}$ is said to be *odd* if:
+\[x \in A \quad \Rightarrow \quad -x \in A \text{ and } f(-x) = -f(x)\]
+
+** Even functions
+A function $f : A \rightarrow \mathbb{R}$ is said to be *even* if:
+\[x \in A \quad \Rightarrow \quad -x \in A \text{ and } f(-x) = f(x)\]
+
+** Periodic functions
+A function $f: \mathbb{R} \rightarrow \mathbb{R}$ is said to be *periodic* if there exists some $T > 0$ such that:
+\[f(x + T) = f(x), \quad \text{ for all } x \in \mathbb{R}\]
+
+The number $T$ is called a *period* for $f$.
+
+
+* Standard sets
+\[\mathbb{N} = \{1, 2, 3, 4, ...\} \text{ is the set of natural numbers}\]
+\[\mathbb{Z} = \{..., -2, -1, 0, -1, -2, ...\} \text{ is the set of integers}\]
+\[\mathbb{Q} = \{\frac{m}{n} : m \in \mathbb{Z}, n \in \mathbb{N}\} \text{ is the set of rational numbers}\]
+\[\mathbb{R} \text{ is the set of real numbers}\]
+
+\newpage
+
+* Explanation of an open set
+A set $A \subset \mathbb{R}$ is open if for every $x \in A$, there exists a $\delta > 0$ such that $(x - \delta, x + \delta) \subset A$. The set $A$ is not open when there exists $x \in A$ such that for every $\delta > 0$, $(x - \delta, x + \delta) \notin A$.
+\\
+
+To make this definition easier to understand, let's assume $\delta$ to be a very small number. Let's look at the set of $(3,5)$. If we pick a $x$ value that is very close to the boundary, like 4.9999 ($x \neq 5$ as the set doesn't include 5), there's still a value of $\delta$ that is greater than 0 ($\delta > 0$) that can be added to 4.9999 that will not cause $(x + \delta)$ to exceed the bounding value. In this case, $\delta$ would be 0.000001. Similarly, for the lower bound, we can pick a $x$ value that is very close to the boundary, such as 3.0001 ($x \neq 3$ as the set doesn't include 3), and there will still be a non-zero $\delta$ that is greater than 0 ($\delta > 0$) that can be subtracted from $x$ that will not cause $(x - \delta)$ to be lower than the lower bound. In this case, $\delta$ would be 0.00001. Hence, $(3,5)$ would be an open set.
+\\
+
+Now, let's look at the set of $[3,5]$. If we pick a $x$ value that is at the boundary (remember that the set includes the boundaries), like 5, there's no value of $\delta$ that is greater than 0 ($\delta > 0$) that can be added to 5 that will not cause $(x + \delta)$ to exceed the bounding value. Similarly, for the lower bound, if we pick a $x$ value that is at the boundary (the set includes the boundaries), such as 3, and there's no value of $\delta$ that is greater than 0 ($\delta > 0$) that can be subtracted from $x$ that will not cause $(x - \delta)$ to be lower than the lower bound. Hence, $(3,5)$ would not be an open set.

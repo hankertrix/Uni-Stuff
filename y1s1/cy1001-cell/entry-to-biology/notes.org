@@ -1,0 +1,371 @@
+#+TITLE: Entry To Biology Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+#+LATEX_HEADER: \usepackage{graphicx, array, siunitx, forest}
+#+LATEX_HEADER: \graphicspath{ {./images/} }
+
+\newpage
+
+* Definitions
+
+** Trace elements
+Trace elements are just elements that are found in small amounts in biological systems. They are usually not important to biological processes.
+
+** Electronegativity
+Electronegativity describes the relative ability of an atom to attract electrons in a covalent bond. It is a dimensionless quantity, which means it is not quantifiable.
+
+** Polarity
+Polarity refers the difference in electronegativity between two atoms in a covalent bond.
+\\
+
+A polar bond is one that has two atoms of different electronegativities, which will result in the more electronegative atom pulling the electrons towards its nucleus, increasing the electron density around itself and making the bond polar.
+\\
+
+A non-polar bond is one that has two atoms of similar electronegativity, which results in the atoms exerting a similar pull on the electrons, making the bond non-polar.
+
+** Ionic bond
+Oppositely charged ions formed through the loss or gain of electrons are strongly attracted to each other, forming ionic bonds. Compounds with ionic bonds usually form a *lattice* structure, which allows the positive ions to be surrounded by as many negative ions as possible, and vice versa.
+
+** Covalent bond
+Covalent bonds are formed when two molecules share electrons to fill the outermost electron shell (usually 8 electrons). Covalent bonds have no net charge and have no free electrons as well. A molecule sharing a single pair of electrons is considered to have a single bond, and a molecule sharing two pairs of electrons is considered to have a single bond, and a molecule sharing three pairs of electrons is considered to have a triple bond.
+
+** Hydrogen bond
+A hydrogen bond is the electrostatic attraction between polar molecules, one of which *must have a hydrogen atom bonded to a highly electronegative atom* like *nitrogen* and *oxygen*. When this hydrogen atom experiences attraction to some other nearby *highly electronegative* atom, a hydrogen bond is formed.
+
+** Hydrophobes
+Hydrophobes are non-polar molecules and usually have a long chain of carbon atoms that do not interact with water molecules.
+
+** Hydrophobic interaction
+Hydrophobic interaction describes the interaction between water and *hydrophobes*, which are molecules that have low solubility in water. Hydrophobic groups cluster together to exclude water from their interior.
+
+** Van der Waals forces (intermolecular attraction)
+Van der Waals forces refer to the collection of forces that occur between atoms and molecules that are very close to each other. These include the attractions and repulsions between atoms, molecules and surfaces as a result of electrostatic interactions and differing polarity of molecules.
+
+** Cohesion
+Cohesion is the self-adhesion of water molecules. At the surface of water, this cohesive force is called surface tension.
+
+** Macromolecules
+Macromolecules refer to large and complex molecules that serve as the building materials of life-forms, and they can be classified into 4 groups:
+- Carbohydrates
+- Nuclei Acid
+- Proteins
+- Lipids
+
+** Natural selection
+Natural selection states that some aspect of the environment selects traits that are more apt to be passed on to the next generation. The reason for this is that individuals with favourable traits produce a greater number of offspring that survive and reproduce.
+
+** Taxonomy
+The branch of biology that identifies, names, and classifies organisms. This is necessary to handle information on diversity.
+
+** Systematics
+They study of evolutionary relationships between organisms.
+
+** Binomial nomenclature
+- Two-part name.
+- First word is the genus and the first letter is always capitalised.
+- Second word is the species designation (or specific epithet), which is written in lowercase.
+- Both words are italicised when typed and underlined if handwritten.
+
+Examples: /Homo sapiens/ (humans), /Zea mays/ (corn).
+
+** Biosphere
+The zone of air, land, and water where organisms exist.
+
+** Population
+All the members of a species (or a strain of a species if the strain is diverse) within an area.
+
+** Community
+A collection of interacting populations within the same environment.
+
+** Ecosystem
+An ecosystem is a community plus its physical environment.
+
+** Tissue
+A tissue is a group of cells of the same type that performs a particular function.
+
+** Organ
+An organ is a body structure that comprises several different tissues grouped together into a larger structural and functional unit.
+
+** Organ system
+An organ system is a group of organs that work together to carry out an important function.
+
+** Hormone
+A hormone is a chemical signal produced in the body. It is stable enough to be transported in active form from where it is produced, and it typically acts at a distant site. Most hormones are produced in glands that are completely enclosed in tissue called endocrine glands.
+
+** Endocrine glands
+Endocrine glands are glands that secrete their hormones directly into the blood stream (no ducts).
+
+** Exocrine glands
+Exocrine glands are glands that have ducts to bring the secretion to the surface they are serving, such as sweat glands, salivary glands and mammary glands.
+
+** Blood
+Blood carries a clear liquid base called plasma, red blood cells (erythrocytes), white blood cells (leukocytes) and platelets. The plasma makes up 55% of blood, while the erythrocytes make up 45% of blood. There are also trace amounts of leukocytes and platelets that make up less than 1% of blood.
+
+\newpage
+
+* Common attributes of living things
+1. Cellular organisation.
+2. Metabolism, which is the ability to process energy to power other processes within the living thing itself.
+3. Homeostasis, which is the ability to maintain relatively stable internal environments to provide optimal conditions for biological processes.
+4. Growth and reproduction.
+5. Heredity, which is the ability to pass heredity (genetic) information to future generations.
+
+\newpage
+
+* Levels of organisation
+
+** Cellular level
+\[\text{Atoms}\]
+\[\downarrow\]
+\[\text{Molecules}\]
+\[\downarrow\]
+\[\text{Macromolecules}\]
+\[\downarrow\]
+\[\text{Organelles}\]
+\[\downarrow\]
+\[\text{Cell}\]
+\[\downarrow\]
+
+** Organismal level
+\[\text{Tissue}\]
+\[\downarrow\]
+\[\text{Organ}\]
+\[\downarrow\]
+\[\text{Organ System}\]
+\[\downarrow\]
+\[\text{Organism}\]
+\[\downarrow\]
+
+** Populational level
+\[\text{Population}\]
+\[\downarrow\]
+\[\text{Species}\]
+\[\downarrow\]
+\[\text{Community}\]
+\[\downarrow\]
+\[\text{Ecosystem}\]
+
+
+* Biological elements
+Below is a periodic table with the list of biological elements highlighted:
+
+\[\includegraphics[width = \textwidth]{periodic-table}\]
+
+* Bonds and interactions
+The table below is based on the *average* values of bond strength. A reversal of the relative strengths is often found as each bond might have higher or lower strength than the average bond strength.
+
+\begin{center}
+\begin{tabular}{ |c|m{15em}|c| }
+\hline
+\textbf{Name} & \textbf{Basis of interaction} & \textbf{Strength} \\
+\hline
+Covalent bond & Sharing of electron pairs & Strongest \\
+\hline
+Ionic bond & Attraction of opposite charges & Strong \\
+\hline
+Hydrogen bond & Sharing of hydrogen atom & Relatively strong \\
+\hline
+Hydrophobic interaction & Forcing of hydrophobic portions of molecules together in the presence of polar substances & Weak \\
+\hline
+Van der Waals attraction & Weak attractions between atoms due to oppositely polarised electron clouds & Weakest \\
+\hline
+\end{tabular}
+\end{center}
+
+\newpage
+
+* Properties of water
+- Adhesion
+- Cohesion (self-adhesion of water molecules)
+- Solubilising ionic compounds
+- High specific heat capacity
+- High heat of vapourisation
+
+* Common weak acids
+\begin{center}
+\begin{tabular}{ c c c c }
+\textbf{Acid} & \textbf{Conjugate Base} & $\mathbf{pK_a}$ & $\mathbf{K_a (\si{M})}$ \\
+\hline
+$H_3PO_4$ & $H_2PO_4^-$ & 2.14 & $7.24 \times 10^{-3}$ \\
+$H_2PO_4^-$ & $HPO_4^{2-}$ & 6.86 & $1.38 \times 10^{-7}$ \\
+$HPO_4^{2-}$ & $PO_4^{3-}$ & 12.4 & $3.98 \times 10^{-15}$ \\
+$H_2CO_3$ & $HCO_3^-$ & 6.37 & $4.27 \times 10^{-7}$ \\
+$HCO_3^-$ & $CO_3^{2-}$ & 10.25 & $5.62 \times 10^{-11}$ \\
+\end{tabular}
+\end{center}
+
+* Diversification over time
+
+\begin{forest}
+for tree={
+delay = {where content = {}
+{shape = coordinate, for siblings = {anchor = north}}{}},
+}
+[Common Ancestor (First Cell)
+[Bacteria]
+[Archaea]
+[Eukarya (Cell with nucleus)
+[Protists]
+[
+[Plants]
+[
+[Fungi]
+[Animals]]]]]
+\end{forest}
+
+\newpage
+
+* Classification Categories
+The mnemonic to remember the taxonomic classifications is:
+\\
+
+*Dear Kevin, please come over for gay sex.*
+\\
+
+Domain, Kingdom, Phylum, Class, Order, Family, Genus, Species.
+\\
+
+\[\text{Species}\]
+\[\subset\]
+\[\text{Genus}\]
+\[\subset\]
+\[\text{Family}\]
+\[\subset\]
+\[\text{Order}\]
+\[\subset\]
+\[\text{Class}\]
+\[\subset\]
+\[\text{Phylum}\]
+\[\subset\]
+\[\text{Kingdom}\]
+\[\subset\]
+\[\text{Domain}\]
+
+** Domains
+The domains of life are:
+- Archaea domain
+- Bacteria domain
+- Eukarya domain
+
+*** Archaea domain
+Contains unicellular *prokaryotes* that live in extreme environments.
+
+*** Bacteria domain
+Contains unicellular *prokaryotes* that live in all environments. Prokaryotes *lack* a membrane-bound nucleus.
+
+*** Eukarya domain
+Contains unicellular and multicellular *eukaryotes*. Eukaryotes *contain* a membrane-bound nucleus.
+
+** Kingdoms
+The kingdoms of life are:
+- Plantae kingdom
+- Animalia kingdom
+- Protists kingdom
+- Fungi kingdom
+
+*** Plantae kingdom
+The plantae kingdom includes certain algae, mosses, ferns, conifers, and flowering plants. They are multicellular, usually with specialised tissues containing complex cells. They also photosynthesise food.
+
+*** Animalia kingdom
+The animalia kingdom include sponges, worms, insects, fishes, frogs, turtles, birds, and mammals. They are multicellular with specialised tissues containing complex cells. They ingest food.
+
+*** Protist kingdom
+The protist kingdom include algae, protozoans, slime moulds, and water moulds. They are complex single cell organisms, and they absorb, photosynthesis or ingest food.
+
+*** Fungi kingdom
+The fungi kingdom include moulds, mushrooms, yeasts and ringworms. They are mostly multicellular filaments with specialised, complex cells and absorb food.
+
+* Virus
+
+** Similarities to living things
+- It has hereditary material in the form of DNA or RNA.
+- Its offspring are carrying these material.
+
+** Similarities to non-living things
+- It does not have a cell.
+- The structure of a virus is a protein shell with a core of genetic material.
+- It can only reproduce by using the machinery of others' cells.
+
+** Naming of viruses
+Viruses are not given genus and species names, because of its "living and non-living" nature. It follows the format, XXX virus, where XXX can be:
+- Name of the place where the first case appeared, like Ebola (a river a Zaire), Lassa (town in Nigeria), West Nile (West of Nile River, Egypt).
+- Name of the disease or symptoms it causes, like Influenza Virus, Bird Flu Virus (Avian Influenza), SARS virus, Human Immunodeficiency Virus (HIV).
+- Others, like the name of the discoverer (Epstein-Barr virus), or the biological characteristics of the virus (vesicular stomatitis virus) etc.
+- The main name can be followed by a subtype or strain name, like Influenza A H1N1.
+
+\newpage
+
+* Levels of organisation in the human body
+\[\text{Human body}\]
+\[\downarrow\]
+\[\text{Human cell}\]
+\[\downarrow\]
+\[\text{Chromosome}\]
+\[\downarrow\]
+\[\text{Gene}\]
+\[\downarrow\]
+\[\text{Gene expression and cell types}\]
+
+* Mammalian body cavities
+
+** Ventral cavities
+
+*** Thoracic cavity
+The thoracic cavity contains the heart, lungs, and esophagus.
+
+*** Abdominal cavity
+The abdominal cavity contains digestive and other organs, such as the stomach, liver, spleen, pancreas, and intestines.
+
+*** Pelvic cavity
+The pelvic cavity contains certain reproductive organs.
+
+** Dorsal cavities
+
+*** Cranial cavity
+The cranial cavity contains the brain.
+
+*** Vertebral cavity
+The vertebral cavity contains the spinal cord.
+
+*** Diaphragm
+The diaphragm is a membrane-like structure of muscle, tendons and fibrous tissue that separates the thoracic cavity from the abdomen.
+
+* The organ systems of humans
+
+** Nervous system
+The nervous system functions to sense and process incoming environmental stimulus to bring about appropriate responses.
+
+** Integumentary system
+The integumentary covers the body and consists of the skin, hair and the accessory structures of skin. It serves to protect underlying tissues against drying, physical trauma and from pathogens. It also regulates body temperature and is embedded with receptors that are responsible for sensing by the nervous system.
+
+** Respiratory system
+The respiratory system is the breathing machinery of the body.
+
+** Endocrine system
+The endocrine system regulates all biological processes in the body, such as the growth and function of the reproductive system and the development of the brain and nervous system, as well as the metabolism and blood sugar levels.
+\\
+
+The endocrine system is also known as the hormone system.
+
+** Urinary system
+The urinary system contains two kidneys and functions to remove metabolic waste from the body.
+
+** Digestive system
+The digestive system is responsible for breaking down food substances into simpler molecules that can be absorbed.
+
+** Reproductive system
+The reproductive system is responsible for reproduction.
+
+** Muscular system
+The muscular system is responsible for bringing about motions.
+
+** Immune system
+The immune system consists of lymphoid organs, such as the spleen and thymus, as well as the lymphatic vessels and lymph nodes.
+
+** Skeletal system
+The skeletal system forms the scaffold upon which the muscular system is layered on.
+
+** Circulatory system
+The circulatory system consists of heart and blood vessels and functions to transport materials such as oxygen, nutrients and wastes around the body via blood.
+
