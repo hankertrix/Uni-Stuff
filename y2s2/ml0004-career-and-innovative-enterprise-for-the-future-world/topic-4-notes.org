@@ -1,0 +1,587 @@
+#+TITLE: ML0004 Career & Innovative Enterprise for the Future World Topic 4 Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** STAR statements
+- STAR refers to Situation, Task, Action and Results.
+- To craft an effective resume, you can use the STAR framework to craft your statements.
+- In the context of a resume, situation and task refer to the company and job title respectively.
+- As an undergraduate, your focus would be on action (what you did) and results (what you learnt or achieved).
+- Always start your statements with a strong action verb corresponding to the skill you wish to showcase.
+- Following the STAR framework will help you write clear and concise statements that will highlight your accomplishments.
+
+*** Example
+"Taught photography skills to 20 new members. Within 6 months, the team won the most number of awards at the 2019 National Photography Competition for the Club."
+
+- Situation: NTU Photography Club.
+- Task: Vice President.
+- Action: Taught Photography.
+- Results: Team won most number of awards.
+
+*** Learning points on writing STAR statements
+1. Quantify the results wherever possible using numbers or percentages. If you are unable to quantify your results, explain the outcomes you generated and any learning points.
+2. Be specific on the actions you took and include the software or tools which were used. This enables the employer to have a clearer picture of what you did.
+3. Start your statements with strong action verbs in past tense when describing the actions you took to complete the tasks. This enables the employer to clearly identify the skills you possess.
+
+** Cover letter
+- Before writing a cover letter, find out more about the company and the specific job you want.
+- Next, catch the attention of the hiring manager or recruiter with a strong opening line.
+- Hiring managers look for people who can help them solve problems, so show that you know what the company does and some of the challenges it faces.
+- Then explain how your experience has equipped you to meet those needs.
+
+*** Why write a cover letter?
+1. It introduces you to the employer.
+   A cover letter is your first change to make a good impression on the employer. It provides a brief overview of your qualifications and why you are the best fit for the job.
+2. It highlights your relevant experience.
+   Your cover letter allows you to highlight your relevant experience and how it makes you a strong candidate for the job. You can provide specific examples of how your experience has prepared you for the role.
+3. It demonstrates your writing skills.
+   A well-written cover letter demonstrates your communication and writing skills. Employers often use it as a way to assess your ability to write clearly and persuasively.
+4. It shows your interest in the job.
+   A cover letter allows you to express your enthusiasm for the job and the company. It shows that you have taken the time to research the company and the position, and that you are genuinely interested in working there.
+5. It sets you apart from other candidates.
+   A well-crafted cover letter can set you apart from other candidates who may have similar qualifications and experience. It shows that you have gone the extra mile to make a strong case for why you are the best fit for the job.
+
+* Ways to find a job
+
+** Job portals
+- [[https://careeraxis.ntu.edu.sg][CareerAxis]]
+- [[https://startupjobs.asia/][StartUpJobs]]
+- [[https://www.mycareersfuture.gov.sg/][MyCareersFuture]]
+- [[https://www.linkedin.com/][LinkedIn]]
+- [[https://sg.indeed.com/][Indeed]]
+- [[https://www.careers.gov.sg/][Careers@Gov]]
+- [[https://www.foundit.sg][foundit]]
+- [[https://gradsingapore.com/][gradsingapore]]
+- [[https://e27.co/][e27]]
+
+** Company platforms
+- Check out the job listings from your preferred companies on their website or on LinkedIn.
+- Follow the companies you like on social media.
+- Follow and connect with people who work in those companies.
+
+** Personal networks
+- Leverage your first or second degree connections.
+- Friends and family, past internship colleagues, past volunteering or project connections, and other acquaintances.
+- [[https://ntu.jobkred.com/student][NTU Mentorship Community]]
+
+** Speculative applications
+Finding hidden jobs:
+- Shortlist the employers that interest you through "function" and "industry" categories.
+- Tailor your resume to each job.
+- Send them a message about your interests and motivations, such as why you would like to intern or work with them.
+
+** Networking fairs
+Take note of career events organised by CAO throughout the year. These are good opportunities for students to network with potential companies. Such events include, Job-In-Fair, Recruitment Talks, GradRecruit, Career Fair, Management Associate Programme (MAP) Awareness Event.
+
+* Resume
+- Every resume should be customised to the internship or job that you are applying for.
+- Include all necessary components relevant to the application.
+- Your resume is a "live" document that is always a "work-in-progress".
+- Update your resume periodically once you have completed an internship, project or undergone a meaningful learning experience.
+
+** Components of a good resume
+
+*** Personal information
+- Include your full name, email address and mobile number.
+- You may also include a link to your LinkedIn profile.
+- You may also include a link to your portfolio to showcase your creative work.
+
+*** Education
+- Indicate your current NTU degree title.
+- You may also include your overseas student exchange programme experience or relevant modules taken.
+
+*** Academic projects
+- Depending on your programme of studies, this is optional.
+- If you think it is relevant, you may include your final year project, research projects, coursework projects and URECA (Undergraduate Research Experience).
+- Explain the project context and include details that are relevant to the job you are applying for.
+- Do not use abbreviations or jargon.
+
+*** Internship experience
+Share about what you have learnt and achieved during your internship.
+
+*** Work experience
+- Highlight the relevant skills that you have acquired from your internship or your part-time work experiences.
+- Use action verbs and apply the STAR framework to showcase your skills.
+
+*** Co-curricular Activities (CCA) and community services
+Showcase your soft skills like leadership, problem-solving, project management and teamwork abilities that you have demonstrated in your CCAs, Halls and volunteer projects.
+
+*** Skills
+Include your digital skills (e.g. Java, Python or SPSS) and language proficiency (e.g. German or Korean) if they are relevant to the internship or job you are applying for.
+
+*** Hobbies and interests
+- Optional, but it gives a glimpse into who you are as a person outside of school.
+- You can include hobbies and interests that lend greater insights into your competence and passion for the internship or job.
+- This sometimes differentiates you from other applicants.
+
+** Formats
+
+*** Reverse-chronological resume
+- Indicates the most recent education and work experiences.
+- Most commonly-used format for fresh graduate applications.
+
+*** Functional resume
+- Highlights skills and abilities.
+- Skills are organised by theme.
+- Specific examples illustrate skills.
+- Ideal for applicants with many relevant experiences in a specific skill or for mid-career changes with gaps in their employment histories.
+
+** Learning points on writing a resume
+1. Create a professional email address.
+2. Focus on highlighting the skills that are relevant to the job application and try to include quantifiable results that you achieved.
+3. Highlight transferrable or soft skills from your CCAs, exchange programme or volunteer work in your resume.
+4. A messy and disorganised resume gives an impression that not much effort was put into crafting it.
+5. Always get a trusted friend or Career Coach to critique your resume.
+
+** Action verbs
+- Action verbs illustrate your contributions and accomplishments.
+- They are often the words that hiring managers look for in your resume to assess if you are suited for the internship or job.
+- For example, if you were part of a team that solved a technical problem, instead of using the word "assisted", demonstrate how you resolved an issue with words like "resolved" or "conceptualised".
+- Search for "resume action verbs" online to get a list of strong action verbs you can use to craft effective STAR statements.
+- Below is a table of action verbs:
+
+| Communication and people skills | Creative skill | Management and leadership skills |
+|---------------------------------+----------------+----------------------------------|
+| Collaborated                    | Conceptualised | Established                      |
+| Directed                        | Formulated     | Streamlined                      |
+| Convinced                       | Integrated     | Spearheaded                      |
+| Negotiated                      | Designed       | Developed                        |
+
+* Interviews
+
+** Interview research
+
+*** The company
+Research the company, their corporate values, latest developments and media reports.
+
+*** Industry trends
+Read up on industry trends - past, current and possible future trends and technological breakthroughs. You can speak to NTU CAO Coaches or consultants for more insights into the company and industry.
+
+*** Latest news articles
+For more in-depth knowledge, read up on the latest news articles about the company from various sources.
+
+*** Interviewer details
+Find out the name and designation of your interviewers. Hiring managers or department heads may ask more technical questions. A human resource personnel may ask more behavioural questions on leadership, communication skills or other soft skills.
+
+*** Interview process details
+Find out more about the selection process - how many rounds of interviews and what to expect during the interview.
+
+*** Networking events
+Attend networking events where you will have the opportunity to meet and speak with the company's representative and industry professionals. Speak to NTU Alumni who are currently working or have worked in the company.
+
+** Tips
+1. Posture: Head up, shoulders pulled back, no slouching, and don't seem laid-back.
+2. Treat everyone in the office with respect while maintaining eye contact, as anyone you run into on the way may be asked to give feedback on you.
+3. Stay calm by taking a deep breath, hold it, count to 3 and then slowly breathe out.
+4. Ace introductions by greeting everyone in a way that is authentic to you, and say their name.
+5. Have firm handshakes and good eye contact.
+6. Small talk often comes up before any questions, so it's good to have a few current events or topics in mind.
+7. Practice answering the common interview questions, like the following:
+   - Why do you want to work here?
+   - What makes you unique?
+8. Question: Tell a little more about your experience and what you bring to this role?
+   - They are looking to learn what makes you stand out.
+   - Think about your experiences and how the role lines up with your future goals.
+9. Be honest with your answers, and don't be afraid to pause and think for a second.
+10. Don't speak negatively about previous places you've worked.
+11. Talk about what you've learnt instead.
+12. Be yourself and let your personality shine.
+13. Be aware of your movements and practice polite, confident body language.
+14. Subtly miming your interviewer's posture can actually create a sense of connection.
+15. Avoid unnecessary movements like tapping your fingers or bouncing your leg.
+16. Be aware and stay present.
+17. Make sure to have a short list of questions for your employer in your back pocket.
+18. Ask the questions you would ask if you got the job, like what would you like to know from the manager if tomorrow is your first day?
+19. Asking a few questions show that you did your homework and that you really care.
+20. Some questions include:
+    - What do you like best about working here?
+    - What are some mistakes that people have made in this position?
+    - What is a goal that you're currently working towards?
+    - How will my performance be evaluated?
+21. Always follow up within 24 hours with a thank-you email to the hiring manager, which can be a quick note simply thanking them for their time, or a longer one that elaborates on some of the things you've talked about. This is key to leaving a lasting impression.
+
+*** Key tips
+1. Research the company and position beforehand.
+2. Prepare questions to ask about the company and position.
+3. Dress appropriately for the interview.
+4. Arrive at least half an hour early.
+5. Silence your phone before starting the interview.
+6. Make eye contact with the interviewer and avoid nervous gestures.
+7. Listen carefully to the interviewer's questions and answer them thoughtfully.
+8. Use the STAR (Situation, Talk, Action and Results) Framework to structure your interview answers.
+9. Be honest about your experience, qualifications, and skills.
+10. Showcase your strengths and accomplishments.
+11. Don't bring up salary or benefits unless the interviewer does first.
+12. Be confident, relax and smile throughout the interview to create a positive impression.
+
+** Things to keep in mind before the interview
+
+*** Company fit
+Express your enthusiasm for the company's culture, mission, or products and how you see yourself contributing positively to the team and its goals.
+
+*** Top strengths
+Pick strengths that are most relevant to the job and provide examples from your work history that demonstrate how these strengths have contributed to your effectiveness.
+
+*** Problem-solving
+Outline your approach to problem-solving, focusing on a particularly challenging issue you faced, how you addressed it, and the results of your actions.
+
+*** Juggling tasks
+Discuss your method for managing multiple tasks or projects, emphasising your ability to organise, prioritise, and deliver results under pressure.
+
+*** Moving on
+Communicate your desire for new challenges and growth opportunities that the prospective role offers, while expressing gratitude for your current or previous role's experiences.
+
+*** Achievements
+Identify key achievements in your career, especially those that demonstrate skills and abilities relevant to the job you're applying for, underscoring your potential value to the employer.
+
+*** Weakness
+Talk about a weakness you've had, how you've addressed it, and what you've learned. Frame it as journey of professional growth.
+
+*** Standing out
+Highlight strengths that directly match the job's needs by discussing specific instances where these strengths played a key role in your past successes.
+
+*** Missed targets
+Describe a situation where you missed a target, how you handled the aftermath, and the strategies you implemented to ensure it doesn't happen again.
+
+*** Handling errors
+Share an example of an error you made, the steps you took to correct it, and the insights gained to avoid similar issues in the future.
+
+** What employers are looking for
+- Humility
+
+  Do you believe you have plenty to learn from those around you at the workplace instead of thinking you are superior because of your academic achievements?
+
+- Courage
+
+  Do you have the courage to believe in your conviction and stand up when you think something is not going right?
+
+- Team spirit
+
+  Can you work well in a team and contribute to the team and organisational success instead of just your own personal success?
+
+- Innovation
+
+  How can you improve the existing processes, the way work is done and have an innovative mindset?
+
+** Answering interview questions
+1. Pay attention to the interview question and be focused when answering it. Keep to a duration of around 2 minutes and do not digress when answering.
+2. Give real examples to your points. For example, if you say that you have leadership skills, support your answer on how you demonstrated your leadership skills in CCA.
+3. Be concise. Don't go in the hope that the quantity of words will impress the interviewers. Once you have answered the question, you could say "I hope I have answered your question." Remember to smile.
+
+** Typical interview questions
+
+*** Why do you want to work here?
+- Think about what you can contribute to the organisation in terms of your skills and interests.
+- Do not give trivial answers like "Because you have such a great reputation."
+
+*** Tell me about yourself.
+- Choose an interesting aspect of yourself to share as this will help you be more memorable when the interviewers are evaluating all the candidates.
+- An interesting part can include your CCAs, your achievements, or your community service.
+- Ideally, it should be something that is valued by the organisation, so check the online annual report of the organisation to see what their values are.
+
+*** What are your strengths?
+- Choose strengths that will be valued by the interviewers, depending on the job you are applying for.
+- For example, if you are applying for an accountancy job, your self-confessed strength could be that you are meticulous, organised and systematic in your work to meet deadlines efficiently.
+- Give a concrete example to illustrate your strength.
+
+*** What are your weaknesses?
+- Choose a weakness that will not be seen by the interviewers as a definite "no-no", depending on the job you are applying for.
+- For example, if you are applying for an accountancy job, the last thing the interviewers want to hear is that you tend to be careless in your work.
+
+*** How well do you work in a team?
+- This suggests the job requires a lot of teamwork and the interview needs to ensure that they hire someone who has excellent teamwork skills.
+- You need to give examples of how well you have worked in teams in CCAs, group projects, or when organising events.
+
+*** Do you feel you are inexperienced for this job?
+- Explain how quickly you can pick up something, using examples from your experience.
+- You could also highlight some transferable skills you have demonstrated in the past in your CCAs to show how relevant they are to the job being applied for.
+
+*** What do you dislike doing in a job?
+- The interviewer is checking if you have a good job-fit as the job may have unpleasant tasks to complete.
+- Even if you do not like a certain task which is important to the job, explain how you have overcome your dislike and what you have learnt from completing such tasks.
+
+*** Why did you choose to study at NTU, or why did you choose your particular course of study?
+- Explain in a way to show that you are able to evaluate your choices and highlight you deep interest in the course or subjects.
+- Show how NTU, the course or the subjects have impacted you and helped you develop certain skills.
+- The last thing the interviewer wants to hear is that your parents forced you to study something, or you were given your last choice when you applied for university.
+
+*** How well do you work under pressure?
+- Explain how well you coped under pressure using concrete examples of your CCAs, studies, etc.
+- Explain how you cope with pressure, for example, self-care activities like your favourite exercise or eating well.
+
+*** Where do you see yourself in 5 years' time
+- Research on the organisation to see the type of work or job roles there are.
+- The interviewer would like to know your career plans and whether you have a realistic view of career progression while balancing this with a certain drive or passion.
+- Reflect on you career plans and share, for example, you may be interested in pursuing a leadership position or a more specialised role to deepen your skills in a particular technical field.
+
+*** Other possible questions
+- What do you know about our company, and why do you want to work here?
+- What skills or experiences do you have that make you a good fit for this role?
+- Can you describe a challenging project or situation you faced during your studies or internships?
+- How do you handle working under pressure or tight deadlines?
+- Can you give an example of a time when you demonstrated leadership or initiative?
+- Describe a situation where you had to work in a team. What was your role, and how did you contribute to the team's success?
+- What do you consider your greatest strengths and weaknesses?
+- How do you handle receiving feedback or criticism on your work?
+- Where do you see yourself in the next 5 years, both professionally and personally?
+
+** What not to do during an interview?
+1. Be arrogant.
+2. Avoid eye contact.
+3. Be late.
+4. Be too early.
+
+   Avoid arriving more than 10 minutes early, as too early of an arrival could be inconvenient for the interviewer, causing them to rush through a prior commitment and come into the interview frustrated. Instead, if you arrive more than 10 minutes early, wait in your car or outside the building and review your interview documents. When appropriate, go inside and introduce yourself at the reception desk.
+5. Lie.
+6. Fidget.
+7. Show a lack of accountability by blaming others for your mistakes.
+8. Check the time.
+9. Answer the phone.
+10. Act desperate.
+11. Appear angry.
+12. Cross your arms.
+13. Be defensive.
+14. Come unprepared.
+15. Look bored.
+16. Be rude.
+17. Eat.
+
+** What do interviewers look for?
+1. Your body language.
+2. Likeability.
+3. Openness to new approaches.
+4. Preparation.
+5. Soft skills in action.
+6. Leadership.
+7. Confidence.
+8. Passion.
+9. Success stories.
+10. Curiosity.
+
+    You can ask things like:
+    - Why is this position needed?
+    - How will you know that you hired the right person?
+    - How does this role fuel the company's overall success?
+    - What immediate challenges and opportunities await the person who fills this role?
+    - What are the three key things you're looking for in the person who will have this job?
+11. Personality.
+12. Thoughtfulness.
+13. Self-direction.
+14. Expectations.
+15. Self-awareness.
+16. Motivation.
+17. Willingness.
+18. Understanding of the company.
+    - History
+    - Business model
+    - Mission
+    - Values
+    - Goals
+19. Understanding of the role.
+20. Understanding your potential in the role.
+
+** End-of-interview questions
+Interviewers tend to ask "Do you have any questions for us?" at the end of the interview. It is to:
+- Ensure that the candidates have all their questions and doubts answered over the course of the interview.
+- Evaluate how keen the candidates are on the job and company.
+
+Asking thoughtful questions at the end of a job interview can demonstrate your interest in the company and the role, and can also provide you with valuable information to help you decide if the job is a good fit for you.
+
+Do not say you do not have any questions as this may be interpreted as a lack of preparation for the interview or a lack of interest in the job. Leave a memorable and positive impression by preparing 3 to 5 questions to ask the interviewer.
+
+*** Possible questions to ask
+- Can you tell me more about the typical day-to-day responsibilities of this role?
+- Can you describe the company culture and what it's like to work here?
+- What are the most important qualities for success in this position?
+- What opportunities are there for professional development and growth within the company?
+- How do you see this role fitting into the larger goals and objectives of the company?
+- What must a new hire in this position achieve in the first 100 days?
+- What are some challenges facing the company right now, and how does this role contribute to addressing them?
+- What is the next step in the hiring process, and when can I expect to hear back from you?
+- What are your expectations of an ideal intern?
+- What are the qualities that would make someone unsuccessful in this internship?
+- What have you liked most about working here?
+- What are the day-to-day responsibilities I will be assigned to?
+- I would love to work for you. Can you share what are my next steps?
+- How long will it take to make a decision about me and is there anything I can do to help you make it?
+
+** Types of interview
+
+*** Digital interview
+There is an increasing tendency for hiring teams to use digital interviews, as opposed to traditional face-to-face interviews, as digital interviews improve efficiency in the hiring process, allowing companies to make hiring decisions faster.
+
+Digital interviews allow hiring teams and job candidates to chat online through various platforms (i.e. Zoom, Microsoft Teams, etc.).
+
+Another common type of digital interview is the recorded interview where candidates record themselves answering a set of questions selected by the hiring team.
+
+**** Tips
+1. Quiet environment.
+   - Close all non-essential windows and lock your door.
+2. Internet stability.
+   - Check your internet connection and video quality.
+   - Consider using an Ethernet cable.
+3. Camera.
+   - Position camera slightly above eye level.
+   - Sit half an arm's length away from the camera.
+   - Use a virtual background of a clean background image.
+4. Audio.
+   - Test your audio before the interview.
+5. Laptop.
+   - Ensure that your battery is fully charged.
+   - Find out which platform will be used and do a test run (Zoom, Cisco Webex, Google Meet, Skype, Microsoft Teams)
+6. Appearance.
+   - Dress professionally.
+   - Ensure lighting is adequate so that your face is not in darkness.
+7. Materials.
+   - Have pen, paper and water nearby.
+   - Print out your resume and the job description.
+8. Have a contingency plan.
+   - If the connection fails, request or give your mobile number for a callback.
+
+**** How to prepare?
+- Preparation is key.
+- Test your technology.
+- Set the scene and minimise distractions.
+- Sit down prepared.
+- Practice, don't memorise.
+- Monitor your body language.
+- Dress the part.
+- Make a connection.
+- Be yourself.
+- Immediately follow up.
+
+*** Video interview
+Organisations from industries like consulting, banking, healthcare, engineering and fast-moving consumer goods (FMCGs) are adopting video interviews in their screening process.
+
+Organisations provide candidates with a link that brings them to a platform to answer a few mandatory questions on their background, experiences and motivations. Video interviews do not replace traditional interviews, but they enhance the interview selection process by identifying suitable applications in a shorter amount of time, by assessing how candidates articulate their suitability for the role.
+
+As your responses are being recorded, you will need to answer the questions once the recording starts. Be prepared and respond succinctly.
+
+**** Tips
+1. Be professional.
+   - Approach your video interview like a face-to-face interview.
+   - Dress professionally, speak clearly and maintain eye contact with the camera.
+   - Do your research beforehand and prepare what you want to say.
+   - Be mindful of your body language and avoid too many hand gestures.
+2. Articulate your skills and abilities.
+   - Don't just read off your script in front of the camera.
+   - The video interview gives you the opportunity to show and demonstrate who you are.
+   - Share about your relevant skills and experiences and why you are interested in the role you are applying for.
+3. Be succinct.
+   - Keep your responses within the time limit given for each question.
+   - You have a short amount of time to capture their attention and make a good first impression.
+
+*** Technical interview
+Technical interviews involve completing or solving questions, problems, and case studies related to the technical ability that the job requires. It can be in a form of face-to-face interviews, online tests or even on competition basis with other candidates.
+
+The test will also be industry and company specific (e.g. creating a loan approval app for a bank, creating sophisticated interactive client database for a sales office).
+
+Interviewers will assess your knowledge, skills, critical thinking, and problem-solving abilities to perform under pressure or unfamiliar circumstances.
+
+**** Tips
+1. Review and refresh your technical knowledge to be tested.
+2. Research and prepare for possible areas to be tested that are industry related.
+3. Be clear to articulate your reasoning and thought process at arriving at your answers.
+
+*** Lunch interview
+A lunch interview is a type of job interview where the employer and candidate meet over lunch to discuss the position and get to know each other in a more informal setting at a restaurant or café near the company's office.
+
+During a lunch interview, the conversation may cover many of the same topics as a traditional job interview, such as the candidate's experience, skills, and qualifications, as well as the requirements and expectations of the position.
+
+It's important to remember that a lunch interview is still a job interview, and you should be prepared to answer questions about your qualifications and experience. You should also be aware of social etiquette, such as ordering appropriate food and drinks and engaging in polite conversation with the interviewer.
+
+*** Assessment centres
+At assessment centres, interviewees are put through a series of carefully designed activities in groups, consisting of interviews, presentations, case study analysis, group discussions and in-tray exercises. Observers on the side assess each candidate's performance and all observations will be collated for the final hiring decision at the end of the day.
+
+Many companies in industries such as banking and finance, consulting, engineering, public service and fast-moving consumer goods (FMCGs) use assessment centres as part of their hiring process.
+
+Traits that the assessors are looking out for are largely connected to the company's core values which include critical thinking, collaboration, analytical skills, interpersonal skills and inclusivity. The reason why assessment centres are common during the selection process is because assessors are able to see the real you and how well you work with others to achieve team goals in a simulated environment.
+
+There will almost definitely be some kind of group assessment carried out on the day.
+
+Group activities in assessment centres test your ability to:
+- Show leadership qualities
+- Work well in a team
+- Strike a balance between putting forth your ideas and showing interest in other's ideas
+- Contribute to the team by taking on a role
+
+**** Tips
+1. Speak up and be confident.
+   This is going to get you noticed by the accessors so that they can assess your performance.
+2. Be collaborative.
+   Showcase your strengths without putting other candidates down.
+3. Encourage quieter members of the group to contribute and don't criticise other members' ideas.
+   This shows that you are aware of all the members in your team, and you have what it takes to work well in a group.
+4. Do note that there are other different roles you can play during the group activities, such as timekeeper, mediator, scribe, etc.
+5. Make suggestions on the approach of the team activity at the start.
+6. Make suggestions on the direction of the activity, such as "Shall we take turns to suggest ...?"
+7. Aim for a collaborative approach. For example, invite team members to share their differences in an amicable way.
+8. Show good self-awareness if asked about your performance during the activity.
+
+*** Group interviews
+
+**** Panel interviews
+Multiple candidates are interviewed at the same time by a panel of interviewers. Each candidate may be asked questions in turn or free for all.
+
+**** Group discussions
+Candidates are given a topic to discuss among themselves while interviewers observe their communication skills, teamwork, and leadership abilities.
+
+**** Tips
+- Take the *initiative* when appropriate, but also encourage others to contribute.
+- Speak *clearly and assertively*, but do not dominate the conversation.
+- Be *concise and articulate* in your responses.
+- Show *respect* for others' opinions and contributions.
+- Be willing to *listen and build on others' ideas*.
+- Exhibit *positive body language*, such as nodding and smiling.
+
+**** Commonly asked questions
+- Who would you hire and why, based on what you know about the other prospects in this room?
+- Why do you think you're the best candidate for this job?
+- Can you tell us about a time when you worked on a project with someone from another department or another course?
+- How do you effectively communicate at work?
+- What motivated you to apply for this specific position?
+- Describe a situation where you went above and beyond to meet a customer's needs?
+- How will your strengths benefit our company?
+- Name on of your weaknesses that you would like to improve?
+- What role did you play in drafting the project plan that your group created?
+- How do you think your core values fit with our company's culture?
+- Can you briefly introduce yourself to the group?
+- Share an example of a time when you contributed an innovative idea to a group?
+- What skills and experiences do you bring to this team?
+- Can you describe a time when you had to work effectively in a team?
+- What role do you usually take on in a group project?
+- How do you balance your own ideas with the ideas of others when making group decisions?
+- What interest you about this position and working with this team?
+- Tell us about a time when you had to manage multiple tasks with a tight deadline.
+- How do you handle situations when you're assigned more tasks than you can handle?
+- Share an interesting fact about yourself that's not on your resume.
+
+**** Tips
+- Avoid phrases that are too general. Avoid phrases like "wanting new challenges to learn new things" as they are overused and meaningless to the interviewer.
+- Ask questions to show interest in the company. This is an opportunity to find out important information from the company which you cannot get from just surfing the internet.
+- Think of something similar that you picked up quickly to let the interviewer know that you will not be hampered by your lack of experience and that you can be productive as soon as possible.
+- Think of a more personal way of phrasing your strengths and use concrete examples so that you sound more original than the other candidates.
+- Put a positive spin to your weakness and what you are doing to overcome a weakness. Choose a weakness that is not seen to be critical to the job being applied to.
+- Show a good knowledge of the company's product and services in order to show that your application arises from a strong professional interest and alignment to your values.
+
+** Post-interview follow up
+- Always send a thank-you email expressing your gratitude to all your interviewers and the person who has helped to schedule the interview within 24 hours.
+- In that email, reiterate your interest in the role, bring up pertinent achievements that you shared during the interview, and express your interest in joining the team and say that you look forward to their reply.
+- If you do not get the job, treat the interview as a learning experience so that you can do better in the next interview.
+- Cherish every interview as not every job application will get you an interview.
+- Evaluate your own interview performance, like the questions you have answered well, not too well, and areas to improve on for future interviews.
+- Tabulate things to remember to prepare yourself for the second interview, such as the name of interviewers, reporting structure, etc.
+- Email any supporting documents, like references for example, swiftly if required.
+- Notify your references about potential interviewers who might be contacting them for character reference about your interview.
+- Enlarge your network with friendly interviewers via LinkedIn at your discretion.
+- Be patient for the prospective organisation to contact you.
+
+** Learning points
+1. Not every job application will result in an interview.
+2. Employers are looking for qualities such as humility, an innovative mindset, courage, and team spirit in job candidates to see if they fit into the company culture.
+3. Be prepared about the type of interview you are attending as that would determine the dressing you choose for the interview as well as the type of preparation you need to make before the interview.
+4. Prepare thoughtful question to ask at the end of a job interview to demonstrate your interest in the company and the role. These question can also provide you with valuable information to help you decide if the job is a good fit for you.
+5. Always send a thank-you email to all your interviewers and the person who has helped to schedule the interview, within 24 hours.

@@ -1,0 +1,443 @@
+#+TITLE: MA0218 Exercise 1
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+STARTUP: inlineimages
+#+OPTIONS: toc:2
+#+PROPERTY: header-args :session py :kernel python3 :results output
+
+* Discussion questions :noexport:
+
+** Question 1
+
+*** How much? How many?
+Predicting an engineer's salary after 5 years of working at a company.
+
+*** Is it Type A or Type B?
+Classifying an image as containing an animal or not containing an animal.
+
+*** How is this organised?
+Marketing a product to a customer group.
+
+*** Is it a weird behaviour?
+Detection of credit card fraud.
+
+*** What should be done next?
+Autonomous vehicles.
+
+** Question 2
+
+*** Types of data needed
+- Price
+- Location
+- Age
+- Lease duration
+- Condition
+
+*** Type of problem
+It is a "How much? How many?" kind of problem.
+
+** Question 3
+
+*** Types of data needed
+- Time and location of the whales
+- Known types of whales
+- Images or videos of the whales
+- Audio recording of whale sounds
+
+*** Type of problem
+It is a "How much? How many?" kind of problem.
+
+* Solutions
+
+** Problem 1
+
+*** (a)
+#+begin_src jupyter-python :results none
+# Import the required libaries
+import numpy as np
+import pandas as pd
+
+# Import the training data
+training_data = pd.read_csv("train.csv")
+#+end_src
+
+*** (b)
+#+begin_src jupyter-python
+# Get the shape of the data
+number_of_observations, number_of_variables = training_data.shape
+
+# Print the number of observations
+print(f"{number_of_observations = }")
+
+# Print the number of variables
+print(f"{number_of_variables = }")
+#+end_src
+
+#+RESULTS:
+: number_of_observations = 1460
+: number_of_variables = 81
+
+*** (c)
+#+begin_src jupyter-python
+# Print out the data types
+print(training_data.dtypes)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Id                 int64
+MSSubClass         int64
+MSZoning          object
+LotFrontage      float64
+LotArea            int64
+                  ...
+MoSold             int64
+YrSold             int64
+SaleType          object
+SaleCondition     object
+SalePrice          int64
+Length: 81, dtype: object
+#+end_example
+
+The data types of the variables are 64-bit integers,
+64-bit floating point numbers and objects, which are probably text.
+
+*** (d)
+#+begin_src jupyter-python
+# Call the info method
+training_data.info()
+#+end_src
+
+#+RESULTS:
+#+begin_example
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1460 entries, 0 to 1459
+Data columns (total 81 columns):
+ #   Column         Non-Null Count  Dtype
+---  ------         --------------  -----
+ 0   Id             1460 non-null   int64
+ 1   MSSubClass     1460 non-null   int64
+ 2   MSZoning       1460 non-null   object
+ 3   LotFrontage    1201 non-null   float64
+ 4   LotArea        1460 non-null   int64
+ 5   Street         1460 non-null   object
+ 6   Alley          91 non-null     object
+ 7   LotShape       1460 non-null   object
+ 8   LandContour    1460 non-null   object
+ 9   Utilities      1460 non-null   object
+ 10  LotConfig      1460 non-null   object
+ 11  LandSlope      1460 non-null   object
+ 12  Neighborhood   1460 non-null   object
+ 13  Condition1     1460 non-null   object
+ 14  Condition2     1460 non-null   object
+ 15  BldgType       1460 non-null   object
+ 16  HouseStyle     1460 non-null   object
+ 17  OverallQual    1460 non-null   int64
+ 18  OverallCond    1460 non-null   int64
+ 19  YearBuilt      1460 non-null   int64
+ 20  YearRemodAdd   1460 non-null   int64
+ 21  RoofStyle      1460 non-null   object
+ 22  RoofMatl       1460 non-null   object
+ 23  Exterior1st    1460 non-null   object
+ 24  Exterior2nd    1460 non-null   object
+ 25  MasVnrType     588 non-null    object
+ 26  MasVnrArea     1452 non-null   float64
+ 27  ExterQual      1460 non-null   object
+ 28  ExterCond      1460 non-null   object
+ 29  Foundation     1460 non-null   object
+ 30  BsmtQual       1423 non-null   object
+ 31  BsmtCond       1423 non-null   object
+ 32  BsmtExposure   1422 non-null   object
+ 33  BsmtFinType1   1423 non-null   object
+ 34  BsmtFinSF1     1460 non-null   int64
+ 35  BsmtFinType2   1422 non-null   object
+ 36  BsmtFinSF2     1460 non-null   int64
+ 37  BsmtUnfSF      1460 non-null   int64
+ 38  TotalBsmtSF    1460 non-null   int64
+ 39  Heating        1460 non-null   object
+ 40  HeatingQC      1460 non-null   object
+ 41  CentralAir     1460 non-null   object
+ 42  Electrical     1459 non-null   object
+ 43  1stFlrSF       1460 non-null   int64
+ 44  2ndFlrSF       1460 non-null   int64
+ 45  LowQualFinSF   1460 non-null   int64
+ 46  GrLivArea      1460 non-null   int64
+ 47  BsmtFullBath   1460 non-null   int64
+ 48  BsmtHalfBath   1460 non-null   int64
+ 49  FullBath       1460 non-null   int64
+ 50  HalfBath       1460 non-null   int64
+ 51  BedroomAbvGr   1460 non-null   int64
+ 52  KitchenAbvGr   1460 non-null   int64
+ 53  KitchenQual    1460 non-null   object
+ 54  TotRmsAbvGrd   1460 non-null   int64
+ 55  Functional     1460 non-null   object
+ 56  Fireplaces     1460 non-null   int64
+ 57  FireplaceQu    770 non-null    object
+ 58  GarageType     1379 non-null   object
+ 59  GarageYrBlt    1379 non-null   float64
+ 60  GarageFinish   1379 non-null   object
+ 61  GarageCars     1460 non-null   int64
+ 62  GarageArea     1460 non-null   int64
+ 63  GarageQual     1379 non-null   object
+ 64  GarageCond     1379 non-null   object
+ 65  PavedDrive     1460 non-null   object
+ 66  WoodDeckSF     1460 non-null   int64
+ 67  OpenPorchSF    1460 non-null   int64
+ 68  EnclosedPorch  1460 non-null   int64
+ 69  3SsnPorch      1460 non-null   int64
+ 70  ScreenPorch    1460 non-null   int64
+ 71  PoolArea       1460 non-null   int64
+ 72  PoolQC         7 non-null      object
+ 73  Fence          281 non-null    object
+ 74  MiscFeature    54 non-null     object
+ 75  MiscVal        1460 non-null   int64
+ 76  MoSold         1460 non-null   int64
+ 77  YrSold         1460 non-null   int64
+ 78  SaleType       1460 non-null   object
+ 79  SaleCondition  1460 non-null   object
+ 80  SalePrice      1460 non-null   int64
+dtypes: float64(3), int64(35), object(43)
+memory usage: 924.0+ KB
+#+end_example
+
+The info method prints a table showing the columns in the data set, the
+number of non-null items, and the type of the items in the column. It
+also prints the number of columns for each data type, and the memory
+used by the data set.
+
+*** (e)
+#+begin_src jupyter-python
+# Call the describe method
+print(training_data.describe())
+#+end_src
+
+#+RESULTS:
+#+begin_example
+                Id   MSSubClass  LotFrontage        LotArea  OverallQual  \
+count  1460.000000  1460.000000  1201.000000    1460.000000  1460.000000
+mean    730.500000    56.897260    70.049958   10516.828082     6.099315
+std     421.610009    42.300571    24.284752    9981.264932     1.382997
+min       1.000000    20.000000    21.000000    1300.000000     1.000000
+25%     365.750000    20.000000    59.000000    7553.500000     5.000000
+50%     730.500000    50.000000    69.000000    9478.500000     6.000000
+75%    1095.250000    70.000000    80.000000   11601.500000     7.000000
+max    1460.000000   190.000000   313.000000  215245.000000    10.000000
+
+       OverallCond    YearBuilt  YearRemodAdd   MasVnrArea   BsmtFinSF1  ...  \
+count  1460.000000  1460.000000   1460.000000  1452.000000  1460.000000  ...
+mean      5.575342  1971.267808   1984.865753   103.685262   443.639726  ...
+std       1.112799    30.202904     20.645407   181.066207   456.098091  ...
+min       1.000000  1872.000000   1950.000000     0.000000     0.000000  ...
+25%       5.000000  1954.000000   1967.000000     0.000000     0.000000  ...
+50%       5.000000  1973.000000   1994.000000     0.000000   383.500000  ...
+75%       6.000000  2000.000000   2004.000000   166.000000   712.250000  ...
+max       9.000000  2010.000000   2010.000000  1600.000000  5644.000000  ...
+
+        WoodDeckSF  OpenPorchSF  EnclosedPorch    3SsnPorch  ScreenPorch  \
+count  1460.000000  1460.000000    1460.000000  1460.000000  1460.000000
+mean     94.244521    46.660274      21.954110     3.409589    15.060959
+std     125.338794    66.256028      61.119149    29.317331    55.757415
+min       0.000000     0.000000       0.000000     0.000000     0.000000
+25%       0.000000     0.000000       0.000000     0.000000     0.000000
+50%       0.000000    25.000000       0.000000     0.000000     0.000000
+75%     168.000000    68.000000       0.000000     0.000000     0.000000
+max     857.000000   547.000000     552.000000   508.000000   480.000000
+
+          PoolArea       MiscVal       MoSold       YrSold      SalePrice
+count  1460.000000   1460.000000  1460.000000  1460.000000    1460.000000
+mean      2.758904     43.489041     6.321918  2007.815753  180921.195890
+std      40.177307    496.123024     2.703626     1.328095   79442.502883
+min       0.000000      0.000000     1.000000  2006.000000   34900.000000
+25%       0.000000      0.000000     5.000000  2007.000000  129975.000000
+50%       0.000000      0.000000     6.000000  2008.000000  163000.000000
+75%       0.000000      0.000000     8.000000  2009.000000  214000.000000
+max     738.000000  15500.000000    12.000000  2010.000000  755000.000000
+
+[8 rows x 38 columns]
+#+end_example
+
+The describe method prints a table with the headers being the column
+headers, and the rows being the number of items in the column, the mean
+of the column, the standard deviation of the column, the minimum value
+in the column, the 25th percentile value in the column, the 50th
+percentile value in the column, the 75th percentile value in the column,
+and the maximum value in the column.
+
+** Problem 2
+
+*** (a)
+#+begin_src jupyter-python :results none
+# Import the Wikipedia page
+wikipedia_page_tables = pd.read_html("https://en.wikipedia.org/wiki/2024_Summer_Olympics_medal_table")
+#+end_src
+
+*** (b)
+#+begin_src jupyter-python
+# Print the number of tables in the Wikipedia page
+print(len(wikipedia_page_tables))
+#+end_src
+
+#+RESULTS:
+: 8
+
+There are 8 tables in the Wikipedia page.
+
+*** (c)
+#+begin_src jupyter-python
+# Iterate over all the tables in the Wikipedia page
+for index, table in enumerate(wikipedia_page_tables):
+
+    # Print the table number
+    print(f"Table {index + 1}")
+
+    # Print the first 5 rows of the table
+    print(table.head())
+
+    # Print a separator
+    print("-" * 80)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+Table 1
+                         2024 Summer Olympics medals  \
+0  Léon Marchand (pictured) won four gold medals ...
+1                                           Location
+2                                         Highlights
+3                                   Most gold medals
+4                                  Most total medals
+
+                       2024 Summer Olympics medals.1 Unnamed: 2
+0  Léon Marchand (pictured) won four gold medals ...        NaN
+1                                      Paris, France        NaN
+2                                         Highlights        NaN
+3                  China (40) and United States (40)        NaN
+4                                United States (126)        NaN
+--------------------------------------------------------------------------------
+Table 2
+          0                      1         2
+0  ← 2020 ·  Olympics medal tables  · 2028 →
+--------------------------------------------------------------------------------
+Table 3
+                                                   0
+0                                Part of a series on
+1                               2024 Summer Olympics
+2  Bid process (bid details) Development (venues,...
+3                                                vte
+--------------------------------------------------------------------------------
+Table 4
+  Rank             NOC  Gold  Silver  Bronze  Total
+0    1  United States‡    40      44      42    126
+1    2           China    40      27      24     91
+2    3           Japan    20      12      13     45
+3    4       Australia    18      19      16     53
+4    5         France*    16      26      22     64
+--------------------------------------------------------------------------------
+Table 5
+      Ruling date                      Event        Athlete (NOC)  Unnamed: 3  \
+0  11 August 2024  Gymnastics, women's floor  Jordan Chiles (USA)         NaN
+1  11 August 2024  Gymnastics, women's floor    Ana Bărbosu (ROM)         NaN
+
+   Unnamed: 4 Unnamed: 5 Net change  \
+0         NaN         −1         −1
+1         NaN         +1         +1
+
+                                             Comment
+0  The Romanian Olympic and Sports Committee appe...
+1  The Romanian Olympic and Sports Committee appe...
+--------------------------------------------------------------------------------
+Table 6
+                      vte Olympic Games medal tables  \
+0  Olympic medal All-time Olympic Games medal tab...
+1                                    Summer Olympics
+2                                    Winter Olympics
+3                              Summer Youth Olympics
+4                              Winter Youth Olympics
+
+                    vte Olympic Games medal tables.1
+0  Olympic medal All-time Olympic Games medal tab...
+1  1896 1900 1904 1908 1912 1920 1924 1928 1932 1...
+2  1924 1928 1932 1936 1948 1952 1956 1960 1964 1...
+3                                2010 2014 2018 2022
+4                                2012 2016 2020 2024
+--------------------------------------------------------------------------------
+Table 7
+  vteEvents at the 2024 Summer Olympics (Paris, France)  \
+0  Archery Artistic swimming Athletics Badminton ...
+1  Chronological summary Medal table List of meda...
+
+  vteEvents at the 2024 Summer Olympics (Paris, France).1
+0  Archery Artistic swimming Athletics Badminton ...
+1  Chronological summary Medal table List of meda...
+--------------------------------------------------------------------------------
+Table 8
+     vte Summer Olympics medal table leaders by year  \
+0  1896: United States 1900: France 1904: United ...
+
+   vte Summer Olympics medal table leaders by year.1
+0  1896: United States 1900: France 1904: United ...
+--------------------------------------------------------------------------------
+#+end_example
+
+The actual Summer Olympics medal table is the 4th table on the website.
+
+*** (d)
+#+begin_src jupyter-python
+# Extract the Summer Olympics medal table
+summer_olympics_medal_table = wikipedia_page_tables[3]
+
+# Print the medal table
+print(summer_olympics_medal_table)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+                   Rank                   NOC  Gold  Silver  Bronze  Total
+0                     1        United States‡    40      44      42    126
+1                     2                 China    40      27      24     91
+2                     3                 Japan    20      12      13     45
+3                     4             Australia    18      19      16     53
+4                     5               France*    16      26      22     64
+..                  ...                   ...   ...     ...     ...    ...
+88                   84  Refugee Olympic Team     0       0       1      1
+89                   84             Singapore     0       0       1      1
+90                   84              Slovakia     0       0       1      1
+91                   84                Zambia     0       0       1      1
+92  Totals (91 entries)   Totals (91 entries)   329     330     385   1044
+
+[93 rows x 6 columns]
+#+end_example
+
+*** (e)
+#+begin_src jupyter-python
+# Get the first 20 rows from the Summer Olympics table
+top_20 = summer_olympics_medal_table[:20]
+
+# Print the first 20 rows
+print(top_20)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+   Rank             NOC  Gold  Silver  Bronze  Total
+0     1  United States‡    40      44      42    126
+1     2           China    40      27      24     91
+2     3           Japan    20      12      13     45
+3     4       Australia    18      19      16     53
+4     5         France*    16      26      22     64
+5     6     Netherlands    15       7      12     34
+6     7   Great Britain    14      22      29     65
+7     8     South Korea    13       9      10     32
+8     9           Italy    12      13      15     40
+9    10         Germany    12      13       8     33
+10   11     New Zealand    10       7       3     20
+11   12          Canada     9       7      11     27
+12   13      Uzbekistan     8       2       3     13
+13   14         Hungary     6       7       6     19
+14   15           Spain     5       4       9     18
+15   16          Sweden     4       4       3     11
+16   17           Kenya     4       2       5     11
+17   18          Norway     4       1       3      8
+18   19         Ireland     4       0       3      7
+19   20          Brazil     3       7      10     20
+#+end_example

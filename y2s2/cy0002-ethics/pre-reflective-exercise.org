@@ -1,0 +1,10 @@
+#+TITLE: CY0002 Ethics Pre-reflective Exercise
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* How do we make decisions in ethics?
+First, we need to define what decisions and ethics are. According to the Oxford Dictionary, a decision refers to a conclusion or resolution reached after consideration. Ethics refers to the study of principles relating to right or wrong conduct. Hence, the question can be rephrased as, "How do we come to a conclusion in the study of principles relating to right or wrong conduct?" Decisions in ethics are made by evaluating the premises, arguments and evidence provided on the criteria of logical soundness, and choosing the most rational position.
+
+* What is the nature of the relationship between logic and ethics?
+Again, we need to define what logic and ethics are. As defined previously, ethics refers to the study of principles relating to right or wrong conduct. Logic refers to the study of the principles of reasoning. Both ethics and logic are studying the principles of a certain topic, making them closely related. Logic precedes ethics, as classifying something as right or wrong needs to be justified using logic, or the principles of reasoning. Only having known the principles of reasoning can we justify that something is right or wrong, otherwise right and wrong have no logical basis and hence mean nothing (as right and wrong are no longer defined in logic). Hence, logic is a necessary precursor to ethics.

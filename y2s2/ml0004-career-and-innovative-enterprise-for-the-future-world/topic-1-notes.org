@@ -1,0 +1,254 @@
+#+TITLE: ML0004 Career & Innovative Enterprise for the Future World Topic 1 Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** Workview
+A workview should address the critical issues related to what work is and what it means to you.
+
+It is not just a list of what you want from or out of work, but a general statement of your view of work.
+
+A workview may address such questions as:
+- Why work?
+- What's work for?
+- What defines good or worthwhile work?
+- What does money have to do with it? - Does work need to pay well?
+- How important is your experience, fulfilment and personal growth while working?
+
+** Lifeview
+Your life is what provides your definition of what matters most to you.
+
+- Why are we here?
+- What is the meaning or purpose of life?
+- What is the relationship between you and others?
+- Where do family, country, and the rest of the world fit in?
+- What is good, and what is evil?
+- Is there a higher power, God, or something transcendent, and if so, what impact does this have on your life?
+- What is the role of joy, sorrow, justice, injustice, love, peace, and strife in life?
+
+** Design Thinking process
+
+*** Accept
+- Where am I?
+
+*** Empathise
+- What are my Workview and Lifeview?
+- Who am I? ([[https://platform.witgritfit.com][WIT-GRIT-FIT]])
+
+*** Define
+- Articulate the "problem"
+- Define targets / goals
+
+*** Ideate
+- Brainstorm
+- Research
+- Explore possibilities
+
+*** Prototype
+- Network, Informational Interview
+- Apply in roadmap
+
+*** Test Prototype and Evaluate
+- What worked and what did not?
+
+** VIPS
+1. Career Values
+2. Career Interests
+3. Personality
+4. Skills
+
+** SODA
+1. Self-Assess
+2. Options
+3. Directions
+4. Action
+
+** VUCA
+
+*** Volatility
+Volatility refers to sudden and *unexpected disruptions*.
+
+The COVID-19 pandemic led to a global upheaval in the way people live, work and interact. You may also face volatility in the job market as economic conditions change quickly, and employers' needs and expectations shift.
+
+*** Uncertainty
+Uncertainty refers to the lack of predictability and the difficulty in anticipating future events or outcomes.
+
+You may face uncertainty in what career path to take, uncertainty in the job market, where you may not know what skills and experiences will be valued by potential employers in the future.
+
+*** Complexity
+Complexity refers to the complexity in navigating the various systems and processes involved in your academic, career and overall life journey.
+
+You may also face complexity in the job market, where you may need to navigate complex application processes, deal with competing job offers, and negotiate salary and benefits.
+
+*** Ambiguity
+Ambiguity refers to the lack of clarity and the difficulty in interpreting events or situations.
+
+You may face ambiguity in the job market, where you may not know how to interpret job descriptions, understand the corporate culture of potential employers, or anticipate how the job may change over time.
+
+** Fourth Industrial Revolution
+The fourth industrial revolution refers to the current period of technological advancement characterised by the integration of advanced technologies such as artificial intelligence, robotics, the Internet of Things (IoT), and big data into various industries.
+
+*** Changes in the job market
+It is likely to create new jobs in emerging fields such as data analytics, cybersecurity, and digital marketing, while also making some existing jobs obsolete.
+
+As a result, you will need to be prepared to adapt to changing job requirements and have a flexible mindset to learn new skills and take advantage of new opportunities.
+
+*** Skills development
+With the rise of advanced technologies, employers will be looking for graduates with relevant skills and knowledge to operate and manage these technologies.
+
+You will need to be proactive in developing your skills in areas such as data analysis, programming and digital literacy to stay relevant in the job market.
+
+*** Entrepreneurship opportunities
+It is expected to create new opportunities for entrepreneurship, with the rise of digital platforms and the increasing ease of starting and running a business online.
+
+If you are innovative and entrepreneurial, you may have opportunities to develop and launch your own businesses using digital technologies.
+
+*** Overall
+Overall, the Fourth Industrial Revolution is likely to have a significant impact on you, requiring you to be adaptable, technologically literate, and proactive in developing your skills and knowledge to take advantage of the opportunities and challenges that come with this period of rapid technological change.
+
+** Enterprising person vs Entrepreneur
+The main difference between an enterprising person and an entrepreneur lies in their respective characteristics and pursuits.
+
+*** Enterprising person
+An enterprising person is defined as an individual who demonstrates initiative and resourcefulness in various endeavours.
+
+*** Entrepreneur
+An entrepreneur is an individual who establishes a business or multiple businesses, and willingly assume financial risks with the primary objective of generating profits.
+
+** Gig economy
+The gig economy refers to the workforce climate comprising short-term work, temporary contracts, freelancing, and independent work for start-ups and other agile firms in the industry. It is also loosely referred to as the "freelance workforce". The outgrowth of the fourth industrial revolution led to the emergence of the *gig economy*.
+
+It can benefit workers, businesses, and consumers by making work more adaptable to the needs of the moment and the demand for flexible lifestyles.
+
+At the same time, it can have downsides due to the erosion of traditional economic relationships between workers, businesses, and clients. Gig workers gain flexibility and independence but little or not job security.
+
+** Enterprising mindset
+An enterprising mindset is an ability to think creatively, take the initiative, and identify opportunities for growth and innovation.
+
+*** Key characteristics of an enterprising mindset
+- Initiative
+  Take proactive steps to solve problems and make improvements.
+- Risk-taking
+  Willing to embrace calculated risks to achieve goals.
+- Adaptability
+  Flexible and open to change in a dynamic work environment.
+- Resilience
+  Bouncing back from failures and setbacks with determination.
+- Creativity
+  Thinking outside the box and generating new ideas.
+
+*** Benefits of an enterprising mindset in the workplace
+- Increased innovation
+  An enterprising mindset fosters a culture of innovation, leading to the development of new products, services, and processes.
+- Problem-solving
+  Employees with an enterprising mindset actively seek solutions and take ownership of challenges.
+- Continuous improvement
+  By constantly seeking opportunities for growth, individuals contribute to the ongoing improvement of the organisation.
+- Proactivity
+  Employees with an enterprising mindset take the initiative, reducing the need for constant supervision and direction.
+- Collaborative environment
+  An enterprising mindset promotes collaboration and teamwork, as individuals are encouraged to share ideas and work together towards common goals.
+- Career advancement
+  Employees with an enterprising mindset are often seen as valuable assets and are more likely to be considered for promotions and leadership roles.
+
+** Digital economy
+Digital economy refers to the *economic activity* that is based on digital technologies, including the production, distribution, and consumption of goods and services that are enabled by the internet, mobile devices and other digital tools.
+
+It has emerged as a significant driver of *economic growth* and innovation in recent years, rising to prominence during the COVID-19 pandemic and will continue to be prominent in the areas of AI, Data Analytics and Software Development.
+
+It encompasses a wide range of *industries and activities*, including e-commerce, digital media, online advertising, software development and more.
+
+*** Key characteristics
+- Global reach
+  Digital technologies have enabled businesses to *reach customers and markets around the world*, breaking down geographical barriers and creating new opportunities for international trade.
+- Data-driven decision-making
+  The digital economy generates vast amounts of data that can be used to inform business decisions, improve efficiency, and create new products and services.
+- Disruptive innovation
+  It has disrupted traditional business models in many industries, creating new opportunities for startups and entrepreneurs while also challenging established companies to adapt to new realities.
+
+*** Examples
+- E-commerce platforms
+  E-commerce platforms such as Amazon, Alibaba, and eBay allow businesses and consumers to buy and sell products online.
+- Social media companies
+  Social media companies such as Facebook, Twitter, and Instagram which enable people to connect and share information and content with each other.
+- Digital advertising platforms
+  Digital advertising platforms such as Google and Facebook, which allow businesses to reach targeted audiences with highly personalised advertising messages.
+- Cloud computing providers
+  Cloud computing providers such as Amazon Web Services, Microsoft Azure, and Google Cloud, which provide on-demand access to computing resources and services over the internet.
+
+** Green economy
+A green economy is defined as *low carbon*, resource efficient and socially inclusive.
+
+It refers to *economic activity* that is focused on creating and supporting sustainable practices and products that minimise harm to the environment and promote the conservation and efficient use of natural resources.
+
+It encompasses a wide range of *industries and activities*, including renewable energy, sustainable agriculture, green construction, clean transportation and more.
+
+*** Key characteristics
+- Environmental sustainability
+  The green economy is focused on promoting *environmental sustainability* by reducing greenhouse gas emissions, conserving natural resources, and promoting the use of renewable energy and other sustainable practices.
+- Economic growth and job creation
+  The green economy is seen as a *driver of economic growth and job creation*, as more and more companies are exploring environmentally sustainable practices and setting sustainability targets to meet targets set by the government for compliance and reporting.
+
+*** Examples
+- Renewable energy
+  Renewable energy, including solar, wind, hydro and geothermal energy, which reduces greenhouse gas emissions and promotes the use of sustainable energy sources.
+- Sustainable agriculture
+  Sustainable agriculture, which promotes the use of environmentally friendly farming practices that minimise the use of pesticides and other harmful chemicals.
+- Green construction
+  Green construction, which focuses on creating buildings and infrastructure that are energy-efficient and minimise environmental impact.
+- Clean transportation
+  Clean transportation, which includes electric and hybrid vehicles, public transportation, and other sustainable transportation options that don't rely on fossil fuels.
+
+** Care economy
+Care economy refers to the *economic activity* associated with the provision of care and support services, including childcare, elder care, healthcare and other forms of care work.
+
+It is an *essential part of society* and contributes to the wellbeing and functioning of families, communities, and societies as a whole.
+
+Demand for health and wellness has risen as a result of the COVID-19 pandemic and will continue to be prominent post-pandemic, hence impacting the design of job roles and skills needed to support staff's wellbeing at the workplace.
+
+*** Key characteristics
+- Importance of social and emotional labour
+  Care work involves not just physical labour, but also *emotional labour*, such as providing emotional support, building relationships, and managing conflicts.
+- Low wages and poor working conditions
+  Despite the importance of care work, it is often *undervalued and underpaid*, with care workers facing low wages, poor working conditions and limited benefits.
+- Need for public investment
+  Care economy requires *significant public investment* in infrastructure, training, and support services to ensure that care workers have the resources and support they need to provide high-quality care.
+
+*** Examples
+- Childcare
+  Childcare services, including daycare centres, preschools, and after-school programs.
+- Elder care
+  Elder care includes home care services, assisted living facilities, and nursing homes.
+- Healthcare
+  Healthcare includes hospitals, clinics, and other medical facilities.
+- Social services
+  Social services include counselling, social work, and community support service.
+
+** [[https://www.skillsfuture.gov.sg/skills-framework][Singapore Skills Framework]]
+The Singapore Skills Framework is created by Employers, Industry Associations, Education Institutions, Unions and Government for the Singapore workforce to help workers to understand the nature of the industries they may be interested in.
+
+** Career
+- A career is a long-term commitment to a particular field or profession.
+- A career is typically focused on developing skills and knowledge over time and may involve taking on additional responsibilities or leadership roles as an individual gains experience.
+- A career may involve a series of jobs, but the overall goal is to build a body of work and experience that allows an individual to progress within a particular field or industry.
+- Careers are focused on building skills and experience over time to achieve long-term goals.
+- Careers may involve pursuing additional education, seeking opportunities for professional development and building a network within a particular industry.
+
+** Job
+- A job is typically seen as a short-term commitment, where an individual performs a specific set of tasks or duties in exchange for compensation.
+- A job may be temporary, part-time, or full-time, and may be focused on a specific skill or function, such as retail sales, customer service, or data entry.
+- In general, jobs are seen as a way to earn income, gain experience, or meet short-term financial needs.
+- Jobs are general focused on meeting immediate financial needs.
+
+
+* Designing your life
+- Capture the times you are immersed in your daily activities.
+- Find out more about what engages and energises you.
+- Simulate possibilities for you life by planning different version of the future.
+
+Starting your career exploration and planning early will rive you more time to:
+- Equip yourself with knowledge and skills for the Future of Work
+- Select modules and electives that are aligned to your career goals.
+- Participate in more CCAs and make more friends instead of focusing single-mindedly on your academic studies.

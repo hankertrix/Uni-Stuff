@@ -1,0 +1,568 @@
+#+TITLE: MA0218 Exercise 5
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+STARTUP: inlineimages
+#+OPTIONS: toc:2
+#+PROPERTY: header-args :session py :kernel python3 :results output
+
+* Solutions
+
+** Problem 1
+Import the required libraries.
+#+begin_src jupyter-python :results none
+import numpy as np
+import pandas as pd
+import seaborn as sb
+import matplotlib.pyplot as plt
+
+# Set the default seaborn style for graphics
+sb.set_theme()
+#+end_src
+
+Importing the data.
+#+begin_src jupyter-python
+house_data = pd.read_csv("train.csv")
+print(house_data.head())
+#+end_src
+
+#+RESULTS:
+#+begin_example
+   Id  MSSubClass MSZoning  LotFrontage  LotArea Street Alley LotShape  \
+0   1          60       RL         65.0     8450   Pave   NaN      Reg
+1   2          20       RL         80.0     9600   Pave   NaN      Reg
+2   3          60       RL         68.0    11250   Pave   NaN      IR1
+3   4          70       RL         60.0     9550   Pave   NaN      IR1
+4   5          60       RL         84.0    14260   Pave   NaN      IR1
+
+  LandContour Utilities  ... PoolArea PoolQC Fence MiscFeature MiscVal MoSold  \
+0         Lvl    AllPub  ...        0    NaN   NaN         NaN       0      2
+1         Lvl    AllPub  ...        0    NaN   NaN         NaN       0      5
+2         Lvl    AllPub  ...        0    NaN   NaN         NaN       0      9
+3         Lvl    AllPub  ...        0    NaN   NaN         NaN       0      2
+4         Lvl    AllPub  ...        0    NaN   NaN         NaN       0     12
+
+  YrSold  SaleType  SaleCondition  SalePrice
+0   2008        WD         Normal     208500
+1   2007        WD         Normal     181500
+2   2008        WD         Normal     223500
+3   2006        WD        Abnorml     140000
+4   2008        WD         Normal     250000
+
+[5 rows x 81 columns]
+#+end_example
+
+*** (a)
+Get the ~CentralAir~ data.
+#+begin_src jupyter-python
+central_air_data = house_data["CentralAir"]
+print(central_air_data)
+#+end_src
+
+#+RESULTS:
+#+begin_example
+0       Y
+1       Y
+2       Y
+3       Y
+4       Y
+       ..
+1455    Y
+1456    Y
+1457    Y
+1458    Y
+1459    Y
+Name: CentralAir, Length: 1460, dtype: object
+#+end_example
+
+Plot the distribution of ~CentralAir~ with a count plot.
+#+begin_src jupyter-python
+sb.catplot(data=central_air_data, kind="count")
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/e05a1c6b9ce2359688a67bd2311c31aa2feaf4de.png]]
+
+Get the ratio of Y to N.
+#+begin_src jupyter-python
+value_counts = central_air_data.value_counts()
+yes_count = value_counts["Y"]
+no_count = value_counts["N"]
+print(f"{yes_count} : {no_count}")
+#+end_src
+
+#+RESULTS:
+: 1365 : 95
+
+*** (b)
+Get the sale price data:
+#+begin_src jupyter-python
+sale_price_data = house_data["SalePrice"]
+print(sale_price_data.head())
+#+end_src
+
+#+RESULTS:
+: 0    208500
+: 1    181500
+: 2    223500
+: 3    140000
+: 4    250000
+: Name: SalePrice, dtype: int64
+
+Plot ~CentralAir~ against ~SalePrice~.
+#+begin_src jupyter-python
+sb.jointplot(y="CentralAir", x="SalePrice", data=house_data)
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/cfcf2f8162164426adc4b14b1000e7542ef45a7c.png]]
+
+*** (c)
+Import the classification tree model from Scikit-learn.
+#+begin_src jupyter-python :results none
+from sklearn.tree import DecisionTreeClassifier
+#+end_src
+
+*** (d)
+Import the function to split the data randomly from Scikit-learn.
+#+begin_src jupyter-python :results none
+from sklearn.model_selection import train_test_split
+#+end_src
+
+Partition the data into two "random" portions, with the training data of 1100 rows, and a test data of 360 rows.
+#+begin_src jupyter-python
+training_data, test_data = train_test_split(house_data[:1100 + 360], test_size = (360 / (1100 + 360)))
+print(len(training_data))
+print(len(test_data))
+#+end_src
+
+#+RESULTS:
+: 1100
+: 360
+
+*** (e)
+Create the decision tree classifier object.
+#+begin_src jupyter-python :results none
+decision_tree = DecisionTreeClassifier(max_depth=2)
+#+end_src
+
+Get the training and test data for the ~CentralAir~ and ~SalePrice~ variables.
+#+begin_src jupyter-python :results none
+sale_price_training_data = pd.DataFrame(training_data["SalePrice"])
+sale_price_test_data = pd.DataFrame(test_data["SalePrice"])
+central_air_training_data = pd.DataFrame(training_data["CentralAir"])
+central_air_test_data = pd.DataFrame(test_data["CentralAir"])
+#+end_src
+
+Fit a decision tree model, with ~SalePrice~ as the predictor and the ~CentralAir~ as the response.
+#+begin_src jupyter-python :results none
+decision_tree.fit(sale_price_training_data, central_air_training_data)
+#+end_src
+
+*** (f)
+Import the plot tree function.
+#+begin_src jupyter-python :results none
+from sklearn.tree import plot_tree
+#+end_src
+
+Visualise the fitted decision tree model.
+#+begin_src jupyter-python
+figure = plt.figure(figsize=(8, 8))
+plot_tree(decision_tree, filled=True, rounded=True, feature_names=["SalePrice"])
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/ad609e540bf1cabe281726e9392c28fc67f60181.png]]
+
+*** (g)
+Predict ~CentralAir~ using the sale price training data set.
+#+begin_src jupyter-python :results none
+central_air_training_prediction = decision_tree.predict(sale_price_training_data)
+#+end_src
+
+Import the function to plot the confusion matrix.
+#+begin_src jupyter-python :results none
+from sklearn.metrics import confusion_matrix
+#+end_src
+
+Plot the 2-way confusion matrix.
+#+begin_src jupyter-python
+# Get the resulting confusion matrix of the data
+confusion_matrix_training_result = confusion_matrix(
+    central_air_training_data,
+    central_air_training_prediction,
+)
+
+# Plot the 2 way confusion matrix
+sb.heatmap(
+    confusion_matrix_training_result,
+    annot=True,
+    fmt=".0f",
+    annot_kws={"size": 18},
+)
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/0db8c5dd1a8f5ec6a02cc38130fb1623ebad0a44.png]]
+
+*** (e)
+Get the all the data needed to calculate the true positive rate, true negative rate, false positive rate, and false negative rate.
+#+begin_src jupyter-python
+true_negative_amount, false_positive_amount, false_negative_amount, true_positive_amount = confusion_matrix_training_result.ravel()
+print(true_negative_amount, false_positive_amount, false_negative_amount, true_positive_amount)
+#+end_src
+
+#+RESULTS:
+: 7 62 2 1029
+
+Calculate the true positive rate, true negative rate, false positive rate, and false negative rate.
+#+begin_src jupyter-python :results none
+true_positive_rate = float(true_positive_amount / (true_positive_amount + false_negative_amount))
+true_negative_rate = float(true_negative_amount / (true_negative_amount + false_positive_amount))
+false_positive_rate = float(false_positive_amount / (false_positive_amount + true_negative_amount))
+false_negative_rate = float(false_negative_amount / (true_positive_amount + false_negative_amount))
+#+end_src
+
+Print out all the accuracy measures.
+#+begin_src jupyter-python
+print(f"Classification accuracy:", decision_tree.score(sale_price_training_data, central_air_training_data))
+print(f"{true_positive_rate= }".replace("=", ":"))
+print(f"{true_negative_rate= }".replace("=", ":"))
+print(f"{false_positive_rate= }".replace("=", ":"))
+print(f"{false_negative_rate= }".replace("=", ":"))
+#+end_src
+
+#+RESULTS:
+: Classification accuracy: 0.9418181818181818
+: true_positive_rate: 0.9980601357904947
+: true_negative_rate: 0.10144927536231885
+: false_positive_rate: 0.8985507246376812
+: false_negative_rate: 0.0019398642095053346
+
+*** (f)
+Predict ~CentralAir~ using the sale price test data set.
+#+begin_src jupyter-python :results none
+central_air_test_prediction = decision_tree.predict(sale_price_test_data)
+#+end_src
+
+Get the confusion matrix.
+#+begin_src jupyter-python :results none
+confusion_matrix_test_result = confusion_matrix(central_air_test_data, central_air_test_prediction)
+#+end_src
+
+Plot the 2-way confusion matrix.
+#+begin_src jupyter-python
+sb.heatmap(
+    confusion_matrix_test_result,
+    annot=True,
+    fmt=".0f",
+    annot_kws={"size": 18},
+)
+#+end_src
+
+#+RESULTS:
+[[file:./.ob-jupyter/8b232452fcb876bfb894cd45f05c2d66eee46303.png]]
+
+*** (j)
+Get the all the data needed to calculate the true positive rate, true negative rate, false positive rate, and false negative rate.
+#+begin_src jupyter-python
+true_negative_amount, false_positive_amount, false_negative_amount, true_positive_amount = confusion_matrix_test_result.ravel()
+print(true_negative_amount, false_positive_amount, false_negative_amount, true_positive_amount)
+#+end_src
+
+#+RESULTS:
+: 6 20 0 334
+
+Calculate the true positive rate, true negative rate, false positive rate, and false negative rate.
+#+begin_src jupyter-python :results none
+true_positive_rate = float(true_positive_amount / (true_positive_amount + false_negative_amount))
+true_negative_rate = float(true_negative_amount / (true_negative_amount + false_positive_amount))
+false_positive_rate = float(false_positive_amount / (false_positive_amount + true_negative_amount))
+false_negative_rate = float(false_negative_amount / (true_positive_amount + false_negative_amount))
+#+end_src
+
+Print out all the accuracy measures.
+#+begin_src jupyter-python
+print(f"Classification accuracy:", decision_tree.score(sale_price_training_data, central_air_training_data))
+print(f"{true_positive_rate= }".replace("=", ":"))
+print(f"{true_negative_rate= }".replace("=", ":"))
+print(f"{false_positive_rate= }".replace("=", ":"))
+print(f"{false_negative_rate= }".replace("=", ":"))
+#+end_src
+
+#+RESULTS:
+: Classification accuracy: 0.9418181818181818
+: true_positive_rate: 1.0
+: true_negative_rate: 0.23076923076923078
+: false_positive_rate: 0.7692307692307693
+: false_negative_rate: 0.0
+
+** Problem 2
+Create the function to plot the heatmap.
+#+begin_src jupyter-python :results none
+def heatmap_plot(confusion_matrix: np.ndarray) -> None:
+    """Function to plot a heatmap with seaborn"""
+    figure = plt.figure(figsize=(6, 6))
+    sb.heatmap(
+        confusion_matrix,
+        annot=True,
+        fmt=".0f",
+        annot_kws={"size": 18},
+    )
+#+end_src
+
+Create a function to calculate and print the accuracy measures.
+#+begin_src jupyter-python :results none
+def print_accuracy_measures(
+    variable_name: str,
+    confusion_matrix: np.ndarray,
+    classification_accuracy: float,
+    ,*,
+    is_test: bool,
+) -> None:
+    """
+    Function to print out the accuracy measures,
+    which are:
+    - Classification accuracy
+    - True positive rate
+    - True negative rate
+    - False positive rate
+    - False negative rate
+    """
+
+    # Get all the data needed to calculate the accuracy measures
+    (
+        true_negative_amount,
+        false_positive_amount,
+        false_negative_amount,
+        true_positive_amount,
+    ) = confusion_matrix.ravel()
+
+    # Calculate the true positive rate
+    true_positive_rate = float(true_positive_amount / (true_positive_amount + false_negative_amount))
+
+    # Calculate the true negative rate
+    true_negative_rate = float(true_negative_amount / (true_negative_amount + false_positive_amount))
+
+    # Calculate the false positive rate
+    false_positive_rate = float(false_positive_amount / (false_positive_amount + true_negative_amount))
+
+    # Calculate the false negative rate
+    false_negative_rate = float(false_negative_amount / (true_positive_amount + false_negative_amount))
+
+    # Get the string for the data set
+    dataset_type = "testing" if is_test else "training"
+
+    # Print out all the variables
+    print(f"Accuracy measures for {variable_name} {dataset_type} data:\n")
+    print(f"{classification_accuracy= }".replace("=", ":"))
+    print(f"{true_positive_rate= }".replace("=", ":"))
+    print(f"{true_negative_rate= }".replace("=", ":"))
+    print(f"{false_positive_rate= }".replace("=", ":"))
+    print(f"{false_negative_rate= }".replace("=", ":"))
+    print("\n")
+#+end_src
+
+Make a function to do all of the above steps.
+#+begin_src jupyter-python :results none
+def data_science_pipeline(
+    data: pd.DataFrame,
+    dependent_variable: str,
+    independent_variables: list[str],
+) -> None:
+    """
+    Function to execute the data science pipeline
+    to perform binary classification on all of the
+    dependent variables.
+    """
+
+    # Iterate over all of the independent variables
+    for variable in independent_variables:
+
+        # Plot the joint plot of the dependent variable
+        # against the independent variable
+        sb.jointplot(y=dependent_variable, x=variable, data=data)
+
+        # Partition the data into two "random" portions,
+        # with the training data of 1100 rows, and a test data
+        # of 360 rows.
+        training_data, test_data = train_test_split(
+            data[:1100 + 360],
+            test_size=(360 / (1100 + 360))
+        )
+
+        # Create the decision tree classifier object
+        decision_tree = DecisionTreeClassifier(max_depth=2)
+
+        # Get the training data for the variables
+        independent_variable_training_data = pd.DataFrame(
+            training_data[variable]
+        )
+        dependent_variable_training_data = pd.DataFrame(
+            training_data[dependent_variable]
+        )
+
+        # Get the test data for the variables
+        independent_variable_test_data = pd.DataFrame(
+            test_data[variable]
+        )
+        dependent_variable_test_data = pd.DataFrame(
+            test_data[dependent_variable]
+        )
+
+        # Fit the decision tree model, with the independent
+        # variable as the predictor and the dependent variable
+        # as the response.
+        decision_tree.fit(
+            independent_variable_training_data,
+            dependent_variable_training_data,
+        )
+
+        # Visualise the fitted decision tree model
+        figure = plt.figure(figsize=(8, 8))
+        plot_tree(
+            decision_tree,
+            filled=True,
+            rounded=True,
+            feature_names=[variable]
+        )
+
+        # Predict the dependent variable using the
+        # independent variable training data set
+        training_prediction = decision_tree.predict(
+            independent_variable_training_data
+        )
+
+        # Get the training confusion matrix
+        training_confusion_matrix = confusion_matrix(
+            dependent_variable_training_data,
+            training_prediction
+        )
+
+        # Plot the 2 way confusion matrix for the training prediction
+        heatmap_plot(training_confusion_matrix)
+
+        # Get the training classification accuracy
+        training_classification_accuracy = decision_tree.score(
+            independent_variable_training_data,
+            dependent_variable_training_data,
+        )
+
+        # Print out all the accuracy measures for the training data set
+        print_accuracy_measures(
+            variable,
+            training_confusion_matrix,
+            training_classification_accuracy,
+            is_test=False,
+        )
+
+        # Predict the dependent variable using the test data set
+        test_prediction = decision_tree.predict(
+            independent_variable_test_data
+        )
+
+        # Get the test confusion matrix
+        test_confusion_matrix = confusion_matrix(
+            dependent_variable_test_data,
+            test_prediction,
+        )
+
+        # Plot the 2 way confusion matrix for the test prediction
+        heatmap_plot(test_confusion_matrix)
+
+        # Get the test classification accuracy
+        test_classification_accuracy = decision_tree.score(
+            independent_variable_test_data,
+            dependent_variable_test_data,
+        )
+
+        # Print out all the accuracy measures for the testing data set
+        print_accuracy_measures(
+            variable,
+            test_confusion_matrix,
+            test_classification_accuracy,
+            is_test=True
+        )
+#+end_src
+
+Initialise the variables to run the pipeline on.
+#+begin_src jupyter-python :results none
+variables = ["GrLivArea", "OverallQual", "YearBuilt"]
+#+end_src
+
+Call the function to run the pipeline on the variables defined above.
+#+begin_src jupyter-python
+data_science_pipeline(house_data, "CentralAir", variables)
+#+end_src
+
+#+RESULTS:
+:RESULTS:
+#+begin_example
+Accuracy measures for GrLivArea training data:
+
+classification_accuracy: 0.9418181818181818
+true_positive_rate: 1.0
+true_negative_rate: 0.030303030303030304
+false_positive_rate: 0.9696969696969697
+false_negative_rate: 0.0
+
+
+Accuracy measures for GrLivArea testing data:
+
+classification_accuracy: 0.925
+true_positive_rate: 1.0
+true_negative_rate: 0.06896551724137931
+false_positive_rate: 0.9310344827586207
+false_negative_rate: 0.0
+
+
+Accuracy measures for OverallQual training data:
+
+classification_accuracy: 0.9363636363636364
+true_positive_rate: 0.9941520467836257
+true_negative_rate: 0.13513513513513514
+false_positive_rate: 0.8648648648648649
+false_negative_rate: 0.005847953216374269
+
+
+Accuracy measures for OverallQual testing data:
+
+classification_accuracy: 0.95
+true_positive_rate: 0.9911504424778761
+true_negative_rate: 0.2857142857142857
+false_positive_rate: 0.7142857142857143
+false_negative_rate: 0.008849557522123894
+
+
+Accuracy measures for YearBuilt training data:
+
+classification_accuracy: 0.9336363636363636
+true_positive_rate: 1.0
+true_negative_rate: 0.02666666666666667
+false_positive_rate: 0.9733333333333334
+false_negative_rate: 0.0
+
+
+Accuracy measures for YearBuilt testing data:
+
+classification_accuracy: 0.9444444444444444
+true_positive_rate: 1.0
+true_negative_rate: 0.0
+false_positive_rate: 1.0
+false_negative_rate: 0.0
+#+end_example
+[[file:./.ob-jupyter/a90e8ebe02bf639f46df6fca1bb6fc355add7663.png]]
+[[file:./.ob-jupyter/671d2889642cce1672be641764e64a85e0b76cb2.png]]
+[[file:./.ob-jupyter/5320ff93716bb0a1c57db6877d475c0fbaa248fd.png]]
+[[file:./.ob-jupyter/e3deb3af846798aa63fa34b9360482ce7f77b4f2.png]]
+[[file:./.ob-jupyter/62b516e8be9356d6f12d9a1adb2b1f00cb1bcb49.png]]
+[[file:./.ob-jupyter/529fcaf8d66d7a4a96b396db751903290172b2f6.png]]
+[[file:./.ob-jupyter/6a79b6924c021ff1dd604a911dccaff89e5f25d4.png]]
+[[file:./.ob-jupyter/aa9e41aad8fa702fd65f06a190870a919513c65f.png]]
+[[file:./.ob-jupyter/584bef8aa79039f3921c816a648a9afe4ed37986.png]]
+[[file:./.ob-jupyter/3477cd2fe3d54aeeb50ff193c646b34d7dc4488f.png]]
+[[file:./.ob-jupyter/315f523e537d0398da98a6da479bc0e936c11a98.png]]
+[[file:./.ob-jupyter/fe0ecc11ca80820807872c1203ca30cd88b9bec3.png]]
+:END:
+
+** Problem 3
+The classification accuracy of ~OverallQual~ is the greatest amongst all other variables, as well as having a much higher true negative rate. Hence, I think that the ~OverallQual~ classification tree is the best to predict ~CentralAir~. However, due to the random nature of the training and testing data set, these accuracy metrics are only valid for the results above, and not when the classifier is run again.

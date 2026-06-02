@@ -1,0 +1,571 @@
+#+TITLE: ML0004 Career & Innovative Enterprise for the Future World Topic 6 Notes
+#+AUTHOR: Hankertrix
+#+STARTUP: showeverything
+#+OPTIONS: toc:2
+
+* Definitions
+
+** Political skills
+- Political skills are the ability to understand and navigate the social dynamics of the workplace.
+- This includes being able to build relationships, influence others, and get things done.
+- Political skills can be important for career success because they can help you *build a network of support, get ahead in your career, and avoid being blind sided by office politics*.
+
+** Workplace etiquette
+- Workplace etiquette refers to the norms of behaviour that are considered appropriate in the workplace.
+- This includes things like being on time for work, dressing appropriately, and being respectful of others.
+- Workplace etiquette can be important for career success because it can help you *make a good impression on your colleagues and supervisors*.
+
+*** Dos and Don'ts
+
+**** Dos
+- Treat your emails as professional communication in general, and make sure the material you send is appropriate for the time, place and person involved.
+- Get there early.
+  - You should arrive at work before your employer, and stay until he or she leaves.
+  - You will be remembered for being punctual, as tardiness is common.
+- Network with people outside your office.
+  - Meeting other people who share your interests can offer advice based on their own experiences.
+  - It is critical to take advantage of networking possibilities, like going to lunch with your co-workers, or going to happy hour and other corporate events.
+- Always be willing to assist a co-worker.
+  - Assist a co-worker if you believe that you can help them while still meeting your own deadlines.
+  - This is your chance to shine, and to demonstrate your own knowledge and abilities.
+  - It is an opportunity to make new acquaintances and enlist their help in the future.
+- Bring in some treats.
+  - Baking cookies, brownies or other treats for your co-workers if you have spare time one night is a kind gesture.
+  - Know if any of your co-workers have allergies or dietary restrictions such as gluten intolerance.
+  - Bringing treats that everyone can enjoy will only add to the significance of the gesture.
+- Make sure you have a separate personal and work email address.
+  - Some companies may not allow you to access work emails from home.
+- Seize the opportunity to complete a new assignment.
+  - Accepting new tasks broadens your skill set and may lead to intriguing future chances.
+  - They probably chose you because they believe in your abilities.
+  - Ask questions and double check that you are on the right road before getting too caught up in the task.
+- Be adaptable.
+  - You may be required to work longer or shorter hours than usual.
+  - You may be required to perform activities or tasks that you do not necessarily wish to perform or for which you were not employed.
+  - You might be requested to work a holiday and being able to roll with it shows that you appreciate the company and your career, which will benefit you in the long term.
+- Dress professionally.
+  - Dressing to impress is always a smart idea.
+  - Keep crop tops, flip-flops and see-through shirts for the weekend, as no one will take you seriously.
+- Double-check that your earbuds are connected to your computer.
+  - It is far more embarrassing at work when you don't realise everyone can hear what you are doing.
+- Keep an open mind.
+  - Nothing is certain, so being able to adapt to the changing circumstances is valuable.
+- Smile
+  - Having a positive attitude about your employment will have a big impact on your job performance.
+  - Being cheerful, friendly and approachable can help you advance your professional career.
+  - It's natural to make mistakes as they are inevitable.
+
+**** Don'ts
+- Don't use "reply all" to reply to emails.
+  - Consider if all the recipients of the initial email should be included in your response.
+  - You risk being embarrassed as the business learns about details that should have only been communicated with one or two people.
+- Don't talk about personal matters at your desk.
+  - Avoid doing private or personal phone discussions at public areas where other people can hear you.
+  - Use the conference rooms if available or even go outside for a phone call.
+  - It may be distracting to your co-workers and might lead to gossip about you being unable to leave your personal life at home, which is not ideal for your professional image.
+- Keep your emotions out of the office.
+  - Take some personal time to manage your feelings if you can't focus on your work because something has happened.
+  - If something at work is troubling you, contact human resources or your supervisor to remedy the problem.
+- Don't be afraid to ask questions, no matter how ridiculous they may seem.
+  - Asking questions will help prevent completing a whole job just to discover that you are completely wrong.
+  - Pay attention to the answers.
+- Don't gossip.
+  - You are only harming yourself, as gossiping can make you appear untrustworthy or uncooperative, neither of which will help you achieve your work objectives.
+  - It can also be extremely destructive if the gossip reaches the intended recipient.
+- Avoid using emoticons or emojis, or multiple exclamation points in your work emails.
+  - This depends on your employer.
+  - Be deliberate in your communication.
+  - Keep a professional demeanour, so that others perceive you as the knowledgeable expert that you are.
+  - If in doubt, communicate formally in your office emails, no matter how relaxed your supervisors appear.
+- Don't argue with your supervisor or manager.
+  - Don't speak back to them, and refrain from being sarcastic of glib.
+  - Feel free to express any disagreements, but don't argue to express them.
+  - You want your boss to assist you in advancing your career.
+- Don't be too laid-back during work social events.
+  - You are still at work during work social events.
+  - Don't overdo the alcohol.
+- Don't be afraid to take risks, but don't go too far.
+  - Appear respectable, but not stuffy.
+  - Appear confident, but not arrogant.
+  - You want to convey your thoughts, but they must be G-rated.
+- Be prepared for all of life's annoyances.
+  - Have an umbrella, extra pair of shoes, tooth floss and even a change of clothing in your desk in case of an emergency for example.
+
+** Ethics
+- Ethics refers to right or wrong and what people should do.
+- Ethics are the basic, moral ground rules by which we live our lives.
+- Unethical behaviour may be illegal but not always so.
+  - For example, workplace bullying (e.g. constantly humiliating a colleague at work and passing offensive remarks) and abusive leadership (e.g. a leader who constantly shouts at employees and constantly publicly humiliates them by calling them incompetent in front of all staff) is unethical.
+  - However, these bullies and abusive leaders may get away with it for a long time as nobody dares to speak up on these issues.
+  - Giving a present to your boss may be perfectly legal, but this act may violate company regulations and be deemed unethical.
+- Unethical behaviour can be intentional or unintentional.
+  - Those who intentionally engage in unethical behaviour would more often than not, find themselves on the wrong side of the law.
+  - For example, when they practise insider trading which is making use of company information for personal gains at the stock market.
+  - On the other hand, revealing company information to your family member may be accidental and unintentional, but it may also have serious consequences when that family member spreads such information to other friends and acquaintances on social media or a chat group. These days, on social media, news spread extremely quickly.
+
+*** Aspects
+1. Openness
+   Do I mind others knowing what I have decided?
+2. Effect
+   Who does my decision affect or hurt?
+3. Impact
+   How would I feel to the receiving end of this decision?
+4. Fairness
+   Would the people affected consider my decision to be fair?
+5. Ethical
+   Am I doing the right thing - is it in line with the company's core values?
+
+*** Ethical decision-making
+1. Thoughtful process is key.
+   Ethical dilemmas require careful consideration, not just quick answers.
+2. Frameworks guide your actions.
+   Applying ethical frameworks helps you navigate complex situations.
+3. Integrity builds confidence.
+   Acting with integrity strengthens your professional reputation and opens doors to success.
+4. Continuous reflection.
+   Regularly assess your ethical decision-making to enhance your approach.
+
+*** Ethical issues
+- Copying software illegally without paying the required licensing fees.
+- Sexually harassing colleagues.
+- Handling confidential information.
+- Using corporate resources for your own agenda.
+- Using company time to pursue your own personal interests.
+- Lying about your own CV or skills, work experience and achievements.
+
+*** Ethical dilemmas
+
+**** Examples of ethical dilemmas in the workplace
+- They way you deliver service or respond to crises.
+- How you react to the policies and practices of your company.
+- The choices you make personally and in team situations.
+- How you fulfil your obligation to co-workers and customers.
+- How you present your company and its products to customers and shareholders.
+- How you deal with outside agencies, contractors, and vendors.
+
+**** Issues of conscience (ethical dilemmas inside your sphere of influence)
+- Should I call in sick to go to the beach?
+- Should I use the photocopy machine for my personal project?
+- Should I use my computer or laptop for my second job?
+- Can I get a little extra cash by faking the travel expense report and no one seems to notice?
+- Should I keep quiet about an unnoticeable but costly manufacturing mistake?
+- When everyone else seems to ignore inflated sales and financial numbers, do you report it, or do you just go with the flow?
+- Do I report harassing or intimidating behaviour of supervisors or others that can make trouble for me?
+
+**** Ethical dilemmas outside your sphere of influence
+- My boss is making lewd sexual remarks and advances.
+- I work with someone who can't tell the truth.
+- Our top management is corrupt and arrogant.
+- A customer is always asking for special favours.
+- I am pressured to cover-up for the mismanagement of my supervisor.
+- I am being isolated and discriminated against for my views.
+
+**** Strategy to manage ethical dilemmas
+1. Step back.
+2. Understand the causes and effects.
+3. Understand the short and long-term ramifications.
+4. Consider the positions of all stakeholders.
+   - Stakeholders are all the people and parties who have some connections to your problem or situation.
+   - Receivers, who are the people on the receiving end of your ethical decisions.
+     - Third parties, which are individuals, groups, departments, communities that are affected by our decision.
+     - The workplace environment and culture, as ethical decisions don't take place in a vacuum and can have a profound impact on everyone.
+     - You, physically, emotionally and spiritually. Your career, reputation, family, safety and security are all at stake.
+5. Come up with possible solutions.
+
+*** How to avoid reneging an offer
+- Evaluate your options before you accept any offer.
+- Look at what is important to you.
+- Think about your criteria.
+- Look at what you wish to achieve from the offer.
+- If the offer isn't what you expect, think about which part of your criteria you will be willing to compromise on.
+
+*** How to handle confidential information
+- Read the confidential information and the non-disclosure policy carefully.
+- Be clear on the dos and don'ts regarding storing and the disclosure of company information.
+- Be extremely careful in managing confidential information.
+- Do not copy out or share confidential information outside the organisation.
+- When in doubt, check with your colleagues, your direct supervisor, or an HR representative. Do not make assumptions.
+
+*** How to avoid sharing company information on social media
+- Always be careful what you post on social media.
+- The post may seem harmless to you, and you wanted to genuinely share with your friends about the retreat or work-related event.
+- But the post could contain sensitive information like organisational chart, company strategies, sales targets, profit margins, etc. Such information should be strictly confidential as they may be picked up by competitors.
+- Remember that your actions affect how others perceive you. It is important to seek clarifications when in doubt and to approach the NTU Career and Attachment Office if you need any assistance in dealing with unprofessional co-workers or organisational practices.
+
+** Conscience
+A conscience is a moral self-awareness of our behaviour.
+
+** Work ethic
+- Work ethic describes your commitment to your internship or job.
+- It is a vital factor that determines whether you get hired, fired or promoted.
+- Work ethic is one of the driving factors in workplace productivity.
+
+*** Good work ethic
+- Shows commitment by performing the job to the best of your ability.
+- Dependable, has integrity, is honest, and is professional.
+- Improves job performance.
+- Increases job satisfaction.
+- Advances your career.
+- Gives 100% commitment and effort to the work.
+- Arrives punctually or early for work.
+- Gives 100% of time to work.
+- Submits work early or within the deadline.
+
+*** Bad work ethic
+- A bad work ethic is one or more habits that lead to poor productivity and results.
+- Does not care about the quality of work produced.
+- Arrives late for work and even spends the first hour having breakfast or chatting with colleagues.
+- Uses company time to surf the net or pursue personal interests.
+- Takes a lunch break longer than the allowed time.
+- Submits work late due to procrastination.
+
+** The 3 Cs
+
+*** Character
+- Care for society
+- Care for the environment
+- People oriented
+- Self-management
+
+*** Cognitive agility
+- Sense making
+- Curiosity
+- Adaptability
+- Learning agility
+- Transdisciplinarity
+- Creative thinking
+- Decision-making
+- Global perspective
+
+*** Competence
+- Digital fluency
+- Communication
+- Collaboration
+
+* Workplace skills
+- Workplace skills include:
+  - Political skills
+  - Skills in making ethical decisions
+  - Skills in handling a multicultural workforce
+  - Skill in handling a multi-generational workforce
+- Working with difficult colleagues is a challenge that everyone faces at some point in their career. Managing multi-generation teams is another challenge that many people face in the workplace. Learning skills to work with difficult colleagues and multi-generational teams will help *reduce potential conflict and maximise team productivity*. The success of your projects when working with them would have a big impact on your future promotion prospects to positions of greater responsibility and leadership.
+- Applying ethics to workplace challenges is also essential for career success. Making the wrong ethical decision would be *costly to your professional reputation* and lead to your downfall or even worse, the company's downfall.
+
+** Tips for when you're starting a new job
+1. Create positive first impressions.
+2. Be indispensable to your boss.
+3. Be known for expertise that nobody in the organisation has.
+4. Network.
+5. Don't gossip.
+6. Think before you write.
+7. Give excellent and consistent performance.
+8. Speak up to have influence.
+9. Volunteer for difficult assignments.
+10. Look for the positive in problems.
+
+** How to make a good first impression
+1. Dress to impress.
+   - Be fresh and put together.
+2. Develop friendships.
+   - Go beyond trying to impress your boss.
+   - Look outside your department and develop friendships.
+3. Ask for feedback.
+   - Ask for honest, good feedback that will help you develop professionally.
+   - Don't take feedback negatively or personally.
+   - Act on the advice.
+4. Drop your personal problems at the door.
+   - Don't bring your baggage to work.
+   - Don't let it impact your work.
+5. Avoid gossip.
+   - You don't want to be known as the gossip king or queen.
+   - Change the subject or leave when there is gossip.
+6. Be punctual.
+   - Arrive early.
+   - It shows that you are keen.
+
+** How to deal with difficult co-workers
+
+*** The negative co-worker
+- The negative co-worker always has something negative to say no matter what.
+- When they raise issues, ask them for more details.
+- Press them to fully describe the problem and ask them to provide a solution.
+
+*** The competitive co-worker
+- The competitive co-worker is someone who may try to sabotage other people's work or constantly throw people under the bus.
+- They will climb over others to try to get to the take and may even try taking credit for other people's work.
+- Competitive co-workers might be insecure, so they're threatened by your wins.
+- Show them that you want to work with them, not against them.
+- Collaborate with them, but make sure to leave a paper trail of your work, indicating how you contributed to projects.
+- Focus on yourself and doing the best work you can do.
+- Don't be derailed by the competitive co-worker and don't try to engage in it.
+
+*** The gossiper
+- The gossiper wants to know everything that's happening and might also be sharing your personal details with other people in the office.
+- They always want to be in the know, and likes to have a juicy story to share.
+- They may ask you questions under the guise of being considerate or thoughtful, but they actually want to use your answers to undermine you.
+- Don't feed into this person's questions.
+- They may ask you questions in a roundabout way like, "So what do you really think of Susan's presentation?"
+- They may try to bait you like, "I heard Claire saying the dumbest thing about you yesterday at lunch."
+- If they try to engage in gossip with you, your manager or your co-workers, politely leave the conversation.
+- Tell them you'd rather not talk about it or pretend you don't have any opinion on the subject.
+- Don't get sucked into the gossip, as there's a pretty good chance they'll share what you've said with other people, which can have major ramifications at work.
+
+*** The bully
+- The bully picks on people, blame others, or even tattle when it's totally not necessary to do so.
+- They may be unable to handle confrontation without acting mean or saying something completely inappropriate.
+- Try not to engage with them.
+- If you have to, hold onto the mean emails and note the times when their behaviour was truly inappropriate.
+- You may have to schedule a time to speak to HR about the situation, and the evidence will be helpful.
+
+*** The work shirker
+- The work shirker tries to push off all their work and get the rest of the team to carry their weight.
+- They may ask you to help them or finish their projects, leave before something is finish, or try to get out of the assignment altogether.
+- Co-workers who need help should be helped, but if there's a person who's constantly having you do all their work, it might be time to push back.
+- Speak to them one-on-one and explain the parts of the project you are working on.
+- Show that you need to finish your sections before you can help with another part.
+- You are responsible for getting your work done, and it can be problematic for you and for the project overall if you can't finish because you are busy assisting with someone else's workload.
+
+** What are career ending or career limiting moves which will prevent you from advancing in your career
+- Turning down a job assignment, moving to another department, and relocation to another country.
+- Disagreeing with the boss without succeeding in influencing him to your view.
+- Being unethical.
+- Gossiping about colleagues.
+- Displaying a lack of emotional intelligence or ability to work in a team.
+
+** How to advance your career
+1. Hard work alone won't cut it.
+   While hard work is crucial, it's only one aspect of career growth. It's like levelling up in a game, you need more than effort to be the boss.
+2. Vibes and skills matter.
+   Success also hinges on networking, understanding workplace culture, and continuous learning. Understanding the culture and who to vibe with can make a big difference.
+3. Mixing it up for the win.
+   For real success, combine hard work with smart moves and strategy. It's like playing a game, you've got to play your cards right to go from good to legendary.
+
+** Myths about office politics
+1. Office politics is always unethical.
+2. Only ambitious people engage in office politics.
+3. Office politics is always a negative, manipulative activity.
+4. Ignoring office politics will keep you out of trouble.
+
+Reframe: How can we build skills to expand our influence and strengthen relationships to enhance our effectiveness for the workplace.
+
+*** Reality
+1. Myth: Office politics is always unethical.
+   Reality: Strategic networking and relationship-building are essential for success, but it is crucial to do this ethically.
+2. Myth: Only ambitious people engage in office politics.
+   Reality: Effective collaboration and navigation of workplace relationships benefit all members. Ignoring office politics can hinder your success and even put you at a disadvantage.
+3. Myth: Office politics is always a negative, manipulative activity.
+   Reality: While office politics can be misused, it also encompasses positive aspects such as networking, building alliances, and strategically advocating for your ideas and your team's goals. The key is to engage ethically and constructively.
+4. Myth: Ignoring office politics will keep you out of trouble.
+   Reality: Ignoring workplace dynamics doesn't make them disappear. A lack of awareness can make you vulnerable to negative consequences. Understanding these dynamics allows you to proactively address potential problems and improve your ability to contribute effectively and build positive relationships.
+
+*** Shifting your perspective
+1. Office politics is not inherently negative, it's about understanding and navigating workplace dynamics.
+2. Ethical strategies, like clear communication and collaboration, are more sustainable than manipulation.
+3. Political intelligence is a learnable skill, not an innate talent.
+4. Success often comes from collaboration, not just competition.
+5. Understanding these dynamics benefits everyone, regardless of position.
+
+*** Reframing dysfunctional beliefs
+- Dysfunctional belief: Working hard leads to career advancement.
+  Reframe: Career advancement requires you to develop political intelligence in the workplace.
+- Dysfunctional belief: I do not understand how things work at my office, it's all about office politics.
+  Reframe: I can learn how to succeed by learning how to manage influence, authority, and power.
+- Dysfunctional belief: My job sucks, and I need to go to another company to get a better one.
+  Reframe: before you resign, make sure you have fully used all your options in your current workplace. The better job you seek may be the one right next to you.
+- Dysfunctional belief: I have a bad job, so I need to quit.
+  Reframe: There are no bad jobs, just jobs that fit badly, and I can *redesign* right where I am to make my own good job.
+
+*** Redesigning your situation
+Don't resign, redesign instead.
+1. Reframe
+2. Remodel (cosmetics or structural change)
+3. Relocate - move into a different work in the company
+4. Reinvent - retrain to get the new job in the same company
+
+**** Reframe
+How can we change the way we perceive the current situation at work?
+
+By looking at our jobs from a different perspective to find new meaning and satisfaction.
+
+**** Remodel
+Making minor or significant changes within our current job to improve our work experience.
+
+Examples:
+- Rearrange our workspaces or adjusting our schedules for better productivity.
+- Reviewing of job scope to better align with your strengths and interests.
+
+**** Relocate
+Move to a different role or department within the same company.
+ Explore internal job positions or discuss with the manager the possibility of transferring to another team.
+
+**** Reinvent
+Retrain or gain new skills to transit into a new role within the company.
+
+Review professional development opportunities.
+
+** Navigating office politics successfully
+Understanding who holds influence in your organisation and how decision are made is key to navigating workplace dynamics effectively.
+
+*** Identifying key stakeholders
+Recognising the individuals and groups who have the most influence on decisions.
+
+*** Understanding the decision-making process
+Recognising formal and informal processes that drive decisions.
+
+*** Building relationships
+Cultivating relationships with diverse stakeholders to advance your goals and interests.
+
+*** Effective communication
+Tailoring the communication strategies to different audiences and situations.
+
+** How to speak up in meetings
+
+*** Prepare a few points in advance
+- This practice allows you to challenge yourself to speak up without the worry of what to say.
+
+*** Ask "why you?"
+- Why do you care about what you do, or what you do about your organisation or your role?
+- Answering this question will help you find purpose and builds confidence.
+- It reminds you that you are committed and passionate about the subject and not to show off.
+
+*** Pause and breath to build confidence
+- Doing so centres you and strengthens your voice so that when you do speak, you speak with conviction.
+- While you pause, ask yourself, "If another person in this room has the same question, am I willing to ask on behalf of the other person?"
+- Sometimes, the person that says the least in a meeting holds the most power.
+
+*** When to hold back from speaking
+- If you are trying to show off.
+  - Ask yourself why you are speaking before you do.
+- If you are trying to empower others on your team.
+  - Allowing your team members to speak up in meetings with your clients will help build their leadership skills, raise their visibility, and give clients a greater sense of support from your whole team.
+- If your comment will be better left for a one-on-one conversation.
+  - Email or speak with someone privately for difficult conversations rather than in a group, where the person will feel defensive.
+
+** Managing multicultural teams
+
+*** Challenges
+- Communication style, as western culture tends to speak more directly while other cultures is more polite to be indirect.
+- Language fluency, as some people may not take someone seriously when they struggle to find the right word.
+- Authority, as some cultures are okay with a flat organisational structure, while some are used to a formal hierarchy.
+- Difference in how decisions are made. Conflicts can arise when some team members make decisions quickly versus slowly, or analytically versus instinctively.
+
+*** Strategies
+- Adaptation, which acknowledges cultural gaps and find ways to work around them, but this requires creativity, self-awareness and time.
+- Structural intervention, where projects or tasks are reassigned to reduce friction or to compel team members to get to know each other better.
+- Managerial intervention, where managers step in and set ground rules when there is a need for someone with authority.
+- Exit, which is completely removing someone from a team. This is costly, but sometimes is the only way to salvage a situation.
+
+** How to manage multi-generational teams
+
+*** Generation Z
+- The youngest generation in the workplace, who are teens to mid-20-year-olds, born between 1997 and 2012.
+- Never known the world without the internet.
+- Tech-savvy and can help your company stay competitive in a quickly evolving technological and global workplace.
+- They appreciate opportunities to be innovative at their jobs as they're open-minded and entrepreneurial-spirited.
+- Emphasise on the stability and security your company can offer them, like health insurance, student loan repayment options, retirement plans, and paid leave.
+- They appreciate working in a flexible workplace that gives them independence over projects and decision-making.
+- They're willing to work hard and perform the best when they have regular feedback from managers, even as often as a quick 5-minute check-in several times a week.
+
+*** Millennials
+- They are people in their mid-20s through their 30s, born between 1981 and 1996.
+- They make up 35% of the workforce.
+- They were growing up as technology and social media were coming of age.
+- You can expect them to embrace teamwork and diversity, and be multitaskers, less formal, and more open to change.
+- Having technology in the workplace will attract millennials.
+- Define the role they will take on and clearly map out what your expectations are while allowing them to ask "why".
+- Millennials are looking for meaningful work and will want to know exactly what working for your company will be like.
+- They need frequent feedback and structure.
+- They value time the most, but also value flexibility and bonuses.
+- This group prefers a work environment that allows for professional growth, teamwork and interaction with others.
+
+*** Generation X
+- These workers are in their 40s and 50s, and were born between 1965 and 1980.
+- Their mothers frequently worked outside the home, creating "latchkey" kids, and many of their parents fell prey to downsizing at no fault of their own.
+- They are self-reliant, hard-working and not intimidated by authority.
+- You can expect candid communication and a collaborative mindset.
+- Be clear about what your company has to offer them and your exact expectations.
+- Similar to millennials, this group will be asking themselves if the position is right for them.
+- They need constructive feedback, but they don't need much oversight or excessive input.
+- Loyalty to a manager is much more valuable to this group than loyalty to a company, so being a mentor, supporter and educator to a Gen X employee increases their chance of staying.
+
+*** Baby boomers
+- Baby boomers are in their late 50s to mid-70s, born between 1948 and 1964.
+- They're dedicated to work, described as workaholics, and are ambitious, motivated and driven.
+- They respect authority, but they don't necessarily trust authority.
+- Being transparent and inclusive in your recruiting and managing is vital.
+- Show respect for their experience and allow for questions.
+- Training opportunities will tell them that they are investment-worthy to your organisation despite their age.
+- Feedback is not as valued by this generation as recognition, title, acknowledgement and advancement in positions when earned.
+- You can generally depend on boomers to be comfortable in leadership and mentoring positions.
+
+*** Silent generation
+- The eldest members of the workforce, they are in their mid-70s and above, born between 1928 and 1945.
+- They bring the traditional values of hard work, loyalty, respect for authority and conformity to your company.
+- Focus on your company's history and how this person will be able to contribute to its overall goals when recruiting.
+- This generation is interested in how they can help your organisation succeed and even be part of its legacy.
+- Many are willing to work as consultants given their years of experience.
+- Retaining members of the silent generation involves creating a sense of satisfaction for a job well done.
+- Constant feedback is not necessary, and quarterly reviews are welcome, but no news is good news to them.
+- They welcome rewards that are earned honestly and include monetary compensation and retirement benefits.
+- They appreciate having responsibilities and control over their environment or projects, and they have the desire to lead.
+- They prefer a conventional work environment with a top-down chain of command.
+
+*** Bridging the gap
+- Understand and appreciate each generation for who they are, and adjust your hiring and management strategies and company culture to meet the needs and play to the strengths of each group.
+- Match your workforce to your customer base.
+- Create councils and boards that are intergenerational.
+- Pay attention to employee demographics.
+- Have mentoring programs and provide opportunities for continued education.
+- Offer a wide variety of benefits for employees to choose from.
+- Have flexible schedules and offer horizontal movement.
+- Being aware of generational differences and making purposeful adaptation can bring out the strengths of having a diverse workforce.
+
+** How to leave a job?
+1. Provide ample notice to your employer.
+2. Submit a formal letter of resignation.
+3. Prep for handover of duties.
+4. End on a positive note.
+
+*** Tips
+- Be clear about the reasons that you want to leave your job.
+- Be honest.
+- Best to resign from your job in person and give as much notice as possible.
+- Stay positive in your answers.
+- Be thankful, and provide constructive feedback.
+
+* Internships
+
+** Tips
+
+*** Have an end goal in mind
+- Go through the intended learning outcomes and have a clear idea of what you want to gain at the end of the internship.
+- If your internship role is not what you wish to pursue after graduation, there will still be transferable skills that you can acquire from the experience.
+- Once you know what you want to learn and develop, you are more likely to seize opportunities to support your learning goals.
+- You can visit the CAO website for more information on the internship application procedures and processes.
+
+*** Gain insights into the organisation
+- Familiarise yourself with the company's upcoming projects, goals, future directions, etc.
+- Pick up the industry lingo, find out who their clients are and speak to your colleagues to find out more about the organisation.
+
+*** Build connections and find mentors
+- Join colleagues from other departments for lunch, attend industry events, mingle and build connections with different people at your workplace.
+- These connections may prove to be important in the future as they could become good mentors and friends in your professional journey.
+
+*** Reflect on what you have learnt
+- At the end of your internship, reflect on what you learnt about yourself, like your abilities, skills, interests, values and accomplishments.
+- How will your new skills and knowledge contribute to your future career plans?
+- Remember to ask your supervisor if they would be willing to write you a letter of recommendation.
+- If you are really keen to return and work in the same organisation, take the first step and approach your supervisor to explore future opportunities.
+- Be proactive.
+
+*** Be appreciative
+- There will be many people who have helped and guided you along the way.
+- At the end of your internship, who your appreciation by thanking them for their support and guidance.
+- Let them know how their actions have impacted you and what you have learnt from them.
+- Don't take their kindness for granted, make them feel valued and appreciated.
+
+*** Positive attitude
+- A positive attitude is needed to overcome obstacles.
+
+*** Curiosity
+- Curiosity is needed for deeper learning and helps in achieving organisational goals.

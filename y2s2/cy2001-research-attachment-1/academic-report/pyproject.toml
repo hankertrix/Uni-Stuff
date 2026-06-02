@@ -1,0 +1,14 @@
+[project]
+name = "step-counter"
+version = "0.0.1"
+requires-python = ">=3.11"
+authors = [
+    { name = "hankertrix", email = "91734413+hankertrix@users.noreply.github.com" },
+]
+dependencies = [
+    "ahrs>=0.3.1",
+    "matplotlib>=3.10.1",
+    "numpy>=2.2.4",
+    "pandas>=2.2.3",
+    "scipy>=1.15.2",
+]
